@@ -1,0 +1,92 @@
+<?php
+
+/**
+ * @file
+ * Contains wxt_ext_user.module.
+ */
+
+use Drupal\shortcut\Entity\Shortcut;
+use Drupal\user\Entity\User;
+
+/**
+ * Implements hook_install().
+ */
+function wxt_ext_user_install() {
+  // Enable default permissions for system roles.
+  user_role_grant_permissions(DRUPAL_ANONYMOUS_RID, [
+    'access comments',
+    'use search',
+    'search content',
+    'access user profiles',
+  ]);
+  user_role_grant_permissions(DRUPAL_AUTHENTICATED_RID, [
+    'access comments',
+    'post comments',
+    'skip comment approval',
+    'search content',
+    'access user profiles',
+  ]);
+
+  // Assign user 1 the "administrator" role.
+  if ($user = User::load(1)) {
+    $user->roles[] = 'administrator';
+    $user->save();
+  }
+
+  user_role_grant_permissions(DRUPAL_ANONYMOUS_RID, ['access site-wide contact form']);
+  user_role_grant_permissions(DRUPAL_AUTHENTICATED_RID, ['access site-wide contact form']);
+
+  // Allow authenticated users to use shortcuts.
+  user_role_grant_permissions(DRUPAL_AUTHENTICATED_RID, ['access shortcuts']);
+
+  if (!\Drupal::service('config.installer')->isSyncing()) {
+
+    // Populate the default shortcut set.
+    $shortcut = Shortcut::create(
+      [
+        'shortcut_set' => 'default',
+        'title' => t('Add content'),
+        'weight' => -20,
+        'link' => ['uri' => 'internal:/node/add'],
+      ]
+    );
+    $shortcut->save();
+
+    $shortcut = Shortcut::create(
+      [
+        'shortcut_set' => 'default',
+        'title' => t('All content'),
+        'weight' => -20,
+        'link' => ['uri' => 'internal:/admin/content'],
+      ]
+    );
+    $shortcut->save();
+
+    $shortcut = Shortcut::create(
+      [
+        'shortcut_set' => 'default',
+        'title' => t('All files'),
+        'weight' => -19,
+        'link' => ['uri' => 'internal:/admin/content/files'],
+      ]
+    );
+    $shortcut->save();
+  }
+
+  // Add the First and Last Name fields to the user entity form display.
+  entity_get_form_display('user', 'user', 'default')
+    ->setComponent('field_first_name', [
+      'type' => 'string_textfield',
+    ])
+    ->setComponent('field_last_name', [
+      'type' => 'string_textfield',
+    ])
+    ->save();
+
+  // Add values for the First and Last name fields to the admin user.
+  if ($user = User::load(1)) {
+    $user->set('field_first_name', 'Super');
+    $user->set('field_last_name', 'Admin');
+    $user->save();
+  }
+}

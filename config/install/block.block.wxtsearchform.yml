@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - wxt_library
+  theme:
+    - wxt_bootstrap
+id: wxtsearchform
+theme: wxt_bootstrap
+region: search
+weight: -7
+provider: null
+plugin: wxt_search_form_block
+settings:
+  id: wxt_search_form_block
+  label: 'WxT Search form'
+  provider: wxt_library
+  label_display: visible
+visibility: {  }

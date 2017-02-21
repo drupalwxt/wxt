@@ -1,0 +1,9 @@
+name: 'WxT Extend User'
+description: 'Provides default user roles, users, and permissions.'
+type: module
+core: 8.x
+package: WxT
+dependencies:
+  - config_rewrite
+  - shortcut
+  - wxt_ext_translation

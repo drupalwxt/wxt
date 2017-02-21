@@ -1,0 +1,355 @@
+id: wxt_menu_link
+label: Embedded data feed of menu link content
+migration_group: wxt
+source:
+  plugin: embedded_data
+  # Enforce default language to english
+  default_lang: true
+  data_rows:
+    # Main Menu.
+    - mlid: 'ml_main_1'
+      link_title: 'Core WxT'
+      description: 'Official site for the WxT jQuery Framework.'
+      menu_name: 'main'
+      link_path: 'http://wet-boew.github.io'
+      options: []
+      external: 1
+      weight: 1
+      parent: 0
+    - mlid: 'ml_main_1_sub_1'
+      link_title: 'GitHub'
+      description: 'GitHub Repository for the WxT jQuery Framework.'
+      menu_name: 'main'
+      link_path: 'http://github.com/wet-boew/wet-boew'
+      options: []
+      external: 1
+      weight: 0
+      parent: 'ml_main_1'
+    - mlid: 'ml_main_2'
+      link_title: 'Drupal WxT'
+      description: 'Documentation site for the Drupal variant of WxT.'
+      menu_name: 'main'
+      link_path: 'http://drupalwxt.github.io'
+      options: []
+      external: 1
+      weight: 2
+      parent: 0
+    - mlid: 'ml_main_2_sub_1'
+      link_title: 'GitHub'
+      description: 'GitHub Repository for the Drupal variant of WxT.'
+      menu_name: 'main'
+      link_path: 'http://github.com/wet-boew/wet-boew-drupal'
+      options: []
+      external: 1
+      weight: 0
+      parent: 'ml_main_2'
+    - mlid: 'ml_main_3'
+      link_title: 'Documentation'
+      description: 'Documentation Pages related to Drupal WxT.'
+      menu_name: 'main'
+      link_path: 'http://drupalwxt.github.io'
+      options: []
+      external: 0
+      weight: 3
+      parent: 0
+    - mlid: 'ml_main_3_sub_1'
+      link_title: 'Drupal 8'
+      description: ''
+      menu_name: 'main'
+      link_path: 'internal:/node/2'
+      options: []
+      external: 0
+      weight: 0
+      parent: 'ml_main_3'
+    - mlid: 'ml_main_3_sub_2'
+      link_title: 'Drupal WxT for Drupal 8'
+      description: ''
+      menu_name: 'main'
+      link_path: 'internal:/node/1'
+      options: []
+      external: 0
+      weight: 0
+      parent: 'ml_main_3'
+    - mlid: 'ml_main_4'
+      link_title: 'Resources'
+      description: 'Drupal 8 API.'
+      menu_name: 'main'
+      link_path: 'https://api.drupal.org/api/drupal/8.2.x'
+      options: []
+      external: 1
+      weight: 4
+      parent: 0
+    - mlid: 'ml_main_4_sub_1'
+      link_title: 'Theming in Drupal 8'
+      description: ''
+      menu_name: 'main'
+      link_path: 'https://loganfarr.com/index.php/d8-theming'
+      options: []
+      external: 1
+      weight: 0
+      parent: 'ml_main_4'
+    - mlid: 'ml_main_4_sub_2'
+      link_title: 'Drupal Console'
+      description: ''
+      menu_name: 'main'
+      link_path: 'https://drupalconsole.com'
+      options: []
+      external: 1
+      weight: 1
+      parent: 'ml_main_4'
+    # Sidebar.
+    - mlid: 'ml_sidebar_1'
+      link_title: 'Drupal'
+      description: 'Drupal.org'
+      menu_name: 'sidebar'
+      link_path: 'http://drupal.org'
+      options: []
+      external: 1
+      weight: 0
+      parent: 0
+    - mlid: 'ml_sidebar_1_sub_1'
+      link_title: 'Drupal 8'
+      description: 'Drupal 8 introduction'
+      menu_name: 'sidebar'
+      link_path: 'internal:/node/2'
+      options: []
+      external: 0
+      weight: 0
+      parent: 'ml_sidebar_1'
+    - mlid: 'ml_sidebar_1_sub_1_sub_1'
+      link_title: 'Why Drupal 8'
+      description: 'Meet the world’s leading digital experience platform.'
+      menu_name: 'sidebar'
+      link_path: 'https://www.drupal.com/why-drupal-8'
+      options: []
+      external: 0
+      weight: 0
+      parent: 'ml_sidebar_1_sub_1'
+    - mlid: 'ml_sidebar_1_sub_1_sub_2'
+      link_title: 'Multilingual Improvements'
+      description: 'Drupal 8 multilingual improvements.'
+      menu_name: 'sidebar'
+      link_path: 'http://www.drupal8multilingual.org/features'
+      options: []
+      external: 0
+      weight: 0
+      parent: 'ml_sidebar_1_sub_1'
+    - mlid: 'ml_sidebar_1_sub_2'
+      link_title: 'Drupal WxT for Drupal 8'
+      description: 'Drupal WxT8 introduction'
+      menu_name: 'sidebar'
+      link_path: 'internal:/node/1'
+      options: []
+      external: 0
+      weight: 0
+      parent: 'ml_sidebar_1'
+    - mlid: 'ml_sidebar_1_sub_2_sub_1'
+      link_title: 'Drupal WxT8 (GitHub)'
+      description: 'The Drupal WxT8 GitHub repository.'
+      menu_name: 'sidebar'
+      link_path: 'http://github.com/wet-boew/wet-boew-drupal8'
+      options: []
+      external: 0
+      weight: 0
+      parent: 'ml_sidebar_1_sub_2'
+    - mlid: 'ml_sidebar_1_sub_2_sub_2'
+      link_title: 'Drupal WxT8 (Drupal.org)'
+      description: 'The Drupal WxT8 Drupal.org repository.'
+      menu_name: 'sidebar'
+      link_path: 'http://drupal.org/project/wxt'
+      options: []
+      external: 0
+      weight: 0
+      parent: 'ml_sidebar_1_sub_2'
+    # Footer.
+    - mlid: 'ml_footer_1'
+      link_title: 'Contact'
+      description: 'Contact us section.'
+      menu_name: 'footer'
+      link_path: 'route:<nolink>'
+      options: []
+      external: 0
+      weight: 0
+      parent: 0
+    - mlid: 'ml_footer_1_sub_1'
+      link_title: 'Questions or comments?'
+      description: 'Questions or comments related to Drupal WxT.'
+      menu_name: 'footer'
+      link_path: 'http://drupal.org/project/wxt'
+      options: []
+      external: 0
+      weight: 0
+      parent: 'ml_footer_1'
+    - mlid: 'ml_footer_2'
+      link_title: 'About'
+      description: 'About us section.'
+      menu_name: 'footer'
+      link_path: 'route:<nolink>'
+      options: []
+      external: 0
+      weight: 1
+      parent: 0
+    - mlid: 'ml_footer_2_sub_1'
+      link_title: 'About DrupalWxT'
+      description: 'Documentation site for Drupal WxT.'
+      menu_name: 'footer'
+      link_path: 'http://drupalwxt.github.io'
+      options: []
+      external: 1
+      weight: 0
+      parent: 'ml_footer_2'
+    - mlid: 'ml_footer_2_sub_2'
+      link_title: 'About the Web Standards'
+      description: 'Web standards that the Web Experience Toolkit adheres to.'
+      menu_name: 'footer'
+      link_path: 'http://www.tbs-sct.gc.ca/ws-nw/index-eng.asp'
+      options: []
+      external: 1
+      weight: 0
+      parent: 'ml_footer_2'
+    - mlid: 'ml_footer_3'
+      link_title: 'News'
+      description: 'News section.'
+      menu_name: 'footer'
+      link_path: 'route:<nolink>'
+      options: []
+      external: 0
+      weight: 2
+      parent: 0
+    - mlid: 'ml_footer_3_sub_1'
+      link_title: 'Recent project activity'
+      description: 'Recent project activity for Drupal WxT'
+      menu_name: 'footer'
+      link_path: 'https://github.com/wet-boew/wet-boew-drupal8/pulse'
+      options: []
+      external: 1
+      weight: 0
+      parent: 'ml_footer_3'
+    - mlid: 'ml_footer_3_sub_2'
+      link_title: 'Project statistics'
+      description: 'Recent project statistics for Drupal WxT.'
+      menu_name: 'footer'
+      link_path: 'https://github.com/wet-boew/wet-boew-drupal8/graphs'
+      options: []
+      external: 1
+      weight: 0
+      parent: 'ml_footer_3'
+    - mlid: 'ml_footer_4'
+      link_title: 'Stay connected'
+      description: 'Stay connected section.'
+      menu_name: 'footer'
+      link_path: 'route:<nolink>'
+      options: []
+      external: 0
+      weight: 3
+      parent: 0
+    - mlid: 'ml_footer_4_sub_1'
+      link_title: 'Twitter'
+      description: 'Twitter Feed for Drupal WxT.'
+      menu_name: 'footer'
+      link_path: 'https://github.com/wet-boew/wet-boew-drupal8/pulse'
+      options: []
+      external: 1
+      weight: 0
+      parent: 'ml_footer_4'
+    - mlid: 'ml_brand_1'
+      link_title: 'Feedback'
+      description: 'Feedback section.'
+      menu_name: 'brand'
+      link_path: 'https://www1.canada.ca/en/contact/feedback.html'
+      options: []
+      external: 1
+      weight: 0
+      parent: 0
+    - mlid: 'ml_brand_2'
+      link_title: 'Social media'
+      description: 'Social media section.'
+      menu_name: 'brand'
+      link_path: 'https://www.canada.ca/en/social.html'
+      options: []
+      external: 1
+      weight: 1
+      parent: 0
+    - mlid: 'ml_brand_3'
+      link_title: 'Mobile applications'
+      description: 'Mobile applications section.'
+      menu_name: 'brand'
+      link_path: 'https://www.canada.ca/en/mobile.html'
+      options: []
+      external: 1
+      weight: 2
+      parent: 0
+    - mlid: 'ml_brand_4'
+      link_title: 'About Canada.ca'
+      description: 'About Canada.ca section.'
+      menu_name: 'brand'
+      link_path: 'https://www1.canada.ca/en/newsite.html'
+      options: []
+      external: 1
+      weight: 3
+      parent: 0
+    - mlid: 'ml_brand_5'
+      link_title: 'Terms and conditions'
+      description: 'Terms and conditions section.'
+      menu_name: 'brand'
+      link_path: 'https://www.canada.ca/en/transparency/terms.html'
+      options: []
+      external: 1
+      weight: 4
+      parent: 0
+    - mlid: 'ml_brand_6'
+      link_title: 'Privacy'
+      description: 'Privacy section.'
+      menu_name: 'brand'
+      link_path: 'https://www.canada.ca/en/transparency/privacy.html'
+      options: []
+      external: 1
+      weight: 5
+      parent: 0
+  # Under 'ids', we identify source fields populated above which will uniquely
+  # identify each imported item. The 'type' makes sure the migration map table
+  # uses the proper schema type for stored the IDs.
+  ids:
+    mlid:
+      type: string
+process:
+  id: mlid
+  bundle: 'constants/bundle'
+  title: link_title
+  description: description
+  menu_name: menu_name
+  'link/uri': link_path
+  'link/options': options
+  route:
+    plugin: route
+    source:
+      - link_path
+      - options
+  route_name: '@route/route_name'
+  route_parameters: '@route/route_parameters'
+  url: '@route/url'
+  options: '@route/options'
+  external: external
+  weight: weight
+  expanded:
+    plugin: default_value
+    default_value: 1
+  enabled:
+    plugin: default_value
+    default_value: 1
+  parent:
+    plugin: menu_link_parent
+    source:
+      - parent
+  changed:
+    plugin: default_value
+    default_value: ''
+destination:
+  plugin: entity:menu_link_content
+migration_dependencies:
+  required:
+    # modules
+    - menu
+    # migrations
+    - wxt_node_page
+    - wxt_menu

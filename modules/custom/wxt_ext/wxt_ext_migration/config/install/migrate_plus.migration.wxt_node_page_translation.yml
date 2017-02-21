@@ -1,0 +1,55 @@
+id: wxt_node_page_translation
+label: Embedded data feed of content
+migration_group: wxt
+source:
+  plugin: embedded_data
+  translations: true
+  data_rows:
+    - name: 'wxt_content_1'
+      title: 'Drupal WxT pour Drupal 8'
+      language: 'fr'
+      body: |
+        <p>Pas de traduction en ce moment.</p>
+    - name: 'wxt_content_2'
+      title: 'Drupal 8'
+      language: 'fr'
+      body:  |
+        <p>Pas de traduction en ce moment.</p>
+  # Under 'ids', we identify source fields populated above which will uniquely
+  # identify each imported item. The 'type' makes sure the migration map table
+  # uses the proper schema type for stored the IDs.
+  ids:
+    name:
+      type: string
+process:
+  id: name
+  title: title
+  nid:
+    plugin: migration
+    migration: wxt_node_page
+    source: name
+  uid:
+    plugin: default_value
+    default_value: 1
+  type:
+    plugin: default_value
+    default_value: page
+  sticky:
+    plugin: default_value
+    default_value: 0
+  'body/value': body
+  'body/format':
+    plugin: default_value
+    default_value: rich_text
+  langcode: language
+  'moderation_state/target_id':
+    plugin: default_value
+    default_value: published
+  content_translation_source: 'en'
+destination:
+  plugin: entity:node
+  translations: true
+migration_dependencies:
+  required:
+    - wxt_node_page
+    - language

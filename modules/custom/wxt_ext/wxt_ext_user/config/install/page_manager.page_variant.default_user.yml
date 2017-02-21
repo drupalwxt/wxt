@@ -1,0 +1,39 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.user
+  module:
+    - ctools
+    - panels
+id: default_user
+label: 'Default User'
+variant: panels_variant
+variant_settings:
+  blocks:
+    142d3558-5fee-442f-9300-a5cf52f2b6a2:
+      id: 'entity_view:user'
+      label: 'Entity view (User)'
+      provider: ctools
+      label_display: '0'
+      view_mode: full
+      region: middle
+      weight: 0
+      uuid: 142d3558-5fee-442f-9300-a5cf52f2b6a2
+      context_mapping:
+        entity: current_user
+  id: panels_variant
+  uuid: 1c74464e-5b9d-41e7-8825-371a214b4620
+  label: null
+  weight: 0
+  layout: onecol
+  layout_settings: {  }
+  page_title: 'My account'
+  storage_type: page_manager
+  storage_id: default_user
+  builder: ipe
+page: user
+weight: -9
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }

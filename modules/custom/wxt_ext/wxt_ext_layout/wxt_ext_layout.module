@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * Contains wxt_ext_layout.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function wxt_ext_layout_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.wxt_ext_layout':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('This module assists in pre-generated best practice
+      layouts with Bootstrap grid system.') . '</p>';
+      return $output;
+  }
+}

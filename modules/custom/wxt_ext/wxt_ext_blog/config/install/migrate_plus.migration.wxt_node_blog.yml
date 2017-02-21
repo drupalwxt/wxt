@@ -1,0 +1,198 @@
+id: wxt_node_blog_post
+label: Embedded data feed of content
+migration_group: wxt
+source:
+  plugin: embedded_data
+  data_rows:
+    - name: 'wxt_node_blog_post_1'
+      title: 'Open Data: Defining Open Data'
+      language: 'en'
+      field_image_fid: '218x291'
+      body: |
+        <p>Open data is data that can be freely used, shared and built-on by
+        anyone, anywhere, for any purpose. This is the summary of the full Open
+        Definition which the Open Knowledge Foundation created in 2005 to
+        provide both a succinct explanation and a detailed definition of open
+        data.</p>
+
+        <p>As the open data movement grows, and even more governments and
+        organisations sign up to open data, it becomes ever more important that
+        there is a clear and agreed definition for what “open data” means if we
+        are to realise the full benefits of openness, and avoid the risks of
+        creating incompatibility between projects and splintering the
+        community.</p>
+
+        <p>Open can apply to information from any source and about any topic.
+        Anyone can release their data under an open licence for free use by and
+        benefit to the public. Although we may think mostly about government
+        and public sector bodies releasing public information such as budgets
+        or maps, or researchers sharing their results data and publications,
+        any organisation can open information (corporations, universities,
+        NGOs, startups, charities, community groups and individuals).</p>
+    - name: 'wxt_node_blog_post_2'
+      title: 'Open Data: Economic Opportunity'
+      language: 'en'
+      field_image_fid: '218x291'
+      body: |
+        <p>Open data gains additional economic value when governments support
+        open data initiatives, although increased uptake and citizen engagement
+        is vital to the economic success of open data. Greater economic impact
+        depends on revenue growth, cost reduction, and job creation. Revenue
+        can be increased through the use of open data with the creation of new
+        businesses, new good or services, or improved goods and services.</p>
+
+        When businesses profit from the creation of goods or services that rely
+        upon open data not only does their company reap the financial benefits
+        but the government does as well, through the increase of tax revenue.
+        Cost reduction helps to increase revenue for private sector businesses
+        but is also an asset to government. Cost reduction in government,
+        whether through reduction of services required or labor requirements,
+        reduces government spending in some areas allowing for investment in
+        others. Open data can also increase economic benefit through the
+        creation of jobs. Jobs can be created through innovative
+        entrepreneurship or through the requirement of skilled labourers to use
+        and understand data.</p>
+    - name: 'wxt_node_blog_post_3'
+      title: 'Open Data: In Government'
+      language: 'en'
+      field_image_fid: '218x291'
+      body: |
+        <p>There are a range of different arguments for open government data.
+        For example, some advocates contend that making government information
+        available to the public as machine readable open data can facilitate
+        government transparency, accountability and public participation. Some
+        make the case that opening up official information can support
+        technological innovation and economic growth by enabling third parties
+        to develop new kinds of digital applications and services.</p>
+
+        <p>Several national governments have created web sites to distribute a
+        portion of the data they collect. It is a concept for a collaborative
+        project in municipal Government to create and organize Culture for Open
+        Data or Open government data.</p>
+    - name: 'wxt_node_blog_post_4'
+      title: 'Open Data: In Science'
+      language: 'en'
+      field_image_fid: '218x291'
+      body: |
+        <p>The concept of open access to scientific data was institutionally
+        established with the formation of the World Data Center system, in
+        preparation for the International Geophysical Year of 1957–1958. The
+        International Council of Scientific Unions (now the International
+        Council for Science) established several World Data Centers to minimize
+        the risk of data loss and to maximize data accessibility, further
+        recommending in 1955 that data be made available in machine-readable
+        form.</p>
+
+        <p>While the open-science-data movement long predates the Internet, the
+        availability of fast, ubiquitous networking has significantly changed
+        the context of Open science data, since publishing or obtaining data
+        has become much less expensive and time-consuming.</p>
+
+        <p>The Human Genome Project was a major initiative that exemplified the
+        power of open data. It was built upon the so-called Bermuda Principles,
+        stipulating that: "All human genomic sequence information (…) should
+        be freely available and in the public domain in order to encourage
+        research and development and to maximise its benefit to society'.
+        More recent initiatives such as the Structural Genomics Consortium
+        have illustrated that the open data approach can also be used
+        productively within the context of industrial R&D.</p>
+    - name: 'wxt_node_blog_post_5'
+      title: 'Open Data: Arguments'
+      language: 'en'
+      field_image_fid: '218x291'
+      body: |
+        <p>The debate on Open Data is still evolving. The best open government
+        applications seek to empower citizens, to help small businesses, or
+        to create value in some other positive, constructive way. Opening
+        government data is only a way-point on the road to improving education,
+        improving government, and building tools to solve other real world
+        problems. While many arguments have been made categorically, the
+        following discussion of arguments for and against open data highlights
+        that these arguments often depend highly on the type of data and its
+        potential uses.</p>
+
+        <p>Arguments made on behalf of Open Data include the following:</p>
+
+        <ul>
+          <li>"Data belong to the human race". Typical examples are genomes, data
+          on organisms, medical science, environmental data following the
+          Aarhus Convention</li>
+          <li>Public money was used to fund the work and so it should be
+          universally available.</li>
+          <li>It was created by or at a government institution (this is common
+          in US National Laboratories and government agencies)</li>
+          <li>Facts cannot legally be copyrighted.</li>
+          <li>Sponsors of research do not get full value unless the resulting
+          data are freely available.</li>
+          <li>Restrictions on data re-use create an anticommons.</li>
+          <li>Data are required for the smooth process of running communal
+          human activities and are an important enabler of socio-economic
+          development (health care, education, economic productivity).</li>
+          <li>In scientific research, the rate of discovery is accelerated by
+          better access to data.</li>
+        </ul>
+    - name: 'wxt_node_blog_post_6'
+      title: 'Open Data: What is Open?'
+      language: 'en'
+      field_image_fid: '218x291'
+      body: |
+        <p>The full Open Definition provides a precise definition of what open
+        data is. There are 2 important elements to openness:</p>
+        <ul>
+          <li><strong>Legal openness</strong>: you must be allowed to get the
+          data legally, to build on it, and to share it. Legal openness is
+          usually provided by applying an appropriate (open) license which
+          allows for free access to and reuse of the data, or by placing data
+          into the public domain.</li>
+          <li><strong>Technical openness</strong>: there should be no
+          technical barriers to using that data. For example, providing data as
+          printouts on paper (or as tables in PDF documents) makes the
+          information extremely difficult to work with. So the Open
+          Definition has various requirements for “technical openness,” such as
+          requiring that data be machine readable and available in bulk.</li>
+        </ul>
+        <p>There are a few key aspects of open which the Open Definition
+        explains in detail. Open Data is useable by anyone, regardless of who
+        they are, where they are, or what they want to do with the data; there
+        must be no restriction on who can use it, and commercial use is fine
+        too.</p>
+        <p>Open data must be available in bulk (so it’s easy to work with) and
+        it should be available free of charge, or at least at no more than a
+        reasonable reproduction cost. The information should be digital,
+        preferably available by downloading through the internet, and easily
+        processed by a computer too (otherwise users can’t fully exploit the
+        power of data – that it can be combined together to create new
+        insights).</p>
+  ids:
+    name:
+      type: string
+process:
+  id: name
+  title: title
+  uid:
+    plugin: default_value
+    default_value: 1
+  type:
+    plugin: default_value
+    default_value: blog_post
+  sticky:
+    plugin: default_value
+    default_value: 0
+  'body/value': body
+  'body/format':
+    plugin: default_value
+    default_value: rich_text
+  field_image:
+    plugin: migration
+    migration: wxt_file
+    source: field_image_fid
+  langcode: language
+  'moderation_state/target_id':
+    plugin: default_value
+    default_value: published
+destination:
+  plugin: entity:node
+migration_dependencies:
+  required:
+    # migrations
+    - wxt_file

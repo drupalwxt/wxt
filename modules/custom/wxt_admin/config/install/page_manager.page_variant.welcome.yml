@@ -1,0 +1,37 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.welcome
+  module:
+    - panels
+    - system
+id: welcome
+label: Welcome
+variant: panels_variant
+variant_settings:
+  blocks:
+    ce1a30c3-d0ff-4480-8908-8e13ba3e1dcb:
+      id: system_main_block
+      label: 'Main page content'
+      provider: system
+      label_display: '0'
+      region: middle
+      weight: 0
+      uuid: ce1a30c3-d0ff-4480-8908-8e13ba3e1dcb
+      context_mapping: {  }
+  id: panels_variant
+  uuid: cb078fed-a5ed-4a6b-b400-afe60d2b1533
+  label: null
+  weight: 0
+  layout: onecol
+  layout_settings: {  }
+  page_title: Welcome
+  storage_type: page_manager
+  storage_id: welcome
+  builder: ipe
+page: welcome
+weight: 0
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }

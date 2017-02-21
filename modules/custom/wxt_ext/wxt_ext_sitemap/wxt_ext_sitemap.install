@@ -1,0 +1,32 @@
+<?php
+
+/**
+ * @file
+ * Install file for wxt_ext_sitemap.
+ */
+
+use Drupal\node\Entity\NodeType;
+
+/**
+ * Implements hook_install().
+ */
+function wxt_ext_sitemap_install() {
+  $enabled_bundles = [
+    'page',
+  ];
+  $sitemap_config = [];
+  foreach ($enabled_bundles as $bundle_name) {
+    // Enable the sitemap only for bundles the user has chosen to install.
+    if (NodeType::load($bundle_name) === NULL) {
+      continue;
+    }
+    $sitemap_config['node'][$bundle_name] = [
+      'index' => 1,
+      'priority' => '0.5',
+    ];
+  }
+  \Drupal::service('config.factory')
+    ->getEditable('simple_sitemap.settings')
+    ->set('entity_types', $sitemap_config)
+    ->save();
+}

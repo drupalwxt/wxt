@@ -1,0 +1,17 @@
+name: 'WxT Extend'
+description: 'Wrapper module for enabling all of the WxT Extensions.'
+type: module
+core: 8.x
+package: WxT
+dependencies:
+  - wxt_core
+  - wxt_ext_config
+  - wxt_ext_editor
+  - wxt_ext_layout
+  - wxt_ext_media_slideshow
+  - wxt_ext_migration
+  - wxt_ext_page
+  - wxt_ext_sitemap
+  - wxt_ext_theme
+  - wxt_ext_translation
+  - wxt_ext_user

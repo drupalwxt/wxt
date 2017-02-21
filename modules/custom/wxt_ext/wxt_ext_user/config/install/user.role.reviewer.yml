@@ -1,0 +1,46 @@
+langcode: en
+status: true
+dependencies: {  }
+id: reviewer
+label: Reviewer
+weight: 4
+is_admin: null
+permissions:
+  - 'edit own comments'
+  - 'access user contact forms'
+  - 'create content translations'
+  - 'delete content translations'
+  - 'update content translations'
+  - 'translate article node'
+  - 'translate employee node'
+  - 'translate service node'
+  - 'access contextual links'
+  - 'access files overview'
+  - 'use text format full_html'
+  - 'use text format rich_text'
+  - 'access content overview'
+  - 'delete all revisions'
+  - 'revert all revisions'
+  - 'view all revisions'
+  - 'view own unpublished content'
+  - 'create article content'
+  - 'delete any article content'
+  - 'delete own article content'
+  - 'delete article revisions'
+  - 'edit any article content'
+  - 'edit own article content'
+  - 'revert article revisions'
+  - 'view article revisions'
+  - 'access user profiles'
+  - 'use draft_draft transition'
+  - 'use draft_needs_review transition'
+  - 'use needs_review_needs_review transition'
+  - 'use needs_review_published transition'
+  - 'use published_draft transition'
+  - 'use published_published transition'
+  - 'dropzone upload files'
+  - 'use published_archived transition'
+  - 'use draft_published transition'
+  - 'use needs_review_draft transition'
+  - 'use archived_published transition'
+

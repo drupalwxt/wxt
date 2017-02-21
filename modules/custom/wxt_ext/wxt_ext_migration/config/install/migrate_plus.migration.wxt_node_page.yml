@@ -1,0 +1,341 @@
+id: wxt_node_page
+label: Embedded data feed of content
+migration_group: wxt
+source:
+  plugin: embedded_data
+  data_rows:
+    - name: 'wxt_content_1'
+      title: 'Drupal WxT for Drupal 8'
+      language: 'en'
+      body: |
+        <p>The Drupal WxT distribution is a web content management
+        framework which assists in building and maintaining innovative Web sites
+        that are accessible, usable, and interoperable. This distribution is
+        open source software and free for use by departments and external Web
+        communities. This distribution relies and integrates extensively on the
+        WET-BOEW (WxT) jQuery Framework to leverage much of the semantic markup.
+        </p>
+
+        <p>Development has been tailored for organizations that need to comply
+        with standards for accessibility and bilingualism or that simply need a
+        distribution that allows them to get up and running quickly using a
+        carefully curated selection of modules that can support common
+        enterprise business requirements.</p>
+
+        <p>Below we highlight the work done on getting the various WxT
+        components / plugins and themes / styles leveraged properly in Drupal.
+        Levels of integration with Drupal will vary as some of the plugins can
+        simply be leveraged by calling a class in markup. Where possible we will
+        try to make a distinction on how each functionality can be used. Note:
+        This list does not represent the full capabilities of the Drupal WxT
+        platform merely the WxT components it integrates with.</p>
+
+        <h3 class="mrgn-bttm-lg">Supported WxT Themes</h3>
+
+        <table class="wb-tables table table-striped table-hover" data-wb-tables="{&quot;columnDefs&quot;: [ { &quot;visible&quot;: false, &quot;targets&quot;: [ 3 ] } ], &quot;lengthMenu&quot;: [[5, 10, -1], [5, 10, &quot;All&quot;]], &quot;pageLength&quot;: 5 }" id="components-theme">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Drupal Integration</th>
+            <th>Keywords</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="http://wet-boew.github.io/themes-dist/theme-base/index-en.html">Base theme</a></td>
+            <td><a href="http://wet-boew.github.io/v4.0-ci/docs/ref/themesstyle-en.html">Themes and style</a></td>
+            <td>Full support via native WxT Library and WxT Bootstrap theme.</td>
+            <td>theme-base</td>
+          </tr>
+          <tr>
+            <td><a href="http://wet-boew.github.io/themes-dist/GCWeb/index-en.html">Canada.ca theme</a></td>
+            <td><a href="http://wet-boew.github.io/v4.0-ci/docs/ref/themesstyle-en.html">Themes and style</a></td>
+            <td>Full support via native WxT Library and WxT Bootstrap theme.</td>
+            <td>gcweb</td>
+          </tr>
+          <tr>
+            <td><a href="http://wet-boew.github.io/themes-dist/theme-gc-intranet/index-en.html">Government of Canada Intranet theme</a></td>
+            <td><a href="http://wet-boew.github.io/v4.0-ci/docs/ref/themesstyle-en.html">Themes and style</a></td>
+            <td>Full support via native WxT Library and WxT Bootstrap theme.</td>
+            <td>theme-gc-intranet</td>
+          </tr>
+          <tr>
+            <td><a href="http://wet-boew.github.io/themes-dist/theme-gcwu-fegc/index-en.html">Government of Canada Web Usability theme</a></td>
+            <td><a href="http://wet-boew.github.io/v4.0-ci/docs/ref/themesstyle-en.html">Themes and style</a></td>
+            <td>Full support via native WxT Library and WxT Bootstrap theme.</td>
+            <td>theme-gcwu-fegc</td>
+          </tr>
+          <tr>
+            <td><a href="http://wet-boew.github.io/themes-dist/theme-ogpl/index-en.html">Open Government Platform (OGPL) theme</a></td>
+            <td><a href="http://wet-boew.github.io/v4.0-ci/docs/ref/themesstyle-en.html">Themes and style</a></td>
+            <td>Full support via native WxT Library and WxT Bootstrap theme.</td>
+            <td>theme-ogpl</td>
+          </tr>
+          <tr>
+            <td><a href="http://wet-boew.github.io/v4.0-ci/theme/index-en.html">Web Experience Toolkit (WET) theme</a></td>
+            <td><a href="http://wet-boew.github.io/v4.0-ci/docs/ref/themesstyle-en.html">Themes and style</a></td>
+            <td>Full support via native WxT Library and WxT Bootstrap theme.</td>
+            <td>theme-wet-boew</td>
+          </tr>
+        </tbody>
+        </table>
+
+        <h3 class="mrgn-bttm-lg">Supported WxT Themes (Additions)</h3>
+
+        <table class="wb-tables table table-striped table-hover" data-wb-tables="{&quot;columnDefs&quot;: [ { &quot;visible&quot;: false, &quot;targets&quot;: [ 3 ] } ], &quot;lengthMenu&quot;: [[5, 10, -1], [5, 10, &quot;All&quot;]], &quot;pageLength&quot;: 5 }" id="components-theme-additons">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Drupal Integration</th>
+            <th>Keywords</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="http://wet-boew.github.io/v4.0-ci/theme/servermessage-en-fr.html">Maintenance Pages</a></td>
+            <td><a href="http://wet-boew.github.io/v4.0-ci/docs/ref/themesstyle-en.html">Themes and style</a></td>
+            <td class="text-danger">Full support via native WxT Library and WxT Bootstrap theme.</td>
+            <td>maintenance</td>
+          </tr>
+          <tr>
+            <td><a href="http://wet-boew.github.io/v4.0-ci/theme/splashpage-en.html">Splash Pages</a></td>
+            <td><a href="http://wet-boew.github.io/v4.0-ci/docs/ref/themesstyle-en.html">Themes and style</a></td>
+            <td class="text-danger">Full support via native WxT Library and WxT Bootstrap theme.</td>
+            <td>splash</td>
+          </tr>
+        </tbody>
+        </table>
+
+        <h3 class="mrgn-bttm-lg">Supported WxT Plugins</h3>
+
+        <table class="wb-tables table table-striped table-hover" data-wb-tables="{&quot;columnDefs&quot;: [ { &quot;visible&quot;: false, &quot;targets&quot;: [ 3 ] } ], &quot;lengthMenu&quot;: [[5, 10, -1], [5, 10, &quot;All&quot;]], &quot;pageLength&quot;: 5 }" id="components-plugins">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Drupal Integration</th>
+            <th>Keywords</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="http://wet-boew.github.io/v4.0-ci/demos/archived/archived-en.html">Archived information</a></td>
+            <td><a href="http://wet-boew.github.io/v4.0-ci/docs/ref/other-en.html">Plugins</a></td>
+            <td>
+            <p>Supported via the following:</p>
+
+            <ul>
+              <li>Natively with any html input (panes, views, wysiwyg)</li>
+            </ul>
+            </td>
+            <td>archived</td>
+          </tr>
+          <tr>
+            <td><a href="http://wet-boew.github.io/wet-boew/demos/details/details-en.html">Collapsible content</a></td>
+            <td><a href="http://wet-boew.github.io/v4.0-ci/docs/ref/other-en.html">Plugins</a></td>
+            <td>
+            <p>Supported via the following:</p>
+
+            <ul>
+              <li>Natively with any html input (panes, views, wysiwyg)</li>
+            </ul>
+            </td>
+            <td>collapsible</td>
+          </tr>
+          <tr>
+            <td><a href="http://wet-boew.github.io/wet-boew/demos/equalheight/equalheight-en.html">Equal Height</a></td>
+            <td><a href="http://wet-boew.github.io/v4.0-ci/docs/ref/other-en.html">Plugins</a></td>
+            <td>
+            <p>Supported via the following:</p>
+
+            <ul>
+              <li>Natively with any html input (panes, views, wysiwyg)</li>
+              <li>Block CSS Style</li>
+            </ul>
+            </td>
+            <td>equalheight</td>
+          </tr>
+          <tr>
+            <td><a href="http://wet-boew.github.io/v4.0-ci/docs/ref/twitter/twitter-en.html">Twitter embedded timeline</a></td>
+            <td><a href="http://wet-boew.github.io/v4.0-ci/docs/ref/plugins-en.html">Plugins</a></td>
+            <td>
+            <p>Supported via the following:</p>
+
+            <ul>
+              <li>Natively with any html input (panes, views, wysiwyg)</li>
+              <li>Block Widget: Twitter</li>
+            </ul>
+            </td>
+            <td>twitter</td>
+          </tr>
+          <tr>
+            <td><a href="http://wet-boew.github.io/wet-boew/demos/lightbox/lightbox-en.html">Lightbox</a></td>
+            <td><a href="http://wet-boew.github.io/v4.0-ci/docs/ref/plugins-en.html">Plugins</a></td>
+            <td>
+            <p>Supported via the following:</p>
+
+            <ul>
+              <li>Natively with any html input (panes, views, wysiwyg)</li>
+            </ul>
+            </td>
+            <td>lightbox</td>
+          </tr>
+          <tr>
+            <td><a href="http://wet-boew.github.io/v4.0-ci/docs/ref/menu/menu-en.html">Menu</a></td>
+            <td><a href="http://wet-boew.github.io/v4.0-ci/docs/ref/plugins-en.html">Plugins</a></td>
+            <td>
+            <p>Supported via the following:</p>
+
+            <ul>
+              <li>Natively with any html input (panes, views, wysiwyg)</li>
+              <li>Drupal theme functions</li>
+            </ul>
+            </td>
+            <td>lightbox</td>
+          </tr>
+          <tr>
+            <td><a href="http://wet-boew.github.io/v4.0-ci/docs/ref/multimedia/multimedia-en.html">Multimedia Player (Audio, Video)</a></td>
+            <td><a href="http://wet-boew.github.io/v4.0-ci/docs/ref/plugins-en.html">Plugins</a></td>
+            <td>
+            <p>Supported via the following:</p>
+
+            <ul>
+              <li>Natively with any html input (panes, views, wysiwyg)</li>
+              <li>Media: Video</li>
+            </ul>
+            </td>
+            <td>lightbox</td>
+          </tr>
+          <tr>
+            <td><a href="http://wet-boew.github.io/v4.0-ci/docs/ref/share/share-en.html">Share Widget</a></td>
+            <td><a href="http://wet-boew.github.io/v4.0-ci/docs/ref/plugins-en.html">Plugins</a></td>
+            <td>
+            <p>Supported via the following:</p>
+
+            <ul>
+              <li>Natively with any html input (panes, views, wysiwyg)</li>
+              <li>Block Widget: Share</li>
+            </ul>
+            </td>
+            <td>lightbox</td>
+          </tr>
+          <tr>
+            <td><a href="http://wet-boew.github.io/v4.0-ci/docs/ref/tabs/tabs-en.html">Tabbed Interface</a></td>
+            <td><a href="http://wet-boew.github.io/v4.0-ci/docs/ref/plugins-en.html">Plugins</a></td>
+            <td>
+            <p>Supported via the following:</p>
+
+            <ul>
+              <li>Natively with any html input (panes, views, wysiwyg)</li>
+              <li>Media: Slideshow</li>
+            </ul>
+            </td>
+            <td>tabbedinterface</td>
+          </tr>
+          <tr>
+            <td><a href="http://wet-boew.github.io/wet-boew/demos/tabs/tabs-carousel-en.html">Tabbed Interface (Carousel)</a></td>
+            <td><a href="http://wet-boew.github.io/v4.0-ci/docs/ref/plugins-en.html">Plugins</a></td>
+            <td>
+            <p>Supported via the following:</p>
+
+            <ul>
+              <li>Natively with any html input (panes, views, wysiwyg)</li>
+              <li>Media: Slideshow</li>
+            </ul>
+            </td>
+            <td>tabbedinterface</td>
+          </tr>
+          <tr>
+            <td><a href="http://wet-boew.github.io/v4.0-ci/demos/zebra/zebra-en.html">Zebra striping</a></td>
+            <td><a href="http://wet-boew.github.io/v4.0-ci/docs/ref/plugins-en.html">Plugins</a></td>
+            <td>
+            <p>Supported via the following:</p>
+
+            <ul>
+              <li>Natively with any html input (panes, views, wysiwyg)</li>
+              <li>WxT Bootstrap</li>
+            </ul>
+            </td>
+            <td>zebra</td>
+          </tr>
+        </tbody>
+        </table>
+
+        <h3>Important Links</h3>
+
+        <ul class="list-unstyled">
+          <li><a href="http://drupal.org/project/wxt">Drupal WxT8 (Drupal)</a></li>
+          <li><a href="http://github.com/wet-boew/wet-boew-drupal8">Drupal WxT8 (GitHub)</a></li>
+        </ul>
+    - name: 'wxt_content_2'
+      title: 'Drupal 8'
+      language: 'en'
+      body: |
+        <p>Drupal 8 is the latest, greatest release of the world''s
+        most widely used enterprise web CMS. It''s fast. Flexible. Drupal 8 taps
+        into the concentrated innovation from its open source community. You can
+        drive value and streamline your work with new capabilities for
+        successful digital experiences.</p>
+
+        <div class="row mrgn-bttm-md">
+        <div class="col-md-6">
+        <p>Drupal 8 has something for everyone who supports online content and
+        digital experience at your organization; business decision makers, site
+        administrators, digital marketers, content managers, web developers,
+        technical architects, and  IT pros.</p>
+        </div>
+
+        <div class="col-md-6">
+        <p>Drupal 8''s core platform has more than 200 new features built in.
+        But it''s more than a collection of features; Drupal 8 is a platform you
+        can use to achieve digital success.</p>
+        </div>
+        </div>
+
+        <p>Thanks to Drupal 8''s powerful new suite of tools, it will
+        quickly become the strongest link in your new content supply chain.
+        Interact with countless applications, thanks to REST-first native web
+        services. Use progressive decoupling to break free from back-end
+        restrictions without sacrificing security and accessibility. Deliver
+        faster, with enhanced entity caching and better integration with CDNs
+        and reverse proxies. With Drupal 8, you can build almost any integrated
+        experience you can imagine.</p>
+
+        <h3>Important Links</h3>
+
+        <ul class="list-unstyled">
+          <li><a href="https://www.drupal.org/8">Drupal 8</a></li>
+          <li><a href="https://www.acquia.com/sites/default/files/library/attachment/ultimate-guide-drupal-8.pdf">Ultimate Guide to Drupal 8</a></li>
+          <li><a href="https://symfony.com">Symfony 3</a></li>
+        </ul>
+  # Under 'ids', we identify source fields populated above which will uniquely
+  # identify each imported item. The 'type' makes sure the migration map table
+  # uses the proper schema type for stored the IDs.
+  ids:
+    name:
+      type: string
+process:
+  id: name
+  title: title
+  uid:
+    plugin: default_value
+    default_value: 1
+  type:
+    plugin: default_value
+    default_value: page
+  sticky:
+    plugin: default_value
+    default_value: 0
+  'body/value': body
+  'body/format':
+    plugin: default_value
+    default_value: rich_text
+  langcode: language
+  'moderation_state/target_id':
+    plugin: default_value
+    default_value: published
+destination:
+  plugin: entity:node
+migration_dependencies: {}

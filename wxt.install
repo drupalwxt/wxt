@@ -1,0 +1,98 @@
+<?php
+
+/**
+ * @file
+ * Install and uninstall functions for the WxT installation profile.
+ */
+
+use Drupal\menu_link_content\Entity\MenuLinkContent;
+
+/**
+ * Implements hook_install().
+ *
+ * Perform actions to set up the site for this profile.
+ *
+ * @see system_install()
+ */
+function wxt_install() {
+  _wxt_setup_themes();
+  _wxt_setup_branding();
+  _wxt_setup_menus();
+  _wxt_setup_base_configurations();
+}
+
+/**
+ * Setup base site configurations.
+ */
+function _wxt_setup_base_configurations() {
+  // Ensure the translation fields are created in the database.
+  \Drupal::service('entity.definition_update_manager')->applyUpdates();
+}
+
+/**
+ * Set up the default branding.
+ */
+function _wxt_setup_branding() {
+  // Set the path to the logo, favicon and README file based on install
+  // directory.
+  $wxt_path = drupal_get_path('profile', 'wxt');
+  \Drupal::configFactory()
+    ->getEditable('system.theme.global')
+    ->set('logo', [
+      'path' => $wxt_path . '/wxt.svg',
+      'url' => '',
+      'use_default' => FALSE,
+    ])
+    ->set('favicon', [
+      'mimetype' => 'image/vnd.microsoft.icon',
+      'path' => $wxt_path . '/favicon.ico',
+      'url' => '',
+      'use_default' => FALSE,
+    ])
+    ->save(TRUE);
+}
+
+/**
+ * Set up the default menu override(s).
+ */
+function _wxt_setup_menus() {
+  /** @var MenuLinkContentInterface $user_account */
+  $parent_link = MenuLinkContent::create([
+    'menu_name' => 'account',
+    'link' => 'route:<nolink>',
+    'title' => 'User Account',
+    'expanded' => TRUE,
+  ]);
+  $parent_link->save();
+
+  $menu_links = [
+    'user.page',
+    'user.logout',
+  ];
+  foreach ($menu_links as $menu_link) {
+    $menu_link_manager = \Drupal::service('plugin.manager.menu.link');
+    $link = $menu_link_manager->getDefinition($menu_link);
+    $link['parent'] = $parent_link->getPluginId();
+    $menu_link_manager->updateDefinition($menu_link, $link);
+    $cache = \Drupal::cache('menu');
+    $cache->deleteAll();
+  }
+}
+
+/**
+ * Setup the themes.
+ */
+function _wxt_setup_themes() {
+  // Set the default and admin theme.
+  \Drupal::configFactory()
+    ->getEditable('system.theme')
+    ->set('default', 'wxt_bootstrap')
+    ->set('admin', 'seven')
+    ->save(TRUE);
+
+  // Enable the admin theme.
+  \Drupal::configFactory()
+    ->getEditable('node.settings')
+    ->set('use_admin_theme', TRUE)
+    ->save(TRUE);
+}

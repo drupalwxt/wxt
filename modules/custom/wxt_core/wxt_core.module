@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * @file
+ * Contains wxt_core.module.
+ */
+
+/**
+ * Toggles the state of a specified menu link.
+ */
+function wxt_core_menu_state_toggle($menu_id, $enabled = TRUE) {
+  $menu_link_manager = \Drupal::service('plugin.manager.menu.link');
+  $front_page_link = $menu_link_manager->getDefinition($menu_id);
+  $front_page_link['enabled'] = $enabled ? 1 : 0;
+  $menu_link_manager->updateDefinition($menu_id, $front_page_link);
+  $cache = \Drupal::cache('menu');
+  $cache->deleteAll();
+}

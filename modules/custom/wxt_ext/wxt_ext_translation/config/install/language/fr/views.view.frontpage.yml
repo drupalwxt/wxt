@@ -1,0 +1,8 @@
+display:
+  default:
+    display_options:
+      empty:
+        area_text_custom:
+          content: '<p>Bienvenue à [site:name]. Aucun contenu de la page d''accueil n''a été créé.</p><p>Voulez-vous <a href="profiles/wxt/README.md">voir le README</a>?</p>'
+        title:
+          title: 'Bienvenue à [site:name]'

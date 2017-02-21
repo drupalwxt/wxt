@@ -1,0 +1,10 @@
+name: 'WxT Extend Translation'
+description: 'Contains default configuration and additional functionality to interact with entity translation.'
+type: module
+core: 8.x
+package: WxT
+dependencies:
+  - config_translation
+  - content_translation
+  - block_content
+  - wxt_ext_page

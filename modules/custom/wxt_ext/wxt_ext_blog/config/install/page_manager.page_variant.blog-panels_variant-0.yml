@@ -1,0 +1,99 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.blog
+    - system.menu.account
+    - views.view.blog
+  module:
+    - panels
+    - system
+    - views
+id: blog-panels_variant-0
+label: Blog
+variant: panels_variant
+variant_settings:
+  blocks:
+    eb20fa55-8b1c-40c5-bbd5-86510c1ce56e:
+      id: 'views_block:blog-block_all'
+      label: ''
+      provider: views
+      label_display: '0'
+      views_label: ''
+      items_per_page: '5'
+      region: left
+      weight: 1
+      uuid: eb20fa55-8b1c-40c5-bbd5-86510c1ce56e
+      context_mapping: {  }
+      style:
+        plugin: panels_default
+    4f5bcbcb-f607-4e0d-b321-974260f72645:
+      id: 'system_menu_block:account'
+      label: 'User account menu'
+      provider: system
+      label_display: visible
+      level: 1
+      depth: 0
+      region: right
+      weight: 1
+      uuid: 4f5bcbcb-f607-4e0d-b321-974260f72645
+      context_mapping: {  }
+      style:
+        plugin: panels_list
+    60c2bd47-f06f-4851-a1cc-06520911cc5b:
+      id: 'views_block:blog-blog_block'
+      label: ''
+      provider: views
+      label_display: visible
+      views_label: ''
+      items_per_page: '10'
+      context_mapping: {  }
+      region: right
+      uuid: 60c2bd47-f06f-4851-a1cc-06520911cc5b
+      weight: 2
+  id: panels_variant
+  uuid: 02319159-cb66-425c-a27e-883713a95664
+  label: null
+  weight: 0
+  layout: bs_2col_stacked
+  layout_settings:
+    layout:
+      wrapper: div
+      classes:
+        row: row
+      attributes: ''
+      add_layout_class: 1
+    regions:
+      top:
+        wrapper: div
+        classes:
+          col-sm-12: col-sm-12
+        add_region_classes: 1
+        attributes: ''
+      left:
+        wrapper: div
+        classes:
+          col-md-8: col-md-8
+        add_region_classes: 1
+        attributes: ''
+      right:
+        wrapper: div
+        classes:
+          col-md-4: col-md-4
+        add_region_classes: 1
+        attributes: ''
+      bottom:
+        wrapper: div
+        classes:
+          col-sm-12: col-sm-12
+        add_region_classes: 1
+        attributes: ''
+  page_title: Blog
+  storage_type: page_manager
+  storage_id: blog-panels_variant-0
+  builder: ipe
+page: blog
+weight: 0
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }

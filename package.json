@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "deploy-libraries": "npm install && bower install"
+  },
+  "dependencies": {
+    "bower": "1.8.0"
+  },
+  "license": "GPL-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://git.drupal.org/project/wxt.git"
+  }
+}

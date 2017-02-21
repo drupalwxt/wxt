@@ -1,0 +1,5 @@
+name: 'WxT Extend Config'
+description: 'Contains specialized Drush commands for handling config exports.'
+type: module
+core: 8.x
+package: WxT

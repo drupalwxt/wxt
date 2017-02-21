@@ -1,0 +1,24 @@
+name: 'WxT Admin'
+description: 'Installs default configuration for administrative tasks.'
+type: module
+core: 8.x
+package: WxT
+dependencies:
+  - admin_toolbar
+  - admin_toolbar_tools
+  - config_rewrite
+  - config_update
+  - contact
+  - diff
+  - embed
+  - entity_embed
+  - field_group
+  - page_manager
+  - panelizer
+  - panels_ipe
+  - pathauto
+  - token
+  - url_embed
+  - workbench_moderation
+  - wxt_core
+  - wxt_ext_theme

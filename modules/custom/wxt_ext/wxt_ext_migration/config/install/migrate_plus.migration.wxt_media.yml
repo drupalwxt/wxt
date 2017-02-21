@@ -1,0 +1,89 @@
+id: wxt_media
+label: Embedded data feed of media associated metadata
+migration_group: wxt
+source:
+  plugin: embedded_data
+  # Enforce default language to english
+  default_lang: true
+  data_rows:
+    - fid: '218x291'
+      title: 'Image (218x291)'
+      alt: 'Image (218x291)'
+      caption: 'Image (218x291) used for Drupal WxT.'
+    - fid: '265x352'
+      title: 'Image (265x352)'
+      alt: 'Image (265x352)'
+      caption: 'Image (265x352) used for Drupal WxT.'
+    - fid: '355x113'
+      title: 'Image (355x113)'
+      alt: 'Image (355x113)'
+      caption: 'Image (355x113) used for Drupal WxT.'
+    - fid: '360x203'
+      title: 'Image (360x203)'
+      alt: 'Image (360x203)'
+      caption: 'Image (360x203) used for Drupal WxT.'
+    - fid: '520x296'
+      title: 'Image (520x296)'
+      alt: 'Image (520x296)'
+      caption: 'Image (520x296) used for Drupal WxT.'
+    - fid: '653x194-1'
+      title: 'Image (653x194)'
+      alt: 'Image (653x194)'
+      caption: 'Image (653x194) used for Drupal WxT.'
+    - fid: '653x194-2'
+      title: 'Image (653x194)'
+      alt: 'Image (653x194)'
+      caption: 'Image (653x194) used for Drupal WxT.'
+    - fid: '653x194-3'
+      title: 'Image (653x194)'
+      alt: 'Image (653x194)'
+      caption: 'Image (653x194) used for Drupal WxT.'
+    - fid: '750x222-1'
+      title: 'Image (750x222)'
+      alt: 'Image (750x222)'
+      caption: 'Image (750x222) used for Drupal WxT.'
+    - fid: '750x222-2'
+      title: 'Image (750x222)'
+      alt: 'Image (750x222)'
+      caption: 'Image (750x222) used for Drupal WxT.'
+    - fid: '1170x347-1'
+      title: 'Image (1170x347)'
+      alt: 'Image (1170x347)'
+      caption: 'Image (1170x347) used for Drupal WxT.'
+    - fid: '1170x347-2'
+      title: 'Image (1170x347)'
+      alt: 'Image (1170x347)'
+      caption: 'Image (1170x347) used for Drupal WxT.'
+    - fid: '1170x347-3'
+      title: 'Image (1170x347)'
+      alt: 'Image (1170x347)'
+      caption: 'Image (1170x347) used for Drupal WxT.'
+  # Under 'ids', we identify source fields populated above which will uniquely
+  # identify each imported item. The 'type' makes sure the migration map table
+  # uses the proper schema type for stored the IDs.
+  ids:
+    fid:
+      type: string
+process:
+  # Media bundle.
+  bundle:
+    plugin: default_value
+    default_value: image
+  # Use image title as media name.
+  name: title
+  status:
+    plugin: default_value
+    default_value: 1
+  # Add image to media entity.
+  'image/target_id':
+    plugin: migration
+    migration: wxt_file
+    source: fid
+  'image/title': title
+  'image/alt': alt
+destination:
+  plugin: entity:media
+migration_dependencies:
+  required:
+    # migrations
+    - wxt_file

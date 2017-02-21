@@ -1,0 +1,5 @@
+services:
+  wxt_admin.subscriber:
+    class: Drupal\wxt_admin\EventSubscriber\MenuRouterRebuildSubscriber
+    tags:
+      - { name: event_subscriber }

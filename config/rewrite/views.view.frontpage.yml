@@ -1,0 +1,9 @@
+display:
+  default:
+    display_options:
+      empty:
+        area_text_custom:
+          content: '<p>Welcome to [site:name]. No front page content has been created yet.</p><p>Would you like to <a href="profiles/wxt/README.md">view the README</a>?</p>'
+        title:
+          title: 'Welcome to [site:name]'
+      title: Entries

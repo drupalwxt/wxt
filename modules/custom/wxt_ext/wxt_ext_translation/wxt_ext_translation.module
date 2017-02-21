@@ -1,0 +1,106 @@
+<?php
+
+/**
+ * @file
+ * Contains wxt_ext_translation.module.
+ */
+
+/**
+ * Enables translation for the given entity bundles and all their fields.
+ *
+ * @param array
+ *        $entity_info An array mapping entity types to arrays of bundles.
+ */
+function wxt_ext_translation_enable_translation($entity_info) {
+  // Enable translation for all of our entities/bundles.
+  foreach ($entity_info as $entity_type => $bundles) {
+    foreach ($bundles as $bundle) {
+      // Store whether a bundle has translation enabled or not.
+      \Drupal::service('content_translation.manager')->setEnabled($entity_type, $bundle, TRUE);
+      // Make every field translatable as well.
+      $fields = \Drupal::entityManager()->getFieldDefinitions($entity_type, $bundle);
+      foreach ($fields as $field) {
+        $field_config = $field->getConfig($bundle);
+        if ($field_config->isTranslatable() && strpos($field->getName(), 'content_translation_') !== 0) {
+          $field_config->setTranslatable(TRUE)->save();
+        }
+      }
+    }
+  }
+  // Ensure entity and menu router information are correctly rebuilt.
+  \Drupal::entityManager()->clearCachedDefinitions();
+  \Drupal::service('router.builder')->setRebuildNeeded();
+}
+
+/**
+ * Updates the current site's translations via a batch process.
+ */
+function wxt_ext_translation_update_config_translation() {
+  // Pull in translations for the all available languages/projects.
+  \Drupal::moduleHandler()->loadInclude('locale', 'fetch.inc');
+  \Drupal::moduleHandler()->loadInclude('locale', 'bulk.inc');
+  \Drupal::moduleHandler()->loadInclude('locale', 'compare.inc');
+
+  // Get a list of all currently installed languages as langcodes.
+  $languageManager = \Drupal::languageManager();
+  $langcodes = array_keys($languageManager->getLanguages());
+
+  // Set a batch to download and import translations.
+  locale_translation_flush_projects();
+  locale_translation_check_projects();
+  $options = _locale_translation_default_update_options();
+  $batch = locale_translation_batch_fetch_build([], $langcodes, $options);
+  batch_set($batch);
+  // Set a batch to update configuration as well.
+  if ($batch = locale_config_batch_update_components($options, $langcodes)) {
+    $batch['file'] = drupal_get_path('module', 'wxt_ext_translation') . '/wxt_ext_translation.batch.inc';
+    batch_set($batch);
+  }
+}
+
+/**
+ * Imports all relevant translations from a modules /translations directory.
+ *
+ * @param string
+ *        $type The project type.
+ * @param string $name
+ *        The name of the project.
+ *
+ * @return bool FALSE if the project does not exist.
+ */
+function wxt_ext_translation_import_translations($type, $name) {
+  // Attempt to pull module path.
+  $path = drupal_get_path($type, $name);
+  if (!$path) {
+    return FALSE;
+  }
+
+  // Get a list of all currently installed languages as langcodes.
+  $languageManager = \Drupal::languageManager();
+  $langcodes = array_keys($languageManager->getLanguages());
+
+  // Import each file.
+  foreach ($langcodes as $langcode) {
+    $filepath = DRUPAL_ROOT . '/' . $path . '/translations/' . $langcode . '.po';
+    if (file_exists($filepath)) {
+      \Drupal::moduleHandler()->loadInclude('locale', 'bulk.inc');
+      \Drupal::moduleHandler()->loadInclude('locale', 'translation.inc');
+      $options = array_merge(_locale_translation_default_update_options(), [
+        'langcode' => $langcode,
+        'overwrite_options' => [
+          'customized' => TRUE,
+          'not_customized' => TRUE,
+        ],
+        'customized' => TRUE,
+      ]);
+
+      $original_file = (object) [
+        'filename' => $langcode . '.po',
+        'uri' => $filepath,
+      ];
+      $file = locale_translate_file_attach_properties($original_file, $options);
+      $batch = locale_translate_batch_build([$file->uri => $file], $options);
+      batch_set($batch);
+    }
+  }
+}

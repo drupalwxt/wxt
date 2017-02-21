@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: mid_footer
+label: 'Mid Footer'
+description: 'Mid Footer Menu.'
+locked: false

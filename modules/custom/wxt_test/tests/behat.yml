@@ -1,0 +1,49 @@
+default:
+  suites:
+    default:
+      paths:
+        features: 'features'
+      filters:
+        tags: "~@chrome"
+      contexts:
+        - FeatureContext
+        - Drupal\DrupalExtension\Context\DrupalContext
+        - Drupal\DrupalExtension\Context\MinkContext
+        - Drupal\DrupalExtension\Context\MarkupContext
+        - Drupal\DrupalExtension\Context\MessageContext
+        - Drupal\DrupalExtension\Context\DrushContext
+  extensions:
+    Behat\MinkExtension:
+      goutte: ~
+      selenium2: ~
+      #base_url: http://mydrupalsite.com
+      #files_path: './profiles/wxt/modules/wxt/wxt_test/tests'
+    Drupal\DrupalExtension:
+      blackbox: ~
+      #drush:
+      #  root: '/path/to/drupal/root'
+      #drupal:
+      #  drupal_root: '/path/to/drupal/root'
+      api_driver: 'drupal'
+      region_map:
+        # The region on wxt_page where the body appears (frequently
+        # customized on child distributions).
+        Breadcrumb: "ol.breadcrumb"
+        Content Well: "main.container"
+      # Look in the profile modules directory and pull in module subcontexts.
+      subcontexts:
+        paths:
+          - "./profiles/lightning"
+          - "./profiles/wxt"
+
+# Setup for Google Chrome only tests.
+chrome:
+  suites:
+    default:
+      filters:
+        tags: "@chrome"
+  extensions:
+    Behat\MinkExtension:
+      selenium2:
+        browser: chrome
+        capabilities: {"browser": "chrome", "browserName": "chrome", "browserVersion": "ANY", "version": "ANY"}

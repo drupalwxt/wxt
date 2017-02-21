@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - media_entity_slideshow
+id: slideshow
+label: Slideshow
+description: 'Slideshows of media items.'
+type: slideshow
+queue_thumbnail_downloads: false
+new_revision: false
+type_configuration:
+  source_field: slideshow_items
+field_map: {  }

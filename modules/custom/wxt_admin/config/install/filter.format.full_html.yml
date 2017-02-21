@@ -1,0 +1,41 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - editor
+    - entity_embed
+    - url_embed
+name: 'Full HTML'
+format: full_html
+weight: 5
+filters:
+  url_embed:
+    id: url_embed
+    provider: url_embed
+    status: true
+    weight: -49
+    settings: {  }
+  entity_embed:
+    id: entity_embed
+    provider: entity_embed
+    status: true
+    weight: -48
+    settings: {  }
+  filter_align:
+    id: filter_align
+    provider: filter
+    status: true
+    weight: -47
+    settings: {  }
+  filter_caption:
+    id: filter_caption
+    provider: filter
+    status: true
+    weight: -46
+    settings: {  }
+  editor_file_reference:
+    id: editor_file_reference
+    provider: editor
+    status: true
+    weight: -45
+    settings: {  }

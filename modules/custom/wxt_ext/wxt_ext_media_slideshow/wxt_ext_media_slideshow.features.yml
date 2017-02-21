@@ -1,0 +1,10 @@
+bundle: wxt
+required:
+  - core.entity_form_display.media.slideshow.default
+  - core.entity_form_display.media.slideshow.media_browser
+  - core.entity_view_display.media.slideshow.default
+  - core.entity_view_display.media.slideshow.embedded
+  - field.field.media.slideshow.field_media_in_library
+  - field.field.media.slideshow.slideshow_items
+  - field.storage.media.slideshow.slideshow_items
+  - media_entity.bundle.slideshow

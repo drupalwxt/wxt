@@ -1,0 +1,31 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.sidebar
+  module:
+    - ctools
+    - system
+  theme:
+    - wxt_bootstrap
+id: sidebar
+theme: wxt_bootstrap
+region: sidebar_first
+weight: -8
+provider: null
+plugin: 'system_menu_block:sidebar'
+settings:
+  id: 'system_menu_block:sidebar'
+  label: Sidebar
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      landing_page: landing_page
+    negate: true
+    context_mapping:
+      node: '@node.node_route_context:node'

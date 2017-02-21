@@ -1,0 +1,4 @@
+administer wxt:
+  title: 'Administer WxT'
+  description: 'Access the WxT Administration pages.'
+  restrict access: true

@@ -1,0 +1,8 @@
+name: 'WxT Core'
+description: 'Provides core configuration.'
+type: module
+core: 8.x
+package: WxT
+dependencies:
+  - block_class
+  - lightning_core

@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.slideshow.field_media_in_library
+    - field.field.media.slideshow.slideshow_items
+    - media_entity.bundle.slideshow
+  module:
+    - field_formatter
+id: media.slideshow.default
+targetEntityType: media
+bundle: slideshow
+mode: default
+content:
+  slideshow_items:
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: default
+      field_name: image
+    third_party_settings: {  }
+    type: field_formatter_from_view_display
+hidden:
+  created: true
+  field_media_in_library: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true

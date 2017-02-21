@@ -1,0 +1,11 @@
+wxt-layout-home:
+  label: Home
+  category: WxT
+  path: templates/home
+  icon: home.png
+  template: home
+  regions:
+    header:
+      label: Header
+    services:
+      label: Services

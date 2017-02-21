@@ -1,0 +1,9 @@
+name: 'WxT Extend Sitemap'
+description: 'Enable(s) and configure a default sitemap.'
+type: module
+package: WxT
+core: '8.x'
+
+dependencies:
+  - simple_sitemap
+  - wxt_ext_page

@@ -1,0 +1,7 @@
+name: 'WxT Extend Editor'
+description: 'Overrides the default settings for CKEditor.'
+type: module
+core: 8.x
+package: WxT
+dependencies:
+  - ckeditor

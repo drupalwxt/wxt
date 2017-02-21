@@ -1,0 +1,54 @@
+name: 'WxT'
+description: 'A Drupal distirubtion created to leverage the Web Experience Toolkit.'
+type: profile
+core: 8.x
+distribution:
+  name: WxT
+
+# Base profile
+base profile: lightning
+
+# Language
+keep_english: true
+
+# Required modules
+dependencies:
+  # core
+  - comment
+  - dynamic_page_cache
+  - responsive_image
+  - telephone
+  - tour
+  # - search
+  # core (multilingual)
+  - config_translation
+  - content_translation
+  - language
+  - locale
+  # core (experimental)
+  - big_pipe
+  - inline_form_errors
+  # core (web services)
+  # - rdf
+  # - hal
+  # - rest
+  # - serialization
+  # contrib (lightning)
+  - lightning_core
+  - lightning_layout
+  - lightning_media
+  - lightning_media_document
+  - lightning_media_image
+  - lightning_media_instagram
+  - lightning_media_twitter
+  - lightning_workflow
+  # custom (wxt)
+  - wxt_admin
+  - wxt_core
+  # contrib (wxt)
+  - wxt_library
+
+themes:
+  - bartik
+  - seven
+  - wxt_bootstrap

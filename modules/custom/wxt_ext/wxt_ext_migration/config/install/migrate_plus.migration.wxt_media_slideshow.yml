@@ -1,0 +1,62 @@
+id: wxt_media_slideshow
+label: Embedded data feed of media slideshow associated metadata
+migration_group: wxt
+source:
+  plugin: embedded_data
+  # Enforce default language to english
+  default_lang: true
+  data_rows:
+    - mid: '653x194'
+      fid:
+        - id: '653x194-1'
+        - id: '653x194-2'
+      title: 'Slideshow (653x194)'
+      alt: 'Slideshow (653x194)'
+      caption: 'Slideshow (653x194) used for Drupal WxT.'
+    - mid: '750x222'
+      fid:
+        - id: '750x222-1'
+        - id: '750x222-2'
+      title: 'Slideshow (750x222)'
+      alt: 'Slideshow (750x222)'
+      caption: 'Slideshow (750x222) used for Drupal WxT.'
+    - mid: '1170x347'
+      fid:
+        - id: '1170x347-1'
+        - id: '1170x347-2'
+        - id: '1170x347-3'
+      title: 'Slideshow (1170x347)'
+      alt: 'Slideshow (1170x347)'
+      caption: 'Slideshow (1170x347) used for Drupal WxT.'
+  # Under 'ids', we identify source fields populated above which will uniquely
+  # identify each imported item. The 'type' makes sure the migration map table
+  # uses the proper schema type for stored the IDs.
+  ids:
+    mid:
+      type: string
+process:
+  # Media bundle.
+  bundle:
+    plugin: default_value
+    default_value: slideshow
+  # Use image title as media name.
+  name: title
+  status:
+    plugin: default_value
+    default_value: 1
+  # Add image to media entity.
+  slideshow_items:
+    plugin: iterator
+    source: fid
+    process:
+      target_id:
+        plugin: migration
+        migration: wxt_media
+        source: id
+destination:
+  plugin: entity:media
+migration_dependencies:
+  required:
+    # migrations
+    - wxt_file
+    - wxt_media

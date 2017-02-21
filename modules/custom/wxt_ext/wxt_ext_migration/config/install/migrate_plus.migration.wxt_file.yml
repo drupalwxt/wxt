@@ -1,0 +1,72 @@
+id: wxt_file
+label: Embedded data feed of file associated metadata
+migration_group: wxt
+source:
+  plugin: embedded_data
+  # Enforce default language to english
+  default_lang: true
+  data_rows:
+    - fid: '218x291'
+      filename: '218x291.png'
+      uri: 'public://218x291.png'
+    - fid: '265x352'
+      filename: '265x352.png'
+      uri: 'public://265x352.png'
+    - fid: '355x113'
+      filename: '355x113.png'
+      uri: 'public://355x113.png'
+    - fid: '360x203'
+      filename: '360x203.png'
+      uri: 'public://360x203.png'
+    - fid: '520x296'
+      filename: '520x296.png'
+      uri: 'public://520x296.png'
+    - fid: '653x194-1'
+      filename: '653x194-1.png'
+      uri: 'public://653x194-1.png'
+    - fid: '653x194-2'
+      filename: '653x194-2.png'
+      uri: 'public://653x194-2.png'
+    - fid: '653x194-3'
+      filename: '653x194-3.png'
+      uri: 'public://653x194-3.png'
+    - fid: '750x222-1'
+      filename: '750x222-1.png'
+      uri: 'public://750x222-1.png'
+    - fid: '750x222-2'
+      filename: '750x222-2.png'
+      uri: 'public://750x222-2.png'
+    - fid: '1170x347-1'
+      filename: '1170x347-1.png'
+      uri: 'public://1170x347-1.png'
+    - fid: '1170x347-2'
+      filename: '1170x347-2.png'
+      uri: 'public://1170x347-2.png'
+    - fid: '1170x347-3'
+      filename: '1170x347-3.png'
+      uri: 'public://1170x347-3.png'
+  # Under 'ids', we identify source fields populated above which will uniquely
+  # identify each imported item. The 'type' makes sure the migration map table
+  # uses the proper schema type for stored the IDs.
+  ids:
+    fid:
+      type: string
+process:
+  filename: filename
+  # Construct the full path of each source file from the provided directory and the individual path,
+  # encoding it according to RFC-3986.
+  source_full_path:
+    plugin: wxt_get_path
+    source: filename
+  # Copy the file to the desired Drupal destination (usually public://...).
+  uri:
+    plugin: file_copy
+    source:
+      - '@source_full_path'
+      - uri
+  uid:
+    plugin: default_value
+    default_value: 1
+destination:
+  plugin: entity:file
+migration_dependencies:

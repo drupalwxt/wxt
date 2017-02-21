@@ -1,0 +1,24 @@
+# Defines additional tasks for WxT to perform during and after site
+# installation. Place this file in your Site Path (e.g. /sites/default or
+# /sites/SITENAME) or /sites/all directory for it to take effect.
+
+# List of WxT Extensions enabled when WxT is installed. The presence
+# of this key will disable the WxT Select Extensions form. If you want to
+# allow users to choose which WxT Extensions should be enabled during
+# installation, comment out the following lines.
+wxt_extensions:
+  - wxt_ext
+
+# List of additional modules to enable after WxT is installed.
+modules: []
+
+# In the components key of their info file, WxT components may list
+# additional sub-components to be installed. To override this behavior, you can
+# specify sub-components that should be excluded from the install process.
+exclude_components: []
+
+# A system path to redirect to once installation is complete.
+redirect:
+  path: ''
+  # Additional options to pass to the URL generator.
+  options: { }

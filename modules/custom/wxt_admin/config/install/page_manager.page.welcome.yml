@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies: {  }
+id: welcome
+label: Welcome
+description: null
+use_admin_theme: false
+path: /welcome
+access_logic: and
+access_conditions: {  }
+parameters: {  }
