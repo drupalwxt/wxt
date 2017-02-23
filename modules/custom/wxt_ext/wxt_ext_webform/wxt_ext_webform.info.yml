@@ -1,0 +1,9 @@
+name: 'WxT Extend Webform'
+description: 'Provides functionality for storing, retrieving, and tabulating webforms.'
+type: module
+core: 8.x
+package: WxT
+
+# Required modules
+dependencies:
+  - webform

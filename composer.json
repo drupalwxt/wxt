@@ -275,6 +275,7 @@
         "drupal/migrate_tools": "3.0-beta1",
         "drupal/url_embed": "1.0-alpha1",
         "drupal/views_bootstrap": "3.x-dev",
+        "drupal/webform": "5.0-beta7",
         "drupal/wxt_library": "1.x-dev",
         "drupal/wxt_bootstrap": "1.x-dev",
         "wet-boew/wet-boew": "4.0.23",
