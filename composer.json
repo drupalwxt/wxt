@@ -187,6 +187,8 @@
                 "https://www.drupal.org/files/issues/1918994-147.patch",
                 "2369119 - Fix error on exposed grouped filters on Views save":
                 "https://www.drupal.org/files/issues/2369119-145_0.patch",
+                "Enter drupal/core patch #2421427 description here":
+                "https://www.drupal.org/files/issues/quickedit-image-2421427-137.patch",
                 "Enter drupal/core patch #2454289 description here":
                 "https://www.drupal.org/files/issues/attribute_hreflang_not-2454289-26.patch",
                 "Enter drupal/core patch #2630732 description here":
@@ -206,7 +208,11 @@
                 "Enter drupal/core patch #2786577 description here":
                 "https://www.drupal.org/files/issues/improve_the_views-2786577-76.patch",
                 "Enter drupal/core patch #2816921 description here":
-                "https://www.drupal.org/files/issues/user_password-2816921-2.patch"
+                "https://www.drupal.org/files/issues/user_password-2816921-2.patch",
+                "Enter drupal/core patch #2820490 description here":
+                "https://www.drupal.org/files/issues/2820490-75.patch",
+                "Enter drupal/core patch #2829792 description here":
+                "https://www.drupal.org/files/issues/2829792-09-quick_edit_toolgroup_and_alt_group_styling.patch"
             },
             "drupal/ctools": {
                 "Enter drupal/ctools patch #2712661 description here":
@@ -223,6 +229,8 @@
                 "https://www.drupal.org/files/issues/issue-2633052-2.patch",
                 "Enter drupal/page_manager patch #2665328 description here":
                 "https://www.drupal.org/files/issues/variants_take_entity-2665328-35.patch",
+                "Enter drupal/page_manager patch #2710169 description here":
+                "https://www.drupal.org/files/issues/page_manager-block-css-attributes-9.patch",
                 "Enter drupal/page_manager patch #2782661 description here":
                 "https://www.drupal.org/files/issues/page_variant_for_node-2782661-5.patch"
             },
