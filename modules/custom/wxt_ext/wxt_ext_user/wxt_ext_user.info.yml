@@ -4,6 +4,6 @@ type: module
 core: 8.x
 package: WxT
 dependencies:
-  - config_rewrite
-  - shortcut
-  - wxt_ext_translation
+  - drupal:config_rewrite
+  - drupal:shortcut
+  - drupal:wxt_ext_translation

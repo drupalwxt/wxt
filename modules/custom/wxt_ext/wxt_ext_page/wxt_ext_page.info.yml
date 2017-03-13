@@ -3,7 +3,9 @@ description: 'Provides customizations / defaults for the page content type.'
 type: module
 core: 8.x
 package: WxT
+
+# Required modules
 dependencies:
-  - lightning_page
-  - wxt_core
-  - wxt_ext_layout
+  - drupal:lightning_page
+  - drupal:wxt_core
+  - drupal:wxt_ext_layout

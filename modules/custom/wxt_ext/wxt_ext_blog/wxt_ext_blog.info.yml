@@ -3,9 +3,12 @@ description: 'Provides customizations / defaults for the blog content type.'
 type: module
 core: 8.x
 package: WxT
+
+# Required modules
 dependencies:
-  - blog
-  - bootstrap_layouts
-  - config_rewrite
-  - views_bootstrap
-  - wxt_ext_migration
+  - drupal:blog
+  - drupal:bootstrap_layouts
+  - drupal:config_rewrite
+  - drupal:views_bootstrap
+  - drupal:wxt_ext_migration
+  - drupal:wxt_ext_translation

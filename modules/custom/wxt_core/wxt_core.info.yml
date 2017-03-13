@@ -3,6 +3,8 @@ description: 'Provides core configuration.'
 type: module
 core: 8.x
 package: WxT
+
+# Required modules
 dependencies:
-  - block_class
-  - lightning_core
+  - drupal:block_class
+  - drupal:lightning_core

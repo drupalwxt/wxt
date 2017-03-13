@@ -9,7 +9,7 @@
  * Enables translation for the given entity bundles and all their fields.
  *
  * @param array
- *        $entity_info An array mapping entity types to arrays of bundles.
+ *   $entity_info An array mapping entity types to arrays of bundles.
  */
 function wxt_ext_translation_enable_translation($entity_info) {
   // Enable translation for all of our entities/bundles.
@@ -62,9 +62,9 @@ function wxt_ext_translation_update_config_translation() {
  * Imports all relevant translations from a modules /translations directory.
  *
  * @param string
- *        $type The project type.
+ *   $type The project type.
  * @param string $name
- *        The name of the project.
+ *   The name of the project.
  *
  * @return bool FALSE if the project does not exist.
  */

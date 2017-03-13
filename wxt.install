@@ -56,7 +56,7 @@ function _wxt_setup_branding() {
  * Set up the default menu override(s).
  */
 function _wxt_setup_menus() {
-  /** @var MenuLinkContentInterface $user_account */
+  /** @var \Drupal\menu_link_content\MenuLinkContentInterface $user_account */
   $parent_link = MenuLinkContent::create([
     'menu_name' => 'account',
     'link' => 'route:<nolink>',

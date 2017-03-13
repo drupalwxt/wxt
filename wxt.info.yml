@@ -14,39 +14,39 @@ keep_english: true
 # Required modules
 dependencies:
   # core
-  - comment
-  - dynamic_page_cache
-  - responsive_image
-  - telephone
-  - tour
-  # - search
+  - drupal:comment
+  - drupal:dynamic_page_cache
+  - drupal:responsive_image
+  - drupal:telephone
+  - drupal:tour
+  # - drupal:search
   # core (multilingual)
-  - config_translation
-  - content_translation
-  - language
-  - locale
+  - drupal:config_translation
+  - drupal:content_translation
+  - drupal:language
+  - drupal:locale
   # core (experimental)
-  - big_pipe
-  - inline_form_errors
+  - drupal:big_pipe
+  - drupal:inline_form_errors
   # core (web services)
-  # - rdf
-  # - hal
-  # - rest
-  # - serialization
+  # - drupal:rdf
+  # - drupal:hal
+  # - drupal:rest
+  # - drupal:serialization
   # contrib (lightning)
-  - lightning_core
-  - lightning_layout
-  - lightning_media
-  - lightning_media_document
-  - lightning_media_image
-  - lightning_media_instagram
-  - lightning_media_twitter
-  - lightning_workflow
+  - drupal:lightning_core
+  - drupal:lightning_layout
+  - drupal:lightning_media
+  - drupal:lightning_media_document
+  - drupal:lightning_media_image
+  - drupal:lightning_media_instagram
+  - drupal:lightning_media_twitter
+  - drupal:lightning_workflow
   # custom (wxt)
-  - wxt_admin
-  - wxt_core
+  - drupal:wxt_admin
+  - drupal:wxt_core
   # contrib (wxt)
-  - wxt_library
+  - drupal:wxt_library
 
 themes:
   - bartik

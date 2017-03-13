@@ -6,6 +6,6 @@ package: WxT
 
 # Required modules
 dependencies:
-  - bootstrap_layouts
-  - layout_plugin
-  - lightning_layout
+  - drupal:bootstrap_layouts
+  - drupal:layout_plugin
+  - drupal:lightning_layout

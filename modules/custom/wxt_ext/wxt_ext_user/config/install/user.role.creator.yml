@@ -38,4 +38,3 @@ permissions:
   - 'access browse_content entity browser pages'
   - 'access browse_content_modal entity browser pages'
   - 'access toolbar'
-

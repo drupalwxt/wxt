@@ -17,11 +17,12 @@ the "Manual update steps" section of this file.
 ## Updating WxT
 
 ### Composer
-If you've installed WxT using our [Composer-based project template][wxt-project], all you need to do is:
+If you've installed WxT using our
+[Composer-based project template][wxt-project], all you need to do is:
 
 * ```cd /path/to/YOUR_PROJECT```
 * ```composer update```
-* Run ```drush updatedb``` or visit ```update.php``` to perform automatic database updates.
+* Run ```drush updatedb``` or visit ```update.php``` to perform db updates.
 * Perform any necessary manual updates (see below).
 
 ### Tarball

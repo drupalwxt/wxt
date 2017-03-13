@@ -43,4 +43,3 @@ permissions:
   - 'use draft_published transition'
   - 'use needs_review_draft transition'
   - 'use archived_published transition'
-

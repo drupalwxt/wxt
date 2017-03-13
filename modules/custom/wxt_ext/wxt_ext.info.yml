@@ -3,15 +3,17 @@ description: 'Wrapper module for enabling all of the WxT Extensions.'
 type: module
 core: 8.x
 package: WxT
+
+# Required modules
 dependencies:
-  - wxt_core
-  - wxt_ext_config
-  - wxt_ext_editor
-  - wxt_ext_layout
-  - wxt_ext_media_slideshow
-  - wxt_ext_migration
-  - wxt_ext_page
-  - wxt_ext_sitemap
-  - wxt_ext_theme
-  - wxt_ext_translation
-  - wxt_ext_user
+  - drupal:wxt_core
+  - drupal:wxt_ext_config
+  - drupal:wxt_ext_editor
+  - drupal:wxt_ext_layout
+  - drupal:wxt_ext_media_slideshow
+  - drupal:wxt_ext_migration
+  - drupal:wxt_ext_page
+  - drupal:wxt_ext_sitemap
+  - drupal:wxt_ext_theme
+  - drupal:wxt_ext_translation
+  - drupal:wxt_ext_user

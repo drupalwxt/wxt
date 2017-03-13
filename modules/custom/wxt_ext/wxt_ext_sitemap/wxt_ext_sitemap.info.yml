@@ -4,6 +4,7 @@ type: module
 package: WxT
 core: '8.x'
 
+# Required modules
 dependencies:
-  - simple_sitemap
-  - wxt_ext_page
+  - drupal:simple_sitemap
+  - drupal:wxt_ext_page

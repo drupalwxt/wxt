@@ -6,7 +6,7 @@ package: WxT
 
 # Required modules
 dependencies:
-  - migrate
-  - migrate_plus
-  - migrate_tools
-  - wxt_ext_media_slideshow
+  - drupal:migrate
+  - drupal:migrate_plus
+  - drupal:migrate_tools
+  - drupal:wxt_ext_media_slideshow

@@ -3,5 +3,7 @@ description: 'Provides default configuration for the WxT theme(s).'
 type: module
 core: 8.x
 package: WxT
+
+# Required modules
 dependencies:
-  - config_rewrite
+  - drupal:config_rewrite
