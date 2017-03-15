@@ -270,6 +270,7 @@
         "drupal/diff": "1.0-rc1",
         "drupal/entity_reference_revisions": "1.2",
         "drupal/field_group": "1.0-rc6",
+        "drupal/jsonapi": "1.0-beta1",
         "drupal/linkit": "5.0-beta4",
         "drupal/menu_block": "1.4",
         "drupal/password_policy": "3.x-dev",
