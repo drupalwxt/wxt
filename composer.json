@@ -145,25 +145,25 @@
     },
     "extra": {
         "installer-paths": {
-            "html/core": [
+            "docroot/core": [
                 "type:drupal-core"
             ],
-            "html/libraries/{$name}" : [
+            "docroot/libraries/{$name}" : [
                 "type:drupal-library"
             ],
-            "html/modules/custom/{$name}": [
+            "docroot/modules/custom/{$name}": [
                 "drupal/wxt_library"
             ],
-            "html/modules/contrib/{$name}": [
+            "docroot/modules/contrib/{$name}": [
                 "type:drupal-module"
             ],
-            "html/profiles/{$name}": [
+            "docroot/profiles/{$name}": [
                 "type:drupal-profile"
             ],
-            "html/themes/custom/{$name}": [
+            "docroot/themes/custom/{$name}": [
                 "drupal/wxt_bootstrap"
             ],
-            "html/themes/contrib/{$name}": [
+            "docroot/themes/contrib/{$name}": [
                 "type:drupal-theme"
             ],
             "drush/contrib/{$name}": [
