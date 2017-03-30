@@ -6,7 +6,7 @@ defaults[projects][subdir] = contrib
 
 ; Contrib (Profiles)
 projects[lightning][type] = "profile"
-projects[lightning][version] = "2.03"
+projects[lightning][version] = "2.05"
 projects[lightning][subdir] = ""
 
 ; Contrib (Modules)
@@ -93,7 +93,7 @@ projects[layout_plugin][type] = "module"
 projects[layout_plugin][version] = "1.0-alpha23"
 
 projects[linkit][type] = "module"
-projects[linkit][version] = "5.0-beta4"
+projects[linkit][version] = "5.0-beta5"
 
 projects[media_entity][type] = "module"
 projects[media_entity][version] = "1.6"
@@ -150,7 +150,7 @@ projects[panels][patch][2296437] = "https://www.drupal.org/files/issues/implemen
 projects[panels][patch][2793801] = "https://www.drupal.org/files/issues/2793801-9.patch"
 
 projects[paragraphs][type] = "module"
-projects[paragraphs][version] = "1.0"
+projects[paragraphs][version] = "1.1"
 
 projects[password_policy][type] = "module"
 projects[password_policy][download][type] = "git"
@@ -168,7 +168,6 @@ projects[replication][patch][2820105] = "https://www.drupal.org/files/issues/282
 
 projects[scheduled_updates][type] = "module"
 projects[scheduled_updates][version] = "1.0-alpha5"
-projects[scheduled_updates][patch][2674873] = "https://www.drupal.org/files/issues/webprofiler_1.patch"
 projects[scheduled_updates][patch][2674874] = "https://www.drupal.org/files/issues/schedule_updates-save_type-2674874-2.patch"
 projects[scheduled_updates][patch][2720169] = "https://www.drupal.org/files/issues/scheduled_updates-no-canonical-link-for-update-type.patch"
 
@@ -176,7 +175,7 @@ projects[search_api][type] = "module"
 projects[search_api][version] = "1.0-beta4"
 
 projects[simple_sitemap][type] = "module"
-projects[simple_sitemap][version] = "2.8"
+projects[simple_sitemap][version] = "2.9"
 
 projects[token][type] = "module"
 projects[token][download][tag] = "1.0-rc1"
