@@ -2,11 +2,7 @@
 Feature: WxT Roles
   Makes sure that the roles are configurable.
 
-  Scenario: Ensure the roles configuration form works
+  Scenario: Administrator Role select list should be present in Account Settings
     Given I am logged in as a user with the administrator role
-    When I visit "/admin/config/system/lightning"
-    And I uncheck the box "content_roles[reviewer]"
-    And I press "Save configuration"
-    Then the response status code should be 200
-    And I check the box "content_roles[reviewer]"
-    And I press "Save configuration"
+    When I visit "/admin/config/people/accounts"
+    Then I should see "This role will be automatically assigned new permissions whenever a module is enabled."
