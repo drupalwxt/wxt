@@ -352,4 +352,3 @@ migration_dependencies:
     - menu
     # migrations
     - wxt_node_page
-    - wxt_menu

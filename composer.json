@@ -201,6 +201,8 @@
                 "https://www.drupal.org/files/issues/2698057_2.patch",
                 "2699157 - Plugin Lazy loading can cause usort warning":
                 "https://www.drupal.org/files/issues/Iterating-through-array--2699157.patch",
+                "Enter drupal/core patch #2705925 description here":
+                "https://www.drupal.org/files/issues/imageitem_presave-2705925-35.patch",
                 "Enter drupal/core patch #2752443 description here":
                 "https://www.drupal.org/files/issues/in_correct_order_and-2752443-1.patch",
                 "2759397 - Patch EntityReferenceItemNormalizer to prevent recursion":
