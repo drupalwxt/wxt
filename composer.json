@@ -278,6 +278,7 @@
         "drupal/media_entity_slideshow": "1.2",
         "drupal/migrate_plus": "3.0-beta1",
         "drupal/migrate_tools": "3.0-beta1",
+        "drupal/search_api": "1.0-beta4",
         "drupal/url_embed": "1.0-alpha1",
         "drupal/views_bootstrap": "3.x-dev",
         "drupal/webform": "5.0-beta9",
