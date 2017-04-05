@@ -1,0 +1,93 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.search
+    - field.field.block_content.search.body
+    - field.field.block_content.search.field_search_filter
+    - field.field.block_content.search.field_search_path
+    - field.field.block_content.search.field_search_placeholder
+  module:
+    - field_group
+    - link
+    - text
+    - workbench_moderation
+third_party_settings:
+  field_group:
+    group_search:
+      children:
+        - group_basic_info
+      parent_name: ''
+      weight: 3
+      format_type: tabs
+      format_settings:
+        id: ''
+        classes: ''
+        direction: vertical
+      label: Search
+    group_basic_info:
+      children:
+        - field_search_placeholder
+        - field_search_path
+        - field_search_filter
+      parent_name: group_search
+      weight: 20
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: open
+        description: ''
+        required_fields: true
+      label: 'Basic Information'
+id: block_content.search.default
+targetEntityType: block_content
+bundle: search
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 2
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+  field_search_filter:
+    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_search_path:
+    weight: 5
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+  field_search_placeholder:
+    weight: 4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  info:
+    type: string_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+  translation:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }
