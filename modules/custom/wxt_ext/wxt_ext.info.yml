@@ -7,6 +7,7 @@ package: WxT
 # Required modules
 dependencies:
   - drupal:wxt_core
+  - drupal:wxt_ext_blocks
   - drupal:wxt_ext_config
   - drupal:wxt_ext_editor
   - drupal:wxt_ext_layout

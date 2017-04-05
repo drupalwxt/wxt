@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.search
+    - field.storage.block_content.field_search_filter
+id: block_content.search.field_search_filter
+field_name: field_search_filter
+entity_type: block_content
+bundle: search
+label: Filter
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
