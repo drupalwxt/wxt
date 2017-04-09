@@ -178,29 +178,19 @@
             },
             "drupal/core": {
                 "Enter drupal/core patch #736066 description here":
-                "https://www.drupal.org/files/issues/ajax_js_insert_command-736066-116.patch",
+                "https://www.drupal.org/files/issues/736066-165.patch",
                 "1356276 - Allow profiles to provide a base/parent profile and load them in the correct order":
-                "https://www.drupal.org/files/issues/1356276-249.patch",
+                "https://www.drupal.org/files/issues/1356276-303.patch",
                 "Enter drupal/core patch #1838234 description here":
                 "https://www.drupal.org/files/issues/1838234-22.patch",
-                "Enter drupal/core patch #1918994 description here":
-                "https://www.drupal.org/files/issues/1918994-147.patch",
-                "2369119 - Fix error on exposed grouped filters on Views save":
-                "https://www.drupal.org/files/issues/2369119-145_0.patch",
-                "Enter drupal/core patch #2421427 description here":
-                "https://www.drupal.org/files/issues/quickedit-image-2421427-137.patch",
-                "Enter drupal/core patch #2454289 description here":
-                "https://www.drupal.org/files/issues/attribute_hreflang_not-2454289-26.patch",
                 "Enter drupal/core patch #2630732 description here":
-                "https://www.drupal.org/files/issues/implement_entity_fields_migrate-2630732-21.patch",
-                "2655104 - List unmet dependencies instead of just failing (Committed to 8.3.x)":
-                "https://www.drupal.org/files/issues/2655104-56.patch",
+                "https://www.drupal.org/files/issues/implement-2630732-35.patch",
                 "2679775 - Fixes float issue with inline label fields (entity references on most cases).":
                 "https://www.drupal.org/files/issues/2679775-11-inline-labels.patch",
                 "Enter drupal/core patch #2698057 description here":
                 "https://www.drupal.org/files/issues/2698057_2.patch",
                 "2699157 - Plugin Lazy loading can cause usort warning":
-                "https://www.drupal.org/files/issues/Iterating-through-array--2699157.patch",
+                "https://www.drupal.org/files/issues/2699157-23.drupal.Plugin-Lazy-loading-can-cause-usort-warning.patch",
                 "Enter drupal/core patch #2705925 description here":
                 "https://www.drupal.org/files/issues/imageitem_presave-2705925-35.patch",
                 "Enter drupal/core patch #2752443 description here":
@@ -256,7 +246,7 @@
         "composer/installers": "^1.0",
         "cweagans/composer-patches": "^1.5.0",
         "drupal-composer/drupal-scaffold": "^2.0.0",
-        "acquia/lightning": "2.0.6",
+        "acquia/lightning": "2.1.0",
         "drupal/admin_toolbar": "1.18",
         "drupal/block_class": "1.0-alpha1",
         "drupal/blog": "2.x-dev",
@@ -278,7 +268,6 @@
         "drupal/media_entity_slideshow": "1.2",
         "drupal/migrate_plus": "3.0-beta1",
         "drupal/migrate_tools": "3.0-beta1",
-        "drupal/search_api": "1.0-beta4",
         "drupal/url_embed": "1.0-alpha1",
         "drupal/views_bootstrap": "3.x-dev",
         "drupal/webform": "5.0-beta9",
