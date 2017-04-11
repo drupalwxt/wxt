@@ -198,7 +198,7 @@ projects[wxt_library][download][revision] = "58ab84d95869be829515d549c7661f3bd22
 
 ; Contrib (Themes)
 projects[bootstrap][type] = "theme"
-projects[bootstrap][version] = "3.2"
+projects[bootstrap][version] = "3.3"
 
 projects[wxt_bootstrap][type] = "theme"
 projects[wxt_bootstrap][download][type] = "git"
