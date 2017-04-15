@@ -11,11 +11,18 @@
 function wxt_ext_translation_install() {
   // Enable translation for our core entities/bundles.
   $entities = [
-    'block_content' => ['basic'],
+    'block_content' => [
+      'basic',
+    ],
     'node' => [
       'page',
     ],
-    'menu_link_content' => ['menu_link_content'],
+    'media' => [
+      'image',
+    ],
+    'menu_link_content' => [
+      'menu_link_content',
+    ],
   ];
   wxt_ext_translation_enable_translation($entities);
 
