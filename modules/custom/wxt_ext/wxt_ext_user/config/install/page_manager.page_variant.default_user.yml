@@ -26,7 +26,7 @@ variant_settings:
   uuid: 1c74464e-5b9d-41e7-8825-371a214b4620
   label: null
   weight: 0
-  layout: onecol
+  layout: layout_onecol
   layout_settings: {  }
   page_title: 'My account'
   storage_type: page_manager
