@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\wxt_ext_migration\Plugin\migrate\process;
+namespace Drupal\od_ext_migration\Plugin\migrate\process;
 
 use Drupal\migrate\MigrateExecutableInterface;
 use Drupal\migrate\MigrateSkipProcessException;
@@ -8,13 +8,13 @@ use Drupal\migrate\ProcessPluginBase;
 use Drupal\migrate\Row;
 
 /**
- * Construct the full directory path of a resource.
+ * Construct the full destination directory path.
  *
  * @MigrateProcessPlugin(
- *   id = "wxt_get_path",
+ *   id = "wxt_dest_path",
  * )
  */
-class WxTGetPath extends ProcessPluginBase {
+class DestPath extends ProcessPluginBase {
 
   /**
    * {@inheritdoc}
@@ -23,14 +23,14 @@ class WxTGetPath extends ProcessPluginBase {
     if (!$value) {
       throw new MigrateSkipProcessException();
     }
-    return $this->getModulePath($value);
+    return $this->getDestPath($value);
   }
 
   /**
-   * Custom function for drupal_get_path().
+   * Custom function for getDestPath().
    */
-  protected function getModulePath($value) {
-    return drupal_get_path('module', 'wxt_ext_migration') . '/data/images/' . $value;
+  protected function getDestPath($value) {
+    return str_replace('public://', 'public://legacy/', $value);
   }
 
 }

@@ -17,7 +17,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  * Convert a Drupal 7 media tag to a rendered image field.
  *
  * @MigrateProcessPlugin(
- *   id = "media_tags",
+ *   id = "wxt_media_tags",
  * )
  *
  * @link https://blog.kalamuna.com/news/converting-drupal-7-media-tags-during-a-drupal-8-migration
