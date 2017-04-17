@@ -152,6 +152,14 @@ class BlockPluginId extends ProcessPluginBase implements ContainerFactoryPluginI
             $block = [
               'id' => $module . ':' . $delta,
             ];
+            if ($delta == 'node:body') {
+              $block['formatter'] = [
+                'label' => 'hidden',
+                'type' => 'text_default',
+                'settings' => [],
+                'third_party_settings' => [],
+              ];
+            }
             break;
 
           case 'page_title_block':
