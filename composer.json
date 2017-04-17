@@ -208,7 +208,9 @@
             },
             "drupal/ctools": {
                 "Enter drupal/ctools patch #2712661 description here":
-                "https://www.drupal.org/files/issues/allow-2712661-2.patch"
+                "https://www.drupal.org/files/issues/allow-2712661-2.patch",
+                "Enter drupal/ctools patch #2844054 description here":
+                "https://www.drupal.org/files/issues/2844054-36.patch"
             },
             "drupal/inline_entity_form": {
                 "Enter drupal/inline_entity_form patch #2367235 description here":
@@ -219,6 +221,8 @@
             "drupal/page_manager": {
                 "Enter drupal/page_manager patch #2633052 description here":
                 "https://www.drupal.org/files/issues/issue-2633052-2.patch",
+                "Enter drupal/page_manager patch #2626090 description here":
+                "https://www.drupal.org/files/issues/page-manager-2626090-page-title-empty-5.patch",
                 "Enter drupal/page_manager patch #2665328 description here":
                 "https://www.drupal.org/files/issues/variants_take_entity-2665328-35.patch",
                 "Enter drupal/page_manager patch #2710169 description here":
