@@ -227,8 +227,6 @@
                 "https://www.drupal.org/files/issues/variants_take_entity-2665328-35.patch",
                 "Enter drupal/page_manager patch #2710169 description here":
                 "https://www.drupal.org/files/issues/page_manager-block-css-attributes-9.patch",
-                "Enter drupal/page_manager patch #2782661 description here":
-                "https://www.drupal.org/files/issues/page_variant_for_node-2782661-5.patch"
             },
             "drupal/panels": {
                 "Enter drupal/panels patch #2667755 description here":
