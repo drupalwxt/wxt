@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\od_ext_migration\Plugin\migrate\process;
+namespace Drupal\wxt_ext_migration\Plugin\migrate\process;
 
 use Drupal\migrate\MigrateExecutableInterface;
 use Drupal\migrate\MigrateSkipProcessException;
