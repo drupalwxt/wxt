@@ -7,5 +7,4 @@ package: WxT
 # Required modules
 dependencies:
   - drupal:bootstrap_layouts
-  - drupal:layout_discovery
   - drupal:lightning_layout

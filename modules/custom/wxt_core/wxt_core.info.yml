@@ -8,3 +8,4 @@ package: WxT
 dependencies:
   - drupal:block_class
   - drupal:lightning_core
+  - drupal:views_bootstrap
