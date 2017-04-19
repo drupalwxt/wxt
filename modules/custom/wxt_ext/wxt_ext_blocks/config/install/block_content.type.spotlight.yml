@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: spotlight
+label: 'Spotlight block'
+revision: 1
+description: 'A spotlight block contains content, and image.'

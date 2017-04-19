@@ -28,6 +28,7 @@ dependencies:
   # core (experimental)
   - drupal:big_pipe
   - drupal:inline_form_errors
+  - drupal:layout_discovery
   # core (web services)
   # - drupal:rdf
   # - drupal:hal

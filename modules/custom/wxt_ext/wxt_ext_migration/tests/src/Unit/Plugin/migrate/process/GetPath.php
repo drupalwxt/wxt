@@ -2,30 +2,30 @@
 
 namespace Drupal\Tests\wxt_ext_migration\Unit\Plugin\migrate\process;
 
-use Drupal\wxt_ext_migration\Plugin\migrate\process\WxTGetPath;
+use Drupal\wxt_ext_migration\Plugin\migrate\process\GetPath;
 use Drupal\Tests\migrate\Unit\process\MigrateProcessTestCase;
 
 /**
- * @coversDefaultClass \Drupal\wxt_ext_migration\Plugin\migrate\process\WxTGetPath
+ * @coversDefaultClass \Drupal\wxt_ext_migration\Plugin\migrate\process\GetPath
  * @group wxt
  */
-class WxTGetPathTest extends MigrateProcessTestCase {
+class GetPathTest extends MigrateProcessTestCase {
 
   /**
    * Tests WxT path.
    *
-   * @dataProvider providerTestWxtGetPath
+   * @dataProvider providerTestGetPath
    */
-  public function testWxtGetPath($value, $expected) {
+  public function testGetPath($value, $expected) {
     $configuration['method'] = 'process';
-    $actual = (new TestWxTGetPath($configuration, 'wxt_get_path', []))->transform($value, $this->migrateExecutable, $this->row, 'testproperty');
+    $actual = (new TestGetPath($configuration, 'wxt_get_path', []))->transform($value, $this->migrateExecutable, $this->row, 'testproperty');
     $this->assertSame($expected, $actual);
   }
 
   /**
-   * Data provider for testWxtGetPath().
+   * Data provider for testGetPath().
    */
-  public function providerTestWxtGetPath() {
+  public function providerTestGetPath() {
     return [
       ['218x291.png', 'profiles/wxt/modules/custom/wxt_ext/wxt_ext_migration/data/images/218x291.png'],
     ];
@@ -33,7 +33,7 @@ class WxTGetPathTest extends MigrateProcessTestCase {
 
 }
 
-class TestWxTGetPath extends WxTGetPath {
+class TestGetPath extends GetPath {
 
   /**
    * Constructor.

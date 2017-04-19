@@ -2,19 +2,20 @@
 
 namespace Drupal\wxt_ext_migration\Plugin\migrate\process;
 
+use Drupal\Core\StreamWrapper\PrivateStream;
 use Drupal\migrate\MigrateExecutableInterface;
 use Drupal\migrate\MigrateSkipProcessException;
 use Drupal\migrate\ProcessPluginBase;
 use Drupal\migrate\Row;
 
 /**
- * Construct the full directory path of a resource.
+ * Constructs the full private directory path.
  *
  * @MigrateProcessPlugin(
- *   id = "wxt_get_path",
+ *   id = "wxt_priv_path",
  * )
  */
-class WxTGetPath extends ProcessPluginBase {
+class PrivPath extends ProcessPluginBase {
 
   /**
    * {@inheritdoc}
@@ -23,14 +24,15 @@ class WxTGetPath extends ProcessPluginBase {
     if (!$value) {
       throw new MigrateSkipProcessException();
     }
-    return $this->getModulePath($value);
+    return $this->getPrivPath($value);
   }
 
   /**
-   * Custom function for drupal_get_path().
+   * Custom function for getPrivPath().
    */
-  protected function getModulePath($value) {
-    return drupal_get_path('module', 'wxt_ext_migration') . '/data/images/' . $value;
+  protected function getPrivPath($value) {
+    $file = str_replace('public://', '', $value);
+    return PrivateStream::basePath() . '/files/' . $file;
   }
 
 }

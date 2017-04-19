@@ -10,6 +10,7 @@ dependencies:
   - drupal:wxt_ext_blocks
   - drupal:wxt_ext_config
   - drupal:wxt_ext_editor
+  - drupal:wxt_ext_landing_page
   - drupal:wxt_ext_layout
   - drupal:wxt_ext_media_slideshow
   - drupal:wxt_ext_migration

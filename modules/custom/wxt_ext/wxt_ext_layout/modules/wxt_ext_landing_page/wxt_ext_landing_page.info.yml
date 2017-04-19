@@ -1,0 +1,9 @@
+name: 'WxT Extend Landing Page'
+description: 'Extends landing page which allows you to build free-form one-off landing pages.'
+type: module
+core: 8.x
+package: WxT
+
+# Required modules
+dependencies:
+  - drupal:wxt_ext_layout

@@ -1,0 +1,134 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.landing_page.body
+    - field.field.node.landing_page.field_meta_tags
+    - field.field.node.landing_page.panelizer
+    - node.type.landing_page
+  module:
+    - metatag
+    - panelizer
+    - user
+third_party_settings:
+  panelizer:
+    enable: true
+    custom: true
+    displays:
+      two_column:
+        blocks:
+          2ba0359c-af3f-4bd7-a6d6-a6e93f680883:
+            id: 'entity_field:node:body'
+            label: Body
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: hidden
+              type: text_default
+              settings: {  }
+              third_party_settings: {  }
+              weight: 0
+            region: top_left
+            weight: 1
+            uuid: 2ba0359c-af3f-4bd7-a6d6-a6e93f680883
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+          62dd7b94-9f49-4b61-ad40-f65d365a7f46:
+            id: page_title_block
+            label: 'Page title'
+            provider: core
+            label_display: visible
+            region: top_left
+            weight: 0
+            uuid: 62dd7b94-9f49-4b61-ad40-f65d365a7f46
+            context_mapping: {  }
+        id: panels_variant
+        uuid: 91b9d430-7b91-4a22-ac4d-2e5e0376c6a2
+        label: 'Two Column'
+        weight: 0
+        layout: bs_2col_bricked
+        layout_settings:
+          layout:
+            wrapper: div
+            classes:
+              row: row
+            add_layout_class: 1
+            attributes: ''
+          regions:
+            top:
+              wrapper: div
+              classes:
+                col-sm-12: col-sm-12
+              add_region_classes: 1
+              attributes: 'class|mrgn-tp-lg,class|mrgn-bttm-lg'
+            top_left:
+              wrapper: div
+              classes:
+                col-md-6: col-md-6
+              add_region_classes: 1
+              attributes: ''
+            top_right:
+              wrapper: div
+              classes:
+                col-md-6: col-md-6
+              add_region_classes: 1
+              attributes: ''
+            middle:
+              wrapper: div
+              classes:
+                col-sm-12: col-sm-12
+              add_region_classes: 1
+              attributes: ''
+            bottom_left:
+              wrapper: div
+              classes:
+                col-sm-6: col-sm-6
+              add_region_classes: 1
+              attributes: ''
+            bottom_right:
+              wrapper: div
+              classes:
+                col-sm-6: col-sm-6
+              add_region_classes: 1
+              attributes: ''
+            bottom:
+              wrapper: div
+              classes:
+                col-sm-12: col-sm-12
+              add_region_classes: 1
+              attributes: ''
+        page_title: '[node:title]'
+        storage_type: panelizer_default
+        storage_id: 'node:landing_page:full:two_column'
+        pattern: panelizer
+        builder: ipe
+        static_context: {  }
+    allow: true
+    default: two_column
+id: node.landing_page.full
+targetEntityType: node
+bundle: landing_page
+mode: full
+content:
+  field_meta_tags:
+    weight: 101
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  workbench_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  body: true
+  langcode: true
+  panelizer: true
