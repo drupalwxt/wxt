@@ -261,7 +261,7 @@
         "drupal/menu_block": "1.4",
         "drupal/password_policy": "3.x-dev",
         "drupal/simple_sitemap": "2.9",
-        "drupal/bootstrap_layouts": "4.x-dev",
+        "drupal/bootstrap_layouts": "5.x-dev",
         "drupal/paragraphs": "1.1",
         "drupal/field_formatter": "1.0",
         "drupal/file_entity": "2.0-beta3",
