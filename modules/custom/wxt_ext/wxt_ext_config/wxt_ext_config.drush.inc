@@ -59,12 +59,7 @@ function drush_wxt_ext_config_wxt_cex() {
   // If config was exported by _drush_config_export(), cycle through the config
   // CRUD operations and attempt to automatically update config.
   if ($result) {
-    $storage_filters = drush_config_get_storage_filters();
     $destination_storage = new FileStorage($destination_dir);
-    // If there are any filters, then attach them to the destination storage.
-    if (!empty($storage_filters)) {
-      $destination_storage = new StorageWrapper($destination_storage, $storage_filters);
-    }
 
     foreach ($change_list as $type => $list) {
       switch ($type) {
