@@ -170,28 +170,11 @@ function _wxt_ext_config_find_config_instances($storage, $config) {
  *   An associative array of changes keyed by the change type.
  */
 function _wxt_ext_config_get_change_list($destination_dir) {
-  // Get the change list.
-  $storage_filters = drush_config_get_storage_filters();
   // Retrieve a list of differences between the active and target configuration.
   $target_storage = new FileStorage($destination_dir);
   /** @var \Drupal\Core\Config\StorageInterface $active_storage */
   $active_storage = Drupal::service('config.storage');
   $comparison_source = $active_storage;
-
-  // If the output is being filtered, then write a temporary copy before doing
-  // any comparison.
-  if (!empty($storage_filters)) {
-    $tmpdir = drush_tempdir();
-    drush_copy_dir($destination_dir, $tmpdir, FILE_EXISTS_OVERWRITE);
-    $comparison_source = new FileStorage($tmpdir);
-    $comparison_source_filtered = new StorageWrapper($comparison_source, $storage_filters);
-    foreach ($active_storage->listAll() as $name) {
-      // Copy active storage to our temporary active store.
-      if ($existing = $active_storage->read($name)) {
-        $comparison_source_filtered->write($name, $existing);
-      }
-    }
-  }
 
   $config_comparer = new StorageComparer($comparison_source, $target_storage, \Drupal::service('config.manager'));
   if (!$config_comparer->createChangelist()->hasChanges()) {
