@@ -62,7 +62,7 @@ function wxt_install_extensions(array &$install_state) {
  *   The name(s) of the module(s) to install.
  */
 function wxt_install_module($module) {
-   \Drupal::service('module_installer')->install((array) $module);
+  \Drupal::service('module_installer')->install((array) $module);
 }
 
 /**
