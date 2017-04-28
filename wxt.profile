@@ -5,7 +5,6 @@
  * Contains wxt.profile.
  */
 
-use Drupal\wxt\Form\ExtensionSelectForm;
 use Symfony\Component\Yaml\Parser;
 
 /**
@@ -13,12 +12,6 @@ use Symfony\Component\Yaml\Parser;
  */
 function wxt_install_tasks() {
   return [
-    'wxt_select_extensions' => [
-      'display_name' => t('Choose extensions'),
-      'display' => TRUE,
-      'type' => 'form',
-      'function' => ExtensionSelectForm::class,
-    ],
     'wxt_install_extensions' => [
       'display_name' => t('Install extensions'),
       'display' => TRUE,
@@ -53,7 +46,10 @@ function wxt_install_tasks_alter(array &$tasks, array $install_state) {
  */
 function wxt_install_extensions(array &$install_state) {
   $batch = [];
-  foreach ($install_state['wxt']['modules'] as $module) {
+  $modules = [
+    'wxt_ext',
+  ];
+  foreach ($modules as $module) {
     $batch['operations'][] = ['wxt_install_module', (array) $module];
   }
   return $batch;
@@ -66,7 +62,7 @@ function wxt_install_extensions(array &$install_state) {
  *   The name(s) of the module(s) to install.
  */
 function wxt_install_module($module) {
-  \Drupal::service('module_installer')->install((array) $module);
+   \Drupal::service('module_installer')->install((array) $module);
 }
 
 /**

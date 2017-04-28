@@ -6,7 +6,8 @@ distribution:
   name: WxT
 
 # Base profile
-base profile: lightning
+base profile:
+  name: lightning
 
 # Language
 keep_english: true
@@ -34,15 +35,6 @@ dependencies:
   # - drupal:hal
   # - drupal:rest
   # - drupal:serialization
-  # contrib (lightning)
-  - drupal:lightning_core
-  - drupal:lightning_layout
-  - drupal:lightning_media
-  - drupal:lightning_media_document
-  - drupal:lightning_media_image
-  - drupal:lightning_media_instagram
-  - drupal:lightning_media_twitter
-  - drupal:lightning_workflow
   # custom (wxt)
   - drupal:wxt_admin
   - drupal:wxt_core

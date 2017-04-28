@@ -12,6 +12,7 @@ compass_app_log.txt
 *.sass-cache
 
 # Composer files
+bin/
 composer.lock
 html
 vendor/
