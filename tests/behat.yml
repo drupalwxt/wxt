@@ -1,0 +1,40 @@
+default:
+  suites:
+    default:
+      paths:
+        - 'features'
+      filters:
+        tags: "~@chrome"
+      contexts:
+        - '\Drupal\DrupalExtension\Context\DrupalContext'
+        - '\Drupal\DrupalExtension\Context\MinkContext'
+        - '\Drupal\DrupalExtension\Context\MessageContext'
+        - '\Drupal\DrupalExtension\Context\DrushContext'
+  extensions:
+    Behat\MinkExtension:
+      goutte: ~
+      selenium2: ~
+    Drupal\DrupalExtension:
+      blackbox: ~
+      api_driver: 'drupal'
+      region_map:
+        # The most common regions along with selectors.
+        Breadcrumb: "ol.breadcrumb"
+        Content Well: "main.container"
+      subcontexts:
+        # Look in the profile modules directory and pull in module subcontexts.
+        paths:
+          - './profiles/lightning'
+          - './profiles/wxt'
+
+# Setup for Google Chrome only tests.
+chrome:
+  suites:
+    default:
+      filters:
+        tags: "@chrome"
+  extensions:
+    Behat\MinkExtension:
+      selenium2:
+        browser: chrome
+        capabilities: {"browser": "chrome", "browserName": "chrome", "browserVersion": "ANY", "version": "ANY"}
