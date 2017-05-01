@@ -1,5 +1,5 @@
 name: 'WxT'
-description: 'A Drupal distirubtion created to leverage the Web Experience Toolkit.'
+description: 'A Drupal distribution created to leverage the Web Experience Toolkit.'
 type: profile
 core: 8.x
 distribution:
@@ -8,6 +8,8 @@ distribution:
 # Base profile
 base profile:
   name: lightning
+  excluded_dependencies:
+    - lightning_contact_form
 
 # Language
 keep_english: true
