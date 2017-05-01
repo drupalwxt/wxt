@@ -1,4 +1,4 @@
-@wxt @api @diff
+@wxt @workflow @api @diff
 Feature: Diffing different revisions of content
 
   Scenario: Diffing two node revisions

@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Contains \WxtSubContext.
+ * Contains \WxTSubContext.
  */
 
 use Behat\Behat\Hook\Scope\BeforeScenarioScope;
@@ -16,7 +16,7 @@ use Drupal\DrupalExtension\Context\DrupalSubContextBase;
 /**
  * Sub context for WxT step definitions.
  */
-class WxtSubContext extends DrupalSubContextBase {
+class WxTSubContext extends DrupalSubContextBase {
 
   /**
    * The Mink context.

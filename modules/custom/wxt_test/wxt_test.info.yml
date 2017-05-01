@@ -1,9 +1,0 @@
-name: 'WxT Test'
-description: 'Tests common / extended functionality for the WxT distribution.'
-type: module
-core: 8.x
-package: WxT
-
-# Required modules
-dependencies:
-  - drupal:wxt_core
