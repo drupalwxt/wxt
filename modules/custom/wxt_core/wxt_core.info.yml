@@ -7,5 +7,6 @@ package: WxT
 # Required modules
 dependencies:
   - drupal:block_class
+  - drupal:button_link
   - drupal:lightning_core
   - drupal:views_bootstrap
