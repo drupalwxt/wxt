@@ -22,10 +22,10 @@ settings:
   level: 1
   depth: 0
 visibility:
-  'entity_bundle:node':
-    id: 'entity_bundle:node'
+  node_type:
+    id: node_type
     bundles:
-      landing_page: landing_page
-    negate: true
+      page: page
+    negate: false
     context_mapping:
       node: '@node.node_route_context:node'

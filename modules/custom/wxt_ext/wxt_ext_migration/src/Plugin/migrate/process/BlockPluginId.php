@@ -174,6 +174,14 @@ class BlockPluginId extends ProcessPluginBase implements ContainerFactoryPluginI
             ];
             break;
 
+          case 'local_tasks_block':
+            $block = [
+              'id' => $module,
+              'primary' => TRUE,
+              'secondary' => TRUE,
+            ];
+            break;
+
           case 'views_block':
             $block = [
               'id' => $module . ':' . $delta,

@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies: {  }
 name: spotlight
-label: Spotlight
+label: 'Spotlight (360x167)'
 effects:
   5e414783-b1db-409d-abd2-aacfd2f5d621:
     uuid: 5e414783-b1db-409d-abd2-aacfd2f5d621
