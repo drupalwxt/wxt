@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: small
+label: 'Small (50x50)'
+effects:
+  95a7ddba-94ab-4a2e-915c-e06ca3f76c2b:
+    uuid: 95a7ddba-94ab-4a2e-915c-e06ca3f76c2b
+    id: image_scale
+    weight: 1
+    data:
+      width: 50
+      height: 50
+      upscale: false

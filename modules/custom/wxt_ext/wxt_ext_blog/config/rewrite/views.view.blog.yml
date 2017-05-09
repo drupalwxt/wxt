@@ -6,12 +6,14 @@ dependencies:
     - field.storage.node.body
     - field.storage.node.field_image
     - image.style.medium
+    - image.style.small
     - node.type.blog_post
   module:
     - image
     - node
     - text
     - user
+    - views_bootstrap
 id: blog
 label: Blog
 module: views
@@ -59,11 +61,6 @@ display:
           offset: 0
           id: 0
           total_pages: null
-          tags:
-            previous: '‹ Previous'
-            next: 'Next ›'
-            first: '« First'
-            last: 'Last »'
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'
@@ -72,6 +69,11 @@ display:
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
+          tags:
+            previous: '‹ Previous'
+            next: 'Next ›'
+            first: '« First'
+            last: 'Last »'
           quantity: 9
       style:
         type: default
@@ -1036,7 +1038,7 @@ display:
   blog_block:
     display_plugin: block
     id: blog_block
-    display_title: Block
+    display_title: 'Recent blog posts'
     position: 5
     display_options:
       display_extenders: {  }
@@ -1047,15 +1049,44 @@ display:
         row: false
         use_ajax: false
         pager: false
+        fields: false
+        filters: false
+        filter_groups: false
       style:
-        type: html_list
+        type: views_bootstrap_table
         options:
           grouping: {  }
           row_class: ''
-          default_row_class: true
-          type: ul
-          wrapper_class: ''
-          class: list-unstyled
+          default_row_class: false
+          override: 1
+          sticky: 0
+          caption: ''
+          summary: ''
+          description: ''
+          columns:
+            field_image: field_image
+            title: title
+          info:
+            field_image:
+              align: ''
+              separator: ''
+              empty_column: 0
+              responsive: ''
+            title:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 0
+              responsive: ''
+          default: '-1'
+          empty_table: 0
+          responsive: 1
+          bootstrap_styles:
+            striped: striped
+            hover: hover
+            condensed: condensed
+            bordered: 0
       row:
         type: fields
         options:
@@ -1065,18 +1096,211 @@ display:
           hide_empty: true
       use_ajax: true
       pager:
-        type: some
+        type: mini
         options:
           items_per_page: 5
           offset: 0
+          id: 0
+          total_pages: null
+          tags:
+            previous: ''
+            next: ''
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
+      fields:
+        field_image:
+          id: field_image
+          table: node__field_image
+          field: field_image
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: image
+          settings:
+            image_style: small
+            image_link: content
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          entity_type: node
+          entity_field: title
+          label: ''
+          alter:
+            alter_text: false
+            make_link: false
+            absolute: false
+            trim: false
+            word_boundary: false
+            ellipsis: false
+            strip_tags: false
+            html: false
+          hide_empty: false
+          empty_zero: false
+          settings:
+            link_to_entity: true
+          plugin_id: field
+          relationship: none
+          group_type: group
+          admin_label: ''
+          exclude: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+      display_description: ''
+      filters:
+        status:
+          value: '1'
+          table: node_field_data
+          field: status
+          plugin_id: boolean
+          entity_type: node
+          entity_field: status
+          id: status
+          expose:
+            operator: ''
+          group: 1
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          value:
+            blog_post: blog_post
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+        langcode:
+          id: langcode
+          table: node_field_data
+          field: langcode
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: in
+          value:
+            '***LANGUAGE_language_interface***': '***LANGUAGE_language_interface***'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: node
+          entity_field: langcode
+          plugin_id: language
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
     cache_metadata:
-      max-age: -1
+      max-age: 0
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url.query_args
         - 'user.node_grants:view'
         - user.permissions
-      tags: {  }
+      tags:
+        - 'config:field.storage.node.field_image'
   blog_user_all:
     display_plugin: page
     id: blog_user_all

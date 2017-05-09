@@ -46,7 +46,7 @@ variant_settings:
       provider: views
       label_display: visible
       views_label: ''
-      items_per_page: '10'
+      items_per_page: none
       context_mapping: {  }
       region: right
       uuid: 60c2bd47-f06f-4851-a1cc-06520911cc5b
