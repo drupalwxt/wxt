@@ -9,4 +9,5 @@ dependencies:
   - drupal:block_class
   - drupal:button_link
   - drupal:lightning_core
+  - drupal:token_filter
   - drupal:views_bootstrap
