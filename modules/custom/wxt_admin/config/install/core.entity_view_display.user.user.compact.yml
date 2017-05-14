@@ -15,20 +15,6 @@ targetEntityType: user
 bundle: user
 mode: compact
 content:
-  field_first_name:
-    type: string
-    weight: 0
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-  field_last_name:
-    type: string
-    weight: 1
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
   user_picture:
     type: image
     weight: 2
@@ -38,6 +24,8 @@ content:
     third_party_settings: {  }
     label: hidden
 hidden:
+  field_first_name: true
+  field_last_name: true
   field_subscriptions: true
   field_user_agent_location: true
   member_for: true

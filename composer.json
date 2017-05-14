@@ -270,6 +270,12 @@
                 "Enter drupal/media_entity patch #2775131 description here":
                 "https://www.drupal.org/files/issues/add_contextual_links-2775131-2.patch"
             },
+            "drupal/views_bootstrap": {
+                "Enter drupal/media_entity patch #2878352 description here":
+                "https://www.drupal.org/files/issues/raw_field_value-2870642-2.patch",
+                "Enter drupal/media_entity patch #2878352 description here":
+                "https://www.drupal.org/files/issues/add_bootstrap_panels-2878352-3.patch"
+            },
             "drupal/workbench_moderation": {
                 "Enter drupal/workbench_moderation patch #2668006 description here":
                 "https://www.drupal.org/files/issues/2668006-2.patch",
