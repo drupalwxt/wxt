@@ -10,6 +10,7 @@ base profile:
   name: lightning
   excluded_dependencies:
     - lightning_contact_form
+    - lightning_search
 
 # Language
 keep_english: true
