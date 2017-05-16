@@ -7,7 +7,6 @@ dependencies:
     - field.field.node.blog_post.field_blog_comments
     - field.field.node.blog_post.field_blog_tags
     - field.field.node.blog_post.field_image
-    - image.style.thumbnail
     - node.type.blog_post
   module:
     - comment
@@ -17,10 +16,151 @@ dependencies:
     - user
 third_party_settings:
   panelizer:
-    enable: false
+    enable: true
     custom: false
     allow: false
     default: default
+    displays:
+      default:
+        blocks:
+          0d881d3b-1339-444f-a138-5d1992e328ee:
+            id: 'entity_field:node:body'
+            label: Body
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: hidden
+              type: text_default
+              settings: {  }
+              third_party_settings: {  }
+              weight: 0
+              region: content
+            region: left
+            weight: 0
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            uuid: 0d881d3b-1339-444f-a138-5d1992e328ee
+          8069ba3a-b0af-4971-96d2-fa55002d26cb:
+            id: 'entity_field:node:field_blog_comments'
+            label: 'Blog comments'
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: above
+              type: comment_default
+              settings:
+                pager_id: 0
+                view_mode: default
+              third_party_settings: {  }
+              weight: 0
+              region: content
+            region: left
+            weight: 2
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            uuid: 8069ba3a-b0af-4971-96d2-fa55002d26cb
+          40ac8267-0723-4d92-8fb1-eaba846f5605:
+            id: 'entity_field:node:field_blog_tags'
+            label: 'Blog tags'
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: above
+              type: entity_reference_label
+              settings:
+                link: true
+              third_party_settings: {  }
+              weight: 0
+              region: content
+            region: left
+            weight: 1
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            uuid: 40ac8267-0723-4d92-8fb1-eaba846f5605
+          38f3df4d-4aee-40f6-9fdc-9ba3a39a3967:
+            id: 'entity_field:node:field_image'
+            label: Image
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: hidden
+              type: image
+              settings:
+                image_style: ''
+                image_link: ''
+              third_party_settings: {  }
+              weight: 0
+              region: content
+            region: left
+            weight: -1
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            uuid: 38f3df4d-4aee-40f6-9fdc-9ba3a39a3967
+          336bb93a-1ab5-444a-aad7-b46013e7036a:
+            id: 'system_menu_block:account'
+            label: 'User account menu'
+            provider: system
+            label_display: visible
+            level: 1
+            depth: 0
+            region: right
+            weight: -2
+            uuid: 336bb93a-1ab5-444a-aad7-b46013e7036a
+            context_mapping: {  }
+          f64e4b52-ef80-49e7-bd95-2b6320ddae40:
+            id: 'views_block:blog-blog_block'
+            label: ''
+            provider: views
+            label_display: visible
+            views_label: ''
+            items_per_page: none
+            region: right
+            weight: -1
+            uuid: f64e4b52-ef80-49e7-bd95-2b6320ddae40
+            context_mapping: {  }
+        id: panels_variant
+        label: Default
+        uuid: 5f833455-c610-41c5-ae17-149ada3d74a5
+        weight: 0
+        layout: bs_2col_stacked
+        layout_settings:
+          layout:
+            wrapper: div
+            classes:
+              row: row
+            add_layout_class: 1
+            attributes: ''
+          regions:
+            top:
+              wrapper: div
+              classes:
+                col-sm-12: col-sm-12
+              add_region_classes: 1
+              attributes: ''
+            left:
+              wrapper: div
+              classes:
+                col-sm-8: col-sm-8
+              add_region_classes: 1
+              attributes: ''
+            right:
+              wrapper: div
+              classes:
+                col-sm-4: col-sm-4
+              add_region_classes: 1
+              attributes: ''
+            bottom:
+              wrapper: div
+              classes:
+                col-sm-12: col-sm-12
+              add_region_classes: 1
+              attributes: ''
+        page_title: '[node:title]'
+        storage_type: panelizer_default
+        storage_id: 'node:blog_post:default:default'
+        builder: ipe
+        pattern: panelizer
+        static_context: {  }
 id: node.blog_post.default
 targetEntityType: node
 bundle: blog_post
@@ -32,6 +172,7 @@ content:
     settings: {  }
     third_party_settings: {  }
     label: hidden
+    region: content
   field_blog_comments:
     type: comment_default
     weight: 4
@@ -40,6 +181,7 @@ content:
       view_mode: default
     third_party_settings: {  }
     label: above
+    region: content
   field_blog_tags:
     type: entity_reference_label
     weight: 3
@@ -47,16 +189,19 @@ content:
       link: true
     third_party_settings: {  }
     label: above
+    region: content
   field_image:
-    weight: 1
-    label: above
-    settings:
-      image_style: thumbnail
-      image_link: content
-    third_party_settings: {  }
     type: image
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
   links:
-    weight: 0
+    weight: 5
+    region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
