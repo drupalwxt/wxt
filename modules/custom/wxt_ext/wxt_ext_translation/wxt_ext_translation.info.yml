@@ -3,8 +3,11 @@ description: 'Contains default configuration and additional functionality to int
 type: module
 core: 8.x
 package: WxT
+
+# Required modules
 dependencies:
   - drupal:config_translation
   - drupal:content_translation
   - drupal:block_content
+  - drupal:wxt_ext_paragraph
   - drupal:wxt_ext_page

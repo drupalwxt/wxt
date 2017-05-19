@@ -254,21 +254,25 @@
                 "Enter drupal/inline_entity_form patch #2673548 description here":
                 "https://www.drupal.org/files/issues/inline_entity_form-widget_ux_0.patch"
             },
+            "drupal/media_entity": {
+                "Enter drupal/media_entity patch #2775131 description here":
+                "https://www.drupal.org/files/issues/add_contextual_links-2775131-2.patch"
+            },
             "drupal/page_manager": {
                 "Enter drupal/page_manager patch #2626090 description here":
                 "https://www.drupal.org/files/issues/page-manager-2626090-page-title-empty-5.patch",
                 "Enter drupal/page_manager patch #2710169 description here":
                 "https://www.drupal.org/files/issues/page_manager-block-css-attributes-9.patch"
             },
+            "drupal/paragraphs": {
+                "Enter drupal/paragraphs patch #2878615 description here":
+                "https://www.drupal.org/files/issues/comments_entity_uri-2878615-6.patch"
+            },
             "drupal/panels": {
                 "Enter drupal/panels patch #2667755 description here":
                 "https://www.drupal.org/files/issues/bandaid.patch",
                 "Enter drupal/panels patch #2667755 description here":
                 "https://www.drupal.org/files/issues/2869412-2-page_title_does_not_show_in_panels.patch"
-            },
-            "drupal/media_entity": {
-                "Enter drupal/media_entity patch #2775131 description here":
-                "https://www.drupal.org/files/issues/add_contextual_links-2775131-2.patch"
             },
             "drupal/views_bootstrap": {
                 "Enter drupal/media_entity patch #2878352 description here":

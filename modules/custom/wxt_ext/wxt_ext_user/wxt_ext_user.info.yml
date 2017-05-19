@@ -3,6 +3,8 @@ description: 'Provides default user roles, users, and permissions.'
 type: module
 core: 8.x
 package: WxT
+
+# Required modules
 dependencies:
   - drupal:config_rewrite
   - drupal:shortcut
