@@ -1,0 +1,45 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.image_text.field_body
+    - field.field.paragraph.image_text.field_image
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.image_text
+  module:
+    - image
+    - text
+    - workbench_moderation
+_core:
+  default_config_hash: f7k8AqdbMqoySoB58Ta8O_o9pzvx_OaeKxYT2c-JISE
+id: paragraph.image_text.default
+targetEntityType: paragraph
+bundle: image_text
+mode: default
+content:
+  field_body:
+    weight: 2
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea_with_summary
+    region: content
+  field_image:
+    weight: 1
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  translation:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true
