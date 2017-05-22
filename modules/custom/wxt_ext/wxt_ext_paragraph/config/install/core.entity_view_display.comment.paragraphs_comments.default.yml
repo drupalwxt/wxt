@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.paragraphs_comments
+    - field.field.comment.paragraphs_comments.comment_body
+  module:
+    - text
+id: comment.paragraphs_comments.default
+targetEntityType: comment
+bundle: paragraphs_comments
+mode: default
+content:
+  comment_body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden:
+  langcode: true
