@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: paragraphs_comments
+label: 'Paragraphs comments'
+target_entity_type_id: paragraph
+description: "Allows commenting on paragraphs"
