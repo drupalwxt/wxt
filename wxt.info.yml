@@ -10,6 +10,7 @@ base profile:
   name: lightning
   excluded_dependencies:
     - lightning_contact_form
+    - lightning_roles
     - lightning_search
 
 # Language
