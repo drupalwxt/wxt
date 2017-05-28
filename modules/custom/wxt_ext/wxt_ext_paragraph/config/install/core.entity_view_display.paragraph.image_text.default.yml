@@ -9,6 +9,8 @@ dependencies:
   module:
     - image
     - text
+_core:
+  default_config_hash: JPA3e4vYvRwYZEC_y3Om9cGPBxvR3VZxQb3QRORO3xM
 id: paragraph.image_text.default
 targetEntityType: paragraph
 bundle: image_text
