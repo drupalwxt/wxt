@@ -13,8 +13,6 @@ third_party_settings:
       alt: alt
       title: title
       file: '0'
-_core:
-  default_config_hash: 2NHsUocVq_H8xv4vfw6mLb4JJOEiuQ8jH6acZ2FFtVU
 id: paragraph.image_text.field_image
 field_name: field_image
 entity_type: paragraph

@@ -157,7 +157,7 @@ display:
             prefix: ''
             suffix: ''
             target: ''
-            nl2br: true
+            nl2br: false
             max_length: 175
             word_boundary: true
             ellipsis: true
@@ -166,7 +166,7 @@ display:
             more_link_path: ''
             strip_tags: true
             trim: true
-            preserve_tags: '<p><br>'
+            preserve_tags: '<p>'
             html: true
           element_type: ''
           element_class: ''
