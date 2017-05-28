@@ -5,8 +5,6 @@ dependencies:
     - field.field.media.slideshow.field_media_in_library
     - field.field.media.slideshow.slideshow_items
     - media_entity.bundle.slideshow
-  module:
-    - field_formatter
 id: media.slideshow.default
 targetEntityType: media
 bundle: slideshow
@@ -16,10 +14,11 @@ content:
     weight: 0
     label: hidden
     settings:
-      view_mode: default
-      field_name: image
+      view_mode: linked
+      link: false
     third_party_settings: {  }
-    type: field_formatter_from_view_display
+    type: entity_reference_entity_view
+    region: content
 hidden:
   created: true
   field_media_in_library: true

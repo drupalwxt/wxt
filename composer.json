@@ -198,6 +198,10 @@
         },
         "enable-patching": true,
         "patches": {
+            "drupal/bootstrap": {
+                "Enter drupal/bootstrap patch #2834732 description here":
+                "https://www.drupal.org/files/issues/temporarily_disable-2881978-2.patch"
+            },
             "drupal/blog": {
                 "Enter drupal/blog patch #2834732 description here":
                 "https://www.drupal.org/files/issues/blog-no_results_text-2834732-2.patch"
