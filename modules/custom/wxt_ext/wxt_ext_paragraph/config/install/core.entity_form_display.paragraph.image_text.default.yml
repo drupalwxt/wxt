@@ -10,8 +10,6 @@ dependencies:
     - image
     - text
     - workbench_moderation
-_core:
-  default_config_hash: f7k8AqdbMqoySoB58Ta8O_o9pzvx_OaeKxYT2c-JISE
 id: paragraph.image_text.default
 targetEntityType: paragraph
 bundle: image_text
