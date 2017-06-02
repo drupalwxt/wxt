@@ -7,3 +7,4 @@ package: WxT
 # Required modules
 dependencies:
   - drupal:webform
+  - drupal:webform_node
