@@ -266,7 +266,9 @@
                 "Enter drupal/page_manager patch #2626090 description here":
                 "https://www.drupal.org/files/issues/page-manager-2626090-page-title-empty-5.patch",
                 "Enter drupal/page_manager patch #2710169 description here":
-                "https://www.drupal.org/files/issues/page_manager-block-css-attributes-9.patch"
+                "https://www.drupal.org/files/issues/page_manager-block-css-attributes-9.patch",
+                "Enter drupal/page_manager patch #2752227 description here":
+                "https://www.drupal.org/files/issues/page_manager-incorrect-page_title-2752227-25-8.x.4.x.patch"
             },
             "drupal/paragraphs": {
                 "Enter drupal/paragraphs patch #2878615 description here":
