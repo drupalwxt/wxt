@@ -168,6 +168,12 @@ class BlockPluginId extends ProcessPluginBase implements ContainerFactoryPluginI
             ];
             break;
 
+          case 'facets_summary_block':
+            $block = [
+              'id' => $module . ':' . $delta,
+            ];
+            break;
+
           case 'page_title_block':
             $block = [
               'id' => $module,
