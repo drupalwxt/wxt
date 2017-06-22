@@ -248,10 +248,6 @@
                 "Enter drupal/ctools patch #2857279 description here":
                 "https://www.drupal.org/files/issues/ctools-duplicated_node_type_condition.patch"
             },
-            "drupal/entity_reference_revisions": {
-                "Enter drupal/entity_reference_revisions patch #2862543 description here":
-                "https://www.drupal.org/files/issues/dependency_on_rest-2862543-2.patch"
-            },
             "drupal/inline_entity_form": {
                 "Enter drupal/inline_entity_form patch #2367235 description here":
                 "https://www.drupal.org/files/issues/support_entity_revision-2367235-92.patch",
