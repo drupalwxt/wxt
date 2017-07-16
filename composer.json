@@ -286,6 +286,10 @@
                 "Enter drupal/media_entity patch #2878352 description here":
                 "https://www.drupal.org/files/issues/add_bootstrap_panels-2878352-3.patch"
             },
+            "wet-boew/wet-boew": {
+                "Enter wet-boew/wet-boew patch #2895190 description here":
+                "https://www.drupal.org/files/issues/issue_with_wb_data_ajax-2895190-2.patch"
+            },
             "drupal/workbench_moderation": {
                 "Enter drupal/workbench_moderation patch #2668006 description here":
                 "https://www.drupal.org/files/issues/2668006-2.patch",
