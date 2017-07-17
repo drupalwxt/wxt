@@ -171,7 +171,8 @@
         ],
         "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
         "package": "Drupal\\wxt\\Composer\\Package::execute",
-        "release-version": "Drupal\\wxt\\Composer\\ReleaseVersion::execute"
+        "release-version": "Drupal\\wxt\\Composer\\ReleaseVersion::execute",
+        "verify-patched-constraints": "Drupal\\wxt\\Composer\\PatchedConstraint::execute"
     },
     "extra": {
         "installer-paths": {
@@ -277,13 +278,13 @@
             "drupal/panels": {
                 "Enter drupal/panels patch #2667755 description here":
                 "https://www.drupal.org/files/issues/bandaid.patch",
-                "Enter drupal/panels patch #2667755 description here":
+                "Enter drupal/panels patch #2869412 description here":
                 "https://www.drupal.org/files/issues/2869412-2-page_title_does_not_show_in_panels.patch"
             },
             "drupal/views_bootstrap": {
-                "Enter drupal/media_entity patch #2878352 description here":
+                "Enter drupal/views_bootstrap patch #2870642 description here":
                 "https://www.drupal.org/files/issues/raw_field_value-2870642-2.patch",
-                "Enter drupal/media_entity patch #2878352 description here":
+                "Enter drupal/views_bootstrap patch #2878352 description here":
                 "https://www.drupal.org/files/issues/add_bootstrap_panels-2878352-3.patch"
             },
             "wet-boew/wet-boew": {
