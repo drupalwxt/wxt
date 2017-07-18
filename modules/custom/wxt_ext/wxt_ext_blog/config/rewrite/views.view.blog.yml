@@ -209,7 +209,7 @@ display:
           default_row_class: false
           type: ul
           wrapper_class: 'mrgn-bttm-0 '
-          class: list-unstyled
+          class: ''
       defaults:
         style: false
         row: false
@@ -440,7 +440,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '<a href="{{ path }}"><span class="glyphicon glyphicon-info-sign">&nbsp;</span>{{ title }}</a>'
+            text: '<a href="{{ path }}">{{ title }}</a>'
             make_link: false
             path: ''
             absolute: false

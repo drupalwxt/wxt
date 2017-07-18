@@ -263,6 +263,10 @@
                 "Enter drupal/media_entity patch #2775131 description here":
                 "https://www.drupal.org/files/issues/add_contextual_links-2775131-2.patch"
             },
+            "drupal/migrate_tools": {
+                "Enter drupal/migrate_tools patch #2825846 description here":
+                "https://www.drupal.org/files/issues/migrate_tools_dashboard-2825846-4.patch"
+            },
             "drupal/page_manager": {
                 "Enter drupal/page_manager patch #2626090 description here":
                 "https://www.drupal.org/files/issues/page-manager-2626090-page-title-empty-5.patch",
