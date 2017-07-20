@@ -220,6 +220,7 @@ display:
         css_class: false
         footer: false
         fields: false
+        use_ajax: false
       row:
         type: fields
         options:
@@ -293,25 +294,27 @@ display:
         groups:
           1: AND
       pager:
-        type: some
+        type: mini
         options:
           items_per_page: 7
           offset: 0
+          id: 0
+          total_pages: null
+          tags:
+            previous: ''
+            next: ''
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
       display_description: ''
       title: 'Latest blogs'
       css_class: ''
-      footer:
-        area_text_custom:
-          id: area_text_custom
-          table: views
-          field: area_text_custom
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: false
-          tokenize: false
-          content: ''
-          plugin_id: text_custom
+      footer: {  }
       fields:
         title:
           id: title
@@ -478,11 +481,13 @@ display:
           empty_zero: false
           hide_alter_empty: false
           plugin_id: custom
+      use_ajax: true
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url.query_args
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
