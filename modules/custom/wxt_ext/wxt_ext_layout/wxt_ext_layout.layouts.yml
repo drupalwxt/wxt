@@ -1,4 +1,4 @@
-wxt-layout-home:
+wxt_home:
   label: Home
   category: WxT
   path: templates/home
@@ -9,3 +9,44 @@ wxt-layout-home:
       label: Header
     services:
       label: Services
+
+wxt_topic:
+  label: 'Topic landing page'
+  category: 'WxT'
+  class: '\Drupal\bootstrap_layouts\Plugin\Layout\BootstrapLayoutsBase'
+  type: partial
+  icon: images/topic.png
+  template: templates/topic
+  regions:
+    top:
+      label: 'Top'
+      classes:
+        - col-sm-12
+    top_left:
+      label: 'Top Left'
+      classes:
+        - col-sm-6
+    top_right:
+      label: 'Top Right'
+      classes:
+        - col-sm-6
+    middle:
+      label: 'Middle'
+      classes:
+        - col-sm-12
+    bottom_left:
+      label: 'Bottom Left'
+      classes:
+        - col-sm-4
+    bottom_middle:
+      label: 'Bottom Middle'
+      classes:
+        - col-sm-4
+    bottom_right:
+      label: 'Bottom Right'
+      classes:
+        - col-sm-4
+    bottom:
+      label: 'Bottom'
+      classes:
+        - col-sm-12

@@ -1,0 +1,79 @@
+{#
+/**
+ * @file
+ * WxT Layouts: "Topic" template.
+ *
+ * Available layout variables:
+ * - wrapper: Wrapper element for the layout container.
+ * - attributes: Wrapper attributes for the layout container.
+ *
+ * Available region variables:
+ * - top
+ * - top_left
+ * - top_right
+ * - middle
+ * - bottom_left
+ * - bottom_middle
+ * - bottom_right
+ * - bottom
+ *
+ * Each region variable contains the following properties:
+ * - wrapper: The HTML element to use to wrap this region.
+ * - attributes: The HTML attributes to use on the wrapper for this region.
+ * - content: The content to go inside the wrapper for this region.
+ */
+#}
+<{{ wrapper }}{{ attributes }}>
+  {{ title_suffix.contextual_links }}
+
+  {% if top.content %}
+  <{{ top.wrapper }}{{ top.attributes }}>
+    {{ top.content }}
+  </{{ top.wrapper }}>
+  {% endif %}
+
+  {% if top_left.content %}
+  <{{ top_left.wrapper }}{{ top_left.attributes }}>
+    {{ top_left.content }}
+  </{{ top_left.wrapper }}>
+  {% endif %}
+
+  {% if top_right.content %}
+  <{{ top_right.wrapper }}{{ top_right.attributes }}>
+    {{ top_right.content }}
+  </{{ top_right.wrapper }}>
+  {% endif %}
+
+  {% if middle.content %}
+  <{{ middle.wrapper }}{{ middle.attributes }}>
+    {{ middle.content }}
+  </{{ middle.wrapper }}>
+  {% endif %}
+
+  <div class="wxt-eqht">
+    {% if bottom_left.content %}
+    <{{ bottom_left.wrapper }}{{ bottom_left.attributes }}>
+      {{ bottom_left.content }}
+    </{{ bottom_left.wrapper }}>
+    {% endif %}
+
+    {% if bottom_middle.content %}
+    <{{ bottom_middle.wrapper }}{{ bottom_middle.attributes }}>
+      {{ bottom_middle.content }}
+    </{{ bottom_middle.wrapper }}>
+    {% endif %}
+  </div>
+
+  {% if bottom_right.content %}
+  <{{ bottom_right.wrapper }}{{ bottom_right.attributes }}>
+    {{ bottom_right.content }}
+  </{{ bottom_right.wrapper }}>
+  {% endif %}
+
+  {% if bottom.content %}
+  <{{ bottom.wrapper }}{{ bottom.attributes }}>
+    {{ bottom.content }}
+  </{{ bottom.wrapper }}>
+  {% endif %}
+
+</{{ wrapper }}>
