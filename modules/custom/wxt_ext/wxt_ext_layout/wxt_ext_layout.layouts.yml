@@ -1,15 +1,3 @@
-wxt_home:
-  label: Home
-  category: WxT
-  path: templates/home
-  icon: home.png
-  template: home
-  regions:
-    header:
-      label: Header
-    services:
-      label: Services
-
 wxt_topic:
   label: 'Topic landing page'
   category: 'WxT'

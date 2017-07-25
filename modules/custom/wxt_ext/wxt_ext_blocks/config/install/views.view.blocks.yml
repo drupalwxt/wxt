@@ -4,11 +4,12 @@ dependencies:
   config:
     - block_content.type.spotlight
     - field.storage.block_content.body
-    - field.storage.block_content.field_spotlight_image
-    - image.style.spotlight
+    - field.storage.block_content.field_spotlight_media
+    - field.storage.media.field_image_link
   module:
     - block_content
-    - image
+    - link
+    - media_entity
     - text
     - views_bootstrap
 id: blocks
@@ -70,10 +71,10 @@ display:
       row:
         type: fields
       fields:
-        field_spotlight_image:
-          id: field_spotlight_image
-          table: block_content__field_spotlight_image
-          field: field_spotlight_image
+        field_spotlight_media:
+          id: field_spotlight_media
+          table: block_content__field_spotlight_media
+          field: field_spotlight_media
           relationship: none
           group_type: group
           admin_label: ''
@@ -113,16 +114,82 @@ display:
           element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: true
+          element_default_classes: false
           empty: ''
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
-          type: image
+          type: entity_reference_entity_view
           settings:
-            image_style: spotlight
-            image_link: ''
+            view_mode: default
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_image_link:
+          id: field_image_link
+          table: media__field_image_link
+          field: field_image_link
+          relationship: field_spotlight_media
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: true
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: false
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: uri
+          type: link
+          settings:
+            trim_length: null
+            url_only: true
+            url_plain: true
+            rel: '0'
+            target: '0'
           group_column: ''
           group_columns: {  }
           group_rows: true
@@ -272,7 +339,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<section class=\"gc-nttvs\">\n<a href=\"#\" class=\"gl-features\">\n{{ field_spotlight_image }} \n<h4>{{ info }}</h4>\n</a>\n{{ body }}\n</section>"
+            text: "<section class=\"gc-nttvs\">\n<a href=\"{{ field_image_link }}\" class=\"gl-features\">\n{{ field_spotlight_media }} \n<h4>{{ info }}</h4>\n</a>\n{{ body }}\n</section>"
             make_link: false
             path: ''
             absolute: false
@@ -306,9 +373,9 @@ display:
           element_wrapper_class: ''
           element_default_classes: true
           empty: ''
-          hide_empty: false
+          hide_empty: true
           empty_zero: false
-          hide_alter_empty: false
+          hide_alter_empty: true
           plugin_id: custom
       filters:
         type:
@@ -325,7 +392,16 @@ display:
       header: {  }
       footer: {  }
       empty: {  }
-      relationships: {  }
+      relationships:
+        field_spotlight_media:
+          id: field_spotlight_media
+          table: block_content__field_spotlight_media
+          field: field_spotlight_media
+          relationship: none
+          group_type: group
+          admin_label: 'field_spotlight_media: Media'
+          required: true
+          plugin_id: standard
       arguments: {  }
       display_extenders: {  }
     cache_metadata:
@@ -335,7 +411,8 @@ display:
         - 'languages:language_interface'
       tags:
         - 'config:field.storage.block_content.body'
-        - 'config:field.storage.block_content.field_spotlight_image'
+        - 'config:field.storage.block_content.field_spotlight_media'
+        - 'config:field.storage.media.field_image_link'
   block_1:
     display_plugin: block
     id: block_1
@@ -352,4 +429,5 @@ display:
         - 'languages:language_interface'
       tags:
         - 'config:field.storage.block_content.body'
-        - 'config:field.storage.block_content.field_spotlight_image'
+        - 'config:field.storage.block_content.field_spotlight_media'
+        - 'config:field.storage.media.field_image_link'
