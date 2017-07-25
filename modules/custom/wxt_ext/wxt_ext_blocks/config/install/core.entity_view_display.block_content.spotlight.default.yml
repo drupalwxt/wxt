@@ -4,9 +4,8 @@ dependencies:
   config:
     - block_content.type.spotlight
     - field.field.block_content.spotlight.body
-    - field.field.block_content.spotlight.field_spotlight_image
+    - field.field.block_content.spotlight.field_spotlight_media
   module:
-    - image
     - text
 id: block_content.spotlight.default
 targetEntityType: block_content
@@ -16,18 +15,18 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 0
+    weight: 1
     settings: {  }
     third_party_settings: {  }
     region: content
-  field_spotlight_image:
-    weight: 1
-    label: above
+  field_spotlight_media:
+    weight: 0
+    label: hidden
     settings:
-      image_style: ''
-      image_link: ''
+      view_mode: linked
+      link: false
     third_party_settings: {  }
-    type: image
+    type: entity_reference_entity_view
     region: content
 hidden:
   langcode: true
