@@ -16,5 +16,5 @@ type: webform
 description: 'A basic page with a webform attached.'
 help: ''
 new_revision: false
-preview_mode: 1
+preview_mode: 0
 display_submitted: false
