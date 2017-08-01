@@ -1,5 +1,7 @@
 <?php
 
+use Drupal\Core\Entity\FieldableEntityInterface;
+
 /**
  * @file
  * Contains wxt_ext_translation.module.
@@ -13,22 +15,33 @@
  */
 function wxt_ext_translation_enable_translation($entity_info) {
   // Enable translation for all of our entities/bundles.
-  foreach ($entity_info as $entity_type => $bundles) {
+  $type_manager = \Drupal::entityTypeManager();
+  /** @var \Drupal\Core\Entity\EntityFieldManagerInterface $field_manager */
+  $field_manager = \Drupal::service('entity_field.manager');
+  /** @var \Drupal\content_translation\ContentTranslationManagerInterface $translation_manager */
+  $translation_manager = \Drupal::service('content_translation.manager');
+  $supported_types = $translation_manager->getSupportedEntityTypes();
+  foreach ($entity_info as $entity_type_id => $bundles) {
     foreach ($bundles as $bundle) {
       // Store whether a bundle has translation enabled or not.
-      \Drupal::service('content_translation.manager')->setEnabled($entity_type, $bundle, TRUE);
+      if (isset($supported_types[$entity_type_id])) {
+        $translation_manager->setEnabled($entity_type_id, $bundle, TRUE);
+      }
       // Make every field translatable as well.
-      $fields = \Drupal::entityManager()->getFieldDefinitions($entity_type, $bundle);
-      foreach ($fields as $field) {
-        $field_config = $field->getConfig($bundle);
-        if ($field_config->isTranslatable() && strpos($field->getName(), 'content_translation_') !== 0) {
-          $field_config->setTranslatable(TRUE)->save();
+      $entity_type = $type_manager->getDefinition($entity_type_id);
+      if ($entity_type && $entity_type->isSubclassOf(FieldableEntityInterface::class)) {
+        $fields = $field_manager->getFieldDefinitions($entity_type_id, $bundle);
+        foreach ($fields as $field) {
+          $field_config = $field->getConfig($bundle);
+          if ($field_config->isTranslatable() && strpos($field->getName(), 'content_translation_') !== 0) {
+            $field_config->setTranslatable(TRUE)->save();
+          }
         }
       }
     }
   }
   // Ensure entity and menu router information are correctly rebuilt.
-  \Drupal::entityManager()->clearCachedDefinitions();
+  $type_manager->clearCachedDefinitions();
   \Drupal::service('router.builder')->setRebuildNeeded();
 }
 
