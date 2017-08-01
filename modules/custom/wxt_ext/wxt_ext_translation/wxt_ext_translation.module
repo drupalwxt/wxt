@@ -1,11 +1,11 @@
 <?php
 
-use Drupal\Core\Entity\FieldableEntityInterface;
-
 /**
  * @file
  * Contains wxt_ext_translation.module.
  */
+
+use Drupal\Core\Entity\FieldableEntityInterface;
 
 /**
  * Enables translation for the given entity bundles and all their fields.
