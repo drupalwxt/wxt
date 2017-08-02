@@ -15,7 +15,7 @@ use Drupal\migrate\Row;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * Constructs blocks dervied from data.
+ * Constructs blocks derived from data.
  *
  * @MigrateProcessPlugin(
  *   id = "wxt_block_plugin_id",
@@ -95,7 +95,8 @@ class BlockPluginId extends ProcessPluginBase implements ContainerFactoryPluginI
     if (isset($migration_dependencies['required'])) {
       foreach ($migration_dependencies['required'] as $dependency) {
         if (strpos($dependency, 'block') !== FALSE ||
-            strpos($dependency, 'media') !== FALSE) {
+            strpos($dependency, 'media') !== FALSE ||
+            strpos($dependency, 'node') !== FALSE) {
           $migration_configuration['migration'][] = $dependency;
         }
       }
@@ -126,6 +127,10 @@ class BlockPluginId extends ProcessPluginBase implements ContainerFactoryPluginI
           case 'block_content':
             $block_id = $this->migrationPlugin
               ->transform($delta, $migrate_executable, $row, $destination_property);
+            // Language Handling.
+            if (is_array($block_id)) {
+              $block_id = current($block_id);
+            }
             if ($block_id) {
               $block = [
                 'id' => $module . ':' . $this->blockContentStorage->load($block_id)->uuid(),
