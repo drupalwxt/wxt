@@ -4,6 +4,7 @@ dependencies:
   module:
     - editor
     - entity_embed
+    - linkit
     - token_filter
     - url_embed
 name: 'Rich Text'
@@ -44,7 +45,7 @@ filters:
     id: filter_html
     provider: filter
     status: false
-    weight: -49
+    weight: -43
     settings:
       allowed_html: '<a href hreflang> <em> <strong> <cite> <blockquote cite> <code> <ul type> <ol start type> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <s> <sup> <sub> <img src alt data-entity-type data-entity-uuid data-align data-caption> <table> <caption> <tbody> <thead> <tfoot> <th> <td> <tr> <hr> <p> <br> <h1> <pre> <drupal-entity data-*>'
       filter_html_help: true
@@ -53,43 +54,50 @@ filters:
     id: filter_autop
     provider: filter
     status: false
-    weight: -42
+    weight: -41
     settings: {  }
   filter_html_escape:
     id: filter_html_escape
     provider: filter
     status: false
-    weight: -43
+    weight: -42
     settings: {  }
   filter_html_image_secure:
     id: filter_html_image_secure
     provider: filter
     status: false
-    weight: -40
+    weight: -39
     settings: {  }
   filter_url:
     id: filter_url
     provider: filter
     status: false
-    weight: -41
+    weight: -40
     settings:
       filter_url_length: 72
   token_filter:
     id: token_filter
     provider: token_filter
     status: true
-    weight: -50
+    weight: -49
     settings: {  }
   url_embed_convert_links:
     id: url_embed_convert_links
     provider: url_embed
     status: false
-    weight: -38
+    weight: -37
     settings:
       url_prefix: ''
   url_embed:
     id: url_embed
     provider: url_embed
     status: false
-    weight: -39
+    weight: -38
     settings: {  }
+  linkit:
+    id: linkit
+    provider: linkit
+    status: true
+    weight: -50
+    settings:
+      title: true
