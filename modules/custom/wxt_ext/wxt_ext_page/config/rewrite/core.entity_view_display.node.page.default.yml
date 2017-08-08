@@ -33,6 +33,17 @@ third_party_settings:
             weight: 0
             uuid: 588e477f-63e7-471a-b464-16a842b8abf3
             context_mapping: {  }
+          c795868d-d954-48e3-8c26-fc1155d2b92a:
+            id: local_tasks_block
+            label: Tabs
+            provider: core
+            label_display: '0'
+            primary: true
+            secondary: true
+            region: content
+            weight: 0
+            uuid: c795868d-d954-48e3-8c26-fc1155d2b92a
+            context_mapping: {  }
         id: panels_variant
         uuid: df0d1b37-8cd5-46d3-b900-f18df4825325
         label: ''
