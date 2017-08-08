@@ -11,14 +11,14 @@ label: Welcome
 variant: panels_variant
 variant_settings:
   blocks:
-    ce1a30c3-d0ff-4480-8908-8e13ba3e1dcb:
+    cdfce282-a241-498f-acb6-c2c815d5f742:
       id: system_main_block
       label: 'Main page content'
       provider: system
-      label_display: '0'
-      region: middle
-      weight: 0
-      uuid: ce1a30c3-d0ff-4480-8908-8e13ba3e1dcb
+      label_display: visible
+      region: content
+      weight: 1
+      uuid: cdfce282-a241-498f-acb6-c2c815d5f742
       context_mapping: {  }
   id: panels_variant
   uuid: cb078fed-a5ed-4a6b-b400-afe60d2b1533
