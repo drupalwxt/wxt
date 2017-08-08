@@ -3,7 +3,7 @@ status: true
 dependencies: {  }
 id: welcome
 label: Welcome
-description: null
+description: ''
 use_admin_theme: false
 path: /welcome
 access_logic: and
