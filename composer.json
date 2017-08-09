@@ -267,6 +267,10 @@
                 "Enter drupal/media_entity patch #2775131 description here":
                 "https://www.drupal.org/files/issues/add_contextual_links-2775131-2.patch"
             },
+            "drupal/metatag": {
+                "Enter drupal/media_entity patch #2899752 description here":
+                "https://www.drupal.org/files/issues/metatag-n2899752-20.patch"
+            },
             "drupal/migrate_tools": {
                 "Enter drupal/migrate_tools patch #2825846 description here":
                 "https://www.drupal.org/files/issues/migrate_tools_dashboard-2825846-4.patch"
@@ -338,7 +342,7 @@
         "drupal/field_formatter": "1.1",
         "drupal/file_entity": "2.0-beta3",
         "drupal/media_entity_slideshow": "1.2",
-        "drupal/metatag": "1.1",
+        "drupal/metatag": "1.2",
         "drupal/migrate_plus": "4.0-beta1",
         "drupal/migrate_tools": "4.0-beta1",
         "drupal/url_embed": "1.0-alpha1",
