@@ -266,10 +266,6 @@
                 "Enter drupal/core patch #2885370 description here":
                 "https://www.drupal.org/files/issues/systemmainblock_build-2885370-3.patch"
             },
-            "drupal/ckeditor_codemirror": {
-                "Enter drupal/ckeditor_codemirror patch #2901069 description here":
-                "https://www.drupal.org/files/issues/slight_re_architecture-2901069-2.patch"
-            },
             "drupal/ctools": {
                 "Enter drupal/ctools patch #2712661 description here":
                 "https://www.drupal.org/files/issues/allow-2712661-2.patch",
