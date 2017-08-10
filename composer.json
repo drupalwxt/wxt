@@ -228,6 +228,10 @@
                 "Enter drupal/button_link patch #2876614 description here":
                 "https://www.drupal.org/files/issues/undefined_index_btn_size-2876614-2.patch"
             },
+            "drupal/ckeditor_codemirror": {
+                "Enter drupal/ckeditor_codemirror patch #2901069 description here":
+                "https://www.drupal.org/files/issues/slight_re_architecture-2901069-6.patch"
+            },
             "drupal/core": {
                 "Enter drupal/core patch #736066 description here":
                 "https://www.drupal.org/files/issues/736066-165.patch",
@@ -261,10 +265,6 @@
                 "https://www.drupal.org/files/issues/preprocess_functions-2861840-17.patch",
                 "Enter drupal/core patch #2885370 description here":
                 "https://www.drupal.org/files/issues/systemmainblock_build-2885370-3.patch"
-            },
-            "drupal/ckeditor_codemirror": {
-                "Enter drupal/ckeditor_codemirror patch #2901069 description here":
-                "https://www.drupal.org/files/issues/slight_re_architecture-2901069-2.patch"
             },
             "drupal/ctools": {
                 "Enter drupal/ctools patch #2712661 description here":
