@@ -349,7 +349,7 @@
         "drupal/views_bootstrap": "3.x-dev",
         "drupal/token_filter": "1.0-beta1",
         "drupal/views_autocomplete_filters": "1.2",
-        "drupal/webform": "5.0-beta16",
+        "drupal/webform": "5.0-beta15",
         "drupal/webform_migrate": "dev-8.x-1.x",
         "drupal/wxt_library": "1.x-dev",
         "drupal/wxt_bootstrap": "1.x-dev",
