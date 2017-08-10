@@ -228,6 +228,10 @@
                 "Enter drupal/button_link patch #2876614 description here":
                 "https://www.drupal.org/files/issues/undefined_index_btn_size-2876614-2.patch"
             },
+            "drupal/ckeditor_codemirror": {
+                "Enter drupal/ckeditor_codemirror patch #2901069 description here":
+                "https://www.drupal.org/files/issues/slight_re_architecture-2901069-6.patch"
+            },
             "drupal/core": {
                 "Enter drupal/core patch #736066 description here":
                 "https://www.drupal.org/files/issues/736066-165.patch",
