@@ -7,3 +7,4 @@ package: WxT
 # Required modules
 dependencies:
   - drupal:ckeditor
+  - drupal:ckeditor_codemirror
