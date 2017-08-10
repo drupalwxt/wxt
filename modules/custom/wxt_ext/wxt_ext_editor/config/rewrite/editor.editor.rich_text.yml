@@ -56,6 +56,21 @@ settings:
       language_list: un
     stylescombo:
       styles: ''
+    codemirror:
+      enable: true
+      mode: htmlmixed
+      theme: monokai
+      lineNumbers: true
+      lineWrapping: true
+      matchBrackets: true
+      autoCloseTags: true
+      autoCloseBrackets: true
+      enableSearchTools: true
+      enableCodeFolding: true
+      enableCodeFormatting: true
+      autoFormatOnStart: true
+      autoFormatOnModeChange: true
+      autoFormatOnUncomment: true
 image_upload:
   status: true
   scheme: public
