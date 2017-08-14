@@ -45,9 +45,12 @@ settings:
         -
           name: Tools
           items:
-            - Maximize
             - ShowBlocks
             - Source
+        -
+          name: WxT
+          items:
+            - Maximize
   plugins:
     drupallink:
       linkit_enabled: true
