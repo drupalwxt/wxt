@@ -318,6 +318,16 @@
                 "Enter drupal/panels patch #2900531 description here":
                 "https://www.drupal.org/files/issues/classes_should_be_array-2900531-2.patch"
             },
+            "drupal/password_policy": {
+                "Enter drupal/password_policy patch #2836453 description here":
+                "https://www.drupal.org/files/issues/password_policy-load_small_userlist-2836453-20.patch",
+                "Enter drupal/password_policy patch #2841044 description here":
+                "https://www.drupal.org/files/issues/password_policy-translation-04.patch",
+                "Enter drupal/password_policy patch #2852312 description here":
+                "https://www.drupal.org/files/issues/password_policy-2852312-expiration_not_set_to_false-10.patch",
+                "Enter drupal/password_policy patch #2878784 description here":
+                "https://www.drupal.org/files/issues/password_policy_error_translate-2878784-2.patch"
+            },
             "drupal/views_bootstrap": {
                 "Enter drupal/views_bootstrap patch #2870642 description here":
                 "https://www.drupal.org/files/issues/raw_field_value-2870642-2.patch",
@@ -358,7 +368,7 @@
         "drupal/linkit": "5.0-beta5",
         "drupal/menu_block": "1.4",
         "drupal/menu_breadcrumb": "1.4",
-        "drupal/password_policy": "3.x-dev",
+        "drupal/password_policy": "3.0-alpha3",
         "drupal/simple_sitemap": "2.9",
         "drupal/paragraphs": "1.1",
         "drupal/field_formatter": "1.1",
