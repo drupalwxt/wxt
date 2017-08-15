@@ -17,6 +17,7 @@ projects[drupal][patch][] = https://www.drupal.org/files/issues/user_password-28
 projects[drupal][patch][] = https://www.drupal.org/files/issues/2820490-87.patch
 projects[drupal][patch][] = https://www.drupal.org/files/issues/2829792-09-quick_edit_toolgroup_and_alt_group_styling.patch
 projects[drupal][patch][] = https://www.drupal.org/files/issues/preprocess_functions-2861840-17.patch
+projects[drupal][patch][] = https://www.drupal.org/files/issues/systemmainblock_build-2885370-3.patch
 projects[drupal][patch][] = https://www.drupal.org/files/issues/2652138-41.patch
 projects[drupal][patch][] = https://www.drupal.org/files/issues/2880374-remove-experimental-warnings-6.patch
 projects[drupal][patch][] = https://www.drupal.org/files/issues/2880445-remove-config-write-warning-2.patch
