@@ -4,6 +4,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.storage.node.body
+    - field.storage.node.field_avatar_image
     - field.storage.node.field_image
     - image.style.medium
     - image.style.small
@@ -14,6 +15,8 @@ dependencies:
     - text
     - user
     - views_bootstrap
+_core:
+  default_config_hash: _eLVyu-2kQ7kbT4w2BtcS97Zddr6K2ZwU_WO_pkTYKQ
 id: blog
 label: Blog
 module: views
@@ -925,10 +928,10 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-        field_image:
-          id: field_image
-          table: node__field_image
-          field: field_image
+        field_avatar_image:
+          id: field_avatar_image
+          table: node__field_avatar_image
+          field: field_avatar_image
           relationship: none
           group_type: group
           admin_label: ''
@@ -936,7 +939,7 @@ display:
           exclude: true
           alter:
             alter_text: true
-            text: '<div class="thumbnail">{{ field_image }}</div>'
+            text: '<div class="thumbnail">{{ field_avatar_image }}</div>'
             make_link: false
             path: ''
             absolute: false
@@ -964,11 +967,11 @@ display:
           element_type: '0'
           element_class: ''
           element_label_type: '0'
-          element_label_class: thumbnail
+          element_label_class: ''
           element_label_colon: false
           element_wrapper_type: '0'
           element_wrapper_class: ''
-          element_default_classes: false
+          element_default_classes: true
           empty: ''
           hide_empty: false
           empty_zero: false
@@ -1065,7 +1068,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"row\">\n<div class=\"col-md-3 hidden-sm hidden-xs\">{{ field_image }}</div>\n<div class=\"col-md-9 col-sm-12\">\n  {{ body }}\n  {{ title_1 }}\n</div>\n</div>"
+            text: "<div class=\"row\">\n<div class=\"col-md-3 hidden-sm hidden-xs\">{{ field_avatar_image }}</div>\n<div class=\"col-md-9 col-sm-12\">\n  {{ body }}\n  {{ title_1 }}\n</div>\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -1200,7 +1203,7 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.node.body'
-        - 'config:field.storage.node.field_image'
+        - 'config:field.storage.node.field_avatar_image'
   blog_all:
     display_plugin: page
     id: blog_all
