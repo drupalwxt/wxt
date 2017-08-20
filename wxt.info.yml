@@ -9,7 +9,7 @@ distribution:
 base profile:
   name: lightning
   excluded_dependencies:
-    - lightning_api
+    - lightning_search
     - lightning_contact_form
     - lightning_roles
     - lightning_search
