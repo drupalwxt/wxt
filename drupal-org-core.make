@@ -1,9 +1,9 @@
 api = 2
 core = 8.x
 projects[drupal][type] = core
-projects[drupal][version] = 8.3.6
+projects[drupal][version] = 8.3.7
 projects[drupal][patch][] = https://www.drupal.org/files/issues/736066-165.patch
-projects[drupal][patch][] = https://www.drupal.org/files/issues/1356276-303.patch
+projects[drupal][patch][] = https://www.drupal.org/files/issues/1356276-360.patch
 projects[drupal][patch][] = https://www.drupal.org/files/issues/1838234-22.patch
 projects[drupal][patch][] = https://www.drupal.org/files/issues/implement-2630732-35.patch
 projects[drupal][patch][] = https://www.drupal.org/files/issues/2679775-11-inline-labels.patch
