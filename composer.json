@@ -403,13 +403,13 @@
         "drupal/wxt_bootstrap": "1.0-alpha1",
         "drupal/wxt_library": "1.0-alpha1",
         "w8tcha/ckeditor-codemirror": "1.16",
-        "wet-boew/wet-boew": "4.0.25",
-        "wet-boew/theme-wet-boew": "4.0.25",
-        "wet-boew/theme-base": "4.0.25",
-        "wet-boew/theme-gc-intranet": "4.0.25",
-        "wet-boew/theme-gcwu-fegc": "4.0.25",
-        "wet-boew/theme-gcweb": "4.0.25",
-        "wet-boew/theme-ogpl": "4.0.25"
+        "wet-boew/wet-boew": "4.0.26",
+        "wet-boew/theme-wet-boew": "4.0.26",
+        "wet-boew/theme-base": "4.0.26",
+        "wet-boew/theme-gc-intranet": "4.0.26",
+        "wet-boew/theme-gcwu-fegc": "4.0.26",
+        "wet-boew/theme-gcweb": "4.0.26",
+        "wet-boew/theme-ogpl": "4.0.26"
     },
     "autoload": {
         "psr-4": {
