@@ -14,7 +14,6 @@ projects[drupal][patch][] = https://www.drupal.org/files/issues/in_correct_order
 projects[drupal][patch][] = https://www.drupal.org/files/issues/2759397-1-entity_reference_recursion.patch
 projects[drupal][patch][] = https://www.drupal.org/files/issues/improve_the_views-2786577-76.patch
 projects[drupal][patch][] = https://www.drupal.org/files/issues/user_password-2816921-2.patch
-projects[drupal][patch][] = https://www.drupal.org/files/issues/2820490-87.patch
 projects[drupal][patch][] = https://www.drupal.org/files/issues/2829792-09-quick_edit_toolgroup_and_alt_group_styling.patch
 projects[drupal][patch][] = https://www.drupal.org/files/issues/preprocess_functions-2861840-17.patch
 projects[drupal][patch][] = https://www.drupal.org/files/issues/systemmainblock_build-2885370-3.patch
