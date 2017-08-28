@@ -252,8 +252,6 @@
             "drupal/core": {
                 "Enter drupal/core patch #736066 description here":
                 "https://www.drupal.org/files/issues/736066-165.patch",
-                "1356276 - Allow profiles to provide a base/parent profile and load them in the correct order":
-                "https://www.drupal.org/files/issues/1356276-303.patch",
                 "Enter drupal/core patch #1838234 description here":
                 "https://www.drupal.org/files/issues/1838234-22.patch",
                 "Enter drupal/core patch #2630732 description here":
@@ -284,8 +282,6 @@
             "drupal/ctools": {
                 "Enter drupal/ctools patch #2712661 description here":
                 "https://www.drupal.org/files/issues/allow-2712661-2.patch",
-                "Enter drupal/ctools patch #2844054 description here":
-                "https://www.drupal.org/files/issues/2844054-36.patch",
                 "Enter drupal/ctools patch #2857279 description here":
                 "https://www.drupal.org/files/issues/ctools-duplicated_node_type_condition.patch"
             },
@@ -294,6 +290,10 @@
                 "https://www.drupal.org/files/issues/support_entity_revision-2367235-92.patch",
                 "Enter drupal/inline_entity_form patch #2673548 description here":
                 "https://www.drupal.org/files/issues/inline_entity_form-widget_ux_0.patch"
+            },
+            "drupal/jsonapi": {
+                "Enter drupal/jsonapi patch #2903261 description here":
+                "https://www.drupal.org/files/issues/2903261-8.patch"
             },
             "drupal/media_entity": {
                 "Enter drupal/media_entity patch #2775131 description here":
