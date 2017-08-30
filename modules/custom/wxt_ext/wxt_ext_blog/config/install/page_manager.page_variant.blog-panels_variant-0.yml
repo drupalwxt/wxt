@@ -51,15 +51,6 @@ variant_settings:
       weight: 2
       context_mapping: {  }
       uuid: 60c2bd47-f06f-4851-a1cc-06520911cc5b
-    dcdd8f16-6822-4ef7-aee4-7605fa8e4f43:
-      id: page_title_block
-      label: 'Page title'
-      provider: core
-      label_display: '0'
-      region: top
-      weight: 0
-      uuid: dcdd8f16-6822-4ef7-aee4-7605fa8e4f43
-      context_mapping: {  }
   id: panels_variant
   uuid: 02319159-cb66-425c-a27e-883713a95664
   label: null

@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * Set up the WxT Extend Landing Page module.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function wxt_ext_landing_page_install() {
+  // Enable translation for our core entities/bundles.
+  $entities = [
+    'node' => [
+      'landing_page',
+    ],
+  ];
+  wxt_ext_translation_enable_translation($entities);
+
+  // Download the newest config translations from Drupal.org.
+  wxt_ext_translation_update_config_translation();
+}
