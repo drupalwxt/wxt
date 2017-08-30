@@ -15,8 +15,6 @@ dependencies:
     - text
     - user
     - views_bootstrap
-_core:
-  default_config_hash: _eLVyu-2kQ7kbT4w2BtcS97Zddr6K2ZwU_WO_pkTYKQ
 id: blog
 label: Blog
 module: views
