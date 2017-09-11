@@ -291,10 +291,6 @@
                 "Enter drupal/inline_entity_form patch #2673548 description here":
                 "https://www.drupal.org/files/issues/inline_entity_form-widget_ux_0.patch"
             },
-            "drupal/jsonapi": {
-                "Enter drupal/jsonapi patch #2903261 description here":
-                "https://www.drupal.org/files/issues/2903261-8.patch"
-            },
             "drupal/media_entity": {
                 "Enter drupal/media_entity patch #2775131 description here":
                 "https://www.drupal.org/files/issues/add_contextual_links-2775131-2.patch"
