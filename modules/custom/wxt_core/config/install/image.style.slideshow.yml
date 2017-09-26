@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies: {  }
+name: slideshow
+label: 'Slideshow (555x134)'
+effects:
+  7ec6e2fd-ea19-4b45-ab70-911b7f156857:
+    uuid: 7ec6e2fd-ea19-4b45-ab70-911b7f156857
+    id: image_resize
+    weight: 1
+    data:
+      width: 555
+      height: 134
