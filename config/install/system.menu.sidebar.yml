@@ -3,5 +3,5 @@ status: true
 dependencies: {  }
 id: sidebar
 label: Sidebar
-description: 'Sidebar Links'
+description: 'Sidebar links.'
 locked: true

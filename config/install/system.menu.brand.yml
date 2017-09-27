@@ -3,5 +3,5 @@ status: true
 dependencies: {  }
 id: brand
 label: Brand
-description: 'Brand Menu.'
+description: 'Brand menu.'
 locked: false

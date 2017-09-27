@@ -2,6 +2,6 @@ langcode: en
 status: true
 dependencies: {  }
 id: mid_footer
-label: 'Mid Footer'
-description: 'Mid Footer Menu.'
+label: 'Mid footer'
+description: 'Mid footer menu.'
 locked: false
