@@ -1,0 +1,7 @@
+langcode: fr
+status: true
+dependencies: {  }
+id: sidebar-fr
+label: 'Barre latérale'
+description: 'Liens de la barre latérale.'
+locked: true

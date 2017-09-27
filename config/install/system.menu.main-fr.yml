@@ -2,6 +2,6 @@ langcode: fr
 status: true
 dependencies: {  }
 id: main-fr
-label: 'Main navigation'
-description: 'Menu Navigation French'
+label: 'Menu principal'
+description: 'Menu principal en francais.'
 locked: false
