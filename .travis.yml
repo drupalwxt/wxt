@@ -35,6 +35,7 @@ before_install:
   - echo "TRAVIS_BRANCH=$TRAVIS_BRANCH, PR=$PR, BRANCH=$BRANCH"
   - composer global require "hirak/prestissimo:^0.3"
   - composer require drupalwxt/wxt:dev-${BRANCH}#${TRAVIS_COMMIT}
+  - if [ -n "$TRAVIS_TAG" ]; then composer require drupalwxt/wxt:${TRAVIS_TAG}; else composer require drupalwxt/wxt:dev-${BRANCH}#${TRAVIS_COMMIT}; fi
   # Update the docker-compose binary for compose v2 support.
   - sudo rm /usr/local/bin/docker-compose || true
   - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
