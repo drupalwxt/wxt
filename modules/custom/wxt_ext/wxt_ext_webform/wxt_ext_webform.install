@@ -12,45 +12,45 @@ use Drupal\user\Entity\User;
  * Implements hook_install().
  */
 function wxt_ext_webform_install() {
-    $states = [
-      'AB' => 'Alberta',
-      'BC' => 'British Columbia',
-      'NB' => 'New Brunswick',
-      'MB' => 'Manitoba',
-      'NL' => 'Newfoundland and Labrador',
-      'NT' => 'Northwest Territories',
-      'NS' => 'Nova Scotia',
-      'NU' => 'Nunavut',
-      'ON' => 'Ontario',
-      'PE' => 'Prince Edward Island',
-      'QC' => 'Quebec',
-      'SK' => 'Saskatchewan',
-      'YT' => 'Yukon Territory',
-    ];
+  $states = [
+    'AB' => 'Alberta',
+    'BC' => 'British Columbia',
+    'NB' => 'New Brunswick',
+    'MB' => 'Manitoba',
+    'NL' => 'Newfoundland and Labrador',
+    'NT' => 'Northwest Territories',
+    'NS' => 'Nova Scotia',
+    'NU' => 'Nunavut',
+    'ON' => 'Ontario',
+    'PE' => 'Prince Edward Island',
+    'QC' => 'Quebec',
+    'SK' => 'Saskatchewan',
+    'YT' => 'Yukon Territory',
+  ];
 
-    // Update provinces list.
-    $webform = \Drupal::configFactory()
-      ->getEditable('webform.webform_options.state_province_names');
-    $provinces = $webform->get('options');
-    $newProvinces = '';
-    foreach ($states as $k => $v) {
-      if (strpos($provinces, $k) === FALSE &&
-          strpos($provinces, $v) === FALSE) {
-        $newProvinces .= $v . ': ' . $v . "\n";
-      }
+  // Update provinces list.
+  $webform = \Drupal::configFactory()
+    ->getEditable('webform.webform_options.state_province_names');
+  $provinces = $webform->get('options');
+  $newProvinces = '';
+  foreach ($states as $k => $v) {
+    if (strpos($provinces, $k) === FALSE &&
+        strpos($provinces, $v) === FALSE) {
+      $newProvinces .= $v . ': ' . $v . "\n";
     }
-   $webform->set('options', $provinces . $newProvinces)->save();
+  }
+  $webform->set('options', $provinces . $newProvinces)->save();
 
-    // Update provinces code list.
-    $webform = \Drupal::configFactory()
-      ->getEditable('webform.webform_options.state_province_codes');
-    $provinces = $webform->get('options');
-    $newProvinces = '';
-    foreach ($states as $k => $v) {
-      if (strpos($provinces, $k) === FALSE &&
-          strpos($provinces, $v) === FALSE) {
-        $newProvinces .= $k . ': ' . $v . "\n";
-      }
+  // Update provinces code list.
+  $webform = \Drupal::configFactory()
+    ->getEditable('webform.webform_options.state_province_codes');
+  $provinces = $webform->get('options');
+  $newProvinces = '';
+  foreach ($states as $k => $v) {
+    if (strpos($provinces, $k) === FALSE &&
+        strpos($provinces, $v) === FALSE) {
+      $newProvinces .= $k . ': ' . $v . "\n";
     }
-   $webform->set('options', $provinces . $newProvinces)->save();
+  }
+  $webform->set('options', $provinces . $newProvinces)->save();
 }
