@@ -5,9 +5,6 @@
  * Contains wxt_ext_webform.module.
  */
 
-use Drupal\shortcut\Entity\Shortcut;
-use Drupal\user\Entity\User;
-
 /**
  * Implements hook_install().
  */
