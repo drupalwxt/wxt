@@ -22,7 +22,6 @@ function wxt_ext_user_install() {
   user_role_grant_permissions(DRUPAL_AUTHENTICATED_RID, [
     'access comments',
     'post comments',
-    'skip comment approval',
     'search content',
     'access user profiles',
   ]);
