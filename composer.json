@@ -328,8 +328,6 @@
                 "https://www.drupal.org/files/issues/classes_should_be_array-2900531-2.patch"
             },
             "drupal/views_bootstrap": {
-                "Enter drupal/views_bootstrap patch #2870642 description here":
-                "https://www.drupal.org/files/issues/raw_field_value-2870642-2.patch",
                 "Enter drupal/views_bootstrap patch #2878352 description here":
                 "https://www.drupal.org/files/issues/add_bootstrap_panels-2878352-3.patch"
             },
@@ -375,7 +373,7 @@
         "drupal/migrate_plus": "4.0-beta1",
         "drupal/migrate_tools": "4.0-beta1",
         "drupal/url_embed": "1.0-alpha1",
-        "drupal/views_bootstrap": "dev-3.x#ef95dac",
+        "drupal/views_bootstrap": "3.0",
         "drupal/token_filter": "1.0-beta1",
         "drupal/views_autocomplete_filters": "1.2",
         "drupal/webform": "5.0-beta19",
