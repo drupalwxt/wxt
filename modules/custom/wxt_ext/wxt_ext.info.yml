@@ -13,6 +13,7 @@ dependencies:
   - drupal:wxt_ext_landing_page
   - drupal:wxt_ext_layout
   - drupal:wxt_ext_media_slideshow
+  - drupal:wxt_ext_metatag
   - drupal:wxt_ext_migration
   - drupal:wxt_ext_page
   - drupal:wxt_ext_paragraph
