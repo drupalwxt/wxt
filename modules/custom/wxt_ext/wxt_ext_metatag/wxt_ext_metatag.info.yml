@@ -1,0 +1,12 @@
+name: 'WxT Extend Metatag'
+description: 'Enable(s) and configure the default metatag configuration.'
+type: module
+package: WxT
+core: '8.x'
+
+# Required modules
+dependencies:
+  - drupal:metatag
+  - drupal:metatag_dc
+  - drupal:metatag_page_variants
+  - drupal:metatag_views
