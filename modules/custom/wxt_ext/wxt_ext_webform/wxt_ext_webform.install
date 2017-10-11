@@ -36,7 +36,7 @@ function wxt_ext_webform_install() {
       $newProvinces .= $v . ': ' . $v . "\n";
     }
   }
-  $webform->set('options', $provinces . $newProvinces)->save();
+  $webform->set('options', $newProvinces . $provinces)->save();
 
   // Update provinces code list.
   $webform = \Drupal::configFactory()
@@ -49,5 +49,5 @@ function wxt_ext_webform_install() {
       $newProvinces .= $k . ': ' . $v . "\n";
     }
   }
-  $webform->set('options', $provinces . $newProvinces)->save();
+  $webform->set('options', $newProvinces . $provinces)->save();
 }
