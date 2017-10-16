@@ -11,6 +11,7 @@ use Drupal\migrate\MigrateSkipProcessException;
 use Drupal\migrate\ProcessPluginBase;
 use Drupal\migrate\Row;
 use Drupal\Component\Serialization\Json;
+use Drupal\media_entity\Entity\Media;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -123,13 +124,10 @@ class MediaTags extends ProcessPluginBase implements ContainerFactoryPluginInter
         ->transform($tag_info['fid'], $migrate_executable, $row, $destination_property);
 
       // Load the file.
-      $file = file_load($fid);
-      if (!$file) {
+      $media = Media::load($fid);
+      if (!$media) {
         throw new MigrateException('Could not load media object');
       }
-
-      // Grab the uri.
-      $uri = $file->getFileUri();
 
       // The class attributes is a string, but drupal requires it to be an
       // array, so we fix it here.
@@ -164,16 +162,22 @@ class MediaTags extends ProcessPluginBase implements ContainerFactoryPluginInter
       return '';
     }
 
-    // Render the image.
-    $element = [
-      '#theme' => 'image',
-      '#uri' => $uri,
-      '#attributes' => isset($settings['attributes']) ? $settings['attributes'] : '',
-      '#width' => $settings['width'],
-      '#height' => $settings['height'],
-    ];
+    $alt = isset($settings['alt']) ? $settings['alt'] : '';
+    $uuid = $media->uuid();
+    $title = $media->get('name')->value;
 
-    $output = \Drupal::service('renderer')->renderRoot($element);
+    // New media entity format.
+    $output = '
+      <drupal-entity
+        alt="' . $alt . '"
+        data-embed-button="media_browser"
+        data-entity-embed-display="media_image"
+        data-entity-embed-display-settings="{&quot;image_style&quot;:&quot;&quot;,&quot;image_link&quot;:&quot;&quot;}"
+        data-entity-type="media"
+        data-entity-uuid="' . $uuid . '"
+        title="' . $title . '">
+      </drupal-entity>
+    ';
 
     return $output;
   }
