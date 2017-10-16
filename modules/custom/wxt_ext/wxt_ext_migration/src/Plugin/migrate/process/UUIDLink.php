@@ -2,6 +2,7 @@
 
 namespace Drupal\wxt_ext_migration\Plugin\migrate\process;
 
+use Drupal\Core\Database\Database;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\migrate\MigrateException;
 use Drupal\migrate\MigrateExecutableInterface;
@@ -10,7 +11,7 @@ use Drupal\migrate\Plugin\MigrateProcessInterface;
 use Drupal\migrate\MigrateSkipProcessException;
 use Drupal\migrate\ProcessPluginBase;
 use Drupal\migrate\Row;
-use Drupal\Core\Database\Database;
+use Drupal\node\Entity\Node;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -73,9 +74,10 @@ class UUIDLink extends ProcessPluginBase implements ContainerFactoryPluginInterf
     if (!$value) {
       throw new MigrateSkipProcessException();
     }
+
     $value = ' ' . $value . ' ';
     $value = preg_replace_callback(
-      '/\[uuid-link:(.*?)\]/s',
+      "/<\s*a[^>]href=\"(\[uuid-link:.*?\])\"\s?(.*?)>/s",
       function ($match) use ($migrate_executable, $row, $destination_property) {
         return $this->replaceToken($match, $migrate_executable, $row, $destination_property);
       },
@@ -98,10 +100,10 @@ class UUIDLink extends ProcessPluginBase implements ContainerFactoryPluginInterf
    *   The destination propery.
    */
   private function replaceToken($match, $migrate_executable, $row, $destination_property) {
-    $match = str_replace("[", "", $match);
-    $match = str_replace("]", "", $match);
-    $match = substr($match[0], 15);
-    $uuid = $match;
+    $tmp = str_replace("[", "", $match[1]);
+    $tmp = str_replace("]", "", $tmp);
+    $tmp = substr($tmp, 15);
+    $uuid = $tmp;
     $output = '';
 
     try {
@@ -121,7 +123,19 @@ class UUIDLink extends ProcessPluginBase implements ContainerFactoryPluginInterf
       $nid = $this->migrationPlugin
         ->transform($nid[0], $migrate_executable, $row, $destination_property);
 
-      $output = '/node/' . $nid;
+      $node = Node::load($nid);
+      if (!$node) {
+        throw new MigrateException('Could not load node object');
+      }
+
+      // New link format.
+      $attributes = !empty($match[2]) ? $match[2] : '';
+      $output = '
+        <a
+          data-entity-substitution="canonical"
+          data-entity-type="node"
+          data-entity-uuid="' . $node->uuid() . '"
+          href="/node/' . $nid . '" ' . $attributes . '>';
     }
     catch (Exception $e) {
       $msg = t('Unable to render link from %link. Error: %error', ['%link' => $uuid, '%error' => $e->getMessage()]);
