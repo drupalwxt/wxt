@@ -107,6 +107,7 @@ class MediaTags extends ProcessPluginBase implements ContainerFactoryPluginInter
     $match = str_replace("[[", "", $match);
     $match = str_replace("]]", "", $match);
     $tag = $match[0];
+    $classes = '';
 
     try {
       if (!is_string($tag)) {
@@ -132,6 +133,7 @@ class MediaTags extends ProcessPluginBase implements ContainerFactoryPluginInter
       // The class attributes is a string, but drupal requires it to be an
       // array, so we fix it here.
       if (!empty($tag_info['attributes']['class'])) {
+        $classes = $tag_info['attributes']['class'];
         $tag_info['attributes']['class'] = explode(" ", $tag_info['attributes']['class']);
       }
 
@@ -165,6 +167,7 @@ class MediaTags extends ProcessPluginBase implements ContainerFactoryPluginInter
     $alt = isset($settings['alt']) ? $settings['alt'] : '';
     $uuid = $media->uuid();
     $title = $media->get('name')->value;
+    $class = isset($classes) ? 'class="' . $classes . '"' : '';
 
     // New media entity format.
     $output = '
@@ -175,7 +178,7 @@ class MediaTags extends ProcessPluginBase implements ContainerFactoryPluginInter
         data-entity-embed-display-settings="{&quot;image_style&quot;:&quot;&quot;,&quot;image_link&quot;:&quot;&quot;}"
         data-entity-type="media"
         data-entity-uuid="' . $uuid . '"
-        title="' . $title . '">
+        title="' . $title . '" ' . $class . '>
       </drupal-entity>
     ';
 
