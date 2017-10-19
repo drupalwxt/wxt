@@ -339,6 +339,10 @@
                 "Enter drupal/views_bootstrap patch #2878352 description here":
                 "https://www.drupal.org/files/issues/add_bootstrap_panels-2878352-3.patch"
             },
+            "drupal/webform": {
+                "Enter drupal/webform patch #2913525 description here":
+                "https://www.drupal.org/files/issues/type_1_error_when-2913525-7.patch"
+            },
             "drupal/workbench_moderation": {
                 "Enter drupal/workbench_moderation patch #2668006 description here":
                 "https://www.drupal.org/files/issues/2668006-2.patch",
