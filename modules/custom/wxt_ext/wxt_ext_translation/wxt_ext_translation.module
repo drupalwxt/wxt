@@ -117,3 +117,20 @@ function wxt_ext_translation_import_translations($type, $name) {
     }
   }
 }
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function wxt_ext_translation_views_pre_render(ViewExecutable $view) {
+  $language_manager = \Drupal::service('language_manager');
+  $currentLang = $language_manager->getCurrentLanguage()->getId();
+
+  if ($currentLang == 'fr') {
+    foreach ($view->field as $id => $field) {
+      if ($view->field[$id]->options['label'] && $view->field[$id]->options['element_label_colon']) {
+        $view->field[$id]->options['label'] .= ' ';
+      }
+    }
+  }
+
+}
