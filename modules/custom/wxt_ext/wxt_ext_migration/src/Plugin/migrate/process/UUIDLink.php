@@ -123,6 +123,10 @@ class UUIDLink extends ProcessPluginBase implements ContainerFactoryPluginInterf
       $nid = $this->migrationPlugin
         ->transform($nid[0], $migrate_executable, $row, $destination_property);
 
+      if (is_array($nid)) {
+        $nid = current($nid);
+      }
+
       $node = Node::load($nid);
       if (!$node) {
         throw new MigrateException('Could not load node object');
