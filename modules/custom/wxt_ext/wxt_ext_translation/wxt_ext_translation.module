@@ -6,6 +6,7 @@
  */
 
 use Drupal\Core\Entity\FieldableEntityInterface;
+use Drupal\views\ViewExecutable;
 
 /**
  * Enables translation for the given entity bundles and all their fields.
