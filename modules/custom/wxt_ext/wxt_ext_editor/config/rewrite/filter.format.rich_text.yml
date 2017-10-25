@@ -71,10 +71,10 @@ filters:
   filter_url:
     id: filter_url
     provider: filter
-    status: false
+    status: true
     weight: -40
     settings:
-      filter_url_length: 72
+      filter_url_length: 128
   token_filter:
     id: token_filter
     provider: token_filter

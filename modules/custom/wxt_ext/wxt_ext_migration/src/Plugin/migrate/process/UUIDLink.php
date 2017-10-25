@@ -77,7 +77,7 @@ class UUIDLink extends ProcessPluginBase implements ContainerFactoryPluginInterf
 
     $value = ' ' . $value . ' ';
     $value = preg_replace_callback(
-      "/<\s*a[^>]href=\"(\[uuid-link:.*?\])\"\s?(.*?)>/s",
+      "/<a.*href=\"(\[uuid-link:.*?\])\"\s?(.*?)>/s",
       function ($match) use ($migrate_executable, $row, $destination_property) {
         return $this->replaceToken($match, $migrate_executable, $row, $destination_property);
       },
