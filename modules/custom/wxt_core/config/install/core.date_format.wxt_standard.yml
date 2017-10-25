@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: wxt_standard
+label: 'Standard (WxT)'
+locked: false
+pattern: 'F d, Y'

@@ -652,7 +652,7 @@ display:
           exclude: true
           alter:
             alter_text: true
-            text: "<span class=\"glyphicon glyphicon-comment\"></span>\n{{ comment_count }}"
+            text: "{% trans %}\n<span class=\"glyphicon glyphicon-comment\"></span> Comment ({{ comment_count }})\n{% endtrans %}"
             make_link: true
             path: '{{ path }}'
             absolute: true
@@ -695,8 +695,8 @@ display:
           separator: ' '
           format_plural: false
           format_plural_string: "1\x03@count"
-          prefix: 'Comment ('
-          suffix: )
+          prefix: ''
+          suffix: ''
           plugin_id: numeric
         nothing:
           id: nothing
@@ -865,7 +865,7 @@ display:
           click_sort_column: value
           type: timestamp
           settings:
-            date_format: custom
+            date_format: wxt_standard
             custom_date_format: 'F d, Y'
             timezone: ''
           group_column: value
@@ -1079,8 +1079,8 @@ display:
             alt: ''
             rel: ''
             link_class: 'mrgn-tp-md mrgn-bttm-sm center-block col-md-12 col-xs-6'
-            prefix: 'Continue reading "'
-            suffix: '"...'
+            prefix: ''
+            suffix: ''
             target: ''
             nl2br: false
             max_length: 0
@@ -1133,7 +1133,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"row\">\n<div class=\"col-md-3 hidden-sm hidden-xs\">{{ field_avatar_image }}</div>\n<div class=\"col-md-9 col-sm-12\">\n  {{ body }}\n  {{ title_1 }}\n</div>\n</div>"
+            text: "<div class=\"row\">\n<div class=\"col-md-3 hidden-sm hidden-xs\">{{ field_avatar_image }}</div>\n<div class=\"col-md-9 col-sm-12\">\n  {{ body }}\n  {% trans %} Continue reading \"{{ title_1 }}\"... {% endtrans %}\n</div>\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -1192,7 +1192,7 @@ display:
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
-          quantity: 9
+          quantity: 5
       filters:
         status:
           value: '1'
