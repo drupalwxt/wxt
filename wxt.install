@@ -84,7 +84,6 @@ function _wxt_setup_menus() {
   $menu_links = [
     'user.page',
     'user.logout',
-    'user.register',
   ];
   foreach ($menu_links as $menu_link) {
     $menu_link_manager = \Drupal::service('plugin.manager.menu.link');
