@@ -4,6 +4,7 @@ dependencies:
   config:
     - core.entity_view_display.comment.comment.default
     - field.field.node.blog_post.body
+    - field.field.node.blog_post.field_avatar_image
     - field.field.node.blog_post.field_blog_comments
     - field.field.node.blog_post.field_blog_tags
     - field.field.node.blog_post.field_image
@@ -139,6 +140,25 @@ third_party_settings:
             weight: 0
             uuid: 3dc5f8d6-0a64-43df-b2f7-0d31fba2ba2a
             context_mapping: {  }
+          5a5bcfc9-779a-4aa9-a809-c44f2dbd85c4:
+            id: 'entity_field:node:created'
+            label: 'Authored on'
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: hidden
+              type: timestamp
+              settings:
+                date_format: wxt_standard
+                custom_date_format: ''
+                timezone: ''
+              third_party_settings: {  }
+              weight: 0
+            region: left
+            weight: -4
+            uuid: 5a5bcfc9-779a-4aa9-a809-c44f2dbd85c4
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
         id: panels_variant
         label: Default
         uuid: 5f833455-c610-41c5-ae17-149ada3d74a5
@@ -222,9 +242,9 @@ content:
     third_party_settings: {  }
   links:
     weight: 5
-    region: content
     settings: {  }
     third_party_settings: {  }
+    region: content
 hidden:
   langcode: true
   panelizer: true
