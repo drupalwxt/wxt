@@ -43,7 +43,7 @@ third_party_settings:
               settings: {  }
               third_party_settings: {  }
               weight: 0
-            region: top_left
+            region: top_right
             weight: 1
             uuid: 2ba0359c-af3f-4bd7-a6d6-a6e93f680883
             context_mapping:
@@ -53,7 +53,7 @@ third_party_settings:
             label: 'Page title'
             provider: core
             label_display: visible
-            region: top_left
+            region: top_right
             weight: -1
             uuid: 62dd7b94-9f49-4b61-ad40-f65d365a7f46
             context_mapping: {  }
@@ -64,7 +64,7 @@ third_party_settings:
             label_display: '0'
             primary: true
             secondary: true
-            region: top_left
+            region: top_right
             weight: 0
             uuid: e58e904b-8890-4559-9582-222b7ca445a9
             context_mapping: {  }
@@ -90,13 +90,13 @@ third_party_settings:
             top_left:
               wrapper: div
               classes:
-                col-md-6: col-md-6
+                col-md-3: col-md-3
               add_region_classes: 1
               attributes: ''
             top_right:
               wrapper: div
               classes:
-                col-md-6: col-md-6
+                col-md-9: col-md-9
               add_region_classes: 1
               attributes: ''
             middle:

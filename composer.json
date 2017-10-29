@@ -311,6 +311,12 @@
                 "Enter drupal/metatag patch #2563657 description here":
                 "https://www.drupal.org/files/issues/panels_page_manager-2563657-29.patch"
             },
+            "drupal/menu_block": {
+                "Enter drupal/menu_block patch #2756675 description here":
+                "https://www.drupal.org/files/issues/menu_block-follow-2756675-32.patch",
+                "Enter drupal/menu_block patch #2919579 description here":
+                "https://www.drupal.org/files/issues/patch_menu_block_with-2919579-3.patch"
+            },
             "drupal/migrate_tools": {
                 "Enter drupal/migrate_tools patch #2825846 description here":
                 "https://www.drupal.org/files/issues/migrate_tools_dashboard-2825846-4.patch"
