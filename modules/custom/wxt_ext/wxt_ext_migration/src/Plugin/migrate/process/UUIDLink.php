@@ -77,7 +77,7 @@ class UUIDLink extends ProcessPluginBase implements ContainerFactoryPluginInterf
 
     $value = ' ' . $value . ' ';
     $value = preg_replace_callback(
-      "/<a.*href=\"(\[uuid-link:.*?\])\"\s?(.*?)>/s",
+      "/<a(.*?)href=\"(\[uuid-link:.*?\])\"\s?(.*?)>/s",
       function ($match) use ($migrate_executable, $row, $destination_property) {
         return $this->replaceToken($match, $migrate_executable, $row, $destination_property);
       },
@@ -100,7 +100,7 @@ class UUIDLink extends ProcessPluginBase implements ContainerFactoryPluginInterf
    *   The destination propery.
    */
   private function replaceToken($match, $migrate_executable, $row, $destination_property) {
-    $tmp = str_replace("[", "", $match[1]);
+    $tmp = str_replace("[", "", $match[2]);
     $tmp = str_replace("]", "", $tmp);
     $tmp = substr($tmp, 15);
     $uuid = $tmp;
@@ -133,13 +133,15 @@ class UUIDLink extends ProcessPluginBase implements ContainerFactoryPluginInterf
       }
 
       // New link format.
-      $attributes = !empty($match[2]) ? $match[2] : '';
+      $attrBefore = !empty($match[1]) ? $match[1] : '';
+      $attrAfter = !empty($match[3]) ? $match[3] : '';
+
       $output = '
         <a
           data-entity-substitution="canonical"
           data-entity-type="node"
           data-entity-uuid="' . $node->uuid() . '"
-          href="/node/' . $nid . '" ' . $attributes . '>';
+          href="/node/' . $nid . '" ' . $attrAfter . ' ' . $attrBefore . '>';
     }
     catch (Exception $e) {
       $msg = t('Unable to render link from %link. Error: %error', ['%link' => $uuid, '%error' => $e->getMessage()]);
