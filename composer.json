@@ -353,7 +353,9 @@
                 "Enter drupal/workbench_moderation patch #2668006 description here":
                 "https://www.drupal.org/files/issues/2668006-2.patch",
                 "Enter drupal/workbench_moderation patch #2768917 description here":
-                "https://www.drupal.org/files/issues/workbench_moderation_2768917_20.patch"
+                "https://www.drupal.org/files/issues/workbench_moderation_2768917_20.patch",
+                "Enter drupal/workbench_moderation patch #2835883 description here":
+                "https://www.drupal.org/files/issues/workbench_moderation-node_grants-2835883-3-D8.patch"
             }
         }
     },
