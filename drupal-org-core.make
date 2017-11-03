@@ -25,3 +25,4 @@ projects[drupal][patch][] = https://www.drupal.org/files/issues/2880445-remove-c
 projects[drupal][patch][] = https://www.drupal.org/files/issues/2869592-remove-update-warning-7.patch
 projects[drupal][patch][] = https://www.drupal.org/files/issues/2885441-2.patch
 projects[drupal][patch][] = https://www.drupal.org/files/issues/2904798-7.patch
+projects[drupal][patch][] = https://www.drupal.org/files/issues/taxonomy-context-provider-2920637-3.patch
