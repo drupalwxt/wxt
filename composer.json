@@ -286,6 +286,8 @@
                 "https://www.drupal.org/files/issues/preprocess_functions-2861840-17.patch",
                 "Enter drupal/core patch #2885370 description here":
                 "https://www.drupal.org/files/issues/systemmainblock_build-2885370-3.patch",
+                "Enter drupal/core patch #2914233 description here":
+                "https://www.drupal.org/files/issues/node_preview_error-2914233-5.patch",
                 "Enter drupal/core patch #2920637 description here":
                 "https://www.drupal.org/files/issues/taxonomy-context-provider-2920637-3.patch"
             },
