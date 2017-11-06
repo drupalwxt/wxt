@@ -1,3 +1,4 @@
+config_rewrite: replace
 langcode: en
 status: true
 dependencies:
@@ -17,16 +18,65 @@ third_party_settings:
     custom: true
     displays:
       default:
-        blocks: {  }
+        blocks:
+          398ddd2d-fe84-40e8-9120-37bc2e866efa:
+            id: page_title_block
+            label: 'Page title'
+            provider: core
+            label_display: '0'
+            region: main
+            weight: -1
+            uuid: 398ddd2d-fe84-40e8-9120-37bc2e866efa
+            context_mapping: {  }
+          d32f81b0-722f-4094-9397-e508fce0be86:
+            id: local_tasks_block
+            label: Tabs
+            provider: core
+            label_display: '0'
+            primary: true
+            secondary: true
+            region: main
+            weight: 0
+            uuid: d32f81b0-722f-4094-9397-e508fce0be86
+            context_mapping: {  }
+          53c78586-ebb9-4749-b0f4-7b0846043c9d:
+            id: 'entity_field:node:body'
+            label: Body
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: above
+              type: text_default
+              settings: {  }
+              third_party_settings: {  }
+              weight: 0
+            region: main
+            weight: 1
+            uuid: 53c78586-ebb9-4749-b0f4-7b0846043c9d
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
         id: panels_variant
         uuid: 1a312aa0-75a2-4467-8421-33670a7bd039
         label: 'Single Column'
         weight: 0
-        layout: layout_onecol
-        layout_settings: {  }
+        layout: bs_1col
+        layout_settings:
+          layout:
+            wrapper: div
+            classes:
+              row: row
+            add_layout_class: 1
+            attributes: ''
+          regions:
+            main:
+              wrapper: div
+              classes:
+                col-sm-12: col-sm-12
+              add_region_classes: 1
+              attributes: ''
         page_title: '[node:title]'
         storage_type: panelizer_default
-        storage_id: 'node:landing_page:default:default'
+        storage_id: 'node:landing_page:full:default'
         pattern: panelizer
         builder: ipe
         static_context: {  }
@@ -67,6 +117,17 @@ third_party_settings:
             region: top_right
             weight: 0
             uuid: e58e904b-8890-4559-9582-222b7ca445a9
+            context_mapping: {  }
+          e18fc4d1-7588-47ae-97b7-69379a6f2e0d:
+            id: 'system_menu_block:account'
+            label: 'User account menu'
+            provider: system
+            label_display: visible
+            level: 1
+            depth: 0
+            region: top_left
+            weight: -1
+            uuid: e18fc4d1-7588-47ae-97b7-69379a6f2e0d
             context_mapping: {  }
         id: panels_variant
         uuid: 91b9d430-7b91-4a22-ac4d-2e5e0376c6a2
@@ -130,16 +191,113 @@ third_party_settings:
         builder: ipe
         static_context: {  }
       three_column:
-        blocks: {  }
+        blocks:
+          5ad36b60-5439-4e3f-bb62-bb504ba9e67a:
+            id: page_title_block
+            label: 'Page title'
+            provider: core
+            label_display: '0'
+            region: middle
+            weight: -1
+            uuid: 5ad36b60-5439-4e3f-bb62-bb504ba9e67a
+            context_mapping: {  }
+          75029cf4-e12d-4af2-9c8d-a6d9a97ded82:
+            id: local_tasks_block
+            label: Tabs
+            provider: core
+            label_display: '0'
+            primary: true
+            secondary: true
+            region: middle
+            weight: 0
+            uuid: 75029cf4-e12d-4af2-9c8d-a6d9a97ded82
+            context_mapping: {  }
+          45da81c5-2c0e-4903-acab-76f999c4cb66:
+            id: 'entity_field:node:body'
+            label: Body
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: above
+              type: text_default
+              settings: {  }
+              third_party_settings: {  }
+              weight: 0
+            region: middle
+            weight: 1
+            uuid: 45da81c5-2c0e-4903-acab-76f999c4cb66
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
         id: panels_variant
         uuid: 5af47416-fa98-4dfb-9761-fc497a47a76f
         label: 'Three Column'
         weight: 0
-        layout: layout_threecol_25_50_25
-        layout_settings: {  }
+        layout: bs_3col_bricked
+        layout_settings:
+          layout:
+            wrapper: div
+            classes:
+              row: row
+            add_layout_class: 1
+            attributes: ''
+          regions:
+            top:
+              wrapper: div
+              classes:
+                col-sm-12: col-sm-12
+              add_region_classes: 1
+              attributes: ''
+            top_left:
+              wrapper: div
+              classes:
+                col-sm-4: col-sm-4
+              add_region_classes: 1
+              attributes: ''
+            top_middle:
+              wrapper: div
+              classes:
+                col-sm-4: col-sm-4
+              add_region_classes: 1
+              attributes: ''
+            top_right:
+              wrapper: div
+              classes:
+                col-sm-4: col-sm-4
+              add_region_classes: 1
+              attributes: ''
+            middle:
+              wrapper: div
+              classes:
+                col-sm-4: col-sm-4
+              add_region_classes: 1
+              attributes: ''
+            bottom_left:
+              wrapper: div
+              classes:
+                col-sm-4: col-sm-4
+              add_region_classes: 1
+              attributes: ''
+            bottom_middle:
+              wrapper: div
+              classes:
+                col-sm-4: col-sm-4
+              add_region_classes: 1
+              attributes: ''
+            bottom_right:
+              wrapper: div
+              classes:
+                col-sm-4: col-sm-4
+              add_region_classes: 1
+              attributes: ''
+            bottom:
+              wrapper: div
+              classes:
+                col-sm-12: col-sm-12
+              add_region_classes: 1
+              attributes: ''
         page_title: '[node:title]'
         storage_type: panelizer_default
-        storage_id: 'node:landing_page:default:three_column'
+        storage_id: 'node:landing_page:full:three_column'
         pattern: panelizer
         builder: ipe
         static_context: {  }
