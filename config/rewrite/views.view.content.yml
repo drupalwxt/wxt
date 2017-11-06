@@ -1,3 +1,4 @@
+config_rewrite: replace
 langcode: en
 status: true
 dependencies:
@@ -59,10 +60,12 @@ display:
             title: title
             type: type
             name: name
+            status: status
             changed: changed
-            moderation_state: moderation_state
-            forward_revision_exists: forward_revision_exists
-            operations: operations
+            edit_node: edit_node
+            delete_node: delete_node
+            dropbutton: dropbutton
+            timestamp: title
           info:
             node_bulk_form:
               align: ''
@@ -90,6 +93,13 @@ display:
               separator: ''
               empty_column: false
               responsive: priority-low
+            status:
+              sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
             changed:
               sortable: true
               default_sort_order: desc
@@ -97,21 +107,30 @@ display:
               separator: ''
               empty_column: false
               responsive: priority-low
-            moderation_state:
-              sortable: true
+            edit_node:
+              sortable: false
               default_sort_order: asc
               align: ''
               separator: ''
               empty_column: false
               responsive: ''
-            forward_revision_exists:
-              sortable: true
+            delete_node:
+              sortable: false
               default_sort_order: asc
               align: ''
               separator: ''
               empty_column: false
               responsive: ''
-            operations:
+            dropbutton:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            timestamp:
+              sortable: false
+              default_sort_order: asc
               align: ''
               separator: ''
               empty_column: false

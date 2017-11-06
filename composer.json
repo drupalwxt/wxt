@@ -343,7 +343,9 @@
                 "Enter drupal/panels patch #2869412 description here":
                 "https://www.drupal.org/files/issues/2869412-2-page_title_does_not_show_in_panels.patch",
                 "Enter drupal/panels patch #2900531 description here":
-                "https://www.drupal.org/files/issues/classes_should_be_array-2900531-2.patch"
+                "https://www.drupal.org/files/issues/classes_should_be_array-2900531-2.patch",
+                "Enter drupal/panels patch #2900531 description here":
+                "https://www.drupal.org/files/issues/panels-ipe-card-flip-ie-error-2910704.diff"
             },
             "drupal/views_bootstrap": {
                 "Enter drupal/views_bootstrap patch #2878352 description here":
