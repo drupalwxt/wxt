@@ -17,11 +17,31 @@ variant_settings:
       provider: ctools
       label_display: '0'
       view_mode: full
-      region: middle
-      weight: 0
+      region: content
+      weight: 1
       uuid: 142d3558-5fee-442f-9300-a5cf52f2b6a2
       context_mapping:
         entity: current_user
+    81f4cd78-b164-4f03-bbf0-f69de1d57b14:
+      id: page_title_block
+      label: 'Page title'
+      provider: core
+      label_display: '0'
+      region: content
+      weight: -1
+      uuid: 81f4cd78-b164-4f03-bbf0-f69de1d57b14
+      context_mapping: {  }
+    c24d4207-94ed-4c91-abe4-5e2536a064de:
+      id: local_tasks_block
+      label: Tabs
+      provider: core
+      label_display: '0'
+      primary: true
+      secondary: true
+      region: content
+      weight: 0
+      uuid: c24d4207-94ed-4c91-abe4-5e2536a064de
+      context_mapping: {  }
   id: panels_variant
   uuid: 1c74464e-5b9d-41e7-8825-371a214b4620
   label: null
