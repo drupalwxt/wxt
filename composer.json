@@ -258,6 +258,8 @@
                 "https://www.drupal.org/files/issues/736066-165.patch",
                 "Enter drupal/core patch #1838234 description here":
                 "https://www.drupal.org/files/issues/1838234-22.patch",
+                "Enter drupal/core patch #2599228 description here":
+                "https://www.drupal.org/files/issues/2599228-31.patch",
                 "Enter drupal/core patch #2630732 description here":
                 "https://www.drupal.org/files/issues/implement-2630732-35.patch",
                 "2679775 - Fixes float issue with inline label fields (entity references on most cases).":
@@ -288,6 +290,8 @@
                 "https://www.drupal.org/files/issues/systemmainblock_build-2885370-3.patch",
                 "Enter drupal/core patch #2914233 description here":
                 "https://www.drupal.org/files/issues/node_preview_error-2914233-5.patch",
+                "Enter drupal/core patch #2917031 description here":
+                "https://www.drupal.org/files/issues/translation-old-buttons-2917031-3.patch",
                 "Enter drupal/core patch #2920637 description here":
                 "https://www.drupal.org/files/issues/taxonomy-context-provider-2920637-3.patch"
             },
