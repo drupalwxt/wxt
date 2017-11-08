@@ -1,13 +1,20 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - system
 id: user
 label: User
 description: ''
 use_admin_theme: false
 path: '/user/{user}'
 access_logic: and
-access_conditions: {  }
+access_conditions:
+  -
+    id: request_path
+    pages: "/user/login\n/user/register"
+    negate: true
+    context_mapping: {  }
 parameters:
   user:
     machine_name: user
