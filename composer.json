@@ -227,6 +227,10 @@
         },
         "enable-patching": true,
         "patches": {
+            "drupal/admin_toolbar": {
+                "Enter drupal/admin_toolbar patch #2922495 description here":
+                "https://www.drupal.org/files/issues/admin_toolbar_mega-2922495-2.patch"
+            },
             "drupal/bootstrap": {
                 "Enter drupal/bootstrap patch #2834732 description here":
                 "https://www.drupal.org/files/issues/temporarily_disable-2881978-2.patch",
