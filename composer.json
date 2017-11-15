@@ -229,7 +229,9 @@
         "patches": {
             "drupal/admin_toolbar": {
                 "Enter drupal/admin_toolbar patch #2922495 description here":
-                "https://www.drupal.org/files/issues/admin_toolbar_mega-2922495-4.patch"
+                "https://www.drupal.org/files/issues/admin_toolbar_mega-2922495-4.patch",
+                "Enter drupal/admin_toolbar patch #2923580 description here":
+                "https://www.drupal.org/files/issues/unexpected-operand-2923580.patch"
             },
             "drupal/bootstrap": {
                 "Enter drupal/bootstrap patch #2834732 description here":
