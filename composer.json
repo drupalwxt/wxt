@@ -272,6 +272,8 @@
                 "https://www.drupal.org/files/issues/2606322-4.x-field_list_item_view_correct_language.patch",
                 "Enter drupal/core patch #2630732 description here":
                 "https://www.drupal.org/files/issues/implement-2630732-35.patch",
+                "Enter drupal/core patch #2630732 description here":
+                "https://www.drupal.org/files/issues/clearing_cache_via_ui-2650434-137.patch",
                 "2679775 - Fixes float issue with inline label fields (entity references on most cases).":
                 "https://www.drupal.org/files/issues/2679775-11-inline-labels.patch",
                 "Enter drupal/core patch #2698057 description here":
