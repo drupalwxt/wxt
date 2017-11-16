@@ -1626,7 +1626,7 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: blog/%
+      path: blog/users/%
       display_description: ''
       arguments:
         uid:
@@ -1656,7 +1656,7 @@ display:
             sort_order: asc
             number_of_records: 0
             format: default_summary
-          specify_validation: false
+          specify_validation: true
           validate:
             type: none
             fail: 'not found'
@@ -1681,6 +1681,7 @@ display:
           entity_type: node
           entity_field: uid
           plugin_id: standard
+      enabled: true
     cache_metadata:
       max-age: -1
       contexts:
