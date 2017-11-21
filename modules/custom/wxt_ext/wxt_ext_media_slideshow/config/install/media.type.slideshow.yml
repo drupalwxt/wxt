@@ -6,9 +6,9 @@ dependencies:
 id: slideshow
 label: Slideshow
 description: 'Slideshows of media items.'
-type: slideshow
+source: slideshow
 queue_thumbnail_downloads: false
 new_revision: false
-type_configuration:
+source_configuration:
   source_field: slideshow_items
 field_map: {  }

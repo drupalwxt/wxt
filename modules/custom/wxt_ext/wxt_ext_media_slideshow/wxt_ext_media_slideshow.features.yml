@@ -7,4 +7,4 @@ required:
   - field.field.media.slideshow.field_media_in_library
   - field.field.media.slideshow.slideshow_items
   - field.storage.media.slideshow.slideshow_items
-  - media_entity.bundle.slideshow
+  - media.type.slideshow
