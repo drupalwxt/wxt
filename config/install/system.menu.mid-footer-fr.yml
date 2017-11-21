@@ -1,7 +1,7 @@
 langcode: fr
 status: true
 dependencies: {  }
-id: mid_footer_fr
+id: mid-footer-fr
 label: 'Pied de page millieu'
 description: 'Pied de page millieu.'
 locked: false

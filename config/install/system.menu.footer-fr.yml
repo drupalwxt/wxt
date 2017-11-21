@@ -1,7 +1,7 @@
 langcode: fr
 status: true
 dependencies: {  }
-id: footer_fr
+id: footer-fr
 label: 'Pied de page'
 description: 'Pied de page en francais.'
 locked: false
