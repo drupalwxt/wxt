@@ -227,6 +227,12 @@
         },
         "enable-patching": true,
         "patches": {
+            "drupal/admin_toolbar": {
+                "Enter drupal/admin_toolbar patch #2922495 description here":
+                "https://www.drupal.org/files/issues/admin_toolbar_mega-2922495-4.patch",
+                "Enter drupal/admin_toolbar patch #2923580 description here":
+                "https://www.drupal.org/files/issues/unexpected-operand-2923580.patch"
+            },
             "drupal/bootstrap": {
                 "Enter drupal/bootstrap patch #2834732 description here":
                 "https://www.drupal.org/files/issues/temporarily_disable-2881978-2.patch",
@@ -258,8 +264,16 @@
                 "https://www.drupal.org/files/issues/736066-270.patch",
                 "Enter drupal/core patch #1838234 description here":
                 "https://www.drupal.org/files/issues/1838234-jQuery_timepicker.patch",
+                "Enter drupal/core patch #1838234 description here":
+                "https://www.drupal.org/files/issues/comment_form_should-2559833-35.patch",
+                "Enter drupal/core patch #2599228 description here":
+                "https://www.drupal.org/files/issues/2599228-31.patch",
+                "Enter drupal/core patch #2606322 description here":
+                "https://www.drupal.org/files/issues/2606322-4.x-field_list_item_view_correct_language.patch",
                 "Enter drupal/core patch #2630732 description here":
                 "https://www.drupal.org/files/issues/implement-2630732-35.patch",
+                "Enter drupal/core patch #2630732 description here":
+                "https://www.drupal.org/files/issues/clearing_cache_via_ui-2650434-137.patch",
                 "2679775 - Fixes float issue with inline label fields (entity references on most cases).":
                 "https://www.drupal.org/files/issues/2679775-11-inline-labels.patch",
                 "Enter drupal/core patch #2698057 description here":
@@ -284,8 +298,12 @@
                 "https://www.drupal.org/files/issues/systemmainblock_build-2885370-3.patch",
                 "Enter drupal/core patch #2898119 description here":
                 "https://www.drupal.org/files/issues/doctrine_common_version_below_2.8-2898119-11.patch",
+                "Enter drupal/core patch #2893029 description here":
+                "https://www.drupal.org/files/issues/2893029-9.patch",
                 "Enter drupal/core patch #2914233 description here":
                 "https://www.drupal.org/files/issues/node_preview_error-2914233-5.patch",
+                "Enter drupal/core patch #2917031 description here":
+                "https://www.drupal.org/files/issues/translation-old-buttons-2917031-3.patch",
                 "Enter drupal/core patch #2920637 description here":
                 "https://www.drupal.org/files/issues/taxonomy-context-provider-2920637-3.patch"
             },
@@ -372,7 +390,7 @@
         "drupal/config_update": "1.4",
         "drupal/diff": "1.0-rc1",
         "drupal/entity_reference_revisions": "1.3",
-        "drupal/field_group": "1.0-rc6",
+        "drupal/field_group": "1.0",
         "drupal/group": "1.0-rc1",
         "drupal/jsonapi": "1.3",
         "drupal/linkit": "5.0-beta6",
