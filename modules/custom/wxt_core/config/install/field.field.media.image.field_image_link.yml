@@ -3,7 +3,7 @@ status: true
 dependencies:
   config:
     - field.storage.media.field_image_link
-    - media_entity.bundle.image
+    - media.type.image
   module:
     - link
 id: media.image.field_image_link
