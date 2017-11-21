@@ -15,10 +15,12 @@ display:
             items_per_page_options_all_label: '- Tout -'
             offset_label: Décalage
           tags:
-            previous: '‹ Précédent'
-            next: 'Suivant ›'
-            first: '« Premier'
-            last: 'Dernier »'
+            previous: '‹ précédent'
+            next: 'suivant ›'
+            first: '« premier'
+            last: 'dernier »'
+      fields:
+        title: {  }
   blog_block:
     display_title: Bloc
     display_options:
@@ -51,7 +53,7 @@ display:
             text: "<div class=\"row\">\r\n<p class=\"pagetag col-md-12 small\">{{ created }}</p>\r\n</div>"
         nothing_2:
           alter:
-            text: "<div class=\"row\">\r\n<div class=\"col-md-3 hidden-sm hidden-xs\">{{ field_avatar_image }}</div>\r\n<div class=\"col-md-9 col-sm-12\">\r\n  {{ body }}\r\n  {% trans %} Continue reading \"{{ title_1 }}\"... {% endtrans %}\r\n</div>\r\n</div>"
+            text: "<div class=\"row\">\r\n<div class=\"col-md-3 hidden-sm hidden-xs\">{{ field_image }}</div>\r\n<div class=\"col-md-9 col-sm-12\">\r\n  {{ body }}\r\n  {% trans %} Continuer la lecture \"{{ title_1 }}\"... {% endtrans %}\r\n</div>\r\n</div>"
       pager:
         options:
           tags:

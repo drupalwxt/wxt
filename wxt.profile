@@ -77,36 +77,42 @@ function wxt_import_language_config(array &$install_state) {
 
   // The language code of the default locale.
   $site_default_langcode = $language_manager->getDefaultLanguage()->getId();
-  // The directory where the language config files reside.
-  $language_config_directory = __DIR__ . '/config/install/language';
 
-  // Sub-directory names (language codes).
-  // The language code of the default language is excluded. If the user
-  // chooses to install in French etc, the language config is imported by core
-  // and the user has the chance to override it during the installation.
-  $langcodes = array_diff(scandir($language_config_directory),
-    ['..', '.', $site_default_langcode]);
+  $files = file_scan_directory(drupal_get_path('profile', 'wxt'), '/.*\.info\.yml/');
+  foreach ($files as $file) {
+    // The directory where the language config files reside.
+    $language_config_directory = dirname($file->uri) . '/config/install/language';
 
-  foreach ($langcodes as $langcode) {
-    // All .yml files in the language's config subdirectory.
-    $config_files = glob("$language_config_directory/$langcode/*.yml");
+    // Sub-directory names (language codes).
+    // The language code of the default language is excluded. If the user
+    // chooses to install in French etc, the language config is imported by core
+    // and the user has the chance to override it during the installation.
+    if (is_dir($language_config_directory)) {
+      $langcodes = array_diff(scandir($language_config_directory),
+        ['..', '.', $site_default_langcode]);
 
-    foreach ($config_files as $file_name) {
-      // Information from the .yml file as an array.
-      $yaml = $yaml_parser->parse(file_get_contents($file_name));
-      // Uses the base name of the .yml file to get the config name.
-      $config_name = basename($file_name, '.yml');
+      foreach ($langcodes as $langcode) {
+        // All .yml files in the language's config subdirectory.
+        $config_files = glob("$language_config_directory/$langcode/*.yml");
 
-      /** @var \Drupal\language\ConfigurableLanguageManager $language_manager */
-      $config = $language_manager->getLanguageConfigOverride($langcode, $config_name);
+        foreach ($config_files as $file_name) {
+          // Information from the .yml file as an array.
+          $yaml = $yaml_parser->parse(file_get_contents($file_name));
+          // Uses the base name of the .yml file to get the config name.
+          $config_name = basename($file_name, '.yml');
 
-      foreach ($yaml as $config_key => $config_value) {
-        // Updates the configuration object.
-        $config->set($config_key, $config_value);
+          /** @var \Drupal\language\ConfigurableLanguageManager $language_manager */
+          $config = $language_manager->getLanguageConfigOverride($langcode, $config_name);
+
+          foreach ($yaml as $config_key => $config_value) {
+            // Updates the configuration object.
+            $config->set($config_key, $config_value);
+          }
+
+          // Saves the configuration.
+          $config->save();
+        }
       }
-
-      // Saves the configuration.
-      $config->save();
     }
   }
 }

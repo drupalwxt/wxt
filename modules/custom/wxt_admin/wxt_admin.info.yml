@@ -8,6 +8,7 @@ package: WxT
 dependencies:
   - drupal:admin_toolbar
   - drupal:admin_toolbar_tools
+  - drupal:admin_toolbar_links_access_filter
   - drupal:config_rewrite
   - drupal:config_update
   - drupal:contact

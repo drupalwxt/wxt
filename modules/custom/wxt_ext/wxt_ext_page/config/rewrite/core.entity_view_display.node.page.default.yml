@@ -1,6 +1,17 @@
-hidden:
-  langcode: true
-  panelizer: true
+config_rewrite: replace
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.page.body
+    - field.field.node.page.comment
+    - field.field.node.page.panelizer
+    - node.type.page
+  module:
+    - metatag
+    - panelizer
+    - text
+    - user
 third_party_settings:
   panelizer:
     enable: true
@@ -46,7 +57,7 @@ third_party_settings:
             context_mapping: {  }
         id: panels_variant
         uuid: df0d1b37-8cd5-46d3-b900-f18df4825325
-        label: ''
+        label: Default
         weight: 0
         layout: layout_onecol
         layout_settings: {  }
@@ -55,3 +66,24 @@ third_party_settings:
         storage_id: 'node:page:default:default'
         builder: ipe
         static_context: {  }
+id: node.page.default
+targetEntityType: node
+bundle: page
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  comment: true
+  langcode: true
+  panelizer: true

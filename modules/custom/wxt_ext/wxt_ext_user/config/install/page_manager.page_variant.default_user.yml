@@ -3,9 +3,12 @@ status: true
 dependencies:
   config:
     - page_manager.page.user
+    - system.menu.account
   module:
     - ctools
     - panels
+    - system
+    - user
 id: default_user
 label: 'Default User'
 variant: panels_variant
@@ -17,7 +20,7 @@ variant_settings:
       provider: ctools
       label_display: '0'
       view_mode: full
-      region: content
+      region: top_right
       weight: 1
       uuid: 142d3558-5fee-442f-9300-a5cf52f2b6a2
       context_mapping:
@@ -27,7 +30,7 @@ variant_settings:
       label: 'Page title'
       provider: core
       label_display: '0'
-      region: content
+      region: top_right
       weight: -1
       uuid: 81f4cd78-b164-4f03-bbf0-f69de1d57b14
       context_mapping: {  }
@@ -38,22 +41,89 @@ variant_settings:
       label_display: '0'
       primary: true
       secondary: true
-      region: content
+      region: top_right
       weight: 0
       uuid: c24d4207-94ed-4c91-abe4-5e2536a064de
+      context_mapping: {  }
+    ec02fb86-f8f5-4e85-8c4d-25a59169b086:
+      id: 'system_menu_block:account'
+      label: 'User account menu'
+      provider: system
+      label_display: visible
+      level: 1
+      depth: 0
+      region: top_left
+      weight: -1
+      uuid: ec02fb86-f8f5-4e85-8c4d-25a59169b086
       context_mapping: {  }
   id: panels_variant
   uuid: 1c74464e-5b9d-41e7-8825-371a214b4620
   label: null
   weight: 0
-  layout: layout_onecol
-  layout_settings: {  }
+  layout: bs_2col_bricked
+  layout_settings:
+    layout:
+      wrapper: div
+      classes:
+        row: row
+      add_layout_class: 1
+      attributes: ''
+    regions:
+      top:
+        wrapper: div
+        classes:
+          col-sm-12: col-sm-12
+        add_region_classes: 1
+        attributes: ''
+      top_left:
+        wrapper: div
+        classes:
+          col-sm-3: col-sm-3
+        add_region_classes: 1
+        attributes: ''
+      top_right:
+        wrapper: div
+        classes:
+          col-sm-9: col-sm-9
+        add_region_classes: 1
+        attributes: ''
+      middle:
+        wrapper: div
+        classes:
+          col-sm-12: col-sm-12
+        add_region_classes: 1
+        attributes: ''
+      bottom_left:
+        wrapper: div
+        classes:
+          col-sm-6: col-sm-6
+        add_region_classes: 1
+        attributes: ''
+      bottom_right:
+        wrapper: div
+        classes:
+          col-sm-6: col-sm-6
+        add_region_classes: 1
+        attributes: ''
+      bottom:
+        wrapper: div
+        classes:
+          col-sm-12: col-sm-12
+        add_region_classes: 1
+        attributes: ''
   page_title: 'My account'
   storage_type: page_manager
   storage_id: default_user
   builder: ipe
 page: user
-weight: -9
-selection_criteria: {  }
+weight: -7
+selection_criteria:
+  -
+    id: user_role
+    roles:
+      authenticated: authenticated
+    negate: false
+    context_mapping:
+      user: current_user
 selection_logic: and
 static_context: {  }

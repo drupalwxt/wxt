@@ -1057,6 +1057,70 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
+        field_image:
+          id: field_image
+          table: node__field_image
+          field: field_image
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: true
+            text: '<div class="thumbnail">{{ field_image }}</div>'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: '0'
+          element_class: ''
+          element_label_type: '0'
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: '0'
+          element_wrapper_class: ''
+          element_default_classes: false
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: image
+          settings:
+            image_style: medium
+            image_link: content
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
         title_1:
           id: title_1
           table: node_field_data
@@ -1133,7 +1197,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"row\">\n<div class=\"col-md-3 hidden-sm hidden-xs\">{{ field_avatar_image }}</div>\n<div class=\"col-md-9 col-sm-12\">\n  {{ body }}\n  {% trans %} Continue reading \"{{ title_1 }}\"... {% endtrans %}\n</div>\n</div>"
+            text: "<div class=\"row\">\n<div class=\"col-md-3 hidden-sm hidden-xs\">{{ field_image }}</div>\n<div class=\"col-md-9 col-sm-12\">\n  {{ body }}\n  {% trans %} Continue reading \"{{ title_1 }}\"... {% endtrans %}\n</div>\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -1269,6 +1333,7 @@ display:
       tags:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_avatar_image'
+        - 'config:field.storage.node.field_image'
   blog_all:
     display_plugin: page
     id: blog_all
@@ -1561,7 +1626,7 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: blog/%
+      path: blog/users/%
       display_description: ''
       arguments:
         uid:
@@ -1591,7 +1656,7 @@ display:
             sort_order: asc
             number_of_records: 0
             format: default_summary
-          specify_validation: false
+          specify_validation: true
           validate:
             type: none
             fail: 'not found'
@@ -1616,6 +1681,7 @@ display:
           entity_type: node
           entity_field: uid
           plugin_id: standard
+      enabled: true
     cache_metadata:
       max-age: -1
       contexts:

@@ -1,7 +1,7 @@
 langcode: fr
 status: true
 dependencies: {  }
-id: brand-fr
+id: brand_fr
 label: 'Marque du site'
 description: 'Menu marque en francais.'
 locked: false
