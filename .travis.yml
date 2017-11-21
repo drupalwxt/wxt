@@ -28,7 +28,6 @@ before_install:
   # Lets set-up our helper repository with all the docker config and use correct version in composer.json.
   - git clone --branch 8.x https://github.com/drupalwxt/site-wxt.git
   - cd site-wxt
-  - git checkout feat-lightning-v2.2.3
   # Install Drupal WxT.
   - export PR=https://api.github.com/repos/$TRAVIS_REPO_SLUG/pulls/$TRAVIS_PULL_REQUEST
   - export BRANCH=$(if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then echo $TRAVIS_BRANCH; else echo `curl -s $PR | jq -r .head.ref`; fi)
