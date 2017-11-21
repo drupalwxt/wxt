@@ -4,7 +4,7 @@ dependencies:
   config:
     - field.field.media.slideshow.field_media_in_library
     - field.field.media.slideshow.slideshow_items
-    - media_entity.bundle.slideshow
+    - media.type.slideshow
   module:
     - inline_entity_form
     - workbench_moderation

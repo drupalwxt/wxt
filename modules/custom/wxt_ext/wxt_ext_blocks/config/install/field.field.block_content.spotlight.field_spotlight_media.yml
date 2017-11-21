@@ -4,7 +4,7 @@ dependencies:
   config:
     - block_content.type.spotlight
     - field.storage.block_content.field_spotlight_media
-    - media_entity.bundle.image
+    - media.type.image
 id: block_content.spotlight.field_spotlight_media
 field_name: field_spotlight_media
 entity_type: block_content
