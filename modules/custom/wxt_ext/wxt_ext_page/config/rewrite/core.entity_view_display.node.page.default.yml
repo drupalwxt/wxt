@@ -8,7 +8,6 @@ dependencies:
     - field.field.node.page.panelizer
     - node.type.page
   module:
-    - metatag
     - panelizer
     - text
     - user
@@ -30,7 +29,7 @@ third_party_settings:
               settings: {  }
               third_party_settings: {  }
               weight: 0
-            region: content
+            region: main
             weight: 2
             context_mapping:
               entity: '@panelizer.entity_context:entity'
@@ -40,7 +39,7 @@ third_party_settings:
             label: 'Page title'
             provider: core
             label_display: '0'
-            region: content
+            region: main
             weight: 0
             uuid: 588e477f-63e7-471a-b464-16a842b8abf3
             context_mapping: {  }
@@ -51,7 +50,7 @@ third_party_settings:
             label_display: '0'
             primary: true
             secondary: true
-            region: content
+            region: main
             weight: 0
             uuid: c795868d-d954-48e3-8c26-fc1155d2b92a
             context_mapping: {  }
@@ -59,13 +58,134 @@ third_party_settings:
         uuid: df0d1b37-8cd5-46d3-b900-f18df4825325
         label: Default
         weight: 0
-        layout: layout_onecol
-        layout_settings: {  }
+        layout: bs_1col_stacked
+        layout_settings:
+          layout:
+            wrapper: div
+            classes:
+              row: row
+            add_layout_class: 1
+            attributes: ''
+          regions:
+            top:
+              wrapper: div
+              classes:
+                col-sm-12: col-sm-12
+              add_region_classes: 1
+              attributes: ''
+            main:
+              wrapper: div
+              classes:
+                col-sm-12: col-sm-12
+              add_region_classes: 1
+              attributes: ''
+            bottom:
+              wrapper: div
+              classes:
+                col-sm-12: col-sm-12
+              add_region_classes: 1
+              attributes: ''
         page_title: '[node:title]'
         storage_type: panelizer_default
         storage_id: 'node:page:default:default'
+        pattern: panelizer
         builder: ipe
         static_context: {  }
+      override:
+        blocks:
+          c62bbe2e-e1cb-48d6-803f-cf0f371d299b:
+            id: page_title_block
+            label: 'Page title'
+            provider: core
+            label_display: '0'
+            region: top
+            weight: -1
+            uuid: c62bbe2e-e1cb-48d6-803f-cf0f371d299b
+            context_mapping: {  }
+          32338ff6-919d-414d-a91b-fa0310743e8c:
+            id: local_tasks_block
+            label: Tabs
+            provider: core
+            label_display: '0'
+            primary: true
+            secondary: true
+            region: top
+            weight: 0
+            uuid: 32338ff6-919d-414d-a91b-fa0310743e8c
+            context_mapping: {  }
+          a9f455ac-7a75-4241-bb9e-52f56897df0a:
+            id: 'entity_field:node:body'
+            label: Body
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: hidden
+              type: text_default
+              settings: {  }
+              third_party_settings: {  }
+              weight: 0
+            region: main
+            weight: -9
+            uuid: a9f455ac-7a75-4241-bb9e-52f56897df0a
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+          62bdbdfd-4fa7-4b64-9568-7e57ff8dfb6d:
+            id: 'entity_field:node:comment'
+            label: Comments
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: above
+              type: comment_default
+              settings:
+                view_mode: default
+                pager_id: 1
+              third_party_settings: {  }
+              weight: 0
+            region: bottom
+            weight: 0
+            uuid: 62bdbdfd-4fa7-4b64-9568-7e57ff8dfb6d
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+        id: panels_variant
+        uuid: 71232a1f-ba27-46d8-8203-b40d96761e33
+        label: Override
+        weight: 0
+        layout: bs_1col_stacked
+        layout_settings:
+          layout:
+            wrapper: div
+            classes:
+              row: row
+            add_layout_class: 1
+            attributes: ''
+          regions:
+            top:
+              wrapper: div
+              classes:
+                col-sm-12: col-sm-12
+              add_region_classes: 1
+              attributes: ''
+            main:
+              wrapper: div
+              classes:
+                col-sm-12: col-sm-12
+              add_region_classes: 1
+              attributes: ''
+            bottom:
+              wrapper: div
+              classes:
+                col-sm-12: col-sm-12
+              add_region_classes: 1
+              attributes: ''
+        page_title: '[node:title]'
+        storage_type: panelizer_default
+        storage_id: 'node:page:default:override'
+        pattern: panelizer
+        builder: ipe
+        static_context: {  }
+    allow: false
+    default: override
 id: node.page.default
 targetEntityType: node
 bundle: page
@@ -80,9 +200,9 @@ content:
     region: content
   links:
     weight: 1
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
 hidden:
   comment: true
   langcode: true
