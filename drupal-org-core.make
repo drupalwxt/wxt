@@ -5,6 +5,7 @@ projects[drupal][version] = 8.4.2
 projects[drupal][patch][] = https://www.drupal.org/files/issues/736066-270.patch
 projects[drupal][patch][] = https://www.drupal.org/files/issues/1838234-jQuery_timepicker.patch
 projects[drupal][patch][] = https://www.drupal.org/files/issues/comment_form_should-2559833-35.patch
+projects[drupal][patch][] = https://www.drupal.org/files/issues/conditional_comment_broken_with_aggregation-2563069-16.patch
 projects[drupal][patch][] = https://www.drupal.org/files/issues/2599228-31.patch
 projects[drupal][patch][] = https://www.drupal.org/files/issues/2606322-4.x-field_list_item_view_correct_language.patch
 projects[drupal][patch][] = https://www.drupal.org/files/issues/implement-2630732-35.patch
