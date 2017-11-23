@@ -227,12 +227,6 @@
         },
         "enable-patching": true,
         "patches": {
-            "drupal/admin_toolbar": {
-                "Enter drupal/admin_toolbar patch #2922495 description here":
-                "https://www.drupal.org/files/issues/admin_toolbar_mega-2922495-4.patch",
-                "Enter drupal/admin_toolbar patch #2923580 description here":
-                "https://www.drupal.org/files/issues/unexpected-operand-2923580.patch"
-            },
             "drupal/bootstrap": {
                 "Enter drupal/bootstrap patch #2834732 description here":
                 "https://www.drupal.org/files/issues/temporarily_disable-2881978-2.patch",
@@ -381,7 +375,7 @@
         "oomphinc/composer-installers-extender": "^1.1",
         "drupal-composer/drupal-scaffold": "^2.0.0",
         "acquia/lightning": "2.2.3",
-        "drupal/admin_toolbar": "1.20",
+        "drupal/admin_toolbar": "1.21",
         "drupal/block_class": "1.0-alpha1",
         "drupal/blog": "dev-2.x#43a2171",
         "drupal/bootstrap": "3.6",
