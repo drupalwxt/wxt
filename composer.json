@@ -415,7 +415,7 @@
         "drupal/webform": "5.0-beta23",
         "drupal/webform_migrate": "1.0-alpha1",
         "drupal/wxt_bootstrap": "1.0-rc1",
-        "drupal/wxt_library": "1.0-rc1",
+        "drupal/wxt_library": "1.0-rc2",
         "w8tcha/ckeditor-codemirror": "1.16",
         "wet-boew/wet-boew": "4.0.26",
         "wet-boew/theme-wet-boew": "4.0.26",
