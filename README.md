@@ -4,11 +4,8 @@
 
 ## Important
 
-Drupal WxT for Drupal 8 is currently under active development and should not be
-considered to be stable and / or ready production use. Should you wish to run
-Drupal with the [WET-BOEW jQuery Framework][wet-boew] you are encouraged to
-leverage [Drupal WxT (D7)][drupal7] which is considered stable and has been
-extensively tested. Currently this project is in the alpha phase.
+Drupal WxT for Drupal 8 is currently under release candidate phase and now will
+provide an update path for all future releases.
 
 ## Important Links
 
