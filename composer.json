@@ -244,14 +244,8 @@
                 "https://www.drupal.org/files/issues/undefined_index_btn_size-2876614-2.patch"
             },
             "drupal/ckeditor_codemirror": {
-                "Enter drupal/ckeditor_codemirror patch #2771143 description here":
-                "https://www.drupal.org/files/issues/ckeditor_codemirror-installation-2771143-6.patch",
-                "Enter drupal/ckeditor_codemirror patch #2781039 description here":
-                "https://www.drupal.org/files/issues/removed_ckeditor_hook.patch",
-                "Enter drupal/ckeditor_codemirror patch #2834789 description here":
-                "https://www.drupal.org/files/issues/ckeditor_codemirror-coding-standards-2834789-5.patch",
                 "Enter drupal/ckeditor_codemirror patch #2901069 description here":
-                "https://www.drupal.org/files/issues/slight_re_architecture-2901069-9.patch"
+                "https://www.drupal.org/files/issues/slight_re_architecture-2901069-10.patch"
             },
             "drupal/core": {
                 "Enter drupal/core patch #736066 description here":
@@ -381,7 +375,7 @@
         "drupal/bootstrap": "3.6",
         "drupal/bootstrap_layouts": "5.0",
         "drupal/button_link": "1.0",
-        "drupal/ckeditor_codemirror": "1.0",
+        "drupal/ckeditor_codemirror": "1.1",
         "drupal/config_rewrite": "1.1",
         "drupal/config_update": "1.4",
         "drupal/diff": "1.0-rc1",

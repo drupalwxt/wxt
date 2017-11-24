@@ -9,3 +9,4 @@ dependencies:
   - drupal:webform
   - drupal:webform_bootstrap
   - drupal:webform_node
+  - drupal:webform_ui
