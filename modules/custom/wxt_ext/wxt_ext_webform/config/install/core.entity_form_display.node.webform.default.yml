@@ -42,7 +42,8 @@ content:
     type: language_select
     weight: 1
     region: content
-    settings: {  }
+    settings:
+      include_locked: true
     third_party_settings: {  }
   path:
     type: path
@@ -92,4 +93,5 @@ content:
     third_party_settings: {  }
     type: webform_entity_reference_select
     region: content
-hidden: {  }
+hidden:
+  status: true
