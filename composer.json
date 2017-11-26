@@ -298,10 +298,16 @@
                 "https://www.drupal.org/files/issues/taxonomy-context-provider-2920637-3.patch"
             },
             "drupal/ctools": {
+                "Enter drupal/ctools patch #2667652 description here":
+                "https://www.drupal.org/files/issues/ctools-option_to_expose-2667652-3.patch",
                 "Enter drupal/ctools patch #2712661 description here":
                 "https://www.drupal.org/files/issues/allow-2712661-2.patch",
                 "Enter drupal/ctools patch #2857279 description here":
-                "https://www.drupal.org/files/issues/ctools-duplicated_node_type_condition.patch"
+                "https://www.drupal.org/files/issues/ctools-duplicated_node_type_condition.patch",
+                "Enter drupal/ctools patch #2874176 description here":
+                "https://www.drupal.org/files/issues/entityview-cache-metadata-2874176-2.patch",
+                "Enter drupal/ctools patch #2924356 description here":
+                "https://www.drupal.org/files/issues/ctools-entity_field_rendered_twice-2924356-2.patch"
             },
             "drupal/inline_entity_form": {
                 "Enter drupal/inline_entity_form patch #2367235 description here":
