@@ -52,7 +52,7 @@ third_party_settings:
               type: comment_default
               settings:
                 view_mode: default
-                pager_id: 1
+                pager_id: 0
               third_party_settings: {  }
               weight: 0
               region: content
