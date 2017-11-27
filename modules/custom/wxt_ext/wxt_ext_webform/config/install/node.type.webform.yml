@@ -5,21 +5,15 @@ dependencies:
     module:
       - webform_node
   module:
+    - content_moderation
     - menu_ui
-    - workbench_moderation
 third_party_settings:
   menu_ui:
     available_menus:
       - main
     parent: 'main:'
-  workbench_moderation:
-    enabled: true
-    allowed_moderation_states:
-      - published
-      - archived
-      - draft
-      - needs_review
-    default_moderation_state: draft
+  lightning_workflow:
+    workflow: editorial
 name: Webform
 type: webform
 description: 'A basic page with a webform attached.'

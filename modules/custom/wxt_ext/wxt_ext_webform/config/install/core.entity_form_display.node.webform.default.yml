@@ -7,11 +7,11 @@ dependencies:
     - field.field.node.webform.webform
     - node.type.webform
   module:
+    - content_moderation
     - metatag
     - path
     - text
     - webform
-    - workbench_moderation
 id: node.webform.default
 targetEntityType: node
 bundle: webform

@@ -8,10 +8,10 @@ dependencies:
     - field.field.block_content.search.field_search_path
     - field.field.block_content.search.field_search_placeholder
   module:
+    - content_moderation
     - field_group
     - link
     - text
-    - workbench_moderation
 third_party_settings:
   field_group:
     group_search:

@@ -7,9 +7,9 @@ dependencies:
     - field.field.block_content.spotlight.body
     - field.field.block_content.spotlight.field_spotlight_media
   module:
+    - content_moderation
     - entity_browser
     - text
-    - workbench_moderation
 id: block_content.spotlight.default
 targetEntityType: block_content
 bundle: spotlight
