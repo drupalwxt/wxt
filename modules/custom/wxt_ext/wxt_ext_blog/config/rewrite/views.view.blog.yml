@@ -500,7 +500,7 @@ display:
     display_options:
       display_extenders: {  }
       display_description: ''
-      block_category: 'Content (Views)'
+      block_category: 'Lists (Views)'
       use_ajax: true
       defaults:
         use_ajax: false
