@@ -9,9 +9,8 @@ dependencies:
     - workbench_moderation
 third_party_settings:
   menu_ui:
-    available_menus:
-      - main
-    parent: 'main:'
+    available_menus: {  }
+    parent: ''
   workbench_moderation:
     enabled: true
     allowed_moderation_states:
