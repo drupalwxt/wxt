@@ -11,4 +11,5 @@ dependencies:
   - drupal:config_rewrite
   - drupal:views_bootstrap
   - drupal:wxt_ext_migration
+  - drupal:wxt_ext_taxonomy
   - drupal:wxt_ext_translation

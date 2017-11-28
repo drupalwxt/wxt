@@ -1,0 +1,9 @@
+name: 'WxT Extend Taxonomy'
+description: 'Provides taxonomy vocabularies used for categorizing content.'
+type: module
+core: 8.x
+package: 'WxT'
+
+# Required modules
+dependencies:
+  - drupal:taxonomy
