@@ -10,5 +10,7 @@ dependencies:
   - drupal:button_link
   - drupal:lightning_core
   - drupal:linkit
+  - drupal:menu_block
+  - drupal:menu_breadcrumb
   - drupal:token_filter
   - drupal:views_bootstrap
