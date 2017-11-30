@@ -1,22 +1,23 @@
+config_rewrite: replace
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.comment
-    - node.type.page
+    - field.storage.node.field_blog_comments
+    - node.type.blog_post
   module:
     - comment
-id: node.page.comment
-field_name: comment
+id: node.blog_post.field_blog_comments
+field_name: field_blog_comments
 entity_type: node
-bundle: page
-label: Comments
-description: ''
+bundle: blog_post
+label: 'Blog comments'
+description: 'Comments against a blog post.'
 required: false
 translatable: false
 default_value:
   -
-    status: 1
+    status: 2
     cid: 0
     last_comment_timestamp: 0
     last_comment_name: null
