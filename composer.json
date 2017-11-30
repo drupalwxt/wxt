@@ -313,7 +313,9 @@
                 "Enter drupal/inline_entity_form patch #2367235 description here":
                 "https://www.drupal.org/files/issues/support_entity_revision-2367235-92.patch",
                 "Enter drupal/inline_entity_form patch #2673548 description here":
-                "https://www.drupal.org/files/issues/inline_entity_form-widget_ux_0.patch"
+                "https://www.drupal.org/files/issues/inline_entity_form-widget_ux_0.patch",
+                "Enter drupal/inline_entity_form patch #2827230 description here":
+                "https://www.drupal.org/files/issues/2827230-5.patch"
             },
             "drupal/media_entity_image": {
                 "Enter drupal/media_entity_image patch #2850169 description here":
@@ -354,6 +356,10 @@
                 "https://www.drupal.org/files/issues/classes_should_be_array-2900531-2.patch",
                 "Enter drupal/panels patch #2910704 description here":
                 "https://www.drupal.org/files/issues/panels-ipe-card-flip-ie-error-2910704.diff"
+            },
+            "drupal/panelizer": {
+                "Enter drupal/panels patch #2778565 description here":
+                "https://www.drupal.org/files/issues/panelizer-multilingual-2778565-25.patch"
             },
             "drupal/views_bootstrap": {
                 "Enter drupal/views_bootstrap patch #2878352 description here":
