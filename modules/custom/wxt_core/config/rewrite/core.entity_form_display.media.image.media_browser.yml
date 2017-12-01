@@ -9,9 +9,9 @@ dependencies:
     - image.style.medium
     - media.type.image
   module:
+    - content_moderation
     - lightning_media
     - link
-    - workbench_moderation
 id: media.image.media_browser
 targetEntityType: media
 bundle: image

@@ -6,8 +6,8 @@ dependencies:
     - field.field.media.slideshow.slideshow_items
     - media.type.slideshow
   module:
+    - content_moderation
     - inline_entity_form
-    - workbench_moderation
 id: media.slideshow.default
 targetEntityType: media
 bundle: slideshow

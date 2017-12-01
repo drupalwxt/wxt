@@ -12,6 +12,7 @@ dependencies:
   - drupal:config_rewrite
   - drupal:config_update
   - drupal:contact
+  - drupal:content_moderation
   - drupal:diff
   - drupal:embed
   - drupal:entity_embed
@@ -22,6 +23,5 @@ dependencies:
   - drupal:pathauto
   - drupal:token
   - drupal:url_embed
-  - drupal:workbench_moderation
   - drupal:wxt_core
   - drupal:wxt_ext_theme

@@ -8,9 +8,9 @@ dependencies:
     - image.style.thumbnail
     - media.type.image
   module:
+    - content_moderation
     - image
     - link
-    - workbench_moderation
 id: media.image.default
 targetEntityType: media
 bundle: image
