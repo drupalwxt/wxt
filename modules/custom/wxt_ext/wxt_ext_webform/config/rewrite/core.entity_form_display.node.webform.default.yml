@@ -1,3 +1,4 @@
+config_rewrite: replace
 langcode: en
 status: true
 dependencies:
@@ -6,10 +7,10 @@ dependencies:
     - field.field.node.webform.webform
     - node.type.webform
   module:
+    - content_moderation
     - path
     - text
     - webform
-    - workbench_moderation
 id: node.webform.default
 targetEntityType: node
 bundle: webform

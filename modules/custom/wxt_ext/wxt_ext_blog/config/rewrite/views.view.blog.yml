@@ -735,7 +735,7 @@ display:
           decimal: .
           separator: ' '
           format_plural: false
-          format_plural_string: "1\x03@count"
+          format_plural_string: !!binary MQNAY291bnQ=
           prefix: ''
           suffix: ''
           plugin_id: numeric
@@ -1174,8 +1174,8 @@ display:
           alter:
             alter_text: true
             text: ''
-            make_link: true
-            path: '{{ title_1 }}'
+            make_link: false
+            path: ''
             absolute: false
             external: false
             replace_spaces: false

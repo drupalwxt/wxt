@@ -366,14 +366,6 @@
             "drupal/views_bootstrap": {
                 "Enter drupal/views_bootstrap patch #2878352 description here":
                 "https://www.drupal.org/files/issues/add_bootstrap_panels-2878352-3.patch"
-            },
-            "drupal/workbench_moderation": {
-                "Enter drupal/workbench_moderation patch #2668006 description here":
-                "https://www.drupal.org/files/issues/2668006-2.patch",
-                "Enter drupal/workbench_moderation patch #2768917 description here":
-                "https://www.drupal.org/files/issues/workbench_moderation_2768917_20.patch",
-                "Enter drupal/workbench_moderation patch #2835883 description here":
-                "https://www.drupal.org/files/issues/workbench_moderation-node_grants-2835883-3-D8.patch"
             }
         }
     },
@@ -382,7 +374,7 @@
         "cweagans/composer-patches": "1.6.2",
         "oomphinc/composer-installers-extender": "^1.1",
         "drupal-composer/drupal-scaffold": "^2.0.0",
-        "acquia/lightning": "2.2.3",
+        "acquia/lightning": "2.2.4-alpha4",
         "drupal/admin_toolbar": "1.21",
         "drupal/block_class": "1.0-alpha1",
         "drupal/blog": "dev-2.x#43a2171",

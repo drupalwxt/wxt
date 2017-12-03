@@ -14,11 +14,11 @@ dependencies:
     - node.type.blog_post
   module:
     - comment
+    - content_moderation
     - image
     - metatag
     - path
     - text
-    - workbench_moderation
 id: node.blog_post.default
 targetEntityType: node
 bundle: blog_post

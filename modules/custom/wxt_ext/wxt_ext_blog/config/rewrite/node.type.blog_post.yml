@@ -3,20 +3,14 @@ langcode: en
 status: true
 dependencies:
   module:
+    - content_moderation
     - menu_ui
-    - workbench_moderation
 third_party_settings:
   menu_ui:
     available_menus: {  }
     parent: 'main:'
-  workbench_moderation:
-    enabled: true
-    allowed_moderation_states:
-      - published
-      - archived
-      - draft
-      - needs_review
-    default_moderation_state: draft
+  lightning_workflow:
+    workflow: editorial
 name: 'Blog post'
 type: blog_post
 description: 'Use for multi-user blogs. Every user gets a personal blog.'
