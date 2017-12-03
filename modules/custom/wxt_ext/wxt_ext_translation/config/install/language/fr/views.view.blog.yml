@@ -44,7 +44,7 @@ display:
       fields:
         comment_count:
           alter:
-            text: "{% trans %}\r\n<span class=\"glyphicon glyphicon-comment\"></span> Comment ({{ comment_count }})\r\n{% endtrans %}"
+            text: "{% trans %}\r\n<span class=\"glyphicon glyphicon-comment\"></span> Commentaire ({{ comment_count }})\r\n{% endtrans %}"
         nothing:
           alter:
             text: "<div class=\"row\">\r\n<h2 class=\"col-md-9 mrgn-tp-md\">{{ title }}</h2>\r\n<div class=\"col-md-3 hidden-sm hidden-xs brdr-lft text-left\">{{ comment_count }}</div>\r\n</div>"
@@ -53,11 +53,11 @@ display:
             text: "<div class=\"row\">\r\n<p class=\"pagetag col-md-12 small\">{{ created }}</p>\r\n</div>"
         nothing_2:
           alter:
-            text: "<div class=\"row\">\r\n<div class=\"col-md-3 hidden-sm hidden-xs\">{{ field_image }}</div>\r\n<div class=\"col-md-9 col-sm-12\">\r\n  {{ body }}\r\n  {% trans %} Continuer la lecture \"{{ title_1 }}\"... {% endtrans %}\r\n</div>\r\n</div>"
+            text: "<div class=\"row\">\r\n<div class=\"col-md-3 hidden-sm hidden-xs\">{{ field_image }}</div>\r\n<div class=\"col-md-9 col-sm-12\">\r\n  {{ body }}\r\n  {% trans %} Continuer à lire \"{{ title_1 }}\"... {% endtrans %}\r\n</div>\r\n</div>"
       pager:
         options:
           tags:
-            previous: '‹ précédent'
+            previous: '‹ précédente'
             next: 'suivant ›'
             first: '« premier'
             last: 'dernier »'
