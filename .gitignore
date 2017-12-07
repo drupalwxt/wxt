@@ -13,7 +13,6 @@ compass_app_log.txt
 
 # Composer files
 bin/
-composer.lock
 html
 vendor/
 */*/*/vendor
