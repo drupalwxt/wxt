@@ -1,1 +1,1 @@
-## Once codebase exits from beta this file will be populated.
+## Once codebase exits from rc this file will be populated.
