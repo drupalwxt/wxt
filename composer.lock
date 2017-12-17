@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "e4494821f3f9c97cd4bb06ebf8127e34",
+    "content-hash": "3cfc0d306c078361e7ed4df96be6efd9",
     "packages": [
         {
             "name": "acquia/lightning",
@@ -1347,17 +1347,17 @@
         },
         {
             "name": "drupal/bootstrap",
-            "version": "3.6.0",
+            "version": "3.7.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/bootstrap",
-                "reference": "8.x-3.6"
+                "reference": "8.x-3.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/bootstrap-8.x-3.6.zip",
-                "reference": "8.x-3.6",
-                "shasum": "fa05324302f837d614bc395286e463b77628854e"
+                "url": "https://ftp.drupal.org/files/projects/bootstrap-8.x-3.7.zip",
+                "reference": "8.x-3.7",
+                "shasum": "e5bd85ccbb0155cfad6258d996c3b511532bbb1a"
             },
             "require": {
                 "drupal/core": "~8.0"
@@ -1368,7 +1368,7 @@
                     "dev-3.x": "3.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-3.6",
+                    "version": "8.x-3.7",
                     "datestamp": "1512079085",
                     "security-coverage": {
                         "status": "covered",
@@ -5963,22 +5963,22 @@
         },
         {
             "name": "drupal/wxt_bootstrap",
-            "version": "1.0.0-rc3",
+            "version": "1.0.0-rc4",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/wxt_bootstrap",
-                "reference": "8.x-1.0-rc3"
+                "reference": "8.x-1.0-rc4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/wxt_bootstrap-8.x-1.0-rc3.zip",
-                "reference": "8.x-1.0-rc3",
-                "shasum": "6de4eebd002fa3cd0258899bac8e5a5184578e0c"
+                "url": "https://ftp.drupal.org/files/projects/wxt_bootstrap-8.x-1.0-rc4.zip",
+                "reference": "8.x-1.0-rc4",
+                "shasum": "8a6d8ca2c50de1d0f9c38f120478430062c175e0"
             },
             "require": {
                 "composer/installers": "^1.2",
                 "cweagans/composer-patches": "^1.6.0",
-                "drupal/bootstrap": "3.6",
+                "drupal/bootstrap": "3.7",
                 "drupal/core": "8.*"
             },
             "type": "drupal-theme",
@@ -5987,8 +5987,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-rc3",
-                    "datestamp": "1511840587",
+                    "version": "8.x-1.0-rc4",
+                    "datestamp": "1513536784",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "RC releases are not covered by Drupal security advisories."
