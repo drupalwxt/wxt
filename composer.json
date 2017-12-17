@@ -27,7 +27,6 @@
         "grasmash/yaml-cli": "^1.0"
     },
     "config": {
-        "bin-dir": "bin/",
         "secure-http": false,
         "prestissimo": {
             "maxConnections": 10,
@@ -227,6 +226,10 @@
         },
         "enable-patching": true,
         "patches": {
+            "acquia/lightning": {
+                "Enter acquia/lightning patch #2927504 description here":
+                "https://www.drupal.org/files/issues/2927504-composer-vendor-bin-06.patch"
+            },
             "drupal/bootstrap": {
                 "Enter drupal/bootstrap patch #2834732 description here":
                 "https://www.drupal.org/files/issues/temporarily_disable-2881978-2.patch",
