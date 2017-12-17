@@ -183,7 +183,7 @@ process:
     plugin: default_value
     default_value: rich_text
   field_image:
-    plugin: migration
+    plugin: migration_lookup
     migration: wxt_file
     source: field_image_fid
   langcode: language

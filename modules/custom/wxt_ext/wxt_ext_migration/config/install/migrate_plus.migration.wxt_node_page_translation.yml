@@ -25,7 +25,7 @@ process:
   id: name
   title: title
   nid:
-    plugin: migration
+    plugin: migration_lookup
     migration: wxt_node_page
     source: name
   uid:

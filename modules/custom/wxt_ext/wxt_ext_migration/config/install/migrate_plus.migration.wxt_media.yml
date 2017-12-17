@@ -76,7 +76,7 @@ process:
     default_value: 1
   # Add image to media entity.
   'image/target_id':
-    plugin: migration
+    plugin: migration_lookup
     migration: wxt_file
     source: fid
   'image/title': title
