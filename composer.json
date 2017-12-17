@@ -294,8 +294,6 @@
                 "https://www.drupal.org/files/issues/doctrine_common_version_below_2.8-2898119-11.patch",
                 "Enter drupal/core patch #2914233 description here":
                 "https://www.drupal.org/files/issues/node_preview_error-2914233-5.patch",
-                "Enter drupal/core patch #2917031 description here":
-                "https://www.drupal.org/files/issues/translation-old-buttons-2917031-3.patch",
                 "Enter drupal/core patch #2920637 description here":
                 "https://www.drupal.org/files/issues/taxonomy-context-provider-2920637-3.patch"
             },
