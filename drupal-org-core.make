@@ -29,6 +29,7 @@ projects[drupal][patch][] = https://www.drupal.org/files/issues/2893029-9.patch
 projects[drupal][patch][] = https://www.drupal.org/files/issues/doctrine_common_version_below_2.8-2898119-11.patch
 projects[drupal][patch][] = https://www.drupal.org/files/issues/node_preview_error-2914233-5.patch
 projects[drupal][patch][] = https://www.drupal.org/files/issues/taxonomy-context-provider-2920637-3.patch
+projects[drupal][patch][] = https://www.drupal.org/files/issues/content_moderation-path_alias-2930599-09.patch
 projects[drupal][patch][] = https://www.drupal.org/files/issues/1356276-408--8.4.3.patch
 projects[drupal][patch][] = https://www.drupal.org/files/issues/2880374-remove-experimental-warnings-6.patch
 projects[drupal][patch][] = https://www.drupal.org/files/issues/2880445-remove-config-write-warning-2.patch

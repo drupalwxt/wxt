@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "54c9e6843941f271a3addb925609170e",
+    "content-hash": "bb99ce41f9bd7a2b946ef7442cae7a97",
     "packages": [
         {
             "name": "acquia/lightning",
@@ -1969,6 +1969,7 @@
                     "Enter drupal/core patch #2898119 description here": "https://www.drupal.org/files/issues/doctrine_common_version_below_2.8-2898119-11.patch",
                     "Enter drupal/core patch #2914233 description here": "https://www.drupal.org/files/issues/node_preview_error-2914233-5.patch",
                     "Enter drupal/core patch #2920637 description here": "https://www.drupal.org/files/issues/taxonomy-context-provider-2920637-3.patch",
+                    "Enter drupal/core patch #2930599 description here": "https://www.drupal.org/files/issues/content_moderation-path_alias-2930599-09.patch",
                     "1356276 - Allow profiles to provide a base/parent profile and load them in the correct order": "https://www.drupal.org/files/issues/1356276-408--8.4.3.patch",
                     "2880374 - Experimental modules should not have warnings after being installed": "https://www.drupal.org/files/issues/2880374-remove-experimental-warnings-6.patch",
                     "2880445 - Config sync should not throw a warning when not being writable": "https://www.drupal.org/files/issues/2880445-remove-config-write-warning-2.patch",
