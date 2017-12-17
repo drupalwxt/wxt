@@ -50,7 +50,7 @@ process:
     source: fid
     process:
       target_id:
-        plugin: migration
+        plugin: migration_lookup
         migration: wxt_media
         source: id
 destination:
