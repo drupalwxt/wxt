@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "5b1e739fc9ba62478446a74bb5652f36",
+    "content-hash": "54c9e6843941f271a3addb925609170e",
     "packages": [
         {
             "name": "acquia/lightning",
@@ -157,7 +157,8 @@
                     }
                 },
                 "patches_applied": {
-                    "Enter acquia/lightning patch #2927504 description here": "https://www.drupal.org/files/issues/2927504-composer-vendor-bin-06.patch"
+                    "Enter acquia/lightning patch #2927504 description here": "https://www.drupal.org/files/issues/2927504-composer-vendor-bin-06.patch",
+                    "Enter acquia/lightning patch #2929997 description here": "https://www.drupal.org/files/issues/2929997-5.patch"
                 }
             },
             "autoload": {

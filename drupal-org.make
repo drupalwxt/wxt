@@ -196,6 +196,7 @@ projects[lightning][type] = profile
 projects[lightning][subdir] = ""
 projects[lightning][version] = 2.25
 projects[lightning][patch][] = https://www.drupal.org/files/issues/2927504-composer-vendor-bin-06.patch
+projects[lightning][patch][] = https://www.drupal.org/files/issues/2929997-5.patch
 libraries[wet-boew][download][type] = get
 libraries[wet-boew][download][url] = https://github.com/wet-boew/wet-boew-cdn/archive/v4.0.26.tar.gz
 libraries[theme-wet-boew][download][type] = get

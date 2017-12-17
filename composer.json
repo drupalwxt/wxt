@@ -228,7 +228,9 @@
         "patches": {
             "acquia/lightning": {
                 "Enter acquia/lightning patch #2927504 description here":
-                "https://www.drupal.org/files/issues/2927504-composer-vendor-bin-06.patch"
+                "https://www.drupal.org/files/issues/2927504-composer-vendor-bin-06.patch",
+                "Enter acquia/lightning patch #2929997 description here":
+                "https://www.drupal.org/files/issues/2929997-5.patch"
             },
             "drupal/bootstrap": {
                 "Enter drupal/bootstrap patch #2834732 description here":
