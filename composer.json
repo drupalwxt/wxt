@@ -369,6 +369,14 @@
             "drupal/views_bootstrap": {
                 "Enter drupal/views_bootstrap patch #2878352 description here":
                 "https://www.drupal.org/files/issues/add_bootstrap_panels-2878352-3.patch"
+            },
+            "drupal/replication": {
+                "2814055 - Allow modules to react to replication events":
+                "https://www.drupal.org/files/issues/2814055-2.patch"
+            },
+            "drupal/workspace": {
+                "Enter drupal/workspace patch #2787947 description here":
+                "https://www.drupal.org/files/issues/add_content_moderation-2787947-12.patch"
             }
         }
     },
@@ -413,6 +421,14 @@
         "drupal/webform_migrate": "1.0-alpha1",
         "drupal/wxt_bootstrap": "1.0-rc5",
         "drupal/wxt_library": "1.0-rc2",
+        "drupal/conflict": "1.0",
+        "drupal/key_value": "1.1",
+        "drupal/multiversion": "1.0-beta7",
+        "drupal/workspace": "1.0-beta4",
+        "drupal/replication": "1.0-beta4",
+        "drupal/deploy": "1.0-beta2",
+        "drupal/relaxed": "dev-2.x",
+        "drupal/trash": "dev-2.x",
         "w8tcha/ckeditor-codemirror": "1.16",
         "wet-boew/wet-boew": "4.0.26",
         "wet-boew/theme-wet-boew": "4.0.26",
