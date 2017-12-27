@@ -427,6 +427,7 @@
         "drupal/wxt_library": "1.0-rc2",
         "drupal/conflict": "1.0",
         "drupal/key_value": "1.1",
+        "drupal/environment_indicator": "3.2",
         "drupal/multiversion": "1.0-beta7",
         "drupal/workspace": "1.0-beta4",
         "drupal/replication": "1.0-beta4",

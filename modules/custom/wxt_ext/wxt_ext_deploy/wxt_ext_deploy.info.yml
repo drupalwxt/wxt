@@ -8,4 +8,5 @@ core: '8.x'
 dependencies:
   - drupal:wxt_ext_preview
   - drupal:deploy
+  - drupal:environment_indicator
   - drupal:relaxed
