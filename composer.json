@@ -370,8 +370,12 @@
                 "Enter drupal/views_bootstrap patch #2878352 description here":
                 "https://www.drupal.org/files/issues/add_bootstrap_panels-2878352-3.patch"
             },
+            "drupal/multiversion": {
+                "Enter drupal/multiversion patch #2928271 description here":
+                "https://www.drupal.org/files/issues/multiversion-media-core-2928271-03.patch"
+            },
             "drupal/replication": {
-                "2814055 - Allow modules to react to replication events":
+                "Enter drupal/replication patch #2814055 description here":
                 "https://www.drupal.org/files/issues/2814055-2.patch"
             },
             "drupal/workspace": {
