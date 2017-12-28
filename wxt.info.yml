@@ -13,6 +13,7 @@ base profile:
     - lightning_contact_form
     - lightning_roles
     - lightning_scheduled_updates
+    - lightning_scheduler
     - lightning_search
 
 # Language
