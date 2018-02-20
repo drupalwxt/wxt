@@ -255,6 +255,8 @@
             "drupal/core": {
                 "Enter drupal/core patch #736066 description here":
                 "https://www.drupal.org/files/issues/736066-270.patch",
+                "1356276 - Allow profiles to provide a base/parent profile and load them in the correct order":
+                "https://www.drupal.org/files/issues/1356276-419--8.4.4.patch",
                 "Enter drupal/core patch #1838234 description here":
                 "https://www.drupal.org/files/issues/1838234-jQuery_timepicker.patch",
                 "Enter drupal/core patch #2559833 description here":
@@ -369,6 +371,14 @@
             "drupal/views_bootstrap": {
                 "Enter drupal/views_bootstrap patch #2878352 description here":
                 "https://www.drupal.org/files/issues/add_bootstrap_panels-2878352-3.patch"
+            }
+        },
+        "patches-ignore": {
+            "acquia/lightning": {
+              "drupal/core": {
+                "2880445 - Config sync should not throw a warning when not being writable":
+                "https://www.drupal.org/files/issues/2880445-remove-config-write-warning-2.patch"
+              }
             }
         }
     },
