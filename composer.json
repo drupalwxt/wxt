@@ -376,6 +376,8 @@
         "patches-ignore": {
             "acquia/lightning": {
               "drupal/core": {
+                "1356276 - Allow profiles to provide a base/parent profile and load them in the correct order":
+                "https://www.drupal.org/files/issues/1356276-408--8.4.3.patch",
                 "2880445 - Config sync should not throw a warning when not being writable":
                 "https://www.drupal.org/files/issues/2880445-remove-config-write-warning-2.patch"
               }
