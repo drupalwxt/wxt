@@ -226,12 +226,6 @@
         },
         "enable-patching": true,
         "patches": {
-            "acquia/lightning": {
-                "Enter acquia/lightning patch #2927504 description here":
-                "https://www.drupal.org/files/issues/2927504-composer-vendor-bin-06.patch",
-                "Enter acquia/lightning patch #2929997 description here":
-                "https://www.drupal.org/files/issues/2929997-5.patch"
-            },
             "drupal/bootstrap": {
                 "Enter drupal/bootstrap patch #2834732 description here":
                 "https://www.drupal.org/files/issues/temporarily_disable-2881978-2.patch",
@@ -302,9 +296,7 @@
                 "Enter drupal/core patch #2920637 description here":
                 "https://www.drupal.org/files/issues/taxonomy-context-provider-2920637-3.patch",
                 "Enter drupal/core patch #2930599 description here":
-                "https://www.drupal.org/files/issues/content_moderation-path_alias-2930599-09.patch",
-                "Enter drupal/core patch #2930715 description here":
-                "https://www.drupal.org/files/issues/2930715-2-4.patch"
+                "https://www.drupal.org/files/issues/content_moderation-path_alias-2930599-09.patch"
             },
             "drupal/ctools": {
                 "Enter drupal/ctools patch #2667652 description here":
