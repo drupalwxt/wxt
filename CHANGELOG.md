@@ -1,4 +1,4 @@
-## v2.0
+## v2.0.0
 
 Initial release of Drupal WxT for Drupal 8.
 
