@@ -336,7 +336,9 @@
                 "Enter drupal/page_manager patch #2710169 description here":
                 "https://www.drupal.org/files/issues/page_manager-block-css-attributes-9.patch",
                 "Enter drupal/page_manager patch #2752227 description here":
-                "https://www.drupal.org/files/issues/page_manager-incorrect-page_title-2752227-25-8.x.4.x.patch"
+                "https://www.drupal.org/files/issues/page_manager-incorrect-page_title-2752227-25-8.x.4.x.patch",
+                "Issue #2918564: Update 'page_manager.variant_route_filter' service according to core changes":
+                "https://www.drupal.org/files/issues/2918564-22.patch"
             },
             "drupal/paragraphs": {
                 "Enter drupal/paragraphs patch #2878615 description here":
@@ -391,7 +393,7 @@
         "drupal/menu_breadcrumb": "1.5",
         "drupal/password_policy": "3.0-alpha4",
         "drupal/simple_sitemap": "2.11",
-        "drupal/page_manager": "^4.0",
+        "drupal/page_manager": "4.0-beta2",
         "drupal/paragraphs": "1.2",
         "drupal/field_formatter": "1.1",
         "drupal/file_entity": "2.0-beta4",
