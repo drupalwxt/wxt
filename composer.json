@@ -248,7 +248,7 @@
             },
             "drupal/core": {
                 "Enter drupal/core patch #736066 description here":
-                "https://www.drupal.org/files/issues/736066-270.patch",
+                "https://www.drupal.org/files/issues/736066-296.patch",
                 "Enter drupal/core patch #1838234 description here":
                 "https://www.drupal.org/files/issues/1838234-jQuery_timepicker.patch",
                 "Enter drupal/core patch #2559833 description here":
@@ -258,7 +258,7 @@
                 "Enter drupal/core patch #2606322 description here":
                 "https://www.drupal.org/files/issues/2606322-4.x-field_list_item_view_correct_language.patch",
                 "Enter drupal/core patch #2630732 description here":
-                "https://www.drupal.org/files/issues/implement-2630732-35.patch",
+                "https://www.drupal.org/files/issues/2630732-42.patch",
                 "2679775 - Fixes float issue with inline label fields (entity references on most cases).":
                 "https://www.drupal.org/files/issues/2679775-11-inline-labels.patch",
                 "Enter drupal/core patch #2698057 description here":
@@ -281,8 +281,6 @@
                 "https://www.drupal.org/files/issues/exposed_filter_reset-2820347-67.patch",
                 "Enter drupal/core patch #2829792 description here":
                 "https://www.drupal.org/files/issues/improve_the_image-2829792-18.patch",
-                "Enter drupal/core patch #2861840 description here":
-                "https://www.drupal.org/files/issues/preprocess_functions-2861840-17.patch",
                 "Enter drupal/core patch #2885370 description here":
                 "https://www.drupal.org/files/issues/systemmainblock_build-2885370-3.patch",
                 "Enter drupal/core patch #2862511 description here":
