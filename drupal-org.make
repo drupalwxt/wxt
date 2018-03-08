@@ -411,56 +411,24 @@ projects[wxt_bootstrap][download][url] = "https://git.drupal.org/project/wxt_boo
 projects[wxt_bootstrap][download][tag] = "1.x-1.0"
 
 ; Libraries
-libraries[acquia/lightning][type] = "library"
-libraries[acquia/lightning][download][type] = "git"
-libraries[acquia/lightning][download][url] = "https://github.com/acquia/lightning.git"
-libraries[acquia/lightning][download][branch] = "3.1.0"
-libraries[acquia/lightning][download][revision] = "4cd895f71815b07cc732b4844e12cd05d1e83943"
+projects[lightning][type] = profile
+projects[lightning][subdir] = ""
+projects[lightning][version] = 3.100
 
-libraries[w8tcha/ckeditor-codemirror][type] = "library"
-libraries[w8tcha/ckeditor-codemirror][download][type] = "git"
-libraries[w8tcha/ckeditor-codemirror][download][url] = "https://github.com/w8tcha/CKEditor-CodeMirror-Plugin.git"
-libraries[w8tcha/ckeditor-codemirror][download][branch] = "v1.16"
-libraries[w8tcha/ckeditor-codemirror][download][revision] = "1.16"
-
-libraries[wet-boew/theme-base][type] = "library"
-libraries[wet-boew/theme-base][download][type] = "git"
-libraries[wet-boew/theme-base][download][url] = "https://github.com/wet-boew/themes-cdn.git"
-libraries[wet-boew/theme-base][download][branch] = "v4.0.27"
-libraries[wet-boew/theme-base][download][revision] = "v4.0.27-theme-base"
-
-libraries[wet-boew/theme-gc-intranet][type] = "library"
-libraries[wet-boew/theme-gc-intranet][download][type] = "git"
-libraries[wet-boew/theme-gc-intranet][download][url] = "https://github.com/wet-boew/themes-cdn.git"
-libraries[wet-boew/theme-gc-intranet][download][branch] = "v4.0.27"
-libraries[wet-boew/theme-gc-intranet][download][revision] = "v4.0.27-theme-gc-intranet"
-
-libraries[wet-boew/theme-gcweb][type] = "library"
-libraries[wet-boew/theme-gcweb][download][type] = "git"
-libraries[wet-boew/theme-gcweb][download][url] = "https://github.com/wet-boew/themes-cdn.git"
-libraries[wet-boew/theme-gcweb][download][branch] = "v4.0.27"
-libraries[wet-boew/theme-gcweb][download][revision] = "v4.0.27-gcweb"
-
-libraries[wet-boew/theme-gcwu-fegc][type] = "library"
-libraries[wet-boew/theme-gcwu-fegc][download][type] = "git"
-libraries[wet-boew/theme-gcwu-fegc][download][url] = "https://github.com/wet-boew/themes-cdn.git"
-libraries[wet-boew/theme-gcwu-fegc][download][branch] = "v4.0.27"
-libraries[wet-boew/theme-gcwu-fegc][download][revision] = "v4.0.27-theme-gcwu-fegc"
-
-libraries[wet-boew/theme-ogpl][type] = "library"
-libraries[wet-boew/theme-ogpl][download][type] = "git"
-libraries[wet-boew/theme-ogpl][download][url] = "https://github.com/wet-boew/themes-cdn.git"
-libraries[wet-boew/theme-ogpl][download][branch] = "v4.0.27"
-libraries[wet-boew/theme-ogpl][download][revision] = "v4.0.27-theme-ogpl"
-
-libraries[wet-boew/theme-wet-boew][type] = "library"
-libraries[wet-boew/theme-wet-boew][download][type] = "git"
-libraries[wet-boew/theme-wet-boew][download][url] = "https://github.com/wet-boew/themes-cdn.git"
-libraries[wet-boew/theme-wet-boew][download][branch] = "v4.0.27"
-libraries[wet-boew/theme-wet-boew][download][revision] = "v4.0.27-theme-wet-boew"
-
-libraries[wet-boew/wet-boew][type] = "library"
-libraries[wet-boew/wet-boew][download][type] = "git"
-libraries[wet-boew/wet-boew][download][url] = "https://github.com/wet-boew/wet-boew-cdn.git"
-libraries[wet-boew/wet-boew][download][branch] = "v4.0.27"
-libraries[wet-boew/wet-boew][download][revision] = "v4.0.27"
+; Themes
+libraries[wet-boew][download][type] = get
+libraries[wet-boew][download][url] = https://github.com/wet-boew/wet-boew-cdn/archive/v4.0.27.tar.gz
+libraries[theme-wet-boew][download][type] = get
+libraries[theme-wet-boew][download][url] = https://github.com/wet-boew/themes-cdn/archive/v4.0.27-theme-wet-boew.tar.gz
+libraries[theme-base][download][type] = get
+libraries[theme-base][download][url] = https://github.com/wet-boew/themes-cdn/archive/v4.0.27-theme-base.tar.gz
+libraries[theme-gc-intranet][download][type] = get
+libraries[theme-gc-intranet][download][url] = https://github.com/wet-boew/themes-cdn/archive/v4.0.27-theme-gc-intranet.tar.gz
+libraries[theme-gcwu-fegc][download][type] = get
+libraries[theme-gcwu-fegc][download][url] = https://github.com/wet-boew/themes-cdn/archive/v4.0.27-theme-gcwu-fegc.tar.gz
+libraries[theme-gcweb][download][type] = get
+libraries[theme-gcweb][download][url] = https://github.com/wet-boew/themes-cdn/archive/v4.0.27-gcweb.tar.gz
+libraries[theme-ogpl][download][type] = get
+libraries[theme-ogpl][download][url] = https://github.com/wet-boew/themes-cdn/archive/v4.0.27-theme-ogpl.tar.gz
+libraries[ckeditor-codemirror][download][type] = get
+libraries[ckeditor-codemirror][download][url] = https://github.com/w8tcha/CKEditor-CodeMirror-Plugin/archive/1.16.tar.gz
