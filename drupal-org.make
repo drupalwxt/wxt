@@ -2,6 +2,7 @@ core = 8.x
 api = 2
 defaults[projects][subdir] = contrib
 
+; Modules
 projects[acquia_connector][type] = "module"
 projects[acquia_connector][download][type] = "git"
 projects[acquia_connector][download][url] = "https://git.drupal.org/project/acquia_connector"
