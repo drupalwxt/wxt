@@ -1,3 +1,9 @@
+## v2.1.2
+
+Feature(s):
+
+- Lightning 3.1.1
+
 ## v2.1.1
 
 Security Update(s):
