@@ -4,6 +4,9 @@ Feature(s):
 
 - Lightning 3.1.1
 
+Note that you must update drupal/drupal-extension to at least 3.4.0
+for behat tests to pass).
+
 ## v2.1.1
 
 Security Update(s):
