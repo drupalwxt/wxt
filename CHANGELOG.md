@@ -1,3 +1,13 @@
+## v2.1.3
+
+Security Update(s):
+
+- Drupal Core 8.5.3 [SA-CORE-2018-004](https://www.drupal.org/sa-core-2018-004)
+
+Feature(s):
+
+- Lightning 3.1.3
+
 ## v2.1.2
 
 Feature(s):
