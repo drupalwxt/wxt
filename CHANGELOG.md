@@ -1,3 +1,9 @@
+## v2.1.4
+
+Bug fixe(s):
+
+- [2969558: Panels patch for issue #2869412 is failing for Panels 4.3](https://www.drupal.org/project/wxt/issues/2969558)
+
 ## v2.1.3
 
 Security Update(s):
