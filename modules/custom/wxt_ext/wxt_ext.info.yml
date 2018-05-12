@@ -22,3 +22,4 @@ dependencies:
   - drupal:wxt_ext_theme
   - drupal:wxt_ext_translation
   - drupal:wxt_ext_user
+  - drupal:s3fs

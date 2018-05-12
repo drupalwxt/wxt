@@ -403,6 +403,7 @@
         "drupal/migrate_tools": "4.0-beta3",
         "drupal/url_embed": "1.0-alpha1",
         "drupal/views_bootstrap": "3.0",
+        "drupal/s3fs": "3.0-alpha10",
         "drupal/scheduled_updates": "1.0.0-alpha6",
         "drupal/token_filter": "1.0-beta1",
         "drupal/views_autocomplete_filters": "1.2",
