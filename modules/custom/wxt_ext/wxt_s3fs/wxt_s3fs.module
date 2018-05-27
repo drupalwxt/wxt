@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * @file
+ * Contains wxt_ext_editor.module.
+ */
+
+/**
+ * Implements hook_editor_js_settings_alter().
+ */
+function wxt_ext_editor_editor_js_settings_alter(array &$settings) {
+  foreach ($settings['editor']['formats'] as &$format) {
+    // Add a small ckeditor faux plugin.
+    $format['editorSettings']['drupalExternalPlugins']['wxt_ext_editor'] = base_path() . drupal_get_path('module', 'wxt_ext_editor') . '/js/wxt_ext_editor.js';
+    $format['editorSettings']['extraPlugins'] .= ',wxt_ext_editor';
+  }
+}
