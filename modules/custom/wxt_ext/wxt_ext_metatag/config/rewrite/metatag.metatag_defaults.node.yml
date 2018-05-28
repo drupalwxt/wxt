@@ -7,3 +7,4 @@ label: Content
 tags:
   description: '[node:summary]'
   canonical_url: '[node:url]'
+  title: '[node:title]'

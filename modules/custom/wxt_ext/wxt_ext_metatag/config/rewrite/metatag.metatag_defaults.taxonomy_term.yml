@@ -7,3 +7,4 @@ label: 'Taxonomy term'
 tags:
   description: '[term:description]'
   canonical_url: '[term:url]'
+  title: '[term:title]'
