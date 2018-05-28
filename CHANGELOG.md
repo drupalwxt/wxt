@@ -1,3 +1,10 @@
+## v2.1.5
+
+Feature(s):
+
+- Lightning 3.1.4
+- Update contrib modules
+
 ## v2.1.4
 
 Bug fixe(s):
