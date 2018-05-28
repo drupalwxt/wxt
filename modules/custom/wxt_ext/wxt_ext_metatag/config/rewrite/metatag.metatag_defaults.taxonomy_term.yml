@@ -1,0 +1,9 @@
+config_rewrite: replace
+langcode: en
+status: true
+dependencies: {  }
+id: taxonomy_term
+label: 'Taxonomy term'
+tags:
+  description: '[term:description]'
+  canonical_url: '[term:url]'
