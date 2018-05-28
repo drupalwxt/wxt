@@ -1,0 +1,9 @@
+config_rewrite: replace
+langcode: en
+status: true
+dependencies: {  }
+id: global
+label: Global
+tags:
+  title: '[current-page:title]'
+  canonical_url: '[current-page:url]'
