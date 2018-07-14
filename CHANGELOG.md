@@ -1,3 +1,29 @@
+## v2.1.6
+
+Features / Bug Fixes:
+
+- Updated Drupal Core to 8.5.5
+- Updated wxt_library to 1.2
+  - Fix Cache issues in user account block (#2980764)
+  - Fix Update search Canada.ca form for HTTPS (#2977233)
+- Updated wxt_bootstrap to 1.3
+  - Add CDN option for the footer to the theme settings (#2927929)
+- Updated contrib modules, including:
+  - admin_toolbar to 1.24
+  - block_class to 1.0
+  - bootstrap_layouts to 5.1
+  - diff to 1.0-rc2
+  - media_entity_image to 1.3
+  - media_entity_slideshow to 2.0-alpha1
+  - menu_block to 1.5.0
+  - field_formatter to 1.2
+  - metatag to 1.5
+  - migrate_tools to 4.0-rc1
+  - token_filter to 1.0
+  - webform to 5.0-rc16
+
+**Note:** After updating, Drupal will emit a warning about the metatag_page_variants module missing. This will be corrected by an update hook in wxt_ext_metatag when `drush updb` is run.
+
 ## v2.1.5
 
 Feature(s):
