@@ -8,5 +8,5 @@ core: '8.x'
 dependencies:
   - drupal:metatag
   - drupal:metatag_dc
-  - drupal:metatag_page_variants
+  - drupal:metatag_page_manager
   - drupal:metatag_views
