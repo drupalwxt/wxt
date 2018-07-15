@@ -18,3 +18,12 @@ function wxt_ext_metatag_update_8001() {
   // Enable metatag_page_manager module.
   \Drupal::service('module_installer')->install(['metatag_page_manager']);
 }
+
+/**
+ * Updates field_meta_tags on 'Basic page' content type to be translatable.
+ */
+function wxt_ext_metatag_update_8002() {
+  $config = \Drupal::configFactory()->getEditable('field.field.node.page.field_meta_tags');
+  $config->set('translatable', TRUE);
+  $config->save();
+}
