@@ -291,9 +291,7 @@
                 "Enter drupal/core patch #2920637 description here":
                 "https://www.drupal.org/files/issues/taxonomy-context-provider-2920637-3.patch",
                 "Enter drupal/core patch #2930599 description here":
-                "https://www.drupal.org/files/issues/content_moderation-path_alias-2930599-09.patch",
-                "Enter drupal/core patch #2921661 description here":
-                "https://www.drupal.org/files/issues/2018-07-04/2921661-86-8.6.x.patch"
+                "https://www.drupal.org/files/issues/content_moderation-path_alias-2930599-09.patch"
             },
             "drupal/ctools": {
                 "Enter drupal/ctools patch #2667652 description here":
