@@ -1,3 +1,16 @@
+## v2.1.7
+
+Security update(s):
+
+- Drupal Core 8.5.6 [SA-CORE-2018-005](https://www.drupal.org/sa-core-2018-005)
+
+Feature(s) / Bug fixe(s):
+
+- Updated wxt_bootstrap to 1.4
+  - Form required marker "\204E" is broken in Chrome on Windows (#2988183)
+  - Use img elements for SVG images instead of object elements (#2990023)
+- Landing page behat test fail with moderation_state (#2989354)
+
 ## v2.1.6
 
 Features / Bug Fixes:
