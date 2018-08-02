@@ -327,6 +327,10 @@
                 "Enter drupal/menu_block patch #2919579 description here":
                 "https://www.drupal.org/files/issues/patch_menu_block_with-2919579-3.patch"
             },
+            "drupal/lightning_core": {
+                "Enter drupal/lightning_layout patch #2990048 description here":
+                "https://www.drupal.org/files/issues/2018-08-01/2990048.patch"
+            },
             "drupal/lightning_layout": {
                 "Enter drupal/lightning_layout patch #2989369 description here":
                 "https://www.drupal.org/files/issues/2018-07-30/2989369-feat-dep-Ensure-lightning_workflow-dep-02.patch"
