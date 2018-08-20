@@ -413,15 +413,8 @@
         "drupal/webform": "^5.0-rc16",
         "drupal/webform_migrate": "1.0-alpha1",
         "drupal/wxt_bootstrap": "1.4",
-        "drupal/wxt_library": "1.2",
-        "w8tcha/ckeditor-codemirror": "1.16",
-        "wet-boew/wet-boew": "4.0.28.1",
-        "wet-boew/theme-wet-boew": "4.0.28.1",
-        "wet-boew/theme-base": "4.0.27",
-        "wet-boew/theme-gc-intranet": "4.0.27",
-        "wet-boew/theme-gcwu-fegc": "4.0.27",
-        "wet-boew/theme-gcweb": "4.0.28.1",
-        "wet-boew/theme-ogpl": "4.0.27"
+        "drupal/wxt_library": "dev-1.x",
+        "w8tcha/ckeditor-codemirror": "1.16"
     },
     "autoload": {
         "psr-4": {
