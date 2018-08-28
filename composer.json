@@ -376,7 +376,7 @@
         "drupal/admin_toolbar": "1.24",
         "drupal/block_class": "1.0",
         "drupal/blog": "dev-2.x#43a2171",
-        "drupal/bootstrap": "3.7",
+        "drupal/bootstrap": "3.12",
         "drupal/bootstrap_layouts": "5.1",
         "drupal/button_link": "1.1",
         "drupal/ckeditor_codemirror": "1.1",
