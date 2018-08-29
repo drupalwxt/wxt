@@ -1,3 +1,13 @@
+## v2.1.8
+
+Feature(s) / Bug fixe(s):
+
+- Removes patches that are no longer necessary
+- Updated wxt_bootstrap to 1.5
+  - Update bootstrap to 3.12
+- Updated wxt_library to 1.3
+  - Update wet-boew packages to 0.28.1 (where available)
+
 ## v2.1.7
 
 Security update(s):
