@@ -228,12 +228,8 @@
         "enable-patching": true,
         "patches": {
             "drupal/bootstrap": {
-                "Enter drupal/bootstrap patch #2834732 description here":
-                "https://www.drupal.org/files/issues/temporarily_disable-2881978-2.patch",
-                "Enter drupal/bootstrap patch #2905729 description here":
-                "https://www.drupal.org/files/issues/bootstrap-improve_alterManager_performance-2905729-5.patch",
-                "Enter drupal/bootstrap patch #2905747 description here":
-                "https://www.drupal.org/files/issues/bootstrap-theme_context_generation_expensive-2905747-2.patch"
+                "Enter drupal/bootstrap patch #2881978 description here":
+                "https://www.drupal.org/files/issues/temporarily_disable-2881978-2.patch"
             },
             "drupal/blog": {
                 "Enter drupal/blog patch #2834732 description here":
@@ -327,10 +323,6 @@
                 "Enter drupal/menu_block patch #2919579 description here":
                 "https://www.drupal.org/files/issues/patch_menu_block_with-2919579-3.patch"
             },
-            "drupal/lightning_layout": {
-                "Enter drupal/lightning_layout patch #2989369 description here":
-                "https://www.drupal.org/files/issues/2018-07-30/2989369-feat-dep-Ensure-lightning_workflow-dep-02.patch"
-            },
             "drupal/page_manager": {
                 "Enter drupal/page_manager patch #2626090 description here":
                 "https://www.drupal.org/files/issues/page-manager-2626090-page-title-empty-5.patch",
@@ -352,10 +344,6 @@
                 "https://www.drupal.org/files/issues/classes_should_be_array-2900531-2.patch",
                 "Enter drupal/panels patch #2910704 description here":
                 "https://www.drupal.org/files/issues/panels-ipe-card-flip-ie-error-2910704.diff"
-            },
-            "drupal/panelizer": {
-                "Enter drupal/panels patch #2778565 description here":
-                "https://www.drupal.org/files/issues/panelizer-multilingual-2778565-25.patch"
             },
             "drupal/views_bootstrap": {
                 "Enter drupal/views_bootstrap patch #2878352 description here":
