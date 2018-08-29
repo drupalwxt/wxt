@@ -327,10 +327,6 @@
                 "Enter drupal/menu_block patch #2919579 description here":
                 "https://www.drupal.org/files/issues/patch_menu_block_with-2919579-3.patch"
             },
-            "drupal/lightning_core": {
-                "Enter drupal/lightning_layout patch #2990048 description here":
-                "https://www.drupal.org/files/issues/2018-08-01/2990048.patch"
-            },
             "drupal/lightning_layout": {
                 "Enter drupal/lightning_layout patch #2989369 description here":
                 "https://www.drupal.org/files/issues/2018-07-30/2989369-feat-dep-Ensure-lightning_workflow-dep-02.patch"
@@ -376,7 +372,6 @@
         "drupal/admin_toolbar": "1.24",
         "drupal/block_class": "1.0",
         "drupal/blog": "dev-2.x#43a2171",
-        "drupal/bootstrap": "3.7",
         "drupal/bootstrap_layouts": "5.1",
         "drupal/button_link": "1.1",
         "drupal/ckeditor_codemirror": "1.1",
@@ -412,7 +407,7 @@
         "drupal/views_autocomplete_filters": "1.2",
         "drupal/webform": "^5.0-rc16",
         "drupal/webform_migrate": "1.0-alpha1",
-        "drupal/wxt_bootstrap": "1.4",
+        "drupal/wxt_bootstrap": "dev-1.x",
         "drupal/wxt_library": "dev-1.x",
         "w8tcha/ckeditor-codemirror": "1.16"
     },
