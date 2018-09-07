@@ -33,9 +33,42 @@ created by [Acquia][acquia] to provide developers with a powerful base toolchain
 upon which to extend. Due to this strict dependency we also align much of our
 workflow with the best practice established patterns `Acquia` has provided.
 
-## Installation Methods
+## 8.x - Recommended Installation
 
-- Pre-Built Distribution: [drupal.org/project/wxt][drupal] (Novice Users)
+We highly recommend using <a href="https://getcomposer.org" rel="nofollow">Composer</a>
+to build and maintain your WxT derived project’s codebase.
+
+```sh
+composer create-project drupalwxt/wxt-project:8.x-dev MYPROJECT --no-interaction
+```
+
+[Install with Composer][project-new]
+
+For more information on creating and maintaining your WxT project with composer,
+see our [WxT Project README][project].
+
+## Installation from exported config
+
+If you have a config export of a site built with Lighting, you can install it using the
+Config Installer profile. You can find more information about installing WxT (Lightning)
+from exported config [config-installer][here]</a>.
+
+## Tarball Installation
+
+The tarball distributed here on drupal.org is deprecated and does not install correctly
+because drupal.org does not package WxT's Composer dependencies.
+
+To work around this, we are providing tarballs on our GitHub page, which contain the
+required dependencies and will work properly. Visit our list of releases on GitHub, and
+under "Downloads", grab the desired wxt-VERSION.tar.gz file. (Sept 8th)
+
+If you MUST use the tarball here on drupal.org, you will still need Composer installed.
+Once you extract the tarball, run the following command from within your web root to
+install the required dependencies:
+
+```sh
+composer require j7mbo/twitter-api-php league/oauth2-server:~6.0 webflo/drupal-core-strict:~8.5.0 "phpdocumentor/reflection-docblock:^3.0||^4.0"
+```
 
 ## Version History
 
@@ -56,6 +89,7 @@ Contributor(s): https://github.com/drupalwxt/wxt/graphs/contributors
 
 [acquia]:               https://acquia.com
 [changelog]:            https://github.com/drupalwxt/wxt/blob/8.x-2.x/CHANGELOG.md
+[config-install]:       https://lightning.acquia.com/blog/using-configuration-installer-lightning
 [docsite]:              http://drupalwxt.github.io
 [drupal]:               http://drupal.org/project/wxt
 [drupal7]:              http://drupal.org/project/wetkit
@@ -65,6 +99,8 @@ Contributor(s): https://github.com/drupalwxt/wxt/graphs/contributors
 [lightning]:            https://github.com/acquia/lightning
 [panopoly]:             https://github.com/panopoly/panopoly
 [pantheon]:             https://pantheon.io
+[project]:              https://github.com/drupalwxt/wxt-project#user-content-new-project
+[project-new]:          https://github.com/drupalwxt/wxt-project#user-content-new-project
 [release-drupal]:       https://github.com/drupalwxt/wxt/releases
 [release-github]:       https://github.com/drupalwxt/wxt/releases
 [responsinator]:        http://www.responsinator.com/?url=demo.drupalwxt.org
