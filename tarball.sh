@@ -2,7 +2,7 @@
 DESTINATION=`pwd`
 WORK_DIR=/tmp
 ARCHIVE=wxt-8.x-$1
-PROFILE_DIR=profiles/contrib/wxt
+PROFILE_DIR=profiles/wxt
 
 composer archive --file $ARCHIVE --dir $WORK_DIR
 cd $WORK_DIR
@@ -17,4 +17,3 @@ tar -x -f ../$ARCHIVE.tar --directory $PROFILE_DIR
 cd ..
 tar --exclude='.DS_Store' --exclude='._*' -c -z -f $DESTINATION/$ARCHIVE.tar.gz $ARCHIVE
 rm -r -f drush $ARCHIVE.tar $ARCHIVE
-
