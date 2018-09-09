@@ -1,0 +1,10 @@
+name: 'WxT Extend Preview'
+description: 'Preview everything before you publish.'
+type: module
+package: WxT
+core: '8.x'
+
+# Required modules
+dependencies:
+  - drupal:lightning_workflow
+  - drupal:workspace

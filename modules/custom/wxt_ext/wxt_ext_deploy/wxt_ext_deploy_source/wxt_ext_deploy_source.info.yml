@@ -1,0 +1,11 @@
+name: 'WxT Extend Deploy Source'
+description: 'Allow users to easily stage, preview and deploy content.'
+type: module
+package: WxT
+core: '8.x'
+
+# Required modules
+dependencies:
+  - drupal:wxt_ext_deploy
+  - drupal:deploy
+  - drupal:relaxed

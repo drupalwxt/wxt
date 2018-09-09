@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies: { }
+id: workspace_reviewer
+label: 'Workspace reviewer'
+weight: 11
+is_admin: null
+permissions:
+  - delete_any_workspace
+  - edit_any_workspace
+  - view_any_workspace
+  - 'use editorial transition archive'
+  - 'use editorial transition archived_draft'
+  - 'use editorial transition archived_published'
+  - 'use editorial transition create_new_draft'
+  - 'use editorial transition publish'
+  - 'use editorial transition review'
