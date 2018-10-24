@@ -1,10 +1,7 @@
 core = 8.x
 api = 2
 projects[drupal][type] = core
-projects[drupal][download][type] = git
-projects[drupal][download][url] = https://git.drupal.org/project/drupal.git
-projects[drupal][download][branch] = 8.5.x
-projects[drupal][download][tag] = 8.5.8
+projects[drupal][version] = 8.5.8
 projects[drupal][patch][] = https://www.drupal.org/files/issues/736066-296.patch
 projects[drupal][patch][] = https://www.drupal.org/files/issues/1838234-jQuery_timepicker.patch
 projects[drupal][patch][] = https://www.drupal.org/files/issues/comment_form_should-2559833-35.patch
