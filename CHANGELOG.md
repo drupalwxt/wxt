@@ -1,3 +1,9 @@
+## v2.1.9
+
+Security Update(s):
+
+- Drupal Core 8.5.8 [SA-CORE-2018-006](https://www.drupal.org/sa-core-2018-006)
+
 ## v2.1.8
 
 Feature(s) / Bug fixe(s):
