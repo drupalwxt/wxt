@@ -229,7 +229,7 @@
         "patches": {
             "drupal/bootstrap": {
                 "Enter drupal/bootstrap patch #2881978 description here":
-                "https://www.drupal.org/files/issues/temporarily_disable-2881978-3.patch"
+                "https://www.drupal.org/files/issues/2018-10-28/temporarily_disable-2881978-3.patch"
             },
             "drupal/blog": {
                 "Enter drupal/blog patch #2834732 description here":
