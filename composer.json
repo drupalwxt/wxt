@@ -356,7 +356,7 @@
         "cweagans/composer-patches": "^1.6.4",
         "oomphinc/composer-installers-extender": "^1.1",
         "drupal-composer/drupal-scaffold": "^2.0.0",
-        "acquia/lightning": "3.1.4",
+        "acquia/lightning": "3.1.7",
         "drupal/admin_toolbar": "1.24",
         "drupal/block_class": "1.0",
         "drupal/blog": "dev-2.x#43a2171",
