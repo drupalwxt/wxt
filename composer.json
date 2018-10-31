@@ -240,8 +240,6 @@
                 "https://www.drupal.org/files/issues/slight_re_architecture-2901069-10.patch"
             },
             "drupal/core": {
-                "Enter drupal/core patch #736066 description here":
-                "https://www.drupal.org/files/issues/736066-296.patch",
                 "Enter drupal/core patch #1838234 description here":
                 "https://www.drupal.org/files/issues/1838234-jQuery_timepicker.patch",
                 "Enter drupal/core patch #2559833 description here":
