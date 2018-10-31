@@ -241,9 +241,9 @@
             },
             "drupal/core": {
                 "Enter drupal/core patch #1838234 description here":
-                "https://www.drupal.org/files/issues/1838234-jQuery_timepicker.patch",
+                "https://www.drupal.org/files/issues/1838234-52.patch",
                 "Enter drupal/core patch #2559833 description here":
-                "https://www.drupal.org/files/issues/comment_form_should-2559833-35.patch",
+                "https://www.drupal.org/files/issues/2559833-52.patch",
                 "Enter drupal/core patch #2599228 description here":
                 "https://www.drupal.org/files/issues/2599228-31.patch",
                 "Enter drupal/core patch #2606322 description here":
@@ -264,14 +264,10 @@
                 "https://www.drupal.org/files/issues/2759397-1-entity_reference_recursion.patch",
                 "Enter drupal/core patch #2765297 description here":
                 "https://www.drupal.org/files/issues/taxonomy-translation-2765297-16.patch",
-                "Enter drupal/core patch #2786577 description here":
-                "https://www.drupal.org/files/issues/improve_the_views-2786577-76.patch",
                 "Enter drupal/core patch #2816921 description here":
                 "https://www.drupal.org/files/issues/user_password-2816921-2.patch",
                 "Enter drupal/core patch #2820347 description here":
                 "https://www.drupal.org/files/issues/exposed_filter_reset-2820347-67.patch",
-                "Enter drupal/core patch #2829792 description here":
-                "https://www.drupal.org/files/issues/improve_the_image-2829792-18.patch",
                 "Enter drupal/core patch #2885370 description here":
                 "https://www.drupal.org/files/issues/systemmainblock_build-2885370-3.patch",
                 "Enter drupal/core patch #2862511 description here":
