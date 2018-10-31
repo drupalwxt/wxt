@@ -1,9 +1,9 @@
 core = 8.x
 api = 2
 projects[drupal][type] = core
-projects[drupal][version] = 8.5.8
-projects[drupal][patch][] = https://www.drupal.org/files/issues/736066-296.patch
+projects[drupal][version] = 8.6.2
 projects[drupal][patch][] = https://www.drupal.org/files/issues/1838234-jQuery_timepicker.patch
+# The following is only avaialble for 8.5.x
 projects[drupal][patch][] = https://www.drupal.org/files/issues/comment_form_should-2559833-35.patch
 projects[drupal][patch][] = https://www.drupal.org/files/issues/2599228-31.patch
 projects[drupal][patch][] = https://www.drupal.org/files/issues/2606322-4.x-field_list_item_view_correct_language.patch
