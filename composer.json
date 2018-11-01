@@ -242,6 +242,8 @@
             "drupal/core": {
                 "Enter drupal/core patch #1838234 description here":
                 "https://www.drupal.org/files/issues/2018-09-06/1838234-52.patch",
+                "Enter drupal/core patch #2559833 description here":
+                "https://www.drupal.org/files/issues/2018-11-01/comment-redirect-2559833-56.patch",
                 "Enter drupal/core patch #2599228 description here":
                 "https://www.drupal.org/files/issues/2599228-31.patch",
                 "Enter drupal/core patch #2606322 description here":
