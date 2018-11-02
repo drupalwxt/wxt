@@ -1,8 +1,9 @@
-## v2.1.10 (In Devlopment)
+## v2.2.0 (In Development)
 
 Feature(s):
 
-- Lightning 3.1.7
+- Lightning 3.2.2
+- Drupal Core 8.6.2
 - Update contrib modules
 
 ## v2.1.9
