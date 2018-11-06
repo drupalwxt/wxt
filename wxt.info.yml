@@ -6,46 +6,47 @@ distribution:
   name: WxT
 
 # Base profile
-base profile:
-  name: lightning
-  excluded_dependencies:
-    - lightning_api
-    - lightning_contact_form
-    - lightning_roles
-    - lightning_scheduled_updates
-    - lightning_search
+base profile: lightning
+
+# Exclude from base profile
+exclude:
+  - lightning_api
+  - lightning_contact_form
+  - lightning_roles
+  - lightning_scheduled_updates
+  - lightning_search
 
 # Language
 keep_english: true
 
 # Required modules
-dependencies:
+install:
   # core
-  - drupal:comment
-  - drupal:dynamic_page_cache
-  - drupal:responsive_image
-  - drupal:telephone
-  - drupal:tour
-  # - drupal:search
+  - comment
+  - dynamic_page_cache
+  - responsive_image
+  - telephone
+  - tour
+  # - search
   # core (multilingual)
-  - drupal:config_translation
-  - drupal:content_translation
-  - drupal:language
-  - drupal:locale
+  - config_translation
+  - content_translation
+  - language
+  - locale
   # core (experimental)
-  - drupal:big_pipe
-  - drupal:inline_form_errors
-  - drupal:layout_discovery
+  - big_pipe
+  - inline_form_errors
+  - layout_discovery
   # core (web services)
-  # - drupal:rdf
-  # - drupal:hal
-  # - drupal:rest
-  # - drupal:serialization
+  # - rdf
+  # - hal
+  # - rest
+  # - serialization
   # custom (wxt)
-  - drupal:wxt_admin
-  - drupal:wxt_core
+  - wxt_admin
+  - wxt_core
   # contrib (wxt)
-  - drupal:wxt_library
+  - wxt_library
 
 themes:
   - bartik
