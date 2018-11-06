@@ -33,7 +33,7 @@ content:
     third_party_settings: {  }
     region: content
   image:
-    type: image_immutable
+    type: image_image
     weight: 0
     settings:
       preview_image_style: medium

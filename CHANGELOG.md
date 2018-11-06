@@ -1,10 +1,20 @@
-## v2.2.0 (In Development)
+## v2.2.0
+
+Security Update(s):
+
+- paragraphs 8.x-1.5 [SA-CONTRIB-2018-073](https://www.drupal.org/sa-contrib-2018-073)
 
 Feature(s):
 
 - Lightning 3.2.2
 - Drupal Core 8.6.2
-- Update contrib modules
+- Updated contrib modules
+  - paragraphs to 1.5
+  - views_bootstrap to 3.1
+  - bootstrap to 3.13
+  - media_entity_instagram to alpha2
+- Removed patches that no longer apply
+- Updated and refactored some patches to work with drupal core 8.6.x
 
 ## v2.1.9
 
