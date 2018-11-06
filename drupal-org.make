@@ -116,7 +116,6 @@ projects[menu_block][version] = 1.4
 projects[menu_breadcrumb][type] = module
 projects[menu_breadcrumb][version] = 1.5
 projects[metatag][type] = module
-projects[metatag][patch][] = https://www.drupal.org/files/issues/2018-04-19/panels_page_manager-2563657-51.patch
 projects[metatag][version] = 1.5
 projects[migrate_plus][type] = module
 projects[migrate_plus][version] = 4.0-beta3

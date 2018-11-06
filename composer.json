@@ -307,10 +307,6 @@
                 "Enter drupal/media_entity_image patch #2850169 description here":
                 "https://www.drupal.org/files/issues/add_image_formatter-2850169-5.patch"
             },
-            "drupal/metatag": {
-                "Enter drupal/metatag patch #2563657 description here":
-                "https://www.drupal.org/files/issues/2018-04-19/panels_page_manager-2563657-51.patch"
-            },
             "drupal/menu_block": {
                 "Enter drupal/menu_block patch #2756675 description here":
                 "https://www.drupal.org/files/issues/menu_block-follow-2756675-32.patch",
