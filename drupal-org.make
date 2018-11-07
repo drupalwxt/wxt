@@ -103,7 +103,6 @@ projects[media_entity_image][type] = module
 projects[media_entity_image][patch][] = https://www.drupal.org/files/issues/add_image_formatter-2850169-5.patch
 projects[media_entity_image][version] = 1.3
 projects[media_entity_instagram][type] = module
-projects[media_entity_instagram][patch][] = https://www.drupal.org/files/issues/2917454-2.patch
 projects[media_entity_instagram][version] = 2.0-alpha2
 projects[media_entity_slideshow][type] = module
 projects[media_entity_slideshow][version] = 2.0-alpha1
