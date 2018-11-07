@@ -16,6 +16,21 @@ Feature(s):
 - Removed patches that no longer apply
 - Updated and refactored some patches to work with drupal core 8.6.x
 
+Upgrade path:
+
+- Update your codebase:
+  - composer update
+
+- Update subprofile info.yml file to look similar to wxt.info.yml
+
+- Run database updates:
+  - drush cache:rebuild
+  - drush updatedb
+
+- Run Lightning configuration updates:
+  - drush cache:rebuild
+  - drush update:lightning
+
 ## v2.1.9
 
 Security Update(s):
