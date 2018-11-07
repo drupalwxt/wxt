@@ -361,7 +361,7 @@
         "drupal/features": "^3.0",
         "drupal/field_group": "1.0",
         "drupal/group": "1.0-rc2",
-        "drupal/inline_entity_form": "1.0-rc1",
+        "drupal/inline_entity_form": "1.0-beta1",
         "drupal/linkit": "5.0-beta7",
         "drupal/media_entity": "2.0.0-beta3",
         "drupal/media_entity_document": "1.x-dev",
