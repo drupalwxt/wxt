@@ -19,17 +19,23 @@ Feature(s):
 Upgrade path:
 
 - Update your codebase:
-  - composer update
+`
+composer update
+`
 
 - Update subprofile info.yml file to look similar to wxt.info.yml
 
 - Run database updates:
-  - drush cache:rebuild
-  - drush updatedb
+`
+drush cache:rebuild
+drush updatedb
+`
 
 - Run Lightning configuration updates:
-  - drush cache:rebuild
-  - drush update:lightning
+`
+drush cache:rebuild
+drush update:lightning
+`
 
 ## v2.1.9
 
