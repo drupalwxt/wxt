@@ -21,8 +21,7 @@ Upgrade path:
 - Update your codebase:
   - `composer update`
 
-- Update subprofile info.yml file to look similar to wxt.info.yml
-  - https://github.com/drupalwxt/wxt/blob/8.x-2.x/wxt.info.yml
+- Update sub-profile info.yml file to look similar to [wxt.info.yml](https://github.com/drupalwxt/wxt/blob/8.x-2.x/wxt.info.yml)
 
 ```
 name: My Profile
