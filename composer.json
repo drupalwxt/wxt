@@ -235,10 +235,6 @@
                 "Enter drupal/blog patch #2834732 description here":
                 "https://www.drupal.org/files/issues/blog-no_results_text-2834732-2.patch"
             },
-            "drupal/ckeditor_codemirror": {
-                "Enter drupal/ckeditor_codemirror patch #2901069 description here":
-                "https://www.drupal.org/files/issues/slight_re_architecture-2901069-10.patch"
-            },
             "drupal/core": {
                 "Enter drupal/core patch #1838234 description here":
                 "https://www.drupal.org/files/issues/2018-09-06/1838234-52.patch",
