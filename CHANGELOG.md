@@ -1,5 +1,11 @@
 ## v2.2.0
 
+Feature(s):
+
+- Fixed core patch version for comments redirect from 56 to 57
+
+## v2.2.0
+
 Security Update(s):
 
 - paragraphs 8.x-1.5 [SA-CONTRIB-2018-073](https://www.drupal.org/sa-contrib-2018-073)
