@@ -303,7 +303,7 @@
             },
             "drupal/menu_block": {
                 "Enter drupal/menu_block patch #2756675 description here":
-                "https://www.drupal.org/files/issues/menu_block-follow-2756675-32.patch",
+                "https://www.drupal.org/files/issues/2018-08-08/menu_block-follow-2756675-55.patch",
                 "Enter drupal/menu_block patch #2919579 description here":
                 "https://www.drupal.org/files/issues/patch_menu_block_with-2919579-3.patch"
             },
