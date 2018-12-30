@@ -1,0 +1,8 @@
+system.404:
+  path: '/system/404'
+  defaults:
+    _controller: '\Drupal\wxt_core\Controller\WxTHttp4xxController:on404'
+    _title: 'Page not found'
+  requirements:
+    # Overrides core native 404 handling
+    _access: 'TRUE'
