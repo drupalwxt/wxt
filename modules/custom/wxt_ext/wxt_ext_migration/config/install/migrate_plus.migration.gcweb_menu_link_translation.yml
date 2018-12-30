@@ -1,0 +1,181 @@
+id: gcweb_menu_link_translation
+label: Embedded data feed of menu link content
+migration_group: gcweb
+source:
+  plugin: embedded_data
+  translations: true
+  default_lang: true
+  data_rows:
+    # Footer.
+    - mlid: 'ml_footer_1'
+      link_title: 'Contactez-nous du gouvernement ouvert'
+      description: 'Contactez-nous du gouvernement ouvert section.'
+      menu_name: 'footer-fr'
+      link_path: 'http://ouvert.canada.ca/fr/formulaire/faites-nous-part-de-vos-commentaires'
+      options: []
+      external: 1
+      weight: 0
+      parent: 0
+    - mlid: 'ml_footer_2'
+      link_title: 'Ministères et organismes'
+      description: 'Ministères et organismes section.'
+      menu_name: 'footer-fr'
+      link_path: 'https://www.canada.ca/fr/gouvernement/min.html'
+      options: []
+      external: 1
+      weight: 1
+      parent: 0
+    - mlid: 'ml_footer_3'
+      link_title: 'Fonction publique et force militaire'
+      description: 'Fonction publique et force militaire section.'
+      menu_name: 'footer-fr'
+      link_path: 'https://www.canada.ca/fr/gouvernement/fonctionpublique.html'
+      options: []
+      external: 1
+      weight: 2
+      parent: 0
+    - mlid: 'ml_footer_4'
+      link_title: 'Nouvelles'
+      description: 'Nouvelles section.'
+      menu_name: 'footer-fr'
+      link_path: 'http://nouvelles.gc.ca'
+      options: []
+      external: 1
+      weight: 3
+      parent: 0
+    - mlid: 'ml_footer_5'
+      link_title: 'Traités, lois et règlements'
+      description: 'Traités, lois et règlements section.'
+      menu_name: 'footer-fr'
+      link_path: 'https://www.canada.ca/fr/gouvernement/systeme/lois.html'
+      options: []
+      external: 1
+      weight: 4
+      parent: 0
+    - mlid: 'ml_footer_6'
+      link_title: 'Rapports à l''échelle du gouvernement'
+      description: 'Rapports à l''échelle du gouvernement section.'
+      menu_name: 'footer-fr'
+      link_path: 'https://www.canada.ca/fr/transparence/rapports.html'
+      options: []
+      external: 1
+      weight: 5
+      parent: 0
+    - mlid: 'ml_footer_7'
+      link_title: 'Ouverture de session Gouvernement ouvert'
+      description: 'Ouverture de session Gouvernement ouvert section.'
+      menu_name: 'footer-fr'
+      link_path: 'http://ouvert.canada.ca/fr/user'
+      options: []
+      external: 1
+      weight: 6
+      parent: 0
+    - mlid: 'ml_footer_8'
+      link_title: 'Comment le gouvernement fonctionne'
+      description: 'Comment le gouvernement fonctionne section.'
+      menu_name: 'footer-fr'
+      link_path: 'https://www.canada.ca/fr/gouvernement/systeme.html'
+      options: []
+      external: 1
+      weight: 7
+      parent: 0
+    - mlid: 'ml_brand_1'
+      link_title: 'Médias sociaux'
+      description: 'Médias sociaux section.'
+      menu_name: 'brand-fr'
+      link_path: 'https://www.canada.ca/fr/sociaux.html'
+      options: []
+      external: 1
+      weight: 0
+      parent: 0
+    - mlid: 'ml_brand_2'
+      link_title: 'Applications mobiles'
+      description: 'Applications mobiles section.'
+      menu_name: 'brand-fr'
+      link_path: 'https://www.canada.ca/fr/mobile.html'
+      options: []
+      external: 1
+      weight: 1
+      parent: 0
+    - mlid: 'ml_brand_3'
+      link_title: 'À propos de Canada.ca'
+      description: 'À propos de Canada.ca section.'
+      menu_name: 'brand-fr'
+      link_path: 'https://www1.canada.ca/fr/nouveausite.html'
+      options: []
+      external: 1
+      weight: 2
+      parent: 0
+    - mlid: 'ml_brand_4'
+      link_title: 'Avis'
+      description: 'Avis section.'
+      menu_name: 'brand-fr'
+      link_path: 'https://www.canada.ca/fr/transparence/avis.html'
+      options: []
+      external: 1
+      weight: 3
+      parent: 0
+    - mlid: 'ml_brand_5'
+      link_title: 'Confidentialité'
+      description: 'Confidentialité section.'
+      menu_name: 'brand-fr'
+      link_path: 'https://www.canada.ca/fr/transparence/confidentialite.html'
+      options: []
+      external: 1
+      weight: 4
+      parent: 0
+    - mlid: 'main_home'
+      link_title: 'Accueil'
+      description: ''
+      menu_name: 'main-fr'
+      link_path: 'https://www.canada.ca/fr.html'
+      options: []
+      external: 1
+      weight: 1
+      parent: 0
+  # Under 'ids', we identify source fields populated above which will uniquely
+  # identify each imported item. The 'type' makes sure the migration map table
+  # uses the proper schema type for stored the IDs.
+  ids:
+    mlid:
+      type: string
+process:
+  id: mlid
+  bundle: 'constants/bundle'
+  title: link_title
+  description: description
+  menu_name: menu_name
+  'link/uri': link_path
+  'link/options': options
+  route:
+    plugin: route
+    source:
+      - link_path
+      - options
+  route_name: '@route/route_name'
+  route_parameters: '@route/route_parameters'
+  url: '@route/url'
+  options: '@route/options'
+  external: external
+  weight: weight
+  expanded:
+    plugin: default_value
+    default_value: 1
+  enabled:
+    plugin: default_value
+    default_value: 1
+  parent:
+    plugin: menu_link_parent
+    source:
+      - parent
+  changed:
+    plugin: default_value
+    default_value: ''
+  langcode:
+    plugin: default_value
+    default_value: "fr"
+destination:
+  plugin: entity:menu_link_content
+migration_dependencies:
+  required:
+    - gcweb_menu_link

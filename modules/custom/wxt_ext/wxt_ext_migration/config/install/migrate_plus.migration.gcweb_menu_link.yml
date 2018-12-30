@@ -1,0 +1,199 @@
+id: gcweb_menu_link
+label: Embedded data feed of menu link content
+migration_group: gcweb
+source:
+  plugin: embedded_data
+  # Enforce default language to english
+  default_lang: true
+  data_rows:
+    # Footer.
+    - mlid: 'ml_footer_1'
+      link_title: 'Open Government Contact'
+      description: 'Open government contact section.'
+      menu_name: 'footer'
+      link_path: 'http://open.canada.ca/en/forms/contact-us'
+      options: []
+      external: 1
+      weight: 0
+      parent: 0
+    - mlid: 'ml_footer_2'
+      link_title: 'Departments and agencies'
+      description: 'Departments and agencies section.'
+      menu_name: 'footer'
+      link_path: 'https://www.canada.ca/en/government/dept.html'
+      options: []
+      external: 1
+      weight: 1
+      parent: 0
+    - mlid: 'ml_footer_3'
+      link_title: 'Public service and military'
+      description: 'Public service and military section.'
+      menu_name: 'footer'
+      link_path: 'https://www.canada.ca/en/government/publicservice.html'
+      options: []
+      external: 1
+      weight: 2
+      parent: 0
+    - mlid: 'ml_footer_4'
+      link_title: 'News'
+      description: 'News section.'
+      menu_name: 'footer'
+      link_path: 'http://news.gc.ca'
+      options: []
+      external: 1
+      weight: 3
+      parent: 0
+    - mlid: 'ml_footer_5'
+      link_title: 'Treaties, laws and regulations'
+      description: 'Treaties, laws and regulations section.'
+      menu_name: 'footer'
+      link_path: 'https://www.canada.ca/en/government/system/laws.html'
+      options: []
+      external: 1
+      weight: 4
+      parent: 0
+    - mlid: 'ml_footer_6'
+      link_title: 'Government-wide reporting'
+      description: 'Government-wide reporting section.'
+      menu_name: 'footer'
+      link_path: 'https://www.canada.ca/en/transparency/reporting.html'
+      options: []
+      external: 1
+      weight: 5
+      parent: 0
+    - mlid: 'ml_footer_7'
+      link_title: 'Open Government Log In'
+      description: 'Open government log in section.'
+      menu_name: 'footer'
+      link_path: 'http://open.canada.ca/en/user'
+      options: []
+      external: 1
+      weight: 6
+      parent: 0
+    - mlid: 'ml_footer_8'
+      link_title: 'How government works'
+      description: 'How government works section.'
+      menu_name: 'footer'
+      link_path: 'https://www.canada.ca/en/government/system.html'
+      options: []
+      external: 1
+      weight: 7
+      parent: 0
+    - mlid: 'ml_brand_1'
+      link_title: 'Social media'
+      description: 'Social media section.'
+      menu_name: 'brand'
+      link_path: 'https://www.canada.ca/en/social.html'
+      options: []
+      external: 1
+      weight: 0
+      parent: 0
+    - mlid: 'ml_brand_2'
+      link_title: 'Mobile applications'
+      description: 'Mobile applications section.'
+      menu_name: 'brand'
+      link_path: 'https://www.canada.ca/en/mobile.html'
+      options: []
+      external: 1
+      weight: 1
+      parent: 0
+    - mlid: 'ml_brand_3'
+      link_title: 'About Canada.ca'
+      description: 'About Canada.ca section.'
+      menu_name: 'brand'
+      link_path: 'https://www1.canada.ca/en/newsite.html'
+      options: []
+      external: 1
+      weight: 2
+      parent: 0
+    - mlid: 'ml_brand_4'
+      link_title: 'Terms and conditions'
+      description: 'Terms and conditions section.'
+      menu_name: 'brand'
+      link_path: 'https://www.canada.ca/en/transparency/terms.html'
+      options: []
+      external: 1
+      weight: 3
+      parent: 0
+    - mlid: 'ml_brand_5'
+      link_title: 'Privacy'
+      description: 'Privacy section.'
+      menu_name: 'brand'
+      link_path: 'https://www.canada.ca/en/transparency/privacy.html'
+      options: []
+      external: 1
+      weight: 4
+      parent: 0
+    - mlid: 'main_home'
+      link_title: 'Home'
+      description: ''
+      menu_name: 'main'
+      link_path: 'https://www.canada.ca/en.html'
+      options: []
+      external: 1
+      weight: 1
+      parent: 0
+    - mlid: user_register
+      link_title: 'Registration'
+      description: ''
+      menu_name: account
+      link_path: 'internal:/en/user/register'
+      options: []
+      external: 0
+      weight: 5
+      parent: 0
+    - mlid: user_rules
+      link_title: 'Rules of Engagement'
+      description: ''
+      menu_name: account
+      link_path: 'internal:/en/rules-engagement'
+      options: []
+      external: 0
+      weight: 10
+      parent: 0
+  # Under 'ids', we identify source fields populated above which will uniquely
+  # identify each imported item. The 'type' makes sure the migration map table
+  # uses the proper schema type for stored the IDs.
+  ids:
+    mlid:
+      type: string
+process:
+  id: mlid
+  bundle: 'constants/bundle'
+  title: link_title
+  description: description
+  menu_name: menu_name
+  'link/uri': link_path
+  'link/options': options
+  route:
+    plugin: route
+    source:
+      - link_path
+      - options
+  route_name: '@route/route_name'
+  route_parameters: '@route/route_parameters'
+  url: '@route/url'
+  options: '@route/options'
+  external: external
+  weight: weight
+  expanded:
+    plugin: default_value
+    default_value: 1
+  enabled:
+    plugin: default_value
+    default_value: 1
+  parent:
+    plugin: menu_link_parent
+    source:
+      - parent
+  changed:
+    plugin: default_value
+    default_value: ''
+destination:
+  plugin: entity:menu_link_content
+migration_dependencies:
+  required:
+    # modules
+    - menu
+    # migrations
+    - wxt_node_page
