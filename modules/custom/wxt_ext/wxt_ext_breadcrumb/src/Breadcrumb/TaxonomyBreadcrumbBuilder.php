@@ -172,7 +172,6 @@ class TaxonomyBreadcrumbBuilder extends PathBasedBreadcrumbBuilder {
     // resolving path aliases, so the breadcrumb can be defined by simply
     // creating a hierarchy of path aliases.
     $path = trim($this->context->getPathInfo(), '/');
-    $path_elements = explode('/', $path);
 
     // Add the url.path.parent cache context. This code ignores the last path
     // part so the result only depends on the path parents.

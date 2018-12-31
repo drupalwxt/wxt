@@ -8,10 +8,10 @@ source:
   data_rows:
     # Footer.
     - mlid: 'ml_footer_1'
-      link_title: 'Contactez-nous du gouvernement ouvert'
-      description: 'Contactez-nous du gouvernement ouvert section.'
+      link_title: 'Contactez-nous'
+      description: 'Contactez-nous section.'
       menu_name: 'footer-fr'
-      link_path: 'http://ouvert.canada.ca/fr/formulaire/faites-nous-part-de-vos-commentaires'
+      link_path: 'https://www.canada.ca/fr/contact.html'
       options: []
       external: 1
       weight: 0
@@ -62,10 +62,10 @@ source:
       weight: 5
       parent: 0
     - mlid: 'ml_footer_7'
-      link_title: 'Ouverture de session Gouvernement ouvert'
-      description: 'Ouverture de session Gouvernement ouvert section.'
+      link_title: 'Premier ministre'
+      description: 'Premier ministre section.'
       menu_name: 'footer-fr'
-      link_path: 'http://ouvert.canada.ca/fr/user'
+      link_path: 'https://pm.gc.ca/fra'
       options: []
       external: 1
       weight: 6
@@ -78,6 +78,15 @@ source:
       options: []
       external: 1
       weight: 7
+      parent: 0
+    - mlid: 'ml_footer_9'
+      link_title: 'Gouvernement ouvert'
+      description: 'Gouvernement ouvert section.'
+      menu_name: 'footer-fr'
+      link_path: 'https://ouvert.canada.ca'
+      options: []
+      external: 1
+      weight: 8
       parent: 0
     - mlid: 'ml_brand_1'
       link_title: 'Médias sociaux'

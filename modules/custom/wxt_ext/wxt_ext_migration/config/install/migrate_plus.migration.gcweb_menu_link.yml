@@ -8,10 +8,10 @@ source:
   data_rows:
     # Footer.
     - mlid: 'ml_footer_1'
-      link_title: 'Open Government Contact'
-      description: 'Open government contact section.'
+      link_title: 'Contact us'
+      description: 'Contact us section.'
       menu_name: 'footer'
-      link_path: 'http://open.canada.ca/en/forms/contact-us'
+      link_path: 'https://www.canada.ca/en/contact.html'
       options: []
       external: 1
       weight: 0
@@ -62,10 +62,10 @@ source:
       weight: 5
       parent: 0
     - mlid: 'ml_footer_7'
-      link_title: 'Open Government Log In'
-      description: 'Open government log in section.'
+      link_title: 'Prime Minister'
+      description: 'Prime Minister section.'
       menu_name: 'footer'
-      link_path: 'http://open.canada.ca/en/user'
+      link_path: 'https://pm.gc.ca/eng'
       options: []
       external: 1
       weight: 6
@@ -78,6 +78,15 @@ source:
       options: []
       external: 1
       weight: 7
+      parent: 0
+    - mlid: 'ml_footer_9'
+      link_title: 'Open government'
+      description: 'Open government section.'
+      menu_name: 'footer'
+      link_path: 'http://open.canada.ca/en/user'
+      options: []
+      external: 1
+      weight: 8
       parent: 0
     - mlid: 'ml_brand_1'
       link_title: 'Social media'

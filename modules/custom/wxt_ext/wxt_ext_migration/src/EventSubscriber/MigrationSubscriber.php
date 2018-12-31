@@ -10,7 +10,6 @@ use Drupal\Core\Path\AliasStorageInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Session\SessionManagerInterface;
 use Drupal\Core\Database\Connection;
-use Drupal\media\Entity\Media;
 use Drupal\migrate\Event\MigrateEvents;
 use Drupal\migrate\Event\MigrateImportEvent;
 use Drupal\migrate\Event\MigratePreRowSaveEvent;
@@ -166,14 +165,19 @@ class MigrationSubscriber implements EventSubscriberInterface {
    * Code to run after a migration has been imported.
    */
   public function onMigrationPostImport(MigrateImportEvent $event) {
-
+    // Landing Page logic.
+    if ($event->getMigration()->id() == 'gcweb_node_landing_page') {
+      // Set front page to panelized "homepage".
+      $this->config->getEditable('system.site')
+        ->set('page.front', '/homepage')
+        ->save(TRUE);
+    }
   }
 
   /**
    * Code to run after a migration row has been saved.
    */
   public function onMigrationPreRowSave(MigratePreRowSaveEvent $event) {
-
 
   }
 

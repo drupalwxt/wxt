@@ -19,7 +19,6 @@ use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\Core\Url;
 use Symfony\Component\Routing\Matcher\RequestMatcherInterface;
-use Drupal\Core\Routing\RouteMatch;
 
 class BlogBreadcrumbBuilder extends PathBasedBreadcrumbBuilder {
 
@@ -152,7 +151,7 @@ class BlogBreadcrumbBuilder extends PathBasedBreadcrumbBuilder {
     $path = trim($this->context->getPathInfo(), '/');
     $path_elements = explode('/', $path);
     $pathEnd = end($path_elements);
-    \Drupal::service('twig')->invalidate();
+
     // Content type determination.
     if (!empty($parameters['node']) &&
         is_object($parameters['node']) &&
@@ -175,7 +174,6 @@ class BlogBreadcrumbBuilder extends PathBasedBreadcrumbBuilder {
     // resolving path aliases, so the breadcrumb can be defined by simply
     // creating a hierarchy of path aliases.
     $path = trim($this->context->getPathInfo(), '/');
-    $path_elements = explode('/', $path);
 
     // Add the url.path.parent cache context. This code ignores the last path
     // part so the result only depends on the path parents.
