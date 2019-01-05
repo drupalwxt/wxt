@@ -264,6 +264,8 @@
                 "https://www.drupal.org/files/issues/user_password-2816921-2.patch",
                 "Enter drupal/core patch #2820347 description here":
                 "https://www.drupal.org/files/issues/exposed_filter_reset-2820347-67.patch",
+                "Enter drupal/core patch #2856362 description here":
+                "https://www.drupal.org/files/issues/2018-05-25/drupal_core-percona_compliance-2856362-13-8.6.x.patch",
                 "Enter drupal/core patch #2885370 description here":
                 "https://www.drupal.org/files/issues/systemmainblock_build-2885370-3.patch",
                 "Enter drupal/core patch #2862511 description here":
