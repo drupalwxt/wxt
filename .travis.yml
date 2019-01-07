@@ -37,6 +37,7 @@ before_install:
   # Remove the composer lock file
   - rm composer.lock
   - composer global require "hirak/prestissimo:^0.3"
+  - composer global require "zaporylie/composer-drupal-optimizations:^1.0"
   - if [ -n "$TRAVIS_TAG" ]; then composer require drupalwxt/wxt:${TRAVIS_TAG}; else composer require drupalwxt/wxt:dev-${BRANCH}#${TRAVIS_COMMIT}; fi
   # Update the docker-compose binary for compose v2 support.
   - sudo rm /usr/local/bin/docker-compose || true
