@@ -1,3 +1,47 @@
+## v2.2.11
+
+Security Updates:
+- bootstrap Security Update:
+  - [bootstrap 8.x-3.16](https://www.drupal.org/project/bootstrap/releases/8.x-3.16) via [wxt_bootstrap 8.x-1.6](https://www.drupal.org/project/wxt_bootstrap/releases/8.x-1.6)
+  - includes [SA-CONTRIB-2018-073](https://www.drupal.org/sa-contrib-2018-073) from [bootstrap 8.x-3.14](https://www.drupal.org/project/bootstrap/releases/8.x-3.14)
+- jsonapi Security Update:
+  - [jsonapi 8.x-2.0-rc4](https://www.drupal.org/project/jsonapi/releases/8.x-2.0-rc4) via [lightning 8.x-3.2.3](https://www.drupal.org/project/lightning/releases/8.x-3.203)
+  - includes [SA-CONTRIB-2018-081](https://www.drupal.org/sa-contrib-2018-081) 
+
+Features:
+- [Lightning 3.2.3](https://www.drupal.org/project/lightning/releases/8.x-3.203)
+- [Drupal Core 8.6.5](https://www.drupal.org/project/drupal/releases/8.6.5)
+- Added module 
+  - fontawesome 2.9 (closes [3021451](https://www.drupal.org/project/wxt/issues/3021451))
+
+- Updated wxt related packages
+  - drupal/wxt_library (1.3.0 => 1.4.0) including:
+    - wet-boew/theme-gcweb (v4.0.28.1 => v4.0.29)
+    - wet-boew/theme-wet-boew (v4.0.28.1 => v4.0.29)
+    - wet-boew/wet-boew (v4.0.28.1 => v4.0.29)
+  - wxt_bootstrap (1.5.0 => 1.6.0) including:
+    - bootstrap (3.12.0 => 3.16.0)
+
+- Updated contrib modules
+  - admin_toolbar (1.24.0 => 1.25.0)
+  - config_update (1.5.0 => 1.6.0)
+  - entity_reference_revisions (1.5.0 => 1.6.0)
+  - inline_entity_form (1.0.0-beta1 => 1.0.0-rc1)
+  - migrate_plus (4.0.0 => 4.1.0)
+  - migrate_tools (4.0.0 => 4.1.0)
+  - webform (5.0.0 => 5.1.0)
+- Removed patches that no longer apply
+- now loading wet-boew dependencies with composer repo [drupalwxt/composer-extdeps](https://github.com/drupalwxt/composer-extdeps)
+
+Upgrade path:
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
 ## v2.2.0
 
 Feature(s):
