@@ -1,0 +1,5 @@
+tag: i
+method: svg
+use_cdn: false
+use_shim: true
+allow_pseudo_elements: false

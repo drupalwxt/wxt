@@ -47,6 +47,7 @@ settings:
           name: Tools
           items:
             - ShowBlocks
+            - DrupalFontAwesome
             - Source
         -
           name: WxT
