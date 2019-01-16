@@ -1,10 +1,7 @@
 core = 8.x
 api = 2
 projects[drupal][type] = core
-projects[drupal][download][type] = git
-projects[drupal][download][url] = https://git.drupal.org/project/drupal.git
-projects[drupal][download][branch] = 8.6.x
-projects[drupal][download][tag] = 8.6.5
+projects[drupal][download][version] = 8.6.6
 projects[drupal][patch][] = https://www.drupal.org/files/issues/2018-09-06/1838234-52.patch
 projects[drupal][patch][] = https://www.drupal.org/files/issues/2018-11-01/comment-redirect-2559833-57.patch
 projects[drupal][patch][] = https://www.drupal.org/files/issues/2018-12-06/2599228-104-8.6.x.patch
