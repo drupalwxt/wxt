@@ -2,7 +2,7 @@
 
 Security update(s):
 
-- Update Drupal Core to 8.6.6 [SA-CORE-2019-002](https://www.drupal.org/sa-core-2019-002)
+- Update Drupal Core to 8.6.6 [SA-CORE-2019-001](https://www.drupal.org/sa-core-2019-001), [SA-CORE-2019-002](https://www.drupal.org/sa-core-2019-002)
 
 ## v2.2.11
 
