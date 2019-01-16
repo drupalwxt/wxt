@@ -1,3 +1,9 @@
+## v2.2.12
+
+Security update(s):
+
+- Update Drupal Core to 8.6.6 [SA-CORE-2019-002](https://www.drupal.org/sa-core-2019-002)
+
 ## v2.2.11
 
 Security Updates:
@@ -6,12 +12,12 @@ Security Updates:
   - includes [SA-CONTRIB-2018-073](https://www.drupal.org/sa-contrib-2018-073) from [bootstrap 8.x-3.14](https://www.drupal.org/project/bootstrap/releases/8.x-3.14)
 - jsonapi Security Update:
   - [jsonapi 8.x-2.0-rc4](https://www.drupal.org/project/jsonapi/releases/8.x-2.0-rc4) via [lightning 8.x-3.2.3](https://www.drupal.org/project/lightning/releases/8.x-3.203)
-  - includes [SA-CONTRIB-2018-081](https://www.drupal.org/sa-contrib-2018-081) 
+  - includes [SA-CONTRIB-2018-081](https://www.drupal.org/sa-contrib-2018-081)
 
 Features:
 - [Lightning 3.2.3](https://www.drupal.org/project/lightning/releases/8.x-3.203)
 - [Drupal Core 8.6.5](https://www.drupal.org/project/drupal/releases/8.6.5)
-- Added module 
+- Added module
   - fontawesome 2.9 (closes [3021451](https://www.drupal.org/project/wxt/issues/3021451))
 
 - Updated wxt related packages
