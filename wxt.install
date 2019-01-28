@@ -20,6 +20,7 @@ function wxt_install() {
   _wxt_setup_menus();
   _wxt_setup_base_configurations();
   _wxt_setup_lang_prefixes();
+  _wxt_setup_404();
 }
 
 /**
@@ -110,5 +111,22 @@ function _wxt_setup_themes() {
   \Drupal::configFactory()
     ->getEditable('node.settings')
     ->set('use_admin_theme', TRUE)
+    ->save(TRUE);
+}
+
+/**
+ * Setup default 403/404.
+ */
+function _wxt_setup_404() {
+  // Set default "403".
+  \Drupal::configFactory()
+    ->getEditable('system.site')
+    ->set('page.403', '/system/404')
+    ->save(TRUE);
+
+  // Set default "404".
+  \Drupal::configFactory()
+    ->getEditable('system.site')
+    ->set('page.404', '/system/404')
     ->save(TRUE);
 }
