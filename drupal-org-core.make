@@ -22,6 +22,7 @@ projects[drupal][patch][] = https://www.drupal.org/files/issues/2893029-9.patch
 projects[drupal][patch][] = https://www.drupal.org/files/issues/doctrine_common_version_below_2.8-2898119-11.patch
 projects[drupal][patch][] = https://www.drupal.org/files/issues/node_preview_error-2914233-5.patch
 projects[drupal][patch][] = https://www.drupal.org/files/issues/taxonomy-context-provider-2920637-3.patch
+projects[drupal][patch][] = https://www.drupal.org/files/issues/2018-06-05/2893407-34.patch
 projects[drupal][patch][] = https://www.drupal.org/files/issues/2869592-remove-update-warning-7.patch
 projects[drupal][patch][] = https://www.drupal.org/files/issues/2885441-2.patch
 projects[drupal][patch][] = https://www.drupal.org/files/issues/2018-09-24/2815221-109.patch
