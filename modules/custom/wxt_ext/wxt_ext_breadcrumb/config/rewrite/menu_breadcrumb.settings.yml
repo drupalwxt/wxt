@@ -1,0 +1,20 @@
+determine_menu: true
+disable_admin_page: true
+append_current_page: false
+current_page_as_link: false
+append_member_page: false
+member_page_as_link: false
+remove_home: false
+add_home: false
+home_as_site_name: false
+menu_breadcrumb_menus:
+  main:
+    enabled: 1
+    langhandle: 1
+    weight: -10
+    taxattach: 0
+  main-fr:
+    enabled: 1
+    langhandle: 1
+    weight: 0
+    taxattach: 0

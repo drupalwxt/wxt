@@ -1,0 +1,16 @@
+services:
+  wxt_ext_breadcrumb.blog_breadcrumb:
+    class: Drupal\wxt_ext_breadcrumb\Breadcrumb\BlogBreadcrumbBuilder
+    arguments: ['@router.request_context', '@access_manager', '@router', '@path_processor_manager', '@config.factory',  '@title_resolver', '@current_user', '@path.current', '@language_manager', '@path.validator', '@path.alias_manager']
+    tags:
+     - { name: breadcrumb_builder, priority: 1020 }
+  wxt_ext_breadcrumb.taxonomy_breadcrumb:
+    class: Drupal\wxt_ext_breadcrumb\Breadcrumb\TaxonomyBreadcrumbBuilder
+    arguments: ['@router.request_context', '@access_manager', '@router', '@path_processor_manager', '@config.factory',  '@title_resolver', '@current_user', '@path.current', '@language_manager', '@path.validator', '@path.alias_manager']
+    tags:
+     - { name: breadcrumb_builder, priority: 1020 }
+  wxt_ext_breadcrumb.main_breadcrumb:
+    class: Drupal\wxt_ext_breadcrumb\Breadcrumb\MainBreadcrumbBuilder
+    arguments: ['@config.factory', '@menu.active_trail', '@plugin.manager.menu.link', '@router.admin_context', '@title_resolver', '@request_stack', '@language_manager', '@entity_type.manager', '@cache.menu', '@lock']
+    tags:
+      - { name: breadcrumb_builder, priority: 1015 }
