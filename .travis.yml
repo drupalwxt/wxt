@@ -14,11 +14,13 @@ php:
 
 env:
   DOCKER_COMPOSE_VERSION: 1.8.1
+  COMPOSER_MEMORY_LIMIT: -1
 
 services:
   - docker
 
 before_install:
+  - echo "memory_limit=2G" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
   # Update docker engine for compose v2 support.
   - sudo apt-get clean
   - sudo apt-get update
