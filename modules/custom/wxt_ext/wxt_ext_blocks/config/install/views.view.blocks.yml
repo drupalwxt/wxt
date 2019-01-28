@@ -339,7 +339,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<section class=\"gc-nttvs\">\n<a href=\"{{ field_image_link }}\" class=\"gl-features\">\n{{ field_spotlight_media }} \n<h4>{{ info }}</h4>\n</a>\n{{ body }}\n</section>"
+            text: "<section class=\"gc-nttvs\">\r\n<a href=\"{{ field_image_link }}\" class=\"gl-features\">\r\n<h4>{{ info }}</h4>\r\n{{ field_spotlight_media }} \r\n</a>\r\n{{ body }}\r\n</section>"
             make_link: false
             path: ''
             absolute: false
@@ -422,6 +422,7 @@ display:
       display_extenders: {  }
       display_description: ''
       block_description: Spotlight
+      rendering_language: '***LANGUAGE_language_interface***'
     cache_metadata:
       max-age: -1
       contexts:
