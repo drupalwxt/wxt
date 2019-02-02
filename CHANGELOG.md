@@ -1,3 +1,12 @@
+## v2.2.13
+
+Features/Updates:
+
+- Update Lightning 3.2.4
+- Update ckeditor-codemirror 2.2
+- Update menu_block 1.5.0
+- Update webform_migrate 1.1
+
 ## v2.2.12
 
 Security update(s):
