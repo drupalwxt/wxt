@@ -244,7 +244,7 @@
         "drupal/field_formatter": "1.2",
         "drupal/file_entity": "2.0-beta6",
         "drupal/metatag": "1.7",
-        "drupal/migrate_plus": "4.1",
+        "drupal/migrate_plus": "4.0",
         "drupal/migrate_tools": "4.1",
         "drupal/s3fs": "3.0-alpha13",
         "drupal/url_embed": "1.0-alpha1",
