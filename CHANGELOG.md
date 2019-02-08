@@ -6,7 +6,7 @@ Features/Updates:
 - Update Lightning 3.2.4
 - Update ckeditor-codemirror 2.2
 - Update webform_migrate 1.1
-- Downgrade migrate_plus from 4.1 to 4.0 ([migrate_tools/3028112](https://www.drupal.org/project/migrate_tools/issues/3028112))
+- Apply patch ([migrate_tools/3024399](https://www.drupal.org/project/migrate_tools/issues/3024399)) to fix various drush migrate-import issues
 - Lock ctools to 3.0
 
 ## v2.2.12
