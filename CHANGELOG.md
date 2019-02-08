@@ -7,6 +7,7 @@ Features/Updates:
 - Update ckeditor-codemirror 2.2
 - Update webform_migrate 1.1
 - Downgrade migrate_plus from 4.1 to 4.0 ([migrate_tools/3028112](https://www.drupal.org/project/migrate_tools/issues/3028112))
+- Lock ctools to 3.0
 
 ## v2.2.12
 
