@@ -159,10 +159,6 @@
                 "Enter drupal/ctools patch #2924356 description here":
                 "https://www.drupal.org/files/issues/ctools-entity_field_rendered_twice-2924356-2.patch"
             },
-            "drupal/fontawesome": {
-                "Enter drupal/fontawesome patch #2745741 description":
-                "https://www.drupal.org/files/issues/2018-11-13/fontawesome-2745741-4.patch"
-            },
             "drupal/inline_entity_form": {
                 "Enter drupal/inline_entity_form patch #2367235 description here":
                 "https://www.drupal.org/files/issues/support_entity_revision-2367235-92.patch"
