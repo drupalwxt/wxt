@@ -10,8 +10,13 @@ Features/Updates:
 - Update Lightning [3.2.5](https://github.com/acquia/lightning/releases/tag/3.2.5); includes:
   - Updated Consumers to 1.8.
   - Updated JSON:API to 2.1.
+  - Updated Moderation Dashboard to 1.0-beta1 (from previous lightning release)
 - Update ckeditor-codemirror 2.2
 - Update webform_migrate 1.1
+- Update font_awesome to 2.10
+- Add s3fs 3.0-alpha13
+
+Fixes
 - Apply patch ([migrate_tools/3024399](https://www.drupal.org/project/migrate_tools/issues/3024399)) to fix various drush migrate-import issues
 - Lock ctools to 3.0
 
