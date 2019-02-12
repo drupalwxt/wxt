@@ -159,10 +159,6 @@
                 "Enter drupal/ctools patch #2924356 description here":
                 "https://www.drupal.org/files/issues/ctools-entity_field_rendered_twice-2924356-2.patch"
             },
-            "drupal/fontawesome": {
-                "Enter drupal/fontawesome patch #2745741 description":
-                "https://www.drupal.org/files/issues/2018-11-13/fontawesome-2745741-4.patch"
-            },
             "drupal/inline_entity_form": {
                 "Enter drupal/inline_entity_form patch #2367235 description here":
                 "https://www.drupal.org/files/issues/support_entity_revision-2367235-92.patch"
@@ -217,7 +213,7 @@
         "composer/installers": "^1.2",
         "cweagans/composer-patches": "^1.6.4",
         "drupal-composer/drupal-scaffold": "^2.0.0",
-        "acquia/lightning": "3.2.4",
+        "acquia/lightning": "3.2.5",
         "drupal/admin_toolbar": "1.25",
         "drupal/block_class": "1.0",
         "drupal/blog": "dev-2.x#43a2171",
@@ -227,7 +223,7 @@
         "drupal/config_rewrite": "1.1",
         "drupal/config_update": "1.6",
         "drupal/ctools": "3.0",
-        "drupal/core": "8.6.7",
+        "drupal/core": "8.6.9",
         "drupal/diff": "1.0-rc2",
         "drupal/entity_reference_revisions": "1.6",
         "drupal/features": "^3.0",
