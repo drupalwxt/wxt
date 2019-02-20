@@ -3,6 +3,11 @@
 Security update:
 
 - Update core to [8.6.10](https://www.drupal.org/project/drupal/releases/8.6.10) as per [SA-CONTRIB-2019-014](https://www.drupal.org/sa-core-2019-003)
+- Update contribs also affected
+  - Font Awesome Icons - Critical - Remote Code Execution - SA-CONTRIB-2019-025
+  - Paragraphs - Critical - Remote Code Execution - SA-CONTRIB-2019-023
+  - Metatag - Critical - Remote code execution - SA-CONTRIB-2019-021
+  - JSON:API - Highly critical - Remote code execution - SA-CONTRIB-2019-019
 
 ## v2.2.13
 
