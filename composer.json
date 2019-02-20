@@ -222,6 +222,7 @@
         "drupal/ckeditor_codemirror": "2.2",
         "drupal/config_rewrite": "1.1",
         "drupal/config_update": "1.6",
+        "drupal/consumers": "^1.9",
         "drupal/ctools": "3.0",
         "drupal/core": "8.6.10",
         "drupal/diff": "1.0-rc2",
