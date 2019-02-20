@@ -9,6 +9,21 @@ Security update:
   - Metatag - Critical - Remote code execution - SA-CONTRIB-2019-021
   - JSON:API - Highly critical - Remote code execution - SA-CONTRIB-2019-019
 
+Features:
+- Update Lightning [3.2.6](https://github.com/acquia/lightning/releases/tag/3.2.6)
+
+Upgrade path:
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
+- Run Lightning configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:lightning`
+
 ## v2.2.13
 
 Security update:
