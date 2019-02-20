@@ -1,3 +1,9 @@
+## v2.2.14
+
+Security update:
+
+- Update core to [8.6.10](https://www.drupal.org/project/drupal/releases/8.6.10) as per [SA-CONTRIB-2019-014](https://www.drupal.org/sa-core-2019-003)
+
 ## v2.2.13
 
 Security update:
