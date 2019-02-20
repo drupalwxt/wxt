@@ -1,7 +1,7 @@
 core = 8.x
 api = 2
 projects[drupal][type] = core
-projects[drupal][version] = 8.6.9
+projects[drupal][version] = 8.6.10
 projects[drupal][patch][] = https://www.drupal.org/files/issues/2018-11-01/comment-redirect-2559833-57.patch
 projects[drupal][patch][] = https://www.drupal.org/files/issues/2018-12-06/2599228-104-8.6.x.patch
 projects[drupal][patch][] = https://www.drupal.org/files/issues/2606322-4.x-field_list_item_view_correct_language.patch
@@ -22,6 +22,7 @@ projects[drupal][patch][] = https://www.drupal.org/files/issues/doctrine_common_
 projects[drupal][patch][] = https://www.drupal.org/files/issues/node_preview_error-2914233-5.patch
 projects[drupal][patch][] = https://www.drupal.org/files/issues/taxonomy-context-provider-2920637-3.patch
 projects[drupal][patch][] = https://www.drupal.org/files/issues/2018-06-05/2893407-34.patch
+projects[drupal][patch][] = https://www.drupal.org/files/issues/2019-02-13/3032548-2.patch
 projects[drupal][patch][] = https://www.drupal.org/files/issues/2869592-remove-update-warning-7.patch
 projects[drupal][patch][] = https://www.drupal.org/files/issues/2885441-2.patch
 projects[drupal][patch][] = https://www.drupal.org/files/issues/2018-09-24/2815221-109.patch
