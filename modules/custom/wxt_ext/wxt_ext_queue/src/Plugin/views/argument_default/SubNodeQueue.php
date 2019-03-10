@@ -25,7 +25,7 @@ class SubNodeQueue extends Node {
   protected $nodeStorage;
 
   /**
-   * Constructs a Drupal\wxt_ext_queue\Plugin\views\argument_default\SubNodeQueue.
+   * Builds Drupal\wxt_ext_queue\Plugin\views\argument_default\SubNodeQueue.
    *
    * @param array $configuration
    *   A configuration array containing information about the plugin instance.
