@@ -226,6 +226,7 @@
         "drupal/core": "8.6.10",
         "drupal/diff": "1.0-rc2",
         "drupal/entity_reference_revisions": "1.6",
+        "drupal/entityqueue": "1.0-alpha7",
         "drupal/features": "^3.0",
         "drupal/field_group": "1.0",
         "drupal/fontawesome": "^2.12",
@@ -256,8 +257,8 @@
         "drupal/views_autocomplete_filters": "1.2",
         "drupal/webform": "^5.1",
         "drupal/webform_migrate": "1.1",
-        "drupal/wxt_bootstrap": "1.6",
-        "drupal/wxt_library": "1.4",
+        "drupal/wxt_bootstrap": "2.x-dev",
+        "drupal/wxt_library": "2.x-dev",
         "w8tcha/ckeditor-codemirror": "1.16"
     },
     "autoload": {

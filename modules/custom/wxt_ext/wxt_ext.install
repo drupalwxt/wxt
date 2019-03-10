@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * @file
+ * Contains install and update routines for WxT Core.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function wxt_ext_install() {
+  // Translate Date Format.
+  $dateConfig = \Drupal::languageManager()->getLanguageConfigOverride('fr', 'core.date_format.wxt_standard');
+  $dateConfig->set('pattern', 'd F Y')
+    ->save();
+}

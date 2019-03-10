@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - entityqueue.entity_queue.front_page
+    - field.storage.node.field_queue
+    - node.type.landing_page
+id: node.landing_page.field_queue
+field_name: field_queue
+entity_type: node
+bundle: landing_page
+label: Queue
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:entity_subqueue'
+  handler_settings:
+    target_bundles:
+      front_page: front_page
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: front_page
+field_type: entity_reference

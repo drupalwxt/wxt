@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+id: front_page
+label: 'Front Page'
+handler: simple
+handler_configuration: {  }
+entity_settings:
+  target_type: block_content
+  handler: 'default:block_content'
+  handler_settings:
+    target_bundles:
+      spotlight: spotlight
+    sort:
+      field: changed
+      direction: DESC
+    auto_create: false
+    auto_create_bundle: basic
+queue_settings:
+  min_size: 0
+  max_size: 4
+  act_as_queue: true
+  reverse_in_admin: false

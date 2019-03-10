@@ -17,6 +17,7 @@ dependencies:
   - drupal:wxt_ext_migration
   - drupal:wxt_ext_page
   - drupal:wxt_ext_paragraph
+  - drupal:wxt_ext_queue
   - drupal:wxt_ext_sitemap
   - drupal:wxt_ext_taxonomy
   - drupal:wxt_ext_theme

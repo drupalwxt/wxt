@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains wxt_ext_queue.module.
+ */
+
+use Drupal\Core\Database\Database;
+use Drupal\views\ViewExecutable;
+use Drupal\views\Plugin\views\query\QueryPluginBase;
+
+/**
+ * Implements hook_views_query_alter().
+ */
+function wxt_ext_queue_views_query_alter(ViewExecutable $view, QueryPluginBase $query) {
+
+  $db = Database::getConnection()->driver();
+  if ($db == 'pgsql') {
+    // TODO: Drupal core should be handling this.
+    if (!empty($view->relationship['entityqueue_relationship'])) {
+      $query->getTableInfo('entity_subqueue__items')['join']->field .= '::bigint';
+    }
+  }
+}
