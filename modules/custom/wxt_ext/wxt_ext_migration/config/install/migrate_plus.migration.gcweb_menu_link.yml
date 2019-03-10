@@ -1,0 +1,334 @@
+id: gcweb_menu_link
+label: Embedded data feed of menu link content
+migration_tags:
+  - menu_link
+migration_group: gcweb
+source:
+  plugin: embedded_data
+  # Enforce default language to english
+  default_lang: true
+  data_rows:
+    # Footer.
+    - mlid: 'ml_footer_1'
+      link_title: 'Contact us'
+      description: 'Contact us section.'
+      menu_name: 'footer'
+      link_path: 'https://www.canada.ca/en/contact.html'
+      options: []
+      external: 1
+      weight: 0
+      parent: 0
+    - mlid: 'ml_footer_2'
+      link_title: 'Departments and agencies'
+      description: 'Departments and agencies section.'
+      menu_name: 'footer'
+      link_path: 'https://www.canada.ca/en/government/dept.html'
+      options: []
+      external: 1
+      weight: 1
+      parent: 0
+    - mlid: 'ml_footer_3'
+      link_title: 'Public service and military'
+      description: 'Public service and military section.'
+      menu_name: 'footer'
+      link_path: 'https://www.canada.ca/en/government/publicservice.html'
+      options: []
+      external: 1
+      weight: 2
+      parent: 0
+    - mlid: 'ml_footer_4'
+      link_title: 'News'
+      description: 'News section.'
+      menu_name: 'footer'
+      link_path: 'http://news.gc.ca'
+      options: []
+      external: 1
+      weight: 3
+      parent: 0
+    - mlid: 'ml_footer_5'
+      link_title: 'Treaties, laws and regulations'
+      description: 'Treaties, laws and regulations section.'
+      menu_name: 'footer'
+      link_path: 'https://www.canada.ca/en/government/system/laws.html'
+      options: []
+      external: 1
+      weight: 4
+      parent: 0
+    - mlid: 'ml_footer_6'
+      link_title: 'Government-wide reporting'
+      description: 'Government-wide reporting section.'
+      menu_name: 'footer'
+      link_path: 'https://www.canada.ca/en/transparency/reporting.html'
+      options: []
+      external: 1
+      weight: 5
+      parent: 0
+    - mlid: 'ml_footer_7'
+      link_title: 'Prime Minister'
+      description: 'Prime Minister section.'
+      menu_name: 'footer'
+      link_path: 'https://pm.gc.ca/eng'
+      options: []
+      external: 1
+      weight: 6
+      parent: 0
+    - mlid: 'ml_footer_8'
+      link_title: 'How government works'
+      description: 'How government works section.'
+      menu_name: 'footer'
+      link_path: 'https://www.canada.ca/en/government/system.html'
+      options: []
+      external: 1
+      weight: 7
+      parent: 0
+    - mlid: 'ml_footer_9'
+      link_title: 'Open government'
+      description: 'Open government section.'
+      menu_name: 'footer'
+      link_path: 'http://open.canada.ca/en/user'
+      options: []
+      external: 1
+      weight: 8
+      parent: 0
+    - mlid: 'ml_brand_1'
+      link_title: 'Social media'
+      description: 'Social media section.'
+      menu_name: 'brand'
+      link_path: 'https://www.canada.ca/en/social.html'
+      options: []
+      external: 1
+      weight: 0
+      parent: 0
+    - mlid: 'ml_brand_2'
+      link_title: 'Mobile applications'
+      description: 'Mobile applications section.'
+      menu_name: 'brand'
+      link_path: 'https://www.canada.ca/en/mobile.html'
+      options: []
+      external: 1
+      weight: 1
+      parent: 0
+    - mlid: 'ml_brand_3'
+      link_title: 'About Canada.ca'
+      description: 'About Canada.ca section.'
+      menu_name: 'brand'
+      link_path: 'https://www1.canada.ca/en/newsite.html'
+      options: []
+      external: 1
+      weight: 2
+      parent: 0
+    - mlid: 'ml_brand_4'
+      link_title: 'Terms and conditions'
+      description: 'Terms and conditions section.'
+      menu_name: 'brand'
+      link_path: 'https://www.canada.ca/en/transparency/terms.html'
+      options: []
+      external: 1
+      weight: 3
+      parent: 0
+    - mlid: 'ml_brand_5'
+      link_title: 'Privacy'
+      description: 'Privacy section.'
+      menu_name: 'brand'
+      link_path: 'https://www.canada.ca/en/transparency/privacy.html'
+      options: []
+      external: 1
+      weight: 4
+      parent: 0
+    - mlid: 'main_jobs_workplace'
+      link_title: 'Jobs and the workplace'
+      description: ''
+      menu_name: 'main'
+      link_path: 'https://www.canada.ca/en/services/jobs.html'
+      options: []
+      external: 1
+      weight: 2
+      parent: 0
+    - mlid: 'main_immigration'
+      link_title: 'Immigration and citizenship'
+      description: ''
+      menu_name: 'main'
+      link_path: 'https://www.canada.ca/en/services/immigration-citizenship.html'
+      options: []
+      external: 1
+      weight: 3
+      parent: 0
+    - mlid: 'main_travel'
+      link_title: 'Travel and tourism'
+      description: ''
+      menu_name: 'main'
+      link_path: 'https://travel.gc.ca/'
+      options: []
+      external: 1
+      weight: 4
+      parent: 0
+    - mlid: 'main_business'
+      link_title: 'Business and industry'
+      description: ''
+      menu_name: 'main'
+      link_path: 'https://www.canada.ca/en/services/business.html'
+      options: []
+      external: 1
+      weight: 5
+      parent: 0
+    - mlid: 'main_benefits'
+      link_title: 'Benefits'
+      description: ''
+      menu_name: 'main'
+      link_path: 'https://www.canada.ca/en/services/benefits.html'
+      options: []
+      external: 1
+      weight: 6
+      parent: 0
+    - mlid: 'main_health'
+      link_title: 'Health'
+      description: ''
+      menu_name: 'main'
+      link_path: 'https://www.canada.ca/en/services/health.html'
+      options: []
+      external: 1
+      weight: 7
+      parent: 0
+    - mlid: 'main_taxes'
+      link_title: 'Taxes'
+      description: ''
+      menu_name: 'main'
+      link_path: 'https://www.canada.ca/en/services/taxes.html'
+      options: []
+      external: 1
+      weight: 8
+      parent: 0
+    - mlid: 'main_environmental'
+      link_title: 'Environment and natural resources'
+      description: ''
+      menu_name: 'main'
+      link_path: 'https://www.canada.ca/en/services/environment.html'
+      options: []
+      external: 1
+      weight: 9
+      parent: 0
+    - mlid: 'main_national_security'
+      link_title: 'National security and defence'
+      description: ''
+      menu_name: 'main'
+      link_path: 'https://www.canada.ca/en/services/defence.html'
+      options: []
+      external: 1
+      weight: 10
+      parent: 0
+    - mlid: 'main_culture'
+      link_title: 'Culture, history and sport'
+      description: ''
+      menu_name: 'main'
+      link_path: 'https://www.canada.ca/en/services/culture.html'
+      options: []
+      external: 1
+      weight: 11
+      parent: 0
+    - mlid: 'main_policing'
+      link_title: 'Policing, justice and emergencies'
+      description: ''
+      menu_name: 'main'
+      link_path: 'https://www.canada.ca/en/services/policing.html'
+      options: []
+      external: 1
+      weight: 12
+      parent: 0
+    - mlid: 'main_transport'
+      link_title: 'Transport and infrastructure'
+      description: ''
+      menu_name: 'main'
+      link_path: 'https://www.canada.ca/en/services/transport.html'
+      options: []
+      external: 1
+      weight: 13
+      parent: 0
+    - mlid: 'main_canada'
+      link_title: 'Canada and the world'
+      description: ''
+      menu_name: 'main'
+      link_path: 'http://international.gc.ca/world-monde/index.aspx?lang=eng'
+      options: []
+      external: 1
+      weight: 14
+      parent: 0
+    - mlid: 'main_money'
+      link_title: 'Money and finances'
+      description: ''
+      menu_name: 'main'
+      link_path: 'https://www.canada.ca/en/services/finance.html'
+      options: []
+      external: 1
+      weight: 15
+      parent: 0
+    - mlid: 'main_science'
+      link_title: 'Science and innovation'
+      description: ''
+      menu_name: 'main'
+      link_path: 'https://www.canada.ca/en/services/finance.html'
+      options: []
+      external: 1
+      weight: 16
+      parent: 0
+    - mlid: user_register
+      link_title: 'Registration'
+      description: ''
+      menu_name: account
+      link_path: 'internal:/en/user/register'
+      options: []
+      external: 0
+      weight: 5
+      parent: 0
+    - mlid: user_rules
+      link_title: 'Rules of Engagement'
+      description: ''
+      menu_name: account
+      link_path: 'internal:/en/rules-engagement'
+      options: []
+      external: 0
+      weight: 10
+      parent: 0
+  # Under 'ids', we identify source fields populated above which will uniquely
+  # identify each imported item. The 'type' makes sure the migration map table
+  # uses the proper schema type for stored the IDs.
+  ids:
+    mlid:
+      type: string
+process:
+  id: mlid
+  bundle: 'constants/bundle'
+  title: link_title
+  description: description
+  menu_name: menu_name
+  'link/uri': link_path
+  'link/options': options
+  route:
+    plugin: route
+    source:
+      - link_path
+      - options
+  route_name: '@route/route_name'
+  route_parameters: '@route/route_parameters'
+  url: '@route/url'
+  options: '@route/options'
+  external: external
+  weight: weight
+  expanded:
+    plugin: default_value
+    default_value: 1
+  enabled:
+    plugin: default_value
+    default_value: 1
+  parent:
+    plugin: menu_link_parent
+    source:
+      - parent
+  changed:
+    plugin: default_value
+    default_value: ''
+destination:
+  plugin: entity:menu_link_content
+migration_dependencies:
+  required:
+    - menu
+    - wxt_node_page

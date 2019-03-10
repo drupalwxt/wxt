@@ -69,4 +69,4 @@ process:
     default_value: 1
 destination:
   plugin: entity:file
-migration_dependencies:
+migration_dependencies: {}

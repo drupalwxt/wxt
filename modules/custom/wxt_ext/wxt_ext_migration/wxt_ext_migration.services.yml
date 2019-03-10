@@ -1,0 +1,6 @@
+services:
+  wxt_ext_migration.migration_subscriber:
+    class: Drupal\wxt_ext_migration\EventSubscriber\MigrationSubscriber
+    arguments: ['@database', '@entity.manager', '@entity_type.manager', '@config.factory', '@session_manager', '@session',  '@current_user', '@uuid', '@cache_tags.invalidator', '@panelizer', '@user.shared_tempstore', '@path.alias_storage']
+    tags:
+      - { name: event_subscriber }

@@ -57,6 +57,5 @@ destination:
   plugin: entity:media
 migration_dependencies:
   required:
-    # migrations
     - wxt_file
     - wxt_media

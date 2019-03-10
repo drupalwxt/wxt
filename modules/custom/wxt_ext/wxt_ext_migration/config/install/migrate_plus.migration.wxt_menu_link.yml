@@ -348,7 +348,5 @@ destination:
   plugin: entity:menu_link_content
 migration_dependencies:
   required:
-    # modules
     - menu
-    # migrations
     - wxt_node_page

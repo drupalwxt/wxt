@@ -1,0 +1,306 @@
+id: gcweb_node_landing_page
+migration_tags:
+  - node
+migration_group: gcweb
+label: 'Embedded data feed of node landing page content'
+source:
+  plugin: embedded_data
+  data_rows:
+    -
+      name: homepage
+      title: 'Canada.ca'
+      language: en
+      body: |
+        <p>The official website of the Government of Canada.</p>
+      alias: /homepage
+      queue: front_page
+      metatags:
+        -
+          title: '[node:title]'
+          description: '[node:summary]'
+          keywords: 'Canada.ca, Open Government, Open Government Canada, Canada Open Government, Canada Open'
+      panelizer:
+        -
+          view_mode: page_manager
+          default: two_column
+          blocks:
+            -
+              id: 'block_content:homepage_block_1'
+              label: Canada
+              label_display: 0
+              region: top
+              view_mode: default
+              weight: 1
+            -
+              id: 'block_content:homepage_block_2'
+              label: 'Most Requested'
+              label_display: 0
+              region: top
+              view_mode: default
+              weight: 2
+            -
+              id: 'block_content:homepage_block_3'
+              label: 'Focus On'
+              label_display: 0
+              region: top
+              view_mode: default
+              weight: 3
+            -
+              id: 'block_content:homepage_block_4'
+              label: 'Your Government'
+              label_display: 0
+              region: top
+              view_mode: default
+              weight: 4
+            -
+              id: 'views_block:blocks-block_2'
+              label: Features
+              label_display: visible
+              region: bottom
+              view_mode: full
+              weight: 0
+          id: panels_variant
+          uuid: 5f833455-c610-41c5-ae17-149ada3d74a5
+          label: 'WxT'
+          weight: 0
+          layout: wxt_homepage
+          layout_settings:
+            layout:
+              wrapper: div
+              classes:
+                row: row
+              add_layout_class: 1
+              attributes: ''
+            regions:
+              top:
+                wrapper: div
+                classes:
+                  col-sm-12: col-sm-12
+                add_region_classes: 1
+                attributes: ''
+              top_left:
+                wrapper: div
+                classes:
+                  col-md-6: col-md-8
+                add_region_classes: 1
+                attributes: class|mrgn-tp-md
+              top_right:
+                wrapper: div
+                classes:
+                  col-md-6: col-md-4
+                add_region_classes: 1
+                attributes: class|mrgn-tp-xl
+              middle:
+                wrapper: div
+                classes:
+                  col-sm-12: col-sm-12
+                add_region_classes: 1
+                attributes: ''
+              bottom_left:
+                wrapper: div
+                classes:
+                  col-sm-6: col-sm-6
+                add_region_classes: 1
+                attributes: ''
+              bottom_right:
+                wrapper: div
+                classes:
+                  col-sm-6: col-sm-6
+                add_region_classes: 1
+                attributes: ''
+              bottom:
+                wrapper: div
+                classes:
+                  col-sm-12: col-sm-12
+                add_region_classes: 1
+                attributes: class|mrgn-tp-lg
+          page_title: '[node:title]'
+          storage_type: panelizer_default
+          storage_id: 'node:landing_page:full:two_column'
+          pattern: panelizer
+          builder: ipe
+          static_context: {  }
+    -
+      name: topic
+      title: '[Theme title]'
+      language: en
+      body: |
+        <p>1-2 sentences that describe the topics and top tasks that can be accessed on this page.</p>
+      alias: /topic
+      queue: topic_page
+      metatags:
+        -
+          title: '[node:title]'
+          description: '[node:summary]'
+          keywords: 'Canada.ca, Open Government, Open Government Canada, Canada Open Government, Canada Open'
+      panelizer:
+        -
+          view_mode: page_manager
+          default: two_column
+          blocks:
+            -
+              id: page_title_block
+              label: '[node:title]'
+              label_display: visible
+              region: top_left
+              weight: 0
+            -
+              id: 'entity_block:653x194'
+              label: Media
+              label_display: 0
+              region: top_right
+              view_mode: default
+              weight: 1
+            -
+              id: local_tasks_block
+              label: Tabs
+              label_display: '0'
+              region: top_left
+              weight: 1
+            -
+              id: 'entity_field:node:body'
+              label: Body
+              label_display: 0
+              region: top_left
+              weight: 5
+            -
+              id: 'views_block:blocks-block_1'
+              label: Features
+              label_display: visible
+              region: bottom
+              view_mode: full
+              weight: 0
+          id: panels_variant
+          uuid: 91b9d430-7b91-4a22-ac4d-2e5e0376c6a2
+          label: 'Two Column'
+          weight: 0
+          layout: bs_2col_bricked
+          layout_settings:
+            layout:
+              wrapper: div
+              classes:
+                row: row
+              add_layout_class: 1
+              attributes: ''
+            regions:
+              top:
+                wrapper: div
+                classes:
+                  col-sm-12: col-sm-12
+                add_region_classes: 1
+                attributes: ''
+              top_left:
+                wrapper: div
+                classes:
+                  col-md-6: col-md-8
+                add_region_classes: 1
+                attributes: class|mrgn-tp-md
+              top_right:
+                wrapper: div
+                classes:
+                  col-md-6: col-md-4
+                add_region_classes: 1
+                attributes: class|mrgn-tp-xl
+              middle:
+                wrapper: div
+                classes:
+                  col-sm-12: col-sm-12
+                add_region_classes: 1
+                attributes: ''
+              bottom_left:
+                wrapper: div
+                classes:
+                  col-sm-6: col-sm-6
+                add_region_classes: 1
+                attributes: ''
+              bottom_right:
+                wrapper: div
+                classes:
+                  col-sm-6: col-sm-6
+                add_region_classes: 1
+                attributes: ''
+              bottom:
+                wrapper: div
+                classes:
+                  col-sm-12: col-sm-12
+                add_region_classes: 1
+                attributes: class|mrgn-tp-lg
+          page_title: '[node:title]'
+          storage_type: panelizer_default
+          storage_id: 'node:landing_page:full:two_column'
+          pattern: panelizer
+          builder: ipe
+          static_context: {  }
+  ids:
+    name:
+      type: string
+process:
+  title:
+    plugin: skip_on_empty
+    method: row
+    source: title
+  uid:
+    plugin: default_value
+    default_value: 1
+  type:
+    plugin: default_value
+    default_value: landing_page
+  sticky:
+    plugin: default_value
+    default_value: 0
+  body/value:
+    plugin: wxt_media_tags
+    source: body
+  body/format:
+    plugin: default_value
+    default_value: rich_text
+  langcode: language
+  path/pathauto:
+    plugin: default_value
+    default_value: 0
+  path/alias: alias
+  status:
+    plugin: default_value
+    default_value: 1
+  moderation_state:
+    plugin: default_value
+    default_value: "published"
+  field_meta_tags:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: metatags
+    -
+      plugin: callback
+      callable: serialize
+  panelizer:
+    plugin: iterator
+    source: panelizer
+    process:
+      view_mode:
+        plugin: static_map
+        source: view_mode
+        bypass: true
+        map:
+          default: default
+          page_manager: full
+      default: default
+      panels_display/blocks:
+        plugin: wxt_block_plugin_id
+        source: blocks
+      panels_display/layout: layout
+      panels_display/layout_settings: layout_settings
+      panels_display/page_title: page_title
+      panels_display/storage_type: storage_type
+      panels_display/storage_id: storage_id
+      panels_display/pattern: pattern
+      panels_display/builder: builder
+      panels_display/static_context: static_context
+destination:
+  plugin: 'entity:node'
+migration_dependencies:
+  required:
+    - wxt_media_slideshow
+    - gcweb_block
+    - gcweb_block_spotlight
+    - gcweb_menu_link

@@ -1,0 +1,7 @@
+id: gcweb
+label: GCWEB Migrate
+description: Provides default content and related configuration for Drupal WxT.
+source_type: Embedded data
+shared_configuration:
+  source:
+    key: default

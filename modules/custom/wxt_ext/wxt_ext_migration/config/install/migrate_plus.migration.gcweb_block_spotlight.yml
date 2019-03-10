@@ -1,0 +1,69 @@
+id: gcweb_block_spotlight
+migration_tags:
+  - spotlight
+migration_group: gcweb
+dependencies:
+  enforced:
+    module:
+      - wxt_ext_migration
+label: 'Embedded data import for custom block types (spotlight)'
+source:
+  plugin: embedded_data
+  # Enforce default language to english
+  default_lang: true
+  data_rows:
+    - bid: 'feature_block_1'
+      language: 'en'
+      title: '[Feature hyperlink text]'
+      body: |
+        <p>Brief description of the feature being promoted.</p>
+      fid:
+        - id: '360x203'
+    - bid: 'feature_block_2'
+      language: 'en'
+      title: '[Feature hyperlink text]'
+      body: |
+        <p>Brief description of the feature being promoted.</p>
+      fid:
+        - id: '360x203'
+    - bid: 'feature_block_3'
+      language: 'en'
+      title: '[Feature hyperlink text]'
+      body: |
+        <p>Brief description of the feature being promoted.</p>
+      fid:
+        - id: '360x203'
+  # Under 'ids', we identify source fields populated above which will uniquely
+  # identify each imported item. The 'type' makes sure the migration map table
+  # uses the proper schema type for stored the IDs.
+  ids:
+    bid:
+      type: string
+process:
+  id: bid
+  info: title
+  uid:
+    plugin: default_value
+    default_value: 1
+  'body/value': body
+  'body/format':
+    plugin: default_value
+    default_value: rich_text
+  langcode: language
+  # Add image to media entity.
+  field_spotlight_media:
+    plugin: iterator
+    source: fid
+    process:
+      target_id:
+        plugin: migration_lookup
+        migration: wxt_media
+        source: id
+destination:
+  plugin: entity:block_content
+  default_bundle: spotlight
+  no_stub: true
+migration_dependencies:
+  required:
+    - wxt_file
+    - wxt_media
