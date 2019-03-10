@@ -1,0 +1,59 @@
+id: wxt_ext_group
+migration_tags: null
+migration_group: gcweb
+dependencies:
+  enforced:
+    module:
+      - wxt_ext_migration
+label: 'Json data for Groups'
+source:
+  # We use the JSON source plugin.
+  plugin: url
+  data_fetcher_plugin: http
+  data_parser_plugin: json
+  headers:
+    Accept: application/json
+  urls: 'http://open.canada.ca/data/api/action/organization_list?all_fields=true'
+  item_selector: result
+  fields:
+    -
+      name: machine_name
+      label: 'Machine Name'
+      selector: id
+    -
+      name: shortcode
+      label: Shortcode
+      selector: name
+    -
+      name: title
+      label: Label
+      selector: title
+  # Under 'ids', we identify source fields populated above which will uniquely
+  # identify each imported item. The 'type' makes sure the migration map table
+  # uses the proper schema type for stored the IDs.
+  ids:
+    machine_name:
+      type: string
+process:
+  label:
+    -
+      plugin: explode
+      source: title
+      delimiter: '|'
+    -
+      plugin: extract
+      index:
+        - 0
+  type:
+    plugin: default_value
+    default_value: department
+  uid:
+    plugin: default_value
+    default_value: 1
+  langcode:
+    plugin: default_value
+    default_value: en
+  field_shortcode/value: shortcode
+destination:
+  plugin: 'entity:group'
+migration_dependencies: null

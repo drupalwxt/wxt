@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_class
+    - ctools
+    - group
+  theme:
+    - wxt_bootstrap
+third_party_settings:
+  block_class:
+    classes: ''
+id: groupoperations
+theme: wxt_bootstrap
+region: sidebar_first
+weight: -10
+provider: null
+plugin: group_operations
+settings:
+  id: group_operations
+  label: 'Group operations'
+  provider: group
+  label_display: visible
+  context_mapping:
+    group: '@group.group_route_context:group'
+visibility:
+  'entity_bundle:group':
+    id: 'entity_bundle:group'
+    bundles:
+      department: department
+    negate: false
+    context_mapping:
+      group: '@group.group_route_context:group'

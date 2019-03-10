@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: department
+label: Department(s)
+description: ''
+creator_roles:
+  - department-admin

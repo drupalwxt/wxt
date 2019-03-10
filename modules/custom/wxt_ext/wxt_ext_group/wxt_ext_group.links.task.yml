@@ -1,0 +1,4 @@
+wxt_ext_group.group:
+  title: 'Group'
+  route_name: view.group_add_content.page_1
+  base_route: system.admin_content

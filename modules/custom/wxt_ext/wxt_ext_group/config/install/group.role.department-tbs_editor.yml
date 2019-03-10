@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.department
+id: department-tbs_editor
+label: 'TBS Editor'
+weight: 101
+internal: false
+audience: member
+group_type: department
+permissions_ui: true
+permissions:
+  0: 'update own group_membership content'
+  1: 'access group_node overview'
+  2: 'create group_node:blog_post entity'
+  3: 'delete any group_node:blog_post entity'
+  4: 'delete own group_node:blog_post entity'
+  5: 'update any group_node:blog_post entity'
+  6: 'update own group_node:blog_post entity'
+  7: 'view group_node:blog_post entity'
+  8: 'view unpublished group_node:blog_post entity'
+  9: 'view group_node:blog_post content'
+  10: 'view group'
+  22: 'create group_node:consultation entity'
+  23: 'delete any group_node:consultation entity'
+  24: 'delete own group_node:consultation entity'
+  25: 'update any group_node:consultation entity'
+  26: 'update own group_node:consultation entity'
+  27: 'view group_node:consultation entity'
+  28: 'view unpublished group_node:consultation entity'
+  29: 'view group_node:consultation content'

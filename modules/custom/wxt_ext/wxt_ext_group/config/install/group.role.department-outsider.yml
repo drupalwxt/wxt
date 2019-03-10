@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.department
+id: department-outsider
+label: Outsider
+weight: -101
+internal: true
+audience: outsider
+group_type: department
+permissions_ui: true
+permissions:
+  0: 'view group'
+  1: 'view group_node:blog_post entity'
+  4: 'view group_node:consultation entity'

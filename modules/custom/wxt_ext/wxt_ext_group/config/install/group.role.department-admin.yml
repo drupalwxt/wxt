@@ -1,0 +1,49 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.department
+id: department-admin
+label: Admin
+weight: 100
+internal: false
+audience: member
+group_type: department
+permissions_ui: true
+permissions:
+  0: 'access content overview'
+  1: 'administer group'
+  2: 'delete group'
+  3: 'edit group'
+  4: 'administer members'
+  5: 'update own group_membership content'
+  6: 'leave group'
+  7: 'view group_membership content'
+  8: 'view group'
+  9: 'access group_node overview'
+  10: 'create group_node:blog_post entity'
+  11: 'delete any group_node:blog_post entity'
+  12: 'delete own group_node:blog_post entity'
+  13: 'update any group_node:blog_post entity'
+  14: 'update own group_node:blog_post entity'
+  15: 'view group_node:blog_post entity'
+  16: 'view unpublished group_node:blog_post entity'
+  17: 'create group_node:blog_post content'
+  18: 'delete any group_node:blog_post content'
+  19: 'delete own group_node:blog_post content'
+  20: 'update any group_node:blog_post content'
+  21: 'update own group_node:blog_post content'
+  22: 'view group_node:blog_post content'
+  46: 'create group_node:consultation entity'
+  47: 'delete any group_node:consultation entity'
+  48: 'delete own group_node:consultation entity'
+  49: 'update any group_node:consultation entity'
+  50: 'update own group_node:consultation entity'
+  51: 'view group_node:consultation entity'
+  52: 'view unpublished group_node:consultation entity'
+  53: 'create group_node:consultation content'
+  54: 'delete any group_node:consultation content'
+  55: 'delete own group_node:consultation content'
+  56: 'update any group_node:consultation content'
+  57: 'update own group_node:consultation content'
+  58: 'view group_node:consultation content'

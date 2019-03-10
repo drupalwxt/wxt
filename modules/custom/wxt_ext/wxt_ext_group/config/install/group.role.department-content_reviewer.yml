@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.department
+id: department-content_reviewer
+label: 'Content Reviewer'
+weight: 103
+internal: false
+audience: member
+group_type: department
+permissions_ui: true
+permissions:
+  0: 'update own group_membership content'
+  1: 'view group'
+  2: 'access group_node overview'
+  3: 'update any group_node:blog_post entity'
+  4: 'view group_node:blog_post entity'
+  5: 'view unpublished group_node:blog_post entity'
+  12: 'update any group_node:consultation entity'
+  13: 'view group_node:consultation entity'
+  14: 'view unpublished group_node:consultation entity'

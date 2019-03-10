@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.group.field_shortcode
+    - group.type.department
+id: group.department.field_shortcode
+field_name: field_shortcode
+entity_type: group
+bundle: department
+label: Shortcode
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

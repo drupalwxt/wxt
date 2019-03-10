@@ -1,0 +1,10 @@
+name: 'WxT Extend Group'
+description: 'WxT functionality related to CKAN organizations.'
+type: module
+core: 8.x
+package: 'WxT'
+
+# Required modules
+dependencies:
+  - drupal:gnode
+  - drupal:group

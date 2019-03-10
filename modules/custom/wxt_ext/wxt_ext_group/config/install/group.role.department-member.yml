@@ -1,0 +1,34 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.department
+id: department-member
+label: Member
+weight: -100
+internal: true
+audience: member
+group_type: department
+permissions_ui: true
+permissions:
+  0: 'edit group'
+  1: 'administer members'
+  2: 'update own group_membership content'
+  3: 'leave group'
+  4: 'view group_membership content'
+  5: 'view group'
+  6: 'access group_node overview'
+  7: 'create group_node:blog_post entity'
+  8: 'delete any group_node:blog_post entity'
+  9: 'delete own group_node:blog_post entity'
+  10: 'update any group_node:blog_post entity'
+  11: 'update own group_node:blog_post entity'
+  12: 'view group_node:blog_post entity'
+  13: 'view unpublished group_node:blog_post entity'
+  28: 'create group_node:consultation entity'
+  29: 'delete any group_node:consultation entity'
+  30: 'delete own group_node:consultation entity'
+  31: 'update any group_node:consultation entity'
+  32: 'update own group_node:consultation entity'
+  33: 'view group_node:consultation entity'
+  34: 'view unpublished group_node:consultation entity'

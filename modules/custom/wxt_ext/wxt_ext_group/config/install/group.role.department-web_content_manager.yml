@@ -1,0 +1,42 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.department
+id: department-web_content_manager
+label: 'Web Content Manager'
+weight: 102
+internal: false
+audience: member
+group_type: department
+permissions_ui: true
+permissions:
+  0: 'update own group_membership content'
+  1: 'view group'
+  2: 'access group_node overview'
+  3: 'create group_node:blog_post entity'
+  4: 'delete any group_node:blog_post entity'
+  5: 'delete own group_node:blog_post entity'
+  6: 'update any group_node:blog_post entity'
+  7: 'update own group_node:blog_post entity'
+  8: 'view group_node:blog_post entity'
+  9: 'view unpublished group_node:blog_post entity'
+  10: 'create group_node:blog_post content'
+  11: 'delete any group_node:blog_post content'
+  12: 'delete own group_node:blog_post content'
+  13: 'update any group_node:blog_post content'
+  14: 'update own group_node:blog_post content'
+  15: 'view group_node:blog_post content'
+  32: 'create group_node:consultation entity'
+  33: 'delete any group_node:consultation entity'
+  34: 'delete own group_node:consultation entity'
+  35: 'update any group_node:consultation entity'
+  36: 'update own group_node:consultation entity'
+  37: 'view group_node:consultation entity'
+  38: 'view unpublished group_node:consultation entity'
+  39: 'create group_node:consultation content'
+  40: 'delete any group_node:consultation content'
+  41: 'delete own group_node:consultation content'
+  42: 'update any group_node:consultation content'
+  43: 'update own group_node:consultation content'
+  44: 'view group_node:consultation content'
