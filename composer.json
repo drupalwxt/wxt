@@ -209,7 +209,9 @@
             },
             "drupal/s3fs": {
                 "Enter drupal/s3fs patch #2986407 description here":
-                "https://www.drupal.org/files/issues/2018-07-17/s3fs-2986407-save-memory-2.patch"
+                "https://www.drupal.org/files/issues/2018-07-17/s3fs-2986407-save-memory-2.patch",
+                "Enter drupal/s3fs patch #3038992 description here":
+                "https://www.drupal.org/files/issues/2019-03-10/0001-feat-s3fs-Compatibility-with-Minio.patch"
             },
             "drupal/views_bootstrap": {
                 "Enter drupal/views_bootstrap patch #2878352 description here":
