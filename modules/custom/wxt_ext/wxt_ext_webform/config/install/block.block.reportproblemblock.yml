@@ -1,0 +1,41 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - webform.webform.contact
+  module:
+    - block_class
+    - wxt_ext_webform
+    - wxt_library
+  theme:
+    - wxt_bootstrap
+third_party_settings:
+  block_class:
+    classes: 'col-sm-6 col-md-5 col-lg-4'
+id: reportproblemblock
+theme: wxt_bootstrap
+region: content_footer
+weight: -9
+provider: null
+plugin: report_problem_block
+settings:
+  id: report_problem_block
+  label: 'Report Problem block'
+  provider: wxt_ext_webform
+  label_display: '0'
+  report_problem_settings:
+    webform_id: ''
+    default_data: ''
+    redirect: false
+  webform_id: contact
+  default_data:
+    webform_id: contact
+    default_data: ''
+    redirect: true
+  redirect: true
+visibility:
+  panels_title:
+    id: panels_title
+    enabled: 0
+    negate: false
+    context_mapping: {  }

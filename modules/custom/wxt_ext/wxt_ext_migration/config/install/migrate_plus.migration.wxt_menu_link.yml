@@ -1,6 +1,8 @@
 id: wxt_menu_link
 label: Embedded data feed of menu link content
 migration_group: wxt
+migration_tags:
+  - Menu
 source:
   plugin: embedded_data
   # Enforce default language to english

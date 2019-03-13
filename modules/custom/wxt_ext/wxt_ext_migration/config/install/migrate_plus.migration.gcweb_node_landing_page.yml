@@ -1,7 +1,7 @@
 id: gcweb_node_landing_page
-migration_tags:
-  - node
 migration_group: gcweb
+migration_tags:
+  - Core
 label: 'Embedded data feed of node landing page content'
 source:
   plugin: embedded_data
@@ -303,4 +303,4 @@ migration_dependencies:
     - wxt_media_slideshow
     - gcweb_block
     - gcweb_block_spotlight
-    - gcweb_menu_link
+

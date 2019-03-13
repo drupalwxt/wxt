@@ -1,7 +1,7 @@
 id: gcweb_block
-migration_tags:
-  - basic
 migration_group: gcweb
+migration_tags:
+  - Core
 dependencies:
   enforced:
     module:

@@ -1,6 +1,8 @@
 id: wxt_file
 label: Embedded data feed of file associated metadata
 migration_group: wxt
+migration_tags:
+  - Core
 source:
   plugin: embedded_data
   # Enforce default language to english

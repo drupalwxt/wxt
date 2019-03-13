@@ -1,7 +1,7 @@
 id: gcweb_block_spotlight_translation
-migration_tags:
-  - spotlight
 migration_group: gcweb_translation
+migration_tags:
+  - Core
 dependencies:
   enforced:
     module:

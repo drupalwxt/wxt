@@ -1,8 +1,8 @@
 id: gcweb_menu_link
 label: Embedded data feed of menu link content
-migration_tags:
-  - menu_link
 migration_group: gcweb
+migration_tags:
+  - Menu
 source:
   plugin: embedded_data
   # Enforce default language to english

@@ -1,8 +1,8 @@
 id: gcweb_menu_link_translation
 label: Embedded data feed of menu link content
-migration_tags:
-  - menu_link
 migration_group: gcweb_translation
+migration_tags:
+  - Menu
 source:
   plugin: embedded_data
   translations: true

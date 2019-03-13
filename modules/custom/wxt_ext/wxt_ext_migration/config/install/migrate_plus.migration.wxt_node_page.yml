@@ -1,6 +1,8 @@
 id: wxt_node_page
 label: Embedded data feed of content
 migration_group: wxt
+migration_tags:
+  - Core
 source:
   plugin: embedded_data
   data_rows:
