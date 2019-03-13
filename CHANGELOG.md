@@ -1,3 +1,17 @@
+## v2.2.15 (In Development)
+
+Features:
+- Support for gcweb (canada.ca) theme v5.0.1 spec
+- Updated WxT related packages
+  - drupal/wxt_library including:
+    - wet-boew/theme-gcweb (v4.0.29 => v5.0.1)
+    - wet-boew/theme-gcweb-legacy (v4.0.29)
+    - wet-boew/wet-boew (v4.0.29 => v4.0.30)
+  - drupal/wxt_bootstrap
+- Added module
+  - entityqueue
+  - s3fs
+
 ## v2.2.14
 
 Security update:
