@@ -1,6 +1,7 @@
-id: canada_ext_group_translation
-migration_tags: null
+id: gcweb_ext_group_translation
 migration_group: gcweb_translation
+migration_tags:
+  - Group
 dependencies:
   enforced:
     module:
@@ -70,4 +71,4 @@ destination:
   translations: true
 migration_dependencies:
   required:
-    - wxt_ext_group
+    - gcweb_ext_group

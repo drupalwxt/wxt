@@ -70,6 +70,55 @@ install the required dependencies:
 composer require j7mbo/twitter-api-php league/oauth2-server:~6.0 webflo/drupal-core-strict:~8.5.0 "phpdocumentor/reflection-docblock:^3.0||^4.0"
 ```
 
+## Installation of Default Content via Migrate
+
+Install the site using drush which should take approximately 4-5 minutes depending on your system.
+
+```sh
+drush si wxt
+  --sites-subdir=default \
+  --db-url=mysql://root:WxT@mysql:3306/wxt \
+  --account-name=admin \
+  --account-pass=WxT \
+  --site-mail=admin@example.com \
+  --site-name="Drupal Install Profile (WxT)" \
+  install_configure_form.update_status_module='array(FALSE,FALSE)' \
+  --yes
+```
+
+### WxT
+
+Imports examples of common design patterns for WxT branded sites.
+
+```sh
+drush migrate:import --group wxt --tag 'Core'
+```
+
+> Note: There is a group wxt_translation for importing the corresponding french content.
+
+### Canada
+
+Imports examples of common design patterns for Canada.ca aligning to C&IA specification.
+
+```sh
+drush migrate:import --group wxt --tag 'Core'
+drush migrate:import --group gcweb --tag 'Core'
+drush migrate:import --group gcweb --tag 'Menu'
+```
+
+> Note: There is a group gcweb_translation for importing the corresponding french content.
+
+### Groups
+
+We also provide an example of importing groups via a json feed from open.canada.ca that will create a group for every government department where you can isolate content acess.
+
+```sh
+drush en wxt_ext_group -y
+drush migrate:import --group gcweb --tag 'Group'
+```
+
+> Note: Make sure to only have one set of menu's imported for each of the supported themes. Leverage migrate:rollback to assist with this requirement.
+
 ## Version History
 
 ### Changelog
@@ -103,7 +152,7 @@ Contributor(s): https://github.com/drupalwxt/wxt/graphs/contributors
 [project-new]:          https://github.com/drupalwxt/wxt-project#user-content-new-project
 [release-drupal]:       https://github.com/drupalwxt/wxt/releases
 [release-github]:       https://github.com/drupalwxt/wxt/releases
-[responsinator]:        http://www.responsinator.com/?url=demo.drupalwxt.org
+[responsinator]:        http://www.responsinator.com/?url=d8.govcloud.ca
 [simplytest]:           http://simplytest.me/project/wxt/8.x-2.x
 [travisci]:             https://travis-ci.org/drupalwxt/wxt
 [travisci-badge]:       https://travis-ci.org/drupalwxt/wxt.png?branch=8.x-2.x

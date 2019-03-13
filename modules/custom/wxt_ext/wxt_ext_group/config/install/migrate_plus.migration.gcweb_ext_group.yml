@@ -1,6 +1,7 @@
-id: wxt_ext_group
-migration_tags: null
+id: gcweb_ext_group
 migration_group: gcweb
+migration_tags:
+  - Group
 dependencies:
   enforced:
     module:
