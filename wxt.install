@@ -130,3 +130,14 @@ function _wxt_setup_404() {
     ->set('page.404', '/system/404')
     ->save(TRUE);
 }
+
+/**
+ * Implements hook_update_N().
+ *
+ * Opt in to newer gcweb look for existing installs.
+ */
+function wxt_update_8201() {
+  $config = \Drupal::configFactory()->getEditable('wxt_library.settings');
+  $config->set('wxt.theme', 'theme-gcweb-legacy');
+  $config->save();
+}
