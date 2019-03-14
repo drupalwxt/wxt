@@ -1,6 +1,7 @@
 ## v2.2.15 (In Development)
 
 Features:
+- Update Drupal Core 8.6.11
 - Support for gcweb (canada.ca) theme v5.0.1 spec
 - Updated WxT related packages
   - drupal/wxt_library including:
@@ -8,9 +9,17 @@ Features:
     - wet-boew/theme-gcweb-legacy (v4.0.29)
     - wet-boew/wet-boew (v4.0.29 => v4.0.30)
   - drupal/wxt_bootstrap
-- Added module
+- Added modules
   - entityqueue
   - s3fs
+
+Upgrade path:
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb` (switches to gcweb-legacy opt in for newer gcweb v5.0.1)
 
 ## v2.2.14
 
