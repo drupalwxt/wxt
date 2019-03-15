@@ -1,4 +1,4 @@
-## v2.2.15 (In Development)
+## v2.2.15
 
 Features:
 - Update Drupal Core 8.6.11
