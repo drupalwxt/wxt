@@ -236,3 +236,4 @@ libraries[theme-gcweb][download][url] = https://github.com/wet-boew/themes-cdn/a
 libraries[theme-gcweb-legacy][download][type] = get
 libraries[theme-gcweb-legacy][download][url] = https://github.com/wet-boew/themes-cdn/archive/v4.0.29-gcweb.tar.gz
 libraries[theme-ogpl][download][type] = get
+libraries[theme-ogpl][download][url] = https://github.com/wet-boew/themes-cdn/archive/v4.0.27-theme-ogpl.tar.gz
