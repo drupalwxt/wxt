@@ -33,3 +33,6 @@ bower_components/
 # WxT
 test-results
 files_private/
+
+# Tarball
+*.tar.gz
