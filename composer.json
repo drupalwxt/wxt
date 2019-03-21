@@ -22,7 +22,7 @@
         "drupal/devel": "^1.0",
         "squizlabs/php_codesniffer": "2.*",
         "se/selenium-server-standalone": "^2.53",
-        "drupal/console": "1.0.1",
+        "drupal/console": "~1.8.0",
         "jakoch/phantomjs-installer": "1.9.8",
         "composer/composer": "^1.4",
         "grasmash/yaml-cli": "^1.0"
@@ -222,6 +222,7 @@
     "require": {
         "composer/installers": "^1.2",
         "cweagans/composer-patches": "^1.6.4",
+        "zaporylie/composer-drupal-optimizations": "^1.1",
         "drupal-composer/drupal-scaffold": "^2.0.0",
         "acquia/lightning": "3.2.7",
         "drupal/admin_toolbar": "^1.26",
