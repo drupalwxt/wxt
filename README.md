@@ -12,7 +12,7 @@ provide an update path for all future releases.
 - Documentation Website: [drupalwxt.github.io][docsite]
 - Drupal Repository: [drupal.org/project/wxt][drupal]
 - GitHub Repository: [drupalwxt/wxt][github]
-- Live Demo: [responsinator][responsinator]
+- Live Demo: [demo][demo]
 - Run it Now: [simplytest.me][simplytest]
 - Issue Queue: [Drupal][issue-drupal] (Primary)
 - Issue Queue: [GitHub][issue-github]
@@ -139,6 +139,7 @@ Contributor(s): https://github.com/drupalwxt/wxt/graphs/contributors
 [acquia]:               https://acquia.com
 [changelog]:            https://github.com/drupalwxt/wxt/blob/8.x-2.x/CHANGELOG.md
 [config-install]:       https://lightning.acquia.com/blog/using-configuration-installer-lightning
+[demo]:                 https://d8.govcloud.ca
 [docsite]:              http://drupalwxt.github.io
 [drupal]:               http://drupal.org/project/wxt
 [drupal7]:              http://drupal.org/project/wetkit
@@ -152,7 +153,6 @@ Contributor(s): https://github.com/drupalwxt/wxt/graphs/contributors
 [project-new]:          https://github.com/drupalwxt/wxt-project#user-content-new-project
 [release-drupal]:       https://github.com/drupalwxt/wxt/releases
 [release-github]:       https://github.com/drupalwxt/wxt/releases
-[responsinator]:        http://www.responsinator.com/?url=d8.govcloud.ca
 [simplytest]:           http://simplytest.me/project/wxt/8.x-2.x
 [travisci]:             https://travis-ci.org/drupalwxt/wxt
 [travisci-badge]:       https://travis-ci.org/drupalwxt/wxt.png?branch=8.x-2.x
