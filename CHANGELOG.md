@@ -4,6 +4,15 @@ Security update:
 
 - Update core to [8.6.13](https://www.drupal.org/project/drupal/releases/8.6.13) [SA-CORE-2019-004](https://www.drupal.org/sa-core-2019-004)
 
+Features/Updates:
+
+- Update Lightning to 3.2.7
+- Update entityqueue to 1.0-alpha0
+- Update menu_breadcrumb to 1.8
+- Update paragraphs to 1.7
+- Update wxt_bootstrap to 1.8
+  - Resolve issues with container class logic in regions
+
 ## v2.2.15
 
 Features:
