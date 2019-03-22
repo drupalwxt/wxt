@@ -195,7 +195,9 @@
             },
             "drupal/paragraphs": {
                 "Enter drupal/paragraphs patch #2878615 description here":
-                "https://www.drupal.org/files/issues/comments_entity_uri-2878615-6.patch"
+                "https://www.drupal.org/files/issues/comments_entity_uri-2878615-6.patch",
+                "Update function 8018 caught in endless loop":
+                "https://www.drupal.org/files/issues/2019-03-21/paragraphs-update-endless-loop-3041868-23.patch"
             },
             "drupal/panels": {
                 "Enter drupal/panels patch #2667755 description here":
