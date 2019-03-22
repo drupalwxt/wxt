@@ -28,6 +28,16 @@ Features:
   - entityqueue
   - s3fs
 
+Manual changes:
+
+Upon running the database updates, the active wet-boew variant will switch
+to gcweb-legacy. New installs will automatically use the new gcweb variant.
+
+If you wish to remain on the gcweb-legacy variant, and you have custom
+templates with `gcweb` in the name, rename `gcweb` to `gcweb-legacy`.
+To use the new gcweb variant, switch the active wet-boew variant
+to Canada.ca (gcweb).
+
 Upgrade path:
 - Update your codebase:
   - `composer update`
