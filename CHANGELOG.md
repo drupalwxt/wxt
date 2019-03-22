@@ -7,7 +7,7 @@ Security update:
 Features/Updates:
 
 - Update Lightning to 3.2.7
-- Update entityqueue to 1.0-alpha0
+- Update entityqueue to 1.0-alpha8
 - Update menu_breadcrumb to 1.8
 - Update paragraphs to 1.7
 - Update wxt_bootstrap to 1.8
