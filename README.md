@@ -44,6 +44,8 @@ composer create-project drupalwxt/wxt-project:8.x-dev MYPROJECT --no-interaction
 
 [Install with Composer][project-new]
 
+> We recommend a composer version of 1.8.1 or greater due to fixes made upstream.
+
 For more information on creating and maintaining your WxT project with composer,
 see our [WxT Project README][project].
 
