@@ -1,3 +1,15 @@
+## v2.2.17 (In Development)
+
+Features/Updates:
+
+- Minor README.md improvements
+- Patch for Paragraphs endless loop
+- Revert menu_breadcrumb to 1.7 + lock
+- Update wxt_bootstrap to 1.9
+  - Resolve additional issues with gcweb legacy port
+- Update wxt_bootstrap to 1.6
+  -  Add guard for language detection in search block
+
 ## v2.2.16
 
 Security update:
