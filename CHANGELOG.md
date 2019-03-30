@@ -1,4 +1,4 @@
-## v2.2.17 (In Development)
+## v2.2.17
 
 Features/Updates:
 
