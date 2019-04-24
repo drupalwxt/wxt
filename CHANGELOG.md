@@ -1,3 +1,31 @@
+## v2.2.18
+
+Security update:
+
+* Update Drupal Core to [8.6.15](https://www.drupal.org/project/drupal/releases/8.6.15) 
+  * [SA-CORE-2019-005](https://www.drupal.org/sa-core-2019-005)
+  * [SA-CORE-2019-006](https://www.drupal.org/sa-core-2019-006)
+
+Features/Updates:
+
+- Update Drupal Core to 8.6.15
+- Update Lightning to 3.2.8
+- Update entityqueue to 1.0-beta2
+- Update migrate_plus to 4.2
+
+Upgrade path:
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
+- Run Lightning configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:lightning`
+
 ## v2.2.17
 
 Features/Updates:
