@@ -155,6 +155,7 @@ projects[page_manager][patch][] = https://www.drupal.org/files/issues/page_manag
 projects[page_manager][patch][] = https://www.drupal.org/files/issues/2018-07-05/page_manager-incorrect-page_title-2752227-32-8.x.4.x.patch
 projects[page_manager][version] = 4.0-beta3
 projects[panelizer][type] = module
+projects[panelizer][patch][] = https://www.drupal.org/files/issues/2019-05-17/panelizer-node-previews-2750491-7.patch
 projects[panelizer][patch][] = https://www.drupal.org/files/issues/2018-08-13/panelizer-multilingual-2778565-38.patch
 projects[panelizer][version] = 4.1
 projects[panels][type] = module
