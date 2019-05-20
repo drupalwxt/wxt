@@ -108,12 +108,10 @@
                 "https://www.drupal.org/files/issues/2018-09-06/1838234-52.patch",
                 "Enter drupal/core patch #2559833 description here":
                 "https://www.drupal.org/files/issues/2018-11-01/comment-redirect-2559833-57.patch",
-                "2599228 - 104 rolled for 8.6.x and to be marked RTBC":
-                "https://www.drupal.org/files/issues/2018-12-06/2599228-104-8.6.x.patch",
                 "Enter drupal/core patch #2606322 description here":
                 "https://www.drupal.org/files/issues/2606322-4.x-field_list_item_view_correct_language.patch",
                 "Enter drupal/core patch #2630732 description here":
-                "https://www.drupal.org/files/issues/2630732-42.patch",
+		"https://www.drupal.org/files/issues/2019-05-11/2630732-55.drupal.Implement-Entityfields-for-migration-destinations.patch",
                 "2679775 - Fixes float issue with inline label fields (entity references on most cases).":
                 "https://www.drupal.org/files/issues/2679775-11-inline-labels.patch",
                 "Enter drupal/core patch #2698057 description here":
@@ -140,8 +138,6 @@
                 "https://www.drupal.org/files/issues/2893029-9.patch",
                 "Enter drupal/core patch #2898119 description here":
                 "https://www.drupal.org/files/issues/doctrine_common_version_below_2.8-2898119-11.patch",
-                "Enter drupal/core patch #2914233 description here":
-                "https://www.drupal.org/files/issues/node_preview_error-2914233-5.patch",
                 "Enter drupal/core patch #2920637 description here":
                 "https://www.drupal.org/files/issues/taxonomy-context-provider-2920637-3.patch",
                 "Enter drupal/core patch #2893407 description here":
@@ -209,6 +205,10 @@
                 "Enter drupal/panels patch #2910704 description here":
                 "https://www.drupal.org/files/issues/panels-ipe-card-flip-ie-error-2910704.diff"
             },
+	    "drupal/panelizer": {
+                "Allow the previewing of nodes with panelizer":
+                "https://www.drupal.org/files/issues/2019-05-17/panelizer-node-previews-2750491-7.patch"
+	    },
             "drupal/s3fs": {
                 "Enter drupal/s3fs patch #2986407 description here":
                 "https://www.drupal.org/files/issues/2018-07-17/s3fs-2986407-save-memory-2.patch",
@@ -226,7 +226,7 @@
         "cweagans/composer-patches": "^1.6.4",
         "zaporylie/composer-drupal-optimizations": "^1.1",
         "drupal-composer/drupal-scaffold": "^2.0.0",
-        "acquia/lightning": "3.2.8",
+        "acquia/lightning": "4.0.0",
         "drupal/admin_toolbar": "^1.26",
         "drupal/block_class": "1.0",
         "drupal/blog": "dev-2.x#43a2171",
@@ -235,7 +235,8 @@
         "drupal/ckeditor_codemirror": "2.2",
         "drupal/config_rewrite": "1.1",
         "drupal/config_update": "1.6",
-        "drupal/core": "8.6.15",
+        "drupal/core": "8.7.1",
+        "drupal/ctools": "3.0.0",
         "drupal/diff": "1.0-rc2",
         "drupal/entity_reference_revisions": "1.6",
         "drupal/entityqueue": "^1.0-alpha8",
@@ -244,7 +245,6 @@
         "drupal/fontawesome": "^2.12",
         "drupal/group": "1.0-rc2",
         "drupal/inline_entity_form": "1.0-rc1",
-        "drupal/jsonapi": "^2.3",
         "drupal/linkit": "5.0-beta8",
         "drupal/media_entity": "2.0.0-beta3",
         "drupal/media_entity_document": "1.x-dev",
