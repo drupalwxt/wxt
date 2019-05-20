@@ -1,10 +1,7 @@
 core = 8.x
 api = 2
 projects[drupal][type] = core
-projects[drupal][download][type] = git
-projects[drupal][download][url] = https://git.drupal.org/project/drupal.git
-projects[drupal][download][branch] = 8.7.x
-projects[drupal][download][tag] = 8.7.1
+projects[drupal][version] = 8.7.1
 projects[drupal][patch][] = https://www.drupal.org/files/issues/2018-09-06/1838234-52.patch
 projects[drupal][patch][] = https://www.drupal.org/files/issues/2018-11-01/comment-redirect-2559833-57.patch
 projects[drupal][patch][] = https://www.drupal.org/files/issues/2606322-4.x-field_list_item_view_correct_language.patch
