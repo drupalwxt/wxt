@@ -243,7 +243,7 @@
         "drupal/features": "^3.0",
         "drupal/field_group": "1.0",
         "drupal/fontawesome": "^2.12",
-        "drupal/group": "1.0-rc3",
+        "drupal/group": "1.0-rc4",
         "drupal/inline_entity_form": "1.0-rc1",
         "drupal/linkit": "5.0-beta8",
         "drupal/media_entity": "2.0.0-beta3",
