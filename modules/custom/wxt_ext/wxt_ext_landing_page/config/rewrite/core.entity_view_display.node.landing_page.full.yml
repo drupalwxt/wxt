@@ -410,49 +410,61 @@ third_party_settings:
               add_region_classes: 1
               attributes: ''
         components:
-          2ba0359c-af3f-4bd7-a6d6-a6e93f680883:
-            uuid: 2ba0359c-af3f-4bd7-a6d6-a6e93f680883
-            region: top_right
-            configuration:
-              id: 'field_block:node:landing_page:body'
-              label: Body
-              label_display: '0'
-              formatter:
-                label: hidden
-                type: text_default
-                settings: {  }
-                third_party_settings: {  }
-              context_mapping: {  }
-            additional: {  }
-            weight: 1
           62dd7b94-9f49-4b61-ad40-f65d365a7f46:
             uuid: 62dd7b94-9f49-4b61-ad40-f65d365a7f46
             region: top_right
             configuration:
-              id: page_title_block
+              id: 'field_block:node:page:title'
               label: 'Page title'
-              label_display: visible
-              context_mapping: {  }
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: string
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
             additional: {  }
-            weight: -1
+            weight: 0
           e58e904b-8890-4559-9582-222b7ca445a9:
             uuid: e58e904b-8890-4559-9582-222b7ca445a9
             region: top_right
             configuration:
               id: local_tasks_block
               label: Tabs
+              provider: core
               label_display: '0'
               primary: true
               secondary: true
               context_mapping: {  }
             additional: {  }
-            weight: 0
+            weight: 1
+          2ba0359c-af3f-4bd7-a6d6-a6e93f680883:
+            uuid: 2ba0359c-af3f-4bd7-a6d6-a6e93f680883
+            region: top_right
+            configuration:
+              id: 'field_block:node:page:body'
+              label: Body
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: text_default
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: 2
           e18fc4d1-7588-47ae-97b7-69379a6f2e0d:
             uuid: e18fc4d1-7588-47ae-97b7-69379a6f2e0d
             region: top_left
             configuration:
               id: 'system_menu_block:account'
               label: 'User account menu'
+              provider: system
               label_display: visible
               level: 1
               depth: 0

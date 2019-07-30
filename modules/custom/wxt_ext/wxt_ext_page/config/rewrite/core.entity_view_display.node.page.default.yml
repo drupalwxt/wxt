@@ -259,45 +259,57 @@ third_party_settings:
             uuid: c62bbe2e-e1cb-48d6-803f-cf0f371d299b
             region: top
             configuration:
-              id: page_title_block
+              id: 'field_block:node:page:title'
               label: 'Page title'
+              provider: layout_builder
               label_display: '0'
-              context_mapping: {  }
+              formatter:
+                label: hidden
+                type: string
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
             additional: {  }
-            weight: -1
+            weight: 0
           32338ff6-919d-414d-a91b-fa0310743e8c:
             uuid: 32338ff6-919d-414d-a91b-fa0310743e8c
             region: top
             configuration:
               id: local_tasks_block
               label: Tabs
+              provider: core
               label_display: '0'
               primary: true
               secondary: true
               context_mapping: {  }
             additional: {  }
-            weight: 0
+            weight: 1
           a9f455ac-7a75-4241-bb9e-52f56897df0a:
             uuid: a9f455ac-7a75-4241-bb9e-52f56897df0a
             region: main
             configuration:
               id: 'field_block:node:page:body'
               label: Body
+              provider: layout_builder
               label_display: '0'
               formatter:
                 label: hidden
                 type: text_default
                 settings: {  }
                 third_party_settings: {  }
-              context_mapping: {  }
+              context_mapping:
+                entity: layout_builder.entity
             additional: {  }
-            weight: -9
+            weight: 0
           62bdbdfd-4fa7-4b64-9568-7e57ff8dfb6d:
             uuid: 62bdbdfd-4fa7-4b64-9568-7e57ff8dfb6d
             region: bottom
             configuration:
               id: 'field_block:node:page:comment'
               label: Comments
+              provider: layout_builder
               label_display: '0'
               formatter:
                 label: above
@@ -306,7 +318,8 @@ third_party_settings:
                   view_mode: default
                   pager_id: 0
                 third_party_settings: {  }
-              context_mapping: {  }
+              context_mapping:
+                entity: layout_builder.entity
             additional: {  }
             weight: 0
         third_party_settings: {  }

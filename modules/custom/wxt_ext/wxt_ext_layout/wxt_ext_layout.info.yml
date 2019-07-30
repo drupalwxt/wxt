@@ -8,5 +8,5 @@ package: WxT
 dependencies:
   - drupal:bootstrap_layouts
   - drupal:layout_library
-  - drupal:page_manager_ui
+  - drupal:lightning_layout
   - drupal:page_manager_ui

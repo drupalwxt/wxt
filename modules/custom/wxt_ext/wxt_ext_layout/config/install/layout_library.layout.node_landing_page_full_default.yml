@@ -27,10 +27,18 @@ layout:
         uuid: 398ddd2d-fe84-40e8-9120-37bc2e866efa
         region: main
         configuration:
-          id: page_title_block
+           id: 'field_block:node:page:title'
           label: 'Page title'
+          provider: layout_builder
           label_display: '0'
-          context_mapping: {  }
+          formatter:
+            label: hidden
+            type: string
+            settings:
+              link_to_entity: false
+            third_party_settings: {  }
+          context_mapping:
+            entity: layout_builder.entity
         additional: {  }
         weight: -1
       d32f81b0-722f-4094-9397-e508fce0be86:
@@ -39,6 +47,7 @@ layout:
         configuration:
           id: local_tasks_block
           label: Tabs
+          provider: core
           label_display: '0'
           primary: true
           secondary: true
@@ -51,13 +60,15 @@ layout:
         configuration:
           id: 'field_block:node:landing_page:body'
           label: Body
+          provider: layout_builder
           label_display: '0'
           formatter:
-            label: above
+            label: hidden
             type: text_default
             settings: {  }
             third_party_settings: {  }
-          context_mapping: {  }
+          context_mapping:
+            entity: layout_builder.entity
         additional: {  }
         weight: 1
     third_party_settings: {  }
