@@ -111,7 +111,7 @@
                 "Enter drupal/core patch #2606322 description here":
                 "https://www.drupal.org/files/issues/2606322-4.x-field_list_item_view_correct_language.patch",
                 "Enter drupal/core patch #2630732 description here":
-		"https://www.drupal.org/files/issues/2019-05-11/2630732-55.drupal.Implement-Entityfields-for-migration-destinations.patch",
+        "https://www.drupal.org/files/issues/2019-05-11/2630732-55.drupal.Implement-Entityfields-for-migration-destinations.patch",
                 "2679775 - Fixes float issue with inline label fields (entity references on most cases).":
                 "https://www.drupal.org/files/issues/2679775-11-inline-labels.patch",
                 "Enter drupal/core patch #2698057 description here":
@@ -205,10 +205,10 @@
                 "Enter drupal/panels patch #2910704 description here":
                 "https://www.drupal.org/files/issues/panels-ipe-card-flip-ie-error-2910704.diff"
             },
-	    "drupal/panelizer": {
+        "drupal/panelizer": {
                 "Allow the previewing of nodes with panelizer":
                 "https://www.drupal.org/files/issues/2019-05-17/panelizer-node-previews-2750491-7.patch"
-	    },
+        },
             "drupal/s3fs": {
                 "Enter drupal/s3fs patch #2986407 description here":
                 "https://www.drupal.org/files/issues/2018-07-17/s3fs-2986407-save-memory-2.patch",
@@ -226,7 +226,7 @@
         "cweagans/composer-patches": "^1.6.4",
         "zaporylie/composer-drupal-optimizations": "^1.1",
         "drupal-composer/drupal-scaffold": "^2.0.0",
-        "acquia/lightning": "4.0.0",
+        "acquia/lightning": "4.0.4",
         "drupal/admin_toolbar": "^1.26",
         "drupal/block_class": "1.0",
         "drupal/blog": "dev-2.x#43a2171",
@@ -235,7 +235,7 @@
         "drupal/ckeditor_codemirror": "2.2",
         "drupal/config_rewrite": "1.1",
         "drupal/config_update": "1.6",
-        "drupal/core": "8.7.1",
+        "drupal/core": "8.7.5",
         "drupal/ctools": "3.0.0",
         "drupal/diff": "1.0-rc2",
         "drupal/entity_reference_revisions": "1.6",
@@ -255,6 +255,7 @@
         "drupal/password_policy": "3.0-alpha4",
         "drupal/simple_sitemap": "2.12",
         "drupal/page_manager": "4.0-beta3",
+        "drupal/panelizer": "dev-5.x as 4.2",
         "drupal/paragraphs": "1.7",
         "drupal/field_formatter": "1.2",
         "drupal/file_entity": "2.0-beta6",

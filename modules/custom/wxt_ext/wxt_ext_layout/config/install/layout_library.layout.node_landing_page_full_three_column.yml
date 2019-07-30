@@ -1,0 +1,111 @@
+langcode: en
+status: true
+dependencies: {  }
+id: node_landing_page_full_three_column
+label: 'Three Column'
+targetEntityType: node
+targetBundle: landing_page
+layout:
+  -
+    layout_id: bs_3col_bricked
+    layout_settings:
+      layout:
+        wrapper: div
+        classes:
+          row: row
+        add_layout_class: 1
+        attributes: ''
+      regions:
+        top:
+          wrapper: div
+          classes:
+            col-sm-12: col-sm-12
+          add_region_classes: 1
+          attributes: ''
+        top_left:
+          wrapper: div
+          classes:
+            col-sm-4: col-sm-4
+          add_region_classes: 1
+          attributes: ''
+        top_middle:
+          wrapper: div
+          classes:
+            col-sm-4: col-sm-4
+          add_region_classes: 1
+          attributes: ''
+        top_right:
+          wrapper: div
+          classes:
+            col-sm-4: col-sm-4
+          add_region_classes: 1
+          attributes: ''
+        middle:
+          wrapper: div
+          classes:
+            col-sm-4: col-sm-4
+          add_region_classes: 1
+          attributes: ''
+        bottom_left:
+          wrapper: div
+          classes:
+            col-sm-4: col-sm-4
+          add_region_classes: 1
+          attributes: ''
+        bottom_middle:
+          wrapper: div
+          classes:
+            col-sm-4: col-sm-4
+          add_region_classes: 1
+          attributes: ''
+        bottom_right:
+          wrapper: div
+          classes:
+            col-sm-4: col-sm-4
+          add_region_classes: 1
+          attributes: ''
+        bottom:
+          wrapper: div
+          classes:
+            col-sm-12: col-sm-12
+          add_region_classes: 1
+          attributes: ''
+    components:
+      5ad36b60-5439-4e3f-bb62-bb504ba9e67a:
+        uuid: 5ad36b60-5439-4e3f-bb62-bb504ba9e67a
+        region: middle
+        configuration:
+          id: page_title_block
+          label: 'Page title'
+          label_display: '0'
+          context_mapping: {  }
+        additional: {  }
+        weight: -1
+      75029cf4-e12d-4af2-9c8d-a6d9a97ded82:
+        uuid: 75029cf4-e12d-4af2-9c8d-a6d9a97ded82
+        region: middle
+        configuration:
+          id: local_tasks_block
+          label: Tabs
+          label_display: '0'
+          primary: true
+          secondary: true
+          context_mapping: {  }
+        additional: {  }
+        weight: 0
+      45da81c5-2c0e-4903-acab-76f999c4cb66:
+        uuid: 45da81c5-2c0e-4903-acab-76f999c4cb66
+        region: middle
+        configuration:
+          id: 'field_block:node:landing_page:body'
+          label: Body
+          label_display: '0'
+          formatter:
+            label: above
+            type: text_default
+            settings: {  }
+            third_party_settings: {  }
+          context_mapping: {  }
+        additional: {  }
+        weight: 1
+    third_party_settings: {  }

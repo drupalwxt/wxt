@@ -1,7 +1,7 @@
 core = 8.x
 api = 2
 projects[drupal][type] = core
-projects[drupal][version] = 8.7.1
+projects[drupal][version] = 8.7.5
 projects[drupal][patch][] = https://www.drupal.org/files/issues/2018-09-06/1838234-52.patch
 projects[drupal][patch][] = https://www.drupal.org/files/issues/2018-11-01/comment-redirect-2559833-57.patch
 projects[drupal][patch][] = https://www.drupal.org/files/issues/2606322-4.x-field_list_item_view_correct_language.patch

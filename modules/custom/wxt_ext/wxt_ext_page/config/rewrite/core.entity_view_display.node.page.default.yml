@@ -5,16 +5,23 @@ dependencies:
   config:
     - field.field.node.page.body
     - field.field.node.page.comment
+    - field.field.node.page.field_meta_tags
+    - field.field.node.page.layout_builder__layout
+    - field.field.node.page.layout_builder__translation
     - field.field.node.page.panelizer
     - node.type.page
   module:
+    - bootstrap_layouts
+    - layout_builder
+    - layout_discovery
+    - layout_library
     - panelizer
     - text
     - user
 third_party_settings:
   panelizer:
-    enable: true
-    custom: true
+    enable: false
+    custom: false
     displays:
       default:
         blocks:
@@ -186,6 +193,126 @@ third_party_settings:
         static_context: {  }
     allow: false
     default: override
+  layout_builder:
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings: {  }
+        components:
+          4524e3ae-d3da-40f9-9c63-7dd0631ff60d:
+            uuid: 4524e3ae-d3da-40f9-9c63-7dd0631ff60d
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:page:body'
+              formatter:
+                label: hidden
+                type: text_default
+                settings: {  }
+                third_party_settings: {  }
+            additional: {  }
+            weight: 0
+          f24eca80-1125-4ef3-b614-9ba3ebc569dc:
+            uuid: f24eca80-1125-4ef3-b614-9ba3ebc569dc
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'extra_field_block:node:page:links'
+            additional: {  }
+            weight: 1
+        third_party_settings: {  }
+      -
+        layout_id: bs_1col_stacked
+        layout_settings:
+          layout:
+            wrapper: div
+            classes:
+              row: row
+            add_layout_class: 1
+            attributes: ''
+          regions:
+            top:
+              wrapper: div
+              classes:
+                col-sm-12: col-sm-12
+              add_region_classes: 1
+              attributes: ''
+            main:
+              wrapper: div
+              classes:
+                col-sm-12: col-sm-12
+              add_region_classes: 1
+              attributes: ''
+            bottom:
+              wrapper: div
+              classes:
+                col-sm-12: col-sm-12
+              add_region_classes: 1
+              attributes: ''
+        components:
+          c62bbe2e-e1cb-48d6-803f-cf0f371d299b:
+            uuid: c62bbe2e-e1cb-48d6-803f-cf0f371d299b
+            region: top
+            configuration:
+              id: page_title_block
+              label: 'Page title'
+              label_display: '0'
+              context_mapping: {  }
+            additional: {  }
+            weight: -1
+          32338ff6-919d-414d-a91b-fa0310743e8c:
+            uuid: 32338ff6-919d-414d-a91b-fa0310743e8c
+            region: top
+            configuration:
+              id: local_tasks_block
+              label: Tabs
+              label_display: '0'
+              primary: true
+              secondary: true
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
+          a9f455ac-7a75-4241-bb9e-52f56897df0a:
+            uuid: a9f455ac-7a75-4241-bb9e-52f56897df0a
+            region: main
+            configuration:
+              id: 'field_block:node:page:body'
+              label: Body
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: text_default
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping: {  }
+            additional: {  }
+            weight: -9
+          62bdbdfd-4fa7-4b64-9568-7e57ff8dfb6d:
+            uuid: 62bdbdfd-4fa7-4b64-9568-7e57ff8dfb6d
+            region: bottom
+            configuration:
+              id: 'field_block:node:page:comment'
+              label: Comments
+              label_display: '0'
+              formatter:
+                label: above
+                type: comment_default
+                settings:
+                  view_mode: default
+                  pager_id: 0
+                third_party_settings: {  }
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
+        third_party_settings: {  }
+    allow_custom: true
+  layout_library:
+    enable: true
 id: node.page.default
 targetEntityType: node
 bundle: page
@@ -205,5 +332,10 @@ content:
     third_party_settings: {  }
 hidden:
   comment: true
+  content_moderation_control: true
+  field_meta_tags: true
   langcode: true
+  layout_builder__layout: true
+  layout_builder__translation: true
+  layout_selection: true
   panelizer: true
