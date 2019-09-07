@@ -27,7 +27,7 @@ layout:
         uuid: 398ddd2d-fe84-40e8-9120-37bc2e866efa
         region: main
         configuration:
-           id: 'field_block:node:page:title'
+          id: 'field_block:node:page:title'
           label: 'Page title'
           provider: layout_builder
           label_display: '0'

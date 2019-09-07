@@ -141,7 +141,13 @@
                 "Enter drupal/core patch #2920637 description here":
                 "https://www.drupal.org/files/issues/taxonomy-context-provider-2920637-3.patch",
                 "Enter drupal/core patch #2893407 description here":
-                "https://www.drupal.org/files/issues/2018-06-05/2893407-34.patch"
+                "https://www.drupal.org/files/issues/2018-06-05/2893407-34.patch",
+                "Enter drupal/core patch #2907413 description here":
+                "https://www.drupal.org/files/issues/2019-06-21/2907413-11.patch",
+                "Enter drupal/core patch #2938129 description here":
+                "https://www.drupal.org/files/issues/2019-01-18/2938129-pagetitle-11.patch ",
+                "Enter drupal/core patch #3008924 description here":
+                "https://www.drupal.org/files/issues/2019-06-20/3008924-5.patch"
             },
             "drupal/ctools": {
                 "Enter drupal/ctools patch #2667652 description here":
@@ -207,9 +213,7 @@
             },
             "drupal/panelizer": {
                     "Allow the previewing of nodes with panelizer":
-                    "https://www.drupal.org/files/issues/2019-05-17/panelizer-node-previews-2750491-7.patch",
-                    "Migrate entity-specific Panelizer data":
-                    "https://www.drupal.org/files/issues/2019-07-30/3071434-2.patch"
+                    "https://www.drupal.org/files/issues/2019-05-17/panelizer-node-previews-2750491-7.patch"
             },
             "drupal/s3fs": {
                 "Enter drupal/s3fs patch #2986407 description here":
@@ -238,6 +242,7 @@
         "drupal/config_rewrite": "1.1",
         "drupal/config_update": "1.6",
         "drupal/core": "8.7.5",
+        "drupal/core_context": "1.0-alpha1",
         "drupal/ctools": "3.0.0",
         "drupal/diff": "1.0-rc2",
         "drupal/entity_reference_revisions": "1.6",
@@ -257,7 +262,7 @@
         "drupal/password_policy": "3.0-alpha4",
         "drupal/simple_sitemap": "2.12",
         "drupal/page_manager": "4.0-beta3",
-        "drupal/panelizer": "dev-5.x#28051c36 as 4.2",
+        "drupal/panelizer": "dev-5.x#5e671cb5 as 4.2",
         "drupal/paragraphs": "1.7",
         "drupal/field_formatter": "1.2",
         "drupal/file_entity": "2.0-beta6",
@@ -272,8 +277,8 @@
         "drupal/views_autocomplete_filters": "1.2",
         "drupal/webform": "^5.1",
         "drupal/webform_migrate": "1.1",
-        "drupal/wxt_bootstrap": "1.9",
-        "drupal/wxt_library": "1.6",
+        "drupal/wxt_bootstrap": "1.x-dev",
+        "drupal/wxt_library": "1.x-dev",
         "w8tcha/ckeditor-codemirror": "1.16"
     },
     "autoload": {
