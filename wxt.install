@@ -141,3 +141,10 @@ function wxt_update_8201() {
   $config->set('wxt.theme', 'theme-gcweb-legacy');
   $config->save();
 }
+
+/**
+ * Installs the layout library module.
+ */
+function wxt_update_8202() {
+  \Drupal::service('module_installer')->install(['layout_library']);
+}

@@ -19,107 +19,113 @@ source:
           title: '[node:title]'
           description: '[node:summary]'
           keywords: 'Canada.ca, Open Government, Open Government Canada, Canada Open Government, Canada Open'
-      panelizer:
-        -
-          view_mode: page_manager
-          default: two_column
-          blocks:
-            -
+      layout:
+        layout_id: 'wxt_homepage'
+        layout_settings:
+          layout:
+            wrapper: div
+            classes:
+              row: row
+            add_layout_class: 1
+            attributes: ''
+          regions:
+            top:
+              wrapper: div
+              classes:
+                col-sm-12: col-sm-12
+              add_region_classes: 1
+              attributes: ''
+            top_left:
+              wrapper: div
+              classes:
+                col-md-6: col-md-8
+              add_region_classes: 1
+              attributes: class|mrgn-tp-md
+            top_right:
+              wrapper: div
+              classes:
+                col-md-6: col-md-4
+              add_region_classes: 1
+              attributes: class|mrgn-tp-xl
+            middle:
+              wrapper: div
+              classes:
+                col-sm-12: col-sm-12
+              add_region_classes: 1
+              attributes: ''
+            bottom_left:
+              wrapper: div
+              classes:
+                col-sm-6: col-sm-6
+              add_region_classes: 1
+              attributes: ''
+            bottom_right:
+              wrapper: div
+              classes:
+                col-sm-6: col-sm-6
+              add_region_classes: 1
+              attributes: ''
+            bottom:
+              wrapper: div
+              classes:
+                col-sm-12: col-sm-12
+              add_region_classes: 1
+              attributes: class|mrgn-tp-lg
+        components:
+          -
+            region: top
+            configuration:
               id: 'block_content:homepage_block_1'
               label: Canada
+              provider: 'block_content'
               label_display: 0
-              region: top
               view_mode: default
-              weight: 1
-            -
+              context_mapping: {}
+            additional: {  }
+            weight: 1
+          -
+            region: top
+            configuration:
               id: 'block_content:homepage_block_2'
               label: 'Most Requested'
+              provider: 'block_content'
               label_display: 0
-              region: top
               view_mode: default
-              weight: 2
-            -
+              context_mapping: {}
+            additional: {  }
+            weight: 2
+          -
+            region: top
+            configuration:
               id: 'block_content:homepage_block_3'
               label: 'Focus On'
+              provider: 'block_content'
               label_display: 0
-              region: top
               view_mode: default
-              weight: 3
-            -
+              context_mapping: {}
+            additional: {  }
+            weight: 3
+          -
+            region: top
+            configuration:
               id: 'block_content:homepage_block_4'
               label: 'Your Government'
+              provider: 'block_content'
               label_display: 0
-              region: top
               view_mode: default
-              weight: 4
-            -
+              context_mapping: {}
+            additional: {  }
+            weight: 4
+          -
+            region: bottom
+            configuration:
               id: 'views_block:blocks-block_2'
               label: Features
               label_display: visible
-              region: bottom
               view_mode: full
               weight: 0
-          id: panels_variant
-          uuid: 5f833455-c610-41c5-ae17-149ada3d74a5
-          label: 'WxT'
-          weight: 0
-          layout: wxt_homepage
-          layout_settings:
-            layout:
-              wrapper: div
-              classes:
-                row: row
-              add_layout_class: 1
-              attributes: ''
-            regions:
-              top:
-                wrapper: div
-                classes:
-                  col-sm-12: col-sm-12
-                add_region_classes: 1
-                attributes: ''
-              top_left:
-                wrapper: div
-                classes:
-                  col-md-6: col-md-8
-                add_region_classes: 1
-                attributes: class|mrgn-tp-md
-              top_right:
-                wrapper: div
-                classes:
-                  col-md-6: col-md-4
-                add_region_classes: 1
-                attributes: class|mrgn-tp-xl
-              middle:
-                wrapper: div
-                classes:
-                  col-sm-12: col-sm-12
-                add_region_classes: 1
-                attributes: ''
-              bottom_left:
-                wrapper: div
-                classes:
-                  col-sm-6: col-sm-6
-                add_region_classes: 1
-                attributes: ''
-              bottom_right:
-                wrapper: div
-                classes:
-                  col-sm-6: col-sm-6
-                add_region_classes: 1
-                attributes: ''
-              bottom:
-                wrapper: div
-                classes:
-                  col-sm-12: col-sm-12
-                add_region_classes: 1
-                attributes: class|mrgn-tp-lg
-          page_title: '[node:title]'
-          storage_type: panelizer_default
-          storage_id: 'node:landing_page:full:two_column'
-          pattern: panelizer
-          builder: ipe
-          static_context: {  }
+            additional: {  }
+            weight: 0
     -
       name: topic
       title: '[Theme title]'
@@ -133,49 +139,9 @@ source:
           title: '[node:title]'
           description: '[node:summary]'
           keywords: 'Canada.ca, Open Government, Open Government Canada, Canada Open Government, Canada Open'
-      panelizer:
-        -
-          view_mode: page_manager
-          default: two_column
-          blocks:
-            -
-              id: page_title_block
-              label: '[node:title]'
-              label_display: visible
-              region: top_left
-              weight: 0
-            -
-              id: 'entity_block:653x194'
-              label: Media
-              label_display: 0
-              region: top_right
-              view_mode: default
-              weight: 1
-            -
-              id: local_tasks_block
-              label: Tabs
-              label_display: '0'
-              region: top_left
-              weight: 1
-            -
-              id: 'entity_field:node:body'
-              label: Body
-              label_display: 0
-              region: top_left
-              weight: 5
-            -
-              id: 'views_block:blocks-block_1'
-              label: Features
-              label_display: visible
-              region: bottom
-              view_mode: full
-              weight: 0
-          id: panels_variant
-          uuid: 91b9d430-7b91-4a22-ac4d-2e5e0376c6a2
-          label: 'Two Column'
-          weight: 0
-          layout: bs_2col_bricked
-          layout_settings:
+      layout:
+        layout_id: 'bs_2col_bricked'
+        layout_settings:
             layout:
               wrapper: div
               classes:
@@ -225,12 +191,66 @@ source:
                   col-sm-12: col-sm-12
                 add_region_classes: 1
                 attributes: class|mrgn-tp-lg
-          page_title: '[node:title]'
-          storage_type: panelizer_default
-          storage_id: 'node:landing_page:full:two_column'
-          pattern: panelizer
-          builder: ipe
-          static_context: {  }
+        components:
+          -
+            region: top_left
+            configuration:
+              id: 'page_title_block'
+              label: 'Page title'
+              provider: core
+              label_display: 0
+              context_mapping: {}
+            additional: {  }
+            weight: 0
+          -
+            region: top_right
+            configuration:
+              id: 'entity_block:653x194'
+              label: 'Media'
+              provider: entity_block
+              label_display: 0
+              view_mode: default
+              context_mapping: {}
+            additional: {  }
+            weight: 1
+          -
+            region: top_left
+            configuration:
+              id: local_tasks_block
+              label: Tabs
+              provider: core
+              label_display: 0
+              primary: 1
+              secondary: 1
+              context_mapping: {}
+            additional: {  }
+            weight: 1
+          -
+            region: top_left
+            configuration:
+              id: 'entity_field:node:body'
+              label: Body
+              provider: ctools_block
+              label_display: 0
+              formatter:
+                label: hidden
+                type: text_default
+                settings: {  }
+                third_party_settings: {  }
+                weight: 0
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: 1
+          -
+            region: bottom
+            configuration:
+              id: 'views_block:blocks-block_1'
+              label: Features
+              label_display: visible
+              view_mode: full
+            additional: {  }
+            weight: 1
   ids:
     name:
       type: string
@@ -273,6 +293,9 @@ process:
     -
       plugin: callback
       callable: serialize
+  layout_builder__layout:
+    plugin: wxt_layout_plugin_id
+    source: layout
   panelizer:
     plugin: iterator
     source: panelizer
