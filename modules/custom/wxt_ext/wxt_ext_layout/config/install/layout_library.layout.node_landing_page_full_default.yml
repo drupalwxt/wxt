@@ -1,0 +1,74 @@
+langcode: en
+status: true
+dependencies: {  }
+id: node_landing_page_full_default
+label: 'Single Column'
+targetEntityType: node
+targetBundle: landing_page
+layout:
+  -
+    layout_id: bs_1col
+    layout_settings:
+      layout:
+        wrapper: div
+        classes:
+          row: row
+        add_layout_class: 1
+        attributes: ''
+      regions:
+        main:
+          wrapper: div
+          classes:
+            col-sm-12: col-sm-12
+          add_region_classes: 1
+          attributes: ''
+    components:
+      398ddd2d-fe84-40e8-9120-37bc2e866efa:
+        uuid: 398ddd2d-fe84-40e8-9120-37bc2e866efa
+        region: main
+        configuration:
+          id: 'field_block:node:page:title'
+          label: 'Page title'
+          provider: layout_builder
+          label_display: '0'
+          formatter:
+            label: hidden
+            type: string
+            settings:
+              link_to_entity: false
+            third_party_settings: {  }
+          context_mapping:
+            entity: layout_builder.entity
+        additional: {  }
+        weight: -1
+      d32f81b0-722f-4094-9397-e508fce0be86:
+        uuid: d32f81b0-722f-4094-9397-e508fce0be86
+        region: main
+        configuration:
+          id: local_tasks_block
+          label: Tabs
+          provider: core
+          label_display: '0'
+          primary: true
+          secondary: true
+          context_mapping: {  }
+        additional: {  }
+        weight: 0
+      53c78586-ebb9-4749-b0f4-7b0846043c9d:
+        uuid: 53c78586-ebb9-4749-b0f4-7b0846043c9d
+        region: main
+        configuration:
+          id: 'field_block:node:landing_page:body'
+          label: Body
+          provider: layout_builder
+          label_display: '0'
+          formatter:
+            label: hidden
+            type: text_default
+            settings: {  }
+            third_party_settings: {  }
+          context_mapping:
+            entity: layout_builder.entity
+        additional: {  }
+        weight: 1
+    third_party_settings: {  }

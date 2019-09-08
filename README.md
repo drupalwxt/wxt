@@ -139,7 +139,7 @@ Contributor(s): https://github.com/drupalwxt/wxt/graphs/contributors
 <!-- Links Referenced -->
 
 [acquia]:               https://acquia.com
-[changelog]:            https://github.com/drupalwxt/wxt/blob/8.x-2.x/CHANGELOG.md
+[changelog]:            https://github.com/drupalwxt/wxt/blob/8.x-3.x/CHANGELOG.md
 [config-install]:       https://lightning.acquia.com/blog/using-configuration-installer-lightning
 [demo]:                 https://d8.govcloud.ca
 [docsite]:              http://drupalwxt.github.io
@@ -155,7 +155,7 @@ Contributor(s): https://github.com/drupalwxt/wxt/graphs/contributors
 [project-new]:          https://github.com/drupalwxt/wxt-project#user-content-new-project
 [release-drupal]:       https://github.com/drupalwxt/wxt/releases
 [release-github]:       https://github.com/drupalwxt/wxt/releases
-[simplytest]:           http://simplytest.me/project/wxt/8.x-2.x
+[simplytest]:           http://simplytest.me/project/wxt/8.x-3.x
 [travisci]:             https://travis-ci.org/drupalwxt/wxt
-[travisci-badge]:       https://travis-ci.org/drupalwxt/wxt.png?branch=8.x-2.x
+[travisci-badge]:       https://travis-ci.org/drupalwxt/wxt.png?branch=8.x-3.x
 [wet-boew]:             https://github.com/wet-boew/wet-boew

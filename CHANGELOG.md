@@ -1,8 +1,31 @@
+## v3.0.0-alpha1 (In Development)
+
+Features/Updates:
+
+- Update Drupal Core to 8.7.5
+- Update Lightning to 4.0.4
+- Move to Layout Builder
+- Migrations updated with Layout Builder support
+- Page Title / Tabs support for Layout Builder
+
+Upgrade path:
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
+- Run Lightning configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:lightning`
+
 ## v2.2.18
 
 Security update:
 
-* Update Drupal Core to [8.6.15](https://www.drupal.org/project/drupal/releases/8.6.15) 
+* Update Drupal Core to [8.6.15](https://www.drupal.org/project/drupal/releases/8.6.15)
   * [SA-CORE-2019-005](https://www.drupal.org/sa-core-2019-005)
   * [SA-CORE-2019-006](https://www.drupal.org/sa-core-2019-006)
 

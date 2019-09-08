@@ -35,6 +35,7 @@ install:
   - locale
   # core (experimental)
   - big_pipe
+  # - core_context
   - inline_form_errors
   - layout_discovery
   # core (web services)

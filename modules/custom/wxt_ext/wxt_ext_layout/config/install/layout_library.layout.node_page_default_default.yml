@@ -1,0 +1,86 @@
+langcode: en
+status: true
+dependencies: {  }
+id: node_page_default_default
+label: Default
+targetEntityType: node
+targetBundle: page
+layout:
+  -
+    layout_id: bs_1col_stacked
+    layout_settings:
+      layout:
+        wrapper: div
+        classes:
+          row: row
+        add_layout_class: 1
+        attributes: ''
+      regions:
+        top:
+          wrapper: div
+          classes:
+            col-sm-12: col-sm-12
+          add_region_classes: 1
+          attributes: ''
+        main:
+          wrapper: div
+          classes:
+            col-sm-12: col-sm-12
+          add_region_classes: 1
+          attributes: ''
+        bottom:
+          wrapper: div
+          classes:
+            col-sm-12: col-sm-12
+          add_region_classes: 1
+          attributes: ''
+    components:
+      588e477f-63e7-471a-b464-16a842b8abf3:
+        uuid: 588e477f-63e7-471a-b464-16a842b8abf3
+        region: main
+        configuration:
+          id: 'field_block:node:page:title'
+          label: 'Page title'
+          provider: layout_builder
+          label_display: '0'
+          formatter:
+            label: hidden
+            type: string
+            settings:
+              link_to_entity: false
+            third_party_settings: {  }
+          context_mapping:
+            entity: layout_builder.entity
+        additional: {  }
+        weight: 0
+      c795868d-d954-48e3-8c26-fc1155d2b92a:
+        uuid: c795868d-d954-48e3-8c26-fc1155d2b92a
+        region: main
+        configuration:
+          id: local_tasks_block
+          label: Tabs
+          provider: core
+          label_display: '0'
+          primary: true
+          secondary: true
+          context_mapping: {  }
+        additional: {  }
+        weight: 1
+      197a21c8-479d-4d6b-9a05-5eaaf82b0e0e:
+        uuid: 197a21c8-479d-4d6b-9a05-5eaaf82b0e0e
+        region: main
+        configuration:
+          id: 'field_block:node:page:body'
+          label: Body
+          provider: layout_builder
+          label_display: '0'
+          formatter:
+            label: hidden
+            type: text_default
+            settings: {  }
+            third_party_settings: {  }
+          context_mapping:
+            entity: layout_builder.entity
+        additional: {  }
+        weight: 2
+    third_party_settings: {  }

@@ -1,0 +1,19 @@
+config_rewrite: replace
+langcode: en
+status: true
+dependencies:
+  module:
+    - layout_builder_std
+    - node
+id: node.layout_builder__translation
+field_name: layout_builder__translation
+entity_type: node
+type: layout_translation
+settings: {  }
+module: layout_builder_st
+locked: true
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: falsed
+custom_storage: false
