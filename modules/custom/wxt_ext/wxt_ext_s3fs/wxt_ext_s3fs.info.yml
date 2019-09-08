@@ -1,9 +1,0 @@
-name: 'WxT Extend S3FS'
-description: 'Enables S3FS to be used for stateful assets.'
-type: module
-core: 8.x
-package: WxT
-
-# Required modules
-dependencies:
-  - drupal:s3fs
