@@ -1,8 +1,50 @@
+## v2.2.19
+
+Security update:
+
+* Update Drupal Core to [8.7.4](https://www.drupal.org/project/drupal/releases/8.7.4)
+  * [SA-CORE-2019-008](https://www.drupal.org/sa-core-2019-008)
+
+Features/Updates:
+
+- Update Drupal Core to 8.7.5
+- Update Ctools to 3.0.0
+- Update admin_toolbar to 1.27
+- Update contact_storage to 1.0-beta10
+- Update entity to 1.0-rc3
+- Update entity_embed to 1.0
+- Update entity_queue to 1.0-beta5
+- Update lightning_api to 4.2
+- Update lightning_core to 4.5
+- Update lightning_media to 3.12
+- Update lightning_workflow to 3.8
+- Update media_entity_twitter to 2.0-alpha3
+- Update metatag to 1.10
+- Update schemata to 1.0-beta1
+- Update search_api to 1.14
+- Update simple_oauth to 3.16
+- Update video_embed_field to 2.2
+- Update views_infinite_scroll to 1.6
+- Update webform to 5.4
+
+Upgrade path:
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
+- Run Lightning configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:lightning`
+
 ## v2.2.18
 
 Security update:
 
-* Update Drupal Core to [8.6.15](https://www.drupal.org/project/drupal/releases/8.6.15) 
+* Update Drupal Core to [8.6.15](https://www.drupal.org/project/drupal/releases/8.6.15)
   * [SA-CORE-2019-005](https://www.drupal.org/sa-core-2019-005)
   * [SA-CORE-2019-006](https://www.drupal.org/sa-core-2019-006)
 
