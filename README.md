@@ -33,13 +33,13 @@ created by [Acquia][acquia] to provide developers with a powerful base toolchain
 upon which to extend. Due to this strict dependency we also align much of our
 workflow with the best practice established patterns `Acquia` has provided.
 
-## 8.x - Recommended Installation
+## 8.x-2.x - Recommended Installation
 
 We highly recommend using <a href="https://getcomposer.org" rel="nofollow">Composer</a>
 to build and maintain your WxT derived project’s codebase.
 
 ```sh
-composer create-project drupalwxt/wxt-project:8.x-dev MYPROJECT --no-interaction
+composer create-project drupalwxt/wxt-project:8.x-2.x-dev MYPROJECT --no-interaction
 ```
 
 [Install with Composer][project-new]
