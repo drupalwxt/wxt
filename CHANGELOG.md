@@ -1,4 +1,4 @@
-## v3.0.0-alpha1 (In Development)
+## v3.0.0-alpha1
 
 Features/Updates:
 
