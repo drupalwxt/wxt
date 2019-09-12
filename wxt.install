@@ -18,17 +18,8 @@ function wxt_install() {
   _wxt_setup_themes();
   _wxt_setup_branding();
   _wxt_setup_menus();
-  _wxt_setup_base_configurations();
   _wxt_setup_lang_prefixes();
   _wxt_setup_404();
-}
-
-/**
- * Setup base site configurations.
- */
-function _wxt_setup_base_configurations() {
-  // Ensure the translation fields are created in the database.
-  \Drupal::service('entity.definition_update_manager')->applyUpdates();
 }
 
 /**
