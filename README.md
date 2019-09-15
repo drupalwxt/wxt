@@ -18,6 +18,9 @@ Drupal WxT for Drupal 8 is stable and will provide an update path for all future
 - Run it Now: [simplytest.me][simplytest]
 - Issue Queue: [Drupal][issue-drupal] (Primary)
 - Issue Queue: [GitHub][issue-github]
+- Continuous Integration: [travis-ci.org/drupalwxt/wxt/builds][ci]
+- CHANGELOG: [CHANGELOG.md][changelog]
+- Release Cycle / Update Process: [architecture/release-cycle][release-cycle]
 
 ## Overview
 
@@ -143,7 +146,8 @@ Contributor(s): https://github.com/drupalwxt/wxt/graphs/contributors
 <!-- Links Referenced -->
 
 [acquia]:               https://acquia.com
-[changelog]:            https://github.com/drupalwxt/wxt/blob/8.x-3.x/CHANGELOG.md
+[changelog]:            https://github.com/drupalwxt/wxt/blob/8.x-2.x/CHANGELOG.md
+[ci]:                   https://travis-ci.org/drupalwxt/wxt/builds
 [containers]:           https://hub.docker.com/r/drupalwxt/site-wxt
 [config-install]:       https://lightning.acquia.com/blog/using-configuration-installer-lightning
 [demo]:                 https://d8.govcloud.ca
@@ -157,9 +161,10 @@ Contributor(s): https://github.com/drupalwxt/wxt/graphs/contributors
 [lightning]:            https://github.com/acquia/lightning
 [project]:              https://github.com/drupalwxt/wxt-project#user-content-new-project
 [project-new]:          https://github.com/drupalwxt/wxt-project#user-content-new-project
+[release-cycle]:        https://drupalwxt.github.io/architecture/release-cycle
 [release-drupal]:       https://github.com/drupalwxt/wxt/releases
 [release-github]:       https://github.com/drupalwxt/wxt/releases
-[simplytest]:           http://simplytest.me/project/wxt/8.x-3.x
+[simplytest]:           http://simplytest.me/project/wxt/8.x-2.x
 [travisci]:             https://travis-ci.org/drupalwxt/wxt
 [travisci-badge]:       https://travis-ci.org/drupalwxt/wxt.png?branch=8.x-2.x
 [wet-boew]:             https://github.com/wet-boew/wet-boew
