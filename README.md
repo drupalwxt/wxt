@@ -4,14 +4,16 @@
 
 ## Important
 
-Drupal WxT for Drupal 8 is currently under release candidate phase and now will
-provide an update path for all future releases.
+Drupal WxT for Drupal 8 is stable and will provide an update path for all future releases.
 
 ## Important Links
 
 - Documentation Website: [drupalwxt.github.io][docsite]
 - Drupal Repository: [drupal.org/project/wxt][drupal]
-- GitHub Repository: [drupalwxt/wxt][github]
+- GitHub Repository: [drupalwxt/wxt][drupal-github]
+- Composer Project: [drupalwxt/site-wxt][drupal-github-proj]
+- Helm Chart: [drupalwxt/helm-drupal][helm]
+- Containers: [hub.docker][containers]
 - Live Demo: [demo][demo]
 - Run it Now: [simplytest.me][simplytest]
 - Issue Queue: [Drupal][issue-drupal] (Primary)
@@ -51,9 +53,11 @@ see our [WxT Project README][project].
 
 ## Installation from exported config
 
-If you have a config export of a site built with Lighting, you can install it using the
-Config Installer profile. You can find more information about installing WxT (Lightning)
-from exported config [config-installer][here]</a>.
+Lightning can be installed from a set of exported configuration (e.g., using the
+--existing-config option with drush site:install). This method of installation is fully supported
+and tested.
+
+You can find more information about installing WxT (Lightning) from exported config [here][config-install].
 
 ## Tarball Installation
 
@@ -69,7 +73,7 @@ Once you extract the tarball, run the following command from within your web roo
 install the required dependencies:
 
 ```sh
-composer require j7mbo/twitter-api-php league/oauth2-server:~6.0 webflo/drupal-core-strict:~8.5.0 "phpdocumentor/reflection-docblock:^3.0||^4.0"
+composer require j7mbo/twitter-api-php league/oauth2-server:~6.0 webflo/drupal-core-strict:~8.7.0 'phpdocumentor/reflection-docblock:^3.0||^4.0'
 ```
 
 ## Installation of Default Content via Migrate
@@ -139,23 +143,23 @@ Contributor(s): https://github.com/drupalwxt/wxt/graphs/contributors
 <!-- Links Referenced -->
 
 [acquia]:               https://acquia.com
-[changelog]:            https://github.com/drupalwxt/wxt/blob/8.x-2.x/CHANGELOG.md
+[changelog]:            https://github.com/drupalwxt/wxt/blob/8.x-3.x/CHANGELOG.md
+[containers]:           https://hub.docker.com/r/drupalwxt/site-wxt
 [config-install]:       https://lightning.acquia.com/blog/using-configuration-installer-lightning
 [demo]:                 https://d8.govcloud.ca
 [docsite]:              http://drupalwxt.github.io
 [drupal]:               http://drupal.org/project/wxt
-[drupal7]:              http://drupal.org/project/wetkit
-[github]:               https://github.com/drupalwxt/wxt
+[drupal-github]:        https://github.com/drupalwxt/wxt
+[drupal-github-proj]:   http://drupal.org/project/site-wxt
+[helm]:                 https://github.com/drupalwxt/helm-drupal
 [issue-drupal]:         https://drupal.org/project/issues/wxt
 [issue-github]:         https://github.com/drupalwxt/wxt/issues
 [lightning]:            https://github.com/acquia/lightning
-[panopoly]:             https://github.com/panopoly/panopoly
-[pantheon]:             https://pantheon.io
 [project]:              https://github.com/drupalwxt/wxt-project#user-content-new-project
 [project-new]:          https://github.com/drupalwxt/wxt-project#user-content-new-project
 [release-drupal]:       https://github.com/drupalwxt/wxt/releases
 [release-github]:       https://github.com/drupalwxt/wxt/releases
-[simplytest]:           http://simplytest.me/project/wxt/8.x-2.x
+[simplytest]:           http://simplytest.me/project/wxt/8.x-3.x
 [travisci]:             https://travis-ci.org/drupalwxt/wxt
 [travisci-badge]:       https://travis-ci.org/drupalwxt/wxt.png?branch=8.x-2.x
 [wet-boew]:             https://github.com/wet-boew/wet-boew
