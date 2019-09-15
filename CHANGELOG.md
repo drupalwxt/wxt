@@ -1,3 +1,25 @@
+## v2.2.20 (In Development)
+
+Features/Updates:
+
+- Update Field Group to 3.0-rc1
+- Update Bootstrap to v3.18 and switch to yarn
+- Minor README.md improvements
+- Deprecated Entity Updates installer logic in Profile
+
+Upgrade path:
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
+- Run Lightning configuration updates:
+  - `drush cache:rebuild`
+  - `drush up
+
 ## v2.2.19
 
 Security update:
