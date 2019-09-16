@@ -4,6 +4,7 @@ Features/Updates:
 
 - Update Field Group to 3.0-rc1
 - Update Bootstrap to v3.18 and switch to yarn
+- Update Simple Sitemap to 3.3
 - Minor README.md improvements
 - Deprecated Entity Updates installer logic in Profile
 
