@@ -259,7 +259,7 @@
         "drupal/menu_block": "1.4.0",
         "drupal/menu_breadcrumb": "1.7",
         "drupal/password_policy": "3.0-alpha4",
-        "drupal/simple_sitemap": "2.12",
+        "drupal/simple_sitemap": "3.3",
         "drupal/page_manager": "4.0-beta3",
         "drupal/paragraphs": "1.7",
         "drupal/field_formatter": "1.2",
