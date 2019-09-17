@@ -104,8 +104,12 @@
                 "https://www.drupal.org/files/issues/blog-no_results_text-2834732-2.patch"
             },
             "drupal/core": {
+                "Enter drupal/core patch #1356276 description here":
+                "https://www.drupal.org/files/issues/2018-10-12/1356276-531.patch ",
                 "Enter drupal/core patch #1838234 description here":
                 "https://www.drupal.org/files/issues/2018-09-06/1838234-52.patch",
+                "Enter drupal/core patch #2846485 description here":
+                "https://www.drupal.org/files/issues/2018-04-03/views-multivalue_field_rendering_performance-2846485-23.patch",
                 "Enter drupal/core patch #2559833 description here":
                 "https://www.drupal.org/files/issues/2018-11-01/comment-redirect-2559833-57.patch",
                 "Enter drupal/core patch #2606322 description here":
@@ -144,8 +148,16 @@
                 "https://www.drupal.org/files/issues/2018-06-05/2893407-34.patch",
                 "Enter drupal/core patch #2907413 description here":
                 "https://www.drupal.org/files/issues/2019-06-21/2907413-11.patch",
+                "Enter drupal/core patch #2914389 description here":
+                "https://www.drupal.org/files/issues/2018-07-09/2914389-8-do-not-test.patch",
                 "Enter drupal/core patch #2938129 description here":
-                "https://www.drupal.org/files/issues/2019-01-18/2938129-pagetitle-11.patch"
+                "https://www.drupal.org/files/issues/2019-01-18/2938129-pagetitle-11.patch",
+                "Enter drupal/core patch #2981889 description here":
+                "https://www.drupal.org/files/issues/2019-08-21/d8_entity_validation.patch",
+                "Enter drupal/core patch #3017710 description here":
+                "https://www.drupal.org/files/issues/2018-12-05/3017710-20.patch",
+                "Enter drupal/core patch #3081656 description here":
+                "https://www.drupal.org/files/issues/2019-09-16/0001-Issue-2488350-by-alexpott-Wim-Leers-Dimiter-catch-da.patch"
             },
             "drupal/ctools": {
                 "Enter drupal/ctools patch #2667652 description here":
@@ -225,6 +237,16 @@
                 "Enter drupal/views_bootstrap patch #2878352 description here":
                 "https://www.drupal.org/files/issues/add_bootstrap_panels-2878352-3.patch"
             }
+        },
+        "patches-ignore": {
+            "drupal/lightning_core": {
+              "drupal/core": {
+                "1356276 - Allow profiles to define a base/parent profile and load them in the correct order":
+                "https://www.drupal.org/files/issues/2018-10-12/1356276-531.patch",
+                "2914389 - Allow profiles to exclude dependencies of their parent":
+                "https://www.drupal.org/files/issues/2018-07-09/2914389-8-do-not-test.patch"
+              }
+            }
         }
     },
     "require": {
@@ -277,8 +299,8 @@
         "drupal/views_autocomplete_filters": "1.2",
         "drupal/webform": "^5.1",
         "drupal/webform_migrate": "1.1",
-        "drupal/wxt_bootstrap": "1.10",
-        "drupal/wxt_library": "1.7",
+        "drupal/wxt_bootstrap": "1.x-dev",
+        "drupal/wxt_library": "1.8",
         "w8tcha/ckeditor-codemirror": "1.16"
     },
     "autoload": {

@@ -7,6 +7,13 @@ Features/Updates:
 - Update Simple Sitemap to 3.3
 - Minor README.md improvements
 - Deprecated Entity Updates installer logic in Profile
+- Update Bootstrap to 3.20
+
+Performance:
+
+- Performance degradation in Layout Builder
+- Performance degradation in multi value fields
+- Switch to a memory cache backend during installation
 
 Upgrade path:
 

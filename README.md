@@ -4,23 +4,18 @@
 
 ## Important
 
-Drupal WxT for Drupal 8 is stable and will provide an update path for all future releases.
+Drupal WxT for Drupal 8 is currently under release candidate phase and now will
+provide an update path for all future releases.
 
 ## Important Links
 
 - Documentation Website: [drupalwxt.github.io][docsite]
 - Drupal Repository: [drupal.org/project/wxt][drupal]
-- GitHub Repository: [drupalwxt/wxt][drupal-github]
-- Composer Project: [drupalwxt/site-wxt][drupal-github-proj]
-- Helm Chart: [drupalwxt/helm-drupal][helm]
-- Containers: [hub.docker][containers]
+- GitHub Repository: [drupalwxt/wxt][github]
 - Live Demo: [demo][demo]
 - Run it Now: [simplytest.me][simplytest]
 - Issue Queue: [Drupal][issue-drupal] (Primary)
 - Issue Queue: [GitHub][issue-github]
-- Continuous Integration: [travis-ci.org/drupalwxt/wxt/builds][ci]
-- CHANGELOG: [CHANGELOG.md][changelog]
-- Release Cycle / Update Process: [architecture/release-cycle][release-cycle]
 
 ## Overview
 
@@ -56,11 +51,9 @@ see our [WxT Project README][project].
 
 ## Installation from exported config
 
-Lightning can be installed from a set of exported configuration (e.g., using the
---existing-config option with drush site:install). This method of installation is fully supported
-and tested.
-
-You can find more information about installing WxT (Lightning) from exported config [here][config-install].
+If you have a config export of a site built with Lighting, you can install it using the
+Config Installer profile. You can find more information about installing WxT (Lightning)
+from exported config [config-installer][here]</a>.
 
 ## Tarball Installation
 
@@ -76,7 +69,7 @@ Once you extract the tarball, run the following command from within your web roo
 install the required dependencies:
 
 ```sh
-composer require j7mbo/twitter-api-php league/oauth2-server:~6.0 webflo/drupal-core-strict:~8.7.0 'phpdocumentor/reflection-docblock:^3.0||^4.0'
+composer require j7mbo/twitter-api-php league/oauth2-server:~6.0 webflo/drupal-core-strict:~8.5.0 "phpdocumentor/reflection-docblock:^3.0||^4.0"
 ```
 
 ## Installation of Default Content via Migrate
@@ -147,21 +140,19 @@ Contributor(s): https://github.com/drupalwxt/wxt/graphs/contributors
 
 [acquia]:               https://acquia.com
 [changelog]:            https://github.com/drupalwxt/wxt/blob/8.x-3.x/CHANGELOG.md
-[ci]:                   https://travis-ci.org/drupalwxt/wxt/builds
-[containers]:           https://hub.docker.com/r/drupalwxt/site-wxt
 [config-install]:       https://lightning.acquia.com/blog/using-configuration-installer-lightning
 [demo]:                 https://d8.govcloud.ca
 [docsite]:              http://drupalwxt.github.io
 [drupal]:               http://drupal.org/project/wxt
-[drupal-github]:        https://github.com/drupalwxt/wxt
-[drupal-github-proj]:   http://drupal.org/project/site-wxt
-[helm]:                 https://github.com/drupalwxt/helm-drupal
+[drupal7]:              http://drupal.org/project/wetkit
+[github]:               https://github.com/drupalwxt/wxt
 [issue-drupal]:         https://drupal.org/project/issues/wxt
 [issue-github]:         https://github.com/drupalwxt/wxt/issues
 [lightning]:            https://github.com/acquia/lightning
+[panopoly]:             https://github.com/panopoly/panopoly
+[pantheon]:             https://pantheon.io
 [project]:              https://github.com/drupalwxt/wxt-project#user-content-new-project
 [project-new]:          https://github.com/drupalwxt/wxt-project#user-content-new-project
-[release-cycle]:        https://drupalwxt.github.io/architecture/release-cycle
 [release-drupal]:       https://github.com/drupalwxt/wxt/releases
 [release-github]:       https://github.com/drupalwxt/wxt/releases
 [simplytest]:           http://simplytest.me/project/wxt/8.x-3.x

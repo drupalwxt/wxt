@@ -55,9 +55,19 @@ class Package {
 
     $encoder = new IniEncoder();
 
+    // Build the complete make file and write it to the console, so it can be
+    // used to build a tarball for use on Acquia Cloud.
     $make = $handler->make();
+
+    // Extract a core-only make file for drupal.org's packaging system.
     $core = $handler->makeCore($make);
     file_put_contents('drupal-org-core.make', $encoder->encode($core));
+
+    // Remove JavaScript libraries, since they may cause a build failure if
+    // the exact repository URLs are not on the accept-list. This means that the
+    // drupal.org-generated tarball will not work, but it does not install
+    // anyway and we don't support it.
+    unset($make['libraries']);
     file_put_contents('drupal-org.make', $encoder->encode($make));
   }
 
@@ -206,7 +216,8 @@ class Package {
         $package['version']{0},
         substr($package['version'], 2)
       );
-      // Make the version Drush make-compatible: 1.x-13.0-beta2 --> 1.13-beta2
+      // Make the version compatible with drush make:
+      // 1.x-13.0-beta2 --> 1.13-beta2.
       $info['version'] = preg_replace(
         '/^([0-9]+)\.x-([0-9]+)\.[0-9]+(-.+)?/',
         '$1.$2$3',
@@ -275,7 +286,12 @@ class Package {
    *   TRUE if the package is an asset library, otherwise FALSE.
    */
   protected function isLibrary(array $package) {
-    return in_array($package['type'], ['drupal-library', 'bower-asset', 'npm-asset'], TRUE);
+    $libraries = [
+      'drupal-library',
+      'bower-asset',
+      'npm-asset',
+    ];
+    return in_array($package['type'], $libraries, TRUE);
   }
 
 }
