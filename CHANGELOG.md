@@ -1,4 +1,25 @@
-## v3.0.0-beta1 (In Development)
+## v3.0.0-beta2
+
+This release is identical, feature wise, to 3.0.0-beta1.
+
+Bug fixes:
+
+- Remove space from patch in composer.json (13263095)
+
+Upgrade path:
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
+- Run Lightning configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:lightning`
+
+## v3.0.0-beta1
 
 Features/Updates:
 
