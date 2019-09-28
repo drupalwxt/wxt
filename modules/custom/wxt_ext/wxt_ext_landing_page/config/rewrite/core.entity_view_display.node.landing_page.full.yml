@@ -10,13 +10,12 @@ dependencies:
     - field.field.node.landing_page.layout_builder__layout
     - field.field.node.landing_page.layout_builder__translation
     - field.field.node.landing_page.layout_selection
-    - field.field.node.landing_page.panelizer
+    - field.field.node.page.body
     - node.type.landing_page
     - system.menu.account
   module:
     - bootstrap_layouts
     - layout_builder
-    - layout_discovery
     - layout_library
     - metatag
     - panelizer
@@ -318,46 +317,6 @@ third_party_settings:
     enabled: true
     sections:
       -
-        layout_id: layout_onecol
-        layout_settings: {  }
-        components:
-          ee17703d-3020-413c-8628-a7262501df98:
-            uuid: ee17703d-3020-413c-8628-a7262501df98
-            region: content
-            configuration:
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              id: 'extra_field_block:node:landing_page:content_moderation_control'
-            additional: {  }
-            weight: 0
-          5ab0d3ea-3958-4374-a527-7bc3ed5605db:
-            uuid: 5ab0d3ea-3958-4374-a527-7bc3ed5605db
-            region: content
-            configuration:
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              id: 'extra_field_block:node:landing_page:links'
-            additional: {  }
-            weight: 1
-          bf3d8627-98cb-44d7-88c8-21a45b4c186d:
-            uuid: bf3d8627-98cb-44d7-88c8-21a45b4c186d
-            region: content
-            configuration:
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              id: 'field_block:node:landing_page:field_meta_tags'
-              formatter:
-                type: metatag_empty_formatter
-                label: above
-                settings: {  }
-                third_party_settings: {  }
-            additional: {  }
-            weight: 2
-        third_party_settings: {  }
-      -
         layout_id: bs_2col_bricked
         layout_settings:
           layout:
@@ -414,18 +373,11 @@ third_party_settings:
             uuid: 62dd7b94-9f49-4b61-ad40-f65d365a7f46
             region: top_right
             configuration:
-              id: 'field_block:node:page:title'
+              id: page_title_block
               label: 'Page title'
-              provider: layout_builder
+              provider: core
               label_display: '0'
-              formatter:
-                label: hidden
-                type: string
-                settings:
-                  link_to_entity: false
-                third_party_settings: {  }
-              context_mapping:
-                entity: layout_builder.entity
+              context_mapping: {  }
             additional: {  }
             weight: 0
           e58e904b-8890-4559-9582-222b7ca445a9:

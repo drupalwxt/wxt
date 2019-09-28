@@ -103,9 +103,13 @@
                 "Enter drupal/blog patch #2834732 description here":
                 "https://www.drupal.org/files/issues/blog-no_results_text-2834732-2.patch"
             },
+            "drupal/claro": {
+                "Enter drupal/claro patch #3083089 description here":
+                "https://www.drupal.org/files/issues/2019-09-24/undefined-index-type_3083089_6.patch"
+            },
             "drupal/core": {
                 "Enter drupal/core patch #1356276 description here":
-                "https://www.drupal.org/files/issues/2018-10-12/1356276-531.patch",
+                "https://www.drupal.org/files/issues/2018-10-12/1356276-531.patch ",
                 "Enter drupal/core patch #1838234 description here":
                 "https://www.drupal.org/files/issues/2018-09-06/1838234-52.patch",
                 "Enter drupal/core patch #2846485 description here":
@@ -158,6 +162,10 @@
                 "https://www.drupal.org/files/issues/2018-12-05/3017710-20.patch",
                 "Enter drupal/core patch #3081656 description here":
                 "https://www.drupal.org/files/issues/2019-09-16/0001-Issue-2488350-by-alexpott-Wim-Leers-Dimiter-catch-da.patch"
+            },
+            "drupal/core_context": {
+                "Enter drupal/core_context patch #3084423 description here":
+                "https://www.drupal.org/files/issues/2019-09-28/0001-feat-page_manager-Ignore-panelizer-routes.patch"
             },
             "drupal/ctools": {
                 "Enter drupal/ctools patch #2667652 description here":
@@ -264,7 +272,7 @@
         "drupal/config_rewrite": "1.1",
         "drupal/config_update": "1.6",
         "drupal/core": "8.7.5",
-        "drupal/core_context": "1.0-alpha1",
+        "drupal/core_context": "1.0-alpha2",
         "drupal/ctools": "3.0.0",
         "drupal/diff": "1.0-rc2",
         "drupal/entity_reference_revisions": "1.6",

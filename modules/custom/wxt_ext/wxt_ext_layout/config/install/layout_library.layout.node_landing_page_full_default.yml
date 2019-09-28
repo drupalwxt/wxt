@@ -27,18 +27,11 @@ layout:
         uuid: 398ddd2d-fe84-40e8-9120-37bc2e866efa
         region: main
         configuration:
-          id: 'field_block:node:page:title'
+          id: 'page_title_block'
           label: 'Page title'
-          provider: layout_builder
+          provider: core
           label_display: '0'
-          formatter:
-            label: hidden
-            type: string
-            settings:
-              link_to_entity: false
-            third_party_settings: {  }
-          context_mapping:
-            entity: layout_builder.entity
+          context_mapping: {}
         additional: {  }
         weight: -1
       d32f81b0-722f-4094-9397-e508fce0be86:

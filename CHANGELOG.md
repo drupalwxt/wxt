@@ -1,10 +1,13 @@
 ## v3.0.0-beta2
 
-This release is identical, feature wise, to 3.0.0-beta1.
+Features/Updates:
 
-Bug fixes:
-
-- Remove space from patch in composer.json (13263095)
+- Layout Builder off canvas fixes
+- Duplicate title logic for Layout Builder
+- Fixes to Entity View Display calling wrong title
+- Claro backend theme enabled by default
+- Homepage CSS fixes for padding issue
+- Addition of Core Context for Layout Builder
 
 Upgrade path:
 

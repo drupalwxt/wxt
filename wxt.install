@@ -95,7 +95,7 @@ function _wxt_setup_themes() {
   \Drupal::configFactory()
     ->getEditable('system.theme')
     ->set('default', 'wxt_bootstrap')
-    ->set('admin', 'seven')
+    ->set('admin', 'claro')
     ->save(TRUE);
 
   // Enable the admin theme.

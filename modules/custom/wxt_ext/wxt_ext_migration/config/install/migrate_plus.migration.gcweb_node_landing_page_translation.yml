@@ -24,15 +24,13 @@ source:
         layout_settings:
           layout:
             wrapper: div
-            classes:
-              row: row
+            classes: {}
             add_layout_class: 1
             attributes: ''
           regions:
             top:
               wrapper: div
-              classes:
-                col-sm-12: col-sm-12
+              classes: {}
               add_region_classes: 1
               attributes: ''
             top_left:
@@ -195,18 +193,11 @@ source:
           -
             region: top_left
             configuration:
-              id: 'field_block:node:page:title'
+              id: 'page_title_block'
               label: 'Page title'
-              provider: layout_builder
+              provider: core
               label_display: '0'
-              formatter:
-                label: hidden
-                type: string
-                settings:
-                  link_to_entity: false
-                third_party_settings: {  }
-              context_mapping:
-                entity: layout_builder.entity
+              context_mapping: {}
             additional: {  }
             weight: 0
           -

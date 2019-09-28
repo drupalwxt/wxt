@@ -24,15 +24,13 @@ source:
         layout_settings:
           layout:
             wrapper: div
-            classes:
-              row: row
+            classes: {}
             add_layout_class: 1
             attributes: ''
           regions:
             top:
               wrapper: div
-              classes:
-                col-sm-12: col-sm-12
+              classes: {}
               add_region_classes: 1
               attributes: ''
             top_left:
