@@ -88,6 +88,14 @@ drush si wxt
   --yes
 ```
 
+```sh
+drush migrate:import --group wxt --tag 'Core'
+drush migrate:import --group gcweb --tag 'Core'
+drush migrate:import --group gcweb --tag 'Menu'
+drush config-set wxt_library.settings wxt.theme theme-gcweb -y
+drush cr
+```
+
 ### WxT
 
 Imports examples of common design patterns for WxT branded sites.
