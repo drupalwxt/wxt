@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   module:
-    - layout_builder_std
+    - layout_builder_st
     - node
 id: node.layout_builder__translation
 field_name: layout_builder__translation
