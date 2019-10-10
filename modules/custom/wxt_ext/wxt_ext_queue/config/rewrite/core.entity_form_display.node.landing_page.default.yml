@@ -5,12 +5,13 @@ dependencies:
     - field.field.node.landing_page.body
     - field.field.node.landing_page.field_meta_tags
     - field.field.node.landing_page.field_queue
-    - field.field.node.landing_page.panelizer
+    - field.field.node.landing_page.layout_builder__layout
+    - field.field.node.landing_page.layout_builder__translation
+    - field.field.node.landing_page.layout_selection
     - node.type.landing_page
   module:
     - content_moderation
     - metatag
-    - panelizer
     - path
     - text
 id: node.landing_page.default
@@ -34,11 +35,11 @@ content:
     third_party_settings: {  }
     region: content
   field_meta_tags:
+    type: metatag_firehose
+    region: content
     weight: 7
     settings: {  }
     third_party_settings: {  }
-    type: metatag_firehose
-    region: content
   field_queue:
     type: entity_reference_autocomplete
     weight: 8
@@ -52,7 +53,20 @@ content:
     type: language_select
     weight: 2
     region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  layout_selection:
+    type: options_select
+    region: content
+    weight: 101
     settings: {  }
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
+    settings: {  }
+    region: content
     third_party_settings: {  }
   panelizer:
     type: panelizer
@@ -66,6 +80,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
+  status:
+    type: boolean_checkbox
+    weight: 10
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    region: content
   title:
     type: string_textfield
     weight: 0
@@ -74,6 +95,11 @@ content:
       placeholder: ''
     third_party_settings: {  }
     region: content
+  translation:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
     weight: 3
@@ -84,5 +110,7 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
+  layout_builder__layout: true
+  layout_builder__translation: true
   promote: true
   sticky: true

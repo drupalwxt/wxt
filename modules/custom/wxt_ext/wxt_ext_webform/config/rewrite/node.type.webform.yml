@@ -4,10 +4,19 @@ dependencies:
   enforced:
     module:
       - webform_node
+  module:
+    - content_moderation
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+  lightning_workflow:
+    workflow: editorial
 name: Webform
 type: webform
 description: 'A basic page with a webform attached.'
 help: ''
-new_revision: false
-preview_mode: 1
-display_submitted: true
+new_revision: true
+preview_mode: 0
+display_submitted: false
