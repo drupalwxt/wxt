@@ -1,0 +1,12 @@
+description: 'Generates a sub-profile of WxT. For additional documentation, see https://drupalwxt.github.io'
+options:
+  include: 'Additional modules to include (optional), separated by commas (e.g. context, rules, file_entity)'
+  exclude: 'WxT components to exclude (optional), separated by commas (e.g. wxt_admin, wxt_core)'
+questions:
+  description: 'Enter the description (optional)'
+  collect-exclusions: 'Do you want to exclude any components of WxT?'
+  exclude-components: '%s has %d sub-component(s): %s. Do you want to exclude any of them?'
+  choose-excluded-components: 'Enter the sub-components you want to exclude:'
+  include-component: 'Do you want to include %s?'
+errors:
+  invalid-exclusions: 'The following modules cannot be excluded because they are required by WxT: %s'

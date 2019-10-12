@@ -58,6 +58,7 @@ class Package {
     // Build the complete make file and write it to the console, so it can be
     // used to build a tarball for use on Acquia Cloud.
     $make = $handler->make();
+    $event->getIO()->write($encoder->encode($make));
 
     // Extract a core-only make file for drupal.org's packaging system.
     $core = $handler->makeCore($make);

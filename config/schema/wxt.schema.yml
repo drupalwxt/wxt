@@ -1,0 +1,14 @@
+user.role.*.third_party.wxt:
+  type: mapping
+  label: 'WxT settings'
+  mapping:
+    bundled:
+      type: boolean
+      label: 'Bundled with WxT'
+
+wxt.versions:
+  type: sequence
+  label: 'WxT component versions'
+  sequence:
+    type: string
+    label: 'Version'

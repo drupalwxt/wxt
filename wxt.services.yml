@@ -1,13 +1,9 @@
 services:
-  wxt.extender:
-    class: '\Drupal\wxt\Extender'
-    arguments:
-      - '@app.root'
-      - '@site.path'
   wxt.form_helper:
     class: '\Drupal\wxt\FormHelper'
     arguments:
       - '@element_info'
+
   wxt.http_exception:
     class: Drupal\wxt\EventSubscriber\WxT4032404Subscriber
     tags:

@@ -35,9 +35,11 @@ class FormHelper {
   public function applyStandardProcessing(array &$element) {
     if (empty($element['#process'])) {
       $info = $this->elementInfo->getInfo($element['#type']);
+
       if (isset($info['#process'])) {
         $element['#process'] = $info['#process'];
       }
     }
   }
+
 }
