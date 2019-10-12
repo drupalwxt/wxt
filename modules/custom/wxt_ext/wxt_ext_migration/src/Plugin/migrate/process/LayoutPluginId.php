@@ -2,7 +2,6 @@
 
 namespace Drupal\wxt_ext_migration\Plugin\migrate\process;
 
-use Drupal\Component\Plugin\Exception\PluginNotFoundException;
 use Drupal\Component\Uuid\UuidInterface;
 use Drupal\Core\Block\BlockManagerInterface;
 use Drupal\Core\Entity\EntityStorageInterface;
@@ -139,6 +138,7 @@ class LayoutPluginId extends ProcessPluginBase implements ContainerFactoryPlugin
             $tmp_component['configuration']['info'] = '';
           }
           break;
+
         case 'entity_block':
           $block_id = $this->migrationPlugin
             ->transform($delta, $migrate_executable, $row, $destination_property);
@@ -147,20 +147,7 @@ class LayoutPluginId extends ProcessPluginBase implements ContainerFactoryPlugin
             $tmp_component['configuration']['entity'] = $block_id;
           }
           break;
-        case 'local_tasks_block':
-          $block = [
-            'id' => $module,
-            'primary' => TRUE,
-            'secondary' => TRUE,
-          ];
-          break;
-        case 'views_block':
-          $block = [
-            'id' => $module . ':' . $delta,
-            'views_label' => '',
-            'items_per_page' => 'none',
-          ];
-          break;
+
         default:
           break;
       }
@@ -187,8 +174,8 @@ class LayoutPluginId extends ProcessPluginBase implements ContainerFactoryPlugin
       return FALSE;
     }
     $region = $component["region"];
-    $plugin_id = $component["id"];
     $component = new SectionComponent($this->uuidService->generate(), $region, $configuration);
     return $component;
   }
+
 }
