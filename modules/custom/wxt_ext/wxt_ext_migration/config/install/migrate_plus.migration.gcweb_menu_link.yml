@@ -8,88 +8,7 @@ source:
   # Enforce default language to english
   default_lang: true
   data_rows:
-    # Footer.
-    - mlid: 'ml_footer_1'
-      link_title: 'Contact us'
-      description: 'Contact us section.'
-      menu_name: 'footer'
-      link_path: 'https://www.canada.ca/en/contact.html'
-      options: []
-      external: 1
-      weight: 0
-      parent: 0
-    - mlid: 'ml_footer_2'
-      link_title: 'Departments and agencies'
-      description: 'Departments and agencies section.'
-      menu_name: 'footer'
-      link_path: 'https://www.canada.ca/en/government/dept.html'
-      options: []
-      external: 1
-      weight: 1
-      parent: 0
-    - mlid: 'ml_footer_3'
-      link_title: 'Public service and military'
-      description: 'Public service and military section.'
-      menu_name: 'footer'
-      link_path: 'https://www.canada.ca/en/government/publicservice.html'
-      options: []
-      external: 1
-      weight: 2
-      parent: 0
-    - mlid: 'ml_footer_4'
-      link_title: 'News'
-      description: 'News section.'
-      menu_name: 'footer'
-      link_path: 'http://news.gc.ca'
-      options: []
-      external: 1
-      weight: 3
-      parent: 0
-    - mlid: 'ml_footer_5'
-      link_title: 'Treaties, laws and regulations'
-      description: 'Treaties, laws and regulations section.'
-      menu_name: 'footer'
-      link_path: 'https://www.canada.ca/en/government/system/laws.html'
-      options: []
-      external: 1
-      weight: 4
-      parent: 0
-    - mlid: 'ml_footer_6'
-      link_title: 'Government-wide reporting'
-      description: 'Government-wide reporting section.'
-      menu_name: 'footer'
-      link_path: 'https://www.canada.ca/en/transparency/reporting.html'
-      options: []
-      external: 1
-      weight: 5
-      parent: 0
-    - mlid: 'ml_footer_7'
-      link_title: 'Prime Minister'
-      description: 'Prime Minister section.'
-      menu_name: 'footer'
-      link_path: 'https://pm.gc.ca/eng'
-      options: []
-      external: 1
-      weight: 6
-      parent: 0
-    - mlid: 'ml_footer_8'
-      link_title: 'How government works'
-      description: 'How government works section.'
-      menu_name: 'footer'
-      link_path: 'https://www.canada.ca/en/government/system.html'
-      options: []
-      external: 1
-      weight: 7
-      parent: 0
-    - mlid: 'ml_footer_9'
-      link_title: 'Open government'
-      description: 'Open government section.'
-      menu_name: 'footer'
-      link_path: 'http://open.canada.ca/en/user'
-      options: []
-      external: 1
-      weight: 8
-      parent: 0
+    # Brand.
     - mlid: 'ml_brand_1'
       link_title: 'Social media'
       description: 'Social media section.'
@@ -135,6 +54,7 @@ source:
       external: 1
       weight: 4
       parent: 0
+    # Main.
     - mlid: 'main_jobs_workplace'
       link_title: 'Jobs and the workplace'
       description: ''
@@ -287,6 +207,152 @@ source:
       options: []
       external: 0
       weight: 10
+      parent: 0
+    # Sidebar.
+    - mlid: 'ml_sidebar_1'
+      link_title: 'Drupal'
+      description: 'Drupal.org'
+      menu_name: 'sidebar'
+      link_path: 'http://drupal.org'
+      options: []
+      external: 1
+      weight: 0
+      parent: 0
+    - mlid: 'ml_sidebar_1_sub_1'
+      link_title: 'Drupal 8'
+      description: 'Drupal 8 introduction'
+      menu_name: 'sidebar'
+      link_path: 'internal:/node/2'
+      options: []
+      external: 0
+      weight: 0
+      parent: 'ml_sidebar_1'
+    - mlid: 'ml_sidebar_1_sub_1_sub_1'
+      link_title: 'Why Drupal 8'
+      description: 'Meet the world’s leading digital experience platform.'
+      menu_name: 'sidebar'
+      link_path: 'https://www.drupal.com/why-drupal-8'
+      options: []
+      external: 0
+      weight: 0
+      parent: 'ml_sidebar_1_sub_1'
+    - mlid: 'ml_sidebar_1_sub_1_sub_2'
+      link_title: 'Multilingual Improvements'
+      description: 'Drupal 8 multilingual improvements.'
+      menu_name: 'sidebar'
+      link_path: 'http://www.drupal8multilingual.org/features'
+      options: []
+      external: 0
+      weight: 0
+      parent: 'ml_sidebar_1_sub_1'
+    - mlid: 'ml_sidebar_1_sub_2'
+      link_title: 'Drupal WxT for Drupal 8'
+      description: 'Drupal WxT8 introduction'
+      menu_name: 'sidebar'
+      link_path: 'internal:/node/1'
+      options: []
+      external: 0
+      weight: 0
+      parent: 'ml_sidebar_1'
+    - mlid: 'ml_sidebar_1_sub_2_sub_1'
+      link_title: 'Drupal WxT8 (GitHub)'
+      description: 'The Drupal WxT8 GitHub repository.'
+      menu_name: 'sidebar'
+      link_path: 'http://github.com/wet-boew/wet-boew-drupal8'
+      options: []
+      external: 0
+      weight: 0
+      parent: 'ml_sidebar_1_sub_2'
+    - mlid: 'ml_sidebar_1_sub_2_sub_2'
+      link_title: 'Drupal WxT8 (Drupal.org)'
+      description: 'The Drupal WxT8 Drupal.org repository.'
+      menu_name: 'sidebar'
+      link_path: 'http://drupal.org/project/wxt'
+      options: []
+      external: 0
+      weight: 0
+      parent: 'ml_sidebar_1_sub_2'
+    # Footer.
+    - mlid: 'ml_footer_1'
+      link_title: 'Contact us'
+      description: 'Contact us section.'
+      menu_name: 'footer'
+      link_path: 'https://www.canada.ca/en/contact.html'
+      options: []
+      external: 1
+      weight: 0
+      parent: 0
+    - mlid: 'ml_footer_2'
+      link_title: 'Departments and agencies'
+      description: 'Departments and agencies section.'
+      menu_name: 'footer'
+      link_path: 'https://www.canada.ca/en/government/dept.html'
+      options: []
+      external: 1
+      weight: 1
+      parent: 0
+    - mlid: 'ml_footer_3'
+      link_title: 'Public service and military'
+      description: 'Public service and military section.'
+      menu_name: 'footer'
+      link_path: 'https://www.canada.ca/en/government/publicservice.html'
+      options: []
+      external: 1
+      weight: 2
+      parent: 0
+    - mlid: 'ml_footer_4'
+      link_title: 'News'
+      description: 'News section.'
+      menu_name: 'footer'
+      link_path: 'http://news.gc.ca'
+      options: []
+      external: 1
+      weight: 3
+      parent: 0
+    - mlid: 'ml_footer_5'
+      link_title: 'Treaties, laws and regulations'
+      description: 'Treaties, laws and regulations section.'
+      menu_name: 'footer'
+      link_path: 'https://www.canada.ca/en/government/system/laws.html'
+      options: []
+      external: 1
+      weight: 4
+      parent: 0
+    - mlid: 'ml_footer_6'
+      link_title: 'Government-wide reporting'
+      description: 'Government-wide reporting section.'
+      menu_name: 'footer'
+      link_path: 'https://www.canada.ca/en/transparency/reporting.html'
+      options: []
+      external: 1
+      weight: 5
+      parent: 0
+    - mlid: 'ml_footer_7'
+      link_title: 'Prime Minister'
+      description: 'Prime Minister section.'
+      menu_name: 'footer'
+      link_path: 'https://pm.gc.ca/eng'
+      options: []
+      external: 1
+      weight: 6
+      parent: 0
+    - mlid: 'ml_footer_8'
+      link_title: 'How government works'
+      description: 'How government works section.'
+      menu_name: 'footer'
+      link_path: 'https://www.canada.ca/en/government/system.html'
+      options: []
+      external: 1
+      weight: 7
+      parent: 0
+    - mlid: 'ml_footer_9'
+      link_title: 'Open government'
+      description: 'Open government section.'
+      menu_name: 'footer'
+      link_path: 'http://open.canada.ca/en/user'
+      options: []
+      external: 1
+      weight: 8
       parent: 0
   # Under 'ids', we identify source fields populated above which will uniquely
   # identify each imported item. The 'type' makes sure the migration map table

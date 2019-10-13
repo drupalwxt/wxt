@@ -301,6 +301,9 @@ process:
     -
       plugin: callback
       callable: serialize
+  'field_queue/target_id':
+    plugin: default_value
+    default_value: front_page
   layout_builder__layout:
     plugin: wxt_layout_plugin_id
     source: layout

@@ -124,7 +124,7 @@ class ReportProblemBlock extends BlockBase implements ContainerFactoryPluginInte
       ->toString();
     $markup = '<a class="btn btn-default" href="' . $url . '">';
     $markup .= '<span class="glyphicon glyphicon-play">&nbsp;</span>';
-    $markup .= $this->t('Report a problem on this page');
+    $markup .= $this->t('Report a problem');
     $markup .= '</a>';
     $build['#markup'] = $markup;
     return $build;
