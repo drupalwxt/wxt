@@ -6,5 +6,5 @@ package: WxT
 
 # Required modules
 dependencies:
-  - drupal:wxt_ext_layout
-  - drupal:wxt_ext_translation
+  - wxt_ext_layout:wxt_ext_layout
+  - wxt_ext_translation:wxt_ext_translation

@@ -6,5 +6,5 @@ core: '8.x'
 
 # Required modules
 dependencies:
-  - drupal:simple_sitemap
-  - drupal:wxt_ext_page
+  - simple_sitemap:simple_sitemap
+  - wxt_ext_page:wxt_ext_page

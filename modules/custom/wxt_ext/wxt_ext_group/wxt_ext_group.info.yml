@@ -6,5 +6,5 @@ package: 'WxT'
 
 # Required modules
 dependencies:
-  - drupal:gnode
-  - drupal:group
+  - gnode:gnode
+  - group:group

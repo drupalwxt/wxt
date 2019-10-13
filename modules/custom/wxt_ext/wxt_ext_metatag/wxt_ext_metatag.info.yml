@@ -6,7 +6,7 @@ core: '8.x'
 
 # Required modules
 dependencies:
-  - drupal:metatag
-  - drupal:metatag_dc
-  - drupal:metatag_page_manager
-  - drupal:metatag_views
+  - metatag:metatag
+  - metatag_dc:metatag_dc
+  - metatag_page_manager:metatag_page_manager
+  - metatag_views:metatag_views

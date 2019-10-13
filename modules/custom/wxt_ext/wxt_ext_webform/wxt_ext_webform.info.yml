@@ -6,7 +6,7 @@ package: WxT
 
 # Required modules
 dependencies:
-  - drupal:webform
-  - drupal:webform_bootstrap
-  - drupal:webform_node
-  - drupal:webform_ui
+  - webform:webform
+  - webform_bootstrap:webform_bootstrap
+  - webform_node:webform_node
+  - webform_ui:webform_ui

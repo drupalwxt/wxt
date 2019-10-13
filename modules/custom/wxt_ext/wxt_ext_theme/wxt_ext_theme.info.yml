@@ -6,4 +6,4 @@ package: WxT
 
 # Required modules
 dependencies:
-  - drupal:config_rewrite
+  - config_rewrite:config_rewrite

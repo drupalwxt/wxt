@@ -6,10 +6,10 @@ package: WxT
 
 # Required modules
 dependencies:
-  - drupal:blog
-  - drupal:bootstrap_layouts
-  - drupal:config_rewrite
-  - drupal:views_bootstrap
-  - drupal:wxt_ext_migration
-  - drupal:wxt_ext_taxonomy
-  - drupal:wxt_ext_translation
+  - blog:blog
+  - bootstrap_layouts:bootstrap_layouts
+  - config_rewrite:config_rewrite
+  - views_bootstrap:views_bootstrap
+  - wxt_ext_migration:wxt_ext_migration
+  - wxt_ext_taxonomy:wxt_ext_taxonomy
+  - wxt_ext_translation:wxt_ext_translation

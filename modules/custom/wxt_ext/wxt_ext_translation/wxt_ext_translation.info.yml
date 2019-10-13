@@ -9,5 +9,5 @@ dependencies:
   - drupal:config_translation
   - drupal:content_translation
   - drupal:block_content
-  - drupal:wxt_ext_paragraph
-  - drupal:wxt_ext_page
+  - wxt_ext_paragraph:wxt_ext_paragraph
+  - wxt_ext_page:wxt_ext_page

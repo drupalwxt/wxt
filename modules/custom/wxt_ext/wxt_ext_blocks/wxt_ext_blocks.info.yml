@@ -6,4 +6,4 @@ package: WxT
 
 # Required modules
 dependencies:
-  - drupal:wxt_core
+  - wxt_core:wxt_core

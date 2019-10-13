@@ -6,4 +6,4 @@ package: 'WxT'
 
 # Required modules
 dependencies:
-  - drupal:menu_breadcrumb
+  - menu_breadcrumb:menu_breadcrumb

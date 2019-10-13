@@ -6,6 +6,6 @@ package: WxT
 
 # Required modules
 dependencies:
-  - drupal:config_rewrite
+  - config_rewrite:config_rewrite
   - drupal:shortcut
-  - drupal:wxt_ext_translation
+  - wxt_ext_translation:wxt_ext_translation

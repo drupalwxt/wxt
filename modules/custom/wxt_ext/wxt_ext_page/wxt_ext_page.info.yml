@@ -6,6 +6,6 @@ package: WxT
 
 # Required modules
 dependencies:
-  - drupal:lightning_page
-  - drupal:wxt_core
-  - drupal:wxt_ext_layout
+  - lightning_page:lightning_page
+  - wxt_core:wxt_core
+  - wxt_ext_layout:wxt_ext_layout

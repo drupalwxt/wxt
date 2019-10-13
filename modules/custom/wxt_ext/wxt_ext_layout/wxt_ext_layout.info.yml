@@ -6,8 +6,8 @@ package: WxT
 
 # Required modules
 dependencies:
-  - drupal:bootstrap_layouts
-  - drupal:core_context
-  - drupal:layout_library
-  - drupal:lightning_layout
-  - drupal:page_manager_ui
+  - bootstrap_layouts:bootstrap_layouts
+  - core_context:core_context
+  - layout_library:layout_library
+  - lightning_layout:lightning_layout
+  - page_manager_ui:page_manager_ui

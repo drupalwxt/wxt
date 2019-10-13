@@ -6,4 +6,4 @@ package: WxT
 
 # Required modules
 dependencies:
-  - drupal:fontawesome
+  - fontawesome:fontawesome

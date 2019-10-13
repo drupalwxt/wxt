@@ -6,22 +6,22 @@ package: WxT
 
 # Required modules
 dependencies:
-  - drupal:admin_toolbar
-  - drupal:admin_toolbar_tools
-  - drupal:admin_toolbar_links_access_filter
-  - drupal:config_rewrite
-  - drupal:config_update
+  - admin_toolbar:admin_toolbar
+  - admin_toolbar_tools:admin_toolbar_tools
+  - admin_toolbar_links_access_filter:admin_toolbar_links_access_filter
+  - config_rewrite:config_rewrite
+  - config_update:config_update
   - drupal:contact
-  - drupal:content_moderation
-  - drupal:diff
-  - drupal:embed
-  - drupal:entity_embed
-  - drupal:field_group
-  - drupal:page_manager
-  - drupal:panelizer
-  - drupal:panels_ipe
-  - drupal:pathauto
-  - drupal:token
-  - drupal:url_embed
-  - drupal:wxt_core
-  - drupal:wxt_ext_theme
+  - content_moderation:content_moderation
+  - diff:diff
+  - embed:embed
+  - entity_embed:entity_embed
+  - field_group:field_group
+  - page_manager:page_manager
+  - panelizer:panelizer
+  - panels_ipe:panels_ipe
+  - pathauto:pathauto
+  - token:token
+  - url_embed:url_embed
+  - wxt_core:wxt_core
+  - wxt_ext_theme:wxt_ext_theme
