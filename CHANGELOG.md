@@ -1,3 +1,33 @@
+## v3.0.0-rc2
+
+Features/Updates:
+
+- Fix padding issue for #wb-srch-sub
+- Fix padding issue for Date Modified block
+- PHPCS corrections for WxT Library
+- Proper dependencies for Webform resolving missing revision
+- Addition of WxT Sub Profile Generator for Drupal Console
+- Addition of WxT Lightning Update Manager for Drupal Console
+- Minor improvements to migration
+- Properly namespace modules with expanded syntax
+
+Upgrade path:
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
+- Run Lightning configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:lightning`
+
+- Run WxT configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:wxt`
+
 ## v3.0.0-rc1
 
 Features/Updates:
