@@ -14,3 +14,4 @@ dependencies:
   - drupal:menu_breadcrumb
   - drupal:token_filter
   - drupal:views_bootstrap
+  - drupal:webform_node
