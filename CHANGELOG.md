@@ -10,6 +10,7 @@ Features/Updates:
 - Addition of WxT Lightning Update Manager for Drupal Console
 - Minor improvements to migration
 - Properly namespace modules with expanded syntax
+- Updates entity_reference_revisions, paragraphs, and simple_sitemap
 
 Upgrade path:
 
