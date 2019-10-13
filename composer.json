@@ -228,8 +228,8 @@
                 "https://www.drupal.org/files/issues/panels-ipe-card-flip-ie-error-2910704.diff"
             },
             "drupal/panelizer": {
-                    "Allow the previewing of nodes with panelizer":
-                    "https://www.drupal.org/files/issues/2019-05-17/panelizer-node-previews-2750491-7.patch"
+                "Allow the previewing of nodes with panelizer":
+                "https://www.drupal.org/files/issues/2019-05-17/panelizer-node-previews-2750491-7.patch"
             },
             "drupal/s3fs": {
                 "Enter drupal/s3fs patch #2986407 description here":
