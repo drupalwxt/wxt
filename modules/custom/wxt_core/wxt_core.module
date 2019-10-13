@@ -6,6 +6,31 @@
  */
 
 use Drupal\Core\Database\Query\AlterableInterface;
+use Drupal\wxt_core\UpdateManager;
+
+/**
+ * Implements hook_modules_installed().
+ */
+function wxt_core_modules_installed(array $modules) {
+  // Don't do anything during config sync.
+  if (\Drupal::isConfigSyncing()) {
+    return;
+  }
+
+  // Record the semantic version of every module in config.
+  $versions = \Drupal::configFactory()->getEditable(UpdateManager::CONFIG_NAME);
+
+  /** @var \Drupal\wxt_core\UpdateManager $update_manager */
+  $update_manager = \Drupal::service('wxt.update_manager');
+
+  foreach ($modules as $module) {
+    $versions->set($module, $update_manager->getVersion($module));
+  }
+  // Sort the list by key.
+  $versions_sorted = $versions->getRawData();
+  ksort($versions_sorted);
+  $versions->setData($versions_sorted)->save();
+}
 
 /**
  * Toggles the state of a specified menu link.

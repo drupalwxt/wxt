@@ -1,0 +1,7 @@
+services:
+  wxt.command.update:
+    class: '\Drupal\wxt_core\Command\UpdateCommand'
+    arguments:
+      - '@wxt.update_manager'
+    tags:
+      - { name: drupal.command }

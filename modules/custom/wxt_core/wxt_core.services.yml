@@ -1,0 +1,14 @@
+services:
+  wxt.display_helper:
+    class: '\Drupal\wxt_core\DisplayHelper'
+    arguments:
+      - '@entity_type.manager'
+      - '@entity_field.manager'
+
+  wxt.update_manager:
+    class: '\Drupal\wxt_core\UpdateManager'
+    arguments:
+      - '@container.namespaces'
+      - '@class_resolver'
+      - '@config.factory'
+      - '@extension.list.module'
