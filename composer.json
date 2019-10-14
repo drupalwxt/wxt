@@ -103,10 +103,6 @@
                 "Enter drupal/blog patch #2834732 description here":
                 "https://www.drupal.org/files/issues/blog-no_results_text-2834732-2.patch"
             },
-            "drupal/claro": {
-                "Enter drupal/claro patch #3083089 description here":
-                "https://www.drupal.org/files/issues/2019-09-24/undefined-index-type_3083089_6.patch"
-            },
             "drupal/core": {
                 "Enter drupal/core patch #1356276 description here":
                 "https://www.drupal.org/files/issues/2018-10-12/1356276-531.patch ",
