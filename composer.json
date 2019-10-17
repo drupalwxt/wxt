@@ -161,7 +161,7 @@
             },
             "drupal/core_context": {
                 "Enter drupal/core_context patch #3084423 description here":
-                "https://www.drupal.org/files/issues/2019-09-28/0001-feat-page_manager-Ignore-panelizer-routes.patch"
+                "https://www.drupal.org/files/issues/2019-10-16/3084423-5.patch"
             },
             "drupal/ctools": {
                 "Enter drupal/ctools patch #2667652 description here":
