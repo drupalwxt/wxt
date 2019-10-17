@@ -7,11 +7,15 @@ use Consolidation\OutputFormatters\Options\FormatterOptions;
 use Drupal\Core\Extension\ProfileExtensionList;
 use Drush\Commands\DrushCommands;
 use Symfony\Component\Console\Event\ConsoleCommandEvent;
+use Drupal\Core\StringTranslation\StringTranslationTrait;
+use Drupal\Core\StringTranslation\TranslationInterface;
+
 
 /**
  * Implements Drush command hooks.
  */
 class Hooks extends DrushCommands {
+  use StringTranslationTrait;
 
   /**
    * The profile extension list service.
@@ -34,10 +38,13 @@ class Hooks extends DrushCommands {
    *   The profile extension list service.
    * @param string $install_profile
    *   The install_profile parameter.
+   * @param \Drupal\Core\StringTranslation\TranslationInterface $string_translation
+   *   The string translation service.
    */
-  public function __construct(ProfileExtensionList $profile_list, $install_profile) {
+  public function __construct(ProfileExtensionList $profile_list, $install_profile, TranslationInterface $string_translation) {
     $this->profileList = $profile_list;
     $this->installProfile = $install_profile;
+    $this->setStringTranslation($string_translation);
   }
 
   /**
