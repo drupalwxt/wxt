@@ -1,3 +1,23 @@
+## v3.0.0-rc3
+
+Features/Updates:
+
+- Update Drupal Core to 8.7.7
+- Fix for Core Context patch somehow missing
+- Add StringTranslationTrait to Drush Hooks
+- Claro updated to 1.0-beta1
+- Add support for proper versioning of Profile tarball for *.info.yml files
+- Add site slogan support to theme-gcwu-fegc
+
+Upgrade path:
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
 ## v3.0.0-rc2
 
 Features/Updates:

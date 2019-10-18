@@ -149,7 +149,7 @@ Contributor(s): https://github.com/drupalwxt/wxt/graphs/contributors
 [acquia]:               https://acquia.com
 [changelog]:            https://github.com/drupalwxt/wxt/blob/8.x-3.x/CHANGELOG.md
 [config-install]:       https://lightning.acquia.com/blog/using-configuration-installer-lightning
-[demo]:                 https://d8.govcloud.ca
+[demo]:                 https://drupalwxt.govcloud.ca
 [docsite]:              http://drupalwxt.github.io
 [drupal]:               http://drupal.org/project/wxt
 [drupal7]:              http://drupal.org/project/wetkit

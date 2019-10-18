@@ -1,7 +1,7 @@
 core = 8.x
 api = 2
 projects[drupal][type] = core
-projects[drupal][version] = 8.7.5
+projects[drupal][version] = 8.7.7
 projects[drupal][patch][] = https://www.drupal.org/files/issues/2018-10-12/1356276-531.patch
 projects[drupal][patch][] = https://www.drupal.org/files/issues/2018-09-06/1838234-52.patch
 projects[drupal][patch][] = https://www.drupal.org/files/issues/2018-04-03/views-multivalue_field_rendering_performance-2846485-23.patch

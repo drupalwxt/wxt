@@ -263,7 +263,7 @@
         "drupal/ckeditor_codemirror": "2.2",
         "drupal/config_rewrite": "1.1",
         "drupal/config_update": "1.6",
-        "drupal/core": "8.7.5",
+        "drupal/core": "8.7.7",
         "drupal/core_context": "1.0-alpha2",
         "drupal/ctools": "3.0.0",
         "drupal/diff": "1.0-rc2",
@@ -299,7 +299,7 @@
         "drupal/views_autocomplete_filters": "1.2",
         "drupal/webform": "^5.1",
         "drupal/webform_migrate": "1.1",
-        "drupal/wxt_bootstrap": "1.14",
+        "drupal/wxt_bootstrap": "1.15",
         "drupal/wxt_library": "1.10",
         "w8tcha/ckeditor-codemirror": "1.16"
     },
