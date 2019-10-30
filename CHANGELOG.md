@@ -1,3 +1,20 @@
+## v3.0.0 (In Development)
+
+Features/Updates:
+
+- Update Drupal Core to 8.7.8
+- WxT padding improvements to front page
+- Docker images now extend directly off drupal:8.7-fpm-alpine
+
+Upgrade path:
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
 ## v3.0.0-rc3
 
 Features/Updates:
