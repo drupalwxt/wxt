@@ -5,6 +5,7 @@ Features/Updates:
 - Update Drupal Core to 8.7.8
 - WxT padding improvements to front page
 - Docker images now extend directly off drupal:8.7-fpm-alpine
+- Page Manager variant does not open when selected
 
 Upgrade path:
 

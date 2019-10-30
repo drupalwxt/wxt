@@ -161,6 +161,7 @@ projects[page_manager][type] = module
 projects[page_manager][patch][] = https://www.drupal.org/files/issues/page-manager-2626090-page-title-empty-5.patch
 projects[page_manager][patch][] = https://www.drupal.org/files/issues/page_manager-block-css-attributes-9.patch
 projects[page_manager][patch][] = https://www.drupal.org/files/issues/2018-07-05/page_manager-incorrect-page_title-2752227-32-8.x.4.x.patch
+projects[page_manager][patch][] = https://www.drupal.org/files/issues/2019-04-25/page_manager-variant_selector_bigpipe-2921404-46.patch
 projects[page_manager][version] = 4.0-beta3
 projects[panelizer][type] = module
 projects[panelizer][download][type] = git

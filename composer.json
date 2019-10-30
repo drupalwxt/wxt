@@ -207,7 +207,9 @@
                 "Enter drupal/page_manager patch #2710169 description here":
                 "https://www.drupal.org/files/issues/page_manager-block-css-attributes-9.patch",
                 "Enter drupal/page_manager patch #2752227 description here":
-                "https://www.drupal.org/files/issues/2018-07-05/page_manager-incorrect-page_title-2752227-32-8.x.4.x.patch"
+                "https://www.drupal.org/files/issues/2018-07-05/page_manager-incorrect-page_title-2752227-32-8.x.4.x.patch",
+                "Enter drupal/page_manager patch #2921404 description here":
+                "https://www.drupal.org/files/issues/2019-04-25/page_manager-variant_selector_bigpipe-2921404-46.patch"
             },
             "drupal/paragraphs": {
                 "Enter drupal/paragraphs patch #2878615 description here":
