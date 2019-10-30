@@ -10,8 +10,11 @@ provide an update path for all future releases.
 ## Important Links
 
 - Documentation Website: [drupalwxt.github.io][docsite]
+- GitHub Repository: [drupalwxt/wxt][github-wxt]
 - Drupal Repository: [drupal.org/project/wxt][drupal]
-- GitHub Repository: [drupalwxt/wxt][github]
+- Composer Project: [drupalwxt/site-wxt][github-site-wxt]
+- Helm Chart: [drupalwxt/helm-drupal][github-helm]
+- Containers: [hub.docker.com][docker-hub]
 - Live Demo: [demo][demo]
 - Run it Now: [simplytest.me][simplytest]
 - Issue Queue: [Drupal][issue-drupal] (Primary)
@@ -49,13 +52,13 @@ composer create-project drupalwxt/wxt-project:8.x-dev MYPROJECT --no-interaction
 For more information on creating and maintaining your WxT project with composer,
 see our [WxT Project README][project].
 
-## Installation from exported config
+### Installation from exported config
 
 If you have a config export of a site built with Lighting, you can install it using the
 Config Installer profile. You can find more information about installing WxT (Lightning)
-from exported config [config-installer][here]</a>.
+from exported config [config-install][here]</a>.
 
-## Tarball Installation
+### Tarball Installation
 
 The tarball distributed here on drupal.org is deprecated and does not install correctly
 because drupal.org does not package WxT's Composer dependencies.
@@ -72,7 +75,7 @@ install the required dependencies:
 composer require j7mbo/twitter-api-php league/oauth2-server:~6.0 webflo/drupal-core-strict:~8.5.0 "phpdocumentor/reflection-docblock:^3.0||^4.0"
 ```
 
-## Installation of Default Content via Migrate
+## Site Installation
 
 Install the site using drush which should take approximately 4-5 minutes depending on your system.
 
@@ -87,6 +90,8 @@ drush si wxt
   install_configure_form.update_status_module='array(FALSE,FALSE)' \
   --yes
 ```
+
+## Installation of Default Content via Migrate
 
 ```sh
 drush migrate:import --group wxt --tag 'Core'
@@ -151,9 +156,12 @@ Contributor(s): https://github.com/drupalwxt/wxt/graphs/contributors
 [config-install]:       https://lightning.acquia.com/blog/using-configuration-installer-lightning
 [demo]:                 https://drupalwxt.govcloud.ca
 [docsite]:              http://drupalwxt.github.io
+[docker-hub]:           https://hub.docker.com/r/drupalwxt/site-wxt
 [drupal]:               http://drupal.org/project/wxt
 [drupal7]:              http://drupal.org/project/wetkit
-[github]:               https://github.com/drupalwxt/wxt
+[github-helm]:          https://github.com/drupalwxt/helm-drupal
+[github-wxt]:           https://github.com/drupalwxt/wxt
+[github-site-wxt]:      https://github.com/drupalwxt/site-wxt
 [issue-drupal]:         https://drupal.org/project/issues/wxt
 [issue-github]:         https://github.com/drupalwxt/wxt/issues
 [lightning]:            https://github.com/acquia/lightning
