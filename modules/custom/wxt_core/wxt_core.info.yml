@@ -15,3 +15,5 @@ dependencies:
   - token_filter:token_filter
   - views_bootstrap:views_bootstrap
   - webform_node:webform_node
+
+configure: wxt4032404.config

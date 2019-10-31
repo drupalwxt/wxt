@@ -6,3 +6,11 @@ system.404:
   requirements:
     # Overrides core native 404 handling
     _access: 'TRUE'
+
+wxt4032404.config:
+  path: '/admin/config/system/wxt4032404'
+  defaults:
+    _form: '\Drupal\wxt_core\Form\WxT4032404Form'
+    _title: '403 to 404 Settings'
+  requirements:
+    _permission: 'administer site configuration'

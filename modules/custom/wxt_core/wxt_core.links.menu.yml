@@ -1,0 +1,5 @@
+wxt4032404.admin:
+  title: 403 to 404 settings
+  description: 'Settings for 403 to 404.'
+  parent: system.admin_config_system
+  route_name: wxt4032404.config

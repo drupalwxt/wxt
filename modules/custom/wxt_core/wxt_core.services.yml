@@ -1,4 +1,13 @@
 services:
+  wxt.4032404_exception_listener:
+    class: Drupal\wxt_core\EventSubscriber\WxT4032404EventSubscriber
+    arguments:
+      - '@config.factory'
+      - '@router.admin_context'
+      - '@current_user'
+    tags:
+      - { name: event_subscriber }
+
   wxt.display_helper:
     class: '\Drupal\wxt_core\DisplayHelper'
     arguments:

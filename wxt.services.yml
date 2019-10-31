@@ -3,8 +3,3 @@ services:
     class: '\Drupal\wxt\FormHelper'
     arguments:
       - '@element_info'
-
-  wxt.http_exception:
-    class: Drupal\wxt\EventSubscriber\WxT4032404Subscriber
-    tags:
-      - { name: event_subscriber }
