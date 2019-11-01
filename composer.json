@@ -99,6 +99,10 @@
                 "Enter drupal/bootstrap patch #2881978 description here":
                 "https://www.drupal.org/files/issues/2018-10-28/temporarily_disable-2881978-3.patch"
             },
+            "drupal/bootstrap_layouts": {
+                "Enter drupal/bootstrap patch #3018633 description here":
+                "https://www.drupal.org/files/issues/2019-04-24/bootstrap_layouts-3018633-6.patch"
+            },
             "drupal/blog": {
                 "Enter drupal/blog patch #2834732 description here":
                 "https://www.drupal.org/files/issues/blog-no_results_text-2834732-2.patch"
