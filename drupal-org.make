@@ -23,6 +23,7 @@ projects[bootstrap][type] = theme
 projects[bootstrap][patch][] = https://www.drupal.org/files/issues/2018-10-28/temporarily_disable-2881978-3.patch
 projects[bootstrap][version] = 3.20
 projects[bootstrap_layouts][type] = module
+projects[bootstrap_layouts][patch][] = https://www.drupal.org/files/issues/2019-04-24/bootstrap_layouts-3018633-6.patch
 projects[bootstrap_layouts][version] = 5.1
 projects[button_link][type] = module
 projects[button_link][version] = 1.1

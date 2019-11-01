@@ -6,6 +6,7 @@ Features/Updates:
 - WxT padding improvements to front page
 - Docker images now extend directly off drupal:8.7-fpm-alpine
 - Page Manager variant does not open when selected
+- Bootstrap Layouts fix for drag n drop in layout builder
 
 Upgrade path:
 
