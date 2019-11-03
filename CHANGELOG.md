@@ -1,3 +1,19 @@
+## v3.0.1
+
+Features/Updates:
+
+- Same as 3.0.0 release
+- Fix for invalid make file patch
+
+Upgrade path:
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
 ## v3.0.0
 
 Features/Updates:
