@@ -72,7 +72,7 @@ Once you extract the tarball, run the following command from within your web roo
 install the required dependencies:
 
 ```sh
-composer require j7mbo/twitter-api-php league/oauth2-server:~6.0 webflo/drupal-core-strict:~8.5.0 "phpdocumentor/reflection-docblock:^3.0||^4.0"
+composer require j7mbo/twitter-api-php league/oauth2-server:~6.0 webflo/drupal-core-strict:~8.7.0 'phpdocumentor/reflection-docblock:^3.0||^4.0'
 ```
 
 ## Site Installation
