@@ -4,6 +4,7 @@ Features/Updates:
 
 - Add link field to entity form display
 - Check for missing schema layout builder
+- Update admin toolbar to latest release
 
 Upgrade path:
 
