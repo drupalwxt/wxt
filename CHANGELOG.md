@@ -1,3 +1,27 @@
+## v3.0.2 (In Development)
+
+Features/Updates:
+
+- Add link field to entity form display
+- Check for missing schema layout builder
+
+Upgrade path:
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
+- Run Lightning configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:lightning`
+
+- Run WxT configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:wxt`
+
 ## v3.0.1
 
 Features/Updates:
