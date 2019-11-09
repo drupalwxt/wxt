@@ -1,7 +1,7 @@
 core = 8.x
 api = 2
 projects[drupal][type] = core
-projects[drupal][version] = 8.7.8
+projects[drupal][version] = 8.7.9
 projects[drupal][patch][] = https://www.drupal.org/files/issues/2018-10-12/1356276-531.patch
 projects[drupal][patch][] = https://www.drupal.org/files/issues/2018-09-06/1838234-52.patch
 projects[drupal][patch][] = https://www.drupal.org/files/issues/2018-04-03/views-multivalue_field_rendering_performance-2846485-23.patch
@@ -26,7 +26,6 @@ projects[drupal][patch][] = https://www.drupal.org/files/issues/2018-06-05/28934
 projects[drupal][patch][] = https://www.drupal.org/files/issues/2019-06-21/2907413-11.patch
 projects[drupal][patch][] = https://www.drupal.org/files/issues/2018-07-09/2914389-8-do-not-test.patch
 projects[drupal][patch][] = https://www.drupal.org/files/issues/2019-01-18/2938129-pagetitle-11.patch
-projects[drupal][patch][] = https://www.drupal.org/files/issues/2019-08-21/d8_entity_validation.patch
 projects[drupal][patch][] = https://www.drupal.org/files/issues/2018-12-05/3017710-20.patch
 projects[drupal][patch][] = https://www.drupal.org/files/issues/2019-09-16/0001-Issue-2488350-by-alexpott-Wim-Leers-Dimiter-catch-da.patch
 projects[drupal][patch][] = https://www.drupal.org/files/issues/2869592-remove-update-warning-7.patch
