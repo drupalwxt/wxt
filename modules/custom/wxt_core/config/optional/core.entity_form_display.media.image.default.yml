@@ -11,6 +11,7 @@ dependencies:
     - content_moderation
     - image
     - link
+    - path
 id: media.image.default
 targetEntityType: media
 bundle: image
@@ -41,18 +42,32 @@ content:
     region: content
   langcode:
     type: language_select
-    weight: 2
+    weight: 1
     region: content
-    settings: {  }
+    settings:
+      include_locked: true
     third_party_settings: {  }
   name:
     type: string_textfield
-    weight: 3
+    weight: 2
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     region: content
+  path:
+    type: path
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 7
+    region: content
+    third_party_settings: {  }
   translation:
     weight: 5
     region: content

@@ -6,6 +6,7 @@ use Drupal\Core\Database\Connection;
 use Drupal\Core\Database\DatabaseException;
 use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\wxt_core\ConfigHelper as Config;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -61,6 +62,18 @@ final class UpdateWxT302 implements ContainerInjectionInterface {
       return TRUE;
     }
     return FALSE;
+  }
+
+  /**
+   * Corrects the image link field not being displayed in Form Display.
+   *
+   * @updatewxt
+   *
+   * @ask Do you want to correct the image link field not being displayed in Form Display for Media Entity Image?
+   */
+  public function correctImageLinkDisplay() {
+    $config = Config::forModule('wxt_core')->optional();
+    $config->getEntity('entity_form_display', 'media.image.default')->save();
   }
 
   /**
