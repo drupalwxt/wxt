@@ -10,7 +10,6 @@ use Symfony\Component\Console\Event\ConsoleCommandEvent;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\Core\StringTranslation\TranslationInterface;
 
-
 /**
  * Implements Drush command hooks.
  */
