@@ -291,7 +291,7 @@
         "drupal/simple_sitemap": "3.4",
         "drupal/page_manager": "4.0-beta3",
         "drupal/panelizer": "5.0-alpha3 as 4.2",
-        "drupal/paragraphs": "1.9",
+        "drupal/paragraphs": "1.10",
         "drupal/field_formatter": "1.2",
         "drupal/file_entity": "2.0-beta6",
         "drupal/metatag": "^1.8",
