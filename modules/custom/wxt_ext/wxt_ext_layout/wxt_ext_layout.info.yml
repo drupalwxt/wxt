@@ -8,6 +8,7 @@ package: WxT
 dependencies:
   - bootstrap_layouts:bootstrap_layouts
   - core_context:core_context
+  - layout_builder_st:layout_builder_st
   - layout_library:layout_library
   - lightning_layout:lightning_layout
   - page_manager_ui:page_manager_ui
