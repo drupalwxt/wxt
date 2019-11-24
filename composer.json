@@ -299,7 +299,7 @@
         "drupal/views_autocomplete_filters": "1.2",
         "drupal/webform": "^5.1",
         "drupal/webform_migrate": "1.1",
-        "drupal/wxt_bootstrap": "1.16",
+        "drupal/wxt_bootstrap": "1.17",
         "drupal/wxt_library": "1.10",
         "w8tcha/ckeditor-codemirror": "1.16"
     },
