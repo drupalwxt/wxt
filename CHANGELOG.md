@@ -2,7 +2,11 @@
 
 Features/Updates:
 
-- Update Drupal Core to 8.7.9
+- Update Drupal Core to 8.7.10
+- Update Lightning to 4.0.5
+- Update CTools and Page Manager
+- Fix for issue with conflict and page manager
+- Issue with Site Installation via browser install
 - Add link field to entity form display
 - Check for missing schema layout builder
 - Update admin toolbar to latest release
