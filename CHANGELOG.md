@@ -1,4 +1,4 @@
-## v3.0.2 (In Development)
+## v3.0.2
 
 Features/Updates:
 
@@ -10,6 +10,7 @@ Features/Updates:
   - Updated Lightning Media to 3.12
   - Updated Search API to to 1.15
   - Updated Entity Browser to 2.2
+  - Addition of Conflict, AutoSave Form, and Redirect
 - Update WxT Bootstrap and Bootstrap base theme
 - Update CTools, Linkit, Field Group, Migrate Tools and Page Manager
 - Fix for issue with conflict and page manager
