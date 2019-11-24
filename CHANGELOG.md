@@ -11,7 +11,7 @@ Features/Updates:
   - Updated Search API to to 1.15
   - Updated Entity Browser to 2.2
 - Update WxT Bootstrap and Bootstrap base theme
-- Update CTools, Linkit, Field Group and Page Manager
+- Update CTools, Linkit, Field Group, Migrate Tools and Page Manager
 - Fix for issue with conflict and page manager
 - Issue with Site Installation via browser install
 - Add link field to entity form display
