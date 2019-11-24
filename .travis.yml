@@ -55,6 +55,7 @@ before_install:
 
 script:
   - make drupal_install
+  - make drupal_migrate
   - sudo make test
 
 notifications:
