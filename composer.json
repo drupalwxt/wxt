@@ -252,7 +252,7 @@
         "drupal-composer/drupal-scaffold": "^2.0.0",
         "acquia/lightning": "4.0.5",
         "drupal/admin_toolbar": "^2.0",
-        "drupal/block_class": "1.0",
+        "drupal/block_class": "1.1",
         "drupal/blog": "dev-2.x#43a2171",
         "drupal/bootstrap_layouts": "5.1",
         "drupal/button_link": "1.1",

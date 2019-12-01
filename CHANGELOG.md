@@ -1,3 +1,33 @@
+## v3.0.3 (In Development)
+
+Features/Updates:
+
+- Update block_class to 1.1
+- Fix page manager variant of type Http Status Code
+- Fix for config export / import
+- Update WxT Library
+  - Update wet-boew to v4.0.32
+  - Update gcweb theme to v6.0.0
+- Update WxT Bootstrap
+  - Improved Footer CDN logic
+
+Upgrade path:
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
+- Run Lightning configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:lightning`
+
+- Run WxT configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:wxt`
+
 ## v3.0.2
 
 Features/Updates:
