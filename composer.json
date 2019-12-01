@@ -296,7 +296,7 @@
         "drupal/webform": "^5.1",
         "drupal/webform_migrate": "1.1",
         "drupal/wxt_bootstrap": "1.18",
-        "drupal/wxt_library": "1.11",
+        "drupal/wxt_library": "1.12",
         "w8tcha/ckeditor-codemirror": "1.16"
     },
     "autoload": {
