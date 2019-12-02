@@ -91,6 +91,12 @@ drush si wxt
   --yes
 ```
 
+> Note: If you work for the Government of Canada you might want to enable the `canada.ca` theme. You can navigate to the `WxT Library` settings page or run the Drush command below.
+
+```sh
+drush config-set wxt_library.settings wxt.theme theme-gcweb -y
+```
+
 ## Installation of Default Content via Migrate
 
 ```sh
