@@ -1,3 +1,36 @@
+## v3.0.5
+
+Features/Updates:
+
+- Update Drupal Core to 8.7.11
+- Update Lightning [4.0.6](https://github.com/acquia/lightning/releases/tag/4.0.6); includes:
+  - Updated Lightning Layout to 2.5
+- Update contributed modules:
+  - Update acquia_connector to 1.18
+  - Update embed to 1.3
+  - Update layout builder restrictions
+  - Update metatag to 1.11
+  - Update pathauto to 1.6
+  - Update redirect to 1.5
+  - Update webform to 5.6
+
+Upgrade path:
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
+- Run Lightning configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:lightning`
+
+- Run WxT configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:wxt`
+
 ## v3.0.4
 
 Features/Updates:
