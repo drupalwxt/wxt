@@ -1,3 +1,27 @@
+## v3.0.6
+
+Features/Updates:
+
+- Update Drupal Core to 8.8.1
+- Update Lightning [4.1.1] (https://github.com/acquia/lightning/releases/tag/4.1.1)
+
+Upgrade path:
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
+- Run Lightning configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:lightning`
+
+- Run WxT configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:wxt`
+
 ## v3.0.5
 
 Features/Updates:
