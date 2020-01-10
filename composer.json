@@ -108,8 +108,6 @@
                 "https://www.drupal.org/files/issues/blog-no_results_text-2834732-2.patch"
             },
             "drupal/core": {
-                "Enter drupal/core patch #1356276 description here":
-                "https://www.drupal.org/files/issues/2019-11-05/1356276-531-8.8.x-4.patch",
                 "Enter drupal/core patch #1838234 description here":
                 "https://www.drupal.org/files/issues/2018-09-06/1838234-52.patch",
                 "Enter drupal/core patch #2846485 description here":
@@ -233,8 +231,6 @@
         "patches-ignore": {
             "drupal/lightning_core": {
               "drupal/core": {
-                "1356276 - Allow profiles to define a base/parent profile and load them in the correct order":
-                "https://www.drupal.org/files/issues/2018-10-12/1356276-531.patch",
                 "2914389 - Allow profiles to exclude dependencies of their parent":
                 "https://www.drupal.org/files/issues/2018-07-09/2914389-8-do-not-test.patch"
               }
