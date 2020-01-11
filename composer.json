@@ -55,6 +55,7 @@
         "post-update-cmd": [
             "@composer package"
         ],
+        "configure-tarball": "Drupal\\wxt\\Composer\\ConfigureLegacyProject::execute",
         "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
         "package": "Drupal\\wxt\\Composer\\Package::execute",
         "release-version": "Drupal\\wxt\\Composer\\ReleaseVersion::execute",
@@ -299,6 +300,9 @@
     "autoload": {
         "psr-4": {
             "Drupal\\wxt\\": "src"
-        }
+        },
+        "classmap": [
+            "src/Composer/ConfigureLegacyProject.php"
+        ]
     }
 }
