@@ -24,6 +24,11 @@ final class ConfigureLegacyProject {
 
     $required = $event->getComposer()->getPackage()->getRequires();
     $project['require-dev'] = new \stdClass();
+    $project['require'] = [];
+    foreach ($required as $name => $info) {
+      $project['require'][$name] = $info->getPrettyConstraint();
+    }
+    $project['require'] = $required;
     $project['repositories'][] = [
       'type' => 'composer',
       'url' => 'https://asset-packagist.org',
