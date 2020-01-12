@@ -3,13 +3,14 @@
 Features/Updates:
 
 - Update Drupal Core to 8.8.1
-- Update Lightning [4.1.1] (https://github.com/acquia/lightning/releases/tag/4.1.1)
+- Update Lightning [4.1.1](https://github.com/acquia/lightning/releases/tag/4.1.1)
 - Update contributed modules:
   - Update core_context to 1.0-beta1
   - Update diff to 1.0
   - Update migrate_tools to 4.5
   - Update panelizer to 5.0-beta2
   - Update simple_sitemap to 3.5
+- Update tarball packaging script to support core 8.8.x
 
 Upgrade path:
 
