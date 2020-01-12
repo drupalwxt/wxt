@@ -160,7 +160,8 @@ make build
 docker volume create --name=docroot-sync && docker volume create --name=root-sync && docker-sync start
 
 # Bring up the dev stack
-docker-compose -f docker-compose.sync.yml up -d
+# Use docker-compose.sync.yml for MacOSX
+docker-compose -f docker-compose.yml up -d
 
 # Install Drupal
 make drupal_install
