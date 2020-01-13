@@ -178,7 +178,7 @@
                 "Enter drupal/group patch #2817109 description here":
                  "https://www.drupal.org/files/issues/2817109-by-rachel_norfolk-ericras-How-to-redir.patch",
                 "Enter drupal/group patch #2864721 description here":
-                "https://www.drupal.org/files/issues/group-translate_content_permission-2864721-5.patch",
+                "https://www.drupal.org/files/issues/2020-01-13/group-translate_content_permission-2864721-19.patch",
                 "Enter drupal/group patch #2895988 description here":
                 "https://www.drupal.org/files/issues/2895988-4.patch"
             },
@@ -265,7 +265,7 @@
         "drupal/features": "^3.0",
         "drupal/field_group": "3.0-rc2",
         "drupal/fontawesome": "^2.12",
-        "drupal/group": "1.0-rc4",
+        "drupal/group": "1.0-rc5",
         "drupal/inline_entity_form": "1.0-rc2",
         "drupal/linkit": "5.0-beta10",
         "drupal/media_entity": "2.0.0-beta3",
