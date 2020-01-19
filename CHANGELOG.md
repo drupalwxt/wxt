@@ -1,3 +1,31 @@
+## v3.0.7
+
+Features/Updates:
+
+- Updates for WxT Bootstrap
+  - Accessibility fix for Signed in as
+  - PHPCS code linting fix
+  - Added class for display-inline
+- Updates for WxT Library
+  - Correct issues with language negotiation
+
+Upgrade path:
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
+- Run Lightning configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:lightning`
+
+- Run WxT configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:wxt`
+
 ## v3.0.6
 
 Features/Updates:
