@@ -2,6 +2,8 @@
 
 Features/Updates:
 
+- Updates for WxT
+  - Update Coder and CodeSniffer
 - Updates for WxT Bootstrap
   - Accessibility fix for Signed in as
   - PHPCS code linting fix
