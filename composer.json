@@ -10,7 +10,7 @@
         "behat/mink": "~1.7",
         "behat/mink-goutte-driver": "~1.2",
         "composer/composer": "^1.4",
-        "drupal/coder": "~8.2.0",
+        "drupal/coder": "^8.3.7",
         "drupal/console": "~1.9.0",
         "drupal/devel": "^1.0",
         "drupal/drupal-extension": "~3.4.0",
@@ -23,7 +23,7 @@
         "phing/phing": "^2.14",
         "phpunit/phpunit": "^4.8.35 || ^6.1",
         "se/selenium-server-standalone": "^2.53",
-        "squizlabs/php_codesniffer": "2.*",
+        "squizlabs/php_codesniffer": "3.*",
         "symfony/css-selector": "~2.8|~3.0",
         "symfony/phpunit-bridge": "^3.4.3"
     },
@@ -244,7 +244,7 @@
     },
     "require": {
         "composer/installers": "^1.2",
-        "cweagans/composer-patches": "^1.6.4",
+        "cweagans/composer-patches": "^1.6.7",
         "zaporylie/composer-drupal-optimizations": "^1.1",
         "drupal-composer/drupal-scaffold": "^2.0.0",
         "acquia/lightning": "4.1.1",
