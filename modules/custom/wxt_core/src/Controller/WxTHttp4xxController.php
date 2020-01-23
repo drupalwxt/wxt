@@ -66,11 +66,11 @@ class WxTHttp4xxController extends ControllerBase implements ContainerInjectionI
           <span class="glyphicon glyphicon-warning-sign glyphicon-error"></span>
         </div>
         <div class="col-xs-9 col-sm-10 col-md-10">
-          <h2 class="mrgn-tp-md">' . $this->t('We couldn\'t find that Web page') . '</h2>
+          <h2 class="mrgn-tp-md">' . $this->t("We couldn't find that Web page") . '</h2>
           <p class="pagetag"><strong>' . $this->t('Error 404') . '</strong></p>
         </div>
       </div>
-      <p class="mrgn-tp-md">' . $this->t('We\'re sorry you ended up here. Sometimes a page gets moved or deleted.') . '</p>
+      <p class="mrgn-tp-md">' . $this->t("We're sorry you ended up here. Sometimes a page gets moved or deleted.") . '</p>
     </div>';
 
     // Lookup our custom 404 content block.

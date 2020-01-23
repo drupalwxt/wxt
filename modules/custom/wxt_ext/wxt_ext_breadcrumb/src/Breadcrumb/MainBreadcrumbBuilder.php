@@ -18,7 +18,6 @@ use Symfony\Component\HttpFoundation\RequestStack;
 use Drupal\menu_breadcrumb\MenuBasedBreadcrumbBuilder;
 use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\Lock\LockBackendInterface;
-use Drupal\Core\Menu\MenuActiveTrail;
 
 /**
  * {@inheritdoc}

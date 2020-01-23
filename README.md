@@ -167,16 +167,16 @@ docker-compose -f docker-compose.yml up -d
 make drupal_install
 
 # Development configuration
-./docker/bin/drush config-set system.performance js.preprocess 0 -y \
-  && ./docker/bin/drush config-set system.performance css.preprocess 0 -y \
-  && ./docker/bin/drush php-eval 'node_access_rebuild();'
-  &&  ./docker/bin/drush config-set wxt_library.settings wxt.theme theme-gcweb -y \
-  && ./docker/bin/drush cr
+./docker/bin/drush config-set system.performance js.preprocess 0 -y && \
+  ./docker/bin/drush config-set system.performance css.preprocess 0 -y && \
+  ./docker/bin/drush php-eval 'node_access_rebuild();' && \
+  ./docker/bin/drush config-set wxt_library.settings wxt.theme theme-gcweb -y && \
+  ./docker/bin/drush cr
 
 # Migrate default content
-./docker/bin/drush migrate:import --group wxt --tag 'Core' \
-  && ./docker/bin/drush migrate:import --group gcweb --tag 'Core' \
-  && ./docker/bin/drush migrate:import --group gcweb --tag 'Menu'
+./docker/bin/drush migrate:import --group wxt --tag 'Core' && \
+  ./docker/bin/drush migrate:import --group gcweb --tag 'Core' && \
+  ./docker/bin/drush migrate:import --group gcweb --tag 'Menu'
 ```
 
 ## Version History
