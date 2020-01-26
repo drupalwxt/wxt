@@ -10,6 +10,8 @@ Features/Updates:
   - Added class for display-inline
 - Updates for WxT Library
   - Correct issues with language negotiation
+- Updates for Contributed modules
+  - Update Webform to 3.8
 
 Upgrade path:
 
