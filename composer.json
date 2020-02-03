@@ -256,7 +256,7 @@
         "drupal/ckeditor_codemirror": "2.2",
         "drupal/config_rewrite": "1.1",
         "drupal/config_update": "1.6",
-        "drupal/core": "8.8.1",
+        "drupal/core": "8.8.2",
         "drupal/core_context": "1.0-beta1",
         "drupal/ctools": "3.2.0",
         "drupal/diff": "1.0",

@@ -72,7 +72,7 @@ Once you extract the tarball, run the following command from within your web roo
 install the required dependencies:
 
 ```sh
-composer require 'j7mbo/twitter-api-php' 'league/oauth2-server:~7.1' 'drupal/core-recommended:8.8.1' 'phpdocumentor/reflection-docblock:^3.0||^4.0'
+composer require 'j7mbo/twitter-api-php' 'league/oauth2-server:~7.1' 'drupal/core-recommended:8.8.2' 'phpdocumentor/reflection-docblock:^3.0||^4.0'
 ```
 
 > Note: Please see our [tarball.sh](tarball.sh) script for how we are doing this.

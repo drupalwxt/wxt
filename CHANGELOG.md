@@ -2,6 +2,7 @@
 
 Features/Updates:
 
+- Update Drupal Core to 8.8.2
 - Updates for WxT
   - Update Coder and CodeSniffer
 - Updates for WxT Bootstrap

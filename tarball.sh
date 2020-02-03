@@ -47,9 +47,9 @@ cat <<EOF > composer.json
     },
     "require": {
         "composer/installers": "^1.0.24",
-        "drupal/core": "8.8.1",
-        "drupal/core-project-message": "8.8.1",
-        "drupal/core-vendor-hardening": "8.8.1",
+        "drupal/core": "8.8.2",
+        "drupal/core-project-message": "8.8.2",
+        "drupal/core-vendor-hardening": "8.8.2",
         "wikimedia/composer-merge-plugin": "^1.4"
     },
     "require-dev": {
@@ -116,23 +116,23 @@ cat <<EOF > composer.json
     },
     "autoload": {
         "psr-4": {
-            "Drupal\\\\Core\\\\Composer\\\\": "core/lib/Drupal/Core/Composer"
+            "Drupal\\Core\\Composer\\": "core/lib/Drupal/Core/Composer"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Drupal\\\\Composer\\\\": "composer"
+            "Drupal\\Composer\\": "composer"
         }
     },
     "scripts": {
-        "pre-install-cmd": "Drupal\\\\Composer\\\\Composer::ensureComposerVersion",
-        "pre-update-cmd": "Drupal\\\\Composer\\\\Composer::ensureComposerVersion",
-        "pre-autoload-dump": "Drupal\\\\Core\\\\Composer\\\\Composer::preAutoloadDump",
-        "drupal-phpunit-upgrade-check": "Drupal\\\\Core\\\\Composer\\\\Composer::upgradePHPUnit",
+        "pre-install-cmd": "Drupal\\Composer\\Composer::ensureComposerVersion",
+        "pre-update-cmd": "Drupal\\Composer\\Composer::ensureComposerVersion",
+        "pre-autoload-dump": "Drupal\\Core\\Composer\\Composer::preAutoloadDump",
+        "drupal-phpunit-upgrade-check": "Drupal\\Core\\Composer\\Composer::upgradePHPUnit",
         "drupal-phpunit-upgrade": "@composer update phpunit/phpunit symfony/phpunit-bridge phpspec/prophecy symfony/yaml --with-dependencies --no-progress",
         "post-update-cmd": [
-            "Drupal\\\\Composer\\\\Composer::generateMetapackages",
-            "Drupal\\\\Composer\\\\Composer::ensureBehatDriverVersions"
+            "Drupal\\Composer\\Composer::generateMetapackages",
+            "Drupal\\Composer\\Composer::ensureBehatDriverVersions"
         ],
         "phpcs": "phpcs --standard=core/phpcs.xml.dist --runtime-set installed_paths $($COMPOSER_BINARY config vendor-dir)/drupal/coder/coder_sniffer --",
         "phpcbf": "phpcbf --standard=core/phpcs.xml.dist --runtime-set installed_paths $($COMPOSER_BINARY config vendor-dir)/drupal/coder/coder_sniffer --"
@@ -157,7 +157,7 @@ cat <<EOF > composer.json
     ]
 }
 EOF
-composer require 'j7mbo/twitter-api-php' 'league/oauth2-server:~7.1' 'drupal/core-recommended:8.8.1' 'phpdocumentor/reflection-docblock:^3.0||^4.0'
+composer require 'j7mbo/twitter-api-php' 'league/oauth2-server:~7.1' 'drupal/core-recommended:8.8.2' 'phpdocumentor/reflection-docblock:^3.0||^4.0'
 
 # Create the profile destination directory.
 mkdir -p $PROFILE_DIR
