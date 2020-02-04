@@ -3,16 +3,24 @@
 Features/Updates:
 
 - Update Drupal Core to 8.8.2
+- Update Lightning [4.1.2](https://github.com/acquia/lightning/releases/tag/4.1.2)
 - Updates for WxT
   - Update Coder and CodeSniffer
 - Updates for WxT Bootstrap
   - Accessibility fix for Signed in as
   - PHPCS code linting fix
   - Added class for display-inline
+  - Additional documentation for subtheme
 - Updates for WxT Library
   - Correct issues with language negotiation
 - Updates for Contributed modules
   - Update Webform to 3.8
+  - Update autosave_form to 1.1
+  - Update bg_image_formatter to 1.12
+  - Update entity_block to 1.0-beta2
+  - Update group to 1.0-rc5
+  - Update layout_builder_restrictions to 2.5
+  - Update media_entity_twitter to 2.3
 
 Upgrade path:
 
