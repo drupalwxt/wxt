@@ -4,6 +4,8 @@ Features/Updates:
 
 - Update Drupal Core to 8.8.2
 - Update Lightning [4.1.2](https://github.com/acquia/lightning/releases/tag/4.1.2)
+- Moved docker logic into [docker-scaffold](https://github.com/drupalwxt/docker-scaffold)
+- Drupal.org + Tarball generated builds now against [drupal/legacy-project](https://github.com/drupal/legacy-project)
 - Updates for WxT
   - Update Coder and CodeSniffer
 - Updates for WxT Bootstrap
@@ -21,6 +23,7 @@ Features/Updates:
   - Update group to 1.0-rc5
   - Update layout_builder_restrictions to 2.5
   - Update media_entity_twitter to 2.3
+- Pathauto must be updated first if below Pathauto 8.x-1.5 to prevent data loss
 
 Upgrade path:
 
