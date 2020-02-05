@@ -36,6 +36,17 @@ created by [Acquia][acquia] to provide developers with a powerful base toolchain
 upon which to extend. Due to this strict dependency we also align much of our
 workflow with the best practice established patterns `Acquia` has provided.
 
+### Lightning
+
+Lightning is something that is being used by and built for governments, and provides 
+much of what is needed to create a Drupal-based content management system that meets 
+the needs of the Government of Canada. It's also used as the basis of government 
+Drupal platforms around the world.
+
+* https://www.acquia.com/blog/building-drupal-8-sites-acquia-lightning-cuts-costs-100000
+* https://www.drupal.org/docs/8/distributions/degov/about-degov
+* https://github.com/govcms/govcms8
+
 ## 8.x - Recommended Installation
 
 We highly recommend using <a href="https://getcomposer.org" rel="nofollow">Composer</a>
