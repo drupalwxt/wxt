@@ -67,7 +67,7 @@ see our [WxT Project README][project].
 
 If you have a config export of a site built with Lighting, you can install it using the
 Config Installer profile. You can find more information about installing WxT (Lightning)
-from exported config [config-install][here]</a>.
+from exported config [here][config-install].
 
 ### Tarball Installation
 
