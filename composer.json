@@ -223,6 +223,10 @@
                 "Allow the previewing of nodes with panelizer":
                 "https://www.drupal.org/files/issues/2019-05-17/panelizer-node-previews-2750491-7.patch"
             },
+            "drupal/password_policy": {
+                "Character types in character plugin not translatable":
+                "https://www.drupal.org/files/issues/2020-03-17/Password-Policy-constraints-summary-character-types-labels-not-translatable-2975694-16.patch"
+            },
             "drupal/s3fs": {
                 "Enter drupal/s3fs patch #2986407 description here":
                 "https://www.drupal.org/files/issues/2018-07-17/s3fs-2986407-save-memory-2.patch",
@@ -276,7 +280,7 @@
         "drupal/media_entity_slideshow": "2.0-alpha1",
         "drupal/menu_block": "1.4.0",
         "drupal/menu_breadcrumb": "1.7",
-        "drupal/password_policy": "3.0-alpha4",
+        "drupal/password_policy": "3.0-alpha5",
         "drupal/simple_sitemap": "3.5",
         "drupal/page_manager": "4.0-beta4",
         "drupal/panelizer": "5.0-beta2",
