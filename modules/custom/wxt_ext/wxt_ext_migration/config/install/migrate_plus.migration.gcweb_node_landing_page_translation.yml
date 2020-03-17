@@ -259,7 +259,7 @@ process:
     source: title
   nid:
     plugin: migration_lookup
-    migration: od_ext_node_landing_page
+    migration: gcweb_node_landing_page
     source: name
   uid:
     plugin: default_value

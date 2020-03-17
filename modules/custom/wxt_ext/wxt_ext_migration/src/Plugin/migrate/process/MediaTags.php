@@ -26,7 +26,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 class MediaTags extends ProcessPluginBase implements ContainerFactoryPluginInterface {
 
   /**
-   * The migration process plugin, configured for lookups in od_ext_db_file.
+   * The migration process plugin, configured for lookups in wxt_ext_file.
    *
    * @var \Drupal\migrate\Plugin\MigrateProcessInterface
    */
