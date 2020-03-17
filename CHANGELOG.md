@@ -1,3 +1,10 @@
+## v3.0.8
+
+Features/Updates:
+
+- Update core_context to 1.0-beta2
+  - Added patch for fieldable entities
+
 ## v3.0.7
 
 Features/Updates:

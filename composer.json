@@ -158,8 +158,8 @@
                 "https://www.drupal.org/files/issues/2019-09-16/0001-Issue-2488350-by-alexpott-Wim-Leers-Dimiter-catch-da.patch"
             },
             "drupal/core_context": {
-                "Enter drupal/core_context patch #3084423 description here":
-                "https://www.drupal.org/files/issues/2019-10-16/3084423-5.patch"
+                "Enter drupal/core_context patch #3120388 description here":
+                "https://www.drupal.org/files/issues/2020-03-17/3120388.patch"
             },
             "drupal/ctools": {
                 "Enter drupal/ctools patch #2667652 description here":
@@ -259,7 +259,7 @@
         "drupal/config_rewrite": "1.1",
         "drupal/config_update": "1.6",
         "drupal/core": "8.8.2",
-        "drupal/core_context": "1.0-beta1",
+        "drupal/core_context": "1.0-beta2",
         "drupal/ctools": "3.2.0",
         "drupal/diff": "1.0",
         "drupal/entity_reference_revisions": "1.7",
