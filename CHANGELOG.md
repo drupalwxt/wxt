@@ -2,6 +2,10 @@
 
 Features/Updates:
 
+- Update Drupal Core to 8.8.4
+- Update Lightning [4.1.3](https://github.com/acquia/lightning/releases/tag/4.1.3)
+  - Updated Lightning API to 4.5
+  - Updated Lightning Media to 3.16
 - Update core_context to 1.0-beta2
   - Added patch for fieldable entities
 - Update password policy to 3.0-alpha5

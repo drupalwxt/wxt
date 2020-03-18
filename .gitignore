@@ -36,3 +36,4 @@ files_private/
 
 # Tarball
 *.tar.gz
+/.editorconfig
