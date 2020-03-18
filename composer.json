@@ -75,6 +75,7 @@
                 "type:drupal-core"
             ],
             "html/libraries/{$name}" : [
+                "type:drupal-console-library",
                 "type:drupal-library",
                 "type:bower-asset",
                 "type:npm-asset"
@@ -99,6 +100,9 @@
             ]
         },
         "enable-patching": true,
+        "patchLevel": {
+            "drupal/core": "-p2"
+        },
         "patches": {
             "drupal/bootstrap": {
                 "Enter drupal/bootstrap patch #2881978 description here":
