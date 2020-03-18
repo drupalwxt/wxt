@@ -2,12 +2,14 @@ langcode: en
 status: true
 dependencies:
   config:
+    - entity_browser.browser.media_browser
     - field.field.media.slideshow.field_media_in_library
+    - field.field.media.slideshow.field_slideshow_style
     - field.field.media.slideshow.slideshow_items
     - media.type.slideshow
   module:
-    - content_moderation
-    - inline_entity_form
+    - entity_browser
+    - path
 id: media.slideshow.default
 targetEntityType: media
 bundle: slideshow
@@ -15,9 +17,16 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 3
+    weight: 4
     settings: {  }
     third_party_settings: {  }
+    region: content
+  field_slideshow_style:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
   name:
     type: string_textfield
     weight: 0
@@ -25,26 +34,45 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+    region: content
+  path:
+    type: path
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   slideshow_items:
-    type: inline_entity_form_complex
+    type: entity_browser_entity_reference
     weight: 1
     settings:
-      form_mode: default
-      override_labels: true
-      label_singular: Media
-      label_plural: Medias
-      allow_new: true
-      allow_existing: true
-      match_operator: CONTAINS
+      entity_browser: media_browser
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      selection_mode: selection_append
+      field_widget_display_settings:
+        view_mode: thumbnail
+      open: true
+      field_widget_replace: false
+    region: content
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 6
+    region: content
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 2
+    weight: 3
     settings:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
+      match_limit: 10
     third_party_settings: {  }
+    region: content
 hidden:
   field_media_in_library: true
   langcode: true

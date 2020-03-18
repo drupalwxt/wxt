@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_slideshow_style
+    - media.type.slideshow
+  module:
+    - options
+id: media.slideshow.field_slideshow_style
+field_name: field_slideshow_style
+entity_type: media
+bundle: slideshow
+label: 'SlideShow Styles'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: default
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -3,6 +3,7 @@ status: true
 dependencies:
   config:
     - field.field.media.slideshow.field_media_in_library
+    - field.field.media.slideshow.field_slideshow_styles
     - field.field.media.slideshow.slideshow_items
     - media.type.slideshow
 id: media.slideshow.default
@@ -22,6 +23,7 @@ content:
 hidden:
   created: true
   field_media_in_library: true
+  field_slideshow_styles: true
   langcode: true
   name: true
   thumbnail: true

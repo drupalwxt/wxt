@@ -4,11 +4,12 @@ dependencies:
   config:
     - core.entity_form_mode.media.media_browser
     - field.field.media.slideshow.field_media_in_library
+    - field.field.media.slideshow.field_slideshow_style
     - field.field.media.slideshow.slideshow_items
     - media.type.slideshow
   module:
-    - content_moderation
     - inline_entity_form
+    - path
 id: media.slideshow.media_browser
 targetEntityType: media
 bundle: slideshow
@@ -19,12 +20,20 @@ content:
     weight: 3
     settings: {  }
     third_party_settings: {  }
+    region: content
   name:
     type: string_textfield
     weight: 0
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+    region: content
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
     third_party_settings: {  }
   slideshow_items:
     type: inline_entity_form_complex
@@ -38,6 +47,14 @@ content:
       allow_existing: true
       match_operator: CONTAINS
     third_party_settings: {  }
+    region: content
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 100
+    region: content
+    third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
     weight: 2
@@ -45,7 +62,10 @@ content:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
+      match_limit: 10
     third_party_settings: {  }
+    region: content
 hidden:
   field_media_in_library: true
+  field_slideshow_style: true
   langcode: true
