@@ -6,6 +6,9 @@ Features/Updates:
   - Added patch for fieldable entities
 - Update password policy to 3.0-alpha5
   - Added more helpful translations
+- Update wxt_ext_media_slideshow
+  - Now provide alternate styles support for slideshow blocks
+- Formatting fixes and alignment of composer.json
 
 ## v3.0.7
 
