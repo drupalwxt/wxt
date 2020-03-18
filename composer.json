@@ -11,7 +11,7 @@
         "behat/mink-goutte-driver": "~1.2",
         "composer/composer": "^1.4",
         "drupal/coder": "^8.3.7",
-        "drupal-composer/drupal-scaffold": "^2.0.0",
+        "drupal/core-composer-scaffold": "*",
         "drupal/console": "~1.9.0",
         "drupal/devel": "^1.0",
         "drupal/drupal-extension": "~3.4.0",
@@ -50,20 +50,22 @@
         }
     ],
     "scripts": {
-        "post-install-cmd": [
-            "@composer drupal-scaffold"
-        ],
+        "post-install-cmd": [ ],
         "post-update-cmd": [
             "@composer package"
         ],
         "configure-tarball": "Drupal\\wxt\\Composer\\ConfigureLegacyProject::execute",
-        "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
         "enable-asset-packagist": "Acquia\\Lightning\\Composer\\AssetPackagist::execute",
         "nuke": "rm -r -f html vendor",
         "package": "Drupal\\wxt\\Composer\\Package::execute",
         "verify-patched-constraints": "Drupal\\wxt\\Composer\\PatchedConstraint::execute"
     },
     "extra": {
+        "drupal-scaffold": {
+            "locations": {
+                "web-root": "html/"
+            }
+        },
         "installer-types": [
           "bower-asset",
           "npm-asset"
