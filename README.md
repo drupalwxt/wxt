@@ -38,9 +38,9 @@ workflow with the best practice established patterns `Acquia` has provided.
 
 ### Lightning
 
-Lightning is something that is being used by and built for governments, and provides 
-much of what is needed to create a Drupal-based content management system that meets 
-the needs of the Government of Canada. It's also used as the basis of government 
+Lightning is something that is being used by and built for governments, and provides
+much of what is needed to create a Drupal-based content management system that meets
+the needs of the Government of Canada. It's also used as the basis of government
 Drupal platforms around the world.
 
 * https://www.acquia.com/blog/building-drupal-8-sites-acquia-lightning-cuts-costs-100000
@@ -178,16 +178,16 @@ docker-compose -f docker-compose.yml up -d
 make drupal_install
 
 # Development configuration
-./docker/bin/drush config-set system.performance js.preprocess 0 -y && \
-  ./docker/bin/drush config-set system.performance css.preprocess 0 -y && \
-  ./docker/bin/drush php-eval 'node_access_rebuild();' && \
-  ./docker/bin/drush config-set wxt_library.settings wxt.theme theme-gcweb -y && \
-  ./docker/bin/drush cr
+drush config-set system.performance js.preprocess 0 -y && \
+drush config-set system.performance css.preprocess 0 -y && \
+drush php-eval 'node_access_rebuild();' && \
+drush config-set wxt_library.settings wxt.theme theme-gcweb -y && \
+drush cr
 
 # Migrate default content
-./docker/bin/drush migrate:import --group wxt --tag 'Core' && \
-  ./docker/bin/drush migrate:import --group gcweb --tag 'Core' && \
-  ./docker/bin/drush migrate:import --group gcweb --tag 'Menu'
+drush migrate:import --group wxt --tag 'Core' && \
+drush migrate:import --group gcweb --tag 'Core' && \
+drush migrate:import --group gcweb --tag 'Menu'
 ```
 
 ## Version History
