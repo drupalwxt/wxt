@@ -77,7 +77,7 @@
             "html/core": [
                 "type:drupal-core"
             ],
-            "html/libraries/{$name}" : [
+            "html/libraries/{$name}": [
                 "type:drupal-console-library",
                 "type:drupal-library",
                 "type:bower-asset",
