@@ -15,6 +15,13 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 final class UpdateWxT308 implements ContainerInjectionInterface {
 
   /**
+   * The config factory service.
+   *
+   * @var \Drupal\Core\Config\ConfigFactoryInterface
+   */
+  protected $configFactory;
+
+  /**
    * The module installer service.
    *
    * @var \Drupal\Core\Extension\ModuleInstallerInterface
@@ -24,10 +31,13 @@ final class UpdateWxT308 implements ContainerInjectionInterface {
   /**
    * Update360 constructor.
    *
+   * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
+   *   The config factory service.
    * @param \Drupal\Core\Extension\ModuleInstallerInterface $module_installer
    *   The module installer service.
    */
-  public function __construct(ModuleInstallerInterface $module_installer) {
+  public function __construct(ConfigFactoryInterface $config_factory, ModuleInstallerInterface $module_installer) {
+    $this->configFactory = $config_factory;
     $this->moduleInstaller = $module_installer;
   }
 
@@ -35,7 +45,10 @@ final class UpdateWxT308 implements ContainerInjectionInterface {
    * {@inheritdoc}
    */
   public static function create(ContainerInterface $container) {
-    return new static($container->get('module_installer'));
+    return new static(
+      $container->get('config.factory'),
+      $container->get('module_installer')
+    );
   }
 
   /**
@@ -46,9 +59,29 @@ final class UpdateWxT308 implements ContainerInjectionInterface {
    * @ask Do you want to enable additional slideshow styles?
    */
   public function enableAdditionalStyles() {
-    $config = Config::forModule('wxt_ext_media_slideshow')->optional();
+    $this->moduleInstaller->install(['wxt_ext_media_slideshow']);
+
+    $config = Config::forModule('wxt_ext_media_slideshow')->install();
     $config->getEntity('field_storage_config', 'media.field_slideshow_style')->save();
     $config->getEntity('field_config', 'media.field_slideshow_style')->save();
+
+    $config = $this->configFactory->getEditable("core.entity_form_display.media.slideshow.default");
+    $content = $config->get('content');
+    $content['field_slideshow_style'] = [
+      'type' => 'options_select',
+      'weight' => 2,
+      'region' => 'content',
+      'settings' => [ ],
+      'third_party_settings' => [],
+    ];
+    $config->set('content', $content);
+    $config->save();
+
+    $config = $this->configFactory->getEditable("core.entity_view_display.media.slideshow.default");
+    $hidden_components = $config->get('hidden');
+    $hidden_components['field_slideshow_styles'] = TRUE;
+    $config->set('hidden', $hidden_components);
+    $config->save();
   }
 
 }
