@@ -2,6 +2,7 @@
 
 namespace Drupal\wxt_core\UpdateWxT;
 
+use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
 use Drupal\Core\Extension\ModuleInstallerInterface;
 use Drupal\wxt_core\ConfigHelper as Config;
@@ -63,7 +64,7 @@ final class UpdateWxT308 implements ContainerInjectionInterface {
 
     $config = Config::forModule('wxt_ext_media_slideshow')->install();
     $config->getEntity('field_storage_config', 'media.field_slideshow_style')->save();
-    $config->getEntity('field_config', 'media.field_slideshow_style')->save();
+    $config->getEntity('field_config', 'media.slideshow.field_slideshow_style')->save();
 
     $config = $this->configFactory->getEditable("core.entity_form_display.media.slideshow.default");
     $content = $config->get('content');
