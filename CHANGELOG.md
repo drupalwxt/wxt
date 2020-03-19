@@ -16,6 +16,9 @@ Features/Updates:
 - Updates for Contributed modules
   - Update core_context to 1.0-beta2 + patch for fieldable entities
   - Update password policy to 3.0-alpha5 + patch for helpful translation
+  - Update entity_reference_revisions to 1.8
+  - Update inline_entity_form to 1.0-rc3
+  - Update paragraphs to 1.11
 
 Upgrade path:
 
