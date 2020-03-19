@@ -6,13 +6,33 @@ Features/Updates:
 - Update Lightning [4.1.3](https://github.com/acquia/lightning/releases/tag/4.1.3)
   - Updated Lightning API to 4.5
   - Updated Lightning Media to 3.16
-- Update core_context to 1.0-beta2
-  - Added patch for fieldable entities
-- Update password policy to 3.0-alpha5
-  - Added more helpful translations
-- Update wxt_ext_media_slideshow
+- Updates for WxT
   - Now provide alternate styles support for slideshow blocks
-- Formatting fixes and alignment of composer.json
+  - Formatting fixes and alignment of composer.json
+- Updates for WxT Bootstrap
+  - Update README.md
+  - Fix CDN Footer for GCWEB
+  - Unexpected breadcrumb padding on some of the WxT supported themes
+- Updates for Contributed modules
+  - Update core_context to 1.0-beta2 + patch for fieldable entities
+  - Update password policy to 3.0-alpha5 + patch for helpful translation
+
+Upgrade path:
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
+- Run Lightning configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:lightning`
+
+- Run WxT configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:wxt`
 
 ## v3.0.7
 
