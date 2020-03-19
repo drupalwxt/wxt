@@ -10,7 +10,7 @@ id: media.slideshow.field_slideshow_style
 field_name: field_slideshow_style
 entity_type: media
 bundle: slideshow
-label: 'SlideShow Styles'
+label: 'SlideShow Style'
 description: ''
 required: false
 translatable: false
