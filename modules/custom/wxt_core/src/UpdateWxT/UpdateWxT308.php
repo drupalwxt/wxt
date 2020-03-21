@@ -53,19 +53,20 @@ final class UpdateWxT308 implements ContainerInjectionInterface {
   }
 
   /**
-   * Enables additionals slideshow styles.
+   * Enables additionals slideshow enhancements.
    *
    * @updatewxt
    *
-   * @ask Do you want to enable additional slideshow styles?
+   * @ask Do you want to enable additional slideshow enhancements?
    */
-  public function enableAdditionalStyles() {
+  public function enableAdditionalEnhancements() {
     $this->moduleInstaller->install(['wxt_ext_media_slideshow']);
 
     $config = Config::forModule('wxt_ext_media_slideshow')->install();
     $config->getEntity('field_storage_config', 'media.field_slideshow_style')->save();
     $config->getEntity('field_config', 'media.slideshow.field_slideshow_style')->save();
 
+    // Media Slideshow: Add additional style field.
     $config = $this->configFactory->getEditable("core.entity_form_display.media.slideshow.default");
     $content = $config->get('content');
     $content['field_slideshow_style'] = [
@@ -82,6 +83,22 @@ final class UpdateWxT308 implements ContainerInjectionInterface {
     $hidden_components = $config->get('hidden');
     $hidden_components['field_slideshow_styles'] = TRUE;
     $config->set('hidden', $hidden_components);
+    $config->save();
+
+    // Media Image: Link to show in Media Browser.
+    $config = $this->configFactory->getEditable("core.entity_form_display.media.image.media_browser");
+    $content = $config->get('content');
+    $content['field_image_link'] = [
+      'type' => 'link_default',
+      'weight' => 1,
+      'region' => 'content',
+      'settings' => [
+        'placeholder_url' => '',
+        'placeholder_title' => '',
+      ],
+      'third_party_settings' => [],
+    ];
+    $config->set('content', $content);
     $config->save();
   }
 
