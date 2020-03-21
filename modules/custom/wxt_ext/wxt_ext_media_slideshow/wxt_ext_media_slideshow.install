@@ -14,9 +14,6 @@ function wxt_ext_media_slideshow_install() {
     return;
   }
   $config = \Drupal::configFactory()->getEditable("core.entity_form_display.media.image.default");
-  $hidden_components = $config->get('hidden');
-  unset($hidden_components['field_image_link']);
-  $config->set('hidden', $hidden_components);
   $content = $config->get('content');
   $content['field_image_link'] = [
     'type' => 'link_default',
@@ -28,6 +25,26 @@ function wxt_ext_media_slideshow_install() {
     ],
     'third_party_settings' => [],
   ];
+  $mb_config = \Drupal::configFactory()->getEditable("core.entity_form_display.media.image.media_browser");
+  $hidden_components = $mb_config->get('hidden');
+  unset($hidden_components['field_image_link']);
+  $mb_config->set('hidden', $hidden_components);
+  $mb_content = $mb_config->get('content');
+  $mb_content['field_image_link'] = [
+    'type' => 'link_default',
+    'weight' => 1,
+    'region' => 'content',
+    'settings' => [
+      'placeholder_url' => '',
+      'placeholder_title' => '',
+    ],
+    'third_party_settings' => [],
+  ];
+  $mb_config->set('content', $mb_content);
+  $mb_config->save();
+  $hidden_components = $config->get('hidden');
+  unset($hidden_components['field_image_link']);
+  $config->set('hidden', $hidden_components);
   $config->set('content', $content);
   $config->save();
 }
