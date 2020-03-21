@@ -30,4 +30,22 @@ function wxt_ext_media_slideshow_install() {
   ];
   $config->set('content', $content);
   $config->save();
+
+  $config = \Drupal::configFactory()->getEditable("core.entity_form_display.media.image.media_browser");
+  $hidden_components = $config->get('hidden');
+  unset($hidden_components['field_image_link']);
+  $config->set('hidden', $hidden_components);
+  $content = $config->get('content');
+  $content['field_image_link'] = [
+    'type' => 'link_default',
+    'weight' => 1,
+    'region' => 'content',
+    'settings' => [
+      'placeholder_url' => '',
+      'placeholder_title' => '',
+    ],
+    'third_party_settings' => [],
+  ];
+  $config->set('content', $content);
+  $config->save();
 }
