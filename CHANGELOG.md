@@ -1,3 +1,43 @@
+## v3.0.9 (UNRELEASED - WIP)
+Features/Updates:
+
+- Update contributed modules:
+  - Update acquia_connector to 1.21
+  - Update admin_toolbar][version] = 2.2
+  - Update bg_image_formatter][version] = 1.13
+  - Update blog to 2.0-beta1 
+    - To address [this](https://www.drupal.org/project/wxt/issues/3124528) build issue
+  - Update consumers to 1.11
+  - Update crop to 2.1
+  - Update entity_embed to 1.1
+  - Update entityqueue to 1.0-rc1
+  - Update image_widget_crop to 2.3
+  - Update layout_builder_styles to 1.0-beta2
+  - Update media_entity_twitter to 2.4
+  - Update metatag to 1.12
+  - Update openapi to 2.0-rc2
+  - Update openapi_rest to 2.0-rc2
+  - Update schemata to 1.0-beta2
+  - Update core_context to 1.0-beta1
+  - Update diff to 1.0
+
+Upgrade path:
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
+- Run Lightning configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:lightning`
+
+- Run WxT configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:wxt`
+
 ## v3.0.8
 
 Features/Updates:
