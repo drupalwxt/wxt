@@ -1,11 +1,12 @@
 ## v3.0.9 (UNRELEASED - WIP)
+
 Features/Updates:
 
-- Update contributed modules:
+- Updates for Contributed modules
   - Update acquia_connector to 1.21
   - Update admin_toolbar][version] = 2.2
   - Update bg_image_formatter][version] = 1.13
-  - Update blog to 2.0-beta1 
+  - Update blog to 2.0-beta1
     - To address [this](https://www.drupal.org/project/wxt/issues/3124528) build issue
   - Update consumers to 1.11
   - Update crop to 2.1
@@ -21,7 +22,7 @@ Features/Updates:
   - Update core_context to 1.0-beta1
   - Update diff to 1.0
 
-**Note:** The following modules are no longer provided or used by WXT (they were removed in Lightning 3.0.0) . If you use these modules you will need to add them to your project's composer.json file or include them in your codebase using another method:
+**Note:** The following modules are no longer provided or used by WXT (they were removed in Lightning 3.0.0). If you use these modules you will need to add them to your project's composer.json file or include them in your codebase using another method:
 
 * Scheduled Updates (`scheduled_updates`)
 * Features (`features`)

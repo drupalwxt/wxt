@@ -89,3 +89,17 @@ function wxt_ext_user_install() {
     $user->save();
   }
 }
+
+/**
+ * Implements hook_update_N().
+ */
+function wxt_ext_user_update_8100() {
+  $definition_update_manager = \Drupal::entityDefinitionUpdateManager();
+  // Update field storage definitions for user's first name and last name fields.
+  if ($user_first_name_field = $definition_update_manager->getFieldStorageDefinition('field_first_name', 'user')) {
+    $definition_update_manager->updateFieldStorageDefinition($user_first_name_field);
+  }
+  if ($user_last_name_field = $definition_update_manager->getFieldStorageDefinition('field_last_name', 'user')) {
+    $definition_update_manager->updateFieldStorageDefinition($user_last_name_field);
+  }
+}
