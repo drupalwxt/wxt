@@ -10,7 +10,6 @@ dependencies:
   - admin_toolbar_tools:admin_toolbar_tools
   - admin_toolbar_links_access_filter:admin_toolbar_links_access_filter
   - config_rewrite:config_rewrite
-  - config_update:config_update
   - drupal:contact
   - content_moderation:content_moderation
   - diff:diff
