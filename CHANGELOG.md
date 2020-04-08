@@ -21,6 +21,15 @@ Features/Updates:
   - Update core_context to 1.0-beta1
   - Update diff to 1.0
 
+**Note:** The following modules are no longer provided or used by WXT (they were removed in Lightning 3.0.0) . If you use these modules you will need to add them to your project's composer.json file or include them in your codebase using another method:
+
+* Scheduled Updates (`scheduled_updates`)
+* Features (`features`)
+* Configuration Update Manager (`config_update`)
+* Media Entity (`media_entity`)
+* Media Entity Document (`media_entity_document`)
+* Media Entity Image (`media_entity_image`)
+
 Upgrade path:
 
 - Update your codebase:

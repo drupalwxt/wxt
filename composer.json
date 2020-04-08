@@ -187,10 +187,6 @@
                 "Enter drupal/group patch #2895988 description here":
                 "https://www.drupal.org/files/issues/2895988-4.patch"
             },
-            "drupal/media_entity_image": {
-                "Enter drupal/media_entity_image patch #2850169 description here":
-                "https://www.drupal.org/files/issues/add_image_formatter-2850169-5.patch"
-            },
             "drupal/menu_block": {
                 "Enter drupal/menu_block patch #2756675 description here":
                 "https://www.drupal.org/files/issues/menu_block-follow-2756675-32.patch",
@@ -271,22 +267,17 @@
         "drupal/button_link": "1.1",
         "drupal/ckeditor_codemirror": "2.2",
         "drupal/config_rewrite": "1.1",
-        "drupal/config_update": "1.6",
         "drupal/core": "8.8.4",
         "drupal/core_context": "1.0-beta2",
         "drupal/ctools": "3.2.0",
         "drupal/diff": "1.0",
         "drupal/entity_reference_revisions": "1.8",
         "drupal/entityqueue": "^1.0-alpha8",
-        "drupal/features": "^3.0",
         "drupal/field_group": "^3.0",
         "drupal/fontawesome": "^2.12",
         "drupal/group": "1.0-rc5",
         "drupal/inline_entity_form": "1.0-rc3",
         "drupal/linkit": "5.0-beta10",
-        "drupal/media_entity": "2.0.0-beta3",
-        "drupal/media_entity_document": "1.x-dev",
-        "drupal/media_entity_image": "1.3",
         "drupal/media_entity_slideshow": "2.0-alpha1",
         "drupal/menu_block": "1.4.0",
         "drupal/menu_breadcrumb": "1.7",
@@ -303,7 +294,6 @@
         "drupal/s3fs": "3.0-alpha13",
         "drupal/url_embed": "1.0-alpha1",
         "drupal/views_bootstrap": "3.1",
-        "drupal/scheduled_updates": "1.0.0-alpha7",
         "drupal/search_api_solr": "^3.8",
         "drupal/token_filter": "1.1",
         "drupal/views_autocomplete_filters": "1.2",
