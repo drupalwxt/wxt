@@ -1,5 +1,9 @@
 ## v3.0.9 (UNRELEASED - WIP)
 
+Security updates:
+
+- Update minimum webform version to 5.11 (SA-CONTRIB-2020-011, SA-CONTRIB-2020-012, SA-CONTRIB-2020-013, SA-CONTRIB-2020-014)
+
 Features/Updates:
 
 - Updates for Contributed modules
