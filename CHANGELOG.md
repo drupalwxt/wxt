@@ -6,6 +6,7 @@ Security updates:
 
 Features/Updates:
 
+- Drupal core 8.8.5
 - Updates for Contributed modules
   - Update acquia_connector to 1.21
   - Update admin_toolbar][version] = 2.2
