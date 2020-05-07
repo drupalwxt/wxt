@@ -2,7 +2,7 @@
 
 Security updates:
 
-- Update minimum webform version to 5.11 (SA-CONTRIB-2020-011, SA-CONTRIB-2020-012, SA-CONTRIB-2020-013, SA-CONTRIB-2020-014)
+- Update minimum webform version to 5.11 ([SA-CONTRIB-2020-011](https://www.drupal.org/sa-contrib-2020-011), [SA-CONTRIB-2020-012](https://www.drupal.org/sa-contrib-2020-012), [SA-CONTRIB-2020-013](https://www.drupal.org/sa-contrib-2020-013), [SA-CONTRIB-2020-014](https://www.drupal.org/sa-contrib-2020-011))
 
 Features/Updates:
 
