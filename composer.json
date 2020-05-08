@@ -84,9 +84,6 @@
                 "type:npm-asset"
             ],
             "html/modules/contrib/{$name}": [
-                "drupal/wxt_library"
-            ],
-            "html/modules/contrib/{$name}": [
                 "type:drupal-module"
             ],
             "html/profiles/{$name}": [
