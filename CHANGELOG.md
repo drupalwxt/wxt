@@ -1,4 +1,4 @@
-## v3.0.9 (UNRELEASED - WIP)
+## v3.0.9
 
 Security updates:
 
