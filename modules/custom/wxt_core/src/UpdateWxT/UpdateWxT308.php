@@ -73,7 +73,7 @@ final class UpdateWxT308 implements ContainerInjectionInterface {
       'type' => 'options_select',
       'weight' => 2,
       'region' => 'content',
-      'settings' => [ ],
+      'settings' => [],
       'third_party_settings' => [],
     ];
     $config->set('content', $content);

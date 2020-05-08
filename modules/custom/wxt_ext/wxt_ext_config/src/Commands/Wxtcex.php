@@ -6,7 +6,6 @@ use Drush\Drupal\Commands\config\ConfigExportCommands;
 use Drupal\Core\Config\StorageComparer;
 use Drupal\Core\Config\FileStorage;
 use Drush\Log\LogLevel;
-use Drush\Exceptions\UserAbortException;
 use Drupal\Core\Site\Settings;
 
 /**
