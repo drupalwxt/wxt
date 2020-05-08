@@ -1,0 +1,6 @@
+services:
+  wxt_ext_config.commands:
+    class: \Drupal\wxt_ext_config\Commands\Wxtcex
+    arguments: ['@config.manager', '@config.storage', '@config.storage.sync']
+    tags:
+      - { name: drush.command }
