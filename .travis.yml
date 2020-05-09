@@ -56,7 +56,6 @@ before_install:
 
 script:
   - make drupal_install
-  - ./docker/bin/drush cr
   - make drupal_migrate
   - sudo make test
 
