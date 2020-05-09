@@ -2,7 +2,7 @@
 
 Features/Updates:
 
-- Update wxt make files to fix issue with tarballs from drupal.org and github.
+- Update wxt make files to fix issue with tarballs from drupal.org and github (missing gcweb 6.1).
 
 ## v3.0.9
 
