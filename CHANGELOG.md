@@ -9,23 +9,37 @@ Features/Updates:
 - Drupal core 8.8.5
 - Updates for Contributed modules
   - Update acquia_connector to 1.21
-  - Update admin_toolbar][version] = 2.2
-  - Update bg_image_formatter][version] = 1.13
+  - Update admin_toolbar = 2.2
+  - Update bg_image_formatter = 1.14
   - Update blog to 2.0-beta1
     - To address [this](https://www.drupal.org/project/wxt/issues/3124528) build issue
   - Update consumers to 1.11
-  - Update crop to 2.1
-  - Update entity_embed to 1.1
-  - Update entityqueue to 1.0-rc1
-  - Update image_widget_crop to 2.3
-  - Update layout_builder_styles to 1.0-beta2
-  - Update media_entity_twitter to 2.4
-  - Update metatag to 1.12
-  - Update openapi to 2.0-rc2
-  - Update openapi_rest to 2.0-rc2
-  - Update schemata to 1.0-beta2
   - Update core_context to 1.0-beta1
+  - Update crop to 2.1
   - Update diff to 1.0
+  - Update entity_browser to 2.5
+  - Update entity_embed to 1.1
+  - Update entityqueue to 1.0
+  - Update fontawesome to 2.16
+  - Update image_widget_crop to 2.3
+  - Update layout_builder_restrictions to 2.7
+  - Update layout_builder_st to 1.0-alpha2
+  - Update layout_builder_styles to 1.0-beta2
+  - Update lightning_core to 5.1
+  - Update lightning_layout to 2.6
+  - Update media_entity_twitter to 2.4
+  - Update metatag to 1.13
+  - Update openapi to 2.0-rc3
+  - Update openapi_rest to 2.0-rc2
+  - Update pathauto to 1.8
+  - Update schemata to 1.0-beta2
+  - Update search_api to 1.16
+  - Update simple_gmap to 2.1-rc1
+  - Update simple_oauth to 4.5
+  - Update token to 1.7
+  - Update video_embed_field to 2.4
+  - Update webform to 5.11
+  - Update lightning to 4.103
 - Update WxT Library 1.17.0
   - Update wet-boew to v4.0.35
   - Update gcweb theme to v6.1.0
