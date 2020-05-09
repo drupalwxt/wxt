@@ -26,7 +26,9 @@ Features/Updates:
   - Update schemata to 1.0-beta2
   - Update core_context to 1.0-beta1
   - Update diff to 1.0
-  - Update wxt_library to 1.14
+- Update WxT Library 1.15
+  - Update wet-boew to v4.0.35
+  - Update gcweb theme to v6.1.0
 - Port drush wxt-cex command to Drush 9
 
 **Note:** The following modules are no longer provided or used by WXT (they were removed in Lightning 3.0.0). If you use these modules you will need to add them to your project's composer.json file or include them in your codebase using another method:
