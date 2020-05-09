@@ -1,3 +1,9 @@
+## v3.0.10
+
+Features/Updates:
+
+- Update wxt make files to fix issue with tarballs from drupal.org and github.
+
 ## v3.0.9
 
 Security updates:
