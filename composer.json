@@ -89,9 +89,6 @@
             "html/profiles/{$name}": [
                 "type:drupal-profile"
             ],
-            "html/themes/custom/{$name}": [
-                "drupal/wxt_bootstrap"
-            ],
             "html/themes/contrib/{$name}": [
                 "type:drupal-theme"
             ],
@@ -297,7 +294,7 @@
         "drupal/webform": "^5.11",
         "drupal/webform_migrate": "1.1",
         "drupal/wxt_bootstrap": "1.21",
-        "drupal/wxt_library": "dev-1.x",
+        "drupal/wxt_library": "1.15.0",
         "w8tcha/ckeditor-codemirror": "1.16"
     },
     "autoload": {
