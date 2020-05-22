@@ -6,8 +6,17 @@ Security updates:
 
 Features/Updates:
 
-- Drupal core 8.8.6
+- Drupal core to 8.8.6
 - Update Lightning [4.1.4](https://github.com/acquia/lightning/releases/tag/4.1.4)
+- Update blazy to 2.1
+- Update conflict to 2.0-alpha2
+- Update lightning_core to 5.2
+- Update lightning_workflow to 3.15
+- Update moderation_dashboard to 1.0-beta2
+- Update moderation_sidebar to 1.4
+- Update redirect to 1.6
+- Update webform to 5.13
+- Update lightning to 4.104
 
 ## v3.0.10
 
