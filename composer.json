@@ -10,7 +10,7 @@
         "behat/mink": "~1.7",
         "behat/mink-goutte-driver": "~1.2",
         "composer/composer": "^1.4",
-        "drupal/coder": "8.3.8",
+        "drupal/coder": "^8.3.9",
         "drupal/core-composer-scaffold": "*",
         "drupal/console": "~1.9.0",
         "drupal/devel": "^1.0",
