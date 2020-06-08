@@ -40,15 +40,25 @@ third_party_settings:
             context_mapping:
               entity: '@panelizer.entity_context:entity'
             uuid: 197a21c8-479d-4d6b-9a05-5eaaf82b0e0e
-          588e477f-63e7-471a-b464-16a842b8abf3:
-            id: page_title_block
-            label: 'Page title'
-            provider: core
-            label_display: '0'
+          d419ff12-36dd-4a6b-911b-0f47bd810cf1:
+            uuid: d419ff12-36dd-4a6b-911b-0f47bd810cf1
             region: main
+            configuration:
+              id: 'field_block:node:page:title'
+              label: Title
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: above
+                type: string
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
             weight: 0
-            uuid: 588e477f-63e7-471a-b464-16a842b8abf3
-            context_mapping: {  }
           c795868d-d954-48e3-8c26-fc1155d2b92a:
             id: local_tasks_block
             label: Tabs
@@ -99,15 +109,25 @@ third_party_settings:
         static_context: {  }
       override:
         blocks:
-          c62bbe2e-e1cb-48d6-803f-cf0f371d299b:
-            id: page_title_block
-            label: 'Page title'
-            provider: core
-            label_display: '0'
+          d419ff12-36dd-4a6b-911b-0f47bd810cf1:
+            uuid: d419ff12-36dd-4a6b-911b-0f47bd810cf1
             region: top
+            configuration:
+              id: 'field_block:node:page:title'
+              label: Title
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: above
+                type: string
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
             weight: -1
-            uuid: c62bbe2e-e1cb-48d6-803f-cf0f371d299b
-            context_mapping: {  }
           32338ff6-919d-414d-a91b-fa0310743e8c:
             id: local_tasks_block
             label: Tabs
@@ -224,15 +244,23 @@ third_party_settings:
               add_region_classes: 1
               attributes: ''
         components:
-          c62bbe2e-e1cb-48d6-803f-cf0f371d299b:
-            uuid: c62bbe2e-e1cb-48d6-803f-cf0f371d299b
+          d419ff12-36dd-4a6b-911b-0f47bd810cf1:
+            uuid: d419ff12-36dd-4a6b-911b-0f47bd810cf1
             region: top
             configuration:
-              id: page_title_block
-              label: 'Page title'
-              provider: core
+              id: 'field_block:node:page:title'
+              label: Title
+              provider: layout_builder
               label_display: '0'
-              context_mapping: {  }
+              formatter:
+                label: above
+                type: string
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
             additional: {  }
             weight: 0
           32338ff6-919d-414d-a91b-fa0310743e8c:
