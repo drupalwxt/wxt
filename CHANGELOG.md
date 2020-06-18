@@ -1,3 +1,14 @@
+## v3.0.12
+Security updates:
+
+* Update Drupal Core to [8.8.8](https://www.drupal.org/project/drupal/releases/8.8.8)
+  * [SA-CORE-2020-004](https://www.drupal.org/sa-core-2020-004)
+  * [SA-CORE-2020-005](https://www.drupal.org/sa-core-2020-005)
+  * [SA-CORE-2020-006](https://www.drupal.org/sa-core-2020-006)
+
+Features/Updates:
+  - Update Lightning [4.1.5](https://github.com/acquia/lightning/releases/tag/4.1.5)
+
 ## v3.0.11
 Security updates:
 
