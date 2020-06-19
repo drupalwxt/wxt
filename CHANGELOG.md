@@ -9,10 +9,7 @@ Security updates:
 Features/Updates:
   - Update Lightning [4.1.5](https://github.com/acquia/lightning/releases/tag/4.1.5)
   - Update acquia_connector to 1.22
-  - Update embed to 1.4
-  - Update media_entity_instagram to 2.1
-  - Update search_api to 1.17
-  - Update webform to 5.16
+  - Update admin_toolbar to 2.3
   - Update bootstrap_layouts to 5.2
   - Update button_link to 1.2
   - Update ckeditor_codemirror to 2.3
@@ -20,14 +17,19 @@ Features/Updates:
     **Note** If you are rewriting OPTIONAL configuration, then you need to read the [1.2 release notes](https://www.drupal.org/project/config_rewrite/releases/8.x-1.2)
   - Update core_context to 1.0-beta4
   - Update ctools to 3.4.0
+  - Update embed to 1.4
   - Update inline_entity_form to 1.0-rc6
   - Update linkit to 5.0-beta11
+  - Update media_entity_instagram to 2.1
   - Update media_entity_slideshow to 2.0
   - Update menu_block to 1.6.0
   - Update menu_breadcrumb to 1.13
   - Update page_manager to 4.0-beta6
   - Update panelizer to 5.0-beta3
+  - Update paragraphs to 1.12
+  - Update search_api to 1.17
   - Update token_filter to 1.2
+  - Update webform to 5.16
 
 **Note:** Many of the above module updates now include Drupal 9 support. We are working towards moving to Drupal 9 in the near future.
 
