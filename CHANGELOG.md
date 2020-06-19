@@ -30,6 +30,23 @@ Features/Updates:
 
 **Note:** Many of the above module updates now include Drupal 9 support. We are working towards moving to Drupal 9 in the near future.
 
+Upgrade path:
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
+- Run Lightning configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:lightning`
+
+- Run WxT configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:wxt`
+
 ## v3.0.11
 Security updates:
 
@@ -50,11 +67,45 @@ Features/Updates:
 - Update webform to 5.13
 - Update lightning to 4.104
 
+Upgrade path:
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
+- Run Lightning configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:lightning`
+
+- Run WxT configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:wxt`
+
 ## v3.0.10
 
 Features/Updates:
 
 - Update wxt make files to fix issue with tarballs from drupal.org and github (missing gcweb 6.1).
+
+Upgrade path:
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
+- Run Lightning configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:lightning`
+
+- Run WxT configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:wxt`
 
 ## v3.0.9
 
@@ -104,7 +155,25 @@ Features/Updates:
   - Update for Drupal 9
 - Port drush wxt-cex command to Drush 9
 
-**Note:** The following modules are no longer provided or used by WXT (they were removed in Lightning 3.0.0). If you use these modules you will need to add them to your project's composer.json file or include them in your codebase using another method:
+**Note:** The following modules are no longer provided or used by WXT (they were removed in Lightning 3.0.0). If you use these modules you will need to add them to your project's composer.json file or include them in your codebase using another method.
+
+Upgrade path:
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
+- Run Lightning configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:lightning`
+
+- Run WxT configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:wxt`
+
 
 * Scheduled Updates (`scheduled_updates`)
 * Features (`features`)
