@@ -157,10 +157,6 @@
                 "Enter drupal/core patch #3081656 description here":
                 "https://www.drupal.org/files/issues/2019-09-16/0001-Issue-2488350-by-alexpott-Wim-Leers-Dimiter-catch-da.patch"
             },
-            "drupal/core_context": {
-                "Enter drupal/core_context patch #3120388 description here":
-                "https://www.drupal.org/files/issues/2020-03-17/3120388.patch"
-            },
             "drupal/ctools": {
                 "Enter drupal/ctools patch #2667652 description here":
                 "https://www.drupal.org/files/issues/ctools-option_to_expose-2667652-3.patch",
