@@ -17,6 +17,7 @@ Features/Updates:
   - Update button_link to 1.2
   - Update ckeditor_codemirror to 2.3
   - Update config_rewrite to 1.3
+    **Note** If you are rewriting OPTIONAL configuration, then you need to read the [1.2 release notes](https://www.drupal.org/project/config_rewrite/releases/8.x-1.2)
   - Update core_context to 1.0-beta4
   - Update ctools to 3.4.0
   - Update inline_entity_form to 1.0-rc6
