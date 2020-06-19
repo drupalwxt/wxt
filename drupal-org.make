@@ -1,5 +1,5 @@
-core = 8.x
 api = 2
+core = 8.x
 defaults[projects][subdir] = contrib
 projects[acquia_connector][type] = module
 projects[acquia_connector][version] = 1.22
