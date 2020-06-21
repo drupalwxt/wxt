@@ -39,4 +39,4 @@ jobs:
         cd site-wxt
         make drupal_install
         make drupal_migrate
-        sudo make test
+        make test
