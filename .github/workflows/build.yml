@@ -39,4 +39,5 @@ jobs:
         cd site-wxt
         make drupal_install
         make drupal_migrate
+        sudo chown -R $(id -u) html/
         make test
