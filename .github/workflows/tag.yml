@@ -1,8 +1,8 @@
-name: build
+name: tag
 on:
   push:
-    branches:
-      - 8.x-3.x
+    tags:
+    - '*'
 
 # Environment variables available to all jobs and steps in this workflow
 env:
@@ -22,7 +22,7 @@ jobs:
 
     - uses: statcan/actions/composer@master
       with:
-        args: require drupalwxt/wxt:dev-8.x-3.x#${GITHUB_SHA} --working-dir=./site-wxt
+        args: require drupalwxt/wxt:${GITHUB_REF#refs/tags/} --working-dir=./site-wxt
 
     - name: Build out the Drupal infrastructure.
       run: |
