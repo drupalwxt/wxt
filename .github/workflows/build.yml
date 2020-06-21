@@ -39,5 +39,6 @@ jobs:
         cd site-wxt
         make drupal_install
         make drupal_migrate
-        sudo chown -R $(id -u) html/
+        # Change ownership on html/core to allow files to be copied (see drupal_cs in Makefile)
+        sudo chown -R $(id -u) html/core
         make test
