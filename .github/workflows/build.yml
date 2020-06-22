@@ -24,7 +24,7 @@ jobs:
       with:
         args: require drupalwxt/wxt:dev-8.x-3.x#${GITHUB_SHA} --working-dir=./site-wxt
 
-    - name: Build out the Drupal infrastructure.
+    - name: Build out the Drupal infrastructure
       run: |
         cd site-wxt
         git clone https://github.com/drupalwxt/docker-scaffold.git docker
@@ -33,7 +33,7 @@ jobs:
         docker ps -a
         sleep 10
 
-    - name: Run integration and BDD tests
+    - name: Run installation and tests
       run: |
         cd site-wxt
         make drupal_install
