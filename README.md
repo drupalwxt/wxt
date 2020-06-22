@@ -154,7 +154,7 @@ drush migrate:import --group gcweb --tag 'Group'
 > Note: Make sure to only have one set of menu's imported for each of the supported themes. Leverage migrate:rollback to assist with this requirement.
 
 
-### Container
+### Containers
 
 For the (optional) container based development workflow this is roughly the steps that are followed.
 
@@ -164,9 +164,6 @@ export COMPOSER_MEMORY_LIMIT=-1 && composer install
 
 # Make our base docker image
 make build
-
-# MacOSX only (docker-sync)
-docker volume create --name=docroot-sync && docker volume create --name=root-sync && docker-sync start
 
 # Bring up the dev stack
 docker-compose -f docker-compose.yml up -d
@@ -185,6 +182,12 @@ make drupal_install
 ./docker/bin/drush migrate:import --group wxt --tag 'Core' && \
 ./docker/bin/drush migrate:import --group gcweb --tag 'Core' && \
 ./docker/bin/drush migrate:import --group gcweb --tag 'Menu'
+```
+
+> Note: The [docker-scaffold][docker-scaffold] has now been moved to its own repository though symlinks are still present. Should you wish to use the docker workflow you simple need to run the following command in the site-wxt repository's working directory.
+
+```sh
+git clone https://github.com/drupalwxt/docker-scaffold.git docker
 ```
 
 ## Version History
@@ -210,7 +213,7 @@ Contributor(s): https://github.com/drupalwxt/wxt/graphs/contributors
 [demo]:                 https://drupalwxt.govcloud.ca
 [docsite]:              http://drupalwxt.github.io
 [docker-hub]:           https://hub.docker.com/r/drupalwxt/site-wxt
-[docker-sync]:          https://github.com/EugenMayer/docker-sync
+[docker-scaffold]:      https://github.com/drupalwxt/docker-scaffold.git
 [drupal]:               http://drupal.org/project/wxt
 [drupal7]:              http://drupal.org/project/wetkit
 [githubci]:             https://github.com/drupalwxt/wxt/actions
