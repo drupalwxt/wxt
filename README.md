@@ -1,6 +1,6 @@
 # Web Experience Toolkit: Drupal WxT
 
-[![Build Status][travisci-badge]][travisci]
+[![Build Status][githubci-badge]][githubci]
 
 ## Important
 
@@ -158,8 +158,6 @@ drush migrate:import --group gcweb --tag 'Group'
 
 For the (optional) container based development workflow this is roughly the steps that are followed.
 
-> Note: That [docker-sync](docker-sync) is installed on a MacOSX host to fix performance issues related to volume mounting. Linux and Windows do not have this restriction.
-
 ```sh
 # Composer install
 export COMPOSER_MEMORY_LIMIT=-1 && composer install
@@ -171,7 +169,6 @@ make build
 docker volume create --name=docroot-sync && docker volume create --name=root-sync && docker-sync start
 
 # Bring up the dev stack
-# Use docker-compose.sync.yml for MacOSX
 docker-compose -f docker-compose.yml up -d
 
 # Install Drupal
@@ -216,6 +213,8 @@ Contributor(s): https://github.com/drupalwxt/wxt/graphs/contributors
 [docker-sync]:          https://github.com/EugenMayer/docker-sync
 [drupal]:               http://drupal.org/project/wxt
 [drupal7]:              http://drupal.org/project/wetkit
+[githubci]:             https://github.com/drupalwxt/wxt/actions
+[githubci-badge]:       https://github.com/drupalwxt/wxt/workflows/build/badge.svg
 [github-helm]:          https://github.com/drupalwxt/helm-drupal
 [github-wxt]:           https://github.com/drupalwxt/wxt
 [github-site-wxt]:      https://github.com/drupalwxt/site-wxt
@@ -229,6 +228,4 @@ Contributor(s): https://github.com/drupalwxt/wxt/graphs/contributors
 [release-drupal]:       https://github.com/drupalwxt/wxt/releases
 [release-github]:       https://github.com/drupalwxt/wxt/releases
 [simplytest]:           http://simplytest.me/project/wxt/8.x-3.x
-[travisci]:             https://travis-ci.org/drupalwxt/wxt
-[travisci-badge]:       https://travis-ci.org/drupalwxt/wxt.png?branch=8.x-3.x
 [wet-boew]:             https://github.com/wet-boew/wet-boew
