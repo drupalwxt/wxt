@@ -41,3 +41,30 @@ jobs:
         # Change ownership on html/core to allow files to be copied (see drupal_cs in Makefile)
         sudo chown -R $(id -u) html/core
         make test
+
+    - name: Generate tarball
+      run: |
+        cd site-wxt
+        ./tarball.sh ${${GITHUB_REF#refs/tags/}:3:1}
+
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${GITHUB_REF#refs/tags/}
+        release_name: ${GITHUB_REF#refs/tags/}
+        draft: false
+        prerelease: false
+
+    - name: Upload Release Asset
+      id: upload-release-asset
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./wxt-8.x-${${GITHUB_REF#refs/tags/}:3:1}.tar.gz
+        asset_name: wxt-8.x-${${GITHUB_REF#refs/tags/}:3:1}.tar.gz
+        asset_content_type: application/tar+gzip
