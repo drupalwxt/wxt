@@ -1,4 +1,41 @@
+## v3.0.13 (In Development)
+
+Features/Updates:
+
+- Updates for WxT Bootstrap
+  - Element figcaption nesting
+  - Duplicated data-trgt element
+  - Remove unncessary article role
+  - Issue with nesting in content footer
+  - dropdown.js bootstrap backport
+  - Custom block theme suggestions
+  - Add wb-inv span for search
+  - Theme suggestions order
+- Updates for WxT Library
+  - Remove dependency on core search
+  - Add core_version_requirement for D9
+
+**Note:** We are working towards moving to Drupal 9 in the near future.
+
+Upgrade path:
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
+- Run Lightning configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:lightning`
+
+- Run WxT configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:wxt`
+
 ## v3.0.12
+
 Security updates:
 
 * Update Drupal Core to [8.8.8](https://www.drupal.org/project/drupal/releases/8.8.8)
@@ -7,6 +44,7 @@ Security updates:
   * [SA-CORE-2020-006](https://www.drupal.org/sa-core-2020-006)
 
 Features/Updates:
+
   - Update Lightning [4.1.5](https://github.com/acquia/lightning/releases/tag/4.1.5)
   - Update acquia_connector to 1.22
   - Update admin_toolbar to 2.3
@@ -51,6 +89,7 @@ Upgrade path:
   - `drush update:wxt`
 
 ## v3.0.11
+
 Security updates:
 
 * Update Drupal Core to [8.8.6](https://www.drupal.org/project/drupal/releases/8.8.6)
