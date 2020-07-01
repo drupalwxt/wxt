@@ -179,7 +179,7 @@ class MainBreadcrumbBuilder implements BreadcrumbBuilderInterface {
    */
   public function applies(RouteMatchInterface $route_match) {
     $parameters = $route_match->getParameters()->all();
-    $this->menuBreadcrumb = new MenuBasedBreadcrumbBuilder($this->configFactory, $this->menuActiveTrail, $this->menuLinkManager, $this->adminContext, $this->titleResolver, $this->requestStack, $this->languageManager, $this->entityTypeManager, $this->config);
+    $this->menuBreadcrumb = new MenuBasedBreadcrumbBuilder($this->configFactory, $this->menuActiveTrail, $this->menuLinkManager, $this->adminContext, $this->titleResolver, $this->requestStack, $this->languageManager, $this->entityTypeManager, $this->cache, $this->lock);
 
     return ((!empty($parameters['node'])) && (is_object($parameters['node'])) && (count($this->menuActiveTrail->getActiveTrailIds('main')) >= 1) && ($this->menuBreadcrumb->applies($route_match)));
   }
