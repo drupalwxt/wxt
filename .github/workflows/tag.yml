@@ -89,7 +89,7 @@ jobs:
       uses: jacobtomlinson/gha-find-replace@master
       with:
         find: "appVersion: 3.*.*"
-        replace: "appVersion: 3.*.*${GITHUB_REF#refs/tags/}"
+        replace: "appVersion: ${GITHUB_REF#refs/tags/}"
         input: ".*"
         exclude: ".git/"
         include: "helm-drupal/"
