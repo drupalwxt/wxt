@@ -14,15 +14,18 @@ jobs:
     steps:
     - uses: actions/checkout@master
 
+    - name: Export github reference var
+      run: echo '::set-env name=GITHUB_REFERENCE::$(echo ${GITHUB_REF#refs/tags/})'
+
     - name: Setup dependencies
       run: |
-        git clone --branch 8.x https://github.com/drupalwxt/site-wxt.git
+        git clone --branch 8.x https://drupalwxt-svc:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/drupalwxt/site-wxt.git
         cd site-wxt
         rm composer.lock
 
     - uses: statcan/actions/composer@master
       with:
-        args: require drupalwxt/wxt:${GITHUB_REF#refs/tags/} --working-dir=./site-wxt
+        args: require drupalwxt/wxt:${{ env.GITHUB_REFERENCE }} --working-dir=./site-wxt
 
     - name: Build out the Drupal infrastructure
       run: |
@@ -45,7 +48,7 @@ jobs:
     - name: Generate tarball
       run: |
         cd site-wxt
-        ./tarball.sh ${${GITHUB_REF#refs/tags/}:3:1}
+        ./tarball.sh ${${{ env.GITHUB_REFERENCE }}:3:1}
 
     - name: Create Release
       id: create_release
@@ -53,8 +56,8 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: ${GITHUB_REF#refs/tags/}
-        release_name: ${GITHUB_REF#refs/tags/}
+        tag_name: ${{ env.GITHUB_REFERENCE }}
+        release_name: ${{ env.GITHUB_REFERENCE }}
         draft: false
         prerelease: false
 
@@ -65,22 +68,22 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./wxt-8.x-${${GITHUB_REF#refs/tags/}:3:1}.tar.gz
-        asset_name: wxt-8.x-${${GITHUB_REF#refs/tags/}:3:1}.tar.gz
+        asset_path: ./wxt-8.x-${${{ env.GITHUB_REFERENCE }}:3:1}.tar.gz
+        asset_name: wxt-8.x-${${{ env.GITHUB_REFERENCE }}:3:1}.tar.gz
         asset_content_type: application/tar+gzip
 
     - name: Checkout repos to update tags
       run: |
-        git clone --branch 8.x https://github.com/drupalwxt/wxt-project.git
-        git clone --branch master https://github.com/drupalwxt/helm-drupal.git
-        git clone --branch master https://github.com/drupalwxt/terraform-containers-webapp-azure
-        git clone --branch master https://github.com/drupalwxt/terraform-kubernetes-drupalwxt
+        git clone --branch 8.x https://drupalwxt-svc:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/drupalwxt/wxt-project.git
+        git clone --branch master https://drupalwxt-svc:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/drupalwxt/helm-drupal.git
+        git clone --branch master https://drupalwxt-svc:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/drupalwxt/terraform-containers-webapp-azure.git
+        git clone --branch master https://drupalwxt-svc:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/drupalwxt/terraform-kubernetes-drupalwxt.git
 
     - name: Update tags for wxt-project
       uses: jacobtomlinson/gha-find-replace@master
       with:
         find: "\"drupalwxt/wxt\": \"3.*.*\""
-        replace: "\"drupalwxt/wxt\": \"${GITHUB_REF#refs/tags/}\""
+        replace: "\"drupalwxt/wxt\": \"${{ env.GITHUB_REFERENCE }}\""
         input: ".*"
         exclude: ".git/"
         include: "wxt-project/"
@@ -89,7 +92,7 @@ jobs:
       uses: jacobtomlinson/gha-find-replace@master
       with:
         find: "appVersion: 3.*.*"
-        replace: "appVersion: ${GITHUB_REF#refs/tags/}"
+        replace: "appVersion: ${{ env.GITHUB_REFERENCE }}"
         input: ".*"
         exclude: ".git/"
         include: "helm-drupal/"
@@ -98,7 +101,7 @@ jobs:
       uses: jacobtomlinson/gha-find-replace@master
       with:
         find: "tag: 3.*.*"
-        replace: "tag: ${GITHUB_REF#refs/tags/}"
+        replace: "tag: ${{ env.GITHUB_REFERENCE }}"
         input: ".*"
         exclude: ".git/"
         include: "helm-drupal/"
@@ -107,7 +110,7 @@ jobs:
       uses: jacobtomlinson/gha-find-replace@master
       with:
         find: "image: drupalwxt/site-wxt:3.*.*"
-        replace: "image: drupalwxt/site-wxt:${GITHUB_REF#refs/tags/}"
+        replace: "image: drupalwxt/site-wxt:${{ env.GITHUB_REFERENCE }}"
         input: ".*"
         exclude: ".git/"
         include: "terraform-kubernetes-drupalwxt/"
@@ -116,7 +119,7 @@ jobs:
       uses: jacobtomlinson/gha-find-replace@master
       with:
         find: "tag: 3.*.*"
-        replace: "tag: ${GITHUB_REF#refs/tags/}"
+        replace: "tag: ${{ env.GITHUB_REFERENCE }}"
         input: ".*"
         exclude: ".git/"
         include: "terraform-kubernetes-drupalwxt/"
@@ -126,41 +129,41 @@ jobs:
         cd site-wxt
         composer install
         git add .
-        git commit -m "Update to latest version of WxT ${GITHUB_REF#refs/tags/}"
+        git commit -m "Update to latest version of WxT ${{ env.GITHUB_REFERENCE }}"
         git push origin 8.x
 
     - name: Push to wxt-project the latest tags
       run: |
         cd wxt-project
         git add .
-        git commit -m "Update to latest version of WxT ${GITHUB_REF#refs/tags/}"
+        git commit -m "Update to latest version of WxT ${{ env.GITHUB_REFERENCE }}"
         git push origin 8.x
 
     - name: Push to helm-drupal the latest tags
       run: |
         cd helm-drupal
         git add .
-        git commit -m "Update to latest version of WxT ${GITHUB_REF#refs/tags/}"
+        git commit -m "Update to latest version of WxT ${{ env.GITHUB_REFERENCE }}"
         git push origin master
 
     - name: Push to terraform-containers-webapp-azure the latest tags
       run: |
         cd terraform-containers-webapp-azure
         git add .
-        git commit -m "Update to latest version of WxT ${GITHUB_REF#refs/tags/}"
+        git commit -m "Update to latest version of WxT ${{ env.GITHUB_REFERENCE }}"
         git push origin master
 
     - name: Push to terraform-kubernetes-drupalwxt the latest tags
       run: |
         cd terraform-kubernetes-drupalwxt
         git add .
-        git commit -m "Update to latest version of WxT ${GITHUB_REF#refs/tags/}"
+        git commit -m "Update to latest version of WxT ${{ env.GITHUB_REFERENCE }}"
         git push origin master
 
     - name: Repository Dispatch to website
       uses: peter-evans/repository-dispatch@v1
       with:
-        token: ${{ secrets.REPO_ACCESS_TOKEN }}
+        token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         repository: drupalwxt/website
         event-type: wxt-tagged
         client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
@@ -174,7 +177,7 @@ jobs:
 
     # Container build and push to a Container registry
     - run: |
-        docker tag site-wxt_web:latest drupalwxt/site-wxt:${GITHUB_REF#refs/tags/}
-        docker tag site-wxt_nginx:latest drupalwxt/site-wxt:${GITHUB_REF#refs/tags/}-nginx
-        docker push drupalwxt/site-wxt:${GITHUB_REF#refs/tags/}
-        docker push drupalwxt/site-wxt:${GITHUB_REF#refs/tags/}-nginx
+        docker tag site-wxt_web:latest drupalwxt/site-wxt:${{ env.GITHUB_REFERENCE }}
+        docker tag site-wxt_nginx:latest drupalwxt/site-wxt:${{ env.GITHUB_REFERENCE }}-nginx
+        docker push drupalwxt/site-wxt:${{ env.GITHUB_REFERENCE }}
+        docker push drupalwxt/site-wxt:${{ env.GITHUB_REFERENCE }}-nginx
