@@ -2,6 +2,8 @@
 
 Features/Updates:
 
+- Updates for Lightning
+  - Patch to Lightning Workflow for entityqueue upgrade issue
 - Updates for WxT Bootstrap
   - Element figcaption nesting
   - Duplicated data-trgt element
@@ -33,6 +35,10 @@ Upgrade path:
 - Run WxT configuration updates:
   - `drush cache:rebuild`
   - `drush update:wxt`
+
+- Manual changes:
+  - If you happen to notice "The ... field needs to be uninstalled" from the status report screen
+  - Goto the `admin/config/workflow/workflows/manage/editorial` screen and re-save the Editorial workflow
 
 ## v3.0.12
 

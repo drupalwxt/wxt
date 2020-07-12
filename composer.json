@@ -177,6 +177,10 @@
                 "Enter drupal/group patch #2895988 description here":
                 "https://www.drupal.org/files/issues/2895988-4.patch"
             },
+            "drupal/lightning_workflow": {
+                "Enter drupal/lightning_workflow patch #3126343 description here":
+                "https://www.drupal.org/files/issues/2020-07-08/3126343-11.patch"
+            },
             "drupal/page_manager": {
                 "Enter drupal/page_manager patch #2626090 description here":
                 "https://www.drupal.org/files/issues/page-manager-2626090-page-title-empty-5.patch",

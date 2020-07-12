@@ -103,6 +103,7 @@ projects[lightning_layout][version] = 2.6
 projects[lightning_media][type] = module
 projects[lightning_media][version] = 3.16
 projects[lightning_workflow][type] = module
+projects[lightning_workflow][patch][] = https://www.drupal.org/files/issues/2020-07-08/3126343-11.patch
 projects[lightning_workflow][version] = 3.15
 projects[linkit][type] = module
 projects[linkit][version] = 5.0-beta11
