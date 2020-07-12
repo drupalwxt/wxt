@@ -288,7 +288,7 @@
         "drupal/views_autocomplete_filters": "1.2",
         "drupal/webform": "^5.11",
         "drupal/webform_migrate": "1.1",
-        "drupal/wxt_bootstrap": "1.22",
+        "drupal/wxt_bootstrap": "1.23",
         "drupal/wxt_library": "1.18",
         "w8tcha/ckeditor-codemirror": "1.16"
     },
