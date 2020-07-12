@@ -157,13 +157,13 @@ jobs:
         git commit -m "Update to latest version of WxT ${GITHUB_REF#refs/tags/}"
         git push origin master
 
-      - name: Repository Dispatch to website
-        uses: peter-evans/repository-dispatch@v1
-        with:
-          token: ${{ secrets.REPO_ACCESS_TOKEN }}
-          repository: drupalwxt/website
-          event-type: wxt-tagged
-          client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
+    - name: Repository Dispatch to website
+      uses: peter-evans/repository-dispatch@v1
+      with:
+        token: ${{ secrets.REPO_ACCESS_TOKEN }}
+        repository: drupalwxt/website
+        event-type: wxt-tagged
+        client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
 
     # Connect to Container registry
     - uses: azure/docker-login@v1
