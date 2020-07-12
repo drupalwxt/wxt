@@ -68,3 +68,83 @@ jobs:
         asset_path: ./wxt-8.x-${${GITHUB_REF#refs/tags/}:3:1}.tar.gz
         asset_name: wxt-8.x-${${GITHUB_REF#refs/tags/}:3:1}.tar.gz
         asset_content_type: application/tar+gzip
+
+    - name: Checkout repos to update tags
+      run: |
+        git clone --branch 8.x https://github.com/drupalwxt/wxt-project.git
+        git clone --branch master https://github.com/drupalwxt/helm-drupal.git
+        git clone --branch master https://github.com/drupalwxt/terraform-containers-webapp-azure
+        git clone --branch master https://github.com/drupalwxt/terraform-kubernetes-drupalwxt
+
+    - name: Update tags for wxt-project
+      uses: jacobtomlinson/gha-find-replace@master
+      with:
+        find: "\"drupalwxt/wxt\": \"3.*.*\""
+        replace: "\"drupalwxt/wxt\": \"${GITHUB_REF#refs/tags/}\""
+        input: ".*"
+        exclude: ".git/"
+        include: "wxt-project/"
+
+    - name: Update tags for helm-drupal
+      uses: jacobtomlinson/gha-find-replace@master
+      with:
+        find: "appVersion: 3.*.*"
+        replace: "appVersion: 3.*.*${GITHUB_REF#refs/tags/}"
+        input: ".*"
+        exclude: ".git/"
+        include: "helm-drupal/"
+
+    - name: Update tags for helm-drupal
+      uses: jacobtomlinson/gha-find-replace@master
+      with:
+        find: "tag: 3.*.*"
+        replace: "tag: ${GITHUB_REF#refs/tags/}"
+        input: ".*"
+        exclude: ".git/"
+        include: "helm-drupal/"
+
+    - name: Update tags for terraform-containers-webapp-azure
+      uses: jacobtomlinson/gha-find-replace@master
+      with:
+        find: "image: drupalwxt/site-wxt:3.*.*"
+        replace: "image: drupalwxt/site-wxt:${GITHUB_REF#refs/tags/}"
+        input: ".*"
+        exclude: ".git/"
+        include: "terraform-kubernetes-drupalwxt/"
+
+    - name: Update tags for terraform-kubernetes-drupalwxt
+      uses: jacobtomlinson/gha-find-replace@master
+      with:
+        find: "tag: 3.*.*"
+        replace: "tag: ${GITHUB_REF#refs/tags/}"
+        input: ".*"
+        exclude: ".git/"
+        include: "terraform-kubernetes-drupalwxt/"
+
+    - name: Push to wxt-project the latest tags
+      run: |
+        cd wxt-project
+        git add .
+        git commit -m "Update to latest version of WxT ${GITHUB_REF#refs/tags/}"
+        git push origin 8.x
+
+    - name: Push to helm-drupal the latest tags
+      run: |
+        cd helm-drupal
+        git add .
+        git commit -m "Update to latest version of WxT ${GITHUB_REF#refs/tags/}"
+        git push origin master
+
+    - name: Push to terraform-containers-webapp-azure the latest tags
+      run: |
+        cd terraform-containers-webapp-azure
+        git add .
+        git commit -m "Update to latest version of WxT ${GITHUB_REF#refs/tags/}"
+        git push origin master
+
+    - name: Push to terraform-kubernetes-drupalwxt the latest tags
+      run: |
+        cd terraform-kubernetes-drupalwxt
+        git add .
+        git commit -m "Update to latest version of WxT ${GITHUB_REF#refs/tags/}"
+        git push origin master
