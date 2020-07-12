@@ -121,6 +121,14 @@ jobs:
         exclude: ".git/"
         include: "terraform-kubernetes-drupalwxt/"
 
+    - name: Push to site-wxt the latest build sha
+      run: |
+        cd site-wxt
+        composer install
+        git add .
+        git commit -m "Update to latest version of WxT ${GITHUB_REF#refs/tags/}"
+        git push origin 8.x
+
     - name: Push to wxt-project the latest tags
       run: |
         cd wxt-project
@@ -156,3 +164,17 @@ jobs:
           repository: drupalwxt/website
           event-type: wxt-tagged
           client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
+
+    # Connect to Container registry
+    - uses: azure/docker-login@v1
+      with:
+        login-server: index.docker.io
+        username: ${{ secrets.REGISTRY_USERNAME }}
+        password: ${{ secrets.REGISTRY_PASSWORD }}
+
+    # Container build and push to a Container registry
+    - run: |
+        docker tag site-wxt_web:latest drupalwxt/site-wxt:${GITHUB_REF#refs/tags/}
+        docker tag site-wxt_nginx:latest drupalwxt/site-wxt:${GITHUB_REF#refs/tags/}-nginx
+        docker push drupalwxt/site-wxt:${GITHUB_REF#refs/tags/}
+        docker push drupalwxt/site-wxt:${GITHUB_REF#refs/tags/}-nginx
