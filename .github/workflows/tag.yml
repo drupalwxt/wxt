@@ -174,5 +174,7 @@ jobs:
     - run: |
         docker tag site-wxt_web:latest drupalwxt/site-wxt:${{ env.GITHUB_REFERENCE }}
         docker tag site-wxt_nginx:latest drupalwxt/site-wxt:${{ env.GITHUB_REFERENCE }}-nginx
+        docker tag site-wxt_web:latest drupalwxt/site-wxt:latest
+        docker tag site-wxt_nginx:latest drupalwxt/site-wxt:latest-nginx
         docker push drupalwxt/site-wxt:${{ env.GITHUB_REFERENCE }}
         docker push drupalwxt/site-wxt:${{ env.GITHUB_REFERENCE }}-nginx
