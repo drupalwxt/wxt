@@ -15,10 +15,15 @@ jobs:
     - uses: actions/checkout@master
 
     - name: Export github reference var
-      run: echo '::set-env name=GITHUB_REFERENCE::$(echo ${GITHUB_REF#refs/tags/})'
+      run: echo "::set-env name=GITHUB_REFERENCE::$(echo ${GITHUB_REF#refs/tags/})"
+
+    - name: Export drupal semver
+      run: echo "::set-env name=DRUPAL_SEMVER::$(echo ${{ env.GITHUB_REFERENCE }} | sed -E 's/([0-9]+)\.([0-9]+)\.([0-9]+)/\1.\2\3/g')"
 
     - name: Setup dependencies
       run: |
+        git config --global user.email "development+drupalwxt@zacharyseguin.ca"
+        git config --global user.name "drupalwxt-svc"
         git clone --branch 8.x https://drupalwxt-svc:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/drupalwxt/site-wxt.git
         cd site-wxt
         rm composer.lock
@@ -47,8 +52,10 @@ jobs:
 
     - name: Generate tarball
       run: |
-        cd site-wxt
-        ./tarball.sh ${${{ env.GITHUB_REFERENCE }}:3:1}
+        sudo rm -rf site-wxt
+        composer global require grasmash/yaml-cli
+        export PATH=/home/runner/.composer/vendor/bin:$PATH
+        ./tarball.sh ${{ env.DRUPAL_SEMVER }}
 
     - name: Create Release
       id: create_release
@@ -68,12 +75,13 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./wxt-8.x-${${{ env.GITHUB_REFERENCE }}:3:1}.tar.gz
-        asset_name: wxt-8.x-${${{ env.GITHUB_REFERENCE }}:3:1}.tar.gz
+        asset_path: ./wxt-8.x-${{ env.DRUPAL_SEMVER }}.tar.gz
+        asset_name: wxt-8.x-${{ env.DRUPAL_SEMVER }}.tar.gz
         asset_content_type: application/tar+gzip
 
     - name: Checkout repos to update tags
       run: |
+        git clone --branch 8.x https://drupalwxt-svc:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/drupalwxt/site-wxt.git
         git clone --branch 8.x https://drupalwxt-svc:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/drupalwxt/wxt-project.git
         git clone --branch master https://drupalwxt-svc:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/drupalwxt/helm-drupal.git
         git clone --branch master https://drupalwxt-svc:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/drupalwxt/terraform-containers-webapp-azure.git
@@ -82,7 +90,7 @@ jobs:
     - name: Update tags for wxt-project
       uses: jacobtomlinson/gha-find-replace@master
       with:
-        find: "\"drupalwxt/wxt\": \"3.*.*\""
+        find: "\"drupalwxt/wxt\": \"3\\.[0-9]+\\.[0-9]+\""
         replace: "\"drupalwxt/wxt\": \"${{ env.GITHUB_REFERENCE }}\""
         input: ".*"
         exclude: ".git/"
@@ -91,7 +99,7 @@ jobs:
     - name: Update tags for helm-drupal
       uses: jacobtomlinson/gha-find-replace@master
       with:
-        find: "appVersion: 3.*.*"
+        find: "appVersion: 3\\.[0-9]+\\.[0-9]+"
         replace: "appVersion: ${{ env.GITHUB_REFERENCE }}"
         input: ".*"
         exclude: ".git/"
@@ -100,7 +108,7 @@ jobs:
     - name: Update tags for helm-drupal
       uses: jacobtomlinson/gha-find-replace@master
       with:
-        find: "tag: 3.*.*"
+        find: "tag: 3\\.[0-9]+\\.[0-9]+"
         replace: "tag: ${{ env.GITHUB_REFERENCE }}"
         input: ".*"
         exclude: ".git/"
@@ -109,16 +117,16 @@ jobs:
     - name: Update tags for terraform-containers-webapp-azure
       uses: jacobtomlinson/gha-find-replace@master
       with:
-        find: "image: drupalwxt/site-wxt:3.*.*"
+        find: "image: drupalwxt/site-wxt:3\\.[0-9]+\\.[0-9]+"
         replace: "image: drupalwxt/site-wxt:${{ env.GITHUB_REFERENCE }}"
         input: ".*"
         exclude: ".git/"
-        include: "terraform-kubernetes-drupalwxt/"
+        include: "terraform-containers-webapp-azure/"
 
     - name: Update tags for terraform-kubernetes-drupalwxt
       uses: jacobtomlinson/gha-find-replace@master
       with:
-        find: "tag: 3.*.*"
+        find: "tag: 3\\.[0-9]+\\.[0-9]+"
         replace: "tag: ${{ env.GITHUB_REFERENCE }}"
         input: ".*"
         exclude: ".git/"
@@ -129,49 +137,41 @@ jobs:
         cd site-wxt
         composer install
         git add .
-        git commit -m "Update to latest version of WxT ${{ env.GITHUB_REFERENCE }}"
+        git commit -m "Update to latest version of WxT ${{ env.GITHUB_REFERENCE }}" || true
         git push origin 8.x
 
     - name: Push to wxt-project the latest tags
       run: |
         cd wxt-project
         git add .
-        git commit -m "Update to latest version of WxT ${{ env.GITHUB_REFERENCE }}"
+        git commit -m "Update to latest version of WxT ${{ env.GITHUB_REFERENCE }}" || true
         git push origin 8.x
 
     - name: Push to helm-drupal the latest tags
       run: |
         cd helm-drupal
         git add .
-        git commit -m "Update to latest version of WxT ${{ env.GITHUB_REFERENCE }}"
+        git commit -m "Update to latest version of WxT ${{ env.GITHUB_REFERENCE }}" || true
         git push origin master
 
     - name: Push to terraform-containers-webapp-azure the latest tags
       run: |
         cd terraform-containers-webapp-azure
         git add .
-        git commit -m "Update to latest version of WxT ${{ env.GITHUB_REFERENCE }}"
+        git commit -m "Update to latest version of WxT ${{ env.GITHUB_REFERENCE }}" || true
         git push origin master
 
     - name: Push to terraform-kubernetes-drupalwxt the latest tags
       run: |
         cd terraform-kubernetes-drupalwxt
         git add .
-        git commit -m "Update to latest version of WxT ${{ env.GITHUB_REFERENCE }}"
+        git commit -m "Update to latest version of WxT ${{ env.GITHUB_REFERENCE }}" || true
         git push origin master
-
-    - name: Repository Dispatch to website
-      uses: peter-evans/repository-dispatch@v1
-      with:
-        token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-        repository: drupalwxt/website
-        event-type: wxt-tagged
-        client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
 
     # Connect to Container registry
     - uses: azure/docker-login@v1
       with:
-        login-server: index.docker.io
+        login-server: docker.io
         username: ${{ secrets.REGISTRY_USERNAME }}
         password: ${{ secrets.REGISTRY_PASSWORD }}
 

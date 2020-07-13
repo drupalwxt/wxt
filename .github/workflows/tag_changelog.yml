@@ -1,0 +1,25 @@
+name: tag_changelog
+on:
+  push:
+    branches:
+      - 8.x-3.x
+  release:
+    types: [edited]
+
+# Environment variables available to all jobs and steps in this workflow
+env:
+  COMPOSER_MEMORY_LIMIT: -1
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+
+    - name: Repository Dispatch to website
+      uses: peter-evans/repository-dispatch@v1
+      with:
+        token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+        repository: drupalwxt/website
+        event-type: wxt-tagged
+        client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
