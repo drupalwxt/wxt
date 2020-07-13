@@ -92,7 +92,6 @@ jobs:
       with:
         find: "\"drupalwxt/wxt\": \"3\\.[0-9]+\\.[0-9]+\""
         replace: "\"drupalwxt/wxt\": \"${{ env.GITHUB_REFERENCE }}\""
-        include: ".*"
         exclude: ".git/"
         include: "wxt-project/"
 
@@ -101,7 +100,6 @@ jobs:
       with:
         find: "appVersion: 3\\.[0-9]+\\.[0-9]+"
         replace: "appVersion: ${{ env.GITHUB_REFERENCE }}"
-        include: ".*"
         exclude: ".git/"
         include: "helm-drupal/"
 
@@ -110,7 +108,6 @@ jobs:
       with:
         find: "tag: 3\\.[0-9]+\\.[0-9]+"
         replace: "tag: ${{ env.GITHUB_REFERENCE }}"
-        include: ".*"
         exclude: ".git/"
         include: "helm-drupal/"
 
@@ -119,7 +116,6 @@ jobs:
       with:
         find: "image: drupalwxt/site-wxt:3\\.[0-9]+\\.[0-9]+"
         replace: "image: drupalwxt/site-wxt:${{ env.GITHUB_REFERENCE }}"
-        include: ".*"
         exclude: ".git/"
         include: "terraform-containers-webapp-azure/"
 
@@ -128,7 +124,6 @@ jobs:
       with:
         find: "tag: 3\\.[0-9]+\\.[0-9]+"
         replace: "tag: ${{ env.GITHUB_REFERENCE }}"
-        include: ".*"
         exclude: ".git/"
         include: "terraform-kubernetes-drupalwxt/"
 
