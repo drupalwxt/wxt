@@ -95,6 +95,14 @@ jobs:
         exclude: ".git/"
         include: "wxt-project/"
 
+    - name: Update tags for wxt-project
+      uses: jacobtomlinson/gha-find-replace@master
+      with:
+        find: "wxt-project:3\\.[0-9]+\\.[0-9]+"
+        replace: "wxt-project:${{ env.GITHUB_REFERENCE }}"
+        exclude: ".git/"
+        include: "wxt-project/"
+
     - name: Update tags for helm-drupal
       uses: jacobtomlinson/gha-find-replace@master
       with:
