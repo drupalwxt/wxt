@@ -92,7 +92,7 @@ jobs:
       with:
         find: "\"drupalwxt/wxt\": \"3\\.[0-9]+\\.[0-9]+\""
         replace: "\"drupalwxt/wxt\": \"${{ env.GITHUB_REFERENCE }}\""
-        input: ".*"
+        include: ".*"
         exclude: ".git/"
         include: "wxt-project/"
 
@@ -101,7 +101,7 @@ jobs:
       with:
         find: "appVersion: 3\\.[0-9]+\\.[0-9]+"
         replace: "appVersion: ${{ env.GITHUB_REFERENCE }}"
-        input: ".*"
+        include: ".*"
         exclude: ".git/"
         include: "helm-drupal/"
 
@@ -110,7 +110,7 @@ jobs:
       with:
         find: "tag: 3\\.[0-9]+\\.[0-9]+"
         replace: "tag: ${{ env.GITHUB_REFERENCE }}"
-        input: ".*"
+        include: ".*"
         exclude: ".git/"
         include: "helm-drupal/"
 
@@ -119,7 +119,7 @@ jobs:
       with:
         find: "image: drupalwxt/site-wxt:3\\.[0-9]+\\.[0-9]+"
         replace: "image: drupalwxt/site-wxt:${{ env.GITHUB_REFERENCE }}"
-        input: ".*"
+        include: ".*"
         exclude: ".git/"
         include: "terraform-containers-webapp-azure/"
 
@@ -128,13 +128,14 @@ jobs:
       with:
         find: "tag: 3\\.[0-9]+\\.[0-9]+"
         replace: "tag: ${{ env.GITHUB_REFERENCE }}"
-        input: ".*"
+        include: ".*"
         exclude: ".git/"
         include: "terraform-kubernetes-drupalwxt/"
 
     - name: Push to site-wxt the latest build sha
       run: |
         cd site-wxt
+        rm composer.lock
         composer install
         git add .
         git commit -m "Update to latest version of WxT ${{ env.GITHUB_REFERENCE }}" || true
