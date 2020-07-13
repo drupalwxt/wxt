@@ -171,7 +171,6 @@ jobs:
     # Connect to Container registry
     - uses: azure/docker-login@v1
       with:
-        login-server: docker.io
         username: ${{ secrets.REGISTRY_USERNAME }}
         password: ${{ secrets.REGISTRY_PASSWORD }}
 
