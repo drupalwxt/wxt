@@ -149,6 +149,7 @@ jobs:
         cd wxt-project
         git add .
         git commit -m "Update to latest version of WxT ${{ env.GITHUB_REFERENCE }}" || true
+        git tag ${{ env.GITHUB_REFERENCE }}
         git push origin 8.x
 
     - name: Push to helm-drupal the latest tags
