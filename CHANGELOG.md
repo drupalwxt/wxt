@@ -10,7 +10,6 @@ Security updates:
   * [SA-core-2020-011](https://www.drupal.org/sa-core-2020-011)
 
 Features/Updates:
-- Update Lightning [4.1.7](https://github.com/acquia/lightning/releases/tag/4.1.7)
 
 ## v3.0.13
 
