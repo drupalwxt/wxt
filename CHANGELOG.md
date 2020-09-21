@@ -1,3 +1,16 @@
+## v3.0.14
+
+Security updates:
+
+* Update Drupal Core to [8.8.10](https://www.drupal.org/project/drupal/releases/8.9.6)
+  * [SA-core-2020-007](https://www.drupal.org/sa-core-2020-007)
+  * [SA-core-2020-008](https://www.drupal.org/sa-core-2020-008)
+  * [SA-core-2020-009](https://www.drupal.org/sa-core-2020-009)
+  * [SA-core-2020-010](https://www.drupal.org/sa-core-2020-010)
+  * [SA-core-2020-011](https://www.drupal.org/sa-core-2020-011)
+
+Features/Updates:
+
 ## v3.0.13
 
 Features/Updates:
