@@ -11,6 +11,8 @@ Security updates:
 
 Features/Updates:
 
+- Update Lightning [4.1.7](https://github.com/acquia/lightning/releases/tag/4.1.7)
+
 ## v3.0.13
 
 Features/Updates:
