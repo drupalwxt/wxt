@@ -200,8 +200,6 @@
                 "https://www.drupal.org/files/issues/bandaid.patch",
                 "Enter drupal/panels patch #2869412 description here":
                 "https://www.drupal.org/files/issues/2018-03-19/panels--page_title_does_not_display--2869412-27.patch",
-                "Enter drupal/panels patch #2900531 description here":
-                "https://www.drupal.org/files/issues/classes_should_be_array-2900531-2.patch",
                 "Enter drupal/panels patch #2910704 description here":
                 "https://www.drupal.org/files/issues/panels-ipe-card-flip-ie-error-2910704.diff"
             },
