@@ -246,6 +246,7 @@
         "cweagans/composer-patches": "^1.6.7",
         "zaporylie/composer-drupal-optimizations": "^1.1",
         "acquia/lightning": "4.1.7",
+        "drupal/lightning_media": "^3.14",
         "drupal/admin_toolbar": "^2.0",
         "drupal/block_class": "1.1",
         "drupal/blog": "2.0-beta1",
