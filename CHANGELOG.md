@@ -13,6 +13,23 @@ Features/Updates:
 
 - Update Lightning [4.1.7](https://github.com/acquia/lightning/releases/tag/4.1.7)
 
+Upgrade path:
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
+- Run Lightning configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:lightning`
+
+- Run WxT configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:wxt`
+
 ## v3.0.13
 
 Features/Updates:
