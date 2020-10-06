@@ -2,12 +2,13 @@ langcode: en
 status: true
 dependencies:
   config:
+    - entity_browser.browser.media_browser
     - field.field.media.slideshow.field_media_in_library
     - field.field.media.slideshow.field_slideshow_style
     - field.field.media.slideshow.slideshow_items
     - media.type.slideshow
   module:
-    - media_library
+    - entity_browser
     - path
 id: media.slideshow.default
 targetEntityType: media
@@ -41,12 +42,20 @@ content:
     settings: {  }
     third_party_settings: {  }
   slideshow_items:
-    type: media_library_widget
-    weight: 26
+    type: entity_browser_entity_reference
+    weight: 1
     settings:
-      media_types: {  }
-    third_party_settings: {  }
+      entity_browser: media_browser
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      selection_mode: selection_append
+      field_widget_display_settings:
+        view_mode: thumbnail
+      open: true
+      field_widget_replace: false
     region: content
+    third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:

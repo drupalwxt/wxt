@@ -8,6 +8,7 @@ dependencies:
     - field.field.block_content.search.field_search_path
     - field.field.block_content.search.field_search_placeholder
   module:
+    - content_moderation
     - field_group
     - link
     - text
@@ -52,7 +53,6 @@ content:
       summary_rows: 3
       placeholder: ''
     third_party_settings: {  }
-    region: content
   field_search_filter:
     weight: 6
     settings:
@@ -60,7 +60,6 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
-    region: content
   field_search_path:
     weight: 5
     settings:
@@ -68,7 +67,6 @@ content:
       placeholder_title: ''
     third_party_settings: {  }
     type: link_default
-    region: content
   field_search_placeholder:
     weight: 4
     settings:
@@ -76,7 +74,6 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
-    region: content
   info:
     type: string_textfield
     weight: 0
@@ -84,16 +81,13 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    region: content
   langcode:
     type: language_select
     weight: 1
     settings: {  }
     third_party_settings: {  }
-    region: content
   translation:
     weight: 4
     settings: {  }
     third_party_settings: {  }
-    region: content
 hidden: {  }

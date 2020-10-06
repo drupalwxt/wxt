@@ -21,7 +21,6 @@ content:
     weight: 0
     settings: {  }
     third_party_settings: {  }
-    region: content
   field_search_filter:
     weight: 2
     label: hidden
@@ -29,7 +28,6 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-    region: content
   field_search_path:
     weight: 4
     label: hidden
@@ -41,7 +39,6 @@ content:
       target: '0'
     third_party_settings: {  }
     type: link
-    region: content
   field_search_placeholder:
     weight: 3
     label: hidden
@@ -49,6 +46,5 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-    region: content
 hidden:
   langcode: true

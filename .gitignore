@@ -11,6 +11,9 @@ compass_app_log.txt
 *.vi
 *.sass-cache
 
+# VSCode
+.vscode
+
 # Composer files
 bin/
 html
@@ -24,9 +27,6 @@ bower_components/
 
 # PhpStorm
 .idea
-
-# VSCode
-.vscode
 
 # SASS
 .sass-cache

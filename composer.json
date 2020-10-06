@@ -70,8 +70,8 @@
             }
         },
         "installer-types": [
-          "bower-asset",
-          "npm-asset"
+            "bower-asset",
+            "npm-asset"
         ],
         "installer-paths": {
             "html/core": [
@@ -171,7 +171,7 @@
             },
             "drupal/group": {
                 "Enter drupal/group patch #2817109 description here":
-                 "https://www.drupal.org/files/issues/2817109-by-rachel_norfolk-ericras-How-to-redir.patch",
+                "https://www.drupal.org/files/issues/2817109-by-rachel_norfolk-ericras-How-to-redir.patch",
                 "Enter drupal/group patch #2864721 description here":
                 "https://www.drupal.org/files/issues/2020-01-13/group-translate_content_permission-2864721-19.patch",
                 "Enter drupal/group patch #2895988 description here":
@@ -260,11 +260,12 @@
         "drupal/entity_reference_revisions": "1.8",
         "drupal/entityqueue": "^1.0-alpha8",
         "drupal/facets": "^1.4",
-		"drupal/field_group": "^3.0",
+        "drupal/field_group": "^3.0",
         "drupal/fontawesome": "^2.12",
         "drupal/group": "1.0-rc5",
         "drupal/inline_entity_form": "1.0-rc6",
         "drupal/linkit": "5.0-beta11",
+        "drupal/lightning_media": "^3.14",
         "drupal/media_entity_slideshow": "2.0",
         "drupal/menu_block": "1.6.0",
         "drupal/menu_breadcrumb": "1.13",
@@ -286,8 +287,8 @@
         "drupal/views_autocomplete_filters": "1.2",
         "drupal/webform": "^5.11",
         "drupal/webform_migrate": "1.1",
-        "drupal/wxt_bootstrap": "1.24",
-        "drupal/wxt_library": "1.18",
+        "drupal/wxt_bootstrap": "1.25",
+        "drupal/wxt_library": "1.19",
         "w8tcha/ckeditor-codemirror": "1.16"
     },
     "autoload": {
