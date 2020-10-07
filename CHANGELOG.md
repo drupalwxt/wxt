@@ -8,6 +8,13 @@ Security updates:
   * [SA-core-2020-009](https://www.drupal.org/sa-core-2020-009)
   * [SA-core-2020-010](https://www.drupal.org/sa-core-2020-010)
   * [SA-core-2020-011](https://www.drupal.org/sa-core-2020-011)
+- Updates for WxT Library
+  - Updates to WET-BOEW Library v4.0.38
+- Updates for WxT Bootstrap
+  - Add missing aria-label
+  - Link Canada Logo
+  - Search Box handling
+  - Article Role and About
 
 Features/Updates:
 
