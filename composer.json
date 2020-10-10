@@ -217,6 +217,10 @@
                 "Enter drupal/s3fs patch #3038992 description here":
                 "https://www.drupal.org/files/issues/2019-03-10/0001-feat-s3fs-Compatibility-with-Minio.patch"
             },
+            "drupal/token": {
+                "Enter drupal/token patch #2863200 description here":
+                "https://www.drupal.org/files/issues/2019-03-15/2863200-23.patch"
+            },
             "drupal/views_bootstrap": {
                 "Enter drupal/views_bootstrap patch #2878352 description here":
                 "https://www.drupal.org/files/issues/add_bootstrap_panels-2878352-3.patch"

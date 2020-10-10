@@ -196,6 +196,7 @@ projects[slick_entityreference][type] = module
 projects[slick_entityreference][version] = 2.0
 projects[token][type] = module
 projects[token][version] = 1.7
+projects[token][patch][] = https://www.drupal.org/files/issues/2019-03-15/2863200-23.patch
 projects[token_filter][type] = module
 projects[token_filter][version] = 1.2
 projects[url_embed][type] = module
