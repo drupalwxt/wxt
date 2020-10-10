@@ -7,6 +7,7 @@ projects[drupal][download][branch] = 8.8.x
 projects[drupal][download][tag] = 8.8.10
 projects[drupal][patch][] = https://www.drupal.org/files/issues/2019-12-27/1356276-88x-603.patch
 projects[drupal][patch][] = https://www.drupal.org/files/issues/2018-09-06/1838234-52.patch
+projects[drupal][patch][] = https://www.drupal.org/files/issues/2020-08-27/w3c-entity-links-2454915-36.patch
 projects[drupal][patch][] = https://www.drupal.org/files/issues/2018-04-03/views-multivalue_field_rendering_performance-2846485-23.patch
 projects[drupal][patch][] = https://www.drupal.org/files/issues/2020-01-08/comment-redirect-2559833-62.patch
 projects[drupal][patch][] = https://www.drupal.org/files/issues/2019-12-30/2630732-63.patch
