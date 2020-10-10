@@ -124,8 +124,6 @@
                 "https://www.drupal.org/files/issues/2019-12-30/2630732-63.patch",
                 "2679775 - Fixes float issue with inline label fields (entity references on most cases).":
                 "https://www.drupal.org/files/issues/2679775-11-inline-labels.patch",
-                "Enter drupal/core patch #2698057 description here":
-                "https://www.drupal.org/files/issues/2698057_2.patch",
                 "2699157 - Plugin Lazy loading can cause usort warning":
                 "https://www.drupal.org/files/issues/2699157-23.drupal.Plugin-Lazy-loading-can-cause-usort-warning.patch",
                 "Enter drupal/core patch #2715483 description here":

@@ -12,7 +12,6 @@ projects[drupal][patch][] = https://www.drupal.org/files/issues/2018-04-03/views
 projects[drupal][patch][] = https://www.drupal.org/files/issues/2020-01-08/comment-redirect-2559833-62.patch
 projects[drupal][patch][] = https://www.drupal.org/files/issues/2019-12-30/2630732-63.patch
 projects[drupal][patch][] = https://www.drupal.org/files/issues/2679775-11-inline-labels.patch
-projects[drupal][patch][] = https://www.drupal.org/files/issues/2698057_2.patch
 projects[drupal][patch][] = https://www.drupal.org/files/issues/2699157-23.drupal.Plugin-Lazy-loading-can-cause-usort-warning.patch
 projects[drupal][patch][] = https://www.drupal.org/files/issues/2020-01-09/regression-2715483-22.patch
 projects[drupal][patch][] = https://www.drupal.org/files/issues/in_correct_order_and-2752443-1.patch
