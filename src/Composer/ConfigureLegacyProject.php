@@ -42,6 +42,9 @@ final class ConfigureLegacyProject {
     $project['extra']['patchLevel']['drupal/core'] = '-p2';
     $project['extra']['patches-ignore'] = $event->getComposer()->getPackage()->getExtra()['patches-ignore'];
 
+    // Composer doesn't like empty sections of composer.json, so
+    // filter those out before we write the configuration.
+    $project = array_filter($project);
     $target->write($project);
   }
 

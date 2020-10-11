@@ -43,6 +43,7 @@ class ComponentDiscovery {
    *   The application root directory.
    */
   public function __construct($app_root) {
+    @trigger_error(__CLASS__ . ' is deprecated in wxt:8.x-4.0 and will be removed in wxt:8.x-4.1. If you need it, copy it into your project. See https://www.drupal.org/node/3156219', E_USER_DEPRECATED);
     $this->discovery = new ExtensionDiscovery($app_root);
   }
 
@@ -87,7 +88,7 @@ class ComponentDiscovery {
   }
 
   /**
-   * Returns extension objects for all main Lightning components.
+   * Returns extension objects for all main WxT components.
    *
    * @return \Drupal\Core\Extension\Extension[]
    *   Array of extension objects for top-level WxT components.
@@ -97,8 +98,10 @@ class ComponentDiscovery {
 
     $filter = function (Extension $module) use ($identifier) {
       // Assumes that:
-      // 1. WxT sub-components are always in a sub-directory
+      // 1. WxT sub-components are always in a sub-directory within the
+      //    main component.
       // 2. The main component's directory starts with "wxt_".
+      // E.g.: "/wxt_core/modules/wxt_search".
       $path = explode(DIRECTORY_SEPARATOR, $module->getPath());
       $parent = $path[count($path) - 3];
       return strpos($parent, $identifier) !== 0;

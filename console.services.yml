@@ -1,22 +1,4 @@
 services:
-  wxt.subprofile:
-    class: '\Drupal\wxt\Command\SubProfileCommand'
-    arguments:
-      - '@wxt.subprofile_generator'
-      - '@?console.string_converter'
-      - '@?console.validator'
-      - '@app.root'
-      - '@info_parser'
-      - '@?console.translator_manager'
-    tags:
-      - { name: drupal.command }
-
-  wxt.subprofile_generator:
-    class: '\Drupal\wxt\Generator\SubProfileGenerator'
-    arguments: []
-    tags:
-      - { name: drupal.generator }
-
   wxt.version_command:
     class: 'Drupal\wxt\Command\VersionCommand'
     arguments:

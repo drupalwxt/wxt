@@ -1,0 +1,7 @@
+services:
+  subprofile.generator:
+    class: '\Drupal\wxt\Generators\SubProfileGenerator'
+    arguments:
+      - '@extension.list.module'
+    tags:
+      - { name: drush.generator }
