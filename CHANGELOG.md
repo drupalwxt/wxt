@@ -1,3 +1,29 @@
+## v3.0.15 (In Development)
+
+- Updates to Drupal
+  - Added language token to token module
+- Updates for WxT
+  - Added new drush command for sub profile generation
+- Updates for WxT Bootstrap
+  - Additional WCAG logic for "skip to" section
+
+Upgrade path:
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
+- Run Lightning configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:lightning`
+
+- Run WxT configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:wxt`
+
 ## v3.0.14
 
 Security updates:
