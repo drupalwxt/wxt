@@ -190,6 +190,10 @@ git clone https://github.com/drupalwxt/docker-scaffold.git docker
 
 Contributor(s): https://github.com/drupalwxt/wxt/graphs/contributors
 
+## Acknowledgements
+
+Extended with code and lessons learned by the [Acquia Team](https://acquia.com) over at [Lightning](https://github.com/acquia/lightning) and [BLT](https://github.com/acquia/blt).
+
 <!-- Links Referenced -->
 
 [acquia]:               https://acquia.com
