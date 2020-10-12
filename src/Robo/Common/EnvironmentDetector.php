@@ -81,9 +81,19 @@ class EnvironmentDetector {
   }
 
   /**
-   * Is stage.
+   * Is test.
    */
-  public static function isStageEnv() {
+  public static function isTestEnv() {
+    $results = self::getSubclassResults(__FUNCTION__);
+    if ($results) {
+      return TRUE;
+    }
+  }
+
+  /**
+   * Is QA.
+   */
+  public static function isQaEnv() {
     $results = self::getSubclassResults(__FUNCTION__);
     if ($results) {
       return TRUE;
@@ -125,7 +135,8 @@ class EnvironmentDetector {
     return [
       'local' => self::isLocalEnv(),
       'dev' => self::isDevEnv(),
-      'stage' => self::isStageEnv(),
+      'test' => self::isTestEnv(),
+      'qa' => self::isQaEnv(),
       'prod' => self::isProdEnv(),
       'ci' => self::isCiEnv(),
     ];
