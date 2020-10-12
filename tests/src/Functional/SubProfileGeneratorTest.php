@@ -11,6 +11,8 @@ use Drush\TestTraits\DrushTestTrait;
 /**
  * Tests the Drush command to generate a WxT sub-profile.
  *
+ * Leveraged from code provided by Acquia for the Lightning distribution.
+ *
  * @covers \Drupal\wxt\Generators\SubProfileGenerator
  *
  * @group wxt

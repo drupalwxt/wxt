@@ -9,6 +9,8 @@ use Composer\Script\Event;
 
 /**
  * Generates Drush make files for drupal.org's ancient packaging system.
+ *
+ * Leveraged from code provided by Acquia for the Lightning distribution.
  */
 class Package {
 

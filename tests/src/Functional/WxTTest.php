@@ -7,6 +7,8 @@ use Drupal\Tests\BrowserTestBase;
 /**
  * Tests WxT installation profile expectations.
  *
+ * Leveraged from code provided by Acquia for the Lightning distribution.
+ *
  * @group wxt
  */
 class WxTTest extends BrowserTestBase {

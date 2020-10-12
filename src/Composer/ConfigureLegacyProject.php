@@ -7,6 +7,8 @@ use Composer\Script\Event;
 
 /**
  * Configures an instance of drupal/legacy-project to install Lightning.
+ *
+ * Leveraged from code provided by Acquia for the Lightning distribution.
  */
 final class ConfigureLegacyProject {
 

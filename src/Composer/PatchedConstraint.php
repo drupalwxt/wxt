@@ -8,6 +8,8 @@ use Composer\Script\Event;
 
 /**
  * Ensures that all patched dependencies are pinned to a specific version.
+ *
+ * Leveraged from code provided by Acquia for the Lightning distribution.
  */
 class PatchedConstraint {
 

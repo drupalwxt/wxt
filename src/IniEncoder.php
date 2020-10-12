@@ -4,6 +4,8 @@ namespace Drupal\wxt;
 
 /**
  * Contains methods for parsing and dumping data in the legacy info file format.
+ *
+ * Leveraged from code provided by Acquia for the Lightning distribution.
  */
 class IniEncoder {
 

@@ -7,6 +7,8 @@ use Drupal\Core\Extension\ExtensionDiscovery;
 
 /**
  * Helper object to locate WxT components and sub-components.
+ *
+ * Leveraged from code provided by Acquia for the Lightning distribution.
  */
 class ComponentDiscovery {
 

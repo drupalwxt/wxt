@@ -18,6 +18,8 @@ use Symfony\Component\Console\Question\Question;
  * The generator will ask for a human-readable name, machine name, optional
  * description, and optional lists of modules to include in the generated
  * profile, and WxT modules to exclude.
+ *
+ * Leveraged from code provided by Acquia for the Lightning distribution.
  */
 final class SubProfileGenerator extends BaseGenerator {
 

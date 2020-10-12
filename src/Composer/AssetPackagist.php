@@ -7,6 +7,8 @@ use Composer\Script\Event;
 
 /**
  * Adds Asset Packagist support to a composer.json.
+ *
+ * Leveraged from code provided by Acquia for the Lightning distribution.
  */
 final class AssetPackagist {
 

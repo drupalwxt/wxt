@@ -11,6 +11,8 @@ use Symfony\Component\Yaml\Yaml;
 
 /**
  * Prints the semver version of the current WxT code base.
+ *
+ * Leveraged from code provided by Acquia for the Lightning distribution.
  */
 class VersionCommand extends Command {
 

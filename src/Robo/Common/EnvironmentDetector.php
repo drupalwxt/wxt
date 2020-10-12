@@ -8,6 +8,8 @@ namespace Drupal\wxt\Robo\Common;
  * @package Drupal\wxt\Robo\Common
  *
  * Attempts to detect various properties about the current hosting environment.
+ *
+ * Leveraged from code provided by Acquia for the Lightning distribution.
  */
 class EnvironmentDetector {
 

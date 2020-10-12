@@ -6,6 +6,8 @@ use Drupal\Core\Render\ElementInfoManagerInterface;
 
 /**
  * Provides helper methods for working with forms and form elements.
+ *
+ * Leveraged from code provided by Acquia for the Lightning distribution.
  */
 class FormHelper {
 

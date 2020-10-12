@@ -14,6 +14,8 @@ use Drupal\Tests\UnitTestCase;
 class FormHelperTest extends UnitTestCase {
 
   /**
+   * Leveraged from code provided by Acquia for the Lightning distribution.
+   *
    * @covers ::applyStandardProcessing
    */
   public function testApplyStandardProcessing() {
