@@ -216,6 +216,10 @@
                 "Character types in character plugin not translatable":
                 "https://www.drupal.org/files/issues/2020-03-17/Password-Policy-constraints-summary-character-types-labels-not-translatable-2975694-16.patch"
             },
+            "drupal/pathauto": {
+                "Better defaults for pathauto to support french.":
+                "https://www.drupal.org/files/issues/2020-10-15/pathauto-config-install-3177185-3.patch"
+            },
             "drupal/s3fs": {
                 "Enter drupal/s3fs patch #2986407 description here":
                 "https://www.drupal.org/files/issues/2018-07-17/s3fs-2986407-save-memory-2.patch",
