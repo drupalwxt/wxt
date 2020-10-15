@@ -291,7 +291,7 @@
         "drupal/s3fs": "3.0-alpha13",
         "drupal/url_embed": "1.0-alpha1",
         "drupal/views_bootstrap": "3.1",
-        "drupal/search_api_solr": "^3.8",
+        "drupal/search_api_solr": "^4.1",
         "drupal/token_filter": "1.2",
         "drupal/views_autocomplete_filters": "1.2",
         "drupal/webform": "^5.11",

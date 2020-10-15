@@ -145,8 +145,11 @@ Drupal WxT thanks to the work done by the Acquia Team is able to use advanced
 configuration management strategies.
 
 At the moment this remains an opt-in process and you will have to add the
-following modules to your `composer.json` before you add the following code
-snippet to your `settings.php` file.
+following modules to your `composer.json` before you add the code snippet
+below to your `settings.php` file.
+
+* [Configuration Split](https://www.drupal.org/project/config_split)
+* [Configuration Ignore](https://www.drupal.org/project/config_ignore)
 
 Once enabled all default configuration will be stored in `/sites/default/files/config/default/`
 and then depending on your environment additionally configuration splits can

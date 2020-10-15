@@ -7,6 +7,8 @@ use Symfony\Component\Console\Style\StyleInterface;
 
 /**
  * Defines a value object wrapping a single optional configuration update.
+ *
+ * Leveraged from code provided by Acquia for the Lightning distribution.
  */
 class UpdateTask {
 

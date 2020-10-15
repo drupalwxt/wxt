@@ -26,8 +26,8 @@ class EnvironmentDetector {
     }
 
     $mapping = [
+      'GITLAB' => 'gitlab',
       'GITHUB' => 'github',
-      'PIPELINE_ENV' => 'pipelines',
     ];
     foreach ($mapping as $env_var => $ci_name) {
       if (getenv($env_var)) {
@@ -42,25 +42,6 @@ class EnvironmentDetector {
    */
   public static function isCiEnv() {
     return self::getCiEnv() || getenv('CI');
-  }
-
-  /**
-   * Get the settings file include for the current CI environment.
-   *
-   * This may be provided by WxT, or via a Composer package that has provided
-   * its own environment detector. In the case of multiple detectors providing a
-   * settings file, the first one wins.
-   *
-   * @return string
-   *   Settings file full path and filename.
-   */
-  public static function getCiSettingsFile() {
-    $results = array_filter(self::getSubclassResults(__FUNCTION__));
-    if ($results) {
-      return current($results);
-    }
-
-    return sprintf("%s/vendor/drupalwxt/wxt/settings/%s.settings.php", dirname(DRUPAL_ROOT), self::getCiEnv());
   }
 
   /**

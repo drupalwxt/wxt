@@ -14,6 +14,8 @@ use Symfony\Component\Console\Style\StyleInterface;
 
 /**
  * Discovers and manages optional configuration updates.
+ *
+ * Leveraged from code provided by Acquia for the Lightning distribution.
  */
 class UpdateManager {
 
