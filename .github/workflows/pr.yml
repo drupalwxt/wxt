@@ -19,7 +19,7 @@ jobs:
 
     - uses: statcan/actions/composer@master
       with:
-        args: require drupalwxt/wxt:dev-${GITHUB_REF#refs/heads/}#${GITHUB_SHA} --working-dir=./site-wxt
+        args: require drupalwxt/wxt:dev-${GITHUB_HEAD_REF}#${GITHUB_SHA} --working-dir=./site-wxt
 
     - name: Build out the Drupal infrastructure
       run: |
