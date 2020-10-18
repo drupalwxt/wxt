@@ -30,7 +30,7 @@ function wxt_ext_translation_enable_translation($entity_info) {
       }
       // Make every field translatable as well.
       $entity_type = $type_manager->getDefinition($entity_type_id);
-      if ($entity_type && $entity_type->isSubclassOf(FieldableEntityInterface::class)) {
+      if ($entity_type && $entity_type->entityClassImplements(FieldableEntityInterface::class)) {
         $fields = $field_manager->getFieldDefinitions($entity_type_id, $bundle);
         foreach ($fields as $field) {
           $field_config = $field->getConfig($bundle);

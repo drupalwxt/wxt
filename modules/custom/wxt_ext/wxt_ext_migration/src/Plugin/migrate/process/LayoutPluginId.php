@@ -84,7 +84,7 @@ class LayoutPluginId extends ProcessPluginBase implements ContainerFactoryPlugin
    * {@inheritdoc}
    */
   public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition, MigrationInterface $migration = NULL) {
-    $entity_manager = $container->get('entity.manager');
+    $entity_manager = $container->get('entity_type.manager');
     $migration_configuration = [
       'migration' => [
         'wxt_media',

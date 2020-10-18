@@ -28,6 +28,13 @@ class WxTHttp4xxController extends ControllerBase implements ContainerInjectionI
   protected $blockViewBuilder;
 
   /**
+   * The entity type manager.
+   *
+   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
+   */
+  protected $entityTypeManager;
+
+  /**
    * Constructs a Drupal\Component\Plugin\PluginBase object.
    *
    * @param \Drupal\Core\Entity\EntityStorageInterface $storage
@@ -45,8 +52,8 @@ class WxTHttp4xxController extends ControllerBase implements ContainerInjectionI
    */
   public static function create(ContainerInterface $container) {
     return new static(
-      $container->get('entity.manager')->getStorage('block_content'),
-      $container->get('entity.manager')->getViewBuilder('block_content')
+      $container->get('entity_type.manager')->getStorage('block_content'),
+      $container->get('entity_type.manager')->getViewBuilder('block_content')
     );
   }
 

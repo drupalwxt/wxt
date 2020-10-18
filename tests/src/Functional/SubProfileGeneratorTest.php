@@ -119,7 +119,6 @@ class SubprofileGeneratorTest extends BrowserTestBase {
     // option, bypassing the generator's interact() method -- which contains all
     // the logic we want to test! The SHELL_INTERACTIVE environment variable
     // forces Symfony Console to run the method anyway.
-    print("hello");
     $this->drush('generate', ['wxt-subprofile'], $options, NULL, "$drupal_root/..", 0, NULL, [
       'SHELL_INTERACTIVE' => 1,
     ]);

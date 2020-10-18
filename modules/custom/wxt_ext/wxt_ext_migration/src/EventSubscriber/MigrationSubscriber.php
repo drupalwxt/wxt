@@ -4,19 +4,17 @@ namespace Drupal\wxt_ext_migration\EventSubscriber;
 
 use Drupal\Core\Cache\CacheTagsInvalidatorInterface;
 use Drupal\Core\Config\ConfigFactoryInterface;
-use Drupal\Core\Entity\EntityManagerInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Drupal\Core\Path\AliasStorageInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Session\SessionManagerInterface;
 use Drupal\Core\Database\Connection;
+use Drupal\Core\TempStore\SharedTempStoreFactory;
 use Drupal\migrate\Event\MigrateEvents;
 use Drupal\migrate\Event\MigrateImportEvent;
 use Drupal\migrate\Event\MigratePreRowSaveEvent;
 use Drupal\migrate\Event\MigratePostRowSaveEvent;
 use Drupal\panelizer\PanelizerInterface;
 use Drupal\Component\Uuid\UuidInterface;
-use Drupal\user\SharedTempStoreFactory;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpFoundation\Session\Session;
 
@@ -45,13 +43,6 @@ class MigrationSubscriber implements EventSubscriberInterface {
    * @var \Drupal\Core\Session\AccountInterface
    */
   protected $currentUser;
-
-  /**
-   * The entity manager.
-   *
-   * @var \Drupal\Core\Entity\EntityStorageInterface
-   */
-  protected $entityManager;
 
   /**
    * The entity type manager service.
@@ -96,24 +87,15 @@ class MigrationSubscriber implements EventSubscriberInterface {
   protected $panelizer;
 
   /**
-   * @var \Drupal\user\SharedTempStoreFactory
+   * @var \Drupal\Core\TempStore\SharedTempStoreFactory
    */
   protected $tempstore;
-
-  /**
-   * The path alias storage.
-   *
-   * @var \Drupal\Core\Path\AliasStorageInterface
-   */
-  protected $aliasStorage;
 
   /**
    * Constructs a new MigrationSubscriber.
    *
    * @param \Drupal\Core\Database\Connection $database
    *   The database.
-   * @param \Drupal\Core\Entity\EntityManagerInterface $entity_manager
-   *   The entity manager service.
    * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
    *   The entity type manager.
    * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
@@ -130,13 +112,10 @@ class MigrationSubscriber implements EventSubscriberInterface {
    *   The cache tag invalidator.
    * @param \Drupal\panelizer\PanelizerInterface $panelizer
    *   The Panelizer service.
-   * @param \Drupal\user\SharedTempStoreFactory $tempstore
+   * @param \Drupal\Core\TempStore\SharedTempStoreFactory $tempstore
    *   The tempstore factory.
-   * @param \Drupal\Core\Path\AliasStorageInterface $alias_storage
-   *   The path alias storage.
    */
   public function __construct(Connection $database,
-                              EntityManagerInterface $entity_manager,
                               EntityTypeManagerInterface $entity_type_manager,
                               ConfigFactoryInterface $config_factory,
                               SessionManagerInterface $session_manager,
@@ -145,10 +124,8 @@ class MigrationSubscriber implements EventSubscriberInterface {
                               UuidInterface $uuid_service,
                               CacheTagsInvalidatorInterface $invalidator,
                               PanelizerInterface $panelizer,
-                              SharedTempStoreFactory $tempstore,
-                              AliasStorageInterface $alias_storage) {
+                              SharedTempStoreFactory $tempstore) {
     $this->database = $database;
-    $this->entityManager = $entity_manager;
     $this->entityTypeManager = $entity_type_manager;
     $this->config = $config_factory;
     $this->sessionManager = $session_manager;
@@ -158,7 +135,6 @@ class MigrationSubscriber implements EventSubscriberInterface {
     $this->invalidator = $invalidator;
     $this->panelizer = $panelizer;
     $this->tempstore = $tempstore;
-    $this->aliasStorage = $alias_storage;
   }
 
   /**
@@ -224,7 +200,7 @@ class MigrationSubscriber implements EventSubscriberInterface {
    * Add a specific entityqueue.
    */
   public function entityQueueCreate($queue, $destBid) {
-    $entity_subqueue = $this->entityManager->getStorage('entity_subqueue')->load($queue);
+    $entity_subqueue = $this->entityTypeManager->getStorage('entity_subqueue')->load($queue);
     $items = $entity_subqueue->get('items')->getValue();
     $items[] = ['target_id' => $destBid[0]];
     $entity_subqueue->set('items', $items);
@@ -235,7 +211,7 @@ class MigrationSubscriber implements EventSubscriberInterface {
    * Add a menu link with dependency support.
    */
   public function menuLinkDependency($title, $link, $translations, $destBid, $weight = 0, $menu = 'main') {
-    $menu_link_content = $this->entityManager->getStorage('menu_link_content')->create([
+    $menu_link_content = $this->entityTypeManager->getStorage('menu_link_content')->create([
       'title' => $title,
       'link' => ['uri' => 'internal:/node/' . $destBid[0]],
       'menu_name' => (!empty($translations)) ? $menu . '-fr' : $menu,

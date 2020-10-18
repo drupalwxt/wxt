@@ -78,7 +78,7 @@ function wxt_import_language_config(array &$install_state) {
   // The language code of the default locale.
   $site_default_langcode = $language_manager->getDefaultLanguage()->getId();
 
-  $files = file_scan_directory(drupal_get_path('profile', 'wxt'), '/.*\.info\.yml/');
+  $files = \Drupal::service('file_system')->scanDirectory(drupal_get_path('profile', 'wxt'), '/.*\.info\.yml/');
   foreach ($files as $file) {
     // The directory where the language config files reside.
     $language_config_directory = dirname($file->uri) . '/config/install/language';

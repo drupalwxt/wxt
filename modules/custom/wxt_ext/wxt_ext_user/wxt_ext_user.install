@@ -5,6 +5,7 @@
  * Contains wxt_ext_user.module.
  */
 
+use Drupal\Core\Session\AccountInterface;
 use Drupal\shortcut\Entity\Shortcut;
 use Drupal\user\Entity\User;
 
@@ -13,13 +14,13 @@ use Drupal\user\Entity\User;
  */
 function wxt_ext_user_install() {
   // Enable default permissions for system roles.
-  user_role_grant_permissions(DRUPAL_ANONYMOUS_RID, [
+  user_role_grant_permissions(AccountInterface::ANONYMOUS_ROLE, [
     'access comments',
     'use search',
     'search content',
     'access user profiles',
   ]);
-  user_role_grant_permissions(DRUPAL_AUTHENTICATED_RID, [
+  user_role_grant_permissions(AccountInterface::AUTHENTICATED_ROLE, [
     'access comments',
     'post comments',
     'search content',
@@ -32,11 +33,11 @@ function wxt_ext_user_install() {
     $user->save();
   }
 
-  user_role_grant_permissions(DRUPAL_ANONYMOUS_RID, ['access site-wide contact form']);
-  user_role_grant_permissions(DRUPAL_AUTHENTICATED_RID, ['access site-wide contact form']);
+  user_role_grant_permissions(AccountInterface::ANONYMOUS_ROLE, ['access site-wide contact form']);
+  user_role_grant_permissions(AccountInterface::AUTHENTICATED_ROLE, ['access site-wide contact form']);
 
   // Allow authenticated users to use shortcuts.
-  user_role_grant_permissions(DRUPAL_AUTHENTICATED_RID, ['access shortcuts']);
+  user_role_grant_permissions(AccountInterface::AUTHENTICATED_ROLE, ['access shortcuts']);
 
   if (!\Drupal::service('config.installer')->isSyncing()) {
 
@@ -73,7 +74,8 @@ function wxt_ext_user_install() {
   }
 
   // Add the First and Last Name fields to the user entity form display.
-  entity_get_form_display('user', 'user', 'default')
+  \Drupal::service('entity_display.repository')
+    ->getFormDisplay('user', 'user', 'default')
     ->setComponent('field_first_name', [
       'type' => 'string_textfield',
     ])

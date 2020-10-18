@@ -68,7 +68,7 @@ class TextToTerm extends ProcessPluginBase {
       return NULL;
     }
 
-    $terms = \Drupal::getContainer()->get('entity.manager')->getStorage('taxonomy_term')->loadByProperties($properties);
+    $terms = \Drupal::getContainer()->get('entity_type.manager')->getStorage('taxonomy_term')->loadByProperties($properties);
     $term = reset($terms);
     if (!empty($term)) {
       if ($row->getDestinationProperty('langcode') && $row->getDestinationProperty('langcode') != LanguageInterface::LANGCODE_NOT_SPECIFIED) {

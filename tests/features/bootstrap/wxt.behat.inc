@@ -12,6 +12,7 @@ use Behat\Mink\Exception\ElementNotFoundException;
 use Behat\Mink\Exception\ExpectationException;
 use Behat\Mink\Exception\UnsupportedDriverActionException;
 use Drupal\DrupalExtension\Context\DrupalSubContextBase;
+use Drupal\Core\Database\Database;
 
 /**
  * Sub context for WxT step definitions.
@@ -56,8 +57,9 @@ class WxTSubContext extends DrupalSubContextBase {
    * @AfterScenario ~@errors
    */
   public function checkWatchdog(AfterScenarioScope $scope) {
-    if (db_table_exists('watchdog')) {
-      $log = db_select('watchdog', 'w')
+    $db = Database::getConnection();
+    if ($db->schema()->tableExists('watchdog')) {
+      $log = $db->select('watchdog', 'w')
         ->fields('w')
         ->condition('w.type', 'php', '=')
         ->condition('w.timestamp', $this->startTime, '>=')

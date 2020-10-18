@@ -9,7 +9,6 @@ use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Controller\TitleResolverInterface;
 use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\Core\Link;
-use Drupal\Core\Path\AliasManagerInterface;
 use Drupal\Core\Path\CurrentPathStack;
 use Drupal\Core\PathProcessor\InboundPathProcessorInterface;
 use Drupal\Core\Path\PathValidator;
@@ -18,6 +17,7 @@ use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\Core\Url;
+use Drupal\path_alias\AliasManagerInterface;
 use Symfony\Component\Routing\Matcher\RequestMatcherInterface;
 
 class TaxonomyBreadcrumbBuilder extends PathBasedBreadcrumbBuilder {
@@ -88,7 +88,7 @@ class TaxonomyBreadcrumbBuilder extends PathBasedBreadcrumbBuilder {
   /**
    * The alias manager.
    *
-   * @var \Drupal\Core\Path\AliasManagerInterface
+   * @var \Drupal\path_alias\AliasManagerInterface
    */
   protected $aliasManager;
 
@@ -115,8 +115,8 @@ class TaxonomyBreadcrumbBuilder extends PathBasedBreadcrumbBuilder {
    *   The language manager.
    * @param \Drupal\Core\Path\PathValidator $pathValidator
    *   The path validator.
-   * @param \Drupal\Core\Path\AliasManager $alias_manager
-   *   The alias manager.
+   * @param \Drupal\path_alias\AliasManagerInterface $alias_manager
+   *   The alias manager service.
    */
   public function __construct(
     RequestContext $context,
