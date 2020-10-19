@@ -234,11 +234,20 @@ if ($split != 'none') {
 // $config["$split_filename_prefix.SITENAME"]['status'] = TRUE;
 ```
 
-## Containers
+## Containers (Optional)
 
 For the (optional) container based development workflow this is roughly the steps that are followed.
 
+> Note: The [docker-scaffold][docker-scaffold] has now been moved to its own repository. Should you wish to use the docker workflow you simply need to run the following command in the site-wxt repository's working directory.
+
 ```sh
+# Git clone docker scaffold
+git clone https://github.com/drupalwxt/docker-scaffold.git docker
+
+# Create symlinks
+ln -s docker/docker-compose.yml docker-compose.yml
+ln -s docker/docker-compose-ci.yml docker-compose-ci.yml
+
 # Composer install
 export COMPOSER_MEMORY_LIMIT=-1 && composer install
 
@@ -262,12 +271,6 @@ make drupal_install
 ./docker/bin/drush migrate:import --group wxt --tag 'Core' && \
 ./docker/bin/drush migrate:import --group gcweb --tag 'Core' && \
 ./docker/bin/drush migrate:import --group gcweb --tag 'Menu'
-```
-
-> Note: The [docker-scaffold][docker-scaffold] has now been moved to its own repository though symlinks are still present. Should you wish to use the docker workflow you simple need to run the following command in the site-wxt repository's working directory.
-
-```sh
-git clone https://github.com/drupalwxt/docker-scaffold.git docker
 ```
 
 ## Version History
