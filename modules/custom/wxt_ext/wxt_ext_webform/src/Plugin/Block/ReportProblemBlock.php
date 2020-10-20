@@ -136,10 +136,10 @@ class ReportProblemBlock extends BlockBase implements ContainerFactoryPluginInte
 
       $build = $view_builder->view($webform);
 
-      return array(
+      return [
         '#theme' => 'gcweb-inline-webform',
         '#content' => $build,
-      );
+      ];
     }
     else {
       $url = $this->getWebform()->toUrl()
