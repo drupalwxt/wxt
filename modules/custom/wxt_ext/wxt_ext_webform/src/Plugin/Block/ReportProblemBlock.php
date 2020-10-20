@@ -88,6 +88,7 @@ class ReportProblemBlock extends BlockBase implements ContainerFactoryPluginInte
   public function defaultConfiguration() {
     return [
       'webform_id' => '',
+      'inline_webform' => '',
     ];
   }
 
@@ -95,6 +96,12 @@ class ReportProblemBlock extends BlockBase implements ContainerFactoryPluginInte
    * {@inheritdoc}
    */
   public function blockForm($form, FormStateInterface $form_state) {
+
+    $form['inline_webform'] = [
+      '#title' => $this->t('Include inline webform (Canada.ca)'),
+      '#type' => 'checkbox',
+      '#default_value' => $this->configuration['inline_webform'],
+    ];
 
     $form['webform_id'] = [
       '#title' => $this->t('Webform'),
@@ -112,22 +119,43 @@ class ReportProblemBlock extends BlockBase implements ContainerFactoryPluginInte
    */
   public function blockSubmit($form, FormStateInterface $form_state) {
     $this->configuration['webform_id'] = $form_state->getValue('webform_id');
+    $this->configuration['inline_webform'] = $form_state->getValue('inline_webform');
   }
 
   /**
    * {@inheritdoc}
    */
   public function build() {
+    $config = \Drupal::config('block.block.reportproblemblock');
+    $inline_webform = $config->get('settings.inline_webform');
 
-    $url = $this->getWebform()->toUrl()
-      ->setOption('query', $this->requestStack->getCurrentRequest()->query->all())
-      ->toString();
-    $markup = '<a class="btn btn-default" href="' . $url . '">';
-    $markup .= '<span class="glyphicon glyphicon-play">&nbsp;</span>';
-    $markup .= $this->t('Report a problem');
-    $markup .= '</a>';
-    $build['#markup'] = $markup;
-    return $build;
+    if ($inline_webform) {
+      $webform_id = $config->get('settings.webform_id');
+      $webform = \Drupal::entityTypeManager()->getStorage('webform')->load($webform_id);
+      $view_builder = \Drupal::service('entity_type.manager')->getViewBuilder('webform');
+
+      $build = $view_builder->view($webform);
+
+      return array(
+        '#theme' => 'gcweb-inline-webform',
+        '#content' => $build,
+      );
+    }
+    else {
+      $url = $this->getWebform()->toUrl()
+        ->setOption('query', $this->requestStack->getCurrentRequest()->query->all())
+        ->toString();
+
+      $markup = '<a class="btn btn-default" href="' . $url . '">';
+      $markup .= '<span class="glyphicon glyphicon-play">&nbsp;</span>';
+      $markup .= $this->t('Report a problem');
+      $markup .= '</a>';
+
+      return [
+        '#type' => 'inline_template',
+        '#template' => $markup,
+      ];
+    }
   }
 
   /**
