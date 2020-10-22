@@ -1,7 +1,7 @@
 name: 'WxT Extend Group'
 description: 'WxT functionality related to CKAN organizations.'
 type: module
-core: 8.x
+core_version_requirement: '^8.8 || ^9'
 package: 'WxT'
 
 # Required modules

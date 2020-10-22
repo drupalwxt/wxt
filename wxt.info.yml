@@ -1,7 +1,7 @@
 name: 'WxT'
 description: 'A Drupal distribution created to leverage the Web Experience Toolkit.'
 type: profile
-core: 8.x
+core_version_requirement: '^8.8 || ^9'
 distribution:
   name: WxT
 

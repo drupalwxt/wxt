@@ -3,9 +3,20 @@
 - Updates to Drupal
   - Added language token to token module
 - Updates for WxT
+  - Ran drupal-check for Drupal 9 support
   - Added new drush command for sub profile generation
+  - Section on configuration split added to README.md
+  - Updated Search API
+  - Optimized default URL alias for french
+  - Support for inline webform report a problem block
 - Updates for WxT Bootstrap
+  - Ran drupal-check for Drupal 9 support
+  - Updated Bootstrap to 3.23
   - Additional WCAG logic for "skip to" section
+  - Additional WCAG only one li element
+- Updates for WxT Library
+  - Ran drupal-check for Drupal 9 support
+  - WCAG missing form label
 
 Upgrade path:
 
