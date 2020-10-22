@@ -6,7 +6,7 @@ use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
- * Class WxT4032404Form.
+ * The WxT4032404Form provides a 403 to 404 redirect.
  *
  * @package Drupal\wxt_core\Form
  */
