@@ -17,6 +17,12 @@
 - Updates for WxT Library
   - Ran drupal-check for Drupal 9 support
   - WCAG missing form label
+- Update openapi_jsonapi to 2.0-rc2
+- Update search_api to 1.18
+- Update simple_gmap to 3.0
+- Update lightning to 4.107
+- Add acquia_telemetry-acquia_telemetry to 1.0-alpha4
+- Update group to 1.0-rc5
 
 Upgrade path:
 
@@ -34,6 +40,11 @@ Upgrade path:
 - Run WxT configuration updates:
   - `drush cache:rebuild`
   - `drush update:wxt`
+
+**Note:** The following modules are no longer provided and were never used by WXT. If you use these modules you will need to add them to your project's composer.json file or include them in your code base using another method.
+
+* Search API Solr (`search_api_solr`)
+* Facets (`facets`)
 
 ## v3.0.14
 
