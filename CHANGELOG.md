@@ -1,4 +1,4 @@
-## v3.0.15 (In Development)
+## v3.0.15
 
 - Updates to Drupal
   - Added language token to token module
@@ -9,6 +9,7 @@
   - Updated Search API
   - Optimized default URL alias for french
   - Support for inline webform report a problem block
+  - Added Redis contributed module to build
 - Updates for WxT Bootstrap
   - Ran drupal-check for Drupal 9 support
   - Updated Bootstrap to 3.23
@@ -21,8 +22,6 @@
 - Update search_api to 1.18
 - Update simple_gmap to 3.0
 - Update lightning to 4.107
-- Add acquia_telemetry-acquia_telemetry to 1.0-alpha4
-- Update group to 1.0-rc5
 
 Upgrade path:
 
