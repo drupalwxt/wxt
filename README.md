@@ -255,7 +255,7 @@ export COMPOSER_MEMORY_LIMIT=-1 && composer install
 make build
 
 # Bring up the dev stack
-docker-compose -f docker-compose.yml up -d
+docker-compose -f docker-compose.yml build --no-cache
 
 # Install Drupal
 make drupal_install

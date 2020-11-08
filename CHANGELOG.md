@@ -1,3 +1,30 @@
+## v3.0.16 (In Development)
+
+- Updates to Composer
+  - Support for Composer v2.0.0
+  - Switch to drupal/core-dev to streamline our composer.json
+- Updates for WxT Bootstrap
+  - Template issue for Main Menu
+- Updates for WxT Library
+  - Improve Canada.ca search submit
+
+Upgrade path:
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
+- Run Lightning configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:lightning`
+
+- Run WxT configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:wxt`
+
 ## v3.0.15
 
 - Updates to Drupal
