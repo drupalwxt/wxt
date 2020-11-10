@@ -24,7 +24,7 @@ jobs:
       run: |
         git config --global user.email "development+drupalwxt@zacharyseguin.ca"
         git config --global user.name "drupalwxt-svc"
-        git clone --branch 8.x https://drupalwxt-svc:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/drupalwxt/site-wxt.git
+        git clone --branch 9.x https://drupalwxt-svc:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/drupalwxt/site-wxt.git
         cd site-wxt
         rm composer.lock
 
@@ -35,7 +35,7 @@ jobs:
     - name: Build out the Drupal infrastructure
       run: |
         cd site-wxt
-        git clone https://github.com/drupalwxt/docker-scaffold.git docker
+        git clone --branch 9.x https://github.com/drupalwxt/docker-scaffold.git docker
         make build
         docker-compose -f docker-compose-ci.yml up -d
         docker ps -a
