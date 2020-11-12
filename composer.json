@@ -85,7 +85,6 @@
         "post-update-cmd": [
             "@composer package"
         ],
-        "configure-tarball": "Drupal\\wxt\\Composer\\ConfigureLegacyProject::execute",
         "enable-asset-packagist": "Acquia\\Lightning\\Composer\\AssetPackagist::execute",
         "nuke": "rm -r -f html vendor",
         "package": "Drupal\\wxt\\Composer\\Package::execute",
@@ -278,8 +277,6 @@
         "psr-4": {
             "Drupal\\wxt\\": "src"
         },
-        "classmap": [
-            "src/Composer/ConfigureLegacyProject.php"
-        ]
+        "classmap": []
     }
 }
