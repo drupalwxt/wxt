@@ -1,0 +1,17 @@
+name: 'WxT Extend Media'
+description: 'Add media entities.'
+type: module
+core_version_requirement: '^8.8 || ^9'
+package: WxT
+
+# Required modules
+dependencies:
+  - lightning_media:lightning_media
+  - lightning_media_audio:lightning_media_audio
+  - lightning_media_bulk_upload:lightning_media_bulk_upload
+  - lightning_media_document:lightning_media_document
+  - lightning_media_image:lightning_media_image
+  - lightning_media_instagram:lightning_media_instagram
+  - lightning_media_slideshow:lightning_media_slideshow
+  - lightning_media_twitter:lightning_media_twitter
+  - lightning_media_video:lightning_media_video

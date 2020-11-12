@@ -7,11 +7,5 @@ package: WxT
 # Required modules
 dependencies:
   - field_formatter:field_formatter
-  - lightning_media:lightning_media
-  - lightning_media_document:lightning_media_document
-  - lightning_media_image:lightning_media_image
-  - lightning_media_instagram:lightning_media_instagram
-  - lightning_media_twitter:lightning_media_twitter
-  - lightning_media_video:lightning_media_video
   - media_entity_slideshow:media_entity_slideshow
-  - wxt_ext_media_slideshow:wxt_ext_media_slideshow
+  - wxt_ext_media:wxt_ext_media
