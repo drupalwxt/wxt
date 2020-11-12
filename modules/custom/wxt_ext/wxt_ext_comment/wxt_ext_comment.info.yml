@@ -1,0 +1,9 @@
+name: 'WxT Extend Comment'
+description: 'Add Comment functionality.'
+type: module
+core_version_requirement: '^8.8 || ^9'
+package: WxT
+
+# Required modules
+dependencies:
+  - drupal:comment
