@@ -8,6 +8,7 @@ package: WxT
 dependencies:
   - block_class:block_class
   - button_link:button_link
+  - entity_block:entity_block
   - lightning_core:lightning_core
   - linkit:linkit
   - menu_block:menu_block

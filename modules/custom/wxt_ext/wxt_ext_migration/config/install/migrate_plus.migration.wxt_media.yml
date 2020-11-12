@@ -103,12 +103,12 @@ process:
     plugin: default_value
     default_value: 1
   # Add image to media entity.
-  'image/target_id':
+  'field_media_image/target_id':
     plugin: migration_lookup
     migration: wxt_file
     source: fid
-  'image/title': title
-  'image/alt': alt
+  'field_media_image/title': title
+  'field_media_image/alt': alt
   'field_image_link/uri': link_uri
   'field_image_link/title': link_title
 destination:

@@ -4,7 +4,7 @@ dependencies:
   config:
     - field.field.media.image.field_image_link
     - field.field.media.image.field_media_in_library
-    - field.field.media.image.image
+    - field.field.media.image.field_media_image
     - image.style.thumbnail
     - media.type.image
   module:
@@ -12,6 +12,7 @@ dependencies:
     - image
     - link
     - path
+third_party_settings: {  }
 id: media.image.default
 targetEntityType: media
 bundle: image
@@ -32,7 +33,7 @@ content:
       display_label: true
     third_party_settings: {  }
     region: content
-  image:
+  field_media_image:
     type: image_image
     weight: 0
     settings:
@@ -49,7 +50,7 @@ content:
     third_party_settings: {  }
   name:
     type: string_textfield
-    weight: 2
+    weight: 3
     settings:
       size: 60
       placeholder: ''

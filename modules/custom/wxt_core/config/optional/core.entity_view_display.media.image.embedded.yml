@@ -5,7 +5,7 @@ dependencies:
     - core.entity_view_mode.media.embedded
     - field.field.media.image.field_image_link
     - field.field.media.image.field_media_in_library
-    - field.field.media.image.image
+    - field.field.media.image.field_media_image
     - media.type.image
   module:
     - image
@@ -14,7 +14,7 @@ targetEntityType: media
 bundle: image
 mode: embedded
 content:
-  image:
+  field_media_image:
     type: image
     weight: 0
     label: hidden
