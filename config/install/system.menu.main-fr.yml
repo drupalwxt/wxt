@@ -1,7 +1,0 @@
-langcode: fr
-status: true
-dependencies: {  }
-id: main-fr
-label: 'Menu principal'
-description: 'Menu principal en francais.'
-locked: false

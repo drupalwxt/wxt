@@ -5,25 +5,17 @@ core_version_requirement: '^8.8 || ^9'
 distribution:
   name: WxT
 
-# Base profile
-base profile: lightning
-
-# Exclude from base profile
-exclude:
-  - lightning_api
-  - lightning_contact_form
-  - lightning_roles
-  - lightning_scheduled_updates
-  - lightning_search
-
 # Language
 keep_english: true
 
 # Required modules
 install:
   # core
+  - big_pipe
   - comment
   - dynamic_page_cache
+  - inline_form_errors
+  - layout_discovery
   - responsive_image
   - telephone
   - tour
@@ -33,19 +25,33 @@ install:
   - content_translation
   - language
   - locale
-  # core (experimental)
-  - big_pipe
-  - inline_form_errors
-  - layout_discovery
   # core (web services)
-  # - rdf
+  - rdf
   # - hal
   # - rest
   # - serialization
-  # custom (wxt)
+  # lightning
+  - lightning_api
+  - lightning_core
+  - lightning_layout
+  - lightning_media
+  - lightning_workflow
+  - lightning_page
+  - lightning_landing_page
+  - lightning_media_audio
+  - lightning_media_bulk_upload
+  - lightning_media_document
+  - lightning_media_image
+  - lightning_media_instagram
+  - lightning_media_slideshow
+  - lightning_media_twitter
+  - lightning_media_video
+  - lightning_scheduler
+  - lightning_banner_block
+  - lightning_map_block
+  # wxt
   - wxt_admin
   - wxt_core
-  # contrib (wxt)
   - wxt_library
 
 themes:

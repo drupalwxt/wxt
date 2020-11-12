@@ -1,7 +1,0 @@
-langcode: fr
-status: true
-dependencies: {  }
-id: mid-footer-fr
-label: 'Pied de page millieu'
-description: 'Pied de page millieu.'
-locked: false

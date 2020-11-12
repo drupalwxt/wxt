@@ -1,7 +1,0 @@
-langcode: fr
-status: true
-dependencies: {  }
-id: brand-fr
-label: 'Marque du site'
-description: 'Menu marque en francais.'
-locked: false

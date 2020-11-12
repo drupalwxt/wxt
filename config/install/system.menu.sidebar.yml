@@ -1,7 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: sidebar
-label: Sidebar
-description: 'Sidebar links.'
-locked: true

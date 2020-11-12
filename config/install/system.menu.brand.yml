@@ -1,7 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: brand
-label: Brand
-description: 'Brand Menu used for departmental specific links.'
-locked: false
