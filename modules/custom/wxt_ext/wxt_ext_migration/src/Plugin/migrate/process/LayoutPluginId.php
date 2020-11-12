@@ -108,7 +108,7 @@ class LayoutPluginId extends ProcessPluginBase implements ContainerFactoryPlugin
       $plugin_id,
       $plugin_definition,
       $entity_manager->getDefinition('block_content') ? $entity_manager->getStorage('block_content') : NULL,
-      $container->get('plugin.manager.migrate.process')->createInstance('migration', $migration_configuration, $migration),
+      $container->get('plugin.manager.migrate.process')->createInstance('migration_lookup', $migration_configuration, $migration),
       $container->get('uuid'),
       $container->get('plugin.manager.block'),
       $entity_manager->hasHandler('block', 'storage') ? $entity_manager->getStorage('block') : NULL

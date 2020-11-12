@@ -48,7 +48,7 @@ process:
     default_value: 1
   # Add image to media entity.
   slideshow_items:
-    plugin: iterator
+    plugin: sub_process
     source: fid
     process:
       target_id:

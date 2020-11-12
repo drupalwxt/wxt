@@ -65,7 +65,7 @@ class MediaTags extends ProcessPluginBase implements ContainerFactoryPluginInter
       $configuration,
       $plugin_id,
       $plugin_definition,
-      $container->get('plugin.manager.migrate.process')->createInstance('migration', $migration_configuration, $migration)
+      $container->get('plugin.manager.migrate.process')->createInstance('migration_lookup', $migration_configuration, $migration)
     );
   }
 

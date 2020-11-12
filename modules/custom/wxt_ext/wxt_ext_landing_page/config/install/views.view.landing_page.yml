@@ -66,6 +66,8 @@ display:
           col_sm: col-sm-12
           col_md: col-md-6
           col_lg: col-lg-6
+          col_class_default: 1
+          row_class_default: 1
       row:
         type: fields
       fields:

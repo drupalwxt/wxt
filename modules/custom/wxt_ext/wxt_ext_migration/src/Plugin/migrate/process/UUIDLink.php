@@ -63,7 +63,7 @@ class UUIDLink extends ProcessPluginBase implements ContainerFactoryPluginInterf
       $configuration,
       $plugin_id,
       $plugin_definition,
-      $container->get('plugin.manager.migrate.process')->createInstance('migration', $migration_configuration, $migration)
+      $container->get('plugin.manager.migrate.process')->createInstance('migration_lookup', $migration_configuration, $migration)
     );
   }
 

@@ -308,7 +308,7 @@ process:
     plugin: wxt_layout_plugin_id
     source: layout
   panelizer:
-    plugin: iterator
+    plugin: sub_process
     source: panelizer
     process:
       view_mode:

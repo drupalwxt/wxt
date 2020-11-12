@@ -1,10 +1,13 @@
 langcode: en
 status: true
 dependencies:
+  config:
+    - core.entity_view_mode.media.embedded
   module:
     - editor
     - entity_embed
     - linkit
+    - media
     - token_filter
     - url_embed
 name: 'Rich Text'
@@ -80,7 +83,8 @@ filters:
     provider: token_filter
     status: true
     weight: -49
-    settings: {  }
+    settings:
+      replace_empty: ''
   url_embed_convert_links:
     id: url_embed_convert_links
     provider: url_embed
@@ -101,3 +105,11 @@ filters:
     weight: -50
     settings:
       title: true
+  media_embed:
+    id: media_embed
+    provider: media
+    status: true
+    weight: 100
+    settings:
+      default_view_mode: embedded
+      allowed_view_modes: {  }

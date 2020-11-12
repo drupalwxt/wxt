@@ -68,6 +68,8 @@ display:
           col_sm: col-sm-12
           col_md: col-md-12
           col_lg: col-lg-4
+          col_class_default: 1
+          row_class_default: 1
       row:
         type: fields
       fields:

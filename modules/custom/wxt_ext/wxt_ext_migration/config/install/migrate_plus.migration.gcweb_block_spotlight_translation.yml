@@ -56,7 +56,7 @@ process:
   langcode: language
   # Add image to media entity.
   field_spotlight_media:
-    plugin: iterator
+    plugin: sub_process
     source: fid
     process:
       target_id:
