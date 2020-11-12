@@ -24,7 +24,6 @@ default:
       subcontexts:
         # Look in the profile modules directory and pull in module subcontexts.
         paths:
-          - './profiles/lightning'
           - './profiles/wxt'
 
 # Setup for Google Chrome only tests.
