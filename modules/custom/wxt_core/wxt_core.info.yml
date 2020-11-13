@@ -8,13 +8,23 @@ package: WxT
 dependencies:
   - block_class:block_class
   - button_link:button_link
+  - config_rewrite:config_rewrite
+  - content_moderation:content_moderation
+  - diff:diff
+  - drupal:block_content
+  - drupal:image
+  - drupal:layout_discovery
+  - embed:embed
   - entity_block:entity_block
-  - lightning_core:lightning_core
+  - entity_embed:entity_embed
+  - field_group:field_group
   - linkit:linkit
+  - pathauto:pathauto
   - menu_block:menu_block
   - menu_breadcrumb:menu_breadcrumb
+  - token:token
   - token_filter:token_filter
+  - url_embed:url_embed
   - views_bootstrap:views_bootstrap
-  - webform_node:webform_node
 
 configure: wxt4032404.config

@@ -6,6 +6,8 @@ package: WxT
 
 # Required modules
 dependencies:
+  - config_rewrite:config_rewrite
+  - lightning_workflow:lightning_workflow
   - webform:webform
   - webform_bootstrap:webform_bootstrap
   - webform_node:webform_node

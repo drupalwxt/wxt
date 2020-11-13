@@ -5,6 +5,7 @@
  * Contains wxt.profile.
  */
 
+use Drupal\wxt\Installer\Form\ExtensionConfigureForm;
 use Symfony\Component\Yaml\Parser;
 
 /**
@@ -28,11 +29,21 @@ function wxt_install_tasks() {
  * Implements hook_install_tasks_alter().
  */
 function wxt_install_tasks_alter(array &$tasks, array $install_state) {
-  // Moves the language config import task to the end of the install tasks so
-  // that it is run after the final import of languages.
   $task = $tasks['wxt_import_language_config'];
   unset($tasks['wxt_import_language_config']);
   $tasks = array_merge($tasks, ['wxt_import_language_config' => $task]);
+
+  $task_keys = array_keys($tasks);
+  $insert_before = array_search('wxt_install_extensions', $task_keys, TRUE);
+  $tasks = array_slice($tasks, 0, $insert_before - 1, TRUE) +
+    [
+      'wxt_extension_configure_form' => [
+        'display_name' => t('Select extensions to enable'),
+        'type' => 'form',
+        'function' => ExtensionConfigureForm::class,
+      ],
+    ] +
+    array_slice($tasks, $insert_before - 1, NULL, TRUE);
 }
 
 /**
@@ -46,9 +57,7 @@ function wxt_install_tasks_alter(array &$tasks, array $install_state) {
  */
 function wxt_install_extensions(array &$install_state) {
   $batch = [];
-  $modules = [
-    'wxt_ext',
-  ];
+  $modules = \Drupal::state()->get('wxt_install_extensions', []);
   foreach ($modules as $module) {
     $batch['operations'][] = ['wxt_install_module', (array) $module];
   }

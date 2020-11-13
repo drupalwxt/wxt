@@ -12,50 +12,23 @@ keep_english: true
 install:
   # core
   - big_pipe
-  - comment
   - dynamic_page_cache
   - inline_form_errors
-  - layout_discovery
-  - responsive_image
-  - telephone
-  - tour
-  # - search
+  - node
+  - path
+  - taxonomy
+  - text
+  - user
   # core (multilingual)
   - config_translation
   - content_translation
   - language
   - locale
-  # core (web services)
-  - rdf
-  # - hal
-  # - rest
-  # - serialization
-  # lightning
-  - lightning_api
-  - lightning_core
-  - lightning_layout
-  - lightning_media
-  - lightning_workflow
-  - lightning_page
-  - lightning_landing_page
-  - lightning_media_audio
-  - lightning_media_bulk_upload
-  - lightning_media_document
-  - lightning_media_image
-  - lightning_media_instagram
-  - lightning_media_slideshow
-  - lightning_media_twitter
-  - lightning_media_video
-  - lightning_scheduler
-  - lightning_banner_block
-  - lightning_map_block
   # wxt
   - wxt_admin
   - wxt_core
   - wxt_library
 
 themes:
-  - bartik
   - claro
-  - seven
   - wxt_bootstrap

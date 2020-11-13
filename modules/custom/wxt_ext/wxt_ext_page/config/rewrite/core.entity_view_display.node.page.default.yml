@@ -265,25 +265,6 @@ third_party_settings:
                 entity: layout_builder.entity
             additional: {  }
             weight: 0
-          62bdbdfd-4fa7-4b64-9568-7e57ff8dfb6d:
-            uuid: 62bdbdfd-4fa7-4b64-9568-7e57ff8dfb6d
-            region: bottom
-            configuration:
-              id: 'field_block:node:page:comment'
-              label: Comments
-              provider: layout_builder
-              label_display: '0'
-              formatter:
-                label: above
-                type: comment_default
-                settings:
-                  view_mode: default
-                  pager_id: 0
-                third_party_settings: {  }
-              context_mapping:
-                entity: layout_builder.entity
-            additional: {  }
-            weight: 0
         third_party_settings: {  }
     allow_custom: true
   layout_library:

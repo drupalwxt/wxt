@@ -2,9 +2,11 @@ name: 'WxT Extend Queue'
 description: 'Entity Queue functionality.'
 type: module
 core_version_requirement: '^8.8 || ^9'
-package: 'wxt'
+package: WxT
 
 # Required modules
 dependencies:
+  - config_rewrite:config_rewrite
   - drupal:entityqueue
   - drupal:wxt_ext_landing_page
+  - wxt_ext_media:wxt_ext_media

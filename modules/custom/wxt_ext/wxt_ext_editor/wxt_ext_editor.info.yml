@@ -8,3 +8,4 @@ package: WxT
 dependencies:
   - ckeditor:ckeditor
   - ckeditor_codemirror:ckeditor_codemirror
+  - wxt_ext_media:wxt_ext_media

@@ -6,4 +6,5 @@ package: WxT
 
 # Required modules
 dependencies:
+  - config_rewrite:config_rewrite
   - fontawesome:fontawesome

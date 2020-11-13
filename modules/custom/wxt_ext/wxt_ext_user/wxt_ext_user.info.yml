@@ -8,4 +8,8 @@ package: WxT
 dependencies:
   - config_rewrite:config_rewrite
   - drupal:shortcut
+  - lightning_layout:lightning_layout
+  - page_manager:page_manager
+  - panelizer:panelizer
+  - panels_ipe:panels_ipe
   - wxt_ext_translation:wxt_ext_translation
