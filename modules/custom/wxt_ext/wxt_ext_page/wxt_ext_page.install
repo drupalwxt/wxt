@@ -2,17 +2,17 @@
 
 /**
  * @file
- * Set up the WxT Extend Blog module.
+ * Contains wxt_ext_page.install.
  */
 
 /**
  * Implements hook_install().
  */
-function wxt_ext_blog_install() {
+function wxt_ext_page_install() {
   // Enable translation for our core entities/bundles.
   $entities = [
     'node' => [
-      'blog_post',
+      'page',
     ],
   ];
   wxt_translation_enable_translation($entities);

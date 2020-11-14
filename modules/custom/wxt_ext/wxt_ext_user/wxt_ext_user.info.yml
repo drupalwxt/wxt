@@ -12,4 +12,4 @@ dependencies:
   - page_manager:page_manager
   - panelizer:panelizer
   - panels_ipe:panels_ipe
-  - wxt_ext_translation:wxt_ext_translation
+  - wxt_translation:wxt_translation
