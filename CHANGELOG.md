@@ -8,6 +8,7 @@
   - [Updates to provide a minimal WxT profile](https://www.drupal.org/project/wxt/issues/3182208)
   - [Simplify and move wxt_ext_translation to wxt_translation](https://www.drupal.org/project/wxt/issues/3182647)
   - [Lightning profile removed in favor of calling modules specifically](https://www.drupal.org/project/wxt/issues/3182195)
+  - [Provide upgrade path from 3.0.0 to 4.0.0](https://www.drupal.org/project/wxt/issues/3182648)
   - Provided extension logic for optional extensions during install
 - Updates for WxT Bootstrap
   - Update twig syntax for Drupal 9 support
