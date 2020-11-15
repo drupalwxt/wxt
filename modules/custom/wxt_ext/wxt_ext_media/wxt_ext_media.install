@@ -2,17 +2,17 @@
 
 /**
  * @file
- * Set up the WxT Extend Blog module.
+ * Contains wxt_ext_media.module.
  */
 
 /**
  * Implements hook_install().
  */
-function wxt_ext_blog_install() {
+function wxt_ext_media_install() {
   // Enable translation for our core entities/bundles.
   $entities = [
-    'node' => [
-      'blog_post',
+    'media' => [
+      'image',
     ],
   ];
   wxt_translation_enable_translation($entities);

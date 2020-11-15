@@ -7,4 +7,5 @@ package: WxT
 # Required modules
 dependencies:
   - wxt_core:wxt_core
+  - wxt_translation:wxt_translation
   - wxt_ext_media:wxt_ext_media

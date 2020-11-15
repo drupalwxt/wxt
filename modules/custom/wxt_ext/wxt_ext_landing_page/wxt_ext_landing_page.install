@@ -15,8 +15,8 @@ function wxt_ext_landing_page_install() {
       'landing_page',
     ],
   ];
-  wxt_ext_translation_enable_translation($entities);
+  wxt_translation_enable_translation($entities);
 
   // Download the newest config translations from Drupal.org.
-  wxt_ext_translation_update_config_translation();
+  wxt_translation_update_config_translation();
 }

@@ -12,4 +12,5 @@ dependencies:
   - lightning_page:lightning_page
   - lightning_workflow:lightning_workflow
   - wxt_core:wxt_core
+  - wxt_translation:wxt_translation
   - wxt_ext_layout:wxt_ext_layout

@@ -28,6 +28,7 @@ install:
   - wxt_admin
   - wxt_core
   - wxt_library
+  - wxt_translation
 
 themes:
   - claro

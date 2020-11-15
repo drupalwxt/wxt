@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Contains wxt_ext_translation.module.
+ * Contains wxt_translation.module.
  */
 
 use Drupal\Core\Entity\FieldableEntityInterface;
@@ -14,7 +14,7 @@ use Drupal\views\ViewExecutable;
  * @param array $entity_info
  *   $entity_info An array mapping entity types to arrays of bundles.
  */
-function wxt_ext_translation_enable_translation($entity_info) {
+function wxt_translation_enable_translation($entity_info) {
   // Enable translation for all of our entities/bundles.
   $type_manager = \Drupal::entityTypeManager();
   /** @var \Drupal\Core\Entity\EntityFieldManagerInterface $field_manager */
@@ -49,7 +49,7 @@ function wxt_ext_translation_enable_translation($entity_info) {
 /**
  * Updates the current site's translations via a batch process.
  */
-function wxt_ext_translation_update_config_translation() {
+function wxt_translation_update_config_translation() {
   // Pull in translations for the all available languages/projects.
   \Drupal::moduleHandler()->loadInclude('locale', 'fetch.inc');
   \Drupal::moduleHandler()->loadInclude('locale', 'bulk.inc');
@@ -67,7 +67,7 @@ function wxt_ext_translation_update_config_translation() {
   batch_set($batch);
   // Set a batch to update configuration as well.
   if ($batch = locale_config_batch_update_components($options, $langcodes)) {
-    $batch['file'] = drupal_get_path('module', 'wxt_ext_translation') . '/wxt_ext_translation.batch.inc';
+    $batch['file'] = drupal_get_path('module', 'wxt_translation') . '/wxt_translation.batch.inc';
     batch_set($batch);
   }
 }
@@ -82,7 +82,7 @@ function wxt_ext_translation_update_config_translation() {
  *
  * @return bool FALSE if the project does not exist.
  */
-function wxt_ext_translation_import_translations($type, $name) {
+function wxt_translation_import_translations($type, $name) {
   // Attempt to pull module path.
   $path = drupal_get_path($type, $name);
   if (!$path) {
@@ -122,7 +122,7 @@ function wxt_ext_translation_import_translations($type, $name) {
 /**
  * Implements hook_views_pre_render().
  */
-function wxt_ext_translation_views_pre_render(ViewExecutable $view) {
+function wxt_translation_views_pre_render(ViewExecutable $view) {
   $language_manager = \Drupal::service('language_manager');
   $currentLang = $language_manager->getCurrentLanguage()->getId();
 

@@ -8,7 +8,7 @@ package: WxT
 dependencies:
   - config_rewrite:config_rewrite
   - layout_builder_st:layout_builder_st
-  - wxt_ext_layout:wxt_ext_layout
-  - wxt_ext_translation:wxt_ext_translation
   - lightning_landing_page:lightning_landing_page
   - lightning_layout:lightning_layout
+  - wxt_ext_layout:wxt_ext_layout
+  - wxt_translation:wxt_translation
