@@ -34,18 +34,31 @@ function wxt_core_update_8400() {
   /** @var \Drupal\Core\Extension\ModuleInstallerInterface $module_installer */
   $module_installer = \Drupal::service('module_installer');
   $uninstalled = $module_installer->uninstall([
+    'libraries',
+    'lightning',
     'wxt_ext_translation',
   ]);
 
   if (!$uninstalled) {
     \Drupal::configFactory()
       ->getEditable('core.extension')
+      ->clear('module.libraries')
+      ->clear('module.lightning')
       ->clear('module.wxt_ext_translation')
       ->save();
     Drupal::keyValue('system.schema')->deleteMultiple([
+      'libraries',
+      'lightning',
       'wxt_ext_translation',
     ]);
   }
+
+  // Deprecate RDF addition to comments.
+  \Drupal::configFactory()->getEditable('rdf.mapping.comment.comment.yml')->delete();
+
+  // Deprecate Panels Welcome page.
+  \Drupal::configFactory()->getEditable('page_manager.page.welcome.yml')->delete();
+  \Drupal::configFactory()->getEditable('page_manager.page_variant.welcome.yml')->delete();
 
   $module_installer->install([
     'wxt_ext_blocks',
@@ -54,10 +67,4 @@ function wxt_core_update_8400() {
     'wxt_translation',
   ]);
 
-  // Deprecate RDF addition to comments.
-  \Drupal::configFactory()->getEditable('rdf.mapping.comment.comment.yml')->delete();
-
-  // Deprecate Panels Welcome page.
-  \Drupal::configFactory()->getEditable('page_manager.page.welcome.yml')->delete();
-  \Drupal::configFactory()->getEditable('page_manager.page_variant.welcome.yml')->delete();
 }
