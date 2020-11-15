@@ -26,3 +26,38 @@ function wxt_core_requirements($phase) {
   }
   return $requirements;
 }
+
+/**
+ * Updates for the WxT 4.0.0 release.
+ */
+function wxt_core_update_8400() {
+  /** @var \Drupal\Core\Extension\ModuleInstallerInterface $module_installer */
+  $module_installer = \Drupal::service('module_installer');
+  $uninstalled = $module_installer->uninstall([
+    'wxt_ext_translation',
+  ]);
+
+  if (!$uninstalled) {
+    \Drupal::configFactory()
+      ->getEditable('core.extension')
+      ->clear('module.wxt_ext_translation')
+      ->save();
+    Drupal::keyValue('system.schema')->deleteMultiple([
+      'wxt_ext_translation',
+    ]);
+  }
+
+  $module_installer->install([
+    'wxt_ext_blocks',
+    'wxt_ext_comment',
+    'wxt_ext_media',
+    'wxt_translation',
+  ]);
+
+  // Deprecate RDF addition to comments.
+  \Drupal::configFactory()->getEditable('rdf.mapping.comment.comment.yml')->delete();
+
+  // Deprecate Panels Welcome page.
+  \Drupal::configFactory()->getEditable('page_manager.page.welcome.yml')->delete();
+  \Drupal::configFactory()->getEditable('page_manager.page_variant.welcome.yml')->delete();
+}

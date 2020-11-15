@@ -173,13 +173,13 @@ class ConfigHelper extends InstallStorage {
   }
 
   /**
-   * Checks if a config entity is bundled with Lightning.
+   * Checks if a config entity is bundled with WxT.
    *
    * @param \Drupal\Core\Config\Entity\ConfigEntityInterface $entity
    *   The config entity.
    *
    * @return bool
-   *   Whether the config entity is marked as being bundled with Lightning.
+   *   Whether the config entity is marked as being bundled with WxT.
    */
   public static function isBundled(ConfigEntityInterface $entity) {
     return (bool) $entity->getThirdPartySetting('wxt', 'bundled', FALSE);
