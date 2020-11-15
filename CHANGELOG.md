@@ -1,11 +1,19 @@
-## v3.0.16 (In Development)
+## v4.0.0 (In Development)
 
 - Updates to Composer
   - Support for Composer v2.0.0
   - Switch to drupal/core-dev to streamline our composer.json
+- Update for WxT
+  - [Drupal 9 support and release of 4.0.0](https://www.drupal.org/project/wxt/issues/3154403)
+  - [Updates to provide a minimal WxT profile](https://www.drupal.org/project/wxt/issues/3182208)
+  - [Simplify and move wxt_ext_translation to wxt_translation](https://www.drupal.org/project/wxt/issues/3182647)
+  - [Lightning profile removed in favor of calling modules specifically](https://www.drupal.org/project/wxt/issues/3182195)
+  - Provided extension logic for optional extensions during install
 - Updates for WxT Bootstrap
+  - Update twig syntax for Drupal 9 support
   - Template issue for Main Menu
 - Updates for WxT Library
+  - Update PSR calls for Drupal 9 support
   - Improve Canada.ca search submit
 
 Upgrade path:
@@ -24,6 +32,10 @@ Upgrade path:
 - Run WxT configuration updates:
   - `drush cache:rebuild`
   - `drush update:wxt`
+
+**Note:** The following modules are no longer provided by WXT. If you use these modules you will need to add them to your project's composer.json file.
+
+* Libraries
 
 ## v3.0.15
 
