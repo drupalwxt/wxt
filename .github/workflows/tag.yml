@@ -15,10 +15,10 @@ jobs:
     - uses: actions/checkout@master
 
     - name: Export github reference var
-      run: echo "::set-env name=GITHUB_REFERENCE::$(echo ${GITHUB_REF#refs/tags/})"
+      run: echo "GITHUB_REFERENCE=$(echo ${GITHUB_REF#refs/tags/})" >> $GITHUB_ENV
 
     - name: Export drupal semver
-      run: echo "::set-env name=DRUPAL_SEMVER::$(echo ${{ env.GITHUB_REFERENCE }} | sed -E 's/([0-9]+)\.([0-9]+)\.([0-9]+)/\1.\2\3/g')"
+      run: echo "DRUPAL_SEMVER=$(echo ${{ env.GITHUB_REFERENCE }} | sed -E 's/([0-9]+)\.([0-9]+)\.([0-9]+)/\1.\2\3/g')" >> $GITHUB_ENV
 
     - name: Setup dependencies
       run: |
