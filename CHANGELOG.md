@@ -1,4 +1,4 @@
-## v3.0.16 (In Development)
+## v3.0.16
 
 - Updates to Composer
   - Support for Composer v2.0.0
