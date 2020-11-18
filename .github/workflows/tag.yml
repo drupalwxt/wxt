@@ -75,14 +75,14 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./wxt-8.x-${{ env.DRUPAL_SEMVER }}.tar.gz
-        asset_name: wxt-8.x-${{ env.DRUPAL_SEMVER }}.tar.gz
+        asset_path: ./wxt-9.x-${{ env.DRUPAL_SEMVER }}.tar.gz
+        asset_name: wxt-9.x-${{ env.DRUPAL_SEMVER }}.tar.gz
         asset_content_type: application/tar+gzip
 
     - name: Checkout repos to update tags
       run: |
-        git clone --branch 8.x https://drupalwxt-svc:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/drupalwxt/site-wxt.git
-        git clone --branch 8.x https://drupalwxt-svc:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/drupalwxt/wxt-project.git
+        git clone --branch 9.x https://drupalwxt-svc:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/drupalwxt/site-wxt.git
+        git clone --branch 9.x https://drupalwxt-svc:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/drupalwxt/wxt-project.git
         git clone --branch master https://drupalwxt-svc:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/drupalwxt/helm-drupal.git
         git clone --branch master https://drupalwxt-svc:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/drupalwxt/terraform-containers-webapp-azure.git
         git clone --branch master https://drupalwxt-svc:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/drupalwxt/terraform-kubernetes-drupalwxt.git
@@ -90,7 +90,7 @@ jobs:
     - name: Update tags for wxt-project
       uses: jacobtomlinson/gha-find-replace@master
       with:
-        find: "\"drupalwxt/wxt\": \"3\\.[0-9]+\\.[0-9]+\""
+        find: "\"drupalwxt/wxt\": \"4\\.[0-9]+\\.[0-9]+\""
         replace: "\"drupalwxt/wxt\": \"${{ env.GITHUB_REFERENCE }}\""
         exclude: ".git/"
         include: "wxt-project/"
@@ -98,7 +98,7 @@ jobs:
     - name: Update tags for wxt-project
       uses: jacobtomlinson/gha-find-replace@master
       with:
-        find: "wxt-project:3\\.[0-9]+\\.[0-9]+"
+        find: "wxt-project:4\\.[0-9]+\\.[0-9]+"
         replace: "wxt-project:${{ env.GITHUB_REFERENCE }}"
         exclude: ".git/"
         include: "wxt-project/"
@@ -106,7 +106,7 @@ jobs:
     - name: Update tags for helm-drupal
       uses: jacobtomlinson/gha-find-replace@master
       with:
-        find: "appVersion: 3\\.[0-9]+\\.[0-9]+"
+        find: "appVersion: 4\\.[0-9]+\\.[0-9]+"
         replace: "appVersion: ${{ env.GITHUB_REFERENCE }}"
         exclude: ".git/"
         include: "helm-drupal/"
@@ -114,7 +114,7 @@ jobs:
     - name: Update tags for helm-drupal
       uses: jacobtomlinson/gha-find-replace@master
       with:
-        find: "tag: 3\\.[0-9]+\\.[0-9]+"
+        find: "tag: 4\\.[0-9]+\\.[0-9]+"
         replace: "tag: ${{ env.GITHUB_REFERENCE }}"
         exclude: ".git/"
         include: "helm-drupal/"
@@ -122,7 +122,7 @@ jobs:
     - name: Update tags for terraform-containers-webapp-azure
       uses: jacobtomlinson/gha-find-replace@master
       with:
-        find: "image: drupalwxt/site-wxt:3\\.[0-9]+\\.[0-9]+"
+        find: "image: drupalwxt/site-wxt:4\\.[0-9]+\\.[0-9]+"
         replace: "image: drupalwxt/site-wxt:${{ env.GITHUB_REFERENCE }}"
         exclude: ".git/"
         include: "terraform-containers-webapp-azure/"
@@ -130,7 +130,7 @@ jobs:
     - name: Update tags for terraform-kubernetes-drupalwxt
       uses: jacobtomlinson/gha-find-replace@master
       with:
-        find: "tag: 3\\.[0-9]+\\.[0-9]+"
+        find: "tag: 4\\.[0-9]+\\.[0-9]+"
         replace: "tag: ${{ env.GITHUB_REFERENCE }}"
         exclude: ".git/"
         include: "terraform-kubernetes-drupalwxt/"
@@ -142,7 +142,7 @@ jobs:
         composer install
         git add .
         git commit -m "Update to latest version of WxT ${{ env.GITHUB_REFERENCE }}" || true
-        git push origin 8.x
+        git push origin 9.x
 
     - name: Push to wxt-project the latest tags
       run: |
@@ -150,7 +150,7 @@ jobs:
         git add .
         git commit -m "Update to latest version of WxT ${{ env.GITHUB_REFERENCE }}" || true
         git tag ${{ env.GITHUB_REFERENCE }}
-        git push origin 8.x
+        git push origin 9.x
 
     - name: Push to helm-drupal the latest tags
       run: |
