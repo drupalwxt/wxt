@@ -140,7 +140,7 @@ jobs:
       run: |
         cd site-wxt
         rm composer.lock
-        composer install
+        COMPOSER_AUTH='${{ secrets.COMPOSER_AUTH }}' composer install
         git add .
         git commit -m "Update to latest version of WxT ${{ env.GITHUB_REFERENCE }}" || true
         git push origin 8.x
