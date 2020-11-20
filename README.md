@@ -4,7 +4,7 @@
 
 ## Important
 
-Drupal WxT for Drupal 8 is currently under release candidate phase and now will
+Drupal WxT for Drupal 8/9 is currently under release candidate phase and now will
 provide an update path for all future releases.
 
 ## Important Links

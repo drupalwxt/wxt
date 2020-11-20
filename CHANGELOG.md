@@ -1,4 +1,4 @@
-## v4.0.0 (In Development)
+## v4.0.0-RC1
 
 - Updates to Composer
   - Support for Composer v2.0.0

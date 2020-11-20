@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ARCHIVE=wxt-8.x-$1
+ARCHIVE=wxt-$1
 PROFILE_DIR=profiles/contrib/wxt
 YAML_CLI=`command -v yaml-cli`
 
@@ -12,12 +12,12 @@ if [[ ! $YAML_CLI ]]; then
 fi
 
 rm -rf $ARCHIVE
-composer create-project --stability beta --no-install drupal/legacy-project:~8.8.0 $ARCHIVE
+composer create-project --stability beta --no-install drupal/legacy-project:~9.0.0 $ARCHIVE
 composer dump-autoload
 composer configure-tarball $ARCHIVE
 
 # Update version number in info files.
-find . -name "*.info.yml" -exec $YAML_CLI update:value {} version 8.x-$1 \;
+find . -name "*.info.yml" -exec $YAML_CLI update:value {} version $1 \;
 
 # Create an archive of the profile to be added to the tarball.
 composer archive --file $ARCHIVE
