@@ -6,6 +6,7 @@ package: WxT
 
 # Required modules
 dependencies:
+  - content_moderation:content_moderation
   - config_rewrite:config_rewrite
   - lightning_workflow:lightning_workflow
   - webform:webform

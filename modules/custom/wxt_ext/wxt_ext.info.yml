@@ -9,9 +9,13 @@ dependencies:
   - wxt_core:wxt_core
   - wxt_translation:wxt_translation
   - wxt_ext_blocks:wxt_ext_blocks
+  - wxt_ext_blog:wxt_ext_blog
+  - wxt_ext_breadcrumb:wxt_ext_breadcrumb
   - wxt_ext_comment:wxt_ext_comment
   - wxt_ext_config:wxt_ext_config
   - wxt_ext_editor:wxt_ext_editor
+  - wxt_ext_fontawesome:wxt_ext_fontawesome
+  - wxt_ext_group:wxt_ext_group
   - wxt_ext_landing_page:wxt_ext_landing_page
   - wxt_ext_layout:wxt_ext_layout
   - wxt_ext_media:wxt_ext_media
@@ -20,6 +24,7 @@ dependencies:
   - wxt_ext_migration:wxt_ext_migration
   - wxt_ext_page:wxt_ext_page
   - wxt_ext_paragraph:wxt_ext_paragraph
+  - wxt_ext_password_policy:wxt_ext_password_policy
   - wxt_ext_queue:wxt_ext_queue
   - wxt_ext_sitemap:wxt_ext_sitemap
   - wxt_ext_taxonomy:wxt_ext_taxonomy

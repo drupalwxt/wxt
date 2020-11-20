@@ -6,6 +6,7 @@ package: WxT
 
 # Required modules
 dependencies:
+  - content_moderation:content_moderation
   - wxt_core:wxt_core
   - wxt_translation:wxt_translation
   - wxt_ext_media:wxt_ext_media

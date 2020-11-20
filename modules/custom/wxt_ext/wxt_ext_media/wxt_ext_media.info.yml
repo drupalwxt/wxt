@@ -6,6 +6,7 @@ package: WxT
 
 # Required modules
 dependencies:
+  - content_moderation:content_moderation
   - lightning_media:lightning_media
   - lightning_media_audio:lightning_media_audio
   - lightning_media_bulk_upload:lightning_media_bulk_upload

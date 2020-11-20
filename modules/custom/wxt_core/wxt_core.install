@@ -53,8 +53,9 @@ function wxt_core_update_8400() {
     ]);
   }
 
-  // Deprecate RDF addition to comments.
+  // Deprecate RDF additions
   \Drupal::configFactory()->getEditable('rdf.mapping.comment.comment.yml')->delete();
+  \Drupal::configFactory()->getEditable('rdf.mapping.node.page.yml')->delete();
 
   // Deprecate Panels Welcome page.
   \Drupal::configFactory()->getEditable('page_manager.page.welcome.yml')->delete();

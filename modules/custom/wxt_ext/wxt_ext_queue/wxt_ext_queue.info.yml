@@ -6,6 +6,7 @@ package: WxT
 
 # Required modules
 dependencies:
+  - content_moderation:content_moderation
   - config_rewrite:config_rewrite
   - drupal:entityqueue
   - drupal:wxt_ext_landing_page

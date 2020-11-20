@@ -14,8 +14,11 @@ install:
   - big_pipe
   - dynamic_page_cache
   - inline_form_errors
+  - menu_link_content
+  - menu_ui
   - node
   - path
+  - search
   - taxonomy
   - text
   - user

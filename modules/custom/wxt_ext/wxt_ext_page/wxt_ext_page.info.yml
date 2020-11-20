@@ -7,6 +7,7 @@ package: WxT
 # Required modules
 dependencies:
   - config_rewrite:config_rewrite
+  - content_moderation:content_moderation
   - layout_builder_st:layout_builder_st
   - lightning_layout:lightning_layout
   - lightning_page:lightning_page
