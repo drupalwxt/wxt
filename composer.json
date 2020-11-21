@@ -77,7 +77,7 @@
             "Drupal\\wxt\\": "src"
         },
         "classmap": []
-    }
+    },
     "repositories": [
         {
             "type": "composer",
