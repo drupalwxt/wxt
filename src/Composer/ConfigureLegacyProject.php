@@ -25,7 +25,7 @@ final class ConfigureLegacyProject {
     $project = $target->read();
 
     $required = $event->getComposer()->getPackage()->getRequires();
-    $project['require']["drupalwxt/wxt"] = "dev-8.x-3.x";
+    $project['require']["drupalwxt/wxt"] = "4.0.x";
     $project['require-dev'] = new \stdClass();
     $project['repositories'][] = [
       'type' => 'composer',
