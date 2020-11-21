@@ -72,6 +72,12 @@
             "minConnections": 5
         }
     },
+    "autoload": {
+        "psr-4": {
+            "Drupal\\wxt\\": "src"
+        },
+        "classmap": []
+    }
     "repositories": [
         {
             "type": "composer",
@@ -90,13 +96,6 @@
             "url": "https://github.com/ossobuffo/drupal-console-extend-plugin.git"
         }
     ],
-    "scripts": {
-        "post-install-cmd": [ ],
-        "post-update-cmd": [ ],
-        "enable-asset-packagist": "Acquia\\Lightning\\Composer\\AssetPackagist::execute",
-        "nuke": "rm -r -f html vendor",
-        "verify-patched-constraints": "Drupal\\wxt\\Composer\\PatchedConstraint::execute"
-    },
     "extra": {
         "drupal-scaffold": {
             "locations": {
@@ -274,10 +273,13 @@
             }
         }
     },
-    "autoload": {
-        "psr-4": {
-            "Drupal\\wxt\\": "src"
-        },
-        "classmap": []
+    "scripts": {
+        "post-install-cmd": [ ],
+        "post-update-cmd": [ ],
+        "configure-tarball": "Drupal\\wxt\\Composer\\ConfigureLegacyProject::execute",
+        "enable-asset-packagist": "Drupal\\wxt\\Composer\\AssetPackagist::execute",
+        "nuke": "rm -r -f html vendor",
+        "package": "Drupal\\wxt\\Composer\\Package::execute",
+        "verify-patched-constraints": "Drupal\\wxt\\Composer\\PatchedConstraint::execute"
     }
 }

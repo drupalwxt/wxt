@@ -75,8 +75,8 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./wxt-9.x-${{ env.DRUPAL_SEMVER }}.tar.gz
-        asset_name: wxt-9.x-${{ env.DRUPAL_SEMVER }}.tar.gz
+        asset_path: ./wxt-${{ env.DRUPAL_SEMVER }}.tar.gz
+        asset_name: wxt-${{ env.DRUPAL_SEMVER }}.tar.gz
         asset_content_type: application/tar+gzip
 
     - name: Checkout repos to update tags
