@@ -1,5 +1,7 @@
 ## v4.0.0-RC1
 
+- Update Drupal Core to [8.8.11](https://www.drupal.org/project/drupal/releases/8.8.11)
+  - [SA-core-2020-012](https://www.drupal.org/sa-core-2020-012)
 - Updates to Composer
   - Support for Composer v2.0.0
   - Switch to drupal/core-dev to streamline our composer.json
@@ -38,6 +40,28 @@ Upgrade path:
 **Note:** The following modules are no longer provided by WXT. If you use these modules you will need to add them to your project's composer.json file.
 
 * Libraries
+
+## v3.0.17
+
+* Update Drupal Core to [8.8.10](https://www.drupal.org/project/drupal/releases/8.8.11)
+  * [SA-core-2020-012](https://www.drupal.org/sa-core-2020-012)
+
+Upgrade path:
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
+- Run Lightning configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:lightning`
+
+- Run WxT configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:wxt`
 
 ## v3.0.16
 
