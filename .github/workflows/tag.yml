@@ -142,7 +142,9 @@ jobs:
         COMPOSER_AUTH='${{ secrets.COMPOSER_AUTH }}' composer install
         git add .
         git commit -m "Update to latest version of WxT ${{ env.GITHUB_REFERENCE }}" || true
+        git tag ${{ env.GITHUB_REFERENCE }}
         git push origin 9.x
+        git push origin ${{ env.GITHUB_REFERENCE }}
 
     - name: Push to wxt-project the latest tags
       run: |
@@ -151,6 +153,7 @@ jobs:
         git commit -m "Update to latest version of WxT ${{ env.GITHUB_REFERENCE }}" || true
         git tag ${{ env.GITHUB_REFERENCE }}
         git push origin 9.x
+        git push origin ${{ env.GITHUB_REFERENCE }}
 
     - name: Push to helm-drupal the latest tags
       run: |
