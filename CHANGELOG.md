@@ -1,3 +1,31 @@
+## v4.0.0-RC2 (Not Yet Released)
+
+- Update for WxT
+  - Corrected issue with install and `assert.exception = On`
+  - Corrected issue with Claro and Chrome 87+
+  - Added new optional extension `wxt_ext_archived`
+
+Upgrade path:
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
+- Run Lightning configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:lightning`
+
+- Run WxT configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:wxt`
+
+**Note:** The following modules are no longer provided by WXT. If you use these modules you will need to add them to your project's composer.json file.
+
+* Libraries
+
 ## v4.0.0-RC1
 
 - Update Drupal Core to [8.8.11](https://www.drupal.org/project/drupal/releases/8.8.11)
