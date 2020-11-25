@@ -8,6 +8,7 @@ package: WxT
 dependencies:
   - wxt_core:wxt_core
   - wxt_translation:wxt_translation
+  - wxt_ext_archived:wxt_ext_archived
   - wxt_ext_blocks:wxt_ext_blocks
   - wxt_ext_blog:wxt_ext_blog
   - wxt_ext_breadcrumb:wxt_ext_breadcrumb

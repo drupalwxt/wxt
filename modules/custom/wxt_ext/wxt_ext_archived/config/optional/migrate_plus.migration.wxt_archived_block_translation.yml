@@ -1,0 +1,53 @@
+id: wxt_archived_block_translation
+migration_group: wxt_archived
+migration_tags:
+  - Core
+label: 'Embedded data import for archived block translation'
+source:
+  plugin: embedded_data
+  translations: true
+  default_lang: false
+  data_rows:
+    -
+      bid: archived_block
+      language: fr
+      title: Archivée
+      body: |
+        <section class="alert alert-warning wb-inview" data-inview="archived-bnr" id="archived">
+          <h2>Cette page Web a été archivée dans le Web</h2>
+          <p>L’information dont il est indiqué qu’elle est archivée est fournie à des fins de référence, de recherche ou de tenue de documents. Elle n’est pas assujettie aux normes Web du gouvernement du Canada et elle n’a pas été modifiée ou mise à jour depuis son archivage. Pour obtenir cette information dans un autre format, veuillez communiquer avec nous.</p>
+        </section>
+        <section class="wb-overlay modal-content overlay-def wb-bar-t" id="archived-bnr">
+          <header>
+            <h2 class="wb-inv">Archivée</h2>
+          </header>
+          <p><a href="#archived">Cette page Web a été archivée dans le Web.</a></p>
+        </section>
+  ids:
+    bid:
+      type: string
+process:
+  id:
+    plugin: migration_lookup
+    migration: wxt_archived_block
+    source: bid
+  info: title
+  uid:
+    plugin: default_value
+    default_value: 1
+  body/value: body
+  body/format:
+    plugin: default_value
+    default_value: rich_text
+  langcode: language
+  content_translation_source:
+    plugin: default_value
+    default_value: en
+destination:
+  plugin: 'entity:block_content'
+  default_bundle: basic
+  no_stub: true
+  translations: true
+migration_dependencies:
+  required:
+    - wxt_archived_block
