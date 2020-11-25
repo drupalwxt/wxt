@@ -192,7 +192,9 @@
                 "Enter drupal/core patch #3017710 description here":
                 "https://www.drupal.org/files/issues/2018-12-05/3017710-20.patch",
                 "Enter drupal/core patch #3081656 description here":
-                "https://www.drupal.org/files/issues/2020-11-17/2488350-3-100.patch"
+                "https://www.drupal.org/files/issues/2020-11-17/2488350-3-100.patch",
+                "Enter drupal/core patch #3183425 description here":
+                "https://www.drupal.org/files/issues/2020-11-25/3183425-claro-styling-64.patch"
             },
             "drupal/ctools": {
                 "Enter drupal/ctools patch #2667652 description here":
