@@ -179,8 +179,6 @@
                 "https://www.drupal.org/files/issues/reroll_patch_for_issue_2862511.patch",
                 "Enter drupal/core patch #2893029 description here":
                 "https://www.drupal.org/files/issues/2893029-9.patch",
-                "Enter drupal/core patch #2920637 description here":
-                "https://www.drupal.org/files/issues/taxonomy-context-provider-2920637-3.patch",
                 "Enter drupal/core patch #2893407 description here":
                 "https://www.drupal.org/files/issues/2020-01-09/2893407-39.patch",
                 "Enter drupal/core patch #2907413 description here":
@@ -189,6 +187,8 @@
                 "https://www.drupal.org/files/issues/2018-07-09/2914389-8-do-not-test.patch",
                 "Enter drupal/core patch #2938129 description here":
                 "https://www.drupal.org/files/issues/2019-01-18/2938129-pagetitle-11.patch",
+                "Enter drupal/core patch #2998826 description here":
+                "https://www.drupal.org/files/issues/2020-11-25/2998826-by-hctom-evilehk-paulocs-5n00py-chipwa.patch",
                 "Enter drupal/core patch #3017710 description here":
                 "https://www.drupal.org/files/issues/2018-12-05/3017710-20.patch",
                 "Enter drupal/core patch #3081656 description here":
@@ -249,10 +249,6 @@
             "drupal/password_policy": {
                 "Character types in character plugin not translatable":
                 "https://www.drupal.org/files/issues/2020-03-17/Password-Policy-constraints-summary-character-types-labels-not-translatable-2975694-16.patch"
-            },
-            "drupal/pathauto": {
-                "Pathauto is broken on D9 with assertions enabled":
-                "https://www.drupal.org/files/issues/2020-11-25/3184850-Pathauto-is-broken-on-D9-with-assertion.patch"
             },
             "drupal/redis": {
                 "Enter drupal/redis patch #3166814 description here":
