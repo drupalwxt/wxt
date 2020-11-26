@@ -17,9 +17,6 @@ jobs:
     - name: Export github reference var
       run: echo "GITHUB_REFERENCE=$(echo ${GITHUB_REF#refs/tags/})" >> $GITHUB_ENV
 
-    - name: Export drupal semver
-      run: echo "DRUPAL_SEMVER=$(echo ${{ env.GITHUB_REFERENCE }} | sed -E 's/([0-9]+)\.([0-9]+)\.([0-9]+)/\1.\2\3/g')" >> $GITHUB_ENV
-
     - name: Setup dependencies
       run: |
         git config --global user.email "development+drupalwxt@zacharyseguin.ca"
@@ -55,7 +52,7 @@ jobs:
         sudo rm -rf site-wxt
         composer global require grasmash/yaml-cli
         export PATH=/home/runner/.composer/vendor/bin:$PATH
-        ./tarball.sh ${{ env.DRUPAL_SEMVER }}
+        ./tarball.sh ${{ env.GITHUB_REFERENCE }}
 
     - name: Create Release
       id: create_release
@@ -75,8 +72,8 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./wxt-${{ env.DRUPAL_SEMVER }}.tar.gz
-        asset_name: wxt-${{ env.DRUPAL_SEMVER }}.tar.gz
+        asset_path: ./wxt-${{ env.GITHUB_REFERENCE }}.tar.gz
+        asset_name: wxt-${{ env.GITHUB_REFERENCE }}.tar.gz
         asset_content_type: application/tar+gzip
 
     - name: Checkout repos to update tags
@@ -90,7 +87,7 @@ jobs:
     - name: Update tags for wxt-project
       uses: jacobtomlinson/gha-find-replace@master
       with:
-        find: "\"drupalwxt/wxt\": \"[3-4]\\.[0-9]+\\.[0-9]+\""
+        find: "\"drupalwxt/wxt\": \"[3-4]\\.[0-9]+\\.[0-9]+(-(beta|rc)[0-9]+])?\""
         replace: "\"drupalwxt/wxt\": \"${{ env.GITHUB_REFERENCE }}\""
         exclude: ".git/"
         include: "wxt-project/"
@@ -98,7 +95,7 @@ jobs:
     - name: Update tags for wxt-project
       uses: jacobtomlinson/gha-find-replace@master
       with:
-        find: "wxt-project:[3-4]\\.[0-9]+\\.[0-9]+"
+        find: "wxt-project:[3-4]\\.[0-9]+\\.[0-9]+(-(beta|rc)[0-9]+])?"
         replace: "wxt-project:${{ env.GITHUB_REFERENCE }}"
         exclude: ".git/"
         include: "wxt-project/"
@@ -106,7 +103,7 @@ jobs:
     - name: Update tags for helm-drupal
       uses: jacobtomlinson/gha-find-replace@master
       with:
-        find: "appVersion: [3-4]\\.[0-9]+\\.[0-9]+"
+        find: "appVersion: [3-4]\\.[0-9]+\\.[0-9]+(-(beta|rc)[0-9]+])?"
         replace: "appVersion: ${{ env.GITHUB_REFERENCE }}"
         exclude: ".git/"
         include: "helm-drupal/"
@@ -114,7 +111,7 @@ jobs:
     - name: Update tags for helm-drupal
       uses: jacobtomlinson/gha-find-replace@master
       with:
-        find: "tag: [3-4]\\.[0-9]+\\.[0-9]+"
+        find: "tag: [3-4]\\.[0-9]+\\.[0-9]+(-(beta|rc)[0-9]+])?"
         replace: "tag: ${{ env.GITHUB_REFERENCE }}"
         exclude: ".git/"
         include: "helm-drupal/"
@@ -122,7 +119,7 @@ jobs:
     - name: Update tags for terraform-containers-webapp-azure
       uses: jacobtomlinson/gha-find-replace@master
       with:
-        find: "image: drupalwxt/site-wxt:[3-4]\\.[0-9]+\\.[0-9]+"
+        find: "image: drupalwxt/site-wxt:[3-4]\\.[0-9]+\\.[0-9]+(-(beta|rc)[0-9]+])?"
         replace: "image: drupalwxt/site-wxt:${{ env.GITHUB_REFERENCE }}"
         exclude: ".git/"
         include: "terraform-containers-webapp-azure/"
@@ -130,7 +127,7 @@ jobs:
     - name: Update tags for terraform-kubernetes-drupalwxt
       uses: jacobtomlinson/gha-find-replace@master
       with:
-        find: "tag: [3-4]\\.[0-9]+\\.[0-9]+"
+        find: "tag: [3-4]\\.[0-9]+\\.[0-9]+(-(beta|rc)[0-9]+])?"
         replace: "tag: ${{ env.GITHUB_REFERENCE }}"
         exclude: ".git/"
         include: "terraform-kubernetes-drupalwxt/"
