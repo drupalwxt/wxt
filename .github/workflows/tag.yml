@@ -81,7 +81,7 @@ jobs:
 
     - name: Checkout repos to update tags
       run: |
-        git clone --branch 9.x https://drupalwxt-svc:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/drupalwxt/site-wxt.git
+        git clone --branch 8.x https://drupalwxt-svc:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/drupalwxt/site-wxt.git
 
     - name: Push to site-wxt the latest build sha
       run: |
@@ -90,9 +90,7 @@ jobs:
         COMPOSER_AUTH='${{ secrets.COMPOSER_AUTH }}' composer install
         git add .
         git commit -m "Update to latest version of WxT ${{ env.GITHUB_REFERENCE }}" || true
-        git tag ${{ env.GITHUB_REFERENCE }}
         git push origin 8.x
-        git push origin ${{ env.GITHUB_REFERENCE }}
 
     # Connect to Container registry
     - uses: azure/docker-login@v1
