@@ -18,6 +18,7 @@ Drupal WxT for Drupal 9 is under a release candidate phase and will provide an u
 - Issue Queue: [drupal.org/project/wxt/issues][issue-drupal]
 - Changelog: [CHANGELOG.md][changelog]
 - GitHub Actions: [github.com/drupalwxt/wxt/actions][githubci]
+- GitHub Tarball: [github.com/drupalwxt/wxt/releases][release-github]
 
 > Note: For up-to-date documentation please always consult our [README.md][readme] file.
 
