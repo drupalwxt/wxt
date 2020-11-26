@@ -3,6 +3,7 @@
 - Update for WxT
   - Corrected issue with install and `assert.exception = On`
   - Corrected issue with Claro and Chrome 87+
+  - Corrected issue with blocks not appearing related to context_defintions
   - Added new optional extension `wxt_ext_archived`
 
 Upgrade path:

@@ -53,7 +53,7 @@
         "drupal/webform": "6.0.0-alpha21",
         "drupal/webform_migrate": "1.x-dev",
         "drupal/wxt_bootstrap": "^4.1",
-        "drupal/wxt_library": "^4.1",
+        "drupal/wxt_library": "^4.2",
         "w8tcha/ckeditor-codemirror": "1.16"
     },
     "require-dev": {
