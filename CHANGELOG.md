@@ -1,4 +1,4 @@
-## v4.0.0-RC2 (Not Yet Released)
+## v4.0.0-RC2
 
 - Update for WxT
   - Corrected issue with install and `assert.exception = On`
