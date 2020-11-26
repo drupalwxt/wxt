@@ -9,20 +9,21 @@ Drupal WxT for Drupal 9 is under a release candidate phase and will provide an u
 ## Important Links
 
 - Documentation Website: [drupalwxt.github.io][docs]
-- GitHub Repository: [drupalwxt/wxt][github-wxt]
+- Installation Profile: [github.com/drupalwxt/wxt][github-wxt]
+- Composer Project: [github.com/drupalwxt/site-wxt][github-site-wxt]
+- Composer Project Template: [github.com/drupalwxt/wxt-project][project]
+- Helm Chart for Kubernetes: [github.com/drupalwxt/helm-drupal][github-helm]
+- Docker Containers: [hub.docker.com/r/drupalwxt/site-wxt][docker-hub]
 - Drupal Repository: [drupal.org/project/wxt][drupal]
-- Composer Project: [drupalwxt/site-wxt][github-site-wxt]
-- Composer Project Template: [drupalwxt/site-wxt][project]
-- Helm Chart for Kubernetes: [drupalwxt/helm-drupal][github-helm]
-- Docker Containers: [hub.docker.com][docker-hub]
-- Run it Now: [simplytest.me][simplytest]
-- Issue Queue: [Drupal][issue-drupal]
+- Issue Queue: [drupal.org/project/wxt/issues][issue-drupal]
+- Changelog: [CHANGELOG.md][changelog]
+- GitHub Actions: [github.com/drupalwxt/wxt/actions][githubci]
+
+> Note: For up-to-date documentation please always consult our [README.md][readme] file.
 
 ## Overview
 
 The Drupal WxT distribution is a web content management system which assists in building and maintaining innovative Web sites that are accessible, usable, and interoperable. This distribution is open source software led by the Government of Canada and free for use by departments and external Web communities. This distribution relies on and integrates with the [Web Experience Toolkit][wet-boew] for its conformance to the Web Content Accessibility Guideline (WCAG 2.0) and its compliance to the Standards on [Web Accessibility][standard_accessibility], [Web Usability][standard_usability], and [Web Interoperability][standard_interoperability].
-
-For more information please consult the official [Web Experience Toolkit][wet-boew-page] page.
 
 ## Architecture
 
@@ -331,6 +332,7 @@ Extended with code and lessons learned by the [Acquia Team](https://acquia.com) 
 [migrate]:                      https://www.drupal.org/node/2127611
 [project]:                      https://github.com/drupalwxt/wxt-project#user-content-new-project
 [project-new]:                  https://github.com/drupalwxt/wxt-project#user-content-new-project
+[readme]:                       https://github.com/drupalwxt/wxt/blob/4.0.x/README.md
 [release-github]:               https://github.com/drupalwxt/wxt/releases
 [simplytest]:                   http://simplytest.me/project/wxt/8.x-3.x
 [standard_accessibility]:       https://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=23601
