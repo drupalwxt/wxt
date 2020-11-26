@@ -1,5 +1,7 @@
 ## v4.0.0-RC2
 
+- Update Drupal Core to [9.0.9](https://www.drupal.org/project/drupal/releases/9.0.9)
+  - [SA-core-2020-013](https://www.drupal.org/sa-core-2020-013)
 - Update for WxT
   - Corrected issue with install and `assert.exception = On`
   - Corrected issue with Claro and Chrome 87+
@@ -29,7 +31,7 @@ Upgrade path:
 
 ## v4.0.0-RC1
 
-- Update Drupal Core to [8.8.11](https://www.drupal.org/project/drupal/releases/8.8.11)
+- Update Drupal Core to [9.0.8](https://www.drupal.org/project/drupal/releases/9.0.8)
   - [SA-core-2020-012](https://www.drupal.org/sa-core-2020-012)
 - Updates to Composer
   - Support for Composer v2.0.0

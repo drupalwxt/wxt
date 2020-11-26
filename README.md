@@ -4,8 +4,7 @@
 
 ## Important
 
-Drupal WxT for Drupal 8/9 is currently under release candidate phase and now will
-provide an update path for all future releases.
+Drupal WxT for Drupal 9 is under a release candidate phase and will provide an upgrade path for all future releases.
 
 ## Important Links
 
@@ -13,10 +12,11 @@ provide an update path for all future releases.
 - GitHub Repository: [drupalwxt/wxt][github-wxt]
 - Drupal Repository: [drupal.org/project/wxt][drupal]
 - Composer Project: [drupalwxt/site-wxt][github-site-wxt]
-- Helm Chart: [drupalwxt/helm-drupal][github-helm]
-- Containers: [hub.docker.com][docker-hub]
+- Composer Project Template: [drupalwxt/site-wxt][project]
+- Helm Chart for Kubernetes: [drupalwxt/helm-drupal][github-helm]
+- Docker Containers: [hub.docker.com][docker-hub]
 - Run it Now: [simplytest.me][simplytest]
-- Issue Queue: [Drupal][issue-drupal] (Primary)
+- Issue Queue: [Drupal][issue-drupal]
 
 ## Overview
 
@@ -26,9 +26,11 @@ For more information please consult the official [Web Experience Toolkit][wet-bo
 
 ## Architecture
 
-The goal of WxT 4.0.x line is to make the installation profile very minimal by default.
+The goal of WxT 4.0.x line is to make the installation profile very minimal by default but providing additional extensions that can be enabled as desired.
 
-All of the additional contrib modules and Lightning integration have been moved into the WxT Extend `wxt_ext` extensions which can now be installed a la carte for fresh installations via the GUI or passed as flags via Drush.
+WxT offers some light enhancements to Drupal Core, mainly around security and performance, and integration with the Web Experience Toolkit. By default, the distribution offers minimal functionality to allow full customizations by users. A set of optional extensions is available that provide additional functionality generally beneficial to Government departments. A community repository of modules and graduation process will be available to enable collaboration between users in the future.
+
+All of the additional contributed modules and Lightning integration have been moved into the WxT Extend `wxt_ext` extensions which can now be installed a la carte for fresh installations via the GUI or passed as flags via Drush.
 
 ```
 wxt_extension_configure_form.select_all='TRUE'
@@ -56,6 +58,7 @@ For the optional extensions that Drupal WxT provides we make use of the followin
 
 For more information about Lightning:
 
+* https://www.acquia.com/products-services/acquia-lightning
 * https://www.acquia.com/blog/building-drupal-8-sites-acquia-lightning-cuts-costs-100000
 * https://www.drupal.org/docs/8/distributions/degov/about-degov
 * https://github.com/govcms/govcms8
@@ -249,7 +252,7 @@ if ($split != 'none') {
 // $config["$split_filename_prefix.SITENAME"]['status'] = TRUE;
 ```
 
-## Containers (Optional)
+## Docker Containers (Optional)
 
 For the (optional) container based development workflow this is roughly the steps that are followed.
 
