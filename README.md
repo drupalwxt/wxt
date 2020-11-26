@@ -46,13 +46,13 @@ For more information please consult the following:
 
 For the optional extensions that Drupal WxT provides we make use of the following Lightning modules:
 
-* Lightning API
-* Lightning Core
-* Lightning Layout
-* Lightning Media
-* Lightning Workflow
+* [Lightning API](https://www.drupal.org/project/lightning_api)
+* [Lightning Core](https://www.drupal.org/project/lightning_core)
+* [Lightning Layout](https://www.drupal.org/project/lightning_layout)
+* [Lightning Media](https://www.drupal.org/project/lightning_media)
+* [Lightning Workflow](https://www.drupal.org/project/lightning_workflow)
 
-> Note: Originally we were leveraging the Lightning installation profile but since Lightning now provides support for the [individual components outside of the profile][lightning_split] we now leverage them directly.
+> Note: Originally we were leveraging the [Lightning](https://www.drupal.org/project/lightning) installation profile but since Lightning now provides support for the [individual components outside of the profile][lightning_split] we now leverage them directly.
 
 For more information about Lightning:
 
