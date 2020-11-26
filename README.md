@@ -9,39 +9,52 @@ provide an update path for all future releases.
 
 ## Important Links
 
-- Documentation Website: [drupalwxt.github.io][docsite]
+- Documentation Website: [drupalwxt.github.io][docs]
 - GitHub Repository: [drupalwxt/wxt][github-wxt]
 - Drupal Repository: [drupal.org/project/wxt][drupal]
 - Composer Project: [drupalwxt/site-wxt][github-site-wxt]
 - Helm Chart: [drupalwxt/helm-drupal][github-helm]
 - Containers: [hub.docker.com][docker-hub]
-- Live Demo: [demo][demo]
 - Run it Now: [simplytest.me][simplytest]
 - Issue Queue: [Drupal][issue-drupal] (Primary)
-- Issue Queue: [GitHub][issue-github]
 
 ## Overview
 
-The Drupal WxT distribution is a web content management system which assists in
-building and maintaining innovative Web sites that are accessible, usable, and
-interoperable. This distribution is open source software and free for use by
-departments and external Web communities. This distribution relies and
-integrates extensively with the [WET-BOEW jQuery Framework][wet-boew] for
-improved accessible markup.
+The Drupal WxT distribution is a web content management system which assists in building and maintaining innovative Web sites that are accessible, usable, and interoperable. This distribution is open source software led by the Government of Canada and free for use by departments and external Web communities. This distribution relies on and integrates with the [Web Experience Toolkit][wet-boew] for its conformance to the Web Content Accessibility Guideline (WCAG 2.0) and its compliance to the Standards on [Web Accessibility][standard_accessibility], [Web Usability][standard_usability], and [Web Interoperability][standard_interoperability].
+
+For more information please consult the official [Web Experience Toolkit][wet-boew-page] page.
 
 ## Architecture
 
-This install profile directly extends from the [Lightning Framework][lightning]
-created by [Acquia][acquia] to provide developers with a powerful base toolchain
-upon which to extend. Due to this strict dependency we also align much of our
-workflow with the best practice established patterns `Acquia` has provided.
+The goal of WxT 4.0.x line is to make the installation profile very minimal by default.
 
-### Lightning
+All of the additional contrib modules and Lightning integration have been moved into the WxT Extend `wxt_ext` extensions which can now be installed a la carte for fresh installations via the GUI or passed as flags via Drush.
 
-Lightning is something that is being used by and built for governments, and provides
-much of what is needed to create a Drupal-based content management system that meets
-the needs of the Government of Canada. It's also used as the basis of government
-Drupal platforms around the world.
+```
+wxt_extension_configure_form.select_all='TRUE'
+```
+
+In order to provide a list of the optional enabled extensions during the installation that can be checked, all that any module now has to do is provide a `modulename.wxt_extension.yml` file in their root and they will be picked as installable during the profile install and also respond to the additional drush flag.
+
+For more information please consult the following:
+
+* [WxT Minimal Install][wxt-minimal-install]
+* [Upgrade Path from 3.0.x -> 4.0.x][wxt-upgrade-path]
+* [Roadmap for Drupal 9][wxt-roadmap]
+
+### Lightning Components
+
+For the optional extensions that Drupal WxT provides we make use of the following Lightning modules:
+
+* Lightning API
+* Lightning Core
+* Lightning Layout
+* Lightning Media
+* Lightning Workflow
+
+> Note: Originally we were leveraging the Lightning installation profile but since Lightning now provides support for the [individual components outside of the profile][lightning_split] we now leverage them directly.
+
+For more information about Lightning:
 
 * https://www.acquia.com/blog/building-drupal-8-sites-acquia-lightning-cuts-costs-100000
 * https://www.drupal.org/docs/8/distributions/degov/about-degov
@@ -293,26 +306,32 @@ Extended with code and lessons learned by the [Acquia Team](https://acquia.com) 
 
 <!-- Links Referenced -->
 
-[acquia]:               https://acquia.com
-[changelog]:            https://github.com/drupalwxt/wxt/blob/8.x-3.x/CHANGELOG.md
-[demo]:                 https://drupalwxt.govcloud.ca
-[docsite]:              http://drupalwxt.github.io
-[docker-hub]:           https://hub.docker.com/r/drupalwxt/site-wxt
-[docker-scaffold]:      https://github.com/drupalwxt/docker-scaffold.git
-[drupal]:               http://drupal.org/project/wxt
-[drupal7]:              http://drupal.org/project/wetkit
-[githubci]:             https://github.com/drupalwxt/wxt/actions
-[githubci-badge]:       https://github.com/drupalwxt/wxt/workflows/build/badge.svg
-[github-helm]:          https://github.com/drupalwxt/helm-drupal
-[github-wxt]:           https://github.com/drupalwxt/wxt
-[github-site-wxt]:      https://github.com/drupalwxt/site-wxt
-[issue-drupal]:         https://drupal.org/project/issues/wxt
-[issue-github]:         https://github.com/drupalwxt/wxt/issues
-[lightning]:            https://github.com/acquia/lightning
-[panopoly]:             https://github.com/panopoly/panopoly
-[pantheon]:             https://pantheon.io
-[project]:              https://github.com/drupalwxt/wxt-project#user-content-new-project
-[project-new]:          https://github.com/drupalwxt/wxt-project#user-content-new-project
-[release-github]:       https://github.com/drupalwxt/wxt/releases
-[simplytest]:           http://simplytest.me/project/wxt/8.x-3.x
-[wet-boew]:             https://github.com/wet-boew/wet-boew
+[acquia]:                       https://acquia.com
+[changelog]:                    https://github.com/drupalwxt/wxt/blob/4.0.x/CHANGELOG.md
+[demo]:                         https://drupalwxt.govcloud.ca
+[docs]:                         http://drupalwxt.github.io
+[docker-hub]:                   https://hub.docker.com/r/drupalwxt/site-wxt
+[docker-scaffold]:              https://github.com/drupalwxt/docker-scaffold.git
+[drupal]:                       http://drupal.org/project/wxt
+[drupal7]:                      http://drupal.org/project/wetkit
+[githubci]:                     https://github.com/drupalwxt/wxt/actions
+[githubci-badge]:               https://github.com/drupalwxt/wxt/workflows/build/badge.svg
+[github-helm]:                  https://github.com/drupalwxt/helm-drupal
+[github-wxt]:                   https://github.com/drupalwxt/wxt
+[github-site-wxt]:              https://github.com/drupalwxt/site-wxt
+[issue-drupal]:                 https://drupal.org/project/issues/wxt
+[issue-github]:                 https://github.com/drupalwxt/wxt/issues
+[lightning]:                    https://github.com/acquia/lightning
+[lightning_split]:              https://www.drupal.org/project/lightning/issues/2933252
+[project]:                      https://github.com/drupalwxt/wxt-project#user-content-new-project
+[project-new]:                  https://github.com/drupalwxt/wxt-project#user-content-new-project
+[release-github]:               https://github.com/drupalwxt/wxt/releases
+[simplytest]:                   http://simplytest.me/project/wxt/8.x-3.x
+[standard_accessibility]:       https://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=23601
+[standard_usability]:           http://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=24227
+[standard_interoperability]:    http://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=25875
+[wet-boew]:                     https://github.com/wet-boew/wet-boew
+[wet-boew-page]:                https://www.canada.ca/en/treasury-board-secretariat/services/government-communications/web-experience-toolkit.html
+[wxt-minimal-install]:          https://www.drupal.org/project/wxt/issues/3182208
+[wxt-upgrade-path]:             https://www.drupal.org/project/wxt/issues/3182648
+[wxt-roadmap]:                  https://www.drupal.org/project/wxt/issues/3182977
