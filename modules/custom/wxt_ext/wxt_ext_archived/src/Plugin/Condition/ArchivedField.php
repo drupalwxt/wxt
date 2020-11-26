@@ -14,7 +14,7 @@ use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
  * @Condition(
  *   id = "wxt_is_archived",
  *   label = @Translation("Archived is checked"),
- *   context = {
+ *   context_definitions = {
  *     "node" = @ContextDefinition(
  *       "entity:node",
  *       required = TRUE,
