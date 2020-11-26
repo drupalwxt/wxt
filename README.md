@@ -300,11 +300,11 @@ make drupal_install
 
 ### Releases
 
-- [GitHub][release-github]
+- [GitHub Releases][release-github]
 
 ## Contributor(s)
 
-Contributor(s): https://github.com/drupalwxt/wxt/graphs/contributors
+Contributors: https://github.com/drupalwxt/wxt/graphs/contributors
 
 ## Acknowledgements
 
