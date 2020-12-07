@@ -49,6 +49,7 @@ function wxt_core_update_8400() {
     Drupal::keyValue('system.schema')->deleteMultiple([
       'libraries',
       'lightning',
+      'lightning_install',
       'wxt_ext_translation',
     ]);
   }
