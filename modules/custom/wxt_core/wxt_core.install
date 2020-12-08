@@ -69,4 +69,25 @@ function wxt_core_update_8400() {
     'wxt_translation',
   ]);
 
+  // Resolve issues with Lightning Scheduler.
+  $entity_type_manager = \Drupal::entityTypeManager();
+  $entity_definition_update_manager = \Drupal::entityDefinitionUpdateManager();
+  $modules = [
+    'block_content',
+    'crop',
+    'entity_subqueue',
+    'media',
+  ];
+  $fields = [
+    'scheduled_transition_date',
+    'scheduled_transition_state',
+  ];
+  foreach ($modules as $module) {
+    foreach ($fields as $field) {
+      if ($field_storage_definition = $entity_definition_update_manager->getFieldStorageDefinition($field, $module)) {
+        $entity_definition_update_manager->uninstallFieldStorageDefinition($field_storage_definition);
+      }
+    }
+  }
+
 }
