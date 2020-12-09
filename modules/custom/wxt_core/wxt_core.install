@@ -36,6 +36,7 @@ function wxt_core_update_8400() {
   $uninstalled = $module_installer->uninstall([
     'libraries',
     'lightning',
+    'lightning_install',
     'wxt_ext_translation',
   ]);
 
@@ -44,6 +45,7 @@ function wxt_core_update_8400() {
       ->getEditable('core.extension')
       ->clear('module.libraries')
       ->clear('module.lightning')
+      ->clear('module.lightning_install')
       ->clear('module.wxt_ext_translation')
       ->save();
     Drupal::keyValue('system.schema')->deleteMultiple([
