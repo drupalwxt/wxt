@@ -202,7 +202,9 @@
                 "Enter drupal/ctools patch #2874176 description here":
                 "https://www.drupal.org/files/issues/entityview-cache-metadata-2874176-2.patch",
                 "Enter drupal/ctools patch #2924356 description here":
-                "https://www.drupal.org/files/issues/ctools-entity_field_rendered_twice-2924356-2.patch"
+                "https://www.drupal.org/files/issues/ctools-entity_field_rendered_twice-2924356-2.patch",
+                "Enter drupal/ctools patch #3108785 description here":
+                "https://www.drupal.org/files/issues/2020-04-28/3108785-8.patch"
             },
             "drupal/field_group": {
                 "Enter drupal/field_group patch #3111107 description here":
