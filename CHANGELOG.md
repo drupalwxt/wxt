@@ -1,3 +1,33 @@
+## v4.0.0-RC3
+
+- Update for WxT
+  - Additional update path enhancements
+  - Resolve issue with Lightning scheduler
+- Updates for Contrib
+  - Updates for CTools
+  - Updates for Webform
+
+Upgrade path:
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
+- Run Lightning configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:lightning`
+
+- Run WxT configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:wxt`
+
+**Note:** The following modules are no longer provided by WXT. If you use these modules you will need to add them to your project's composer.json file.
+
+* Libraries
+
 ## v4.0.0-RC2
 
 - Update Drupal Core to [9.0.9](https://www.drupal.org/project/drupal/releases/9.0.9)
