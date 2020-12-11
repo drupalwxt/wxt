@@ -150,7 +150,7 @@
             },
             "drupal/core": {
                 "Enter drupal/core patch #1356276 description here":
-                "https://www.drupal.org/files/issues/2020-03-24/1356276-531-9.0.x-9.patch",
+                "https://www.drupal.org/files/issues/2020-12-11/1356276-631-by-mpotter-balsama-phenaproxima.patch",
                 "Enter drupal/core patch #2454915 description here":
                 "https://www.drupal.org/files/issues/2020-08-27/w3c-entity-links-2454915-36.patch",
                 "Enter drupal/core patch #2846485 description here":
@@ -184,7 +184,7 @@
                 "Enter drupal/core patch #2907413 description here":
                 "https://www.drupal.org/files/issues/2019-06-21/2907413-11.patch",
                 "Enter drupal/core patch #2914389 description here":
-                "https://www.drupal.org/files/issues/2018-07-09/2914389-8-do-not-test.patch",
+                "https://www.drupal.org/files/issues/2020-12-11/0001-Issue-2914389-by-phenaproxima-Allow-profiles-to-excl.patch",
                 "Enter drupal/core patch #2938129 description here":
                 "https://www.drupal.org/files/issues/2019-01-18/2938129-pagetitle-11.patch",
                 "Enter drupal/core patch #2998826 description here":
