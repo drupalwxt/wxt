@@ -218,6 +218,10 @@
                 "Enter drupal/group patch #2895988 description here":
                 "https://www.drupal.org/files/issues/2895988-4.patch"
             },
+            "drupal/lightning_media": {
+                "Enter drupal/lightning_media patch #3097516 description here":
+                "https://www.drupal.org/files/issues/2019-11-29/lightning_bulk_upload_form-3097516-2.patch"
+            },
             "drupal/lightning_workflow": {
                 "Enter drupal/lightning_workflow patch #3126343 description here":
                 "https://www.drupal.org/files/issues/2020-07-08/3126343-11.patch"

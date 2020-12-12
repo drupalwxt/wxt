@@ -7,6 +7,8 @@
   - Resolve issue with Lightning scheduler
 - Updates for WxT Bootstrap
   - Update twig syntax for Drupal 9 support
+- Updates for Lightning Media
+  - Improvements to Bulk Upload form
 - Updates for Contrib
   - Updates for CTools
   - Updates for Webform
