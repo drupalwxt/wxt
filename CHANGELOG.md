@@ -1,13 +1,19 @@
 ## v4.0.0-RC3
 
+- Update for Drupal Core
+  - [Updated Patch for SubProfile Inheritance](https://www.drupal.org/project/drupal/issues/1356276?page=1#comment-13935658)
 - Update for WxT
   - Additional update path enhancements
   - Resolve issue with Lightning scheduler
+- Updates for WxT Bootstrap
+  - Update twig syntax for Drupal 9 support
 - Updates for Contrib
   - Updates for CTools
   - Updates for Webform
 
 Upgrade path:
+
+> Note: For this upgrade path you will have to run `updatedb` through Drush as the GUI update.php will block on modules that were uninstalled.
 
 - Update your codebase:
   - `composer update`
