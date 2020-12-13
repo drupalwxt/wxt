@@ -7,11 +7,13 @@
   - Resolve issue with Lightning scheduler
 - Updates for WxT Bootstrap
   - Update twig syntax for Drupal 9 support
+  - Resolved skip link not accessible on reflow
 - Updates for Lightning Media
   - Improvements to Bulk Upload form
 - Updates for Contrib
   - Updates for CTools
   - Updates for Webform
+  - Removed Page Manager patch breaking anonymous users
 
 Upgrade path:
 
