@@ -45,6 +45,7 @@ For more information please consult the following:
 * [WxT Minimal Install][wxt-minimal-install]
 * [Upgrade Path from 3.0.x -> 4.0.x][wxt-upgrade-path]
 * [Roadmap for Drupal 9][wxt-roadmap]
+* [Subprofile install of modules and wxt_extensions][wxt-subprofile]
 
 ### Lightning Components
 
@@ -344,3 +345,4 @@ Extended with code and lessons learned by the [Acquia Team](https://acquia.com) 
 [wxt-minimal-install]:          https://www.drupal.org/project/wxt/issues/3182208
 [wxt-upgrade-path]:             https://www.drupal.org/project/wxt/issues/3182648
 [wxt-roadmap]:                  https://www.drupal.org/project/wxt/issues/3182977
+[wxt-subprofile]:               https://www.drupal.org/project/wxt/issues/3188088
