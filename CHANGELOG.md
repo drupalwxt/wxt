@@ -12,6 +12,27 @@
   - Added back Page Manager patch correcting panels pages + conflict
   - Added pathauto patch for avoid update query for key_value table
 
+Upgrade path:
+
+> Note: For this upgrade path you will have to run `updatedb` through Drush as the GUI update.php will block on modules that were uninstalled.
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
+- Run Lightning configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:lightning`
+
+- Run WxT configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:wxt`
+
+**Note:** The following modules are no longer provided by WXT. If you use these modules you will need to add them to your project's composer.json file.
+
 ## v4.0.0-RC3
 
 - Update for Drupal Core
