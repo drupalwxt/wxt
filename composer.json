@@ -263,8 +263,8 @@
                 "https://www.drupal.org/files/issues/2020-03-17/Password-Policy-constraints-summary-character-types-labels-not-translatable-2975694-16.patch"
             },
             "drupal/redis": {
-                "Enter drupal/redis patch #2882796 description here":
-                "https://www.drupal.org/files/issues/2020-09-29/redis-persistent_connections-2882796-22.patch",
+                "3004561 - Enable ssl scheme":
+                "https://www.drupal.org/files/issues/2019-06-26/override-default-scheme-and-persistent-for-predis-3004561-12.patch",
                 "Enter drupal/redis patch #3166814 description here":
                 "https://www.drupal.org/files/issues/2020-08-23/redis_test_lock_setup.patch",
                 "Enter drupal/redis patch #3179757 description here":

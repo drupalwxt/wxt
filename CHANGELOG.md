@@ -11,6 +11,7 @@
 - Updates for Contrib
   - Added back Page Manager patch correcting panels pages + conflict
   - Added pathauto patch for avoid update query for key_value table
+  - Redis improvements for TTL handling
 
 Upgrade path:
 
