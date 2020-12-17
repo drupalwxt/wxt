@@ -1,3 +1,17 @@
+## v4.0.0-RC4
+
+- Update for Drupal Core
+  - Documented issue and fix for PostgreSQL and large url_alias table
+- Updates for WxT Bootstrap
+  - Remove deprecated code
+  - Fix skip to link on reflow
+- Updates for Lightning Media
+  - Improvements to Bulk Upload form
+  - Improvements to Add UID for bulk uploaded files
+- Updates for Contrib
+  - Added back Page Manager patch correcting panels pages + conflict
+  - Added pathauto patch for avoid update query for key_value table
+
 ## v4.0.0-RC3
 
 - Update for Drupal Core
