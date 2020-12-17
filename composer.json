@@ -238,6 +238,10 @@
                 "Enter drupal/page_manager patch #2752227 description here":
                 "https://www.drupal.org/files/issues/2020-11-12/page_manager-incorrect-page_title-2752227-42-8.x.4.x.patch"
             },
+            "drupal/pathauto": {
+                "Enter drupal/pathauto patch #3184164 description here":
+                "https://www.drupal.org/files/issues/2020-11-23/3184164-2.patch"
+            },
             "drupal/paragraphs": {
                 "Enter drupal/paragraphs patch #2878615 description here":
                 "https://www.drupal.org/files/issues/comments_entity_uri-2878615-6.patch"
