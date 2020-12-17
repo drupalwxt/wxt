@@ -231,6 +231,8 @@
                 "https://www.drupal.org/files/issues/page-manager-2626090-page-title-empty-5.patch",
                 "Enter drupal/page_manager patch #2710169 description here":
                 "https://www.drupal.org/files/issues/page_manager-block-css-attributes-9.patch",
+                "Enter drupal/page_manager patch #3096408 description here":
+                "https://www.drupal.org/files/issues/2019-11-23/Issue-3096408-Page-Manager-issue-with-conflict-modul.patch",
                 "Enter drupal/page_manager patch #2752227 description here":
                 "https://www.drupal.org/files/issues/2020-11-12/page_manager-incorrect-page_title-2752227-42-8.x.4.x.patch"
             },
@@ -255,8 +257,12 @@
                 "https://www.drupal.org/files/issues/2020-03-17/Password-Policy-constraints-summary-character-types-labels-not-translatable-2975694-16.patch"
             },
             "drupal/redis": {
+                "Enter drupal/redis patch #2882796 description here":
+                "https://www.drupal.org/files/issues/2020-09-29/redis-persistent_connections-2882796-22.patch",
                 "Enter drupal/redis patch #3166814 description here":
-                "https://www.drupal.org/files/issues/2020-08-23/redis_test_lock_setup.patch"
+                "https://www.drupal.org/files/issues/2020-08-23/redis_test_lock_setup.patch",
+                "Enter drupal/redis patch #3179757 description here":
+                "https://www.drupal.org/files/issues/2020-10-30/3179757-4.patch"
             },
             "drupal/s3fs": {
                 "Enter drupal/s3fs patch #2986407 description here":
