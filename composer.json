@@ -220,7 +220,9 @@
             },
             "drupal/lightning_media": {
                 "Enter drupal/lightning_media patch #3097516 description here":
-                "https://www.drupal.org/files/issues/2019-11-29/lightning_bulk_upload_form-3097516-2.patch"
+                "https://www.drupal.org/files/issues/2019-11-29/lightning_bulk_upload_form-3097516-2.patch",
+                "Enter drupal/lightning_media patch #3179758 description here":
+                "https://www.drupal.org/files/issues/2020-10-29/bulk_fix-3179758-99.patch"
             },
             "drupal/lightning_workflow": {
                 "Enter drupal/lightning_workflow patch #3126343 description here":
