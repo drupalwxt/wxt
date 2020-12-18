@@ -2,6 +2,8 @@
 
 - Update for Drupal Core
   - Documented issue and fix for PostgreSQL and large url_alias table
+  - PostgreSQL operator in views queries
+  - Refactor array_merge usage in loops for performance
 - Updates for WxT Bootstrap
   - Remove deprecated code
   - Fix skip to link on reflow
@@ -12,6 +14,7 @@
   - Added back Page Manager patch correcting panels pages + conflict
   - Added pathauto patch for avoid update query for key_value table
   - Redis improvements for TTL handling
+  - Static caching for Metatag
 
 Upgrade path:
 

@@ -149,6 +149,8 @@
                 "https://www.drupal.org/files/issues/2019-04-24/bootstrap_layouts-3018633-6.patch"
             },
             "drupal/core": {
+                "Enter drupal/core patch #850600 description here":
+                "https://www.drupal.org/files/issues/postgresql_ssl_dsn-850600-3.patch",
                 "Enter drupal/core patch #1356276 description here":
                 "https://www.drupal.org/files/issues/2020-12-11/1356276-631-by-mpotter-balsama-phenaproxima.patch",
                 "Enter drupal/core patch #2454915 description here":
@@ -171,6 +173,8 @@
                 "https://www.drupal.org/files/issues/2020-03-21/2759397-19-entityref_recursion.patch",
                 "Enter drupal/core patch #2765297 description here":
                 "https://www.drupal.org/files/issues/2019-06-28/taxonomy_translation_2765297_0.patch",
+                "Enter drupal/core patch #2784739 description here":
+                "https://www.drupal.org/files/issues/2020-12-17/2784739-91.patch",
                 "Enter drupal/core patch #2816921 description here":
                 "https://www.drupal.org/files/issues/user_password-2816921-2.patch",
                 "Enter drupal/core patch #2885370 description here":
@@ -193,6 +197,8 @@
                 "https://www.drupal.org/files/issues/2018-12-05/3017710-20.patch",
                 "Enter drupal/core patch #3081656 description here":
                 "https://www.drupal.org/files/issues/2020-11-17/2488350-3-100.patch",
+                "Enter drupal/core patch #3164210 description here":
+                "https://www.drupal.org/files/issues/2020-08-09/3164210-3.patch",
                 "Enter drupal/core patch #3183425 description here":
                 "https://www.drupal.org/files/issues/2020-11-25/3183425-claro-styling-64.patch"
             },
@@ -227,6 +233,10 @@
             "drupal/lightning_workflow": {
                 "Enter drupal/lightning_workflow patch #3126343 description here":
                 "https://www.drupal.org/files/issues/2020-07-08/3126343-11.patch"
+            },
+            "drupal/metatag": {
+                "Enter drupal/metatag patch #2955407 description here":
+                "https://www.drupal.org/files/issues/2020-12-18/Issue-2955407-Static-caching-for-token-processing-ic.patch"
             },
             "drupal/page_manager": {
                 "Enter drupal/page_manager patch #2626090 description here":
