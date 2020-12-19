@@ -227,6 +227,8 @@
             "drupal/lightning_media": {
                 "Enter drupal/lightning_media patch #3097516 description here":
                 "https://www.drupal.org/files/issues/2019-11-29/lightning_bulk_upload_form-3097516-2.patch",
+                "Enter drupal/lightning_media patch #3113656 description here":
+                "https://www.drupal.org/files/issues/2020-02-14/3113656-2.patch",
                 "Enter drupal/lightning_media patch #3179758 description here":
                 "https://www.drupal.org/files/issues/2020-10-29/bulk_fix-3179758-99.patch"
             },
