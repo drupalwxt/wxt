@@ -4,6 +4,7 @@
   - Documented issue and fix for PostgreSQL and large url_alias table
   - PostgreSQL operator in views queries
   - Refactor array_merge usage in loops for performance
+  - Updated comment patch which was causing errors
 - Updates for WxT Bootstrap
   - Remove deprecated code
   - Fix skip to link on reflow
