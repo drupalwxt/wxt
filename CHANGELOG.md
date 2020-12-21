@@ -5,9 +5,12 @@
   - PostgreSQL operator in views queries
   - Refactor array_merge usage in loops for performance
   - Updated comment patch which was causing errors
+- Update for WxT
+  - Added translated content for webform "Report a Problem"
 - Updates for WxT Bootstrap
   - Remove deprecated code
   - Fix skip to link on reflow
+  - Fix for view node revision error
 - Updates for Lightning Media
   - Improvements to Bulk Upload form
   - Improvements to Add UID for bulk uploaded files
