@@ -30,7 +30,7 @@
         "drupal/fontawesome": "^2.12",
         "drupal/group": "1.3",
         "drupal/inline_entity_form": "1.0-rc8",
-        "drupal/linkit": "5.0-beta11",
+        "drupal/linkit": "6.0.0-beta2",
         "drupal/media_entity_slideshow": "2.0",
         "drupal/menu_block": "1.6.0",
         "drupal/menu_breadcrumb": "1.13",
@@ -235,6 +235,10 @@
             "drupal/lightning_workflow": {
                 "Enter drupal/lightning_workflow patch #3126343 description here":
                 "https://www.drupal.org/files/issues/2020-07-08/3126343-11.patch"
+            },
+            "drupal/linkit": {
+                "Detect and strip base URL from pasted URLs to increase matching hits":
+                "https://www.drupal.org/files/issues/2020-09-21/3078075-13.patch"
             },
             "drupal/metatag": {
                 "Enter drupal/metatag patch #2955407 description here":
