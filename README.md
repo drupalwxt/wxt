@@ -28,6 +28,10 @@ The Drupal WxT distribution is a web content management system which assists in 
 
 ## Architecture
 
+Please consult our Architectural Diagram for a recommended setup on Azure:
+
+* [Azure AKS](https://github.com/drupalwxt/helm-drupal/blob/master/docs/azure-aks-infra.pdf)
+
 The goal of WxT 4.0.x line is to make the installation profile very minimal by default but providing additional extensions that can be enabled as desired.
 
 WxT offers some light enhancements to Drupal Core, mainly around security and performance, and integration with the Web Experience Toolkit. By default, the distribution offers minimal functionality to allow full customizations by users. A set of optional extensions is available that provide additional functionality generally beneficial to Government departments. A community repository of modules and graduation process will be available to enable collaboration between users in the future.
