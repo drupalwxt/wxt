@@ -1,16 +1,24 @@
 ## v4.0.0-RC4
 
-- Update for Drupal Core
+- Updates for Drupal Core
+  - [SA-core-2021-001](https://www.drupal.org/sa-core-2021-001)
   - Documented issue and fix for PostgreSQL and large url_alias table
   - PostgreSQL operator in views queries
   - Refactor array_merge usage in loops for performance
   - Updated comment patch which was causing errors
-- Update for WxT
+  - Remove patch #3192376 due to entity translation fields
+  - Update for Linkit patch for D9 compatibility
+- Updates for WxT
   - Added translated content for webform "Report a Problem"
 - Updates for WxT Bootstrap
   - Remove deprecated code
   - Fix skip to link on reflow
   - Fix for view node revision error
+  - WCAG template issue for header branding block
+  - W3C image twig output for alt tag
+  - Add roles to all menu ul, li, and links
+  - Fix sidebar active class logic
+  - Fix for report a problem markup
 - Updates for Lightning Media
   - Improvements to Bulk Upload form
   - Improvements to Add UID for bulk uploaded files
