@@ -92,4 +92,29 @@ function wxt_core_update_8400() {
     }
   }
 
+  // Panels Title logic adjustments.
+  /** @var \Drupal\block\Entity\Block $block */
+  foreach (\Drupal::entityTypeManager()->getStorage('block')->loadMultiple() as $block) {
+    $visiblity_conditions = $block->getVisibilityConditions();
+    $visibility_rules = $visiblity_conditions->getConfiguration();
+    foreach ($visibility_rules as $k => $v) {
+      if ($v['id'] == 'panels_title') {
+        if (isset($v['enabled']) && $v['enabled'] == 1) {
+          unset($visibility_rules[$k]['enabled']);
+          $visibility_rules[$k] += [
+            'is_panelized' => [
+              'enabled' => 1,
+            ],
+          ];
+          $visibility_rules[$k]['negate'] = 1;
+        }
+        else if (isset($v['enabled']) && $v['enabled'] == 0) {
+          unset($visibility_rules[$k]);
+        }
+      }
+    }
+    $visiblity_conditions->setConfiguration($visibility_rules);
+    $block->save();
+  }
+
 }
