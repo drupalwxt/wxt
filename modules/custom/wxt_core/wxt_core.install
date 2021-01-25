@@ -108,7 +108,7 @@ function wxt_core_update_8400() {
           ];
           $visibility_rules[$k]['negate'] = 1;
         }
-        else if (isset($v['enabled']) && $v['enabled'] == 0) {
+        elseif (isset($v['enabled']) && $v['enabled'] == 0) {
           unset($visibility_rules[$k]);
         }
       }
