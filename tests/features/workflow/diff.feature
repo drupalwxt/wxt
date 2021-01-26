@@ -6,7 +6,7 @@ Feature: Diffing different revisions of content
     And page content:
       | title       | body           | moderation_state |
       | Drupal 9    | First revision | draft            |
-    When I visit "/drupal-8"
+    When I visit "/drupal-9"
     And I visit the edit form
     And I enter "Second revision" for "body[0][value]"
     And I press "Save"
