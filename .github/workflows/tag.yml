@@ -133,6 +133,7 @@ jobs:
         include: "terraform-kubernetes-drupalwxt/"
 
     - name: Push to site-wxt the latest build sha
+      uses: statcan/actions/composer@master
       run: |
         cd site-wxt
         rm composer.lock
