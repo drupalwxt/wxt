@@ -238,7 +238,7 @@
             },
             "drupal/linkit": {
                 "Detect and strip base URL from pasted URLs to increase matching hits":
-                "https://www.drupal.org/files/issues/2021-01-14/3078075-22.patch"
+                "https://www.drupal.org/files/issues/2021-01-25/3078075-24_0.patch"
             },
             "drupal/metatag": {
                 "Enter drupal/metatag patch #2955407 description here":
