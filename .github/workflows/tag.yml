@@ -141,7 +141,7 @@ jobs:
       working-directory: ./site-wxt
       env:
         COMPOSER_AUTH: ${{ secrets.COMPOSER_AUTH }}
-     with:
+      with:
         args: install
 
     - name: Push to site-wxt the latest build sha
