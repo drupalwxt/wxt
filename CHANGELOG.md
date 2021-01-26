@@ -1,4 +1,4 @@
-## v4.0.0-RC4
+## v4.0.0
 
 - Updates for Drupal Core
   - [SA-core-2021-001](https://www.drupal.org/sa-core-2021-001)
@@ -8,6 +8,7 @@
   - Updated comment patch which was causing errors
   - Remove patch #3192376 due to entity translation fields
   - Update for Linkit patch for D9 compatibility
+  - Patch for correct version of Azure MySQL
 - Updates for WxT
   - Added translated content for webform "Report a Problem"
 - Updates for WxT Bootstrap
@@ -31,6 +32,7 @@
 Upgrade path:
 
 > Note: For this upgrade path you will have to run `updatedb` through Drush as the GUI update.php will block on modules that were uninstalled.
+> Additionally please note if you have run any of the prior release candidate's you might have to manually re-run the wxt_core_update_8400 hook.
 
 - Update your codebase:
   - `composer update`
@@ -1314,7 +1316,7 @@ makefile so that versions match composer.json.
 
 ## v2.0.0
 
-Initial release of Drupal WxT for Drupal 8.
+Initial release of Drupal WxT for Drupal 9.
 
 Security Update(s):
 

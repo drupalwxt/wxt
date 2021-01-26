@@ -219,8 +219,8 @@ source:
       weight: 0
       parent: 0
     - mlid: 'ml_sidebar_1_sub_1'
-      link_title: 'Drupal 8'
-      description: 'Drupal 8 introduction'
+      link_title: 'Drupal 9'
+      description: 'Drupal 9 introduction'
       menu_name: 'sidebar'
       link_path: 'internal:/node/2'
       options: []
@@ -228,7 +228,7 @@ source:
       weight: 0
       parent: 'ml_sidebar_1'
     - mlid: 'ml_sidebar_1_sub_1_sub_1'
-      link_title: 'Why Drupal 8'
+      link_title: 'Why Drupal 9'
       description: 'Meet the world’s leading digital experience platform.'
       menu_name: 'sidebar'
       link_path: 'https://www.drupal.com/why-drupal-8'
@@ -238,7 +238,7 @@ source:
       parent: 'ml_sidebar_1_sub_1'
     - mlid: 'ml_sidebar_1_sub_1_sub_2'
       link_title: 'Multilingual Improvements'
-      description: 'Drupal 8 multilingual improvements.'
+      description: 'Drupal 9 multilingual improvements.'
       menu_name: 'sidebar'
       link_path: 'http://www.drupal8multilingual.org/features'
       options: []
@@ -246,7 +246,7 @@ source:
       weight: 0
       parent: 'ml_sidebar_1_sub_1'
     - mlid: 'ml_sidebar_1_sub_2'
-      link_title: 'Drupal WxT for Drupal 8'
+      link_title: 'Drupal WxT for Drupal 9'
       description: 'Drupal WxT8 introduction'
       menu_name: 'sidebar'
       link_path: 'internal:/node/1'

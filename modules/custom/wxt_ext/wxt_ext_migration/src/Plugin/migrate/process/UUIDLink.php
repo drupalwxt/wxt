@@ -15,7 +15,7 @@ use Drupal\node\Entity\Node;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * Convert a Drupal 7 UUID Link to a Drupal 8 UUID Link.
+ * Convert a Drupal 7 UUID Link to a Drupal 9 UUID Link.
  *
  * @MigrateProcessPlugin(
  *   id = "wxt_uuid_link",
@@ -88,7 +88,7 @@ class UUIDLink extends ProcessPluginBase implements ContainerFactoryPluginInterf
   }
 
   /**
-   * Replace callback to convert a Drupal 7 UUID link into a Drupal 8 UUID Link.
+   * Replace callback to convert a Drupal 7 UUID link into a Drupal 9 UUID Link.
    *
    * @param string $match
    *   Takes a match of tag code

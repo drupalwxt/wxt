@@ -8,12 +8,12 @@ source:
   translations: true
   data_rows:
     - name: 'wxt_content_1'
-      title: 'Drupal WxT pour Drupal 8'
+      title: 'Drupal WxT pour Drupal 9'
       language: 'fr'
       body: |
         <p>Pas de traduction en ce moment.</p>
     - name: 'wxt_content_2'
-      title: 'Drupal 8'
+      title: 'Drupal 9'
       language: 'fr'
       body:  |
         <p>Pas de traduction en ce moment.</p>

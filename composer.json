@@ -1,6 +1,6 @@
 {
     "name": "drupalwxt/wxt",
-    "description": "Project template for Drupal 8 sites built with the WxT distribution.",
+    "description": "Project template for Drupal 9 sites built with the WxT distribution.",
     "type": "drupal-profile",
     "license": "GPL-2.0+",
     "minimum-stability": "dev",
