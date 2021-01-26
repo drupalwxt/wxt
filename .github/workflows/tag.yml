@@ -134,24 +134,23 @@ jobs:
 
     - name: Enter the site-wxt directory
       working-directory: ./site-wxt
-      run: |
-       rm composer.lock
+      run: |
+        rm composer.lock
 
     - uses: statcan/actions/composer@master
-      working-directory: ./site-wxt
-      env:
-        COMPOSER_AUTH: ${{ secrets.COMPOSER_AUTH }}
-      with:
-        args: install
+      env:
+        COMPOSER_AUTH: ${{ secrets.COMPOSER_AUTH }}
+      with:
+        args: install --working-dir=./site-wxt
 
     - name: Push to site-wxt the latest build sha
       working-directory: ./site-wxt
       run: |
-        git add .
-        git commit -m "Update to latest version of WxT ${{ env.GITHUB_REFERENCE }}" || true
-        git tag ${{ env.GITHUB_REFERENCE }}
-        git push origin 9.x
-        git push origin ${{ env.GITHUB_REFERENCE }}
+        git add .
+        git commit -m "Update to latest version of WxT ${{ env.GITHUB_REFERENCE }}" || true
+        git tag ${{ env.GITHUB_REFERENCE }}
+        git push origin 9.x
+        git push origin ${{ env.GITHUB_REFERENCE }}
 
     - name: Push to wxt-project the latest tags
       run: |
