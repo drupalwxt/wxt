@@ -5,5 +5,7 @@ dependencies: {  }
 id: global
 label: Global
 tags:
-  title: '[current-page:title]'
+  title: '[current-page:title] - [site:name]'
   canonical_url: '[current-page:url]'
+  dcterms_title: '[current-page:title]'
+  dcterms_language: '[language:langcode]'

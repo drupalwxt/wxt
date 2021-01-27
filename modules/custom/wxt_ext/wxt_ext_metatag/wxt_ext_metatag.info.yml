@@ -8,5 +8,6 @@ core_version_requirement: '^8.8.10 || ^9'
 dependencies:
   - metatag:metatag
   - metatag_dc:metatag_dc
+  - metatag_dc_advanced:metatag_dc_advanced
   - metatag_page_manager:metatag_page_manager
   - metatag_views:metatag_views
