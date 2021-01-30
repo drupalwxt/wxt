@@ -1,3 +1,36 @@
+## v4.0.1
+
+- Updates for WxT
+  - Restore French + Non symmetric menu functionality [#3195279](https://www.drupal.org/project/wxt/issues/3195279)
+  - Enable advanced dublin core metatag module by default [#3194123](https://www.drupal.org/project/wxt/issues/3194123)
+  - Update WxT migration content
+  - Menu breadcrumb minor fix for french menu handling
+- Updates for WxT Bootstrap
+  - Restore French + Non symmetric menu functionality [#3195279](https://www.drupal.org/project/wxt/issues/3195279)
+  - WxT Bootstrap Fix Header Layout Issues [#3194962](https://www.drupal.org/project/wxt/issues/3194962)
+  - Fix unnecessary ARIA roles [#3154001](https://www.drupal.org/project/wxt/issues/3154001)
+
+Upgrade path:
+
+> Note: No special notes for this release.
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
+- Run Lightning configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:lightning`
+
+- Run WxT configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:wxt`
+
+**Note:** French non-symmetric menu functionality has been fully restored.
+
 ## v4.0.0
 
 - Updates for Drupal Core
@@ -50,6 +83,8 @@ Upgrade path:
   - `drush update:wxt`
 
 **Note:** The following modules are no longer provided by WXT. If you use these modules you will need to add them to your project's composer.json file.
+
+* Libraries
 
 ## v4.0.0-RC3
 
