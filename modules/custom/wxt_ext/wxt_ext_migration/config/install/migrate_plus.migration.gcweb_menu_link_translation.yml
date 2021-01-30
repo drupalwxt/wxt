@@ -8,92 +8,11 @@ source:
   translations: true
   default_lang: true
   data_rows:
-    # Footer.
-    - mlid: 'ml_footer_1'
-      link_title: 'Contactez-nous'
-      description: 'Contactez-nous section.'
-      menu_name: 'footer-fr'
-      link_path: 'https://www.canada.ca/fr/contact.html'
-      options: []
-      external: 1
-      weight: 0
-      parent: 0
-    - mlid: 'ml_footer_2'
-      link_title: 'Ministères et organismes'
-      description: 'Ministères et organismes section.'
-      menu_name: 'footer-fr'
-      link_path: 'https://www.canada.ca/fr/gouvernement/min.html'
-      options: []
-      external: 1
-      weight: 1
-      parent: 0
-    - mlid: 'ml_footer_3'
-      link_title: 'Fonction publique et force militaire'
-      description: 'Fonction publique et force militaire section.'
-      menu_name: 'footer-fr'
-      link_path: 'https://www.canada.ca/fr/gouvernement/fonctionpublique.html'
-      options: []
-      external: 1
-      weight: 2
-      parent: 0
-    - mlid: 'ml_footer_4'
-      link_title: 'Nouvelles'
-      description: 'Nouvelles section.'
-      menu_name: 'footer-fr'
-      link_path: 'http://nouvelles.gc.ca'
-      options: []
-      external: 1
-      weight: 3
-      parent: 0
-    - mlid: 'ml_footer_5'
-      link_title: 'Traités, lois et règlements'
-      description: 'Traités, lois et règlements section.'
-      menu_name: 'footer-fr'
-      link_path: 'https://www.canada.ca/fr/gouvernement/systeme/lois.html'
-      options: []
-      external: 1
-      weight: 4
-      parent: 0
-    - mlid: 'ml_footer_6'
-      link_title: 'Rapports à l''échelle du gouvernement'
-      description: 'Rapports à l''échelle du gouvernement section.'
-      menu_name: 'footer-fr'
-      link_path: 'https://www.canada.ca/fr/transparence/rapports.html'
-      options: []
-      external: 1
-      weight: 5
-      parent: 0
-    - mlid: 'ml_footer_7'
-      link_title: 'Premier ministre'
-      description: 'Premier ministre section.'
-      menu_name: 'footer-fr'
-      link_path: 'https://pm.gc.ca/fra'
-      options: []
-      external: 1
-      weight: 6
-      parent: 0
-    - mlid: 'ml_footer_8'
-      link_title: 'Comment le gouvernement fonctionne'
-      description: 'Comment le gouvernement fonctionne section.'
-      menu_name: 'footer-fr'
-      link_path: 'https://www.canada.ca/fr/gouvernement/systeme.html'
-      options: []
-      external: 1
-      weight: 7
-      parent: 0
-    - mlid: 'ml_footer_9'
-      link_title: 'Gouvernement ouvert'
-      description: 'Gouvernement ouvert section.'
-      menu_name: 'footer-fr'
-      link_path: 'https://ouvert.canada.ca'
-      options: []
-      external: 1
-      weight: 8
-      parent: 0
+    # Brand.
     - mlid: 'ml_brand_1'
       link_title: 'Médias sociaux'
       description: 'Médias sociaux section.'
-      menu_name: 'brand-fr'
+      menu_name: 'brand_fr'
       link_path: 'https://www.canada.ca/fr/sociaux.html'
       options: []
       external: 1
@@ -102,7 +21,7 @@ source:
     - mlid: 'ml_brand_2'
       link_title: 'Applications mobiles'
       description: 'Applications mobiles section.'
-      menu_name: 'brand-fr'
+      menu_name: 'brand_fr'
       link_path: 'https://www.canada.ca/fr/mobile.html'
       options: []
       external: 1
@@ -111,7 +30,7 @@ source:
     - mlid: 'ml_brand_3'
       link_title: 'À propos de Canada.ca'
       description: 'À propos de Canada.ca section.'
-      menu_name: 'brand-fr'
+      menu_name: 'brand_fr'
       link_path: 'https://www1.canada.ca/fr/nouveausite.html'
       options: []
       external: 1
@@ -120,7 +39,7 @@ source:
     - mlid: 'ml_brand_4'
       link_title: 'Avis'
       description: 'Avis section.'
-      menu_name: 'brand-fr'
+      menu_name: 'brand_fr'
       link_path: 'https://www.canada.ca/fr/transparence/avis.html'
       options: []
       external: 1
@@ -129,16 +48,81 @@ source:
     - mlid: 'ml_brand_5'
       link_title: 'Confidentialité'
       description: 'Confidentialité section.'
-      menu_name: 'brand-fr'
+      menu_name: 'brand_fr'
       link_path: 'https://www.canada.ca/fr/transparence/confidentialite.html'
       options: []
       external: 1
       weight: 4
       parent: 0
+    # Sidebar.
+    - mlid: 'ml_sidebar_1'
+      link_title: 'Drupal'
+      description: 'Drupal.org'
+      menu_name: 'sidebar_fr'
+      link_path: 'http://drupal.org'
+      options: []
+      external: 1
+      weight: 0
+      parent: 0
+    - mlid: 'ml_sidebar_1_sub_1'
+      link_title: 'Drupal 9'
+      description: 'Drupal 9 introduction'
+      menu_name: 'sidebar_fr'
+      link_path: 'internal:/node/2'
+      options: []
+      external: 0
+      weight: 0
+      parent: 'ml_sidebar_1'
+    - mlid: 'ml_sidebar_1_sub_1_sub_1'
+      link_title: 'Pourquoi Drupal 9'
+      description: 'Découvrez la principale plate-forme d''expérience numérique au monde.'
+      menu_name: 'sidebar_fr'
+      link_path: 'https://www.drupal.org/about/9'
+      options: []
+      external: 0
+      weight: 0
+      parent: 'ml_sidebar_1_sub_1'
+    - mlid: 'ml_sidebar_1_sub_1_sub_2'
+      link_title: 'Améliorations multilingues'
+      description: 'Améliorations multilingues de Drupal 9.'
+      menu_name: 'sidebar_fr'
+      link_path: 'https://www.drupal.org/features/multilingual'
+      options: []
+      external: 0
+      weight: 0
+      parent: 'ml_sidebar_1_sub_1'
+    - mlid: 'ml_sidebar_1_sub_2'
+      link_title: 'Drupal WxT pour Drupal 9'
+      description: 'Drupal WxT pour Drupal 9'
+      menu_name: 'sidebar_fr'
+      link_path: 'internal:/node/1'
+      options: []
+      external: 0
+      weight: 0
+      parent: 'ml_sidebar_1'
+    - mlid: 'ml_sidebar_1_sub_2_sub_1'
+      link_title: 'Drupal WxT (GitHub)'
+      description: 'Drupal WxT sur GitHub'
+      menu_name: 'sidebar_fr'
+      link_path: 'http://github.com/drupalwxt/wxt'
+      options: []
+      external: 0
+      weight: 0
+      parent: 'ml_sidebar_1_sub_2'
+    - mlid: 'ml_sidebar_1_sub_2_sub_2'
+      link_title: 'Drupal WxT (Drupal.org)'
+      description: 'Drupal WxT sur Drupal.org.'
+      menu_name: 'sidebar_fr'
+      link_path: 'http://drupal.org/project/wxt'
+      options: []
+      external: 0
+      weight: 0
+      parent: 'ml_sidebar_1_sub_2'
+    # Main.
     - mlid: 'main_jobs_workplace'
       link_title: 'Emplois et milieu de travail'
       description: ''
-      menu_name: 'main-fr'
+      menu_name: 'main_fr'
       link_path: 'https://www.canada.ca/fr/services/emplois.html'
       options: []
       external: 1
@@ -147,7 +131,7 @@ source:
     - mlid: 'main_immigration'
       link_title: 'Immigration et citoyenneté'
       description: ''
-      menu_name: 'main-fr'
+      menu_name: 'main_fr'
       link_path: 'https://www.canada.ca/fr/services/immigration-citoyennete.html'
       options: []
       external: 1
@@ -156,7 +140,7 @@ source:
     - mlid: 'main_travel'
       link_title: 'Voyage et tourisme'
       description: ''
-      menu_name: 'main-fr'
+      menu_name: 'main_fr'
       link_path: 'https://voyage.gc.ca/'
       options: []
       external: 1
@@ -165,7 +149,7 @@ source:
     - mlid: 'main_business'
       link_title: 'Entreprises et industrie'
       description: ''
-      menu_name: 'main-fr'
+      menu_name: 'main_fr'
       link_path: 'https://www.canada.ca/fr/services/entreprises.html'
       options: []
       external: 1
@@ -174,7 +158,7 @@ source:
     - mlid: 'main_benefits'
       link_title: 'Prestations'
       description: ''
-      menu_name: 'main-fr'
+      menu_name: 'main_fr'
       link_path: 'https://www.canada.ca/fr/services/prestations.html'
       options: []
       external: 1
@@ -183,7 +167,7 @@ source:
     - mlid: 'main_health'
       link_title: 'Santé'
       description: ''
-      menu_name: 'main-fr'
+      menu_name: 'main_fr'
       link_path: 'https://www.canada.ca/fr/services/sante.html'
       options: []
       external: 1
@@ -192,7 +176,7 @@ source:
     - mlid: 'main_taxes'
       link_title: 'Impôts'
       description: ''
-      menu_name: 'main-fr'
+      menu_name: 'main_fr'
       link_path: 'https://www.canada.ca/fr/services/impots.html'
       options: []
       external: 1
@@ -201,7 +185,7 @@ source:
     - mlid: 'main_environmental'
       link_title: 'Environnement et ressources naturelles'
       description: ''
-      menu_name: 'main-fr'
+      menu_name: 'main_fr'
       link_path: 'https://www.canada.ca/fr/services/environnement.html'
       options: []
       external: 1
@@ -210,7 +194,7 @@ source:
     - mlid: 'main_national_security'
       link_title: 'Sécurité nationale et défense'
       description: ''
-      menu_name: 'main-fr'
+      menu_name: 'main_fr'
       link_path: 'https://www.canada.ca/fr/services/defense.html'
       options: []
       external: 1
@@ -219,7 +203,7 @@ source:
     - mlid: 'main_culture'
       link_title: 'Culture, histoire et sport'
       description: ''
-      menu_name: 'main-fr'
+      menu_name: 'main_fr'
       link_path: 'https://www.canada.ca/fr/services/culture.html'
       options: []
       external: 1
@@ -228,7 +212,7 @@ source:
     - mlid: 'main_policing'
       link_title: 'Services de police, justice et urgences'
       description: ''
-      menu_name: 'main-fr'
+      menu_name: 'main_fr'
       link_path: 'https://www.canada.ca/fr/services/police.html'
       options: []
       external: 1
@@ -237,7 +221,7 @@ source:
     - mlid: 'main_transport'
       link_title: 'Transport et infrastructure'
       description: ''
-      menu_name: 'main-fr'
+      menu_name: 'main_fr'
       link_path: 'https://www.canada.ca/fr/services/transport.html'
       options: []
       external: 1
@@ -246,7 +230,7 @@ source:
     - mlid: 'main_canada'
       link_title: 'Canada et le monde'
       description: ''
-      menu_name: 'main-fr'
+      menu_name: 'main_fr'
       link_path: 'http://international.gc.ca/world-monde/index.aspx?lang=fra'
       options: []
       external: 1
@@ -255,7 +239,7 @@ source:
     - mlid: 'main_money'
       link_title: 'Argent et finances'
       description: ''
-      menu_name: 'main-fr'
+      menu_name: 'main_fr'
       link_path: 'https://www.canada.ca/fr/services/finance.html'
       options: []
       external: 1
@@ -264,11 +248,93 @@ source:
     - mlid: 'main_science'
       link_title: 'Science et innovation'
       description: ''
-      menu_name: 'main-fr'
+      menu_name: 'main_fr'
       link_path: 'https://www.canada.ca/fr/services/science.html'
       options: []
       external: 1
       weight: 16
+      parent: 0
+    # Footer.
+    - mlid: 'ml_footer_1'
+      link_title: 'Contactez-nous'
+      description: 'Contactez-nous section.'
+      menu_name: 'footer_fr'
+      link_path: 'https://www.canada.ca/fr/contact.html'
+      options: []
+      external: 1
+      weight: 0
+      parent: 0
+    - mlid: 'ml_footer_2'
+      link_title: 'Ministères et organismes'
+      description: 'Ministères et organismes section.'
+      menu_name: 'footer_fr'
+      link_path: 'https://www.canada.ca/fr/gouvernement/min.html'
+      options: []
+      external: 1
+      weight: 1
+      parent: 0
+    - mlid: 'ml_footer_3'
+      link_title: 'Fonction publique et force militaire'
+      description: 'Fonction publique et force militaire section.'
+      menu_name: 'footer_fr'
+      link_path: 'https://www.canada.ca/fr/gouvernement/fonctionpublique.html'
+      options: []
+      external: 1
+      weight: 2
+      parent: 0
+    - mlid: 'ml_footer_4'
+      link_title: 'Nouvelles'
+      description: 'Nouvelles section.'
+      menu_name: 'footer_fr'
+      link_path: 'http://nouvelles.gc.ca'
+      options: []
+      external: 1
+      weight: 3
+      parent: 0
+    - mlid: 'ml_footer_5'
+      link_title: 'Traités, lois et règlements'
+      description: 'Traités, lois et règlements section.'
+      menu_name: 'footer_fr'
+      link_path: 'https://www.canada.ca/fr/gouvernement/systeme/lois.html'
+      options: []
+      external: 1
+      weight: 4
+      parent: 0
+    - mlid: 'ml_footer_6'
+      link_title: 'Rapports à l''échelle du gouvernement'
+      description: 'Rapports à l''échelle du gouvernement section.'
+      menu_name: 'footer_fr'
+      link_path: 'https://www.canada.ca/fr/transparence/rapports.html'
+      options: []
+      external: 1
+      weight: 5
+      parent: 0
+    - mlid: 'ml_footer_7'
+      link_title: 'Premier ministre'
+      description: 'Premier ministre section.'
+      menu_name: 'footer_fr'
+      link_path: 'https://pm.gc.ca/fra'
+      options: []
+      external: 1
+      weight: 6
+      parent: 0
+    - mlid: 'ml_footer_8'
+      link_title: 'Comment le gouvernement fonctionne'
+      description: 'Comment le gouvernement fonctionne section.'
+      menu_name: 'footer_fr'
+      link_path: 'https://www.canada.ca/fr/gouvernement/systeme.html'
+      options: []
+      external: 1
+      weight: 7
+      parent: 0
+    - mlid: 'ml_footer_9'
+      link_title: 'Gouvernement ouvert'
+      description: 'Gouvernement ouvert section.'
+      menu_name: 'footer_fr'
+      link_path: 'https://ouvert.canada.ca'
+      options: []
+      external: 1
+      weight: 8
       parent: 0
   # Under 'ids', we identify source fields populated above which will uniquely
   # identify each imported item. The 'type' makes sure the migration map table

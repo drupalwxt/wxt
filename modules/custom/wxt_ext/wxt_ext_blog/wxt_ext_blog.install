@@ -24,9 +24,6 @@ function wxt_ext_blog_install() {
   ];
   wxt_translation_enable_translation($entities);
 
-  // Download the newest config translations from Drupal.org.
-  wxt_translation_update_config_translation();
-
   $modules = [
     'autosave_form',
     'lightning_roles',

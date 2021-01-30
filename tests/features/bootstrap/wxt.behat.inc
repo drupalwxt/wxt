@@ -69,7 +69,6 @@ class WxTSubContext extends DrupalSubContextBase {
         foreach ($log as $error) {
           // Make the substitutions easier to read in the log.
           $error->variables = unserialize($error->variables);
-          print_r($error);
         }
         throw new \Exception('PHP errors logged to watchdog in this scenario.');
       }

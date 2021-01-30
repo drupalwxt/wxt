@@ -16,7 +16,4 @@ function wxt_ext_blocks_install() {
     ],
   ];
   wxt_translation_enable_translation($entities);
-
-  // Download the newest config translations from Drupal.org.
-  wxt_translation_update_config_translation();
 }

@@ -131,7 +131,7 @@ source:
       link_title: 'Multilingual Improvements'
       description: 'Drupal 9 multilingual improvements.'
       menu_name: 'sidebar'
-      link_path: 'http://www.drupal8multilingual.org/features'
+      link_path: 'https://www.drupal.org/features/multilingual'
       options: []
       external: 0
       weight: 0
@@ -149,7 +149,7 @@ source:
       link_title: 'Drupal WxT8 (GitHub)'
       description: 'The Drupal WxT8 GitHub repository.'
       menu_name: 'sidebar'
-      link_path: 'http://github.com/wet-boew/wet-boew-drupal8'
+      link_path: 'http://github.com/drupalwxt/wxt'
       options: []
       external: 0
       weight: 0
@@ -222,7 +222,7 @@ source:
       link_title: 'Recent project activity'
       description: 'Recent project activity for Drupal WxT'
       menu_name: 'footer'
-      link_path: 'https://github.com/wet-boew/wet-boew-drupal8/pulse'
+      link_path: 'http://github.com/drupalwxt/wxt/pulse'
       options: []
       external: 1
       weight: 0
@@ -231,7 +231,7 @@ source:
       link_title: 'Project statistics'
       description: 'Recent project statistics for Drupal WxT.'
       menu_name: 'footer'
-      link_path: 'https://github.com/wet-boew/wet-boew-drupal8/graphs'
+      link_path: 'http://github.com/drupalwxt/wxt/graphs'
       options: []
       external: 1
       weight: 0
@@ -249,7 +249,7 @@ source:
       link_title: 'Twitter'
       description: 'Twitter Feed for Drupal WxT.'
       menu_name: 'footer'
-      link_path: 'https://github.com/wet-boew/wet-boew-drupal8/pulse'
+      link_path: 'http://github.com/drupalwxt/wxt/pulse'
       options: []
       external: 1
       weight: 0

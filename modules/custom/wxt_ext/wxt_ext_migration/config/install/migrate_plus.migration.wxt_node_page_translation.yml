@@ -4,7 +4,7 @@ migration_group: wxt_translation
 migration_tags:
   - Core
 source:
-  plugin: embedded_data
+  plugin: custom_embedded_data
   translations: true
   data_rows:
     - name: 'wxt_content_1'
