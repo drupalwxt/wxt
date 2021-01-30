@@ -124,10 +124,16 @@ WxT can be installed from a set of exported configuration (e.g., using the `--ex
 ### Installation of Default Content via [Migrate][migrate]
 
 ```sh
+drush config-set wxt_library.settings wxt.theme theme-gcweb -y
+
 drush migrate:import --group wxt --tag 'Core'
 drush migrate:import --group gcweb --tag 'Core'
 drush migrate:import --group gcweb --tag 'Menu'
-drush config-set wxt_library.settings wxt.theme theme-gcweb -y
+
+drush migrate:import --group wxt_translation --tag 'Core'
+drush migrate:import --group gcweb_translation --tag 'Core'
+drush migrate:import --group gcweb_translation --tag 'Menu'
+
 drush cr
 ```
 
