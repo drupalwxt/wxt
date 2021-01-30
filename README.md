@@ -4,7 +4,7 @@
 
 ## Important
 
-Drupal WxT for Drupal 9 is under a release candidate phase and will provide an upgrade path for all future releases.
+Drupal WxT for Drupal 9 is released and provides an upgrade path from the 3.0.x line.
 
 ## Important Links
 
