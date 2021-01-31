@@ -28,7 +28,7 @@ The Drupal WxT distribution is a web content management system which assists in 
 
 ## Architecture
 
-Please consult our Architectural Diagram for a recommended setup on Azure:
+Please consult our Architectural Diagram for a example implementation on Kubernetes:
 
 * [Azure AKS](https://github.com/drupalwxt/helm-drupal/blob/master/docs/azure-aks-infra.pdf)
 
