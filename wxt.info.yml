@@ -18,7 +18,6 @@ install:
   - menu_ui
   - node
   - path
-  - search
   - taxonomy
   - text
   - user

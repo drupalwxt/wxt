@@ -10,11 +10,13 @@ source:
     - name: 'wxt_content_1'
       title: 'Drupal WxT pour Drupal 9'
       language: 'fr'
+      status: 1
       body: |
         <p>Pas de traduction en ce moment.</p>
     - name: 'wxt_content_2'
       title: 'Drupal 9'
       language: 'fr'
+      status: 1
       body:  |
         <p>Pas de traduction en ce moment.</p>
   # Under 'ids', we identify source fields populated above which will uniquely
@@ -44,9 +46,12 @@ process:
     plugin: default_value
     default_value: rich_text
   langcode: language
-  'moderation_state/target_id':
-    plugin: default_value
-    default_value: published
+  moderation_state:
+    plugin: static_map
+    source: status
+    map:
+      0: draft
+      1: published
   content_translation_source: 'en'
 destination:
   plugin: entity:node

@@ -9,6 +9,7 @@ source:
     - name: 'wxt_content_1'
       title: 'Drupal WxT for Drupal 9'
       language: 'en'
+      status: 1
       body: |
         <p>The Drupal WxT distribution is a web content management
         framework which assists in building and maintaining innovative Web sites
@@ -274,6 +275,7 @@ source:
     - name: 'wxt_content_2'
       title: 'Drupal 9'
       language: 'en'
+      status: 1
       body: |
         <p>Drupal 9 is the latest, greatest release of the world's
         most widely used enterprise web CMS. It's fast. Flexible. Drupal 9 taps
@@ -335,9 +337,12 @@ process:
     plugin: default_value
     default_value: rich_text
   langcode: language
-  'moderation_state/target_id':
-    plugin: default_value
-    default_value: published
+  moderation_state:
+    plugin: static_map
+    source: status
+    map:
+      0: draft
+      1: published
 destination:
   plugin: entity:node
 migration_dependencies: {}

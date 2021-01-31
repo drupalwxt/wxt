@@ -1,0 +1,39 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_index
+    - field.field.node.page.body
+    - field.field.node.page.field_meta_tags
+    - field.field.node.page.layout_builder__layout
+    - field.field.node.page.layout_builder__translation
+    - field.field.node.page.layout_selection
+    - node.type.page
+  module:
+    - text
+    - user
+id: node.page.search_index
+targetEntityType: node
+bundle: page
+mode: search_index
+content:
+  body:
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    label: hidden
+    region: content
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_meta_tags: true
+  langcode: true
+  layout_builder__layout: true
+  layout_builder__translation: true
+  layout_selection: true
+  links: true
+  search_api_excerpt: true

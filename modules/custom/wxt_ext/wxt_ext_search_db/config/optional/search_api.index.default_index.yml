@@ -1,0 +1,224 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - user
+    - search_api
+  config:
+    - search_api.server.default_server
+    - core.entity_view_mode.node.search_index
+id: default_index
+name: 'Default content index'
+description: 'Default content index created by the Database Search Defaults module'
+read_only: false
+field_settings:
+  author:
+    label: 'Author name'
+    datasource_id: 'entity:node'
+    property_path: 'uid:entity:name'
+    type: string
+    dependencies:
+      module:
+        - node
+        - user
+  changed:
+    label: Changed
+    datasource_id: 'entity:node'
+    property_path: changed
+    type: date
+    dependencies:
+      module:
+        - node
+  created:
+    label: 'Authored on'
+    datasource_id: 'entity:node'
+    property_path: created
+    type: date
+    dependencies:
+      module:
+        - node
+  node_grants:
+    label: 'Node access information'
+    property_path: search_api_node_grants
+    type: string
+    indexed_locked: true
+    type_locked: true
+    hidden: true
+  rendered_item:
+    label: 'Rendered item'
+    property_path: rendered_item
+    type: text
+    configuration:
+      roles:
+        anonymous: anonymous
+      view_mode:
+        'entity:node':
+          page: search_index
+  status:
+    label: 'Publishing status'
+    datasource_id: 'entity:node'
+    property_path: status
+    type: boolean
+    indexed_locked: true
+    type_locked: true
+    dependencies:
+      module:
+        - node
+  sticky:
+    label: 'Sticky at top of lists'
+    datasource_id: 'entity:node'
+    property_path: sticky
+    type: boolean
+    dependencies:
+      module:
+        - node
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: text
+    boost: !!float 8
+    dependencies:
+      module:
+        - node
+  type:
+    label: 'Content type'
+    datasource_id: 'entity:node'
+    property_path: type
+    type: string
+    dependencies:
+      module:
+        - node
+  uid:
+    label: 'Author ID'
+    datasource_id: 'entity:node'
+    property_path: uid
+    type: integer
+    indexed_locked: true
+    type_locked: true
+    dependencies:
+      module:
+        - node
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: false
+      selected:
+        - page
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url:
+    weights:
+      preprocess_index: -30
+  aggregated_field:
+    weights:
+      add_properties: 20
+  content_access:
+    weights:
+      preprocess_index: -6
+      preprocess_query: -4
+  entity_status:
+    weights:
+      preprocess_index: -10
+  html_filter:
+    all_fields: false
+    fields:
+      - rendered_item
+    title: true
+    alt: true
+    tags:
+      b: 2
+      h1: 5
+      h2: 3
+      h3: 2
+      string: 2
+    weights:
+      preprocess_index: -3
+      preprocess_query: -6
+  ignorecase:
+    all_fields: false
+    fields:
+      - rendered_item
+      - title
+    weights:
+      preprocess_index: -5
+      preprocess_query: -8
+  language_with_fallback: {  }
+  rendered_item:
+    weights:
+      add_properties: 0
+      pre_index_save: -10
+  stopwords:
+    all_fields: false
+    fields:
+      - rendered_item
+      - title
+    stopwords:
+      - a
+      - an
+      - and
+      - are
+      - as
+      - at
+      - be
+      - but
+      - by
+      - for
+      - if
+      - in
+      - into
+      - is
+      - it
+      - 'no'
+      - not
+      - of
+      - 'on'
+      - or
+      - s
+      - such
+      - t
+      - that
+      - the
+      - their
+      - then
+      - there
+      - these
+      - they
+      - this
+      - to
+      - was
+      - will
+      - with
+    weights:
+      preprocess_index: -5
+      preprocess_query: -10
+  tokenizer:
+    all_fields: false
+    fields:
+      - rendered_item
+      - title
+    ignored: ._-
+    spaces: ''
+    overlap_cjk: 1
+    minimum_word_size: '3'
+    weights:
+      preprocess_index: -2
+      preprocess_query: -5
+  transliteration:
+    all_fields: false
+    fields:
+      - rendered_item
+      - title
+    weights:
+      preprocess_index: -4
+      preprocess_query: -7
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  cron_limit: 50
+  index_directly: true
+server: default_server

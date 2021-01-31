@@ -99,6 +99,9 @@ drush si wxt
   --site-name="Drupal Install Profile (WxT)" \
   install_configure_form.update_status_module='array(FALSE,FALSE)' \
   --yes
+
+drush locale-check
+drush locale-update
 ```
 
 > Note: If you work for the Government of Canada you might want to enable the `canada.ca` theme. You can navigate to the `WxT Library` settings page or run the Drush command below.

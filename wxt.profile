@@ -5,6 +5,7 @@
  * Contains wxt.profile.
  */
 
+use Drupal\Core\Session\AccountInterface;
 use Drupal\wxt\Installer\Form\ExtensionConfigureForm;
 use Symfony\Component\Yaml\Parser;
 
@@ -47,7 +48,7 @@ function wxt_install_tasks_alter(array &$tasks, array $install_state) {
 }
 
 /**
- * Install task callback; prepares a batch job to install WxT extensions.
+ * Install task callback prepares a batch job to install WxT extensions.
  *
  * @param array $install_state
  *   The current install state.
@@ -58,9 +59,24 @@ function wxt_install_tasks_alter(array &$tasks, array $install_state) {
 function wxt_install_extensions(array &$install_state) {
   $batch = [];
   $modules = \Drupal::state()->get('wxt_install_extensions', []);
+  $install_core_search = TRUE;
+
   foreach ($modules as $module) {
     $batch['operations'][] = ['wxt_install_module', (array) $module];
+    if ($module == 'wxt_ext_search_db') {
+      $install_core_search = FALSE;
+    }
   }
+
+  if ($install_core_search) {
+    $batch['operations'][] = ['wxt_install_module', (array) 'search'];
+    // Enable default permissions for system roles.
+    user_role_grant_permissions(AccountInterface::ANONYMOUS_ROLE, [
+      'use search',
+      'search content',
+    ]);
+  }
+
   return $batch;
 }
 

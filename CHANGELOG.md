@@ -5,10 +5,14 @@
   - Enable advanced dublin core metatag module by default [#3194123](https://www.drupal.org/project/wxt/issues/3194123)
   - Update WxT migration content
   - Menu breadcrumb minor fix for french menu handling
+  - Improved the default search experience [#3195726](https://www.drupal.org/project/wxt/issues/3195726)
 - Updates for WxT Bootstrap
   - Restore French + Non symmetric menu functionality [#3195279](https://www.drupal.org/project/wxt/issues/3195279)
   - WxT Bootstrap Fix Header Layout Issues [#3194962](https://www.drupal.org/project/wxt/issues/3194962)
   - Fix unnecessary ARIA roles [#3154001](https://www.drupal.org/project/wxt/issues/3154001)
+  - Improved the default search experience [#3195726](https://www.drupal.org/project/wxt/issues/3195726)
+- Updates for WxT Library
+  - Improved the default search experience [#3195726](https://www.drupal.org/project/wxt/issues/3195726)
 - Updates for Config Rewrite
   - PHP 8.0 compatibility fix
 

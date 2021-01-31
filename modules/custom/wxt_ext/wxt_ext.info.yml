@@ -27,6 +27,8 @@ dependencies:
   - wxt_ext_paragraph:wxt_ext_paragraph
   - wxt_ext_password_policy:wxt_ext_password_policy
   - wxt_ext_queue:wxt_ext_queue
+  - wxt_ext_search:wxt_ext_search
+  - wxt_ext_search_db:wxt_ext_search_db
   - wxt_ext_sitemap:wxt_ext_sitemap
   - wxt_ext_taxonomy:wxt_ext_taxonomy
   - wxt_ext_theme:wxt_ext_theme
