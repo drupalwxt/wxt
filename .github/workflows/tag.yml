@@ -83,11 +83,20 @@ jobs:
       run: |
         git clone --branch 8.x https://drupalwxt-svc:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/drupalwxt/site-wxt.git
 
-    - name: Push to site-wxt the latest build sha
+    - name: Enter the site-wxt directory
+      working-directory: ./site-wxt
       run: |
-        cd site-wxt
         rm composer.lock
-        COMPOSER_AUTH='${{ secrets.COMPOSER_AUTH }}' composer install
+
+    - uses: statcan/actions/composer@master
+      env:
+        COMPOSER_AUTH: ${{ secrets.COMPOSER_AUTH }}
+      with:
+        args: install --working-dir=./site-wxt
+
+    - name: Push to site-wxt the latest build sha
+      working-directory: ./site-wxt
+      run: |
         git add .
         git commit -m "Update to latest version of WxT ${{ env.GITHUB_REFERENCE }}" || true
         git push origin 8.x
