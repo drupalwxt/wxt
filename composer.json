@@ -212,6 +212,10 @@
                 "Enter drupal/ctools patch #3108785 description here":
                 "https://www.drupal.org/files/issues/2020-04-28/3108785-8.patch"
             },
+            "drupal/diff": {
+                "The getModerationState() function fails to take translations into consideration":
+                "https://www.drupal.org/files/issues/2018-12-03/ModerationState-error-of-translated-node-in-revision-overview-page-3004705-4.patch"
+            },
             "drupal/field_group": {
                 "Enter drupal/field_group patch #3111107 description here":
                 "https://www.drupal.org/files/issues/2020-02-04/3111107-2--fix-translations.patch"
