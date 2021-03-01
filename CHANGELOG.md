@@ -1,3 +1,36 @@
+## v4.0.2
+
+- Updates for WxT
+  - Detect and strip base URL from pasted URLs to increase matching hits [#3078075](https://www.drupal.org/project/wxt/issues/3078075)
+  - French revisions page always shows English revision state [#3199354](https://www.drupal.org/project/wxt/issues/3199354)
+  - Discard Draft button on moderation sidebar [#3199358](https://www.drupal.org/project/wxt/issues/3199358)
+  - Implement the Did you find what you were looking for webform [#3200416](https://www.drupal.org/project/wxt/issues/3200416)
+- Updates for WxT Bootstrap
+  - Implement the Did you find what you were looking for webform [#3200416](https://www.drupal.org/project/wxt/issues/3200416)
+- Updates for WxT Library
+  - Undefined variable wxt_active [#3199471](https://www.drupal.org/project/wxt/issues/3199471)
+
+Upgrade path:
+
+> Note: No special notes for this release.
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
+- Run Lightning configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:lightning`
+
+- Run WxT configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:wxt`
+
+**Note:** N/A
+
 ## v4.0.1
 
 - Updates for WxT
