@@ -7,6 +7,7 @@
 
 use Drupal\webform\Entity\Webform;
 use Drupal\webform\Entity\WebformSubmission;
+use Drupal\Core\Form\FormStateInterface;
 
 /**
  * Implements hook_theme().
@@ -69,8 +70,8 @@ function wxt_ext_webform_webform_submission_presave(WebformSubmission &$submissi
 /**
  * Implements hook_webform_submission_form_alter().
  */
-function wxt_ext_webform_webform_submission_form_alter(array &$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
-  if (strpos($form_id, 'webform_submission_gcweb_did_you_find') !== false) {
+function wxt_ext_webform_webform_submission_form_alter(array &$form, FormStateInterface $form_state, $form_id) {
+  if (strpos($form_id, 'webform_submission_gcweb_did_you_find') !== FALSE) {
     if ($form_state->get('current_page') == 'initial_page') {
       // Add submit button on first page of wizard
       $form['actions']['submit_first_page'] = [
@@ -101,7 +102,7 @@ function _gcweb_did_you_find_form_ajax_submit($form, $form_state) {
   $values = [
     'webform_id' => $webform->id(),
     'data' => [
-      'did_you_find_answer' => 'Yes'
+      'did_you_find_answer' => 'Yes',
     ],
   ];
 
@@ -109,7 +110,7 @@ function _gcweb_did_you_find_form_ajax_submit($form, $form_state) {
   $webform_submission->save();
 
   // Build confirmation message
-  $confirmation = array(
+  $confirmation = [
     '#type' => 'markup',
     '#markup' => '<div class="webform-confirmation">
                     <div class="webform-confirmation__message">
@@ -118,7 +119,7 @@ function _gcweb_did_you_find_form_ajax_submit($form, $form_state) {
                       </div>
                     </div>
                   </div>',
-  );
+	];
 
   return $confirmation;
 }
