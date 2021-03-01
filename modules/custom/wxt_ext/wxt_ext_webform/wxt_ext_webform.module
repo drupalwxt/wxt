@@ -119,7 +119,7 @@ function _gcweb_did_you_find_form_ajax_submit($form, $form_state) {
                       </div>
                     </div>
                   </div>',
-	];
+  ];
 
   return $confirmation;
 }
