@@ -9,6 +9,8 @@
   - Implement the Did you find what you were looking for webform [#3200416](https://www.drupal.org/project/wxt/issues/3200416)
 - Updates for WxT Library
   - Undefined variable wxt_active [#3199471](https://www.drupal.org/project/wxt/issues/3199471)
+- Updates for Contrib
+  - Update webform to 6.0.2 [#3202289](https://www.drupal.org/project/wxt/issues/32022892)
 
 Upgrade path:
 
