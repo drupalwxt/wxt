@@ -1,3 +1,29 @@
+## v4.0.3
+
+- Updates for WxT Bootstrap (8.x-4.6)
+  - Severe Layout Builder regressions [#3199500](https://www.drupal.org/project/wxt/issues/3199500)
+
+Upgrade path:
+
+> Note: No special notes for this release.
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
+- Run Lightning configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:lightning`
+
+- Run WxT configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:wxt`
+
+**Note:** N/A
+
 ## v4.0.2
 
 - Updates for WxT
