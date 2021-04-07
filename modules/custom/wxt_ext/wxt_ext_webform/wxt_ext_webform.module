@@ -58,7 +58,7 @@ function wxt_ext_webform_theme_suggestions_container_alter(array &$suggestions, 
 /**
  * Implements hook_ENTITY_TYPE_presave().
  */
-function wxt_ext_webform_webform_submission_presave(WebformSubmission &$submission) {
+function wxt_ext_webform_webform_submission_presave(WebformSubmission $submission) {
   $did_you_find_answer = $submission->getElementData('did_you_find_answer');
 
   if (empty($did_you_find_answer)) {
