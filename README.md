@@ -110,6 +110,16 @@ drush locale-update
 drush config-set wxt_library.settings wxt.theme theme-gcweb -y
 ```
 
+## StandAlone Installation
+
+The standalone install is provided as an additional method for those who do not wish to have the full weight of a distribution and its required dependencies. You will need to add at the minimum the below listed modules and themes (including Bootstrap base theme) as well as the WxT jQuery Framework assets installed into the `/libraries` folder with the proper naming scheme.
+
+* [WxT Bootstrap][wxt-bootstrap]
+* [WxT Library][wxt-library]
+* [WxT jQuery Framework assets][wxt-jquery]
+
+> Note: We heavily recommend that you use the distribution method. Limited support is provided for the standalone method.
+
 ### Generating a Sub Profile
 
 You can customize your installation by creating a sub-profile which uses WxT as its base profile.
@@ -355,6 +365,9 @@ Extended with code and lessons learned by the [Acquia Team](https://acquia.com) 
 [standard_interoperability]:    http://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=25875
 [wet-boew]:                     https://github.com/wet-boew/wet-boew
 [wet-boew-page]:                https://www.canada.ca/en/treasury-board-secretariat/services/government-communications/web-experience-toolkit.html
+[wxt-bootstrap]:                http://drupal.org/project/wxt_bootstrap
+[wxt-jquery]:                   https://github.com/drupalwxt/composer-extdeps
+[wxt-library]:                  http://drupal.org/project/wxt_library
 [wxt-minimal-install]:          https://www.drupal.org/project/wxt/issues/3182208
 [wxt-upgrade-path]:             https://www.drupal.org/project/wxt/issues/3182648
 [wxt-roadmap]:                  https://www.drupal.org/project/wxt/issues/3182977
