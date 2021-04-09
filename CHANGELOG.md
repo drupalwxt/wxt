@@ -1,6 +1,16 @@
 ## v4.0.3
 
+- Updates for WxT
+  - Radio button validation text [#3205860](https://www.drupal.org/project/wxt/issues/3205860)
+  - Webform submission warning[#3205860](https://www.drupal.org/project/wxt/issues/3206440)
+  - Layout builder fix when using external URLs [#3205841](https://www.drupal.org/project/wxt/issues/3205841)
+  - WxT Install AJAX Error [#3204369](https://www.drupal.org/project/wxt/issues/3204369)
 - Updates for WxT Bootstrap (8.x-4.6)
+  - Severe Layout Builder regressions [#3199500](https://www.drupal.org/project/wxt/issues/3199500)
+  - Subtheme based on wxt_bootstrap starterkit shows no rendered CSS [#3112946](https://www.drupal.org/project/wxt/issues/3112946)
+  - WCAG fix for missing title attribute on canada.ca [#3205517](https://www.drupal.org/project/wxt/issues/3205517)
+  - Add missing search submit button [#3206295](https://www.drupal.org/project/wxt/issues/3206295)
+  - Contextual menu links color is white[#3206397](https://www.drupal.org/project/wxt/issues/3206397)
   - Severe Layout Builder regressions [#3199500](https://www.drupal.org/project/wxt/issues/3199500)
 
 Upgrade path:
