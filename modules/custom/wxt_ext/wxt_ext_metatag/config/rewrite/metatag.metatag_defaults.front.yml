@@ -1,0 +1,10 @@
+config_rewrite: replace
+langcode: en
+status: true
+dependencies: {  }
+id: front
+label: 'Front page'
+tags:
+  canonical_url: '[site:url]'
+  title: '[site:name]'
+  shortlink: '[site:url]'
