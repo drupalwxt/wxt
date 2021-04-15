@@ -16,7 +16,7 @@
   - Severe Layout Builder regressions [#3199500](https://www.drupal.org/project/wxt/issues/3199500)
   - Metatag front page default config [#3208091](https://www.drupal.org/project/wxt/issues/3208091)
   - Add share widget options [#3208103](https://www.drupal.org/project/wxt/issues/3208103)
-- Updates for WxT Library (8.x-4.6)
+- Updates for WxT Library (8.x-4.7)
   - Add share widget options [#3208103](https://www.drupal.org/project/wxt/issues/3208103)
   - Extra values(query) on search submit [#3208471](https://www.drupal.org/project/wxt/issues/3208471)
 
