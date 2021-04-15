@@ -30,17 +30,32 @@ function wxt_core_requirements($phase) {
 /**
  * Updates for the WxT 4.0.0 release.
  */
-function wxt_core_update_8400() {
+function wxt_core_update_8403() {
   /** @var \Drupal\Core\Extension\ModuleInstallerInterface $module_installer */
   $module_installer = \Drupal::service('module_installer');
-  $uninstalled = $module_installer->uninstall([
-    'libraries',
-    'lightning',
-    'lightning_install',
-    'wxt_ext_translation',
-  ]);
+  $modules_to_check = [
+    'libraries' => (drupal_get_installed_schema_version('libraries') >= 0) ? TRUE : FALSE,
+    'lightning' => (drupal_get_installed_schema_version('lightning') >= 0) ? TRUE : FALSE,
+    'lightning_install' => (drupal_get_installed_schema_version('lightning_install') >= 0) ? TRUE : FALSE,
+    'wxt_ext_translation' => (drupal_get_installed_schema_version('wxt_ext_translation') >= 0) ? TRUE : FALSE,
+  ];
 
-  if (!$uninstalled) {
+  $needs_uninstalling = FALSE;
+  $modules_to_uninstall = [];
+  $uninstalled = TRUE;
+
+  foreach ($modules_to_check as $module => $installed) {
+    if ($installed) {
+      $needs_uninstalling = TRUE;
+      $modules_to_uninstall[] = $module;
+    }
+  }
+
+  if ($needs_uninstalling) {
+    $uninstalled = $module_installer->uninstall($modules_to_uninstall);
+  }
+
+  if ($needs_uninstalling && !$uninstalled) {
     \Drupal::configFactory()
       ->getEditable('core.extension')
       ->clear('module.libraries')
