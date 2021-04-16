@@ -190,17 +190,6 @@ class BlogBreadcrumbBuilder extends PathBasedBreadcrumbBuilder {
         $link = array_shift($links);
         $link->setUrl(Url::fromUri($url));
 
-        if (stripos($this->context->getPathInfo(), "blog") !== FALSE) {
-          $tbs = Url::fromUri('https://github.com/drupalwxt/wxt');
-          $linkTbs = Link::fromTextAndUrl("Drupal WxT", $tbs);
-          $linkTbsBlog = Link::createFromRoute($this->t('Blog'), '<front>');
-          if ($this->languageManager->getCurrentLanguage()->getId() == 'fr') {
-            $tbs = Url::fromUri('https://github.com/drupalwxt/wxt');
-            $linkTbs = Link::fromTextAndUrl("Drupal WxT", $tbs);
-          }
-          array_unshift($links, $linkTbs, $linkTbsBlog);
-        }
-
         array_unshift($links, $link);
       }
 
