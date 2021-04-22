@@ -2,6 +2,9 @@
 
 - Updates for Drupal Core
   - [SA-core-2021-003](https://www.drupal.org/sa-core-2021-002)
+- Updates for Contrib
+  - Update ctools to to 3.5.0
+  - Update inline_entity_form to 1.0-rc9 or better
 
 Upgrade path:
 
