@@ -1,3 +1,29 @@
+## v4.0.4
+
+- Updates for Drupal Core
+  - [SA-core-2021-003](https://www.drupal.org/sa-core-2021-002)
+
+Upgrade path:
+
+> Note: No special notes for this release.
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
+- Run Lightning configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:lightning`
+
+- Run WxT configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:wxt`
+
+**Note:** N/A
+
 ## v4.0.3
 
 - Updates for WxT
