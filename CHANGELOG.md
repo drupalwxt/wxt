@@ -1,4 +1,4 @@
-## v3.0.19
+## v3.0.20
 
 * Update Drupal Core to [8.9.14](https://www.drupal.org/project/drupal/releases/8.9.14)
   * [SA-core-2021-002](https://www.drupal.org/sa-core-2021-002)
