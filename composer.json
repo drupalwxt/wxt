@@ -16,7 +16,7 @@
         "drupal/button_link": "1.2",
         "drupal/ckeditor_codemirror": "2.3",
         "drupal/config_rewrite": "1.4",
-        "drupal/core": "8.9.13 || ^9",
+        "drupal/core": "8.9.14 || ^9",
         "drupal/core_context": "1.0-beta4",
         "drupal/ctools": "3.4.0",
         "drupal/diff": "1.0",

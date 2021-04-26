@@ -1,3 +1,25 @@
+## v3.0.19
+
+* Update Drupal Core to [8.9.14](https://www.drupal.org/project/drupal/releases/8.9.14)
+  * [SA-core-2021-002](https://www.drupal.org/sa-core-2021-002)
+
+Upgrade path:
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
+- Run Lightning configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:lightning`
+
+- Run WxT configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:wxt`
+
 ## v3.0.18
 
 * Update Drupal Core to [8.9.13](https://www.drupal.org/project/drupal/releases/8.9.13)
