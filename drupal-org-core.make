@@ -28,5 +28,5 @@ projects[drupal][patch][] = https://www.drupal.org/files/issues/2019-10-22/29143
 projects[drupal][patch][] = https://www.drupal.org/files/issues/2019-01-18/2938129-pagetitle-11.patch
 projects[drupal][patch][] = https://www.drupal.org/files/issues/2018-12-05/3017710-20.patch
 projects[drupal][patch][] = https://www.drupal.org/files/issues/2020-11-17/2488350-3-100.patch
-projects[drupal][patch][] = https://www.drupal.org/files/issues/2020-02-07/2869592-remove-update-warning-34.patch
 projects[drupal][patch][] = https://www.drupal.org/files/issues/2019-11-27/2815221-125.patch
+projects[drupal][patch][] = https://www.drupal.org/files/issues/2020-02-07/2869592-remove-update-warning-34.patch

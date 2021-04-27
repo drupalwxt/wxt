@@ -1,10 +1,9 @@
-## v3.0.22
+## v3.0.20
 
 * Update Drupal Core to [8.9.14](https://www.drupal.org/project/drupal/releases/8.9.14)
   * [SA-core-2021-002](https://www.drupal.org/sa-core-2021-002)
 * Update minimum webform version to 5.25 ([SA-CONTRIB-2021-004](https://www.drupal.org/sa-contrib-2021-004))
 * Update group to 1.3 ([SA-CONTRIB-2020-032](https://www.drupal.org/sa-contrib-2020-032), [SA-CONTRIB-2020-033](https://www.drupal.org/sa-contrib-2020-033), [SA-CONTRIB-2020-030](https://www.drupal.org/sa-contrib-2020-030))
-
 
 Upgrade path:
 
@@ -23,7 +22,7 @@ Upgrade path:
   - `drush cache:rebuild`
   - `drush update:wxt`
 
-## v3.0.18
+## v3.0.19
 
 * Update Drupal Core to [8.9.13](https://www.drupal.org/project/drupal/releases/8.9.13)
   * [SA-core-2021-001](https://www.drupal.org/sa-core-2021-001)
