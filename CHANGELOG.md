@@ -1,4 +1,4 @@
-## v3.0.20
+## v3.0.23
 
 * Update Drupal Core to [8.9.14](https://www.drupal.org/project/drupal/releases/8.9.14)
   * [SA-core-2021-002](https://www.drupal.org/sa-core-2021-002)
@@ -21,6 +21,8 @@ Upgrade path:
 - Run WxT configuration updates:
   - `drush cache:rebuild`
   - `drush update:wxt`
+
+> Note: There were problem in the build process so this is the next release tag.
 
 ## v3.0.19
 
