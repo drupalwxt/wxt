@@ -1,3 +1,32 @@
+## v4.0.5
+
+- Updates for WxT
+  - WxT Install UX Improvement [#3211057](https://www.drupal.org/project/wxt/issues/3211057)
+  - Misplaced Pathauto config prevents site installations [#3211052](https://www.drupal.org/project/wxt/issues/3211052)
+- Updates for WxT Bootstrap (8.x-4.6)
+  - Skip links theme configuration text is currently not translateable [#3210758](https://www.drupal.org/project/wxt/issues/3210758)
+
+Upgrade path:
+
+> Note: No special notes for this release.
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
+- Run Lightning configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:lightning`
+
+- Run WxT configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:wxt`
+
+**Note:** The select_all form was renamed to all_wxt so please update your drush site install scripts accordingly.
+
 ## v4.0.4
 
 - Updates for Drupal Core
