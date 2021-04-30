@@ -65,21 +65,40 @@ class ExtensionConfigureForm extends ConfigFormBase {
   public function buildForm(array $form, FormStateInterface $form_state) {
     $form['#title'] = $this->t('Install extensions');
 
-    $form['description'] = [
+    $form['install_all'] = [
+      '#type' => 'container',
+    ];
+
+    $form['install_all']['title'] = [
       '#type' => 'item',
-      '#markup' => $this->t('Please select all of the extensions you wish to enable.'),
+      '#markup' => '<h2>' . $this->t('Install all WxT extensions') . '</h2>',
+    ];
+
+    $form['install_all']['description'] = [
+      '#type' => 'item',
+      '#markup' => $this->t('Deselect this option to choose which WxT extensions to enable.'),
+    ];
+
+    $form['install_all']['all_wxt'] = [
+      '#type' => 'checkbox',
+      '#title' => $this->t('Enable all WxT extensions'),
+      '#default_value' => TRUE,
     ];
 
     $form['install_extensions'] = [
       '#type' => 'container',
+      '#states' => array(
+        'invisible' => array(
+          'input[name="all_wxt"]' => array(
+            'checked' => TRUE,
+          ),
+        ),
+      ),
     ];
 
-    $form['install_extensions']['select_all'] = [
-      '#type' => 'checkbox',
-      '#label' => 'Install all extensions',
-      '#attributes' => [
-        'class' => ['visually-hidden'],
-      ],
+    $form['install_extensions']['description'] = [
+      '#type' => 'item',
+      '#markup' => $this->t('Please select all of the extensions you wish to enable.'),
     ];
 
     $optional_features = $this->extensionManager->getExtensions();
@@ -100,7 +119,7 @@ class ExtensionConfigureForm extends ConfigFormBase {
 
     $form['install_extensions']['extensions'] = [
       '#type' => 'checkboxes',
-      '#title' => t('Enable additional extensions'),
+      '#title' => $this->t('Enable additional extensions'),
       '#options' => $feature_options,
       '#default_value' => $default_features,
     ];
@@ -120,7 +139,7 @@ class ExtensionConfigureForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    if ($form_state->getValue('select_all')) {
+    if ($form_state->getValue('all_wxt')) {
       $extensions = array_keys($this->extensionManager->getExtensions());
     }
     else {
