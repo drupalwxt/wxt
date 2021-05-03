@@ -30,7 +30,7 @@ The Drupal WxT distribution is a web content management system which assists in 
 
 Please consult our Architectural Diagram for a example implementation on Kubernetes:
 
-* [Azure AKS](https://github.com/drupalwxt/helm-drupal/blob/master/docs/azure-aks-infra.pdf)
+* [Azure AKS](https://github.com/drupalwxt/helm-drupal/blob/master/docs/diagram-drupal.pdf)
 
 The goal of WxT 4.0.x line is to make the installation profile very minimal by default but providing additional extensions that can be enabled as desired.
 
