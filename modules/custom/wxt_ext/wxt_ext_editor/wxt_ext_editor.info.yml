@@ -8,6 +8,7 @@ package: WxT
 dependencies:
   - ckeditor:ckeditor
   - ckeditor_codemirror:ckeditor_codemirror
+  - ckeditor_details:ckeditor_details
   - editor:editor
   - entity_embed:entity_embed
   - linkit:linkit

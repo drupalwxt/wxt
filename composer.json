@@ -54,7 +54,8 @@
         "drupal/webform_migrate": "1.x-dev",
         "drupal/wxt_bootstrap": "4.6",
         "drupal/wxt_library": "4.7",
-        "w8tcha/ckeditor-codemirror": "1.16"
+        "w8tcha/ckeditor-codemirror": "1.16",
+        "drupal/ckeditor_details": "^2.0.2"
     },
     "require-dev": {
         "drupal/core-composer-scaffold": "^9",

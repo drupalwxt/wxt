@@ -46,6 +46,7 @@ settings:
         -
           name: Tools
           items:
+            - detail
             - ShowBlocks
             - DrupalFontAwesome
             - Source
