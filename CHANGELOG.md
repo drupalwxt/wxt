@@ -316,7 +316,7 @@ Upgrade path:
   - Support for Composer v2.0.0
   - Switch to drupal/core-dev to streamline our composer.json
 - Update for WxT
-  - [Roadmap for 4.0.x release](https://www.drupal.org/project/wxt/issues/3182977)
+  - [Roadmap for 4.1.x release](https://www.drupal.org/project/wxt/issues/3182977)
   - [Drupal 9 support and release of 4.0.0](https://www.drupal.org/project/wxt/issues/3154403)
   - [Updates to provide a minimal WxT profile](https://www.drupal.org/project/wxt/issues/3182208)
   - [Simplify and move wxt_ext_translation to wxt_translation](https://www.drupal.org/project/wxt/issues/3182647)
