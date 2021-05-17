@@ -18,7 +18,7 @@
         "drupal/config_rewrite": "1.4",
         "drupal/core": "8.9.14 || ^9",
         "drupal/core_context": "1.0-beta4",
-        "drupal/ctools": "3.4.0",
+        "drupal/ctools": "3.6.0",
         "drupal/diff": "1.0",
         "drupal/entity_reference_revisions": "1.8",
         "drupal/entityqueue": "^1.0-alpha8",
