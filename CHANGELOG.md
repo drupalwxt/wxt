@@ -3,8 +3,17 @@
 - Updates for WxT
   - WxT Install UX Improvement [#3211057](https://www.drupal.org/project/wxt/issues/3211057)
   - Misplaced Pathauto config prevents site installations [#3211052](https://www.drupal.org/project/wxt/issues/3211052)
+  - wxt_core update 8403 fails on blocks with null id [#3213304](https://www.drupal.org/project/wxt/issues/3213304)
+  - CKEditor improvements add Details functionality [#3213286](https://www.drupal.org/project/wxt/issues/3213286)
+  - CKEditor improvements add Panels functionality [#3213766](https://www.drupal.org/project/wxt/issues/3213766)
+  - Page manager patch not D9 compatible [#3214053](https://www.drupal.org/project/wxt/issues/3214053)
+  - Translate the "Did you find" webform [#3203752](https://www.drupal.org/project/wxt/issues/3203752)
 - Updates for WxT Bootstrap (8.x-4.6)
   - Skip links theme configuration text is currently not translateable [#3210758](https://www.drupal.org/project/wxt/issues/3210758)
+  - Incorrect/outdated class "mrgn-bttm-none" [#3213481](https://www.drupal.org/project/wxt/issues/3213481)
+  - Skip links theme configuration text is currently not translateable [#3210758](https://www.drupal.org/project/wxt/issues/3210758)
+- Updates for Contrib
+  - [SA-CONTRIB-2021-009 for CTools](https://www.drupal.org/SA-CONTRIB-2021-009)
 
 Upgrade path:
 
