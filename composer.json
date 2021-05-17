@@ -202,8 +202,6 @@
             "drupal/ctools": {
                 "Enter drupal/ctools patch #2667652 description here":
                 "https://www.drupal.org/files/issues/ctools-option_to_expose-2667652-3.patch",
-                "Enter drupal/ctools patch #2874176 description here":
-                "https://www.drupal.org/files/issues/entityview-cache-metadata-2874176-2.patch",
                 "Enter drupal/ctools patch #2924356 description here":
                 "https://www.drupal.org/files/issues/ctools-entity_field_rendered_twice-2924356-2.patch"
             },
