@@ -1,30 +1,35 @@
 langcode: en
 status: open
-dependencies: {  }
+dependencies:
+  module:
+    - wxt_ext_webform
+  enforced:
+    module:
+      - wxt_ext_webform
 open: null
 close: null
 weight: 0
 uid: 1
 template: false
 archive: false
-id: gcweb_report_a_problem
-title: 'GCWeb - Report a Problem'
+id: gcweb_did_you_find
+title: 'GCWeb - Did you find what you were looking for'
 description: ''
 category: ''
-elements: "markup_01:\n  '#type': webform_markup\n  '#markup': '<fieldset>'\nmarkup:\n  '#type': webform_markup\n  '#markup': '<legend><span class=\"field-name\">Please select all that apply:</span></legend>'\nproblem1:\n  '#type': checkbox\n  '#title': 'A link, button or video is not working'\nproblem2:\n  '#type': checkbox\n  '#title': 'It has a spelling mistake'\nproblem3:\n  '#type': checkbox\n  '#title': 'Information is missing'\nproblem4:\n  '#type': checkbox\n  '#title': 'Information is outdated or wrong'\nproblem5:\n  '#type': checkbox\n  '#title': 'Login error when trying to access an account (e.g. My Service Canada Account)'\nsub_option_container:\n  '#type': container\n  '#attributes':\n    style: 'margin-left: 40px;'\n  problem6:\n    '#type': checkbox\n    '#title': 'GC Key access'\n  problem7:\n    '#type': checkbox\n    '#title': 'SecureKey Concierge (Banking Credential) access'\n  problem8:\n    '#type': checkbox\n    '#title': 'Personal Access Code (PAC) problems or EI Access Code (AC) problems'\n  problem9:\n    '#type': checkbox\n    '#title': 'Social Insurance Number (SIN) validation problems'\n  problem10:\n    '#type': checkbox\n    '#title': 'Other login error not in this list'\nproblem11:\n  '#type': checkbox\n  '#title': 'I can''t find what I''m looking for'\nproblem12:\n  '#type': checkbox\n  '#title': 'Other issue not in this list'\nmarkup_02:\n  '#type': webform_markup\n  '#markup': '</fieldset>'"
+elements: "did_you_find_answer:\n  '#type': hidden\n  '#title': 'Did you find what you were looking for?'\ninitial_page:\n  '#type': webform_wizard_page\n  '#title': 'Initial page'\n  initial_page_text:\n    '#type': processed_text\n    '#text': |\n      <h2 class=\"mrgn-tp-sm h5\">Did you find what you were looking for?</h2>\n    '#format': rich_text\n  actions_02:\n    '#type': webform_actions\n    '#title': 'Submit button (No)'\n    '#submit_hide': true\n    '#update_hide': true\n    '#wizard_prev_hide': true\n    '#wizard_next__label': 'No'\n    '#wizard_next__attributes':\n      class:\n        - 'btn btn-primary'\nno_page:\n  '#type': webform_wizard_page\n  '#title': 'No page'\n  what_was_wrong:\n    '#type': radios\n    '#title': 'What was wrong?'\n    '#options':\n      problem1: 'The answer I need is missing'\n      problem2: 'The information isn’t clear'\n      problem3: 'I’m not in the right place'\n      problem4: 'Something is broken or incorrect'\n      problem5: 'Other reason'\n  problem6:\n    '#type': textarea\n    '#title': 'Please provide more details'\n    '#description': |-\n      <p>(Don&rsquo;t include any personal information. Note that you will not receive a reply.)</p>\n\n      <p class=\"small\">Maximum 300 characters</p>\n    '#description_display': before\n  actions_01:\n    '#type': webform_actions\n    '#title': 'Submit button'\n    '#submit__label': Submit\n    '#submit__attributes':\n      class:\n        - 'btn btn-primary'\n    '#update_hide': true\n    '#wizard_prev_hide': true\n    '#wizard_next_hide': true"
 css: ''
 javascript: ''
 settings:
   ajax: true
-  ajax_scroll_top: ''
-  ajax_progress_type: ''
-  ajax_effect: fade
-  ajax_speed: 500
-  page: true
+  ajax_scroll_top: form
+  ajax_progress_type: throbber
+  ajax_effect: ''
+  ajax_speed: null
+  page: false
   page_submit_path: ''
   page_confirm_path: ''
   page_theme_name: ''
-  form_title: both
+  form_title: source_entity_webform
   form_submit_once: false
   form_exception_message: ''
   form_open_message: ''
@@ -78,7 +83,7 @@ settings:
   autofill: false
   autofill_message: ''
   autofill_excluded_elements: {  }
-  wizard_progress_bar: true
+  wizard_progress_bar: false
   wizard_progress_pages: false
   wizard_progress_percentage: false
   wizard_progress_link: false
@@ -93,7 +98,7 @@ settings:
   wizard_track: ''
   wizard_prev_button_label: ''
   wizard_next_button_label: ''
-  wizard_toggle: false
+  wizard_toggle: true
   wizard_toggle_show_label: ''
   wizard_toggle_hide_label: ''
   preview: 0
@@ -113,7 +118,7 @@ settings:
   draft_pending_multiple_message: ''
   confirmation_type: inline
   confirmation_title: ''
-  confirmation_message: "<h3>Thank you for your help!</h3>\r\n\r\n<p>You will not receive a reply. For enquiries, <a href=\"https://www.canada.ca/en/contact/index.html\">contact us</a>.</p>"
+  confirmation_message: "<div class=\"gc-pg-hlpfl-thnk\">\r\n<p class=\"h3 mrgn-tp-sm mrgn-bttm-sm\"><span class=\"far fa-check-circle text-success mrgn-rght-sm\" aria-hidden=\"true\"> </span>Thank you for your feedback</p>\r\n</div>"
   confirmation_url: ''
   confirmation_attributes: {  }
   confirmation_back: false

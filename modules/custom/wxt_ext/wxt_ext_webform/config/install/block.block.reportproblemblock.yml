@@ -9,6 +9,9 @@ dependencies:
     - wxt_library
   theme:
     - wxt_bootstrap
+  enforced:
+    module:
+      - wxt_ext_webform
 third_party_settings:
   block_class:
     classes: 'col-sm-6 col-md-5 col-lg-4'
@@ -27,7 +30,8 @@ settings:
     webform_id: ''
     default_data: ''
     redirect: false
-  webform_id: contact
+  webform_id: gcweb_report_a_problem
+  inline_webform: 1
   default_data:
     webform_id: contact
     default_data: ''
