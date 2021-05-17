@@ -13,7 +13,7 @@ jobs:
 
     - name: Setup dependencies
       run: |
-        git clone --branch 9.x https://github.com/drupalwxt/site-wxt.git
+        git clone --branch 9.1.x https://github.com/drupalwxt/site-wxt.git
         cd site-wxt
         rm composer.lock
 
@@ -24,7 +24,7 @@ jobs:
     - name: Build out the Drupal infrastructure
       run: |
         cd site-wxt
-        git clone --branch 9.x https://github.com/drupalwxt/docker-scaffold.git docker
+        git clone --branch 9.1.x https://github.com/drupalwxt/docker-scaffold.git docker
         make build
         docker-compose -f docker-compose-ci.yml up -d
         docker ps -a
