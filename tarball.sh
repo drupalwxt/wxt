@@ -31,7 +31,7 @@ composer config minimum-stability dev
 composer config prefer-stable true
 composer remove --no-update composer/installers
 composer require --no-update "ext-dom:*" cweagans/composer-patches oomphinc/composer-installers-extender 'drupal/core:9.0.11'
-composer update
+composer update --ignore-platform-reqs
 
 # Create the profile destination directory.
 mkdir -p $PROFILE_DIR
