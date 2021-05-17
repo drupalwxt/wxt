@@ -46,10 +46,14 @@ settings:
         -
           name: Tools
           items:
-            - detail
             - ShowBlocks
             - DrupalFontAwesome
             - Source
+        -
+          name: 'WET Components'
+          items:
+            - detail
+            - panel
         -
           name: WxT
           items:
