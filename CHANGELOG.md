@@ -1,5 +1,7 @@
 ## v4.0.5
 
+- Updates for Drupal Core
+  - [SA-core-2021-003](https://www.drupal.org/sa-core-2021-003)
 - Updates for WxT
   - WxT Install UX Improvement [#3211057](https://www.drupal.org/project/wxt/issues/3211057)
   - Misplaced Pathauto config prevents site installations [#3211052](https://www.drupal.org/project/wxt/issues/3211052)
