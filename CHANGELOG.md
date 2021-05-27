@@ -1,5 +1,7 @@
 ## v4.0.5
 
+- Updates for Drupal Core
+  - [SA-core-2021-003](https://www.drupal.org/sa-core-2021-003)
 - Updates for WxT
   - WxT Install UX Improvement [#3211057](https://www.drupal.org/project/wxt/issues/3211057)
   - Misplaced Pathauto config prevents site installations [#3211052](https://www.drupal.org/project/wxt/issues/3211052)
@@ -8,10 +10,12 @@
   - CKEditor improvements add Panels functionality [#3213766](https://www.drupal.org/project/wxt/issues/3213766)
   - Page manager patch not D9 compatible [#3214053](https://www.drupal.org/project/wxt/issues/3214053)
   - Translate the "Did you find" webform [#3203752](https://www.drupal.org/project/wxt/issues/3203752)
-- Updates for WxT Bootstrap (8.x-4.6)
+- Updates for WxT Bootstrap (8.x-4.8)
   - Skip links theme configuration text is currently not translateable [#3210758](https://www.drupal.org/project/wxt/issues/3210758)
   - Incorrect/outdated class "mrgn-bttm-none" [#3213481](https://www.drupal.org/project/wxt/issues/3213481)
   - Skip links theme configuration text is currently not translateable [#3210758](https://www.drupal.org/project/wxt/issues/3210758)
+- Updates for WxT Library (8.x-4.8)
+  - Language switcher is based on wrong language [#3214421](https://www.drupal.org/project/wxt/issues/3214421)
 - Updates for Contrib
   - [SA-CONTRIB-2021-009 for CTools](https://www.drupal.org/SA-CONTRIB-2021-009)
 
