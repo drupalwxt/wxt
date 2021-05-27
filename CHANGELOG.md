@@ -16,7 +16,6 @@
   - Skip links theme configuration text is currently not translateable [#3210758](https://www.drupal.org/project/wxt/issues/3210758)
 - Updates for WxT Library (8.x-4.8)
   - Language switcher is based on wrong language [#3214421](https://www.drupal.org/project/wxt/issues/3214421)
-
 - Updates for Contrib
   - [SA-CONTRIB-2021-009 for CTools](https://www.drupal.org/SA-CONTRIB-2021-009)
 
