@@ -5,6 +5,8 @@
  * Install and uninstall functions for the WxT installation profile.
  */
 
+use Drupal\workflows\Entity\Workflow;
+
 /**
  * Implements hook_requirements().
  */
@@ -86,15 +88,25 @@ function wxt_core_update_8403() {
     'wxt_translation',
   ]);
 
+  // Resolve block_content workflow issue.
+  $block_content = [];
+  foreach (Workflow::loadMultipleByType('content_moderation') as $workflow) {
+    if ($block_moderation = $workflow->getTypePlugin()->getBundlesForEntityType('block_content')) {
+      $block_content[] = $block_moderation;
+    }
+  }
+
   // Resolve issues with Lightning Scheduler.
   $entity_type_manager = \Drupal::entityTypeManager();
   $entity_definition_update_manager = \Drupal::entityDefinitionUpdateManager();
   $modules = [
-    'block_content',
     'crop',
     'entity_subqueue',
     'media',
   ];
+  if (empty($block_content)) {
+    $modules[] = 'block_content';
+  }
   $fields = [
     'scheduled_transition_date',
     'scheduled_transition_state',
