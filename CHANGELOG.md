@@ -1,3 +1,33 @@
+## v4.0.6
+
+- Updates for WxT
+  - Update hook wxt_core_update_8403 [#3214811](https://www.drupal.org/project/wxt/issues/3214811)
+- Updates for WxT Bootstrap (8.x-4.9)
+  - GCWeb Fix Footer Classes [#3216067](https://www.drupal.org/project/wxt/issues/3216067)
+- Updates for WxT Library (8.x-4.9)
+  - Language toggle broken [#3216306](https://www.drupal.org/project/wxt/issues/3216306)
+
+Upgrade path:
+
+> Note: No special notes for this release.
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
+- Run Lightning configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:lightning`
+
+- Run WxT configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:wxt`
+
+**Note:** The select_all form was renamed to all_wxt so please update your drush site install scripts accordingly.
+
 ## v4.0.5
 
 - Updates for Drupal Core
