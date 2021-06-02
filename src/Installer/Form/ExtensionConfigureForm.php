@@ -71,34 +71,29 @@ class ExtensionConfigureForm extends ConfigFormBase {
 
     $form['install_all']['title'] = [
       '#type' => 'item',
-      '#markup' => '<h2>' . $this->t('Install all WxT extensions') . '</h2>',
+      '#markup' => '<h3>' . $this->t('Install WxT extensions') . '</h3>',
     ];
 
     $form['install_all']['description'] = [
       '#type' => 'item',
-      '#markup' => $this->t('Deselect this option to choose which WxT extensions to enable.'),
+      '#markup' => $this->t('Select this option to enable all WxT extensions.'),
     ];
 
-    $form['install_all']['all_wxt'] = [
+    $form['install_all']['select_all'] = [
       '#type' => 'checkbox',
       '#title' => $this->t('Enable all WxT extensions'),
-      '#default_value' => TRUE,
+      '#default_value' => FALSE,
     ];
 
     $form['install_extensions'] = [
       '#type' => 'container',
       '#states' => array(
         'invisible' => array(
-          'input[name="all_wxt"]' => array(
+          'input[name="select_all"]' => array(
             'checked' => TRUE,
           ),
         ),
       ),
-    ];
-
-    $form['install_extensions']['description'] = [
-      '#type' => 'item',
-      '#markup' => $this->t('Please select all of the extensions you wish to enable.'),
     ];
 
     $optional_features = $this->extensionManager->getExtensions();
@@ -119,7 +114,7 @@ class ExtensionConfigureForm extends ConfigFormBase {
 
     $form['install_extensions']['extensions'] = [
       '#type' => 'checkboxes',
-      '#title' => $this->t('Enable additional extensions'),
+      '#title' => $this->t('Enable individual extensions'),
       '#options' => $feature_options,
       '#default_value' => $default_features,
     ];
@@ -139,7 +134,7 @@ class ExtensionConfigureForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    if ($form_state->getValue('all_wxt')) {
+    if ($form_state->getValue('select_all')) {
       $extensions = array_keys($this->extensionManager->getExtensions());
     }
     else {
