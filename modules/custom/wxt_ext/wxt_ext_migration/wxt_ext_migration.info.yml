@@ -6,6 +6,7 @@ package: WxT
 
 # Required modules
 dependencies:
+  - entityqueue:entityqueue
   - migrate:migrate
   - migrate_plus:migrate_plus
   - migrate_tools:migrate_tools

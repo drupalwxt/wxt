@@ -5,6 +5,7 @@ migration_tags:
 dependencies:
   enforced:
     module:
+      - entityqueue
       - wxt_ext_migration
 label: 'Embedded data import for custom block types (spotlight)'
 source:
