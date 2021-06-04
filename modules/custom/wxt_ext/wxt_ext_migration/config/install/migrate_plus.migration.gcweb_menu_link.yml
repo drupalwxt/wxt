@@ -31,7 +31,7 @@ source:
       link_title: 'About Canada.ca'
       description: 'About Canada.ca section.'
       menu_name: 'brand'
-      link_path: 'https://www1.canada.ca/en/newsite.html'
+      link_path: 'https://www.canada.ca/en/government/about.html'
       options: []
       external: 1
       weight: 2
@@ -305,7 +305,7 @@ source:
       link_title: 'News'
       description: 'News section.'
       menu_name: 'footer'
-      link_path: 'http://news.gc.ca'
+      link_path: 'https://www.canada.ca/en/news.html'
       options: []
       external: 1
       weight: 3
