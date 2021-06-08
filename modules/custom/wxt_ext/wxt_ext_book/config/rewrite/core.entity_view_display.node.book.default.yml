@@ -24,39 +24,88 @@ third_party_settings:
           label: ''
           layout:
             wrapper: div
-            classes:
-              row: row
-            add_layout_class: 1
+            classes: {  }
+            add_layout_class: 0
             attributes: ''
           regions:
             top:
               wrapper: div
-              classes:
-                col-sm-12: col-sm-12
-              add_region_classes: 1
+              classes: {  }
+              add_region_classes: 0
               attributes: ''
             left:
               wrapper: div
-              classes:
-                col-sm-6: col-sm-6
-              add_region_classes: 1
-              attributes: ''
+              classes: {  }
+              add_region_classes: 0
+              attributes: 'class|provisional gc-subway no-blink'
             right:
               wrapper: div
-              classes:
-                col-sm-6: col-sm-6
-              add_region_classes: 1
+              classes: {  }
+              add_region_classes: 0
               attributes: ''
             bottom:
               wrapper: div
-              classes:
-                col-sm-12: col-sm-12
-              add_region_classes: 1
+              classes: {  }
+              add_region_classes: 0
               attributes: ''
         components:
+          590ecf5d-9024-4b07-84ea-6cde1b2955d0:
+            uuid: 590ecf5d-9024-4b07-84ea-6cde1b2955d0
+            region: bottom
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'extra_field_block:node:book:links'
+            additional: {  }
+            weight: 0
+          29c1ab68-fe67-4397-86f9-def314e68f2f:
+            uuid: 29c1ab68-fe67-4397-86f9-def314e68f2f
+            region: left
+            configuration:
+              id: book_navigation
+              label: Section
+              provider: book
+              label_display: '0'
+              block_mode: 'all pages'
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
+          4493672f-b912-4c51-9e5f-516126c74672:
+            uuid: 4493672f-b912-4c51-9e5f-516126c74672
+            region: right
+            configuration:
+              id: 'field_block:node:book:title'
+              label: Title
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: string
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 0
+          28a2c185-c77e-4256-8f4b-680d115286b8:
+            uuid: 28a2c185-c77e-4256-8f4b-680d115286b8
+            region: top
+            configuration:
+              id: local_tasks_block
+              label: Tabs
+              provider: core
+              label_display: '0'
+              primary: true
+              secondary: true
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
           1295a7be-f121-40dd-ab42-322a8a4922eb:
             uuid: 1295a7be-f121-40dd-ab42-322a8a4922eb
-            region: left
+            region: right
             configuration:
               label_display: '0'
               context_mapping:
@@ -68,29 +117,7 @@ third_party_settings:
                 settings: {  }
                 third_party_settings: {  }
             additional: {  }
-            weight: 0
-          590ecf5d-9024-4b07-84ea-6cde1b2955d0:
-            uuid: 590ecf5d-9024-4b07-84ea-6cde1b2955d0
-            region: bottom
-            configuration:
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              id: 'extra_field_block:node:book:links'
-            additional: {  }
-            weight: 0
-          2faddfc4-5058-4d44-9c9d-973365d6b1c2:
-            uuid: 2faddfc4-5058-4d44-9c9d-973365d6b1c2
-            region: right
-            configuration:
-              id: book_navigation
-              label: Sections
-              provider: book
-              label_display: visible
-              block_mode: 'all pages'
-              context_mapping: {  }
-            additional: {  }
-            weight: 0
+            weight: 1
         third_party_settings: {  }
   layout_library:
     enable: false
