@@ -67,7 +67,7 @@ third_party_settings:
               label: Section
               provider: book
               label_display: '0'
-              block_mode: 'all pages'
+              block_mode: 'book pages'
               context_mapping: {  }
             additional: {  }
             weight: 0
