@@ -26,13 +26,13 @@ third_party_settings:
             wrapper: div
             classes: {  }
             add_layout_class: 0
-            attributes: ''
+            attributes: class|book-page-wrapper
           regions:
             top:
               wrapper: div
               classes: {  }
               add_region_classes: 0
-              attributes: ''
+              attributes: class|tabs
             left:
               wrapper: div
               classes: {  }
