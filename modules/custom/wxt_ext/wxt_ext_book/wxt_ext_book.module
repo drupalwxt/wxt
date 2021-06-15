@@ -4,3 +4,17 @@
  * @file
  * Contains wxt_ext_book.module.
  */
+
+/**
+ * Implements hook_preprocess_layout().
+ */
+function wxt_ext_book_preprocess_layout(&$variables) {
+  $node = \Drupal::routeMatch()->getParameter('node');
+
+  if ($node instanceof \Drupal\node\NodeInterface) {
+    if ($node->bundle() == 'book' && ($node->book['bid'] == $node->id())) {
+      // Remove region to prevent empty div
+      unset($variables['content']['left']);
+    }
+  }
+}
