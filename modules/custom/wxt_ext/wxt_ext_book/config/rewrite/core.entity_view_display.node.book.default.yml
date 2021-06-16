@@ -34,31 +34,21 @@ third_party_settings:
               add_region_classes: 0
               attributes: class|tabs
             left:
-              wrapper: div
+              wrapper: section
               classes: {  }
               add_region_classes: 0
-              attributes: 'class|provisional gc-subway no-blink'
+              attributes: class|gc-nav
             right:
-              wrapper: div
+              wrapper: section
               classes: {  }
               add_region_classes: 0
-              attributes: ''
+              attributes: 'class|gc-nav-section experimental'
             bottom:
               wrapper: div
               classes: {  }
               add_region_classes: 0
               attributes: ''
         components:
-          590ecf5d-9024-4b07-84ea-6cde1b2955d0:
-            uuid: 590ecf5d-9024-4b07-84ea-6cde1b2955d0
-            region: bottom
-            configuration:
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              id: 'extra_field_block:node:book:links'
-            additional: {  }
-            weight: 0
           29c1ab68-fe67-4397-86f9-def314e68f2f:
             uuid: 29c1ab68-fe67-4397-86f9-def314e68f2f
             region: left
@@ -118,6 +108,16 @@ third_party_settings:
                 third_party_settings: {  }
             additional: {  }
             weight: 1
+          590ecf5d-9024-4b07-84ea-6cde1b2955d0:
+            uuid: 590ecf5d-9024-4b07-84ea-6cde1b2955d0
+            region: right
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'extra_field_block:node:book:links'
+            additional: {  }
+            weight: 2
         third_party_settings: {  }
   layout_library:
     enable: false
