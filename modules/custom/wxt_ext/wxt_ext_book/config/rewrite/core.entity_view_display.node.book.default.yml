@@ -82,7 +82,7 @@ third_party_settings:
             weight: 0
           28a2c185-c77e-4256-8f4b-680d115286b8:
             uuid: 28a2c185-c77e-4256-8f4b-680d115286b8
-            region: top
+            region: right
             configuration:
               id: local_tasks_block
               label: Tabs
@@ -92,7 +92,7 @@ third_party_settings:
               secondary: true
               context_mapping: {  }
             additional: {  }
-            weight: 0
+            weight: 1
           1295a7be-f121-40dd-ab42-322a8a4922eb:
             uuid: 1295a7be-f121-40dd-ab42-322a8a4922eb
             region: right
@@ -107,7 +107,7 @@ third_party_settings:
                 settings: {  }
                 third_party_settings: {  }
             additional: {  }
-            weight: 1
+            weight: 2
           590ecf5d-9024-4b07-84ea-6cde1b2955d0:
             uuid: 590ecf5d-9024-4b07-84ea-6cde1b2955d0
             region: right
@@ -117,7 +117,7 @@ third_party_settings:
                 entity: layout_builder.entity
               id: 'extra_field_block:node:book:links'
             additional: {  }
-            weight: 2
+            weight: 3
         third_party_settings: {  }
   layout_library:
     enable: false
