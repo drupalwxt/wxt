@@ -1,3 +1,38 @@
+## v4.0.7
+
+- Updates for WxT
+  - 4.0.4 to 4.0.6 upgrade installs all modules [#3216815](https://www.drupal.org/project/wxt/issues/3216815)
+  - Broken/outdated links in menu migrations [#3217224](https://www.drupal.org/project/wxt/issues/3217224)
+  - Implied dependency in gcweb_block_spotlight migration [#3217034](https://www.drupal.org/project/wxt/issues/3217034)
+- Updates for WxT Bootstrap
+  - Sensible label defaults for brand menu  [#3217232](https://www.drupal.org/project/wxt/issues/3217232)
+  - Footer menu should be configurable [#3217213](https://www.drupal.org/project/wxt/issues/3217213)
+  - Search field has hardcoded value [#3217296](https://www.drupal.org/project/wxt/issues/3217296)
+- Updates for WxT Library
+  - Search field has hardcoded value [#3217296](https://www.drupal.org/project/wxt/issues/3217296)
+  - Language block use correct language type [#3219470](https://www.drupal.org/project/wxt/issues/3219470)
+
+Upgrade path:
+
+> Note: No special notes for this release.
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
+- Run Lightning configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:lightning`
+
+- Run WxT configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:wxt`
+
+**Note:** The all_wxt form was renamed back to select_all so please update your drush site install scripts accordingly.
+
 ## v4.0.6
 
 - Updates for WxT
