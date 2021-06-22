@@ -192,7 +192,9 @@
                 "Enter drupal/core patch #3164210 description here":
                 "https://www.drupal.org/files/issues/2021-05-17/3164210-11.patch",
                 "Enter drupal/core patch #2470896 description here":
-                "https://www.drupal.org/files/issues/2021-06-10/2470896-244.patch"
+                "https://www.drupal.org/files/issues/2021-06-10/2470896-244.patch",
+                "Enter drupal/core patch #3173808 description here":
+                "https://www.drupal.org/files/issues/2021-01-31/3173808-9-Make-book-child-content-type-configura.patch"
             },
             "drupal/ctools": {
                 "Enter drupal/ctools patch #2667652 description here":
