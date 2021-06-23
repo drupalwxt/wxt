@@ -6,15 +6,98 @@
  */
 
 /**
- * Implements hook_preprocess_layout().
+ * Implements hook_preprocess_book_navigation().
  */
-function wxt_ext_book_preprocess_layout(&$variables) {
+function wxt_ext_book_preprocess_book_navigation(&$variables) {
   $node = \Drupal::routeMatch()->getParameter('node');
 
   if ($node instanceof \Drupal\node\NodeInterface) {
-    if ($node->bundle() == 'book' && (empty($node->book['bid']) || $node->book['bid'] == $node->id())) {
-      // Remove region to prevent empty div
-      unset($variables['content']['left']);
+    if (!empty($node->book) && $node->book['bid'] == $node->id()) {
+      $variables['is_book_index'] = TRUE;
+    }
+  }
+
+
+  if (!empty($variables['tree']['#items'])) {
+    foreach ($variables['tree']['#items'] as $nid => &$item) {
+      $langcode = \Drupal::languageManager()->getCurrentLanguage()->getId();
+      $book_page =  \Drupal::entityTypeManager()->getStorage('node')->load($nid);
+
+      if ($book_page->hasTranslation($langcode)) {
+        $book_page = $book_page->getTranslation($langcode);
+      }
+
+      $summary = $book_page->get('body')->getValue()[0]['summary'];
+
+      $item['summary'] = $summary;
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_book_tree().
+ */
+function wxt_ext_book_preprocess_book_tree(&$variables) {
+  $node = \Drupal::routeMatch()->getParameter('node');
+
+  if ($node instanceof \Drupal\node\NodeInterface) {
+    if (!empty($node->book) && $node->book['bid'] == $node->id()) {
+      $variables['is_book_index'] = TRUE;
+    }
+
+    $active_nid = $node->id();
+    $variables['items'] = _wxt_book_is_active_item($variables['items'], $active_nid);
+  }
+}
+
+/**
+ * Recursive function to mark active item in book hierarchy
+ */
+function _wxt_book_is_active_item(&$items, $active_nid) {
+  foreach ($items as $nid => &$item) {
+    if ($nid == $active_nid) {
+      $item['active'] = 'true';
+    }
+    else {
+      $item['active'] = 'false';
+    }
+
+    if (!empty($item['below'])) {
+      $item['below'] = _wxt_book_is_active_item($item['below'], $active_nid);
+    }
+  }
+
+  return $items;
+}
+
+/**
+ * Implements hook_preprocess_links.
+ */
+function wxt_ext_book_preprocess_links(&$variables) {
+  $links = &$variables['links'];
+
+  foreach ($links as $id => &$link) {
+    if ($id === 'book_add_child') {
+      $link['link']['#options']['attributes']['class'][] = 'button button--primary btn-success btn icon-before';
+      $link['attributes']->addClass('mrgn-tp-sm');
+      $icon_class = 'glyphicon glyphicon-plus';
+    }
+
+    if ($id === 'book_printer') {
+      $link['link']['#options']['attributes']['class'][] = 'button btn-default btn icon-before';
+      $link['attributes']->addClass('mrgn-tp-sm');
+      $icon_class = 'glyphicon glyphicon-print';
+    }
+
+    if (isset($icon_class)) {
+      $link['link']['#title'] = [
+        '#type' => 'inline_template',
+        '#template' => '<span class="{{ icon }}" aria-hidden="true"></span>{{ title }}',
+        '#context' => [
+          'title' => is_string($link['link']['#title']) ? $link['link']['#title']: $link['link']['#title']->getUntranslatedString(),
+          'icon' => $icon_class
+        ]
+      ];
     }
   }
 }
