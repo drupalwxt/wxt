@@ -5,13 +5,15 @@
  * Contains wxt_ext_book.module.
  */
 
+use Drupal\node\NodeInterface;
+
 /**
  * Implements hook_preprocess_page.
  */
 function wxt_ext_book_preprocess_page(&$variables) {
   $node = \Drupal::routeMatch()->getParameter('node');
 
-  if ($node instanceof \Drupal\node\NodeInterface) {
+  if ($node instanceof NodeInterface) {
     if (!empty($node->book)) {
 
       if ($node->book['bid'] == $node->id()) {
@@ -38,15 +40,15 @@ function wxt_ext_book_preprocess_page(&$variables) {
       if ($node->book['bid'] != $node->id()) {
         $config = [
           'label_display' => '0',
-          'block_mode' => 'book pages'
+          'block_mode' => 'book pages',
         ];
 
         $block = \Drupal::service('plugin.manager.block')->createInstance('book_navigation', $config);
         $variables['book_navigation'] = $block->build();
 
-        $book =  \Drupal::entityTypeManager()->getStorage('node')->load($node->book['bid']);
+        $book = \Drupal::entityTypeManager()->getStorage('node')->load($node->book['bid']);
 
-        if ($book instanceof \Drupal\node\NodeInterface) {
+        if ($book instanceof NodeInterface) {
           if ($book->hasTranslation($language)) {
             $book = $book->getTranslation($language);
           }
@@ -65,7 +67,7 @@ function wxt_ext_book_preprocess_page(&$variables) {
 function wxt_ext_book_preprocess_book_navigation(&$variables) {
   $node = \Drupal::routeMatch()->getParameter('node');
 
-  if ($node instanceof \Drupal\node\NodeInterface) {
+  if ($node instanceof NodeInterface) {
     if (!empty($node->book)) {
       $config = \Drupal::config('wxt_ext_book.settings');
 
@@ -89,7 +91,7 @@ function wxt_ext_book_preprocess_book_navigation(&$variables) {
   if (!empty($variables['tree']['#items'])) {
     foreach ($variables['tree']['#items'] as $nid => &$item) {
       $langcode = \Drupal::languageManager()->getCurrentLanguage()->getId();
-      $book_page =  \Drupal::entityTypeManager()->getStorage('node')->load($nid);
+      $book_page = \Drupal::entityTypeManager()->getStorage('node')->load($nid);
 
       if ($book_page->hasTranslation($langcode)) {
         $book_page = $book_page->getTranslation($langcode);
@@ -108,7 +110,7 @@ function wxt_ext_book_preprocess_book_navigation(&$variables) {
 function wxt_ext_book_preprocess_book_tree(&$variables) {
   $node = \Drupal::routeMatch()->getParameter('node');
 
-  if ($node instanceof \Drupal\node\NodeInterface) {
+  if ($node instanceof NodeInterface) {
     // Set active menu item in hierarchy
     $active_nid = $node->id();
     $variables['items'] = _wxt_ext_book_set_variables_recursive($variables['items'], $active_nid);
@@ -136,14 +138,13 @@ function _wxt_ext_book_set_variables_recursive(&$items, $active_nid) {
   return $items;
 }
 
-
 /**
  * Implements hook_preprocess_page_title.
  */
 function wxt_ext_book_preprocess_page_title(&$variables) {
   $node = \Drupal::routeMatch()->getParameter('node');
 
-  if ($node instanceof \Drupal\node\NodeInterface && !empty($node->book)) {
+  if ($node instanceof NodeInterface && !empty($node->book)) {
     $variables['is_book'] = TRUE;
   }
 }
@@ -176,9 +177,9 @@ function wxt_ext_book_preprocess_links(&$variables) {
         '#type' => 'inline_template',
         '#template' => '<span class="{{ icon }}" aria-hidden="true"></span>{{ title }}',
         '#context' => [
-          'title' => is_string($link['link']['#title']) ? $link['link']['#title']: $link['link']['#title']->getUntranslatedString(),
-          'icon' => $icon_class
-        ]
+          'title' => is_string($link['link']['#title']) ? $link['link']['#title'] : $link['link']['#title']->getUntranslatedString(),
+          'icon' => $icon_class,
+        ],
       ];
     }
   }
