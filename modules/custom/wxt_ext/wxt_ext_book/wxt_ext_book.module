@@ -136,6 +136,18 @@ function _wxt_ext_book_set_variables_recursive(&$items, $active_nid) {
   return $items;
 }
 
+
+/**
+ * Implements hook_preprocess_page_title.
+ */
+function wxt_ext_book_preprocess_page_title(&$variables) {
+  $node = \Drupal::routeMatch()->getParameter('node');
+
+  if ($node instanceof \Drupal\node\NodeInterface && !empty($node->book)) {
+    $variables['is_book'] = TRUE;
+  }
+}
+
 /**
  * Implements hook_preprocess_links.
  */
