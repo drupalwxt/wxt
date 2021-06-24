@@ -6,6 +6,58 @@
  */
 
 /**
+ * Implements hook_preprocess_page.
+ */
+function wxt_ext_book_preprocess_page(&$variables) {
+  $node = \Drupal::routeMatch()->getParameter('node');
+
+  if ($node instanceof \Drupal\node\NodeInterface) {
+    if (!empty($node->book)) {
+
+      if ($node->book['bid'] == $node->id()) {
+        $variables['#attached']['library'][] = 'wxt_bootstrap/book-base';
+      }
+      else {
+        $variables['#attached']['library'][] = 'wxt_bootstrap/book-base';
+        $variables['#attached']['library'][] = 'wxt_bootstrap/book-page';
+      }
+
+      $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+
+      if ($node->hasTranslation($language)) {
+        $node = $node->getTranslation($language);
+      }
+
+      // Set variables for book templates
+      $variables['title'] = $node->getTitle();
+
+      $block_local_tasks = \Drupal::service('plugin.manager.block')->createInstance('local_tasks_block', []);
+      $variables['tabs'] = $block_local_tasks->build();
+
+      // If book child page
+      if ($node->book['bid'] != $node->id()) {
+        $config = [
+          'label_display' => '0',
+          'block_mode' => 'book pages'
+        ];
+
+        $block = \Drupal::service('plugin.manager.block')->createInstance('book_navigation', $config);
+        $variables['book_navigation'] = $block->build();
+
+        $book =  \Drupal::entityTypeManager()->getStorage('node')->load($node->book['bid']);
+
+        if ($book->hasTranslation($language)) {
+          $book = $book->getTranslation($language);
+        }
+
+        $book_title = $book->getTitle();
+        $variables['book_title'] = $book_title;
+      }
+    }
+  }
+}
+
+/**
  * Implements hook_preprocess_book_navigation().
  */
 function wxt_ext_book_preprocess_book_navigation(&$variables) {
@@ -13,10 +65,10 @@ function wxt_ext_book_preprocess_book_navigation(&$variables) {
 
   if ($node instanceof \Drupal\node\NodeInterface) {
     if (!empty($node->book) && $node->book['bid'] == $node->id()) {
+      // Current page is the book index
       $variables['is_book_index'] = TRUE;
     }
   }
-
 
   if (!empty($variables['tree']['#items'])) {
     foreach ($variables['tree']['#items'] as $nid => &$item) {
@@ -41,29 +93,27 @@ function wxt_ext_book_preprocess_book_tree(&$variables) {
   $node = \Drupal::routeMatch()->getParameter('node');
 
   if ($node instanceof \Drupal\node\NodeInterface) {
-    if (!empty($node->book) && $node->book['bid'] == $node->id()) {
-      $variables['is_book_index'] = TRUE;
-    }
-
+    // Set active menu item in hierarchy
     $active_nid = $node->id();
-    $variables['items'] = _wxt_book_is_active_item($variables['items'], $active_nid);
+    $variables['items'] = _wxt_ext_book_set_variables_recursive($variables['items'], $active_nid);
   }
 }
 
 /**
  * Recursive function to mark active item in book hierarchy
  */
-function _wxt_book_is_active_item(&$items, $active_nid) {
+function _wxt_ext_book_set_variables_recursive(&$items, $active_nid) {
+  $langcode = \Drupal::languageManager()->getCurrentLanguage()->getId();
+
   foreach ($items as $nid => &$item) {
     if ($nid == $active_nid) {
-      $item['active'] = 'true';
-    }
-    else {
-      $item['active'] = 'false';
+      // Active menu item
+      $item['active'] = TRUE;
+      break;
     }
 
     if (!empty($item['below'])) {
-      $item['below'] = _wxt_book_is_active_item($item['below'], $active_nid);
+      $item['below'] = _wxt_ext_book_set_variables_recursive($item['below'], $active_nid);
     }
   }
 
@@ -77,19 +127,23 @@ function wxt_ext_book_preprocess_links(&$variables) {
   $links = &$variables['links'];
 
   foreach ($links as $id => &$link) {
+    $match = FALSE;
+
     if ($id === 'book_add_child') {
       $link['link']['#options']['attributes']['class'][] = 'button button--primary btn-success btn icon-before';
       $link['attributes']->addClass('mrgn-tp-sm');
       $icon_class = 'glyphicon glyphicon-plus';
+      $match = TRUE;
     }
 
     if ($id === 'book_printer') {
       $link['link']['#options']['attributes']['class'][] = 'button btn-default btn icon-before';
       $link['attributes']->addClass('mrgn-tp-sm');
       $icon_class = 'glyphicon glyphicon-print';
+      $match = TRUE;
     }
 
-    if (isset($icon_class)) {
+    if ($match) {
       $link['link']['#title'] = [
         '#type' => 'inline_template',
         '#template' => '<span class="{{ icon }}" aria-hidden="true"></span>{{ title }}',
