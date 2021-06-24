@@ -46,12 +46,14 @@ function wxt_ext_book_preprocess_page(&$variables) {
 
         $book =  \Drupal::entityTypeManager()->getStorage('node')->load($node->book['bid']);
 
-        if ($book->hasTranslation($language)) {
-          $book = $book->getTranslation($language);
-        }
+        if ($book instanceof \Drupal\node\NodeInterface) {
+          if ($book->hasTranslation($language)) {
+            $book = $book->getTranslation($language);
+          }
 
-        $book_title = $book->getTitle();
-        $variables['book_title'] = $book_title;
+          $book_title = $book->getTitle();
+          $variables['book_title'] = $book_title;
+        }
       }
     }
   }
@@ -64,9 +66,23 @@ function wxt_ext_book_preprocess_book_navigation(&$variables) {
   $node = \Drupal::routeMatch()->getParameter('node');
 
   if ($node instanceof \Drupal\node\NodeInterface) {
-    if (!empty($node->book) && $node->book['bid'] == $node->id()) {
-      // Current page is the book index
-      $variables['is_book_index'] = TRUE;
+    if (!empty($node->book)) {
+      $config = \Drupal::config('wxt_ext_book.settings');
+
+      if ($node->book['bid'] == $node->id()) {
+        // Current page is the book index
+        $variables['is_book_index'] = TRUE;
+
+        // Enable/disable persistent navigation on book index page
+        $variables['nav_enabled'] = $config->get('navigation.persistent_nav');
+      }
+      else {
+        // Should page titles be used as book navigation labels
+        $variables['page_title_as_nav_label'] = $config->get('navigation.page_title_nav_labels');
+
+        // Should we include home link in book navigation
+        $variables['include_home_link'] = $config->get('navigation.page_nav_home_link');
+      }
     }
   }
 
