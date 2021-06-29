@@ -8,7 +8,7 @@
 use Drupal\node\NodeInterface;
 
 /**
- * Implements hook_preprocess_page.
+ * Implements hook_preprocess_page().
  */
 function wxt_ext_book_preprocess_page(&$variables) {
   $node = \Drupal::routeMatch()->getParameter('node');
@@ -16,25 +16,11 @@ function wxt_ext_book_preprocess_page(&$variables) {
   if ($node instanceof NodeInterface) {
     if (!empty($node->book)) {
 
-      if ($node->book['bid'] == $node->id()) {
-        $variables['#attached']['library'][] = 'wxt_bootstrap/book-base';
-      }
-      else {
-        $variables['#attached']['library'][] = 'wxt_bootstrap/book-base';
-        $variables['#attached']['library'][] = 'wxt_bootstrap/book-page';
-      }
-
       $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
 
       if ($node->hasTranslation($language)) {
         $node = $node->getTranslation($language);
       }
-
-      // Set variables for book templates
-      $variables['title'] = $node->getTitle();
-
-      $block_local_tasks = \Drupal::service('plugin.manager.block')->createInstance('local_tasks_block', []);
-      $variables['tabs'] = $block_local_tasks->build();
 
       // If book child page
       if ($node->book['bid'] != $node->id()) {
