@@ -76,6 +76,7 @@ function wxt_ext_book_preprocess_book_navigation(&$variables) {
 
   if (!empty($variables['tree']['#items'])) {
     foreach ($variables['tree']['#items'] as $nid => &$item) {
+      $summary = '';
       $langcode = \Drupal::languageManager()->getCurrentLanguage()->getId();
       $book_page = \Drupal::entityTypeManager()->getStorage('node')->load($nid);
 
@@ -83,7 +84,9 @@ function wxt_ext_book_preprocess_book_navigation(&$variables) {
         $book_page = $book_page->getTranslation($langcode);
       }
 
-      $summary = $book_page->get('body')->getValue()[0]['summary'];
+      if (!empty($book_page->get('body')->getValue()[0]['summary'])) {
+        $summary = $book_page->get('body')->getValue()[0]['summary'];
+      }
 
       $item['summary'] = $summary;
     }
