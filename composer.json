@@ -22,7 +22,7 @@
         "drupal/config_rewrite": "1.4",
         "drupal/core": "9.1.9",
         "drupal/core_context": "1.0-beta4",
-        "drupal/ctools": "3.6.0",
+        "drupal/ctools": "^3.7",
         "drupal/diff": "1.0",
         "drupal/entity_reference_revisions": "^1.8",
         "drupal/entityqueue": "^1.0-alpha8",
@@ -284,9 +284,7 @@
             },
             "drupal/webform": {
                 "Enter drupal/webform patch #3205860 description here":
-                "https://www.drupal.org/files/issues/2021-03-26/webform_clientside_validation-3205860-2.patch",
-                "Enter drupal/webform patch #3212867 description here":
-                "https://www.drupal.org/files/issues/2021-05-07/3212867-3.patch"
+                "https://www.drupal.org/files/issues/2021-03-26/webform_clientside_validation-3205860-2.patch"
             },
             "drupal/token": {
                 "Enter drupal/token patch #2863200 description here":
