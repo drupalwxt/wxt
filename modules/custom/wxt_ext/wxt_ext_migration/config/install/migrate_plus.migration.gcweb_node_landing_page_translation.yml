@@ -307,29 +307,6 @@ process:
   layout_builder__layout:
     plugin: wxt_layout_plugin_id
     source: layout
-  panelizer:
-    plugin: sub_process
-    source: panelizer
-    process:
-      view_mode:
-        plugin: static_map
-        source: view_mode
-        bypass: true
-        map:
-          default: default
-          page_manager: full
-      default: default
-      panels_display/blocks:
-        plugin: wxt_block_plugin_id
-        source: blocks
-      panels_display/layout: layout
-      panels_display/layout_settings: layout_settings
-      panels_display/page_title: page_title
-      panels_display/storage_type: storage_type
-      panels_display/storage_id: storage_id
-      panels_display/pattern: pattern
-      panels_display/builder: builder
-      panels_display/static_context: static_context
 destination:
   plugin: 'entity:node'
   translations: true

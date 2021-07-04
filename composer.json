@@ -38,7 +38,6 @@
         "drupal/pathauto": "1.8",
         "drupal/simple_sitemap": "^3.8",
         "drupal/page_manager": "4.0-beta6",
-        "drupal/panelizer": "5.0-beta3",
         "drupal/paragraphs": "1.12",
         "drupal/field_formatter": "^3.0",
         "drupal/file_entity": "2.0-beta8",
@@ -259,10 +258,6 @@
                 "https://www.drupal.org/files/issues/2018-03-19/panels--page_title_does_not_display--2869412-27.patch",
                 "Enter drupal/panels patch #2910704 description here":
                 "https://www.drupal.org/files/issues/panels-ipe-card-flip-ie-error-2910704.diff"
-            },
-            "drupal/panelizer": {
-                "Allow the previewing of nodes with panelizer":
-                "https://www.drupal.org/files/issues/2019-05-17/panelizer-node-previews-2750491-7.patch"
             },
             "drupal/password_policy": {
                 "Character types in character plugin not translatable":

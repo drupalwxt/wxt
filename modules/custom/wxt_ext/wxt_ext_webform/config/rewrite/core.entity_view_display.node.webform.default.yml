@@ -7,16 +7,10 @@ dependencies:
     - field.field.node.webform.webform
     - node.type.webform
   module:
-    - panelizer
     - text
     - user
     - webform
-third_party_settings:
-  panelizer:
-    enable: false
-    custom: false
-    allow: false
-    default: default
+third_party_settings: {  }
 id: node.webform.default
 targetEntityType: node
 bundle: webform
