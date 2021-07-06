@@ -13,7 +13,6 @@ dependencies:
   - lightning_layout:lightning_layout
   - lightning_workflow:lightning_workflow
   - page_manager:page_manager
-  - panelizer:panelizer
   - panels_ipe:panels_ipe
   - views_bootstrap:views_bootstrap
   - wxt_translation:wxt_translation

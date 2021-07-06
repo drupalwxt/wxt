@@ -6,12 +6,12 @@ package: WxT
 
 # Required modules
 dependencies:
+  - entityqueue:entityqueue
   - migrate:migrate
   - migrate_plus:migrate_plus
   - migrate_tools:migrate_tools
   - lightning_layout:lightning_layout
   - page_manager:page_manager
-  - panelizer:panelizer
   - panels_ipe:panels_ipe
   - wxt_ext_media:wxt_ext_media
   - wxt_ext_media_slideshow:wxt_ext_media_slideshow

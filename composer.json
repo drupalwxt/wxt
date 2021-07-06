@@ -22,7 +22,7 @@
         "drupal/config_rewrite": "1.4",
         "drupal/core": "9.1.9",
         "drupal/core_context": "1.0-beta4",
-        "drupal/ctools": "3.6.0",
+        "drupal/ctools": "^3.7",
         "drupal/diff": "1.0",
         "drupal/entity_reference_revisions": "^1.8",
         "drupal/entityqueue": "^1.0-alpha8",
@@ -38,7 +38,6 @@
         "drupal/pathauto": "1.8",
         "drupal/simple_sitemap": "^3.8",
         "drupal/page_manager": "4.0-beta6",
-        "drupal/panelizer": "5.0-beta3",
         "drupal/paragraphs": "1.12",
         "drupal/field_formatter": "^3.0",
         "drupal/file_entity": "2.0-beta8",
@@ -264,10 +263,6 @@
                 "Enter drupal/panels patch #2910704 description here":
                 "https://www.drupal.org/files/issues/panels-ipe-card-flip-ie-error-2910704.diff"
             },
-            "drupal/panelizer": {
-                "Allow the previewing of nodes with panelizer":
-                "https://www.drupal.org/files/issues/2019-05-17/panelizer-node-previews-2750491-7.patch"
-            },
             "drupal/password_policy": {
                 "Character types in character plugin not translatable":
                 "https://www.drupal.org/files/issues/2020-03-17/Password-Policy-constraints-summary-character-types-labels-not-translatable-2975694-16.patch"
@@ -288,9 +283,7 @@
             },
             "drupal/webform": {
                 "Enter drupal/webform patch #3205860 description here":
-                "https://www.drupal.org/files/issues/2021-03-26/webform_clientside_validation-3205860-2.patch",
-                "Enter drupal/webform patch #3212867 description here":
-                "https://www.drupal.org/files/issues/2021-05-07/3212867-3.patch"
+                "https://www.drupal.org/files/issues/2021-03-26/webform_clientside_validation-3205860-2.patch"
             },
             "drupal/token": {
                 "Enter drupal/token patch #2863200 description here":

@@ -69,12 +69,6 @@ content:
     settings: {  }
     region: content
     third_party_settings: {  }
-  panelizer:
-    type: panelizer
-    weight: 6
-    settings: {  }
-    third_party_settings: {  }
-    region: content
   path:
     type: path
     weight: 5

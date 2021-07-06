@@ -10,6 +10,5 @@ dependencies:
   - drupal:shortcut
   - lightning_layout:lightning_layout
   - page_manager:page_manager
-  - panelizer:panelizer
   - panels_ipe:panels_ipe
   - wxt_translation:wxt_translation

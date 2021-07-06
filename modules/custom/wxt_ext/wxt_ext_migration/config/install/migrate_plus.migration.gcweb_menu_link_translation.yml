@@ -31,7 +31,7 @@ source:
       link_title: 'À propos de Canada.ca'
       description: 'À propos de Canada.ca section.'
       menu_name: 'brand_fr'
-      link_path: 'https://www1.canada.ca/fr/nouveausite.html'
+      link_path: 'https://www.canada.ca/fr/gouvernement/a-propos.html'
       options: []
       external: 1
       weight: 2
@@ -286,7 +286,7 @@ source:
       link_title: 'Nouvelles'
       description: 'Nouvelles section.'
       menu_name: 'footer_fr'
-      link_path: 'http://nouvelles.gc.ca'
+      link_path: 'https://www.canada.ca/fr/nouvelles.html'
       options: []
       external: 1
       weight: 3

@@ -224,10 +224,6 @@ class BlockPluginId extends ProcessPluginBase implements ContainerFactoryPluginI
           $block['provider'] = $definition['provider'];
         }
 
-        if (isset($definition['context']['entity'])) {
-          $block['context_mapping']['entity'] = '@panelizer.entity_context:entity';
-        }
-
         $blocks[$uuid] = $block;
       }
     }
