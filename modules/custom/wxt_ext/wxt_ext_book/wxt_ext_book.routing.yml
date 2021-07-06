@@ -1,0 +1,7 @@
+wxt_ext_book.admin_config_wxt_ext_book:
+  path: '/admin/config/wxt/wxt_ext_book'
+  defaults:
+    _form: '\Drupal\wxt_ext_book\Form\WxtBookSettingsForm'
+    _title: 'WxT Book Settings'
+  requirements:
+    _permission: 'administer site configuration'
