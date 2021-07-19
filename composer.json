@@ -34,7 +34,7 @@
         "drupal/media_entity_slideshow": "^2.0",
         "drupal/menu_block": "1.6.0",
         "drupal/menu_breadcrumb": "^1.13",
-        "drupal/password_policy": "3.0-beta1",
+        "drupal/password_policy": "^3.0",
         "drupal/pathauto": "1.8",
         "drupal/simple_sitemap": "^3.8",
         "drupal/page_manager": "4.0-beta6",
@@ -258,10 +258,6 @@
                 "https://www.drupal.org/files/issues/2018-03-19/panels--page_title_does_not_display--2869412-27.patch",
                 "Enter drupal/panels patch #2910704 description here":
                 "https://www.drupal.org/files/issues/panels-ipe-card-flip-ie-error-2910704.diff"
-            },
-            "drupal/password_policy": {
-                "Character types in character plugin not translatable":
-                "https://www.drupal.org/files/issues/2020-03-17/Password-Policy-constraints-summary-character-types-labels-not-translatable-2975694-16.patch"
             },
             "drupal/redis": {
                 "3004561 - Enable ssl scheme":
