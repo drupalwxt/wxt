@@ -20,7 +20,7 @@
         "drupal/button_link": "1.2",
         "drupal/ckeditor_codemirror": "2.3",
         "drupal/config_rewrite": "1.4",
-        "drupal/core": "9.1.9",
+        "drupal/core": "9.1.10",
         "drupal/core_context": "1.0-beta4",
         "drupal/ctools": "^3.7",
         "drupal/diff": "1.0",
@@ -153,7 +153,7 @@
                 "Enter drupal/core patch #850600 description here":
                 "https://www.drupal.org/files/issues/postgresql_ssl_dsn-850600-3.patch",
                 "Enter drupal/core patch #1356276 description here":
-                "https://www.drupal.org/files/issues/2020-12-13/1356276-633-by-mpotter-balsama-phenaproxima-9.1.0-9.2.x.patch",
+                "https://www.drupal.org/files/issues/2021-06-29/D91x-1356276-656.patch",
                 "Enter drupal/core patch #2559833 description here":
                 "https://www.drupal.org/files/issues/2020-10-31/2559833-72.patch",
                 "Enter drupal/core patch #2630732 description here":
@@ -177,11 +177,11 @@
                 "Enter drupal/core patch #2893029 description here":
                 "https://www.drupal.org/files/issues/2893029-9.patch",
                 "Enter drupal/core patch #2893407 description here":
-                "https://www.drupal.org/files/issues/2020-01-09/2893407-39.patch",
+                "https://www.drupal.org/files/issues/2021-06-07/2893407-47.patch",
                 "Enter drupal/core patch #2907413 description here":
                 "https://www.drupal.org/files/issues/2019-06-21/2907413-11.patch",
                 "Enter drupal/core patch #2922570 description here":
-                "https://www.drupal.org/files/issues/2021-02-02/2922570-61.patch",
+                "https://www.drupal.org/files/issues/2021-06-29/D91x-2922570-88.patch",
                 "Enter drupal/core patch #2938129 description here":
                 "https://www.drupal.org/files/issues/2019-01-18/2938129-pagetitle-11.patch",
                 "Enter drupal/core patch #2998826 description here":
