@@ -1,0 +1,175 @@
+<?php
+
+/**
+ * @file
+ * Contains wxt_ext_book.module.
+ */
+
+use Drupal\node\NodeInterface;
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function wxt_ext_book_preprocess_page(&$variables) {
+  $node = \Drupal::routeMatch()->getParameter('node');
+
+  if ($node instanceof NodeInterface) {
+    if (!empty($node->book)) {
+
+      $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+
+      if ($node->hasTranslation($language)) {
+        $node = $node->getTranslation($language);
+      }
+
+      // If book child page
+      if ($node->book['bid'] != $node->id()) {
+        $config = [
+          'label_display' => '0',
+          'block_mode' => 'book pages',
+        ];
+
+        $block = \Drupal::service('plugin.manager.block')->createInstance('book_navigation', $config);
+        $variables['book_navigation'] = $block->build();
+
+        $book = \Drupal::entityTypeManager()->getStorage('node')->load($node->book['bid']);
+
+        if ($book instanceof NodeInterface) {
+          if ($book->hasTranslation($language)) {
+            $book = $book->getTranslation($language);
+          }
+
+          $book_title = $book->getTitle();
+          $variables['book_title'] = $book_title;
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_book_navigation().
+ */
+function wxt_ext_book_preprocess_book_navigation(&$variables) {
+  $node = \Drupal::routeMatch()->getParameter('node');
+
+  if ($node instanceof NodeInterface) {
+    if (!empty($node->book)) {
+      $config = \Drupal::config('wxt_ext_book.settings');
+
+      if ($node->book['bid'] == $node->id()) {
+        // Current page is the book index
+        $variables['is_book_index'] = TRUE;
+
+        // Enable/disable persistent navigation on book index page
+        $variables['nav_enabled'] = $config->get('navigation.persistent_nav');
+      }
+      else {
+        // Should page titles be used as book navigation labels
+        $variables['page_title_as_nav_label'] = $config->get('navigation.page_title_nav_labels');
+
+        // Should we include home link in book navigation
+        $variables['include_home_link'] = $config->get('navigation.page_nav_home_link');
+      }
+    }
+  }
+
+  if (!empty($variables['tree']['#items'])) {
+    foreach ($variables['tree']['#items'] as $nid => &$item) {
+      $summary = '';
+      $langcode = \Drupal::languageManager()->getCurrentLanguage()->getId();
+      $book_page = \Drupal::entityTypeManager()->getStorage('node')->load($nid);
+
+      if ($book_page->hasTranslation($langcode)) {
+        $book_page = $book_page->getTranslation($langcode);
+      }
+
+      if (!empty($book_page->get('body')->getValue()[0]['summary'])) {
+        $summary = $book_page->get('body')->getValue()[0]['summary'];
+      }
+
+      $item['summary'] = $summary;
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_book_tree().
+ */
+function wxt_ext_book_preprocess_book_tree(&$variables) {
+  $node = \Drupal::routeMatch()->getParameter('node');
+
+  if ($node instanceof NodeInterface) {
+    // Set active menu item in hierarchy
+    $active_nid = $node->id();
+    $variables['items'] = _wxt_ext_book_set_variables_recursive($variables['items'], $active_nid);
+  }
+}
+
+/**
+ * Recursive function to mark active item in book hierarchy
+ */
+function _wxt_ext_book_set_variables_recursive(&$items, $active_nid) {
+  $langcode = \Drupal::languageManager()->getCurrentLanguage()->getId();
+
+  foreach ($items as $nid => &$item) {
+    if ($nid == $active_nid) {
+      // Active menu item
+      $item['active'] = TRUE;
+      break;
+    }
+
+    if (!empty($item['below'])) {
+      $item['below'] = _wxt_ext_book_set_variables_recursive($item['below'], $active_nid);
+    }
+  }
+
+  return $items;
+}
+
+/**
+ * Implements hook_preprocess_page_title.
+ */
+function wxt_ext_book_preprocess_page_title(&$variables) {
+  $node = \Drupal::routeMatch()->getParameter('node');
+
+  if ($node instanceof NodeInterface && !empty($node->book)) {
+    $variables['is_book'] = TRUE;
+  }
+}
+
+/**
+ * Implements hook_preprocess_links.
+ */
+function wxt_ext_book_preprocess_links(&$variables) {
+  $links = &$variables['links'];
+
+  foreach ($links as $id => &$link) {
+    $match = FALSE;
+
+    if ($id === 'book_add_child') {
+      $link['link']['#options']['attributes']['class'][] = 'button button--primary btn-success btn icon-before';
+      $link['attributes']->addClass('mrgn-tp-sm');
+      $icon_class = 'glyphicon glyphicon-plus';
+      $match = TRUE;
+    }
+
+    if ($id === 'book_printer') {
+      $link['link']['#options']['attributes']['class'][] = 'button btn-default btn icon-before';
+      $link['attributes']->addClass('mrgn-tp-sm');
+      $icon_class = 'glyphicon glyphicon-print';
+      $match = TRUE;
+    }
+
+    if ($match) {
+      $link['link']['#title'] = [
+        '#type' => 'inline_template',
+        '#template' => '<span class="{{ icon }}" aria-hidden="true"></span>{{ title }}',
+        '#context' => [
+          'title' => is_string($link['link']['#title']) ? $link['link']['#title'] : $link['link']['#title']->getUntranslatedString(),
+          'icon' => $icon_class,
+        ],
+      ];
+    }
+  }
+}

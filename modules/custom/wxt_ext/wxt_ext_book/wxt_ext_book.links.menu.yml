@@ -1,0 +1,5 @@
+wxt_ext_book.admin_config_wxt_ext_book:
+  title: WxT Book
+  description: 'Configure GC Subway book integration'
+  parent: wxt.admin_config_wxt
+  route_name: wxt_ext_book.admin_config_wxt_ext_book
