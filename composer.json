@@ -34,7 +34,7 @@
         "drupal/media_entity_slideshow": "^2.0",
         "drupal/menu_block": "1.6.0",
         "drupal/menu_breadcrumb": "^1.13",
-        "drupal/password_policy": "3.0-beta1",
+        "drupal/password_policy": "^3.0",
         "drupal/pathauto": "1.8",
         "drupal/simple_sitemap": "^3.8",
         "drupal/page_manager": "4.0-beta6",
@@ -276,10 +276,6 @@
             "drupal/panelizer": {
                 "Allow the previewing of nodes with panelizer":
                 "https://www.drupal.org/files/issues/2019-05-17/panelizer-node-previews-2750491-7.patch"
-            },
-            "drupal/password_policy": {
-                "Character types in character plugin not translatable":
-                "https://www.drupal.org/files/issues/2020-03-17/Password-Policy-constraints-summary-character-types-labels-not-translatable-2975694-16.patch"
             },
             "drupal/redis": {
                 "3004561 - Enable ssl scheme":
