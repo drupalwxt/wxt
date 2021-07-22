@@ -300,6 +300,7 @@ make build
 
 # Bring up the dev stack
 docker-compose -f docker-compose.yml build --no-cache
+docker-compose -f docker-compose.yml up -d
 
 # Install Drupal
 make drupal_install
