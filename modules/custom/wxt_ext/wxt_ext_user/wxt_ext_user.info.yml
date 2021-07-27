@@ -3,12 +3,11 @@ description: 'Provides default user roles, users, and permissions.'
 type: module
 core_version_requirement: '^8.8 || ^9'
 package: WxT
-
-# Required modules
 dependencies:
-  - config_rewrite:config_rewrite
-  - drupal:shortcut
-  - lightning_layout:lightning_layout
-  - page_manager:page_manager
-  - panels_ipe:panels_ipe
-  - wxt_translation:wxt_translation
+  - 'config_rewrite:config_rewrite'
+  - 'drupal:shortcut'
+  - 'lightning_layout:lightning_layout'
+  - 'page_manager:page_manager'
+  - 'panels_ipe:panels_ipe'
+  - 'wxt_translation:wxt_translation'
+version: 4.0.7-dev

@@ -3,8 +3,7 @@ description: 'Enable(s) and configure a default sitemap.'
 type: module
 package: WxT
 core_version_requirement: '^8.8.10 || ^9'
-
-# Required modules
 dependencies:
-  - simple_sitemap:simple_sitemap
-  - wxt_ext_page:wxt_ext_page
+  - 'simple_sitemap:simple_sitemap'
+  - 'wxt_ext_page:wxt_ext_page'
+version: 4.0.7-dev

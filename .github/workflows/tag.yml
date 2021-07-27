@@ -54,6 +54,7 @@ jobs:
         export PATH=/home/runner/.composer/vendor/bin:$PATH
         ./tarball.sh ${{ env.GITHUB_REFERENCE }}
 
+
     - name: Create Release
       id: create_release
       uses: actions/create-release@v1
@@ -147,9 +148,9 @@ jobs:
       working-directory: ./site-wxt
       run: |
         git add .
-        git commit -m "Update to latest version of WxT ${{ env.GITHUB_REFERENCE }}" || true
+        git commit -m "feat(composer): Update version in the composer.json file ${{ env.GITHUB_REFERENCE }}" || true
         git tag ${{ env.GITHUB_REFERENCE }}
-        git push origin 9.x
+        git push origin 9.1.x
         git push origin ${{ env.GITHUB_REFERENCE }}
 
     - name: Push to wxt-project the latest tags
@@ -158,7 +159,7 @@ jobs:
         git add .
         git commit -m "Update to latest version of WxT ${{ env.GITHUB_REFERENCE }}" || true
         git tag ${{ env.GITHUB_REFERENCE }}
-        git push origin 9.x
+        git push origin 9.1.x
         git push origin ${{ env.GITHUB_REFERENCE }}
 
     - name: Push to helm-drupal the latest tags

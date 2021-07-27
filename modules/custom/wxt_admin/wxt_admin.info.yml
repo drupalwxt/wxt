@@ -3,9 +3,8 @@ description: 'Installs default configuration for administrative tasks.'
 type: module
 core_version_requirement: '^8.8 || ^9'
 package: WxT
-
-# Required modules
 dependencies:
-  - admin_toolbar:admin_toolbar
-  - admin_toolbar_tools:admin_toolbar_tools
-  - admin_toolbar_links_access_filter:admin_toolbar_links_access_filter
+  - 'admin_toolbar:admin_toolbar'
+  - 'admin_toolbar_tools:admin_toolbar_tools'
+  - 'admin_toolbar_links_access_filter:admin_toolbar_links_access_filter'
+version: 4.0.7-dev

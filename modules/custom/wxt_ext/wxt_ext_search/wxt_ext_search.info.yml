@@ -1,13 +1,14 @@
 name: 'WxT Extend Search'
-description: Enable this module for a initial setup of Search API.
+description: 'Enable this module for a initial setup of Search API.'
 type: module
 core_version_requirement: '^8.8 || ^9'
 package: WxT
 dependencies:
-  - drupal:field
-  - drupal:image
-  - drupal:node
-  - drupal:text
-  - drupal:user
-  - drupal:views
-  - search_api:search_api
+  - 'drupal:field'
+  - 'drupal:image'
+  - 'drupal:node'
+  - 'drupal:text'
+  - 'drupal:user'
+  - 'drupal:views'
+  - 'search_api:search_api'
+version: 4.0.7-dev

@@ -3,11 +3,10 @@ description: 'Entity Queue functionality.'
 type: module
 core_version_requirement: '^8.8 || ^9'
 package: WxT
-
-# Required modules
 dependencies:
-  - content_moderation:content_moderation
-  - config_rewrite:config_rewrite
-  - drupal:entityqueue
-  - drupal:wxt_ext_landing_page
-  - wxt_ext_media:wxt_ext_media
+  - 'content_moderation:content_moderation'
+  - 'config_rewrite:config_rewrite'
+  - 'drupal:entityqueue'
+  - 'drupal:wxt_ext_landing_page'
+  - 'wxt_ext_media:wxt_ext_media'
+version: 4.0.7-dev

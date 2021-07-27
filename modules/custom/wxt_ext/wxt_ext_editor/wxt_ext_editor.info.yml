@@ -3,16 +3,15 @@ description: 'Overrides the default settings for CKEditor.'
 type: module
 core_version_requirement: '^8.8 || ^9'
 package: WxT
-
-# Required modules
 dependencies:
-  - ckeditor:ckeditor
-  - ckeditor_codemirror:ckeditor_codemirror
-  - ckeditor_details:ckeditor_details
-  - editor:editor
-  - entity_embed:entity_embed
-  - linkit:linkit
-  - media:media
-  - token_filter:token_filter
-  - url_embed:url_embed
-  - wxt_ext_media:wxt_ext_media
+  - 'ckeditor:ckeditor'
+  - 'ckeditor_codemirror:ckeditor_codemirror'
+  - 'ckeditor_details:ckeditor_details'
+  - 'editor:editor'
+  - 'entity_embed:entity_embed'
+  - 'linkit:linkit'
+  - 'media:media'
+  - 'token_filter:token_filter'
+  - 'url_embed:url_embed'
+  - 'wxt_ext_media:wxt_ext_media'
+version: 4.0.7-dev

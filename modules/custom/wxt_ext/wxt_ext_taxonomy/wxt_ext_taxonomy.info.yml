@@ -2,8 +2,7 @@ name: 'WxT Extend Taxonomy'
 description: 'Provides taxonomy vocabularies used for categorizing content.'
 type: module
 core_version_requirement: '^8.8 || ^9'
-package: 'WxT'
-
-# Required modules
+package: WxT
 dependencies:
-  - drupal:taxonomy
+  - 'drupal:taxonomy'
+version: 4.0.7-dev

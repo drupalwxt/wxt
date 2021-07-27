@@ -3,8 +3,7 @@ description: 'Add Font Awesome to the site.'
 type: module
 core_version_requirement: '^8.8 || ^9'
 package: WxT
-
-# Required modules
 dependencies:
-  - config_rewrite:config_rewrite
-  - fontawesome:fontawesome
+  - 'config_rewrite:config_rewrite'
+  - 'fontawesome:fontawesome'
+version: 4.0.7-dev

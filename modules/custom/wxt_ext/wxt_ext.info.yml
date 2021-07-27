@@ -3,34 +3,33 @@ description: 'Wrapper module for enabling all of the WxT Extensions.'
 type: module
 core_version_requirement: '^8.8 || ^9'
 package: WxT
-
-# Required modules
 dependencies:
-  - wxt_core:wxt_core
-  - wxt_translation:wxt_translation
-  - wxt_ext_archived:wxt_ext_archived
-  - wxt_ext_blocks:wxt_ext_blocks
-  - wxt_ext_blog:wxt_ext_blog
-  - wxt_ext_breadcrumb:wxt_ext_breadcrumb
-  - wxt_ext_comment:wxt_ext_comment
-  - wxt_ext_config:wxt_ext_config
-  - wxt_ext_editor:wxt_ext_editor
-  - wxt_ext_fontawesome:wxt_ext_fontawesome
-  - wxt_ext_group:wxt_ext_group
-  - wxt_ext_landing_page:wxt_ext_landing_page
-  - wxt_ext_layout:wxt_ext_layout
-  - wxt_ext_media:wxt_ext_media
-  - wxt_ext_media_slideshow:wxt_ext_media_slideshow
-  - wxt_ext_metatag:wxt_ext_metatag
-  - wxt_ext_migration:wxt_ext_migration
-  - wxt_ext_page:wxt_ext_page
-  - wxt_ext_paragraph:wxt_ext_paragraph
-  - wxt_ext_password_policy:wxt_ext_password_policy
-  - wxt_ext_queue:wxt_ext_queue
-  - wxt_ext_search:wxt_ext_search
-  - wxt_ext_search_db:wxt_ext_search_db
-  - wxt_ext_sitemap:wxt_ext_sitemap
-  - wxt_ext_taxonomy:wxt_ext_taxonomy
-  - wxt_ext_theme:wxt_ext_theme
-  - wxt_ext_user:wxt_ext_user
-  - wxt_ext_webform:wxt_ext_webform
+  - 'wxt_core:wxt_core'
+  - 'wxt_translation:wxt_translation'
+  - 'wxt_ext_archived:wxt_ext_archived'
+  - 'wxt_ext_blocks:wxt_ext_blocks'
+  - 'wxt_ext_blog:wxt_ext_blog'
+  - 'wxt_ext_breadcrumb:wxt_ext_breadcrumb'
+  - 'wxt_ext_comment:wxt_ext_comment'
+  - 'wxt_ext_config:wxt_ext_config'
+  - 'wxt_ext_editor:wxt_ext_editor'
+  - 'wxt_ext_fontawesome:wxt_ext_fontawesome'
+  - 'wxt_ext_group:wxt_ext_group'
+  - 'wxt_ext_landing_page:wxt_ext_landing_page'
+  - 'wxt_ext_layout:wxt_ext_layout'
+  - 'wxt_ext_media:wxt_ext_media'
+  - 'wxt_ext_media_slideshow:wxt_ext_media_slideshow'
+  - 'wxt_ext_metatag:wxt_ext_metatag'
+  - 'wxt_ext_migration:wxt_ext_migration'
+  - 'wxt_ext_page:wxt_ext_page'
+  - 'wxt_ext_paragraph:wxt_ext_paragraph'
+  - 'wxt_ext_password_policy:wxt_ext_password_policy'
+  - 'wxt_ext_queue:wxt_ext_queue'
+  - 'wxt_ext_search:wxt_ext_search'
+  - 'wxt_ext_search_db:wxt_ext_search_db'
+  - 'wxt_ext_sitemap:wxt_ext_sitemap'
+  - 'wxt_ext_taxonomy:wxt_ext_taxonomy'
+  - 'wxt_ext_theme:wxt_ext_theme'
+  - 'wxt_ext_user:wxt_ext_user'
+  - 'wxt_ext_webform:wxt_ext_webform'
+version: 4.0.7-dev

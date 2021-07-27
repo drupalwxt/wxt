@@ -3,13 +3,12 @@ description: 'Provides functionality for storing, retrieving, and tabulating web
 type: module
 core_version_requirement: '^8.8 || ^9'
 package: WxT
-
-# Required modules
 dependencies:
-  - content_moderation:content_moderation
-  - config_rewrite:config_rewrite
-  - lightning_workflow:lightning_workflow
-  - webform:webform
-  - webform_bootstrap:webform_bootstrap
-  - webform_node:webform_node
-  - webform_ui:webform_ui
+  - 'content_moderation:content_moderation'
+  - 'config_rewrite:config_rewrite'
+  - 'lightning_workflow:lightning_workflow'
+  - 'webform:webform'
+  - 'webform_bootstrap:webform_bootstrap'
+  - 'webform_node:webform_node'
+  - 'webform_ui:webform_ui'
+version: 4.0.7-dev

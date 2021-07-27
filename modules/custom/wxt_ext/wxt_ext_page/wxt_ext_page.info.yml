@@ -3,15 +3,14 @@ description: 'Provides customizations / defaults for the page content type.'
 type: module
 core_version_requirement: '^8.8 || ^9'
 package: WxT
-
-# Required modules
 dependencies:
-  - config_rewrite:config_rewrite
-  - content_moderation:content_moderation
-  - layout_builder_st:layout_builder_st
-  - lightning_layout:lightning_layout
-  - lightning_page:lightning_page
-  - lightning_workflow:lightning_workflow
-  - wxt_core:wxt_core
-  - wxt_translation:wxt_translation
-  - wxt_ext_layout:wxt_ext_layout
+  - 'config_rewrite:config_rewrite'
+  - 'content_moderation:content_moderation'
+  - 'layout_builder_st:layout_builder_st'
+  - 'lightning_layout:lightning_layout'
+  - 'lightning_page:lightning_page'
+  - 'lightning_workflow:lightning_workflow'
+  - 'wxt_core:wxt_core'
+  - 'wxt_translation:wxt_translation'
+  - 'wxt_ext_layout:wxt_ext_layout'
+version: 4.0.7-dev

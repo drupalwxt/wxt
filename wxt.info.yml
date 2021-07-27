@@ -1,16 +1,11 @@
-name: 'WxT'
+name: WxT
 description: 'A Drupal distribution created to leverage the Web Experience Toolkit.'
 type: profile
 core_version_requirement: '^8.8 || ^9'
 distribution:
   name: WxT
-
-# Language
 keep_english: true
-
-# Required modules
 install:
-  # core
   - big_pipe
   - dynamic_page_cache
   - inline_form_errors
@@ -21,17 +16,15 @@ install:
   - taxonomy
   - text
   - user
-  # core (multilingual)
   - config_translation
   - content_translation
   - language
   - locale
-  # wxt
   - wxt_admin
   - wxt_core
   - wxt_library
   - wxt_translation
-
 themes:
   - claro
   - wxt_bootstrap
+version: 4.0.7-dev

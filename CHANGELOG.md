@@ -1,3 +1,39 @@
+## v4.1.0
+
+- Updates for Drupal Core
+  - [SA-core-2021-003](https://www.drupal.org/sa-core-2021-004)
+- Updates for WxT
+  - Issue #3219195 by smulvih2: Configure book module to support GC Subway functionality
+  - Issue #3212225: Remove Panelizer completely for 4.1.x line
+- Updates for WxT Bootstrap
+  - Issue #3219195 by smulvih2: Configure book module to support GC Subway functionality
+  - Issue #3223026 by smulvih2: Toolbar menu icons are smaller on wxt_bootstrap
+  - Issue #3222228 by smulvih2: WxT Search Form Layout Issue
+- Updates for WxT Library
+  - feat(gcweb): Switch to gcweb v9.3.0
+  - feat(gcweb): Switch to wet-boew v4.0.42.2
+
+Upgrade path:
+
+> Note: No special notes for this release.
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
+- Run Lightning configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:lightning`
+
+- Run WxT configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:wxt`
+
+**Note:** N/A
+
 ## v4.0.7
 
 - Updates for WxT

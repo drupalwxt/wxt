@@ -3,15 +3,14 @@ description: 'Provides custom and responsive panel layouts.'
 type: module
 core_version_requirement: '^8.8 || ^9'
 package: WxT
-
-# Required modules
 dependencies:
-  - bootstrap_layouts:bootstrap_layouts
-  - config_rewrite:config_rewrite
-  - core_context:core_context
-  - layout_builder_st:layout_builder_st
-  - layout_library:layout_library
-  - lightning_layout:lightning_layout
-  - lightning_landing_page:lightning_landing_page
-  - lightning_page:lightning_page
-  - page_manager_ui:page_manager_ui
+  - 'bootstrap_layouts:bootstrap_layouts'
+  - 'config_rewrite:config_rewrite'
+  - 'core_context:core_context'
+  - 'layout_builder_st:layout_builder_st'
+  - 'layout_library:layout_library'
+  - 'lightning_layout:lightning_layout'
+  - 'lightning_landing_page:lightning_landing_page'
+  - 'lightning_page:lightning_page'
+  - 'page_manager_ui:page_manager_ui'
+version: 4.0.7-dev
