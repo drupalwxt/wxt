@@ -25,4 +25,4 @@ dependencies:
   - 'url_embed:url_embed'
   - 'views_bootstrap:views_bootstrap'
 configure: wxt4032404.config
-version: 4.0.7-dev
+version: 4.1.0

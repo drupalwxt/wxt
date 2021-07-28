@@ -27,4 +27,4 @@ install:
 themes:
   - claro
   - wxt_bootstrap
-version: 4.0.7-dev
+version: 4.1.0
