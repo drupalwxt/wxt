@@ -11,4 +11,4 @@ dependencies:
   - 'webform_bootstrap:webform_bootstrap'
   - 'webform_node:webform_node'
   - 'webform_ui:webform_ui'
-version: 4.1.0
+version: 4.1.0-dev

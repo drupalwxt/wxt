@@ -42,7 +42,9 @@ final class ConfigureLegacyProject {
     ];
     $project['extra']['installer-types'] = ['bower-asset', 'npm-asset'];
     $project['extra']['patchLevel']['drupal/core'] = '-p2';
-    $project['extra']['patches-ignore'] = $event->getComposer()->getPackage()->getExtra()['patches-ignore'];
+    if (!empty($project['extra']['patches-ignore'])) {
+      $project['extra']['patches-ignore'] = $event->getComposer()->getPackage()->getExtra()['patches-ignore'];
+    }
 
     // Composer doesn't like empty sections of composer.json, so
     // filter those out before we write the configuration.
