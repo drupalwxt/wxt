@@ -1,0 +1,10 @@
+block.settings.wxt_archived_block:
+  type: block_settings
+  label: 'field translations'
+  mapping:
+    archived_title:
+      type: text
+      label: 'Archived title'
+    archived_text:
+      type: text
+      label: 'Archived text'
