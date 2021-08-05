@@ -1,0 +1,293 @@
+id: gc_intranet_menu_link
+label: Embedded data feed of menu link content
+migration_group: gc_intranet
+migration_tags:
+  - Menu
+source:
+  plugin: embedded_data
+  # Enforce default language to english
+  default_lang: true
+  data_rows:
+    # Brand.
+    - mlid: 'ml_brand_1'
+      link_title: 'Social media'
+      description: 'Social media section.'
+      menu_name: 'brand'
+      link_path: 'https://www.canada.ca/en/social.html'
+      options: []
+      external: 1
+      weight: 0
+      parent: 0
+    - mlid: 'ml_brand_2'
+      link_title: 'Mobile applications'
+      description: 'Mobile applications section.'
+      menu_name: 'brand'
+      link_path: 'https://www.canada.ca/en/mobile.html'
+      options: []
+      external: 1
+      weight: 1
+      parent: 0
+    - mlid: 'ml_brand_3'
+      link_title: 'About Canada.ca'
+      description: 'About Canada.ca section.'
+      menu_name: 'brand'
+      link_path: 'https://www.canada.ca/en/government/about.html'
+      options: []
+      external: 1
+      weight: 2
+      parent: 0
+    - mlid: 'ml_brand_4'
+      link_title: 'Terms and conditions'
+      description: 'Terms and conditions section.'
+      menu_name: 'brand'
+      link_path: 'https://www.canada.ca/en/transparency/terms.html'
+      options: []
+      external: 1
+      weight: 3
+      parent: 0
+    - mlid: 'ml_brand_5'
+      link_title: 'Privacy'
+      description: 'Privacy section.'
+      menu_name: 'brand'
+      link_path: 'https://www.canada.ca/en/transparency/privacy.html'
+      options: []
+      external: 1
+      weight: 4
+      parent: 0
+    # Sidebar.
+    - mlid: 'ml_sidebar_1'
+      link_title: 'Drupal'
+      description: 'Drupal.org'
+      menu_name: 'sidebar'
+      link_path: 'http://drupal.org'
+      options: []
+      external: 1
+      weight: 0
+      parent: 0
+    - mlid: 'ml_sidebar_1_sub_1'
+      link_title: 'Drupal 9'
+      description: 'Drupal 9 introduction'
+      menu_name: 'sidebar'
+      link_path: 'internal:/node/2'
+      options: []
+      external: 0
+      weight: 0
+      parent: 'ml_sidebar_1'
+    - mlid: 'ml_sidebar_1_sub_1_sub_1'
+      link_title: 'Why Drupal 9'
+      description: 'Meet the world''s leading digital experience platform.'
+      menu_name: 'sidebar'
+      link_path: 'https://www.drupal.org/about/9'
+      options: []
+      external: 0
+      weight: 0
+      parent: 'ml_sidebar_1_sub_1'
+    - mlid: 'ml_sidebar_1_sub_1_sub_2'
+      link_title: 'Multilingual Improvements'
+      description: 'Drupal 9 multilingual improvements.'
+      menu_name: 'sidebar'
+      link_path: 'https://www.drupal.org/features/multilingual'
+      options: []
+      external: 0
+      weight: 0
+      parent: 'ml_sidebar_1_sub_1'
+    - mlid: 'ml_sidebar_1_sub_2'
+      link_title: 'Drupal WxT for Drupal 9'
+      description: 'Drupal WxT introduction'
+      menu_name: 'sidebar'
+      link_path: 'internal:/node/1'
+      options: []
+      external: 0
+      weight: 0
+      parent: 'ml_sidebar_1'
+    - mlid: 'ml_sidebar_1_sub_2_sub_1'
+      link_title: 'Drupal WxT (GitHub)'
+      description: 'Drupal WxT on GitHub'
+      menu_name: 'sidebar'
+      link_path: 'http://github.com/drupalwxt/wxt'
+      options: []
+      external: 0
+      weight: 0
+      parent: 'ml_sidebar_1_sub_2'
+    - mlid: 'ml_sidebar_1_sub_2_sub_2'
+      link_title: 'Drupal WxT (Drupal.org)'
+      description: 'Drupal WxT on Drupal.org.'
+      menu_name: 'sidebar'
+      link_path: 'http://drupal.org/project/wxt'
+      options: []
+      external: 0
+      weight: 0
+      parent: 'ml_sidebar_1_sub_2'
+    # Main.
+    - mlid: 'main_news'
+      link_title: 'News'
+      description: ''
+      menu_name: 'main'
+      link_path: 'https://intranet.canada.ca/psc-fsc/index-eng.asp'
+      options: []
+      external: 1
+      weight: 2
+      parent: 0
+    - mlid: 'main_news_sub_1'
+      link_title: 'Messages for employees'
+      description: 'Messages for employees.'
+      menu_name: 'main'
+      link_path: 'https://intranet.canada.ca/psc-fsc/messages/index-eng.asp'
+      options: []
+      external: 0
+      weight: 0
+      parent: 'main_news'
+    - mlid: 'main_human_resources'
+      link_title: 'Human resources'
+      description: ''
+      menu_name: 'main'
+      link_path: 'https://intranet.canada.ca/hr-rh/index-eng.asp'
+      options: []
+      external: 1
+      weight: 3
+      parent: 0
+    - mlid: 'main_human_resources_sub_1'
+      link_title: 'Pay, pensions and benefits'
+      description: 'Pay, pensions and benefits.'
+      menu_name: 'main'
+      link_path: 'https://intranet.canada.ca/ppb-rpa/index-eng.asp'
+      options: []
+      external: 0
+      weight: 0
+      parent: 'main_human_resources'
+    - mlid: 'main_career'
+      link_title: 'Career development and learning'
+      description: ''
+      menu_name: 'main'
+      link_path: 'https://intranet.canada.ca/cdl-dca/index-eng.asp'
+      options: []
+      external: 1
+      weight: 4
+      parent: 0
+    - mlid: 'main_career_sub_1'
+      link_title: 'Find a job'
+      description: 'Find a job.'
+      menu_name: 'main'
+      link_path: 'https://intranet.canada.ca/cdl-dca/fj-te/index-eng.asp'
+      options: []
+      external: 0
+      weight: 0
+      parent: 'main_career'
+    - mlid: 'main_services'
+      link_title: 'Services and tools'
+      description: ''
+      menu_name: 'main'
+      link_path: 'https://intranet.canada.ca/wg-tg/index-eng.asp'
+      options: []
+      external: 1
+      weight: 5
+      parent: 0
+    - mlid: 'main_services_sub_1'
+      link_title: 'Reporting on government finances'
+      description: 'Reporting on government finances.'
+      menu_name: 'main'
+      link_path: 'https://intranet.canada.ca/wg-tg/gf-fg/index-eng.asp'
+      options: []
+      external: 0
+      weight: 0
+      parent: 'main_services'
+   # Account.
+    - mlid: user_register
+      link_title: 'Registration'
+      description: ''
+      menu_name: account
+      link_path: 'internal:/en/user/register'
+      options: []
+      external: 0
+      weight: 5
+      parent: 0
+    - mlid: user_rules
+      link_title: 'Rules of Engagement'
+      description: ''
+      menu_name: account
+      link_path: 'internal:/en/rules-engagement'
+      options: []
+      external: 0
+      weight: 10
+      parent: 0
+    # Footer.
+    - mlid: 'ml_footer_1'
+      link_title: 'Contact us'
+      description: 'Contact us section.'
+      menu_name: 'footer'
+      link_path: 'https://intranet.canada.ca/contact/contactgc-eng.aspx'
+      options: []
+      external: 1
+      weight: 0
+      parent: 0
+    - mlid: 'ml_footer_2'
+      link_title: 'About GCTools'
+      description: 'About GCTools section.'
+      menu_name: 'footer'
+      link_path: 'https://intranet.canada.ca/ict-oci/index-eng.asp'
+      options: []
+      external: 1
+      weight: 1
+      parent: 0
+    - mlid: 'ml_footer_3'
+      link_title: 'Canada.ca'
+      description: 'Canada.ca section.'
+      menu_name: 'footer'
+      link_path: 'https://www.canada.ca/en.html'
+      options: []
+      external: 1
+      weight: 2
+      parent: 0
+    - mlid: 'ml_footer_4'
+      link_title: 'Terms and conditions'
+      description: 'Terms and conditions section.'
+      menu_name: 'footer'
+      link_path: 'https://intranet.canada.ca/terms-avis-eng.asp'
+      options: []
+      external: 1
+      weight: 3
+      parent: 0
+  # Under 'ids', we identify source fields populated above which will uniquely
+  # identify each imported item. The 'type' makes sure the migration map table
+  # uses the proper schema type for stored the IDs.
+  ids:
+    mlid:
+      type: string
+process:
+  id: mlid
+  bundle: 'constants/bundle'
+  title: link_title
+  description: description
+  menu_name: menu_name
+  'link/uri': link_path
+  'link/options': options
+  route:
+    plugin: route
+    source:
+      - link_path
+      - options
+  route_name: '@route/route_name'
+  route_parameters: '@route/route_parameters'
+  url: '@route/url'
+  options: '@route/options'
+  external: external
+  weight: weight
+  expanded:
+    plugin: default_value
+    default_value: 1
+  enabled:
+    plugin: default_value
+    default_value: 1
+  parent:
+    plugin: menu_link_parent
+    source:
+      - parent
+  changed:
+    plugin: default_value
+    default_value: ''
+destination:
+  plugin: entity:menu_link_content
+migration_dependencies:
+  required:
+    - menu
+    - wxt_node_page
