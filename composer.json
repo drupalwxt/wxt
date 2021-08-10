@@ -193,7 +193,9 @@
                 "Enter drupal/core patch #2470896 description here":
                 "https://www.drupal.org/files/issues/2021-06-10/2470896-244.patch",
                 "Enter drupal/core patch #3173808 description here":
-                "https://www.drupal.org/files/issues/2021-01-31/3173808-9-Make-book-child-content-type-configura.patch"
+                "https://www.drupal.org/files/issues/2021-01-31/3173808-9-Make-book-child-content-type-configura.patch",
+                "Enter drupal/core patch #2546212 description here":
+                "https://www.drupal.org/files/issues/2020-10-02/2546212-155.patch"
             },
             "drupal/ctools": {
                 "Enter drupal/ctools patch #2667652 description here":
@@ -204,10 +206,6 @@
             "drupal/diff": {
                 "The getModerationState() function fails to take translations into consideration":
                 "https://www.drupal.org/files/issues/2018-12-03/ModerationState-error-of-translated-node-in-revision-overview-page-3004705-4.patch"
-            },
-            "drupal/field_group": {
-                "Enter drupal/field_group patch #3111107 description here":
-                "https://www.drupal.org/files/issues/2020-02-04/3111107-2--fix-translations.patch"
             },
             "drupal/group": {
                 "Enter drupal/group patch #2817109 description here":
