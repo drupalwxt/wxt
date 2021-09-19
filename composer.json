@@ -143,7 +143,9 @@
         "patches": {
             "drupal/bootstrap": {
                 "Enter drupal/bootstrap patch #2881978 description here":
-                "https://www.drupal.org/files/issues/2018-10-28/temporarily_disable-2881978-3.patch"
+                "https://www.drupal.org/files/issues/2018-10-28/temporarily_disable-2881978-3.patch",
+                "Enter drupal/bootstrap patch #3209773 description here":
+                "https://www.drupal.org/files/issues/2021-08-24/bootstrap-toggle_undefined-3209773-8.patch"
             },
             "drupal/bootstrap_layouts": {
                 "Enter drupal/bootstrap patch #3018633 description here":
