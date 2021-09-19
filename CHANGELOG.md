@@ -1,3 +1,47 @@
+## v4.1.1
+
+- Updates for Drupal Core (v9.1.13)
+  - [SA-core-2021-009](https://www.drupal.org/sa-core-2021-009)
+- Updates for WxT
+  - Addition of the new GC Intranet Theme [#3226972](https://www.drupal.org/project/wxt/issues/3226972)
+  - WxT Ext Archived module improvements [#3226555](https://www.drupal.org/project/wxt/issues/3226555)
+  - Resolve this.$toggleWeightBUtton is undefined [#3209773](https://www.drupal.org/project/wxt/issues/3209773)
+- Updates for WxT Bootstrap
+  - Addition of the new GC Intranet Theme [#3226972](https://www.drupal.org/project/wxt/issues/3226972)
+  - Remove remnant flag template [#3227017](https://www.drupal.org/project/wxt/issues/3227017)
+  - Status message layout issues [#3227944](https://www.drupal.org/project/wxt/issues/3227944)
+  - All input buttons have title attribute set to "Search" [#3230876](https://www.drupal.org/project/wxt/issues/3230876)
+- Updates for WxT Library
+  - Addition of the new GC Intranet Theme [#3226972](https://www.drupal.org/project/wxt/issues/3226972)
+  - GC Intranet search block layout issues [#3229155](https://www.drupal.org/project/wxt/issues/3229155)
+
+Upgrade path:
+
+> Note: No special notes for this release.
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
+- Run Lightning configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:lightning`
+
+- Run WxT configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:wxt`
+
+**Note:** The default GC Intranet theme has been updated to the latest specification. You will need to manually switch to the gc-intranet-legacy theme if you wish to have no changes to the theme.
+
+```sh
+drush config-set wxt_library.settings wxt.theme theme-gcweb-intranet-legacy
+```
+
+The only additional caveat is that if you have any of your own pages referencing theme-gcweb-intranet.tpl.php you will now have to append the suffix "--legacy" to them.
+
 ## v4.1.0
 
 - Updates for Drupal Core
