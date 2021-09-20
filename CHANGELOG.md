@@ -5,10 +5,10 @@
 - Updates for WxT
   - Addition of the new GC Intranet Theme [#3226972](https://www.drupal.org/project/wxt/issues/3226972)
   - WxT Ext Archived module improvements [#3226555](https://www.drupal.org/project/wxt/issues/3226555)
-  - Resolve this.$toggleWeightBUtton is undefined [#3209773](https://www.drupal.org/project/wxt/issues/3209773)
+  - Resolve this.$toggleWeightBUtton is undefined [#3230065](https://www.drupal.org/project/wxt/issues/3230065)
 - Updates for WxT Bootstrap
   - Addition of the new GC Intranet Theme [#3226972](https://www.drupal.org/project/wxt/issues/3226972)
-  - Remove remnant flag template [#3227017](https://www.drupal.org/project/wxt/issues/3227017)
+  - Remove remnant flag template [#3226974](https://www.drupal.org/project/wxt/issues/3226974)
   - Status message layout issues [#3227944](https://www.drupal.org/project/wxt/issues/3227944)
   - All input buttons have title attribute set to "Search" [#3230876](https://www.drupal.org/project/wxt/issues/3230876)
 - Updates for WxT Library
@@ -34,13 +34,13 @@ Upgrade path:
   - `drush cache:rebuild`
   - `drush update:wxt`
 
-**Note:** The default GC Intranet theme has been updated to the latest specification. You will need to manually switch to the gc-intranet-legacy theme if you wish to have no changes to the theme.
+**Note:** The default GC Intranet theme has been updated to the latest specification. You will need to manually switch to the `gc-intranet-legacy` theme if you wish to have no changes to the theme.
 
 ```sh
 drush config-set wxt_library.settings wxt.theme theme-gcweb-intranet-legacy
 ```
 
-The only additional caveat is that if you have any of your own pages referencing theme-gcweb-intranet.tpl.php you will now have to append the suffix "--legacy" to them.
+The only additional caveat is that if you have any of your own pages referencing theme-gcweb-intranet.tpl.php you will now have to append the suffix `--legacy` to them.
 
 ## v4.1.0
 
