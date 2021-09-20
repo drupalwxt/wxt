@@ -7,4 +7,4 @@ dependencies:
   - 'field_formatter:field_formatter'
   - 'media_entity_slideshow:media_entity_slideshow'
   - 'wxt_ext_media:wxt_ext_media'
-version: 4.1.0-dev
+version: 4.1.1

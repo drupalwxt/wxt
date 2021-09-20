@@ -9,4 +9,4 @@ dependencies:
   - 'metatag_dc_advanced:metatag_dc_advanced'
   - 'metatag_page_manager:metatag_page_manager'
   - 'metatag_views:metatag_views'
-version: 4.1.0-dev
+version: 4.1.1
