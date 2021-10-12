@@ -30,7 +30,7 @@ The Drupal WxT distribution is a web content management system which assists in 
 
 Please consult our Architectural Diagram for a example implementation on Kubernetes:
 
-* [Architectural Diagram](https://github.com/drupalwxt/helm-drupal/blob/master/docs/diagram-drupal.pdf)
+- [Architectural Diagram](https://github.com/drupalwxt/helm-drupal/blob/master/docs/diagram-drupal.pdf)
 
 The goal of WxT 4.1.x line is to make the installation profile very minimal by default but providing additional extensions that can be enabled as desired.
 
@@ -46,29 +46,29 @@ In order to provide a list of the optional enabled extensions during the install
 
 For more information please consult the following:
 
-* [WxT Minimal Install][wxt-minimal-install]
-* [Upgrade Path from 3.0.x -> 4.1.x][wxt-upgrade-path]
-* [Roadmap for Drupal 9][wxt-roadmap]
-* [Subprofile install of modules and wxt_extensions][wxt-subprofile]
+- [WxT Minimal Install][wxt-minimal-install]
+- [Upgrade Path from 3.0.x -> 4.1.x][wxt-upgrade-path]
+- [Roadmap for Drupal 9][wxt-roadmap]
+- [Subprofile install of modules and wxt_extensions][wxt-subprofile]
 
 ### Lightning Components
 
 For the optional extensions that Drupal WxT provides we make use of the following Lightning modules:
 
-* [Lightning API](https://www.drupal.org/project/lightning_api)
-* [Lightning Core](https://www.drupal.org/project/lightning_core)
-* [Lightning Layout](https://www.drupal.org/project/lightning_layout)
-* [Lightning Media](https://www.drupal.org/project/lightning_media)
-* [Lightning Workflow](https://www.drupal.org/project/lightning_workflow)
+- [Lightning API](https://www.drupal.org/project/lightning_api)
+- [Lightning Core](https://www.drupal.org/project/lightning_core)
+- [Lightning Layout](https://www.drupal.org/project/lightning_layout)
+- [Lightning Media](https://www.drupal.org/project/lightning_media)
+- [Lightning Workflow](https://www.drupal.org/project/lightning_workflow)
 
 > Note: Originally we were leveraging the [Lightning](https://www.drupal.org/project/lightning) installation profile but since Lightning now provides support for the [individual components outside of the profile][lightning_split] we now leverage them directly.
 
 For more information about Lightning:
 
-* https://www.acquia.com/products-services/acquia-lightning
-* https://www.acquia.com/blog/building-drupal-8-sites-acquia-lightning-cuts-costs-100000
-* https://www.drupal.org/docs/8/distributions/degov/about-degov
-* https://github.com/govcms/govcms8
+- https://www.acquia.com/products-services/acquia-lightning
+- https://www.acquia.com/blog/building-drupal-8-sites-acquia-lightning-cuts-costs-100000
+- https://www.drupal.org/docs/8/distributions/degov/about-degov
+- https://github.com/govcms/govcms8
 
 ## Installing WxT
 
@@ -114,9 +114,9 @@ drush config-set wxt_library.settings wxt.theme theme-gcweb -y
 
 The standalone install is provided as an additional method for those who do not wish to have the full weight of a distribution and its required dependencies. You will need to add at the minimum the below listed modules and themes (including Bootstrap base theme) as well as the WxT jQuery Framework assets installed into the `/libraries` folder with the proper naming scheme.
 
-* [WxT Bootstrap][wxt-bootstrap]
-* [WxT Library][wxt-library]
-* [WxT jQuery Framework assets][wxt-jquery]
+- [WxT Bootstrap][wxt-bootstrap]
+- [WxT Library][wxt-library]
+- [WxT jQuery Framework assets][wxt-jquery]
 
 > Note: We heavily recommend that you use the distribution method. Limited support is provided for the standalone method.
 
@@ -192,8 +192,8 @@ At the moment this remains an opt-in process and you will have to add the
 following modules to your `composer.json` before you add the code snippet
 below to your `settings.php` file.
 
-* [Configuration Split](https://www.drupal.org/project/config_split)
-* [Configuration Ignore](https://www.drupal.org/project/config_ignore)
+- [Configuration Split](https://www.drupal.org/project/config_split)
+- [Configuration Ignore](https://www.drupal.org/project/config_ignore)
 
 Once enabled all default configuration will be stored in `/sites/default/files/config/default/`
 and then depending on your environment additionally configuration splits can
@@ -278,16 +278,22 @@ if ($split != 'none') {
 // $config["$split_filename_prefix.SITENAME"]['status'] = TRUE;
 ```
 
-## Docker Containers (Optional)
+## Containers (Optional)
 
 For the (optional) container based development workflow this is roughly the steps that are followed.
-
-> Note: The [docker-scaffold][docker-scaffold] has now been moved to its own repository. Should you wish to use the docker workflow you simply need to run the following command in the site-wxt repository's working directory.
 
 ```sh
 # Git clone docker scaffold
 git clone https://github.com/drupalwxt/docker-scaffold.git docker
+```
 
+> Note: The [docker-scaffold][docker-scaffold] has now been moved to its own repository. Should you wish to use the docker workflow you simply need to run the following command in the site-wxt repository's working directory.
+
+### Linux Environments
+
+The following are the steps you should follow for a Linux based environment.
+
+```sh
 # Create symlinks
 ln -s docker/docker-compose.yml docker-compose.yml
 ln -s docker/docker-compose-ci.yml docker-compose-ci.yml
@@ -301,6 +307,53 @@ make build
 # Bring up the dev stack
 docker-compose -f docker-compose.yml build --no-cache
 docker-compose -f docker-compose.yml up -d
+
+# Install Drupal
+make drupal_install
+
+# Development configuration
+./docker/bin/drush config-set system.performance js.preprocess 0 -y && \
+./docker/bin/drush config-set system.performance css.preprocess 0 -y && \
+./docker/bin/drush php-eval 'node_access_rebuild();' && \
+./docker/bin/drush config-set wxt_library.settings wxt.theme theme-gcweb -y && \
+./docker/bin/drush cr
+
+# Migrate default content
+./docker/bin/drush migrate:import --group wxt --tag 'Core' && \
+./docker/bin/drush migrate:import --group gcweb --tag 'Core' && \
+./docker/bin/drush migrate:import --group gcweb --tag 'Menu'
+```
+
+### MacOSX Environments
+
+There are currently known performance issues related to the file mounting in `Docker for Desktop`
+
+- https://github.com/docker/roadmap/issues/7
+
+This is supposed to be fixed with the new virtualization framework in MacOSX 11.1+ but for the moment mutagen should be used.
+
+```sh
+# Mutagen Setup
+export VOLUME=mutagen-cache
+export NAME=site-wxt
+docker volume create $VOLUME
+docker container create --name $VOLUME -v $VOLUME:/volumes/$VOLUME mutagenio/sidecar
+docker start $VOLUME
+mutagen sync create --name $NAME --sync-mode=two-way-resolved --default-file-mode-beta 0666 --default-directory-mode-beta 0777  $(pwd) docker://mutagen-cache/volumes/mutagen-cache
+
+
+# Create symlinks
+ln -s docker/docker-compose-mutagen.yml docker-compose-mutagen.yml
+
+# Composer install
+export COMPOSER_MEMORY_LIMIT=-1 && composer install
+
+# Make our base docker image
+make build
+
+# Bring up the dev stack
+docker-compose -f docker-compose-mutagen.yml build --no-cache
+docker-compose -f docker-compose-mutagen.yml up -d
 
 # Install Drupal
 make drupal_install
@@ -338,38 +391,38 @@ Extended with code and lessons learned by the [Acquia Team](https://acquia.com) 
 
 <!-- Links Referenced -->
 
-[acquia]:                       https://acquia.com
-[changelog]:                    https://github.com/drupalwxt/wxt/blob/4.1.x/CHANGELOG.md
-[demo]:                         https://drupalwxt.govcloud.ca
-[docs]:                         http://drupalwxt.github.io
-[docker-hub]:                   https://hub.docker.com/r/drupalwxt/site-wxt
-[docker-scaffold]:              https://github.com/drupalwxt/docker-scaffold.git
-[drupal]:                       http://drupal.org/project/wxt
-[drupal7]:                      http://drupal.org/project/wetkit
-[githubci]:                     https://github.com/drupalwxt/wxt/actions
-[githubci-badge]:               https://github.com/drupalwxt/wxt/workflows/build/badge.svg
-[github-helm]:                  https://github.com/drupalwxt/helm-drupal
-[github-wxt]:                   https://github.com/drupalwxt/wxt
-[github-site-wxt]:              https://github.com/drupalwxt/site-wxt
-[issue-drupal]:                 https://drupal.org/project/issues/wxt
-[issue-github]:                 https://github.com/drupalwxt/wxt/issues
-[lightning]:                    https://github.com/acquia/lightning
-[lightning_split]:              https://www.drupal.org/project/lightning/issues/2933252
-[migrate]:                      https://www.drupal.org/node/2127611
-[project]:                      https://github.com/drupalwxt/wxt-project#user-content-new-project
-[project-new]:                  https://github.com/drupalwxt/wxt-project#user-content-new-project
-[readme]:                       https://github.com/drupalwxt/wxt/blob/4.1.x/README.md
-[release-github]:               https://github.com/drupalwxt/wxt/releases
-[simplytest]:                   http://simplytest.me/project/wxt/8.x-3.x
-[standard_accessibility]:       https://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=23601
-[standard_usability]:           http://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=24227
-[standard_interoperability]:    http://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=25875
-[wet-boew]:                     https://github.com/wet-boew/wet-boew
-[wet-boew-page]:                https://www.canada.ca/en/treasury-board-secretariat/services/government-communications/web-experience-toolkit.html
-[wxt-bootstrap]:                http://drupal.org/project/wxt_bootstrap
-[wxt-jquery]:                   https://github.com/drupalwxt/composer-extdeps
-[wxt-library]:                  http://drupal.org/project/wxt_library
-[wxt-minimal-install]:          https://www.drupal.org/project/wxt/issues/3182208
-[wxt-upgrade-path]:             https://www.drupal.org/project/wxt/issues/3182648
-[wxt-roadmap]:                  https://www.drupal.org/project/wxt/issues/3182977
-[wxt-subprofile]:               https://www.drupal.org/project/wxt/issues/3188088
+[acquia]: https://acquia.com
+[changelog]: https://github.com/drupalwxt/wxt/blob/4.1.x/CHANGELOG.md
+[demo]: https://drupalwxt.govcloud.ca
+[docs]: http://drupalwxt.github.io
+[docker-hub]: https://hub.docker.com/r/drupalwxt/site-wxt
+[docker-scaffold]: https://github.com/drupalwxt/docker-scaffold.git
+[drupal]: http://drupal.org/project/wxt
+[drupal7]: http://drupal.org/project/wetkit
+[githubci]: https://github.com/drupalwxt/wxt/actions
+[githubci-badge]: https://github.com/drupalwxt/wxt/workflows/build/badge.svg
+[github-helm]: https://github.com/drupalwxt/helm-drupal
+[github-wxt]: https://github.com/drupalwxt/wxt
+[github-site-wxt]: https://github.com/drupalwxt/site-wxt
+[issue-drupal]: https://drupal.org/project/issues/wxt
+[issue-github]: https://github.com/drupalwxt/wxt/issues
+[lightning]: https://github.com/acquia/lightning
+[lightning_split]: https://www.drupal.org/project/lightning/issues/2933252
+[migrate]: https://www.drupal.org/node/2127611
+[project]: https://github.com/drupalwxt/wxt-project#user-content-new-project
+[project-new]: https://github.com/drupalwxt/wxt-project#user-content-new-project
+[readme]: https://github.com/drupalwxt/wxt/blob/4.1.x/README.md
+[release-github]: https://github.com/drupalwxt/wxt/releases
+[simplytest]: http://simplytest.me/project/wxt/8.x-3.x
+[standard_accessibility]: https://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=23601
+[standard_usability]: http://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=24227
+[standard_interoperability]: http://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=25875
+[wet-boew]: https://github.com/wet-boew/wet-boew
+[wet-boew-page]: https://www.canada.ca/en/treasury-board-secretariat/services/government-communications/web-experience-toolkit.html
+[wxt-bootstrap]: http://drupal.org/project/wxt_bootstrap
+[wxt-jquery]: https://github.com/drupalwxt/composer-extdeps
+[wxt-library]: http://drupal.org/project/wxt_library
+[wxt-minimal-install]: https://www.drupal.org/project/wxt/issues/3182208
+[wxt-upgrade-path]: https://www.drupal.org/project/wxt/issues/3182648
+[wxt-roadmap]: https://www.drupal.org/project/wxt/issues/3182977
+[wxt-subprofile]: https://www.drupal.org/project/wxt/issues/3188088
