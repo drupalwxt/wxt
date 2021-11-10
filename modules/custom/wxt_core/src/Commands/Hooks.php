@@ -58,7 +58,9 @@ class Hooks extends DrushCommands {
    * @hook pre-command updatedb
    */
   public function preUpdate() {
+    \Drupal::state()->set('system.maintenance_mode', TRUE);
     drupal_flush_all_caches();
+    \Drupal::state()->set('system.maintenance_mode', FALSE);
   }
 
   /**
