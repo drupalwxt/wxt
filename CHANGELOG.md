@@ -1,3 +1,40 @@
+## v4.1.2
+
+- Updates for Drupal Core (v9.1.14)
+  - [SA-core-2021-011](https://www.drupal.org/sa-core-2021-011)
+- Updates for WxT
+  - CKEditor table improvements [#3247278](https://www.drupal.org/project/wxt/issues/3247278)
+  - D9 Core patch fixing missing hooks [#3241632](https://www.drupal.org/project/wxt/issues/3241632)
+  - Update linkit for SA [#3240307](https://www.drupal.org/project/wxt/issues/3240307)
+- Updates for WxT Bootstrap
+  - CKEditor table improvements [#3247943](https://www.drupal.org/project/wxt/issues/3247943)
+  - Add aria-current to GC Subway navigation [#3243162](https://www.drupal.org/project/wxt/issues/3243162)
+  - Accessibility issue in GC Intranet menu [#3240931](https://www.drupal.org/project/wxt/issues/3240931)
+- Updates for WxT Library
+  - Language switcher issue on Intranet theme [#3246029](https://www.drupal.org/project/wxt/issues/3246029)
+  - Undefined variable $wxt_active [#3250005](https://www.drupal.org/project/wxt/issues/3250005)
+
+Upgrade path:
+
+> Note: No special notes for this release.
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
+- Run Lightning configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:lightning`
+
+- Run WxT configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:wxt`
+
+**Note:** N/A
+
 ## v4.1.1
 
 - Updates for Drupal Core (v9.1.13)
