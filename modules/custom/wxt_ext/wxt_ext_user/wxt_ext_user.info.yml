@@ -10,4 +10,4 @@ dependencies:
   - 'page_manager:page_manager'
   - 'panels_ipe:panels_ipe'
   - 'wxt_translation:wxt_translation'
-version: 4.1.2
+version: 4.1.2-dev
