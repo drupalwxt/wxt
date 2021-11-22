@@ -6,6 +6,7 @@
   - CKEditor table improvements [#3247278](https://www.drupal.org/project/wxt/issues/3247278)
   - D9 Core patch fixing missing hooks [#3241632](https://www.drupal.org/project/wxt/issues/3241632)
   - Update linkit for SA [#3240307](https://www.drupal.org/project/wxt/issues/3240307)
+  - Update token_filter for core fix [#3236440](https://www.drupal.org/project/token_filter/issues/3236440)
 - Updates for WxT Bootstrap
   - CKEditor table improvements [#3247943](https://www.drupal.org/project/wxt/issues/3247943)
   - Add aria-current to GC Subway navigation [#3243162](https://www.drupal.org/project/wxt/issues/3243162)
