@@ -20,7 +20,7 @@
         "drupal/button_link": "1.2",
         "drupal/ckeditor_codemirror": "2.3",
         "drupal/config_rewrite": "1.4",
-        "drupal/core": "9.1.13",
+        "drupal/core": "9.1.14",
         "drupal/core_context": "1.0-beta4",
         "drupal/ctools": "^3.7",
         "drupal/diff": "1.0",

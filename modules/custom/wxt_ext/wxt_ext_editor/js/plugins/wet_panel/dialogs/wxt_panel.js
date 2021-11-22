@@ -17,6 +17,8 @@ CKEDITOR.dialog.add('wet_panel', function(editor) {
             label: 'Panel type',
             items: [
               ['primary', 'primary'],
+              ['default', 'default'],
+              ['default well', 'default_well'],
               ['success', 'success'],
               ['info', 'info'],
               ['warning', 'warning'],
@@ -27,6 +29,13 @@ CKEDITOR.dialog.add('wet_panel', function(editor) {
               // Setup the dialog field value on existing element
               if (element.hasClass('panel-primary'))
                 this.setValue('primary');
+              else if (element.hasClass('panel-default'))
+                if (element.hasClass('well')) {
+                  this.setValue('default_well');
+                }
+                else {
+                  this.setValue('default');
+                }
               else if (element.hasClass('panel-success'))
                 this.setValue('success');
               else if (element.hasClass('panel-info'))
@@ -39,13 +48,21 @@ CKEDITOR.dialog.add('wet_panel', function(editor) {
             commit: function(element) {
               // Remove class from existing widget
               element.removeClass('panel-primary');
+              element.removeClass('panel-default');
+              element.removeClass('well');
               element.removeClass('panel-success');
               element.removeClass('panel-info');
               element.removeClass('panel-warning');
               element.removeClass('panel-danger');
 
               // Add class
-              element.addClass('panel-' + this.getValue());
+              if (this.getValue() == 'default_well') {
+                element.addClass('panel-default');
+                element.addClass('well');
+              }
+              else {
+                element.addClass('panel-' + this.getValue());
+              }
             }
           }
         ]
