@@ -282,10 +282,6 @@
             "drupal/webform": {
                 "Enter drupal/webform patch #3205860 description here":
                 "https://www.drupal.org/files/issues/2021-03-26/webform_clientside_validation-3205860-2.patch"
-            },
-            "drupal/token": {
-                "Enter drupal/token patch #2863200 description here":
-                "https://www.drupal.org/files/issues/2019-03-15/2863200-23.patch"
             }
         }
     },
