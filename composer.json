@@ -271,7 +271,9 @@
                 "Enter drupal/redis patch #3166814 description here":
                 "https://www.drupal.org/files/issues/2020-08-23/redis_test_lock_setup.patch",
                 "Enter drupal/redis patch #3179757 description here":
-                "https://www.drupal.org/files/issues/2020-10-30/3179757-4.patch"
+                "https://www.drupal.org/files/issues/2020-10-30/3179757-4.patch",
+                "3175412 - Use item_id instead of qid for Queue item":
+                "https://www.drupal.org/files/issues/2020-10-07/redis-queue-item-id-3175412-2.patch"
             },
             "drupal/s3fs": {
                 "Enter drupal/s3fs patch #2986407 description here":
