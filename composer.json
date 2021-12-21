@@ -20,7 +20,7 @@
         "drupal/button_link": "1.2",
         "drupal/ckeditor_codemirror": "2.3",
         "drupal/config_rewrite": "1.4",
-        "drupal/core": "9.1.14",
+        "drupal/core": "9.2.9",
         "drupal/core_context": "1.0-beta4",
         "drupal/ctools": "^3.7",
         "drupal/diff": "1.0",
@@ -157,7 +157,7 @@
                 "Enter drupal/core patch #1356276 description here":
                 "https://www.drupal.org/files/issues/2021-06-29/D91x-1356276-656.patch",
                 "Enter drupal/core patch #2559833 description here":
-                "https://www.drupal.org/files/issues/2020-10-31/2559833-72.patch",
+                "https://www.drupal.org/files/issues/2021-06-02/comment_form_redirect-2559833-87.patch",
                 "Enter drupal/core patch #2630732 description here":
                 "https://www.drupal.org/files/issues/2020-09-17/2630732-77.patch",
                 "2679775 - Fixes float issue with inline label fields (entity references on most cases).":
@@ -183,17 +183,13 @@
                 "Enter drupal/core patch #2907413 description here":
                 "https://www.drupal.org/files/issues/2019-06-21/2907413-11.patch",
                 "Enter drupal/core patch #2922570 description here":
-                "https://www.drupal.org/files/issues/2021-06-29/D91x-2922570-88.patch",
+                "https://www.drupal.org/files/issues/2021-09-08/2922570-90.9.2.5.patch",
                 "Enter drupal/core patch #2938129 description here":
                 "https://www.drupal.org/files/issues/2019-01-18/2938129-pagetitle-11.patch",
-                "Enter drupal/core patch #2998826 description here":
-                "https://www.drupal.org/files/issues/2021-03-17/core-Term_route_context-2998826-93.patch",
                 "Enter drupal/core patch #3017710 description here":
                 "https://www.drupal.org/files/issues/2018-12-05/3017710-20.patch",
                 "Enter drupal/core patch #3164210 description here":
                 "https://www.drupal.org/files/issues/2021-05-17/3164210-11.patch",
-                "Enter drupal/core patch #2470896 description here":
-                "https://www.drupal.org/files/issues/2021-06-10/2470896-244.patch",
                 "Enter drupal/core patch #3173808 description here":
                 "https://www.drupal.org/files/issues/2021-01-31/3173808-9-Make-book-child-content-type-configura.patch",
                 "Enter drupal/core patch #2546212 description here":
