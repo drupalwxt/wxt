@@ -20,110 +20,111 @@ source:
           description: '[node:summary]'
           keywords: 'Canada.ca, Open Government, Open Government Canada, Canada Open Government, Canada Open'
       layout:
-        layout_id: 'wxt_homepage'
-        layout_settings:
-          layout:
-            wrapper: div
-            classes: {}
-            add_layout_class: 1
-            attributes: ''
-          regions:
-            top:
+        sections:
+        - layout_id: 'wxt_homepage'
+          layout_settings:
+            layout:
               wrapper: div
               classes: {}
-              add_region_classes: 1
+              add_layout_class: 1
               attributes: ''
-            top_left:
-              wrapper: div
-              classes:
-                col-md-6: col-md-8
-              add_region_classes: 1
-              attributes: class|mrgn-tp-md
-            top_right:
-              wrapper: div
-              classes:
-                col-md-6: col-md-4
-              add_region_classes: 1
-              attributes: class|mrgn-tp-xl
-            middle:
-              wrapper: div
-              classes:
-                col-sm-12: col-sm-12
-              add_region_classes: 1
-              attributes: ''
-            bottom_left:
-              wrapper: div
-              classes:
-                col-sm-6: col-sm-6
-              add_region_classes: 1
-              attributes: ''
-            bottom_right:
-              wrapper: div
-              classes:
-                col-sm-6: col-sm-6
-              add_region_classes: 1
-              attributes: ''
-            bottom:
-              wrapper: div
-              classes:
-                col-sm-12: col-sm-12
-              add_region_classes: 1
-              attributes: class|mrgn-tp-lg
-        components:
-          -
-            region: top
-            configuration:
-              id: 'block_content:homepage_block_1'
-              label: Canada
-              provider: 'block_content'
-              label_display: 0
-              view_mode: default
-              context_mapping: {}
-            additional: {  }
-            weight: 1
-          -
-            region: top
-            configuration:
-              id: 'block_content:homepage_block_2'
-              label: 'En demande'
-              provider: 'block_content'
-              label_display: 0
-              view_mode: default
-              context_mapping: {}
-            additional: {  }
-            weight: 2
-          -
-            region: top
-            configuration:
-              id: 'block_content:homepage_block_3'
-              label: 'Par public'
-              provider: 'block_content'
-              label_display: 0
-              view_mode: default
-              context_mapping: {}
-            additional: {  }
-            weight: 3
-          -
-            region: top
-            configuration:
-              id: 'block_content:homepage_block_4'
-              label: 'Votre gouvernement'
-              provider: 'block_content'
-              label_display: 0
-              view_mode: default
-              context_mapping: {}
-            additional: {  }
-            weight: 4
-          -
-            region: bottom
-            configuration:
-              id: 'views_block:blocks-block_2'
-              label: En Vedette
-              label_display: visible
-              view_mode: full
+            regions:
+              top:
+                wrapper: div
+                classes: {}
+                add_region_classes: 1
+                attributes: ''
+              top_left:
+                wrapper: div
+                classes:
+                  col-md-6: col-md-8
+                add_region_classes: 1
+                attributes: class|mrgn-tp-md
+              top_right:
+                wrapper: div
+                classes:
+                  col-md-6: col-md-4
+                add_region_classes: 1
+                attributes: class|mrgn-tp-xl
+              middle:
+                wrapper: div
+                classes:
+                  col-sm-12: col-sm-12
+                add_region_classes: 1
+                attributes: ''
+              bottom_left:
+                wrapper: div
+                classes:
+                  col-sm-6: col-sm-6
+                add_region_classes: 1
+                attributes: ''
+              bottom_right:
+                wrapper: div
+                classes:
+                  col-sm-6: col-sm-6
+                add_region_classes: 1
+                attributes: ''
+              bottom:
+                wrapper: div
+                classes:
+                  col-sm-12: col-sm-12
+                add_region_classes: 1
+                attributes: class|mrgn-tp-lg
+          components:
+            -
+              region: top
+              configuration:
+                id: 'block_content:homepage_block_1'
+                label: Canada
+                provider: 'block_content'
+                label_display: 0
+                view_mode: default
+                context_mapping: {}
+              additional: {  }
+              weight: 1
+            -
+              region: top
+              configuration:
+                id: 'block_content:homepage_block_2'
+                label: 'En demande'
+                provider: 'block_content'
+                label_display: 0
+                view_mode: default
+                context_mapping: {}
+              additional: {  }
+              weight: 2
+            -
+              region: top
+              configuration:
+                id: 'block_content:homepage_block_3'
+                label: 'Par public'
+                provider: 'block_content'
+                label_display: 0
+                view_mode: default
+                context_mapping: {}
+              additional: {  }
+              weight: 3
+            -
+              region: top
+              configuration:
+                id: 'block_content:homepage_block_4'
+                label: 'Votre gouvernement'
+                provider: 'block_content'
+                label_display: 0
+                view_mode: default
+                context_mapping: {}
+              additional: {  }
+              weight: 4
+            -
+              region: bottom
+              configuration:
+                id: 'views_block:blocks-block_2'
+                label: En Vedette
+                label_display: visible
+                view_mode: full
+                weight: 0
+              additional: {  }
               weight: 0
-            additional: {  }
-            weight: 0
     -
       name: topic
       title: '[Titre du thème]'
@@ -138,8 +139,9 @@ source:
           description: '[node:summary]'
           keywords: 'Canada.ca, Open Government, Open Government Canada, Canada Open Government, Canada Open'
       layout:
-        layout_id: 'bs_2col_bricked'
-        layout_settings:
+        sections:
+        - layout_id: 'bs_2col_bricked'
+          layout_settings:
             layout:
               wrapper: div
               classes:

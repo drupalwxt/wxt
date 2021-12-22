@@ -120,39 +120,42 @@ class LayoutPluginId extends ProcessPluginBase implements ContainerFactoryPlugin
    */
   public function transform($value, MigrateExecutableInterface $migrate_executable, Row $row, $destination_property) {
     $sections = [];
-    $section = new Section($value['layout_id'], $value['layout_settings']);
-    $sections[] = $section;
-    foreach ($value['components'] as $tmp_component) {
-      list($module, $delta) = array_pad(explode(":", $tmp_component['configuration']['id'], 2), 2, NULL);
-      switch ($module) {
-        case 'block_content':
-          $block_id = $this->migrationPlugin
-            ->transform($delta, $migrate_executable, $row, $destination_property);
-          // Language Handling.
-          if (is_array($block_id)) {
-            $block_id = current($block_id);
-          }
-          if ($block_id) {
-            $tmp_component['configuration']['id'] = $module . ':' . $this->blockContentStorage->load($block_id)->uuid();
-            $tmp_component['configuration']['status'] = TRUE;
-            $tmp_component['configuration']['info'] = '';
-          }
-          break;
 
-        case 'entity_block':
-          $block_id = $this->migrationPlugin
-            ->transform($delta, $migrate_executable, $row, $destination_property);
-          if ($block_id) {
-            $tmp_component['configuration']['id'] = $module . ':media';
-            $tmp_component['configuration']['entity'] = $block_id;
-          }
-          break;
+    foreach ($value['sections'] as $section_value) {
+      $section = new Section($section_value['layout_id'], $section_value['layout_settings']);
+      $sections[] = $section;
+      foreach ($section_value['components'] as $tmp_component) {
+        list($module, $delta) = explode(":", $tmp_component['configuration']['id'], 2);
+        switch ($module) {
+          case 'block_content':
+            $block_id = $this->migrationPlugin
+              ->transform($delta, $migrate_executable, $row, $destination_property);
+            // Language Handling.
+            if (is_array($block_id)) {
+              $block_id = current($block_id);
+            }
+            if ($block_id) {
+              $tmp_component['configuration']['id'] = $module . ':' . $this->blockContentStorage->load($block_id)->uuid();
+              $tmp_component['configuration']['status'] = TRUE;
+              $tmp_component['configuration']['info'] = '';
+            }
+            break;
 
-        default:
-          break;
+          case 'entity_block':
+            $block_id = $this->migrationPlugin
+              ->transform($delta, $migrate_executable, $row, $destination_property);
+            if ($block_id) {
+              $tmp_component['configuration']['id'] = $module . ':media';
+              $tmp_component['configuration']['entity'] = $block_id;
+            }
+            break;
+
+          default:
+            break;
+        }
+        $component = $this->getComponents($tmp_component);
+        $section->appendComponent($component);
       }
-      $component = $this->getComponents($tmp_component);
-      $section->appendComponent($component);
     }
 
     return $sections;
