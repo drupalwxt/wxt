@@ -32,7 +32,7 @@ Please consult our Architectural Diagram for a example implementation on Kuberne
 
 - [Architectural Diagram](https://github.com/drupalwxt/helm-drupal/blob/master/docs/diagram-drupal.pdf)
 
-The goal of WxT 4.1.x line is to make the installation profile very minimal by default but providing additional extensions that can be enabled as desired.
+The goal of WxT 4.2.x line is to make the installation profile very minimal by default but providing additional extensions that can be enabled as desired.
 
 WxT offers some light enhancements to Drupal Core, mainly around security and performance, and integration with the Web Experience Toolkit. By default, the distribution offers minimal functionality to allow full customizations by users. A set of optional extensions is available that provide additional functionality generally beneficial to Government departments. A community repository of modules and graduation process will be available to enable collaboration between users in the future.
 
@@ -47,7 +47,7 @@ In order to provide a list of the optional enabled extensions during the install
 For more information please consult the following:
 
 - [WxT Minimal Install][wxt-minimal-install]
-- [Upgrade Path from 3.0.x -> 4.1.x][wxt-upgrade-path]
+- [Upgrade Path from 4.1.x -> 4.2.x][wxt-upgrade-path]
 - [Roadmap for Drupal 9][wxt-roadmap]
 - [Subprofile install of modules and wxt_extensions][wxt-subprofile]
 
@@ -76,7 +76,7 @@ We highly recommend using our [Composer-based project template][project-new] to 
 
 ```sh
 composer self-update
-composer create-project drupalwxt/wxt-project:4.1.x-dev MYPROJECT
+composer create-project drupalwxt/wxt-project:4.2.x-dev MYPROJECT
 ```
 
 > Note: Normally you will pass a stable tag to the above command rather then just pulling from the development branch.
@@ -392,7 +392,7 @@ Extended with code and lessons learned by the [Acquia Team](https://acquia.com) 
 <!-- Links Referenced -->
 
 [acquia]: https://acquia.com
-[changelog]: https://github.com/drupalwxt/wxt/blob/4.1.x/CHANGELOG.md
+[changelog]: https://github.com/drupalwxt/wxt/blob/4.2.x/CHANGELOG.md
 [demo]: https://drupalwxt.govcloud.ca
 [docs]: http://drupalwxt.github.io
 [docker-hub]: https://hub.docker.com/r/drupalwxt/site-wxt
@@ -411,7 +411,7 @@ Extended with code and lessons learned by the [Acquia Team](https://acquia.com) 
 [migrate]: https://www.drupal.org/node/2127611
 [project]: https://github.com/drupalwxt/wxt-project#user-content-new-project
 [project-new]: https://github.com/drupalwxt/wxt-project#user-content-new-project
-[readme]: https://github.com/drupalwxt/wxt/blob/4.1.x/README.md
+[readme]: https://github.com/drupalwxt/wxt/blob/4.2.x/README.md
 [release-github]: https://github.com/drupalwxt/wxt/releases
 [simplytest]: http://simplytest.me/project/wxt/8.x-3.x
 [standard_accessibility]: https://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=23601
