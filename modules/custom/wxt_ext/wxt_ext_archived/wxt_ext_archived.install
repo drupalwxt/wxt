@@ -1,0 +1,23 @@
+<?php
+
+/**
+ * @file
+ * Contains wxt_ext_archived.module.
+ */
+
+use Drupal\wxt_translation\TranslationHelper;
+
+/**
+ * Implements hook_install().
+ */
+function wxt_ext_archived_install() {
+  // Stop here during a config sync.
+  if (Drupal::isConfigSyncing()) {
+    return;
+  }
+
+  $moduleHandler = \Drupal::service('module_handler');
+  if ($moduleHandler->moduleExists('wxt_translation')) {
+    TranslationHelper::importTranslations('wxt_ext_archived');
+  }
+}

@@ -6,6 +6,7 @@
  */
 
 use Drupal\node\Entity\NodeType;
+use Drupal\wxt_translation\TranslationHelper;
 
 /**
  * Implements hook_install().
@@ -69,5 +70,10 @@ function wxt_ext_webform_install() {
 
   foreach (NodeType::loadMultiple() as $node_type) {
     lightning_workflow_node_type_insert($node_type);
+  }
+
+  $moduleHandler = \Drupal::service('module_handler');
+  if ($moduleHandler->moduleExists('wxt_translation')) {
+    TranslationHelper::importTranslations('wxt_ext_webform');
   }
 }
