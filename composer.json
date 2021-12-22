@@ -182,6 +182,8 @@
                 "https://www.drupal.org/files/issues/2021-06-07/2893407-47.patch",
                 "Enter drupal/core patch #2907413 description here":
                 "https://www.drupal.org/files/issues/2019-06-21/2907413-11.patch",
+                "2921627 - WCAG required markers on forms":
+                "https://www.drupal.org/files/issues/2021-09-07/2921627-68_3.patch",
                 "Enter drupal/core patch #2922570 description here":
                 "https://www.drupal.org/files/issues/2021-06-29/D91x-2922570-88.patch",
                 "Enter drupal/core patch #2938129 description here":
@@ -190,8 +192,12 @@
                 "https://www.drupal.org/files/issues/2021-03-17/core-Term_route_context-2998826-93.patch",
                 "Enter drupal/core patch #3017710 description here":
                 "https://www.drupal.org/files/issues/2018-12-05/3017710-20.patch",
+                "3150294 - New translations for moderated nodes are not created in the initial workflow state":
+                "https://www.drupal.org/files/issues/2021-11-02/3150294-74.patch",
                 "Enter drupal/core patch #3164210 description here":
                 "https://www.drupal.org/files/issues/2021-05-17/3164210-11.patch",
+                "3177182 - Book title in breadcrumb not translated":
+                "https://www.drupal.org/files/issues/2020-10-20/book-breadcrumb_title_xlate-3177182-3.patch",
                 "Enter drupal/core patch #2470896 description here":
                 "https://www.drupal.org/files/issues/2021-06-10/2470896-244.patch",
                 "Enter drupal/core patch #3173808 description here":
@@ -208,8 +214,20 @@
                 "https://www.drupal.org/files/issues/ctools-entity_field_rendered_twice-2924356-2.patch"
             },
             "drupal/diff": {
-                "The getModerationState() function fails to take translations into consideration":
-                "https://www.drupal.org/files/issues/2018-12-03/ModerationState-error-of-translated-node-in-revision-overview-page-3004705-4.patch"
+                "Enter drupal/diff patch #2844337 description here":
+                "https://www.drupal.org/files/issues/diff-remove-thumbnails-errors-2844337-17.patch",
+                "Enter drupal/diff patch #2834253 description here":
+                "https://www.drupal.org/files/issues/2021-08-19/diff-missing-column-headers-2834253-15.patch",
+                "Enter drupal/diff patch #2882334 description here":
+                "https://www.drupal.org/files/issues/2020-09-28/2882334-diff-missing_some_revisions-13.patch",
+                "Enter drupal/diff patch #3004705 description here":
+                "https://www.drupal.org/files/issues/2018-12-03/ModerationState-error-of-translated-node-in-revision-overview-page-3004705-4.patch",
+                "Enter drupal/diff patch #3169729 description here":
+                "https://www.drupal.org/files/issues/2020-09-08/diff_add-local-tasks-3169729-2.patch",
+                "Enter drupal/diff patch #3183380 description here":
+                "https://www.drupal.org/files/issues/2020-11-19/3183380-add-compare-revisions.patch",
+                "Enter drupal/diff patch #3228798 description here":
+                "https://www.drupal.org/files/issues/2021-08-19/diff-a11y-3228798-10.patch"
             },
             "drupal/group": {
                 "Enter drupal/group patch #2817109 description here":
@@ -256,6 +274,8 @@
             "drupal/panels": {
                 "Enter drupal/panels patch #2667755 description here":
                 "https://www.drupal.org/files/issues/bandaid.patch",
+                "Enter drupal/panels patch #2849867 description here":
+                "https://www.drupal.org/files/issues/2020-04-30/panels_custom_attributes_in_panels_blocks-2849867-78.patch",
                 "Enter drupal/panels patch #2869412 description here":
                 "https://www.drupal.org/files/issues/2018-03-19/panels--page_title_does_not_display--2869412-27.patch",
                 "Enter drupal/panels patch #2910704 description here":
