@@ -39,7 +39,7 @@ WxT offers some light enhancements to Drupal Core, mainly around security and pe
 All of the additional contributed modules and Lightning integration have been moved into the WxT Extend `wxt_ext` extensions which can now be installed a la carte for fresh installations via the GUI or passed as flags via Drush.
 
 ```
-wxt_extension_configure_form.select_all
+wxt_extension_configure_form.select_all='TRUE'
 ```
 
 In order to provide a list of the optional enabled extensions during the installation that can be checked, all that any module now has to do is provide a `modulename.wxt_extension.yml` file in their root and they will be picked as installable during the profile install and also respond to the additional drush flag.

@@ -5,7 +5,10 @@
  * Contains wxt_ext_breadcrumb.module.
  */
 
+use Drupal\Core\Link;
 use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Breadcrumb\Breadcrumb;
+use Drupal\Core\Url;
 
 /**
  * Implements hook_help().
@@ -16,9 +19,89 @@ function wxt_ext_breadcrumb_help($route_name, RouteMatchInterface $route_match) 
     case 'help.page.wxt_ext_breadcrumb':
       $output = '';
       $output .= '<h3>' . t('About') . '</h3>';
-      $output .= '<p>' . t('Setting bread crumbs for all of WxT.') . '</p>';
+      $output .= '<p>' . t('Setting breadcrumbs for all of WxT.') . '</p>';
       return $output;
 
     default:
+  }
+}
+
+/**
+ * Implements hook_system_breadcrumb_alter().
+ */
+function wxt_ext_breadcrumb_system_breadcrumb_alter(Breadcrumb &$breadcrumb, RouteMatchInterface $route_match, array $context) {
+
+  if (\Drupal::service('router.admin_context')->isAdminRoute()) {
+    // Use core breadcrumb for admin pages.
+    return;
+  }
+
+  // Get current language.
+  $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+  $config = \Drupal::config('wxt_ext_breadcrumb.settings');
+
+  $enabled = $config->get('enable_wxt_breadcrumbs');
+
+  // Onlt alter breadcrumbs if WxT Breadcrumbs is enabled
+  if ($enabled) {
+    $links = [];
+
+    // Set configured header breadcrumbs.
+    if ($breadcrumb_settings = $config->get($language)) {
+
+      for ($i = 0; $i < count($breadcrumb_settings); $i++) {
+        $title = $language . '_crumb';
+        $url = $language . '_url';
+        if (!empty($breadcrumb_settings[$i][$title]) && !empty($breadcrumb_settings[$i][$url])) {
+          if (stripos($breadcrumb_settings[$i][$url], 'http') >= 0) {
+            $links[] = Link::fromTextAndUrl($breadcrumb_settings[$i][$title], Url::fromUri($breadcrumb_settings[$i][$url]));
+          }
+        }
+      }
+    }
+
+    $route_name = \Drupal::routeMatch()->getRouteName();
+    $breadcrumb_links = $breadcrumb->getLinks();
+    $sitename = \Drupal::config('system.site')->get('name');
+
+    $idx = 0;
+    foreach ($breadcrumb_links as $breadcrumb_item => $key) {
+      if (!is_null($breadcrumb_links[$idx])) {
+        if ($breadcrumb_links[$idx]->getText() == 'Home' || $breadcrumb_links[$idx]->getText() == 'Accueil') {
+          $breadcrumb_links = $breadcrumb->getLinks();
+          unset($breadcrumb_links[$idx]);
+          $breadcrumb = new Breadcrumb();
+          $breadcrumb->setLinks($breadcrumb_links);
+          $breadcrumb_links = $breadcrumb->getLinks();
+          // Only expect one 'Home'.
+          break;
+        }
+      }
+      $idx++;
+    }
+
+    $is_front = \Drupal::service('path.matcher')->isFrontPage();
+
+    if (!$is_front) {
+      $links[] = Link::fromTextAndUrl($sitename, Url::fromRoute('<front>'));
+    }
+
+    $links = array_merge($links, $breadcrumb_links);
+    $breadcrumb = new Breadcrumb();
+    $breadcrumb->setLinks($links);
+    $breadcrumb_links = $breadcrumb->getLinks();
+
+    // Add back the cacheable dependency at the end of these modifications.
+    if ($route_match && $node = $route_match->getParameter('node')) {
+      $breadcrumb->addCacheableDependency($node);
+    }
+    if ($route_match && $term = $route_match->getParameter('taxonomy_term')) {
+      $breadcrumb->addCacheableDependency($term);
+    }
+    if ($route_match && $mlink = $route_match->getParameter('menu_link_content')) {
+      $breadcrumb->addCacheableDependency($mlink);
+    }
+
+    $breadcrumb->addCacheContexts(['route', 'url.path', 'languages']);
   }
 }
