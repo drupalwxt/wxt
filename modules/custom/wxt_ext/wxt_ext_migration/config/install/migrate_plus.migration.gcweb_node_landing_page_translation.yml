@@ -226,9 +226,9 @@ source:
           -
             region: top_left
             configuration:
-              id: 'entity_field:node:body'
+              id: 'field_block:node:landing_page:body'
               label: Body
-              provider: ctools_block
+              provider: layout_builder
               label_display: 0
               formatter:
                 label: hidden
@@ -238,6 +238,7 @@ source:
                 weight: 0
               context_mapping:
                 entity: layout_builder.entity
+                view_mode: view_mode
             additional: {  }
             weight: 1
           -
