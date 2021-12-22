@@ -8,9 +8,9 @@ dependencies:
   - 'migrate:migrate'
   - 'migrate_plus:migrate_plus'
   - 'migrate_tools:migrate_tools'
-  - 'lightning_layout:lightning_layout'
   - 'page_manager:page_manager'
   - 'panels_ipe:panels_ipe'
+  - 'wxt_ext_layout:wxt_ext_layout'
   - 'wxt_ext_media:wxt_ext_media'
   - 'wxt_ext_media_slideshow:wxt_ext_media_slideshow'
 version: 4.1.2-dev

@@ -316,3 +316,7 @@ migration_dependencies:
     - gcweb_node_landing_page
     - gcweb_block_translation
     - gcweb_block_spotlight_translation
+dependencies:
+  enforced:
+    module:
+      - wxt_ext_layout

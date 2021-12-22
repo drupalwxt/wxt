@@ -304,3 +304,7 @@ migration_dependencies:
     - wxt_media_slideshow
     - gcweb_block
     - gcweb_block_spotlight
+dependencies:
+  enforced:
+    module:
+      - wxt_ext_layout
