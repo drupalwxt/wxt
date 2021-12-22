@@ -73,7 +73,7 @@ class BreadcrumbsForm extends ConfigFormBase {
     $form['wxt_ext_breadcrumb']['enable_wxt_breadcrumbs'] = [
       '#type' => 'checkbox',
       '#title' => $this->t('Enable WxT Breadcrumbs'),
-      '#default_value' => $config->get('enable_wxt_breadcrumbs')
+      '#default_value' => $config->get('enable_wxt_breadcrumbs'),
     ];
 
     $form['wxt_ext_breadcrumb'][0]['set-0'] = [
