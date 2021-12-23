@@ -60,7 +60,7 @@ final class UpdateWxT420 implements ContainerInjectionInterface {
    *
    * @ask Do you want to enable CKEditor TOC functionality?
    */
-  public function enableAdditionalEnhancements() {
+  public function enableCKEditorTOC() {
     $this->moduleInstaller->install(['toc_filter']);
 
     $format = FilterFormat::load('rich_text');
@@ -78,6 +78,52 @@ final class UpdateWxT420 implements ContainerInjectionInterface {
       foreach ($row as $group_key => $group) {
         if ($group['name'] === 'WET Components') {
           array_unshift($settings['toolbar']['rows'][$row_key][$group_key]['items'], "abbr");
+        }
+      }
+    }
+    $editor->setSettings($settings);
+    $editor->save();
+  }
+
+  /**
+   * Enables CKEditor Abbreviation functionality
+   *
+   * @updatewxt
+   *
+   * @ask Do you want to enable CKEditor Abbreviation functionality?
+   */
+  public function enableCKEditorABBR() {
+    $this->moduleInstaller->install(['ckeditor_abbreviation']);
+
+    $editor = Editor::load('rich_text');
+    $settings = $editor->getSettings();
+    $rows = $settings['toolbar']['rows'];
+    foreach ($rows as $row_key => $row) {
+      foreach ($row as $group_key => $group) {
+        if ($group['name'] === 'WET Components') {
+          array_unshift($settings['toolbar']['rows'][$row_key][$group_key]['items'], "abbr");
+        }
+      }
+    }
+    $editor->setSettings($settings);
+    $editor->save();
+  }
+
+  /**
+   * Enables CKEditor Alert functionality
+   *
+   * @updatewxt
+   *
+   * @ask Do you want to enable CKEditor Alert functionality?
+   */
+  public function enableCKEditorAlert() {
+    $editor = Editor::load('rich_text');
+    $settings = $editor->getSettings();
+    $rows = $settings['toolbar']['rows'];
+    foreach ($rows as $row_key => $row) {
+      foreach ($row as $group_key => $group) {
+        if ($group['name'] === 'WET Components') {
+          array_push($settings['toolbar']['rows'][$row_key][$group_key]['items'], "alert");
         }
       }
     }

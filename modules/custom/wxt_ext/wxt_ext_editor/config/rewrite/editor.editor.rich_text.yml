@@ -55,6 +55,7 @@ settings:
             - abbr
             - detail
             - panel
+            - alert
         -
           name: WxT
           items:
