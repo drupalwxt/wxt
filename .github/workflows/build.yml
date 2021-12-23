@@ -22,7 +22,7 @@ jobs:
 
     - uses: statcan/actions/composer@master
       with:
-        args: require drupalwxt/wxt:4.2.x-dev#${GITHUB_SHA} --working-dir=./site-wxt
+        args: require drupalwxt/wxt:4.2.x-dev#${{ github.sha }} --working-dir=./site-wxt
 
     - name: Build out the Drupal infrastructure
       run: |
