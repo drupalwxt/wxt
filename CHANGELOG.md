@@ -23,10 +23,10 @@
   - GC Subway not working correctly in Intranet theme [#3253829](https://www.drupal.org/project/wxt/issues/3253829)
   - Issues with Insert from Media Library [#3246714](https://www.drupal.org/project/wxt/issues/3246714)
   - Add new `route:<separator>` for menu items [#3236799](https://www.drupal.org/project/wxt/issues/3236799)
+- Update `wxt_layout_plugin_id` migration process plugin to support
+  creating multiple sections.
 
 Upgrade path:
-
-> Note: To Be Written
 
 - Update your codebase:
   - `composer update`
@@ -43,7 +43,37 @@ Upgrade path:
   - `drush cache:rebuild`
   - `drush update:wxt`
 
-**Note:** To Be Written.
+**Note**: The data structure expected by the `wxt_layout_plugin_id`
+migration plugin has been updated to support multiple sections.
+
+The current format only created one section:
+
+```yaml
+layout_id: 'layoutid'
+layout_settings: {}
+components: []
+```
+
+The new format is a top-level `sections` array, which supports multiple entries:
+
+```yaml
+# Same behaviour as previous format
+sections:
+- layout_id: 'layoutid'
+  layout_settings: {}
+  components: []
+```
+
+```yaml
+# New format which support multiple sections
+sections:
+- layout_id: 'layoutid1'
+  layout_settings: {}
+  components: []
+- layout_id: 'layoutid2'
+  layout_settings: {}
+  components: []
+```
 
 ## v4.1.2
 
