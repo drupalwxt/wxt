@@ -337,7 +337,7 @@ This is supposed to be fixed with the new virtualization framework in MacOSX 11.
 export VOLUME=mutagen-cache
 export NAME=site-wxt
 docker volume create $VOLUME
-docker container create --name $VOLUME -v $VOLUME:/volumes/$VOLUME mutagenio/sidecar
+docker container create --name $VOLUME -v $VOLUME:/volumes/$VOLUME mutagenio/sidecar:0.13.0-beta3
 docker start $VOLUME
 mutagen sync create --name $NAME --sync-mode=two-way-resolved --default-file-mode-beta 0666 --default-directory-mode-beta 0777  $(pwd) docker://mutagen-cache/volumes/mutagen-cache
 
