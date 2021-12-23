@@ -6,7 +6,6 @@ use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
 use Drupal\Core\Extension\ModuleInstallerInterface;
 use Drupal\filter\Entity\FilterFormat;
-use Drupal\wxt_core\ConfigHelper as Config;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
