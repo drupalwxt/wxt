@@ -101,7 +101,7 @@ final class UpdateWxT420 implements ContainerInjectionInterface {
     foreach ($rows as $row_key => $row) {
       foreach ($row as $group_key => $group) {
         if ($group['name'] === 'WET Components') {
-        array_unshift($settings['toolbar']['rows'][$row_key][$group_key]['items'], "abbr");
+          array_unshift($settings['toolbar']['rows'][$row_key][$group_key]['items'], "abbr");
         }
       }
     }
@@ -123,7 +123,7 @@ final class UpdateWxT420 implements ContainerInjectionInterface {
     foreach ($rows as $row_key => $row) {
       foreach ($row as $group_key => $group) {
         if ($group['name'] === 'WET Components') {
-        array_push($settings['toolbar']['rows'][$row_key][$group_key]['items'], "alert");
+          array_push($settings['toolbar']['rows'][$row_key][$group_key]['items'], "alert");
         }
       }
     }
