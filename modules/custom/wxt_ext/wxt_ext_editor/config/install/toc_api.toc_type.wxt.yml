@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies: {  }
+id: wxt
+label: WxT
+options:
+  template: default
+  title: 'On this page'
+  block: false
+  header_count: 1
+  header_min: 2
+  header_max: 2
+  header_allowed_tags: '<em> <b> <del> <i> <mark> <s> <span> <strong> <sup> <sub> <em> <b> <del> <i> <mark> <s> <span> <strong> <sup> <sub>'
+  header_id: number_path
+  header_id_prefix: section
+  header_exclude_xpath: '//*[contains(@class,"toc-ignore")]'
+  top_min: 1
+  top_max: 1
+  top_label: ''
+  default:
+    number_type: none
+    number_prefix: ''
+    number_suffix: ''
+  number_path_separator: '-'
+  number_path: false
+  number_path_truncate: true
+  headers: {  }

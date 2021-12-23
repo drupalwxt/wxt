@@ -11,6 +11,8 @@ dependencies:
   - 'entity_embed:entity_embed'
   - 'linkit:linkit'
   - 'media:media'
+  - 'toc_api:toc_api'
+  - 'toc_filter:toc_filter'
   - 'token_filter:token_filter'
   - 'url_embed:url_embed'
   - 'wxt_ext_media:wxt_ext_media'
