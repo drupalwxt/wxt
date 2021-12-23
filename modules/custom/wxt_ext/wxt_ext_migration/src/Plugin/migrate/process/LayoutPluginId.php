@@ -125,7 +125,7 @@ class LayoutPluginId extends ProcessPluginBase implements ContainerFactoryPlugin
       $section = new Section($section_value['layout_id'], $section_value['layout_settings']);
       $sections[] = $section;
       foreach ($section_value['components'] as $tmp_component) {
-        list($module, $delta) = explode(":", $tmp_component['configuration']['id'], 2);
+        list($module, $delta) = array_pad(explode(":", $tmp_component['configuration']['id'], 2), 2, NULL);
         switch ($module) {
           case 'block_content':
             $block_id = $this->migrationPlugin
