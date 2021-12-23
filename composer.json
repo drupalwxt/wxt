@@ -52,7 +52,7 @@
         "drupal/webform": "^6.0",
         "drupal/webform_migrate": "1.x-dev",
         "drupal/wxt_bootstrap": "6.x-dev",
-        "drupal/wxt_library": "5.2",
+        "drupal/wxt_library": "6.x-dev",
         "w8tcha/ckeditor-codemirror": "1.16",
         "drupal/ckeditor_abbreviation": "^2.0",
         "drupal/ckeditor_details": "^2.0.2",
