@@ -5,6 +5,7 @@ namespace Drupal\wxt_core\UpdateWxT;
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
 use Drupal\Core\Extension\ModuleInstallerInterface;
+use Drupal\editor\Entity\Editor;
 use Drupal\filter\Entity\FilterFormat;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
@@ -13,7 +14,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  *
  * @UpdateWxT("4.2.0")
  */
-final class UpdateWxT413 implements ContainerInjectionInterface {
+final class UpdateWxT420 implements ContainerInjectionInterface {
 
   /**
    * The config factory service.
@@ -67,6 +68,21 @@ final class UpdateWxT413 implements ContainerInjectionInterface {
     $format->setFilterConfig('entity_embed', ['weight' => $configuration['weight'] + 1]);
     $format->setFilterConfig('toc_filter', ['status' => TRUE, 'settings' => ['type' => 'wxt']]);
     $format->save();
+
+    $this->moduleInstaller->install(['ckeditor_abbreviation']);
+
+    $editor = Editor::load('rich_text');
+    $settings = $editor->getSettings();
+    $rows = $settings['toolbar']['rows'];
+    foreach ($rows as $row_key => $row) {
+      foreach ($row as $group_key => $group) {
+        if ($group['name'] === 'WET Components') {
+          array_unshift($settings['toolbar']['rows'][$row_key][$group_key]['items'], "abbr");
+        }
+      }
+    }
+    $editor->setSettings($settings);
+    $editor->save();
   }
 
 }

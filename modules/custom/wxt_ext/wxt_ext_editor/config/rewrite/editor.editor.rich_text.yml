@@ -52,6 +52,7 @@ settings:
         -
           name: 'WET Components'
           items:
+            - abbr
             - detail
             - panel
         -
