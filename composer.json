@@ -101,21 +101,6 @@
         {
             "type": "vcs",
             "url": "https://github.com/ossobuffo/drupal-console-extend-plugin.git"
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "ckeditor/fakeobjects",
-                "version": "4.16.2",
-                "type": "drupal-library",
-                "extra": {
-                    "installer-name": "fakeobjects"
-                },
-                "dist": {
-                    "url": "https://download.ckeditor.com/fakeobjects/releases/fakeobjects_4.16.2.zip",
-                    "type": "zip"
-                }
-            }
         }
     ],
     "extra": {
