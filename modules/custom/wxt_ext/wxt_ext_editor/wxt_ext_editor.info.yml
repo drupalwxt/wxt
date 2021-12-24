@@ -10,6 +10,7 @@ dependencies:
   - 'ckeditor_details:ckeditor_details'
   - 'editor:editor'
   - 'entity_embed:entity_embed'
+  - 'footnotes:footnotes'
   - 'linkit:linkit'
   - 'media:media'
   - 'toc_api:toc_api'
