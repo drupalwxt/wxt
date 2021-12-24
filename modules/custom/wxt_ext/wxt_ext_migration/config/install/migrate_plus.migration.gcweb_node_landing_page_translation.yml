@@ -191,67 +191,67 @@ source:
                   col-sm-12: col-sm-12
                 add_region_classes: 1
                 attributes: class|mrgn-tp-lg
-        components:
-          -
-            region: top_left
-            configuration:
-              id: 'page_title_block'
-              label: 'Page title'
-              provider: core
-              label_display: '0'
-              context_mapping: {}
-            additional: {  }
-            weight: 0
-          -
-            region: top_right
-            configuration:
-              id: 'entity_block:653x194'
-              label: 'Media'
-              provider: entity_block
-              label_display: 0
-              view_mode: default
-              context_mapping: {}
-            additional: {  }
-            weight: 1
-          -
-            region: top_left
-            configuration:
-              id: local_tasks_block
-              label: Tabs
-              provider: core
-              label_display: 0
-              primary: 1
-              secondary: 1
-              context_mapping: {}
-            additional: {  }
-            weight: 1
-          -
-            region: top_left
-            configuration:
-              id: 'field_block:node:landing_page:body'
-              label: Body
-              provider: layout_builder
-              label_display: 0
-              formatter:
-                label: hidden
-                type: text_default
-                settings: {  }
-                third_party_settings: {  }
-                weight: 0
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-            additional: {  }
-            weight: 1
-          -
-            region: bottom
-            configuration:
-              id: 'views_block:blocks-block_1'
-              label: Features
-              label_display: visible
-              view_mode: full
-            additional: {  }
-            weight: 1
+          components:
+            -
+              region: top_left
+              configuration:
+                id: 'page_title_block'
+                label: 'Page title'
+                provider: core
+                label_display: '0'
+                context_mapping: {}
+              additional: {  }
+              weight: 0
+            -
+              region: top_right
+              configuration:
+                id: 'entity_block:653x194'
+                label: 'Media'
+                provider: entity_block
+                label_display: 0
+                view_mode: default
+                context_mapping: {}
+              additional: {  }
+              weight: 1
+            -
+              region: top_left
+              configuration:
+                id: local_tasks_block
+                label: Tabs
+                provider: core
+                label_display: 0
+                primary: 1
+                secondary: 1
+                context_mapping: {}
+              additional: {  }
+              weight: 1
+            -
+              region: top_left
+              configuration:
+                id: 'field_block:node:landing_page:body'
+                label: Body
+                provider: layout_builder
+                label_display: 0
+                formatter:
+                  label: hidden
+                  type: text_default
+                  settings: {  }
+                  third_party_settings: {  }
+                  weight: 0
+                context_mapping:
+                  entity: layout_builder.entity
+                  view_mode: view_mode
+              additional: {  }
+              weight: 1
+            -
+              region: bottom
+              configuration:
+                id: 'views_block:blocks-block_1'
+                label: Features
+                label_display: visible
+                view_mode: full
+              additional: {  }
+              weight: 1
   ids:
     name:
       type: string
