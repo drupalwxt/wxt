@@ -52,6 +52,7 @@ settings:
         -
           name: 'WET Components'
           items:
+            - footnotes
             - abbr
             - detail
             - panel

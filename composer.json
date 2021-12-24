@@ -7,6 +7,7 @@
     "prefer-stable": true,
     "require": {
         "ext-dom": "*",
+        "ckeditor/fakeobjects": "^4.16",
         "cweagans/composer-patches": "^1.6.0",
         "drupal/lightning_api": "^4.6",
         "drupal/lightning_core": "^5.4",
@@ -28,6 +29,7 @@
         "drupal/entityqueue": "^1.0-alpha8",
         "drupal/field_group": "^3.0",
         "drupal/fontawesome": "^2.12",
+        "drupal/footnotes": "^3.0",
         "drupal/group": "1.3",
         "drupal/inline_entity_form": "^1.0-rc9",
         "drupal/linkit": "6.0.0-beta3",
@@ -99,6 +101,21 @@
         {
             "type": "vcs",
             "url": "https://github.com/ossobuffo/drupal-console-extend-plugin.git"
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "ckeditor/fakeobjects",
+                "version": "4.16.2",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "fakeobjects"
+                },
+                "dist": {
+                    "url": "https://download.ckeditor.com/fakeobjects/releases/fakeobjects_4.16.2.zip",
+                    "type": "zip"
+                }
+            }
         }
     ],
     "extra": {
@@ -231,6 +248,14 @@
                 "https://www.drupal.org/files/issues/2020-11-19/3183380-add-compare-revisions.patch",
                 "Enter drupal/diff patch #3228798 description here":
                 "https://www.drupal.org/files/issues/2021-08-19/diff-a11y-3228798-10.patch"
+            },
+            "drupal/footnotes": {
+                "3248765 - Footnote links aware of instances":
+                "https://www.drupal.org/files/issues/2021-11-12/footnotes-provide-instance-visibility-to-links-3248765-5.patch",
+                "3249716 - Set title attribute for fakeobjects":
+                "https://www.drupal.org/files/issues/2021-11-16/footnotes-add-title-attr-to-fakeobjects-3249716-2.patch",
+                "3204959 - Enable CKEditor basic styles for footnot text field":
+                "https://www.drupal.org/files/issues/2021-11-16/footnotes-basic-styles-for-footnote-text-field-3204959-4.patch"
             },
             "drupal/group": {
                 "Enter drupal/group patch #2817109 description here":
