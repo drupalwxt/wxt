@@ -36,7 +36,7 @@ The goal of WxT 4.2.x line is to make the installation profile very minimal by d
 
 WxT offers some light enhancements to Drupal Core, mainly around security and performance, and integration with the Web Experience Toolkit. By default, the distribution offers minimal functionality to allow full customizations by users. A set of optional extensions is available that provide additional functionality generally beneficial to Government departments. A community repository of modules and graduation process will be available to enable collaboration between users in the future.
 
-All of the additional contributed modules and Lightning integration have been moved into the WxT Extend `wxt_ext` extensions which can now be installed a la carte for fresh installations via the GUI or passed as flags via Drush.
+All of the additional custom modules have been moved into the WxT Extend `wxt_ext` extensions which can now be installed a la carte for fresh installations via the GUI or passed as flags via Drush.
 
 ```
 wxt_extension_configure_form.select_all='TRUE'
@@ -50,25 +50,6 @@ For more information please consult the following:
 - [Upgrade Path from 4.1.x -> 4.2.x][wxt-upgrade-path]
 - [Roadmap for Drupal 9][wxt-roadmap]
 - [Subprofile install of modules and wxt_extensions][wxt-subprofile]
-
-### Lightning Components
-
-For the optional extensions that Drupal WxT provides we make use of the following Lightning modules:
-
-- [Lightning API](https://www.drupal.org/project/lightning_api)
-- [Lightning Core](https://www.drupal.org/project/lightning_core)
-- [Lightning Layout](https://www.drupal.org/project/lightning_layout)
-- [Lightning Media](https://www.drupal.org/project/lightning_media)
-- [Lightning Workflow](https://www.drupal.org/project/lightning_workflow)
-
-> Note: Originally we were leveraging the [Lightning](https://www.drupal.org/project/lightning) installation profile but since Lightning now provides support for the [individual components outside of the profile][lightning_split] we now leverage them directly.
-
-For more information about Lightning:
-
-- https://www.acquia.com/products-services/acquia-lightning
-- https://www.acquia.com/blog/building-drupal-8-sites-acquia-lightning-cuts-costs-100000
-- https://www.drupal.org/docs/8/distributions/degov/about-degov
-- https://github.com/govcms/govcms8
 
 ## Installing WxT
 
@@ -341,7 +322,6 @@ docker container create --name $VOLUME -v $VOLUME:/volumes/$VOLUME mutagenio/sid
 docker start $VOLUME
 mutagen sync create --name $NAME --sync-mode=two-way-resolved --default-file-mode-beta 0666 --default-directory-mode-beta 0777  $(pwd) docker://mutagen-cache/volumes/mutagen-cache
 
-
 # Create symlinks
 ln -s docker/docker-compose-mutagen.yml docker-compose-mutagen.yml
 
@@ -407,13 +387,11 @@ Extended with code and lessons learned by the [Acquia Team](https://acquia.com) 
 [issue-drupal]: https://drupal.org/project/issues/wxt
 [issue-github]: https://github.com/drupalwxt/wxt/issues
 [lightning]: https://github.com/acquia/lightning
-[lightning_split]: https://www.drupal.org/project/lightning/issues/2933252
 [migrate]: https://www.drupal.org/node/2127611
 [project]: https://github.com/drupalwxt/wxt-project#user-content-new-project
 [project-new]: https://github.com/drupalwxt/wxt-project#user-content-new-project
 [readme]: https://github.com/drupalwxt/wxt/blob/4.2.x/README.md
 [release-github]: https://github.com/drupalwxt/wxt/releases
-[simplytest]: http://simplytest.me/project/wxt/8.x-3.x
 [standard_accessibility]: https://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=23601
 [standard_usability]: http://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=24227
 [standard_interoperability]: http://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=25875

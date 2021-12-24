@@ -18,13 +18,18 @@
   - Issues with Insert from Media Library [#3246714](https://www.drupal.org/project/wxt/issues/3246714)
   - Can't install WxT Extend Webform after minimal site install [#3249953](https://www.drupal.org/project/wxt/issues/3249953)
   - Adjustments to Password Policy [#3252532](https://www.drupal.org/project/wxt/issues/3252532)
+  - Add new CKEditor Abbreviations Filter [#3228812](https://www.drupal.org/project/wxt/issues/3228812)
+  - Add new CKEditor Alerts Filter  [#3228616](https://www.drupal.org/project/wxt/issues/3228616)
+  - Add new CKEditor TOC Filter [#3227545](https://www.drupal.org/project/wxt/issues/3227545)
+  - Add new CKEditor Footnotes Filter  [#3249208](https://www.drupal.org/project/wxt/issues/3249208)
+  - Update `wxt_layout_plugin_id` migration process plugin to support creating multiple sections.
 - Updates for WxT Bootstrap
   - WxT Bootstrap fix .pagedetails layout issues [#3253398](https://www.drupal.org/project/wxt/issues/3253398)
   - GC Subway not working correctly in Intranet theme [#3253829](https://www.drupal.org/project/wxt/issues/3253829)
   - Issues with Insert from Media Library [#3246714](https://www.drupal.org/project/wxt/issues/3246714)
   - Add new `route:<separator>` for menu items [#3236799](https://www.drupal.org/project/wxt/issues/3236799)
-- Update `wxt_layout_plugin_id` migration process plugin to support
-  creating multiple sections.
+  - Add new CKEditor TOC Filter [#3227545](https://www.drupal.org/project/wxt/issues/3227545)
+  - Add new CKEditor Footnotes Filter  [#3249208](https://www.drupal.org/project/wxt/issues/3249208)
 
 Upgrade path:
 
