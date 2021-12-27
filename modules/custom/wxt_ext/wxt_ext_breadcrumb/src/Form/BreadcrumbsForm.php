@@ -78,7 +78,7 @@ class BreadcrumbsForm extends ConfigFormBase {
 
     $form['wxt_ext_breadcrumb'][0]['set-0'] = [
       '#type' => 'fieldset',
-      '#title' => $this->t('Breadcrumb %count', array('%count' => '1')),
+      '#title' => $this->t('Breadcrumb %count', ['%count' => '1']),
     ];
 
     $form['wxt_ext_breadcrumb'][0]['set-0']['en_crumb'] = [

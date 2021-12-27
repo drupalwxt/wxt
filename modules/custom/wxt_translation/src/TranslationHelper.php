@@ -5,7 +5,7 @@ namespace Drupal\wxt_translation;
 use Symfony\Component\Yaml\Parser;
 
 /**
- * Translation Helper
+ * Translation Helper.
  */
 class TranslationHelper {
 
