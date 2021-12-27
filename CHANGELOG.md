@@ -48,8 +48,9 @@ Upgrade path:
   - `drush cache:rebuild`
   - `drush update:wxt`
 
-**Note**: The data structure expected by the `wxt_layout_plugin_id`
-migration plugin has been updated to support multiple sections.
+**Note(s)**:
+
+a) The data structure expected by the `wxt_layout_plugin_id` migration plugin has been updated to support multiple sections.
 
 The current format only created one section:
 
@@ -78,6 +79,25 @@ sections:
 - layout_id: 'layoutid2'
   layout_settings: {}
   components: []
+```
+
+b) Lightning API has been removed from our `composer.json` file.
+
+If you were relying on this functionality please add the following to your `composer.json` file:
+
+```json
+"drupal/lightning_api": "^4.6",
+```
+
+The following contributed modules were added by Lightning API:
+
+```json
+"drupal/consumers": "^1.10",
+"drupal/openapi_jsonapi": "^2.0-rc1",
+"drupal/openapi_rest": "^2.0-rc1",
+"drupal/openapi_ui_redoc": "^1.0",
+"drupal/openapi_ui_swagger": "^1.0",
+"drupal/simple_oauth": "^4.0"
 ```
 
 ## v4.1.2
