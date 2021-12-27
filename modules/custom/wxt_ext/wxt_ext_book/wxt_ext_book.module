@@ -107,7 +107,7 @@ function wxt_ext_book_preprocess_book_tree(&$variables) {
 }
 
 /**
- * Recursive function to mark active item in book hierarchy
+ * Recursive function to mark active item in book hierarchy.
  */
 function _wxt_ext_book_set_variables_recursive(&$items, $active_nid) {
   $langcode = \Drupal::languageManager()->getCurrentLanguage()->getId();
@@ -128,7 +128,7 @@ function _wxt_ext_book_set_variables_recursive(&$items, $active_nid) {
 }
 
 /**
- * Implements hook_preprocess_page_title.
+ * Implements hook_preprocess_page_title().
  */
 function wxt_ext_book_preprocess_page_title(&$variables) {
   $node = \Drupal::routeMatch()->getParameter('node');
@@ -139,7 +139,7 @@ function wxt_ext_book_preprocess_page_title(&$variables) {
 }
 
 /**
- * Implements hook_preprocess_links.
+ * Implements hook_preprocess_links().
  */
 function wxt_ext_book_preprocess_links(&$variables) {
   $links = &$variables['links'];

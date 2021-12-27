@@ -13,7 +13,7 @@ use Drupal\migrate\Row;
  *   id = "nulldestination"
  * )
  */
-class NullDestination extends DestinationBase {
+class NullDest extends DestinationBase {
 
   /**
    * {@inheritdoc}

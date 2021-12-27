@@ -9,7 +9,7 @@ use Drupal\Tests\migrate\Unit\process\MigrateProcessTestCase;
  * @coversDefaultClass \Drupal\wxt_ext_migration\Plugin\migrate\process\GetPath
  * @group wxt
  */
-class GetPathTest extends MigrateProcessTestCase {
+class GetPath extends MigrateProcessTestCase {
 
   /**
    * Tests WxT path.

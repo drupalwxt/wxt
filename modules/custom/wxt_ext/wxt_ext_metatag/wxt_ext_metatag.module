@@ -14,12 +14,15 @@ function wxt_ext_metatag_metatags_attachments_alter(array &$metatag_attachments)
       case 'dcterms_issued':
         $tag[0]['#attributes']['title'] = 'W3CDTF';
         break;
+
       case 'dcterms_modified':
         $tag[0]['#attributes']['title'] = 'W3CDTF';
         break;
+
       case 'dcterms_subject':
         $tag[0]['#attributes']['title'] = 'gccore';
         break;
+
       case 'dcterms_language':
         $tag[0]['#attributes']['title'] = 'ISO639-2/T';
 

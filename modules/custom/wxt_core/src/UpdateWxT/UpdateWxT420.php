@@ -54,7 +54,7 @@ final class UpdateWxT420 implements ContainerInjectionInterface {
   }
 
   /**
-   * Enables CKEditor TOC functionality
+   * Enables CKEditor TOC functionality.
    *
    * @updatewxt
    *
@@ -86,7 +86,7 @@ final class UpdateWxT420 implements ContainerInjectionInterface {
   }
 
   /**
-   * Enables CKEditor Abbreviation functionality
+   * Enables CKEditor Abbreviation functionality.
    *
    * @updatewxt
    *
@@ -110,7 +110,7 @@ final class UpdateWxT420 implements ContainerInjectionInterface {
   }
 
   /**
-   * Enables CKEditor Alert functionality
+   * Enables CKEditor Alert functionality.
    *
    * @updatewxt
    *
@@ -132,7 +132,7 @@ final class UpdateWxT420 implements ContainerInjectionInterface {
   }
 
   /**
-   * Enables CKEditor Footnotes functionality
+   * Enables CKEditor Footnotes functionality.
    *
    * @updatewxt
    *
