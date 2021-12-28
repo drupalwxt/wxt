@@ -27,7 +27,7 @@ class FormHelperTest extends UnitTestCase {
     ]);
     $element = ['#type' => 'location'];
 
-    $form_helper = new FormHelper($element_info->reveal());
+    $form_helper = new FormHelper($this->root, $element_info->reveal());
     $form_helper->applyStandardProcessing($element);
 
     $this->assertEquals(['process_location'], $element['#process']);

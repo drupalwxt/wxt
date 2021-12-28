@@ -26,11 +26,11 @@ class ComponentDiscoveryTest extends KernelTestBase {
   /**
    * {@inheritdoc}
    */
-  protected function setUp() {
+  protected function setUp(): void {
     parent::setUp();
 
     $this->discovery = new ComponentDiscovery(
-      $this->container->get('app.root')
+      $this->container->getParameter('app.root')
     );
   }
 
