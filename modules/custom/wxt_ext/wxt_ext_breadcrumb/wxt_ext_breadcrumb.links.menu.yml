@@ -3,4 +3,3 @@ wxt_ext_breadcrumb.settings_form:
   description: 'Set WxT initial breadcrumbs.'
   parent: wxt.admin_config_wxt
   route_name: wxt_ext_breadcrumb.settings_form
-  weight: 100
