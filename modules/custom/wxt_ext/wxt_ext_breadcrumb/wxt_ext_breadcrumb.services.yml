@@ -14,3 +14,8 @@ services:
     arguments: ['@config.factory', '@menu.active_trail', '@plugin.manager.menu.link', '@router.admin_context', '@title_resolver', '@request_stack', '@language_manager', '@entity_type.manager', '@cache.menu', '@lock']
     tags:
       - { name: breadcrumb_builder, priority: 1015 }
+ wxt_ext_breadcrumb.node_breadcrumb:
+    class: Drupal\wxt_ext_breadcrumb\Breadcrumb\NodeBreadcrumbBuilder
+    arguments: ['@request_stack', '@config.factory', '@current_user', '@title_resolver', '@access_manager']
+    tags:
+      - { name: breadcrumb_builder, priority: 1010 }
