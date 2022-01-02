@@ -82,7 +82,6 @@ jobs:
         git clone --branch 9.2.x https://drupalwxt-svc:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/drupalwxt/site-wxt.git
         git clone --branch 9.2.x https://drupalwxt-svc:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/drupalwxt/wxt-project.git
         git clone --branch master https://drupalwxt-svc:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/drupalwxt/helm-drupal.git
-        git clone --branch master https://drupalwxt-svc:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/drupalwxt/terraform-containers-webapp-azure.git
         git clone --branch master https://drupalwxt-svc:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/drupalwxt/terraform-kubernetes-drupalwxt.git
 
     - name: Update tags for wxt-project
@@ -116,14 +115,6 @@ jobs:
         replace: "tag: ${{ env.GITHUB_REFERENCE }}"
         exclude: ".git/"
         include: "helm-drupal/"
-
-    - name: Update tags for terraform-containers-webapp-azure
-      uses: jacobtomlinson/gha-find-replace@master
-      with:
-        find: "image: drupalwxt/site-wxt:[3-4]\\.[0-9]+\\.[0-9]+(-(beta|rc)[0-9])?]?"
-        replace: "image: drupalwxt/site-wxt:${{ env.GITHUB_REFERENCE }}"
-        exclude: ".git/"
-        include: "terraform-containers-webapp-azure/"
 
     - name: Update tags for terraform-kubernetes-drupalwxt
       uses: jacobtomlinson/gha-find-replace@master
@@ -165,13 +156,6 @@ jobs:
     - name: Push to helm-drupal the latest tags
       run: |
         cd helm-drupal
-        git add .
-        git commit -m "Update to latest version of WxT ${{ env.GITHUB_REFERENCE }}" || true
-        git push origin master
-
-    - name: Push to terraform-containers-webapp-azure the latest tags
-      run: |
-        cd terraform-containers-webapp-azure
         git add .
         git commit -m "Update to latest version of WxT ${{ env.GITHUB_REFERENCE }}" || true
         git push origin master

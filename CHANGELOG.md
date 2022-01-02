@@ -1,4 +1,4 @@
-## v4.2.0 (Unreleased)
+## v4.2.0
 
 - Updates for Drupal Core (9.2.x)
   - Upgrading to the 9.2.x Drupal Core [#3226492](https://www.drupal.org/node/3226492)
