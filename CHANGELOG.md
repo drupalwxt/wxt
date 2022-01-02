@@ -7,11 +7,14 @@
   - Book title in breadcrumb not translated [#3177182](https://www.drupal.org/node/3177182)
   - Add new `route:<separator>` for menu items [#3236799](https://www.drupal.org/project/wxt/issues/3236799)
   - CKEditor adding closing tags to `<source>` and `<track>` [#3155911](https://www.drupal.org/project/wxt/issues/3155911)
+  - Claro support for extra wide screens [#3184667](https://www.drupal.org/node/3184667)
+  - Empty breadcrumb at node/add with frontpage view [#3184667](https://www.drupal.org/node/3184667)
 - Updates for Drupal Contrib
   - Token module updates breaks patch [#3252881](https://www.drupal.org/project/wxt/issues/3252881)
   - Redis incorrect QueueInterface implementation [#3253822](https://www.drupal.org/project/wxt/issues/3253822)
   - New metatag release conflicts with wxt patch [#3255324](https://www.drupal.org/project/wxt/issues/3255324)
   - Accessibility improvements to Diff Module [#3228798](https://www.drupal.org/project/diff/issues/3228798)
+  - Update button_link, core_context, and group to latest stable
 - Updates for WxT
   - Configurable Leading Breadcrumbs [#3203791](https://www.drupal.org/project/wxt/issues/3203791)
   - Flushing caches during preUpdate set maintenance mode [#3248590](https://www.drupal.org/project/wxt/issues/3248590)
