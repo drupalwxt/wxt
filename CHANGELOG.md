@@ -1,4 +1,4 @@
-## v4.1.3 (Unreleased)
+## v4.1.3
 
 - Updates for Drupal Core
   - WCAG required markers on forms [#2921627](https://www.drupal.org/node/2921627)
