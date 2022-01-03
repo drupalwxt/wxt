@@ -89,40 +89,40 @@ jobs:
       with:
         find: "\"drupalwxt/wxt\": \"[3-4]\\.[0-9]+\\.[0-9]+(-(beta|rc)[0-9])?]?\""
         replace: "\"drupalwxt/wxt\": \"${{ env.GITHUB_REFERENCE }}\""
-        exclude: ".git/"
-        include: "wxt-project/"
+        exclude: ".git/**"
+        include: "wxt-project/**"
 
     - name: Update tags for wxt-project
       uses: jacobtomlinson/gha-find-replace@master
       with:
         find: "wxt-project:[3-4]\\.[0-9]+\\.[0-9]+(-(beta|rc)[0-9])?]?"
         replace: "wxt-project:${{ env.GITHUB_REFERENCE }}"
-        exclude: ".git/"
-        include: "wxt-project/"
+        exclude: ".git/**"
+        include: "wxt-project/**"
 
     - name: Update tags for helm-drupal
       uses: jacobtomlinson/gha-find-replace@master
       with:
         find: "appVersion: [3-4]\\.[0-9]+\\.[0-9]+(-(beta|rc)[0-9])?]?"
         replace: "appVersion: ${{ env.GITHUB_REFERENCE }}"
-        exclude: ".git/"
-        include: "helm-drupal/"
+        exclude: ".git/**"
+        include: "helm-drupal/**"
 
     - name: Update tags for helm-drupal
       uses: jacobtomlinson/gha-find-replace@master
       with:
         find: "tag: [3-4]\\.[0-9]+\\.[0-9]+(-(beta|rc)[0-9])?]?"
         replace: "tag: ${{ env.GITHUB_REFERENCE }}"
-        exclude: ".git/"
-        include: "helm-drupal/"
+        exclude: ".git/**"
+        include: "helm-drupal/**"
 
     - name: Update tags for terraform-kubernetes-drupalwxt
       uses: jacobtomlinson/gha-find-replace@master
       with:
         find: "tag: [3-4]\\.[0-9]+\\.[0-9]+(-(beta|rc)[0-9])?]?"
         replace: "tag: ${{ env.GITHUB_REFERENCE }}"
-        exclude: ".git/"
-        include: "terraform-kubernetes-drupalwxt/"
+        exclude: ".git/**"
+        include: "terraform-kubernetes-drupalwxt/**"
 
     - name: Enter the site-wxt directory
       working-directory: ./site-wxt
