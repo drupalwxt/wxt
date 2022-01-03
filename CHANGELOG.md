@@ -1,7 +1,8 @@
-## v4.2.0 (Unreleased)
+## v4.2.0
 
 - Updates for Drupal Core (9.2.x)
   - Upgrading to the 9.2.x Drupal Core [#3226492](https://www.drupal.org/node/3226492)
+  - Updates for Drupal Core to [v9.2.10](https://www.drupal.org/project/drupal/releases/9.2.10)
   - WCAG required markers on forms [#2921627](https://www.drupal.org/node/2921627)
   - New translations for moderated nodes initial workflow state [#3150294](https://www.drupal.org/node/3150294)
   - Book title in breadcrumb not translated [#3177182](https://www.drupal.org/node/3177182)

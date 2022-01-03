@@ -6,4 +6,4 @@ package: WxT
 dependencies:
   - 'wxt_ext_search:wxt_ext_search'
   - 'search_api:search_api_db'
-version: 4.2.0-dev
+version: 4.2.0
