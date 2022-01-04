@@ -104,6 +104,51 @@ The following contributed modules were added by Lightning API:
 "drupal/simple_oauth": "^4.0"
 ```
 
+## v4.1.3
+
+- Updates for Drupal Core
+  - Updates for Drupal Core to [v9.1.15](https://www.drupal.org/project/drupal/releases/9.1.15)
+  - WCAG required markers on forms [#2921627](https://www.drupal.org/node/2921627)
+  - New translations for moderated nodes initial workflow state [#3150294](https://www.drupal.org/node/3150294)
+  - Book title in breadcrumb not translated [#3177182](https://www.drupal.org/node/3177182)
+  - Add new `route:<separator>` for menu items [#3236799](https://www.drupal.org/project/wxt/issues/3236799)
+- Updates for Drupal Contrib
+  - Token module updates breaks patch [#3252881](https://www.drupal.org/project/wxt/issues/3252881)
+  - Redis incorrect QueueInterface implementation [#3253822](https://www.drupal.org/project/wxt/issues/3253822)
+  - New metatag release conflicts with wxt patch [#3255324](https://www.drupal.org/project/wxt/issues/3255324)
+  - Accessibility improvements to Diff Module [#3228798](https://www.drupal.org/project/diff/issues/3228798)
+- Updates for WxT
+  - Flushing caches during preUpdate set maintenance mode [#3248590](https://www.drupal.org/project/wxt/issues/3248590)
+  - Issues with Insert from Media Library [#3246714](https://www.drupal.org/project/wxt/issues/3246714)
+  - Can't install WxT Extend Webform after minimal site install [#3249953](https://www.drupal.org/project/wxt/issues/3249953)
+  - Adjustments to Password Policy [#3252532](https://www.drupal.org/project/wxt/issues/3252532)
+- Updates for WxT Bootstrap
+  - WxT Bootstrap fix .pagedetails layout issues [#3253398](https://www.drupal.org/project/wxt/issues/3253398)
+  - GC Subway not working correctly in Intranet theme [#3253829](https://www.drupal.org/project/wxt/issues/3253829)
+  - Issues with Insert from Media Library [#3246714](https://www.drupal.org/project/wxt/issues/3246714)
+  - Add new `route:<separator>` for menu items [#3236799](https://www.drupal.org/project/wxt/issues/3236799)
+
+Upgrade path:
+
+> Note: No special notes for this release.
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
+- Run Lightning configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:lightning`
+
+- Run WxT configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:wxt`
+
+**Note:** N/A
+
 ## v4.1.2
 
 - Updates for Drupal Core (v9.1.14)
