@@ -15,4 +15,4 @@ dependencies:
   - 'lightning_media_twitter:lightning_media_twitter'
   - 'lightning_media_video:lightning_media_video'
   - 'wxt_translation:wxt_translation'
-version: 4.2.0
+version: 4.2.0-dev
