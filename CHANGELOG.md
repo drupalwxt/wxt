@@ -1,3 +1,31 @@
+## v4.2.1 (In Development)
+
+- Updates for Drupal Core (v9.2.x)
+  - [SA-core-2022-001](https://www.drupal.org/sa-core-2022-001)
+- Updates for WxT Bootstrap
+  - Table of Contents (TOC) issue [#3258089](https://www.drupal.org/project/wxt/issues/3258089)
+
+Upgrade path:
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
+- Run Lightning configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:lightning`
+
+- Run WxT configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:wxt`
+
+**Note(s)**:
+
+N/A
+
 ## v4.2.0
 
 - Updates for Drupal Core (9.2.x)
