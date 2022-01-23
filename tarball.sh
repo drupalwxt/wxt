@@ -12,7 +12,7 @@ if [[ ! $YAML_CLI ]]; then
 fi
 
 rm -rf $ARCHIVE
-composer create-project --stability beta --no-install drupal/legacy-project:1 $ARCHIVE
+composer create-project --stability beta --no-install drupal/legacy-project:9.2.11 $ARCHIVE
 composer dump-autoload
 composer configure-tarball $ARCHIVE
 
