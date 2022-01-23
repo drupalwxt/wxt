@@ -32,4 +32,4 @@ dependencies:
   - 'wxt_ext_theme:wxt_ext_theme'
   - 'wxt_ext_user:wxt_ext_user'
   - 'wxt_ext_webform:wxt_ext_webform'
-version: 4.2.0-dev
+version: 4.2.1
