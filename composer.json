@@ -76,6 +76,14 @@
         "prestissimo": {
             "maxConnections": 10,
             "minConnections": 5
+        },
+        "allow-plugins": {
+            "composer/installers": true,
+            "drupal/core-composer-scaffold": true,
+            "cweagans/composer-patches": true,
+            "drupal/console-extend-plugin": true,
+            "oomphinc/composer-installers-extender": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true
         }
     },
     "autoload": {
