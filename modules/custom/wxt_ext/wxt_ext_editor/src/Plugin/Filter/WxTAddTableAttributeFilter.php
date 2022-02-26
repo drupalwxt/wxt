@@ -132,16 +132,16 @@ class WxTAddTableAttributeFilter extends FilterBase {
     foreach ($xpath->query('//table') as $node) {
       if ($replace_classes) {
         if ($replace_all_classes) {
-          // Replace all existing classes
+          // Replace all existing classes.
           $node->setAttribute('class', $this->settings['classes']);
         }
         else {
-          // Add new classes and keep whitelisted classes
+          // Add new classes and keep whitelisted classes.
           $existing_classes = explode(" ", $node->getAttribute('class'));
 
           foreach ($existing_classes as $key => $value) {
             if (!in_array($value, $whitelisted_classes)) {
-              // Remove class if not in whitelist
+              // Remove class if not in whitelist.
               unset($existing_classes[$key]);
             }
           }
@@ -152,7 +152,7 @@ class WxTAddTableAttributeFilter extends FilterBase {
             }
           }
 
-          // Replace classes with new classes
+          // Replace classes with new classes.
           $node->setAttribute('class', implode(" ", $existing_classes));
         }
       }
@@ -165,7 +165,7 @@ class WxTAddTableAttributeFilter extends FilterBase {
       }
 
       if ($add_datatable_attribute) {
-        // Add datatable options to "data-wb-tables" attribute
+        // Add datatable options to "data-wb-tables" attribute.
         $node->setAttribute('data-wb-tables', $datatable_options);
       }
     }

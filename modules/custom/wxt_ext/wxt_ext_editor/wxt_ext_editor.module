@@ -22,7 +22,7 @@ function wxt_ext_editor_editor_js_settings_alter(array &$settings) {
  * Implements hook_form_FORM_ID_alter().
  */
 function wxt_ext_editor_form_editor_media_dialog_alter(array &$form, FormStateInterface $form_state) {
-  // Relabel existing field
+  // Relabel existing field.
   $form['caption']['#title'] = t('Figure');
   $form['caption']['#description'] = t('Place this media item within a figure, with optional caption.');
 }

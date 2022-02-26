@@ -6,6 +6,7 @@
 - Updates for WxT
   - Table of Contents exclude headings above token [#3262311](https://www.drupal.org/project/wxt/issues/3262311)
   - Use footnote value as placeholder in CKEditor [#3262570](https://www.drupal.org/project/wxt/issues/3262570)
+  - WxT Editor PHPCS Cleanup [#3261854](https://www.drupal.org/project/wxt/issues/3261854)
 
 Upgrade path:
 

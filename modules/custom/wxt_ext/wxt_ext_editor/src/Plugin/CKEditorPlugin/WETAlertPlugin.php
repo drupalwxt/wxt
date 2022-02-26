@@ -5,6 +5,7 @@ namespace Drupal\wxt_ext_editor\Plugin\CKEditorPlugin;
 use Drupal\ckeditor\CKEditorPluginInterface;
 use Drupal\ckeditor\CKEditorPluginButtonsInterface;
 use Drupal\Component\Plugin\PluginBase;
+use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\editor\Entity\Editor;
 
 /**
@@ -17,8 +18,10 @@ use Drupal\editor\Entity\Editor;
  */
 class WETAlertPlugin extends PluginBase implements CKEditorPluginInterface, CKEditorPluginButtonsInterface {
 
+  use StringTranslationTrait;
+
   /**
-   * Implements \Drupal\ckeditor\Plugin\CKEditorPluginInterface::getDependencies().
+   * {@inheritdoc}
    */
   public function getDependencies(Editor $editor) {
     return [];
@@ -32,7 +35,7 @@ class WETAlertPlugin extends PluginBase implements CKEditorPluginInterface, CKEd
   }
 
   /**
-   * Implements \Drupal\ckeditor\Plugin\CKEditorPluginInterface::isInternal().
+   * {@inheritdoc}
    */
   public function isInternal() {
     return FALSE;
@@ -51,7 +54,7 @@ class WETAlertPlugin extends PluginBase implements CKEditorPluginInterface, CKEd
   public function getButtons() {
     return [
       'alert' => [
-        'label' => t('Add alert'),
+        'label' => $this->t('Add alert'),
         'image' => drupal_get_path('module', 'wxt_ext_editor') . '/js/plugins/wet_alert/icons/alert.png',
       ],
     ];
