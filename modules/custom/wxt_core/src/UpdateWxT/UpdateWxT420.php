@@ -61,6 +61,7 @@ final class UpdateWxT420 implements ContainerInjectionInterface {
    * @ask Do you want to enable CKEditor TOC functionality?
    */
   public function enableCKEditorTOC() {
+    $this->moduleInstaller->install(['wxt_ext_editor']);
     $this->moduleInstaller->install(['toc_filter']);
 
     $format = FilterFormat::load('rich_text');
@@ -68,21 +69,6 @@ final class UpdateWxT420 implements ContainerInjectionInterface {
     $format->setFilterConfig('entity_embed', ['weight' => $configuration['weight'] + 1]);
     $format->setFilterConfig('toc_filter', ['status' => TRUE, 'settings' => ['type' => 'wxt']]);
     $format->save();
-
-    $this->moduleInstaller->install(['ckeditor_abbreviation']);
-
-    $editor = Editor::load('rich_text');
-    $settings = $editor->getSettings();
-    $rows = $settings['toolbar']['rows'];
-    foreach ($rows as $row_key => $row) {
-      foreach ($row as $group_key => $group) {
-        if ($group['name'] === 'WET Components') {
-          array_unshift($settings['toolbar']['rows'][$row_key][$group_key]['items'], "abbr");
-        }
-      }
-    }
-    $editor->setSettings($settings);
-    $editor->save();
   }
 
   /**
@@ -93,6 +79,7 @@ final class UpdateWxT420 implements ContainerInjectionInterface {
    * @ask Do you want to enable CKEditor Abbreviation functionality?
    */
   public function enableCKEditorAbbreviation() {
+    $this->moduleInstaller->install(['wxt_ext_editor']);
     $this->moduleInstaller->install(['ckeditor_abbreviation']);
 
     $editor = Editor::load('rich_text');
@@ -117,6 +104,8 @@ final class UpdateWxT420 implements ContainerInjectionInterface {
    * @ask Do you want to enable CKEditor Alert functionality?
    */
   public function enableCKEditorAlert() {
+    $this->moduleInstaller->install(['wxt_ext_editor']);
+
     $editor = Editor::load('rich_text');
     $settings = $editor->getSettings();
     $rows = $settings['toolbar']['rows'];
@@ -139,6 +128,8 @@ final class UpdateWxT420 implements ContainerInjectionInterface {
    * @ask Do you want to enable CKEditor Footnotes functionality?
    */
   public function enableCKEditorFootnotes() {
+    $this->moduleInstaller->install(['wxt_ext_editor']);
+
     $editor = Editor::load('rich_text');
     $settings = $editor->getSettings();
     $rows = $settings['toolbar']['rows'];
