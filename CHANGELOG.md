@@ -3,6 +3,8 @@
 - Updates for Drupal Core (v9.2.13)
   - [SA-core-2022-003](https://www.drupal.org/sa-core-2022-003)
   - [SA-core-2022-004](https://www.drupal.org/sa-core-2022-004)
+- Updates for WxT
+  - Table of Contents exclude headings above token [#3262311](https://www.drupal.org/project/wxt/issues/3262311)
 
 Upgrade path:
 

@@ -148,3 +148,4 @@ filters:
       type: wxt
       auto: ''
       block: '0'
+      exclude_above: '1'
