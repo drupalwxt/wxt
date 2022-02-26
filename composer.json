@@ -18,7 +18,7 @@
         "drupal/ckeditor_codemirror": "2.3",
         "drupal/ckeditor_details": "^2.0.2",
         "drupal/config_rewrite": "1.4",
-        "drupal/core": "9.2.11",
+        "drupal/core": "9.2.13",
         "drupal/core_context": "1.0-beta5",
         "drupal/ctools": "^3.7",
         "drupal/diff": "1.0",
@@ -76,6 +76,14 @@
         "prestissimo": {
             "maxConnections": 10,
             "minConnections": 5
+        },
+        "allow-plugins": {
+            "composer/installers": true,
+            "drupal/core-composer-scaffold": true,
+            "cweagans/composer-patches": true,
+            "drupal/console-extend-plugin": true,
+            "oomphinc/composer-installers-extender": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true
         }
     },
     "autoload": {

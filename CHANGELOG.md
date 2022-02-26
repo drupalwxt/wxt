@@ -1,3 +1,30 @@
+## v4.2.2 (In Development)
+
+- Updates for Drupal Core (v9.2.13)
+  - [SA-core-2022-003](https://www.drupal.org/sa-core-2022-003)
+  - [SA-core-2022-004](https://www.drupal.org/sa-core-2022-004)
+
+Upgrade path:
+
+> Note: No special notes for this release.
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
+- Run Lightning configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:lightning`
+
+- Run WxT configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:wxt`
+
+**Note:** N/A
+
 ## v4.2.1
 
 - Updates for Drupal Core (v9.2.x)

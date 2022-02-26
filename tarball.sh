@@ -12,7 +12,7 @@ if [[ ! $YAML_CLI ]]; then
 fi
 
 rm -rf $ARCHIVE
-composer create-project --stability beta --no-install drupal/legacy-project:9.2.11 $ARCHIVE
+composer create-project --stability beta --no-install drupal/legacy-project:9.2.13 $ARCHIVE
 composer dump-autoload
 composer configure-tarball $ARCHIVE
 
@@ -30,7 +30,7 @@ composer config extra.enable-patching true
 composer config minimum-stability dev
 composer config prefer-stable true
 composer remove --no-update composer/installers
-composer require --no-update "ext-dom:*" cweagans/composer-patches oomphinc/composer-installers-extender 'drupal/core:9.2.11'
+composer require --no-update "ext-dom:*" cweagans/composer-patches oomphinc/composer-installers-extender 'drupal/core:9.2.13'
 composer update --ignore-platform-reqs
 
 # Create the profile destination directory.
