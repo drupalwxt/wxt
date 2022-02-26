@@ -5,6 +5,7 @@
   - [SA-core-2022-004](https://www.drupal.org/sa-core-2022-004)
 - Updates for WxT
   - Table of Contents exclude headings above token [#3262311](https://www.drupal.org/project/wxt/issues/3262311)
+  - Use footnote value as placeholder in CKEditor [#3262570](https://www.drupal.org/project/wxt/issues/3262570)
 
 Upgrade path:
 

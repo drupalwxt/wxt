@@ -246,8 +246,8 @@
             "drupal/footnotes": {
                 "3248765 - Footnote links aware of instances":
                 "https://www.drupal.org/files/issues/2021-11-12/footnotes-provide-instance-visibility-to-links-3248765-5.patch",
-                "3249716 - Set title attribute for fakeobjects":
-                "https://www.drupal.org/files/issues/2021-11-16/footnotes-add-title-attr-to-fakeobjects-3249716-2.patch",
+                "3119883 - Set title attribute for fakeobjects and display footnote value in backend":
+                "https://www.drupal.org/files/issues/2022-02-04/footnotes-value-as-placeholder-3119883-8.patch",
                 "3204959 - Enable CKEditor basic styles for footnot text field":
                 "https://www.drupal.org/files/issues/2021-11-16/footnotes-basic-styles-for-footnote-text-field-3204959-4.patch"
             },
