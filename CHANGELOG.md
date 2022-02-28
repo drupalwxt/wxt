@@ -8,6 +8,8 @@
   - Use footnote value as placeholder in CKEditor [#3262570](https://www.drupal.org/project/wxt/issues/3262570)
   - WxT Editor PHPCS Cleanup [#3261854](https://www.drupal.org/project/wxt/issues/3261854)
   - 4.20 Update Hook with minimal install [#3263903](https://www.drupal.org/project/wxt/issues/3263903)
+  - importTranslations() method not working for config translations [#3266196](https://www.drupal.org/project/wxt/issues/3266196)
+  - Ensure WxT custom install tasks are post install_finished [#3266820](https://www.drupal.org/project/wxt/issues/3266820)
 
 Upgrade path:
 
