@@ -1,4 +1,4 @@
-## v4.2.2 (In Development)
+## v4.2.2
 
 - Updates for Drupal Core (v9.2.13)
   - [SA-core-2022-003](https://www.drupal.org/sa-core-2022-003)
