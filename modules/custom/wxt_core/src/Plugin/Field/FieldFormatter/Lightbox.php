@@ -96,10 +96,17 @@ class Lightbox extends ImageFormatterBase {
       $image_uri = $file->getFileUri();
       $lbx_image_path = !empty($lbx_image_style) ? ImageStyle::load($lbx_image_style)->buildUrl($image_uri) : $image_uri;
 
-      $url = Url::fromUri(file_create_url($lbx_image_path));
       $item = $file->_referringItem;
       $item_attributes = $file->_attributes;
       unset($file->_attributes);
+
+      $title = $item->get('title')->getValue();
+      $url_options = [
+        'attributes' => [
+          'title' => $title,
+         ],
+      ];
+      $url = Url::fromUri(file_create_url($lbx_image_path), $url_options);
 
       $item_attributes['class'][] = 'thumbnail';
 
@@ -116,7 +123,14 @@ class Lightbox extends ImageFormatterBase {
       ];
     }
 
-    return $elements;
+    $output[0] = [
+      '#theme' => 'item_list',
+      '#list_type' => 'ul',
+      '#items' => $elements,
+      '#attributes' => ['class' => 'list-inline'],
+    ];
+
+    return $output;
   }
 
   /**
