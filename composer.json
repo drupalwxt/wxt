@@ -18,7 +18,7 @@
         "drupal/ckeditor_codemirror": "2.3",
         "drupal/ckeditor_details": "^2.0.2",
         "drupal/config_rewrite": "1.4",
-        "drupal/core": "9.2.13",
+        "drupal/core": "9.2.16",
         "drupal/core_context": "1.0-beta5",
         "drupal/ctools": "^3.7",
         "drupal/diff": "1.0",
