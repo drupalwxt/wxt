@@ -35,11 +35,6 @@ class BreadcrumbsForm extends ConfigFormBase {
 
     $form = [];
 
-    // Example from: https://drupal.stackexchange.com/a/200972
-    $form['description'] = [
-      '#markup' => '<div>' . $this->t('Add leading breadcrumbs, which appear before page specific breadcrumbs.') . '</div>',
-    ];
-
     $i = 0;
     $crumbtitle_field = $form_state->get('num_crumbs');
     $num_vals = 0;
@@ -59,11 +54,32 @@ class BreadcrumbsForm extends ConfigFormBase {
 
     $form['#tree'] = TRUE;
 
+    /*
+     * Home breadcrumb
+     */
+    $form['wxt_ext_breadcrumb_home'] = [
+      '#type' => 'fieldset',
+      '#title' => $this->t('Home breadcrumb link'),
+    ];
+
+    $form['wxt_ext_breadcrumb_home']['enable_app_breadcrumb'] = [
+      '#type' => 'checkbox',
+      '#title' => $this->t('Label the home breadcrumb link with application name'),
+      '#default_value' => $config->get('enable_app_breadcrumb'),
+    ];
+
+    /*
+     * Leading breadcrumbs
+     */
     $form['wxt_ext_breadcrumb'] = [
       '#type' => 'fieldset',
-      '#title' => $this->t('Leading breadcrumbs for this application'),
+      '#title' => $this->t('Leading breadcrumbs'),
       '#prefix' => '<div id="crumbs-fieldset-wrapper">',
       '#suffix' => '</div>',
+    ];
+
+    $form['wxt_ext_breadcrumb']['description'] = [
+      '#markup' => '<div>' . $this->t('Add leading breadcrumbs, which appear before application specific breadcrumbs.') . '</div>',
     ];
 
     if (empty($crumbtitle_field)) {
@@ -72,7 +88,7 @@ class BreadcrumbsForm extends ConfigFormBase {
 
     $form['wxt_ext_breadcrumb']['enable_wxt_breadcrumbs'] = [
       '#type' => 'checkbox',
-      '#title' => $this->t('Enable WxT Breadcrumbs'),
+      '#title' => $this->t('Enable leading breadcrumbs'),
       '#default_value' => $config->get('enable_wxt_breadcrumbs'),
     ];
 
@@ -296,6 +312,7 @@ class BreadcrumbsForm extends ConfigFormBase {
     $settings->set('en', $values_en);
     $settings->set('fr', $values_fr);
     $settings->set('enable_wxt_breadcrumbs', $values['enable_wxt_breadcrumbs']);
+    $settings->set('enable_app_breadcrumb', $form_state->getValue('wxt_ext_breadcrumb_home')['enable_app_breadcrumb']);
     $settings->save();
 
     parent::submitForm($form, $form_state);

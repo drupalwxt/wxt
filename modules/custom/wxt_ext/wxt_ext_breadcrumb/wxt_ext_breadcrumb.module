@@ -40,12 +40,13 @@ function wxt_ext_breadcrumb_system_breadcrumb_alter(Breadcrumb &$breadcrumb, Rou
   $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
   $config = \Drupal::config('wxt_ext_breadcrumb.settings');
 
-  $enabled = $config->get('enable_wxt_breadcrumbs');
+  $enable_leading = $config->get('enable_wxt_breadcrumbs');
+  $label_home = $config->get('enable_app_breadcrumb');
+  $leading_links = [];
+  $app_link = [];
 
-  // Onlt alter breadcrumbs if WxT Breadcrumbs is enabled
-  if ($enabled) {
-    $links = [];
-
+  // Only alter leading breadcrumbs if enabled
+  if ($enable_leading) {
     // Set configured header breadcrumbs.
     if ($breadcrumb_settings = $config->get($language)) {
 
@@ -54,13 +55,14 @@ function wxt_ext_breadcrumb_system_breadcrumb_alter(Breadcrumb &$breadcrumb, Rou
         $url = $language . '_url';
         if (!empty($breadcrumb_settings[$i][$title]) && !empty($breadcrumb_settings[$i][$url])) {
           if (stripos($breadcrumb_settings[$i][$url], 'http') >= 0) {
-            $links[] = Link::fromTextAndUrl($breadcrumb_settings[$i][$title], Url::fromUri($breadcrumb_settings[$i][$url]));
+            $leading_links[] = Link::fromTextAndUrl($breadcrumb_settings[$i][$title], Url::fromUri($breadcrumb_settings[$i][$url]));
           }
         }
       }
     }
+  }
 
-    $route_name = \Drupal::routeMatch()->getRouteName();
+  if ($label_home) {
     $breadcrumb_links = $breadcrumb->getLinks();
     $sitename = \Drupal::config('system.site')->get('name');
 
@@ -83,25 +85,25 @@ function wxt_ext_breadcrumb_system_breadcrumb_alter(Breadcrumb &$breadcrumb, Rou
     $is_front = \Drupal::service('path.matcher')->isFrontPage();
 
     if (!$is_front) {
-      $links[] = Link::fromTextAndUrl($sitename, Url::fromRoute('<front>'));
+      $app_link[] = Link::fromTextAndUrl($sitename, Url::fromRoute('<front>'));
     }
-
-    $links = array_merge($links, $breadcrumb_links);
-    $breadcrumb = new Breadcrumb();
-    $breadcrumb->setLinks($links);
-    $breadcrumb_links = $breadcrumb->getLinks();
-
-    // Add back the cacheable dependency at the end of these modifications.
-    if ($route_match && $node = $route_match->getParameter('node')) {
-      $breadcrumb->addCacheableDependency($node);
-    }
-    if ($route_match && $term = $route_match->getParameter('taxonomy_term')) {
-      $breadcrumb->addCacheableDependency($term);
-    }
-    if ($route_match && $mlink = $route_match->getParameter('menu_link_content')) {
-      $breadcrumb->addCacheableDependency($mlink);
-    }
-
-    $breadcrumb->addCacheContexts(['route', 'url.path', 'languages']);
   }
+
+  $breadcrumb_links = $breadcrumb->getLinks();
+  $links = array_merge($leading_links, $app_link, $breadcrumb_links);
+  $breadcrumb = new Breadcrumb();
+  $breadcrumb->setLinks($links);
+
+  // Add back the cacheable dependency at the end of these modifications.
+  if ($route_match && $node = $route_match->getParameter('node')) {
+    $breadcrumb->addCacheableDependency($node);
+  }
+  if ($route_match && $term = $route_match->getParameter('taxonomy_term')) {
+    $breadcrumb->addCacheableDependency($term);
+  }
+  if ($route_match && $mlink = $route_match->getParameter('menu_link_content')) {
+    $breadcrumb->addCacheableDependency($mlink);
+  }
+
+  $breadcrumb->addCacheContexts(['route', 'url.path', 'languages']);
 }
