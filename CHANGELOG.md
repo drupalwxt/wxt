@@ -1,5 +1,42 @@
 ## v4.2.2
 
+- Updates for Drupal Core (v9.2.17)
+  - [SA-core-2022-005](https://www.drupal.org/sa-core-2022-005)
+  - [SA-core-2022-006](https://www.drupal.org/sa-core-2022-006)
+- Updates for WxT
+  - Core Context breaks Layout Library [#3263697](https://www.drupal.org/project/wxt/issues/3263697)
+  - Lightbox markup incorrect [#3269655](https://www.drupal.org/project/wxt/issues/3269655)
+  - Switching to seven admin theme causes WSOD [#3272568](https://www.drupal.org/project/wxt/issues/3272568)
+  - Rename home breadcrumb [#3275151](https://www.drupal.org/project/wxt/issues/3275151)
+- Updates for WxT Bootstrap
+  - GC Subway layout issue [#3268224](https://www.drupal.org/project/wxt/issues/3268224)
+  - wxt_bootstrap starterkit core version requirement [#3274498](https://www.drupal.org/project/wxt/issues/3274498)
+  - Search form block layout issues with custom theme [#3274502](https://www.drupal.org/project/wxt/issues/3274502)
+  - Remove current page title from breadcrumbs by default [#3274514](https://www.drupal.org/project/wxt/issues/3274514)
+  - Enable fluid page per entity [#3275166](https://www.drupal.org/project/wxt/issues/3275166)
+Upgrade path:
+
+> Note: No special notes for this release.
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
+- Run Lightning configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:lightning`
+
+- Run WxT configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:wxt`
+
+**Note:** N/A
+
+## v4.2.2
+
 - Updates for Drupal Core (v9.2.13)
   - [SA-core-2022-003](https://www.drupal.org/sa-core-2022-003)
   - [SA-core-2022-004](https://www.drupal.org/sa-core-2022-004)

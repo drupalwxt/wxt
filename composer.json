@@ -18,7 +18,7 @@
         "drupal/ckeditor_codemirror": "2.3",
         "drupal/ckeditor_details": "^2.0.2",
         "drupal/config_rewrite": "1.4",
-        "drupal/core": "9.2.16",
+        "drupal/core": "9.2.17",
         "drupal/core_context": "1.0-beta5",
         "drupal/ctools": "^3.7",
         "drupal/diff": "1.0",
@@ -56,7 +56,7 @@
         "drupal/views_bootstrap": "^3.4",
         "drupal/webform": "^6.0",
         "drupal/webform_migrate": "1.x-dev",
-        "drupal/wxt_bootstrap": "6.1",
+        "drupal/wxt_bootstrap": "6.2",
         "drupal/wxt_library": "6.0",
         "w8tcha/ckeditor-codemirror": "1.16"
     },
