@@ -13,4 +13,4 @@ dependencies:
   - 'lightning_landing_page:lightning_landing_page'
   - 'lightning_page:lightning_page'
   - 'page_manager_ui:page_manager_ui'
-version: 4.2.3
+version: 4.2.3-dev
