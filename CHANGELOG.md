@@ -1,4 +1,4 @@
-## v4.2.2
+## v4.2.3
 
 - Updates for Drupal Core (v9.2.17)
   - [SA-core-2022-005](https://www.drupal.org/sa-core-2022-005)

@@ -18,4 +18,4 @@ dependencies:
   - 'wxt_ext_metatag:wxt_ext_metatag'
   - 'wxt_ext_migration:wxt_ext_migration'
   - 'wxt_ext_taxonomy:wxt_ext_taxonomy'
-version: 4.2.2-dev
+version: 4.2.3
