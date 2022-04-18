@@ -86,6 +86,10 @@ function wxt_install_extensions(array &$install_state) {
  */
 function wxt_install_module($module) {
   \Drupal::service('module_installer')->install((array) $module);
+
+  if ($module == 'search') {
+    \Drupal::service('router.builder')->rebuild();
+  }
 }
 
 /**
