@@ -8,6 +8,7 @@
 use Drupal\Core\Link;
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Breadcrumb\Breadcrumb;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\Core\Url;
 
 /**
@@ -96,6 +97,26 @@ function wxt_ext_breadcrumb_system_breadcrumb_alter(Breadcrumb &$breadcrumb, Rou
 
   // Add back the cacheable dependency at the end of these modifications.
   if ($route_match && $node = $route_match->getParameter('node')) {
+    if ($node->bundle() == 'blog_post') {
+      $links = $breadcrumb->getLinks();
+
+      foreach ($links as $key => $link) {
+        $text = $link->getText();
+
+        if ($text instanceof TranslatableMarkup) {
+          $arguments = $text->getArguments();
+
+          if (!empty($arguments['@username'])) {
+            // Remove user blog path.
+            unset($links[$key]);
+            $breadcrumb = new Breadcrumb();
+            $breadcrumb->setLinks($links);
+            break;
+          }
+        }
+      }
+    }
+
     $breadcrumb->addCacheableDependency($node);
   }
   if ($route_match && $term = $route_match->getParameter('taxonomy_term')) {
