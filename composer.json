@@ -221,7 +221,9 @@
                 "Enter drupal/core patch #3236799 description here":
                 "https://www.drupal.org/files/issues/2021-12-22/drupal-core-9.2.x-li-role-separator-tag-linkGenerator-3236799-11.patch",
                 "2632132 - Fix seven install":
-                "https://www.drupal.org/files/issues/2019-10-11/Move_Seven_block_config_into_the_Seven_theme-2632132-42.patch"
+                "https://www.drupal.org/files/issues/2019-10-11/Move_Seven_block_config_into_the_Seven_theme-2632132-42.patch",
+                "2681947 - Allow exposed form in views block without AJAX":
+                "https://www.drupal.org/files/issues/2020-12-22/2681947-40.patch"
             },
             "drupal/core_context": {
                 "Enter drupal/core_context patch #3263703 description here":
