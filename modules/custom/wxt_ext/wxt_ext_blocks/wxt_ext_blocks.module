@@ -4,3 +4,39 @@
  * @file
  * Contains wxt_ext_blocks.module.
  */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\block\Entity\Block;
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function wxt_ext_blocks_form_block_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  /** @var \Drupal\block\BlockInterface $block */
+  $block = $form_state->getFormObject()->getEntity();
+
+  // This will automatically be saved in the third party settings.
+  $form['third_party_settings']['#tree'] = TRUE;
+  $form['third_party_settings']['wxt_ext_blocks']['display_title_invisible'] = [
+    '#type' => 'checkbox',
+    '#title' => t('Display invisible title'),
+    '#default_value' => $block->getThirdPartySetting('wxt_ext_blocks', 'display_title_invisible'),
+  ];
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function wxt_ext_blocks_preprocess_block(&$variables) {
+  // Blocks coming from page manager widget does not have id.
+  if (!empty($variables['elements']['#id'])) {
+    $block = Block::load($variables['elements']['#id']);
+    if ($block) {
+      $variables['label_display'] = $block->get('settings')['label_display'] == 'visible' ? TRUE : FALSE;
+
+      if ($display_title_invisible = $block->getThirdPartySetting('wxt_ext_blocks', 'display_title_invisible')) {
+        $variables['display_title_invisible'] = TRUE;
+      }
+    }
+  }
+}
