@@ -1,0 +1,204 @@
+
+.intranet-blue #wb-sec h3 a:hover {
+ background: #335075 !important; }
+
+.intranet-blue #wb-sec li .wb-navcurr {
+ background-color: #335075 !important; }
+
+.intranet-blue #wb-sec li a:hover {
+ background: #335075 !important; }
+
+.intranet-blue #wb-sec li a:focus {
+ background: #335075 !important; }
+
+.intranet-blue #wb-sm .sm.open li a:hover,
+.intranet-blue #wb-sm .sm.open li a:focus,
+.intranet-blue #wb-sm .sm.open li a:active,
+.intranet-blue #wb-sm .sm.open li summary:hover,
+.intranet-blue #wb-sm .sm.open li summary:focus,
+.intranet-blue #wb-sm .sm.open li summary:active {
+ background: #335075; }
+
+.intranet-blue #wb-srch button,
+.intranet-blue .srchbox button {
+ background-color: #243851;
+ border-color: #243851; }
+
+.intranet-blue #app-brand{
+ background-color: #335075;
+}
+
+.intranet-blue #wb-info .brand {
+ border-top: 4px solid #335075; }
+
+.intranet-blue #wb-glb-mn ul.chvrn {
+ background: #335075; }
+
+.intranet-blue #wb-info .brand {
+ border-top: 4px solid #335075; }
+
+.intranet-blue #mb-pnl .modal-body {
+ background: #335075; }
+
+.intranet-blue #mb-pnl .srch-pnl form button:hover,
+.intranet-blue #mb-pnl .srch-pnl form button:focus,
+.intranet-blue #mb-pnl .srch-pnl form button:active {
+ background: #335075; }
+
+.intranet-blue #mb-pnl .sm-pnl {
+ background: #335075; }
+
+.intranet-blue #mb-pnl .info-pnl {
+ background: #335075; }
+
+.intranet-blue .wb-tabs.carousel-s2 figcaption,
+.intranet-blue .wb-tabs.carousel-s1 figcaption {
+ background-color: #335075; }
+
+.intranet-blue #geds button {
+ background-color: #335075;
+ border-color: #335075; }
+
+.intranet-blue #spotlight div {
+ background-color: #335075;
+ border-color: #335075; }
+
+.intranet-blue #spotlight .btn-primary a {
+ background-color: #335075; }
+
+.intranet-blue #wb-smapp2 .menu .active,
+.intranet-blue #wb-smapp2 .menu .selected,
+.intranet-blue #wb-smapp2 .menu .wb-navcurr {
+ background: #335075 !important; }
+
+.intranet-blue #wb-smapp2 .menu > li a:hover,
+.intranet-blue #wb-smapp2 .menu > li a:focus {
+ background: #335075 !important; }
+
+.intranet-blue #wb-smapp2 .sm.open {
+ border-bottom: 5px solid #335075; }
+
+.intranet-blue #wb-smapp2 .sm.open li summary:active {
+ background: #335075; }
+
+.intranet-blue #wb-smapp .nvbar {
+ background-color: #335075; }
+
+.intranet-blue .btn-primary {
+ background-color: #335075; }
+
+.intranet-blue .btn-primary.disabled,
+.intranet-blue .btn-primary.disabled:hover,
+.intranet-blue .btn-primary.disabled:focus,
+.intranet-blue .btn-primary.disabled.focus,
+.intranet-blue .btn-primary.disabled:active,
+.intranet-blue .btn-primary.disabled.active,
+.intranet-blue .btn-primary[disabled],
+.intranet-blue .btn-primary[disabled]:hover,
+.intranet-blue .btn-primary[disabled]:focus,
+.intranet-blue .btn-primary[disabled].focus,
+.intranet-blue .btn-primary[disabled]:active,
+.intranet-blue .btn-primary[disabled].active,
+.intranet-blue fieldset[disabled] .btn-primary,
+.intranet-blue fieldset[disabled] .btn-primary:hover,
+.intranet-blue fieldset[disabled] .btn-primary:focus,
+.intranet-blue fieldset[disabled] .btn-primary.focus,
+.intranet-blue fieldset[disabled] .btn-primary:active,
+.intranet-blue fieldset[disabled] .btn-primary.active {
+ background-color: #335075; }
+
+.intranet-blue .btn-primary .badge {
+ color: #335075; }
+
+.intranet-blue main .btn-primary {
+background-color: #335075;
+border-color: #335075; }
+
+.intranet-blue .panel-gcintranet {
+ border-color: #335075; }
+
+.intranet-blue .panel-gcintranet > .panel-heading {
+ background-color: #335075;
+ border-color: #335075; }
+
+.intranet-blue .panel-gcintranet > .panel-heading + .panel-collapse > .panel-body {
+ border-top-color: #335075; }
+
+.intranet-blue .panel-gcintranet > .panel-footer + .panel-collapse > .panel-body {
+ border-bottom-color: #335075; }
+
+.intranet-blue .panel-gcintranet-home {
+ border-color: #335075; }
+
+.intranet-blue .panel-gcintranet-home > .panel-heading {
+ background-color: #335075;
+ border-color: #335075; }
+
+.intranet-blue .panel-gcintranet-home header {
+ background-color: #335075; }
+
+.intranet-blue .panel-gcintranet-home > a {
+ background-color: #335075; }
+
+.intranet-blue .panel-gcintranet-home > a:hover,
+.intranet-blue .panel-gcintranet-home header > a:active {
+ background-color: #335075; }
+
+.intranet-blue #tools-sm{
+ background: red; /* For browsers that do not support gradients */
+ background: -webkit-linear-gradient(left, #243851 , #335075); /* For Safari 5.1 to 6.0 */
+ background: -o-linear-gradient(right, #243851, #335075); /* For Opera 11.1 to 12.0 */
+ background: -moz-linear-gradient(right, #243851, #335075); /* For Firefox 3.6 to 15 */
+ background: linear-gradient(to right, #243851 , #335075); /* Standard syntax */ }
+
+.intranet-blue #wb-sec h3 {
+ border-bottom: 5px solid #243851 !important; }
+
+.intranet-blue #wb-srch button:hover,
+.intranet-blue #wb-srch button:focus,
+.intranet-blue #wb-srch button:active,
+.intranet-blue .srchbox button:hover,
+.intranet-blue .srchbox button:focus,
+.intranet-blue .srchbox button:active {
+ background: #243851; }
+
+.intranet-blue .app-name{
+ background-color: #243851; }
+
+.intranet-blue .app-name:before{
+ border-left: 20px solid #243851; }
+
+.intranet-blue #mb-pnl .modal-header {
+ background: #243851;
+ border-bottom: 1px solid #243851; }
+
+.intranet-blue #mb-pnl .modal-header:before {
+ border-bottom: 1.45em solid #243851;
+ border-top: 1.45em solid #243851; }
+
+.intranet-blue #mb-pnl .srch-pnl form button {
+ background-color: #243851;
+ border-color: #243851; }
+
+.intranet-blue #geds button:hover,
+.intranet-blue #geds button:focus,
+.intranet-blue #geds button:active {
+ background: #243851; }
+
+.intranet-blue #spotlight div:hover,
+.intranet-blue #spotlight div:focus,
+.intranet-blue #spotlight div:active {
+ background: #243851; }
+
+.intranet-blue #spotlight .btn-primary:active,
+.intranet-blue #spotlight .btn-primary:hover,
+.intranet-blue #spotlight .btn-primary:focus{
+ background-color: #243851; }
+
+.intranet-blue .btn-primary:hover,
+.intranet-blue .btn-primary:focus,
+.intranet-blue .btn-primary.focus,
+.intranet-blue .btn-primary:active,
+.intranet-blue .btn-primary.active,
+.intranet-blue .open > .btn-primary.dropdown-toggle {
+ background-color: #243851; }
