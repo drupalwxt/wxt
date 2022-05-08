@@ -269,7 +269,9 @@
             },
             "drupal/lightning_core": {
                 "Enter drupal/lightning_core patch #3223839 description here":
-                "https://www.drupal.org/files/issues/2021-07-15/3223839-1-PHP-warning-from-contextual-links.patch"
+                "https://www.drupal.org/files/issues/2021-07-15/3223839-1-PHP-warning-from-contextual-links.patch",
+                "Enter drupal/lightning_core patch #3277249 description here":
+                "https://www.drupal.org/files/issues/2022-04-26/lightning_core_remove_composer_autoload-3277249-3.patch"
             },
             "drupal/lightning_media": {
                 "Enter drupal/lightning_media patch #3097516 description here":
