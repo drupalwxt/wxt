@@ -31,7 +31,7 @@
         "drupal/footnotes": "^3.0",
         "drupal/group": "1.4",
         "drupal/inline_entity_form": "^1.0-rc9",
-        "drupal/lightning_core": "^5.4",
+        "drupal/lightning_core": "^5.10",
         "drupal/lightning_layout": "^2.9",
         "drupal/lightning_media": "^4.4",
         "drupal/lightning_workflow": "^3.16",
@@ -269,9 +269,7 @@
             },
             "drupal/lightning_core": {
                 "Enter drupal/lightning_core patch #3223839 description here":
-                "https://www.drupal.org/files/issues/2021-07-15/3223839-1-PHP-warning-from-contextual-links.patch",
-                "Enter drupal/lightning_core patch #3277249 description here":
-                "https://www.drupal.org/files/issues/2022-04-26/lightning_core_remove_composer_autoload-3277249-3.patch"
+                "https://www.drupal.org/files/issues/2021-07-15/3223839-1-PHP-warning-from-contextual-links.patch"
             },
             "drupal/lightning_media": {
                 "Enter drupal/lightning_media patch #3097516 description here":
