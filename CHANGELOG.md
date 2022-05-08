@@ -1,3 +1,43 @@
+## v4.2.4
+
+- Updates for Drupal Core (v9.2.18)
+  - [SA-core-2022-008](https://www.drupal.org/sa-core-2022-008)
+- Updates for WxT
+  - RouteNotFoundException: Route "search.view_node_search" on browser install [#3275738](https://www.drupal.org/node/3275738)
+  - Blue intranet theme toggle [#3276713](https://www.drupal.org/node/3276713)
+  - Views exposed form requires AJAX to be enabled on block display [#3276663](https://www.drupal.org/node/3276663)
+  - Update blog breadcrumbs to work similar to other content type [#3277084](https://www.drupal.org/node/3277084)
+  - Block headings changes for WCAG compliance [#3277101](https://www.drupal.org/node/3277101)
+- Updates for WxT Bootstrap
+  - Revert search form block layout issues with custom theme [#3274502](https://www.drupal.org/node/3274502)
+  - WET media player [#3279276](https://www.drupal.org/node/3279276)
+  - Add common book page template fix to starterkit [#3277987](https://www.drupal.org/node/3277987)
+  - Language switcher validation issue [#3277091](https://www.drupal.org/node/3277091)
+  - Block headings changes for WCAG compliance [#3277101](https://www.drupal.org/node/3277101)
+- Updates for WxT Library
+  - Blue intranet theme toggle [#3276713](https://www.drupal.org/node/3276713)
+
+Upgrade path:
+
+> Note: No special notes for this release.
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
+- Run Lightning configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:lightning`
+
+- Run WxT configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:wxt`
+
+**Note:** N/A
+
 ## v4.2.3
 
 - Updates for Drupal Core (v9.2.17)
@@ -14,6 +54,7 @@
   - Search form block layout issues with custom theme [#3274502](https://www.drupal.org/project/wxt/issues/3274502)
   - Remove current page title from breadcrumbs by default [#3274514](https://www.drupal.org/project/wxt/issues/3274514)
   - Enable fluid page per entity [#3275166](https://www.drupal.org/project/wxt/issues/3275166)
+
 Upgrade path:
 
 > Note: No special notes for this release.
