@@ -277,7 +277,9 @@
             },
             "drupal/lightning_workflow": {
                 "Enter drupal/lightning_workflow patch #3126343 description here":
-                "https://www.drupal.org/files/issues/2020-07-08/3126343-11.patch"
+                "https://www.drupal.org/files/issues/2020-07-08/3126343-11.patch",
+                "Enter drupal/lightning_workflow patch #3277251 description here":
+                "https://www.drupal.org/files/issues/2022-04-26/lightning_workflow_remove_composer_autoload-3277251-2.patch"
             },
             "drupal/linkit": {
                 "Detect and strip base URL from pasted URLs to increase matching hits":
