@@ -34,7 +34,7 @@
         "drupal/lightning_core": "^5.10",
         "drupal/lightning_layout": "^2.9",
         "drupal/lightning_media": "^4.4",
-        "drupal/lightning_workflow": "^3.16",
+        "drupal/lightning_workflow": "^3.17",
         "drupal/linkit": "6.0.0-beta3",
         "drupal/media_entity_slideshow": "^2.0",
         "drupal/menu_block": "1.6.0",
@@ -277,9 +277,7 @@
             },
             "drupal/lightning_workflow": {
                 "Enter drupal/lightning_workflow patch #3126343 description here":
-                "https://www.drupal.org/files/issues/2020-07-08/3126343-11.patch",
-                "Enter drupal/lightning_workflow patch #3277251 description here":
-                "https://www.drupal.org/files/issues/2022-04-26/lightning_workflow_remove_composer_autoload-3277251-2.patch"
+                "https://www.drupal.org/files/issues/2020-07-08/3126343-11.patch"
             },
             "drupal/linkit": {
                 "Detect and strip base URL from pasted URLs to increase matching hits":
