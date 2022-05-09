@@ -5,4 +5,4 @@ core_version_requirement: '^8.8 || ^9'
 package: WxT
 dependencies:
   - 'book:book'
-version: 4.2.3-dev
+version: 4.2.4

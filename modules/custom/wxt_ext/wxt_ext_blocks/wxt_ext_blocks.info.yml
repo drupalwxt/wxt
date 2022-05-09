@@ -8,4 +8,4 @@ dependencies:
   - 'wxt_core:wxt_core'
   - 'wxt_translation:wxt_translation'
   - 'wxt_ext_media:wxt_ext_media'
-version: 4.2.3-dev
+version: 4.2.4
