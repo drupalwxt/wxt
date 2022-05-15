@@ -335,10 +335,6 @@
                 "Enter drupal/s3fs patch #3038992 description here":
                 "https://www.drupal.org/files/issues/2019-03-10/0001-feat-s3fs-Compatibility-with-Minio.patch"
             },
-            "drupal/toc_api": {
-                "3118516 - Add an 'exclude' xpath option":
-                "https://www.drupal.org/files/issues/2021-08-04/toc_api-add_exclude_xpath_option-6.patch"
-            },
             "toc_filter": {
                 "3262302 - Exclude text above [toc] token when building TOC":
                 "https://www.drupal.org/files/issues/2022-02-03/toc-filter-exclude-text-above-token-3262302-2.patch"
