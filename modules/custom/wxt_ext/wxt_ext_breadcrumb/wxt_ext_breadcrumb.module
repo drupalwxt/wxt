@@ -10,6 +10,7 @@ use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Breadcrumb\Breadcrumb;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\Core\Url;
+use Drupal\node\NodeInterface;
 
 /**
  * Implements hook_help().
@@ -97,21 +98,23 @@ function wxt_ext_breadcrumb_system_breadcrumb_alter(Breadcrumb &$breadcrumb, Rou
 
   // Add back the cacheable dependency at the end of these modifications.
   if ($route_match && $node = $route_match->getParameter('node')) {
-    if ($node->bundle() == 'blog_post') {
-      $links = $breadcrumb->getLinks();
+    if ($node instanceof NodeInterface) {
+      if ($node->bundle() == 'blog_post') {
+        $links = $breadcrumb->getLinks();
 
-      foreach ($links as $key => $link) {
-        $text = $link->getText();
+        foreach ($links as $key => $link) {
+          $text = $link->getText();
 
-        if ($text instanceof TranslatableMarkup) {
-          $arguments = $text->getArguments();
+          if ($text instanceof TranslatableMarkup) {
+            $arguments = $text->getArguments();
 
-          if (!empty($arguments['@username'])) {
-            // Remove user blog path.
-            unset($links[$key]);
-            $breadcrumb = new Breadcrumb();
-            $breadcrumb->setLinks($links);
-            break;
+            if (!empty($arguments['@username'])) {
+              // Remove user blog path.
+              unset($links[$key]);
+              $breadcrumb = new Breadcrumb();
+              $breadcrumb->setLinks($links);
+              break;
+            }
           }
         }
       }
