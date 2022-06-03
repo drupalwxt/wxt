@@ -21,11 +21,11 @@ function wxt_ext_blocks_form_block_form_alter(&$form, FormStateInterface $form_s
     '#type' => 'checkbox',
     '#title' => t('Display invisible title'),
     '#default_value' => $block->getThirdPartySetting('wxt_ext_blocks', 'display_title_invisible'),
-    '#states' => array(
-      'visible' => array(
-        ':input[name="settings[label_display]"]' => array('checked' => TRUE),
-      ),
-    ),
+    '#states' => [
+      'visible' => [
+        ':input[name="settings[label_display]"]' => ['checked' => TRUE],
+      ],
+    ],
   ];
 }
 
