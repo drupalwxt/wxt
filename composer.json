@@ -18,7 +18,7 @@
         "drupal/ckeditor_codemirror": "2.3",
         "drupal/ckeditor_details": "^2.0.2",
         "drupal/config_rewrite": "1.4",
-        "drupal/core": "9.2.18",
+        "drupal/core": "9.3.15",
         "drupal/core_context": "1.0-beta5",
         "drupal/ctools": "^3.7",
         "drupal/diff": "1.0",
@@ -167,11 +167,11 @@
                 "Enter drupal/core patch #850600 description here":
                 "https://www.drupal.org/files/issues/postgresql_ssl_dsn-850600-3.patch",
                 "Enter drupal/core patch #1356276 description here":
-                "https://www.drupal.org/files/issues/2021-06-29/D91x-1356276-656.patch",
+                "https://www.drupal.org/files/issues/2021-11-18/1356276-675.patch",
                 "Enter drupal/core patch #2559833 description here":
                 "https://www.drupal.org/files/issues/2021-06-02/comment_form_redirect-2559833-87.patch",
                 "Enter drupal/core patch #2630732 description here":
-                "https://www.drupal.org/files/issues/2020-09-17/2630732-77.patch",
+                "https://www.drupal.org/files/issues/2022-02-22/D93x-implement_entity_fields_for_migration_dest-2630732.patch",
                 "2679775 - Fixes float issue with inline label fields (entity references on most cases).":
                 "https://www.drupal.org/files/issues/2679775-11-inline-labels.patch",
                 "2699157 - Plugin Lazy loading can cause usort warning":
@@ -195,17 +195,15 @@
                 "Enter drupal/core patch #2893407 description here":
                 "https://www.drupal.org/files/issues/2021-06-07/2893407-47.patch",
                 "Enter drupal/core patch #2907413 description here":
-                "https://www.drupal.org/files/issues/2019-06-21/2907413-11.patch",
+                "https://www.drupal.org/files/issues/2021-11-19/D93x-2907413-23.patch",
                 "2921627 - WCAG required markers on forms":
-                "https://www.drupal.org/files/issues/2021-09-07/2921627-68_3.patch",
-                "Enter drupal/core patch #2922570 description here":
-                "https://www.drupal.org/files/issues/2021-09-08/2922570-90.9.2.5.patch",
+                "https://www.drupal.org/files/issues/2021-10-13/2921627-71.patch",
                 "Enter drupal/core patch #2938129 description here":
                 "https://www.drupal.org/files/issues/2019-01-18/2938129-pagetitle-11.patch",
                 "Enter drupal/core patch #3017710 description here":
                 "https://www.drupal.org/files/issues/2018-12-05/3017710-20.patch",
                 "3150294 - New translations for moderated nodes are not created in the initial workflow state":
-                "https://www.drupal.org/files/issues/2021-11-02/3150294-74.patch",
+                "https://www.drupal.org/files/issues/2022-01-05/3150294-95.patch",
                 "Enter drupal/core patch #3164210 description here":
                 "https://www.drupal.org/files/issues/2021-05-17/3164210-11.patch",
                 "3177182 - Book title in breadcrumb not translated":
@@ -222,8 +220,6 @@
                 "https://www.drupal.org/files/issues/2021-12-22/drupal-core-9.2.x-li-role-separator-tag-linkGenerator-3236799-11.patch",
                 "2632132 - Fix seven install":
                 "https://www.drupal.org/files/issues/2019-10-11/Move_Seven_block_config_into_the_Seven_theme-2632132-42.patch",
-                "2681947 - Allow exposed form in views block without AJAX":
-                "https://www.drupal.org/files/issues/2020-12-22/2681947-40.patch",
                 "3107212 - allow translation of views field empty text":
                 "https://www.drupal.org/files/issues/2022-03-09/d9-3-x--3107212-13.patch"
             },
