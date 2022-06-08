@@ -16,7 +16,53 @@ id: gcweb_did_you_find
 title: 'GCWeb - Did you find what you were looking for'
 description: ''
 category: ''
-elements: "did_you_find_answer:\n  '#type': hidden\n  '#title': 'Did you find what you were looking for?'\ninitial_page:\n  '#type': webform_wizard_page\n  '#title': 'Initial page'\n  initial_page_text:\n    '#type': processed_text\n    '#text': |\n      <h2 class=\"mrgn-tp-sm h5\">Did you find what you were looking for?</h2>\n    '#format': rich_text\n  actions_02:\n    '#type': webform_actions\n    '#title': 'Submit button (No)'\n    '#submit_hide': true\n    '#update_hide': true\n    '#wizard_prev_hide': true\n    '#wizard_next__label': 'No'\n    '#wizard_next__attributes':\n      class:\n        - 'btn btn-primary'\nno_page:\n  '#type': webform_wizard_page\n  '#title': 'No page'\n  what_was_wrong:\n    '#type': radios\n    '#title': 'What was wrong?'\n    '#options':\n      problem1: 'The answer I need is missing'\n      problem2: 'The information isn’t clear'\n      problem3: 'I’m not in the right place'\n      problem4: 'Something is broken or incorrect'\n      problem5: 'Other reason'\n  problem6:\n    '#type': textarea\n    '#title': 'Please provide more details'\n    '#description': |-\n      <p>(Don&rsquo;t include any personal information. Note that you will not receive a reply.)</p>\n\n      <p class=\"small\">Maximum 300 characters</p>\n    '#description_display': before\n  actions_01:\n    '#type': webform_actions\n    '#title': 'Submit button'\n    '#submit__label': Submit\n    '#submit__attributes':\n      class:\n        - 'btn btn-primary'\n    '#update_hide': true\n    '#wizard_prev_hide': true\n    '#wizard_next_hide': true"
+elements: |-
+  did_you_find_answer:
+    '#type': hidden
+    '#title': 'Did you find what you were looking for?'
+  initial_page:
+    '#type': webform_wizard_page
+    '#title': 'Initial page'
+    actions_02:
+      '#type': webform_actions
+      '#title': 'Submit button (No)'
+      '#submit_hide': true
+      '#update_hide': true
+      '#wizard_prev_hide': true
+      '#wizard_next__label': 'No'
+      '#wizard_next__attributes':
+        class:
+          - 'btn btn-primary'
+  no_page:
+    '#type': webform_wizard_page
+    '#title': 'No page'
+    what_was_wrong:
+      '#type': radios
+      '#title': 'What was wrong?'
+      '#options':
+        problem1: 'The answer I need is missing'
+        problem2: 'The information isn’t clear'
+        problem3: 'I’m not in the right place'
+        problem4: 'Something is broken or incorrect'
+        problem5: 'Other reason'
+    problem6:
+      '#type': textarea
+      '#title': 'Please provide more details'
+      '#description': |-
+        <p>(Don&rsquo;t include any personal information. Note that you will not receive a reply.)</p>
+
+        <p class="small">Maximum 300 characters</p>
+      '#description_display': before
+    actions_01:
+      '#type': webform_actions
+      '#title': 'Submit button'
+      '#submit__label': Submit
+      '#submit__attributes':
+        class:
+          - 'btn btn-primary'
+      '#update_hide': true
+      '#wizard_prev_hide': true
+      '#wizard_next_hide': true
 css: ''
 javascript: ''
 settings:

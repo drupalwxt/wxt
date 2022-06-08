@@ -41,17 +41,9 @@ function wxt_ext_webform_theme_suggestions_form_element_alter(array &$suggestion
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
  */
-function wxt_ext_webform_theme_suggestions_container_alter(array &$suggestions, array &$variables) {
-  if (!empty($variables['element']['#webform']) && $variables['element']['#webform'] == 'gcweb_did_you_find') {
-    if ($variables['element']['#webform_key'] == 'initial_page') {
-      // Add class to webform container
-      $variables['element']['#attributes']['class'][] = 'row';
-    }
-
-    if ($variables['element']['#webform_key'] == 'actions_02') {
-      // Add class to webform container (action buttons)
-      $variables['element']['#attributes']['class'][] = 'col-xs-8 col-sm-5 text-right margin-bottom-none';
-    }
+function wxt_ext_webform_theme_suggestions_container_alter(array &$suggestions, array $variables) {
+  if (!empty($variables['element']['#webform_id']) && $variables['element']['#webform_id'] == 'gcweb_did_you_find--actions_02') {
+    $suggestions[] = 'container__gcweb_did_you_find_actions';
   }
 }
 
@@ -73,7 +65,10 @@ function wxt_ext_webform_webform_submission_presave(WebformSubmission $submissio
 function wxt_ext_webform_webform_submission_form_alter(array &$form, FormStateInterface $form_state, $form_id) {
   if (strpos($form_id, 'webform_submission_gcweb_did_you_find') !== FALSE) {
     if ($form_state->get('current_page') == 'initial_page') {
-      // Add submit button on first page of wizard
+      // Add class to No button for spacing.
+      $form['actions']['wizard_next']['#attributes']['class'][] = 'mrgn-lft-sm';
+
+      // Add submit button on first page of wizard.
       $form['actions']['submit_first_page'] = [
         '#type' => 'submit',
         '#value' => t('Yes'),
