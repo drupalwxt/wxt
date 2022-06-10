@@ -1,5 +1,7 @@
 ## v4.2.5
 
+- Updates for Drupal Core (v9.2.20)
+  - [SA-core-2022-010](https://www.drupal.org/sa-core-2022-010)
 - Updates for WxT
   - Error on revisions page [#3283171](https://www.drupal.org/node/3283171)
   - Update drupal/toc_api [#3280164](https://www.drupal.org/node/3280164)
