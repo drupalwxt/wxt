@@ -8,4 +8,4 @@ dependencies:
   - 'gnode:gnode'
   - 'group:group'
   - 'wxt_ext_blog:wxt_ext_blog'
-version: 4.2.4
+version: 4.2.5
