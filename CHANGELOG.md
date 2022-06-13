@@ -1,3 +1,75 @@
+## v4.3.0 (In Development)
+
+- Updates for Drupal Core (v9.3.16)
+  - [SA-core-2022-011](https://www.drupal.org/sa-core-2022-011)
+
+Upgrade path:
+
+> Note: No special notes for this release.
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
+- Run Lightning configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:lightning`
+
+- Run WxT configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:wxt`
+
+**Note:** N/A
+
+## v4.2.5
+
+- Updates for Drupal Core (v9.2.20)
+  - [SA-core-2022-010](https://www.drupal.org/sa-core-2022-010)
+- Updates for WxT
+  - Error on revisions page [#3283171](https://www.drupal.org/node/3283171)
+  - Update drupal/toc_api [#3280164](https://www.drupal.org/node/3280164)
+  - Improve block headings [#3282516](https://www.drupal.org/node/3282516)
+  - PHPCS Issues [#3283216](https://www.drupal.org/node/3283216)
+  - Did you find webform message not announced [#3280784](https://www.drupal.org/node/3280784)
+  - Translate views field empty text [#3284335](https://www.drupal.org/node/3284335)
+- Updates for WxT Bootstrap
+  - Intranet fluid page issue [#3281242](https://www.drupal.org/node/3281242)
+  - Remote video support non-youtube sources [#3280184](https://www.drupal.org/node/3280184)
+  - Improve block headings [#3282516](https://www.drupal.org/node/3282516)
+  - Fix body field block template WCAG [#3280257](https://www.drupal.org/node/3280257)
+  - Did you find webform message not announced [#3280784](https://www.drupal.org/node/3280784)
+  - WeT media player for local videos [#3284458](https://www.drupal.org/node/3284458)
+  - Fix markup validation issue [#3284898](https://www.drupal.org/node/3284898)
+  - Remove aria-label from invisible header nav [#3284573](https://www.drupal.org/node/3284573)
+- Updates for WxT Library
+  - Date modified spacing issue [#3282358](https://www.drupal.org/node/3282358)
+  - Date modified block to get value from Date Modified field [#3280231](https://www.drupal.org/node/3280231)
+  - Update to latest GCweb and WxT [#3280226](https://www.drupal.org/node/3280226)
+
+Upgrade path:
+
+> Note: No special notes for this release.
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
+- Run Lightning configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:lightning`
+
+- Run WxT configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:wxt`
+
+**Note:** N/A
+
 ## v4.2.4
 
 - Updates for Drupal Core (v9.2.18)
