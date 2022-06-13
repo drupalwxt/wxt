@@ -11,4 +11,4 @@ dependencies:
   - 'drupal:user'
   - 'drupal:views'
   - 'search_api:search_api'
-version: 4.2.5
+version: 4.2.5-dev
