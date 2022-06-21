@@ -202,18 +202,6 @@ class MainBreadcrumbBuilder implements BreadcrumbBuilderInterface {
     if ($route && !$route->getOption('_admin_route')) {
       $links = $breadcrumb->getLinks();
 
-      if (!empty($links) && $links[0]->getText() == $this->t('Home')) {
-
-        $url = 'https://www.canada.ca/en.html';
-        if ($this->languageManager->getCurrentLanguage()->getId() == 'fr') {
-          $url = 'https://www.canada.ca/fr.html';
-        }
-        $link = array_shift($links);
-        $link->setUrl(Url::fromUri($url));
-
-        array_unshift($links, $link);
-      }
-
       $breadcrumb = new Breadcrumb();
       $breadcrumb->addCacheContexts(['url.path.parent']);
       $breadcrumb->setLinks($links);
