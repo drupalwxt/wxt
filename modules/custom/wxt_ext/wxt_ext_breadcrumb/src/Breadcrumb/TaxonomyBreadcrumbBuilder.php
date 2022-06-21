@@ -16,7 +16,6 @@ use Drupal\Core\Routing\RequestContext;
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
-use Drupal\Core\Url;
 use Drupal\path_alias\AliasManagerInterface;
 use Symfony\Component\Routing\Matcher\RequestMatcherInterface;
 

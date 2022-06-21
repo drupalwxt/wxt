@@ -1,7 +1,14 @@
-## v4.3.0 (In Development)
+## v4.3.0
 
 - Updates for Drupal Core (v9.3.16)
   - [SA-core-2022-011](https://www.drupal.org/sa-core-2022-011)
+- Updates for WxT
+  - Add config link for modules [#3291183](https://www.drupal.org/node/3291183)
+  - Hardcoded breadcrumb links to canada.ca [#3291230](https://www.drupal.org/node/3291230)
+- Updates for WxT Bootstrap
+  - Footnotes template issue [#3285890](https://www.drupal.org/node/3285890)
+- Updates for WxT Library
+  - Add config link for modules [#3291183](https://www.drupal.org/node/3291183)
 
 Upgrade path:
 

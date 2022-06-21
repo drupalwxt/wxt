@@ -13,7 +13,6 @@ use Drupal\Core\Menu\MenuActiveTrailInterface;
 use Drupal\Core\Menu\MenuLinkManagerInterface;
 use Drupal\Core\Routing\AdminContext;
 use Drupal\Core\Routing\RouteMatchInterface;
-use Drupal\Core\Url;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Drupal\menu_breadcrumb\MenuBasedBreadcrumbBuilder;
 use Drupal\Core\Cache\CacheBackendInterface;
