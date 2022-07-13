@@ -9,4 +9,4 @@ dependencies:
   - 'drupal:entityqueue'
   - 'drupal:wxt_ext_landing_page'
   - 'wxt_ext_media:wxt_ext_media'
-version: 4.3.0
+version: 4.3.0-dev
