@@ -122,7 +122,7 @@ source:
     - mlid: 'main_news'
       link_title: 'Nouvelles'
       description: ''
-      menu_name: 'main_fr'
+      menu_name: 'main-fr'
       link_path: 'https://intranet.canada.ca/psc-fsc/index-fra.asp'
       options: []
       external: 1
@@ -131,7 +131,7 @@ source:
     - mlid: 'main_news_sub_1'
       link_title: 'Messages aux employés'
       description: 'Messages aux employés.'
-      menu_name: 'main_fr'
+      menu_name: 'main-fr'
       link_path: 'https://intranet.canada.ca/psc-fsc/messages/index-fra.asp'
       options: []
       external: 0
@@ -140,7 +140,7 @@ source:
     - mlid: 'main_human_resources'
       link_title: 'Ressources humaines'
       description: 'Ressources humaines.'
-      menu_name: 'main_fr'
+      menu_name: 'main-fr'
       link_path: 'https://intranet.canada.ca/hr-rh/index-fra.asp'
       options: []
       external: 1
@@ -149,7 +149,7 @@ source:
     - mlid: 'main_human_resources_sub_1'
       link_title: 'Rémunération, pension et avantages sociaux'
       description: 'Rémunération, pension et avantages sociaux.'
-      menu_name: 'main_fr'
+      menu_name: 'main-fr'
       link_path: 'https://intranet.canada.ca/ppb-rpa/index-fra.asp'
       options: []
       external: 0
@@ -158,7 +158,7 @@ source:
     - mlid: 'main_career'
       link_title: 'Développement de carrière et apprentissage'
       description: 'Développement de carrière et apprentissage'
-      menu_name: 'main_fr'
+      menu_name: 'main-fr'
       link_path: 'https://intranet.canada.ca/cdl-dca/index-fra.asp'
       options: []
       external: 1
@@ -167,7 +167,7 @@ source:
     - mlid: 'main_career_sub_1'
       link_title: 'Trouver un emploi'
       description: 'Trouver un emploi.'
-      menu_name: 'main_fr'
+      menu_name: 'main-fr'
       link_path: 'https://intranet.canada.ca/cdl-dca/fj-te/index-fra.asp'
       options: []
       external: 0
@@ -176,7 +176,7 @@ source:
     - mlid: 'main_services'
       link_title: 'Services et outils'
       description: 'Services et outils'
-      menu_name: 'main_fr'
+      menu_name: 'main-fr'
       link_path: 'https://intranet.canada.ca/wg-tg/index-fra.asp'
       options: []
       external: 1
@@ -185,7 +185,7 @@ source:
     - mlid: 'main_services_sub_1'
       link_title: 'Reporting on government finances'
       description: 'Reporting on government finances.'
-      menu_name: 'main_fr'
+      menu_name: 'main-fr'
       link_path: 'https://intranet.canada.ca/wg-tg/gf-fg/index-eng.asp'
       options: []
       external: 0

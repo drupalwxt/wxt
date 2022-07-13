@@ -13,7 +13,7 @@ menu_breadcrumb_menus:
     langhandle: 1
     weight: -10
     taxattach: 0
-  main_fr:
+  main-fr:
     enabled: 1
     langhandle: 1
     weight: 0
