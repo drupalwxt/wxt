@@ -1,3 +1,39 @@
+## v4.3.1 (In Development)
+
+- Updates for Drupal Core (v9.3.18)
+  - [Bugfix Release](https://www.drupal.org/project/drupal/releases/9.3.18)
+- Updates for WxT
+  - Translation patch causes whitescreen [#3291183](https://www.drupal.org/node/3295377)
+  - Main menu in French not editable [#3291230](https://www.drupal.org/node/3294325)
+- Updates for WxT Bootstrap
+  - Main menu in French not editable [#3291230](https://www.drupal.org/node/3294325)
+  - PHP 8.1 compatibility [#3294596](https://www.drupal.org/node/3294596)
+  - GCIntranet WxT search form label visible on mobile [#3294629](https://www.drupal.org/node/3294629)
+  - Set dynamic wrapper element for Did you find webform block [#3291816](https://www.drupal.org/node/3291816)
+- Updates for WxT Library
+  - Passing null to parameter #1 ($string)  [#3286651](https://www.drupal.org/node/3286651)
+
+Upgrade path:
+
+> Note: No special notes for this release.
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
+- Run Lightning configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:lightning`
+
+- Run WxT configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:wxt`
+
+**Note:** N/A
+
 ## v4.3.0
 
 - Updates for Drupal Core (v9.3.16)
