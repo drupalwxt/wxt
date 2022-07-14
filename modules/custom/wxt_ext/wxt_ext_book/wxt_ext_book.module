@@ -164,7 +164,7 @@ function wxt_ext_book_preprocess_links(&$variables) {
     if ($match) {
       $link['link']['#title'] = [
         '#type' => 'inline_template',
-        '#template' => '<span class="{{ icon }}" aria-hidden="true"></span>{{ title }}',
+        '#template' => '<span class="{{ icon }}" aria-hidden="true"></span>{{ title|t }}',
         '#context' => [
           'title' => is_string($link['link']['#title']) ? $link['link']['#title'] : $link['link']['#title']->getUntranslatedString(),
           'icon' => $icon_class,
