@@ -1,0 +1,7 @@
+node.type.*.third_party.wxt_ext_workflow:
+  type: mapping
+  label: 'WxT Extend Workflow settings'
+  mapping:
+    workflow:
+      type: string
+      label: 'Workflow ID'

@@ -1,0 +1,8 @@
+name: 'WxT Extend Workflow'
+description: 'Tools to improve your content workflow.'
+type: module
+core_version_requirement: '^8.8 || ^9'
+package: WxT
+dependencies:
+  - drupal:content_moderation
+version: 4.3.0-dev

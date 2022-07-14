@@ -12,8 +12,6 @@ third_party_settings:
   menu_ui:
     available_menus: {  }
     parent: ''
-  lightning_workflow:
-    workflow: editorial
 name: Webform
 type: webform
 description: 'A basic page with a webform attached.'

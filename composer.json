@@ -21,7 +21,7 @@
         "drupal/core": "9.3.16",
         "drupal/core_context": "1.0-beta5",
         "drupal/ctools": "^3.7",
-        "drupal/diff": "1.0",
+        "drupal/diff": "^1.0",
         "drupal/entity_reference_revisions": "^1.8",
         "drupal/entityqueue": "^1.0-alpha8",
         "drupal/field_formatter": "^3.0",
@@ -34,7 +34,6 @@
         "drupal/lightning_core": "^5.10",
         "drupal/lightning_layout": "^2.9",
         "drupal/lightning_media": "^4.4",
-        "drupal/lightning_workflow": "^3.17",
         "drupal/linkit": "6.0.0-beta3",
         "drupal/media_entity_slideshow": "^2.0",
         "drupal/menu_block": "1.6.0",
@@ -272,12 +271,6 @@
             "drupal/lightning_media": {
                 "Enter drupal/lightning_media patch #3097516 description here":
                 "https://www.drupal.org/files/issues/2019-11-29/lightning_bulk_upload_form-3097516-2.patch"
-            },
-            "drupal/lightning_workflow": {
-                "Enter drupal/lightning_workflow patch #3126343 description here":
-                "https://www.drupal.org/files/issues/2020-07-08/3126343-11.patch",
-                "Enter drupal/lightning_workflow patch #3277251 description here":
-                "https://www.drupal.org/files/issues/2022-05-08/lightning_workflow_remove_composer_autoload-3277251-5.patch"
             },
             "drupal/linkit": {
                 "Detect and strip base URL from pasted URLs to increase matching hits":

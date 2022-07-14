@@ -1,0 +1,251 @@
+<?php
+
+/**
+ * @file
+ * Contains wxt_ext_workflow.module.
+ */
+
+use Drupal\content_moderation\Plugin\WorkflowType\ContentModerationInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\EntityPublishedInterface;
+use Drupal\Core\Entity\RevisionableInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Serialization\Yaml;
+use Drupal\wxt_core\Routing\RouteSubscriber;
+use Drupal\node\NodeTypeInterface;
+use Drupal\views\Entity\View;
+use Drupal\views\ViewExecutable;
+use Drupal\workflows\Entity\Workflow;
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function wxt_ext_workflow_form_node_type_add_form_alter(array &$form) {
+  $map = function (Workflow $workflow) {
+    return $workflow->label();
+  };
+  $workflows = array_map($map, Workflow::loadMultipleByType('content_moderation'));
+
+  $form['workflow']['workflow'] = [
+    '#type' => 'select',
+    '#title' => t('Add this content type to workflow'),
+    '#options' => $workflows,
+    '#access' => (bool) $workflows,
+    '#empty_value' => '',
+  ];
+  if (array_key_exists('editorial', $workflows)) {
+    $form['workflow']['workflow']['#default_value'] = 'editorial';
+  }
+
+  // If Field UI is installed, there will be a button to save the content type
+  // and add more fields.
+  if (isset($form['actions']['save_continue'])) {
+    $submit_handlers = &$form['actions']['save_continue']['#submit'];
+  }
+  else {
+    $submit_handlers = &$form['actions']['submit']['#submit'];
+  }
+
+  $index = array_search('::save', $submit_handlers);
+  if (is_int($index)) {
+    array_splice($submit_handlers, $index, 0, ['_wxt_ext_workflow_node_type_add_form_submit']);
+  }
+}
+
+/**
+ * Submit handler for node_type_add_form.
+ */
+function _wxt_ext_workflow_node_type_add_form_submit(array &$form, FormStateInterface $form_state) {
+  $workflow = $form_state->getValue('workflow');
+  if ($workflow) {
+    /** @var \Drupal\node\NodeTypeInterface $node_type */
+    $node_type = $form_state->getFormObject()->getEntity();
+    assert($node_type->isNew());
+    $node_type->setThirdPartySetting('wxt_ext_workflow', 'workflow', $workflow);
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_insert().
+ */
+function wxt_ext_workflow_node_type_insert(NodeTypeInterface $node_type) {
+  // Don't do anything during a config sync.
+  if (Drupal::isConfigSyncing()) {
+    return;
+  }
+
+  $workflow = $node_type->getThirdPartySetting('wxt_ext_workflow', 'workflow');
+  if ($workflow) {
+    _wxt_ext_workflow_moderate_content_type($node_type, $workflow);
+  }
+}
+
+/**
+ * Adds a content type to a moderation workflow.
+ *
+ * @param \Drupal\node\NodeTypeInterface $node_type
+ *   The content type.
+ * @param string $workflow_id
+ *   The workflow ID. The workflow must exist and use a plugin that implements
+ *   \Drupal\content_moderation\Plugin\WorkflowType\ContentModerationInterface.
+ *
+ * @internal
+ *   This function may be changed or removed at any time without warning. It
+ *   should NOT be called by external code!
+ */
+function _wxt_ext_workflow_moderate_content_type(NodeTypeInterface $node_type, $workflow_id) {
+  $workflow = Workflow::load($workflow_id);
+  if (empty($workflow)) {
+    return;
+  }
+
+  $plugin = $workflow->getTypePlugin();
+  if ($plugin instanceof ContentModerationInterface) {
+    $plugin->addEntityTypeAndBundle('node', $node_type->id());
+    $workflow->save();
+
+    // The moderation_history view depends on the existence of the
+    // moderation_state base field, which is only defined once a content type
+    // has been opted into moderation. Now that's done, so create the
+    // moderation_history view if it doesn't already exist.
+    if (Drupal::moduleHandler()->moduleExists('views')) {
+      $view = View::load('moderation_history');
+
+      if (empty($view)) {
+        $values = file_get_contents(__DIR__ . '/config/dynamic/views.view.moderation_history.yml');
+        $values = Yaml::decode($values);
+        View::create($values)->save();
+      }
+    }
+    // We need to rebuild all routes because Content Moderation needs to ensure
+    // that edit forms load the latest revision, and that the moderation_history
+    // view's routes are registered if needed.
+    Drupal::service('router.builder')->rebuild();
+  }
+}
+
+/**
+ * Implements hook_theme_registry_alter().
+ */
+function wxt_ext_workflow_theme_registry_alter(array &$theme_registry) {
+  foreach ($theme_registry as $hook => &$info) {
+    if ($hook == 'field' || (isset($info['base hook']) && $info['base hook'] == 'field')) {
+      // We wrap around Quick Edit's preprocess function, so it should not be
+      // run directly.
+      $info['preprocess functions'] = array_diff($info['preprocess functions'], ['quickedit_preprocess_field']);
+    }
+  }
+}
+
+/**
+ * Implements template_preprocess_field().
+ */
+function wxt_ext_workflow_preprocess_field(array &$variables) {
+  if (\Drupal::moduleHandler()->moduleExists('quickedit')) {
+    quickedit_preprocess_field($variables);
+
+    /** @var \Drupal\Core\Entity\EntityInterface $entity */
+    $entity = $variables['element']['#object'];
+
+    if ($entity instanceof EntityPublishedInterface && $entity->isPublished() && RouteSubscriber::isViewing($entity)) {
+      unset($variables['attributes']['data-quickedit-field-id']);
+    }
+  }
+}
+
+/**
+ * Implements hook_module_implements_alter().
+ */
+function wxt_ext_workflow_module_implements_alter(array &$implementations, $hook) {
+  // We have to check for hook_node_view_alter() because of absolute insanity
+  // in ModuleHandler::alter() and the way it determines the implementations of
+  // 'secondary' alter hooks. It's weird logic that is pretty close to
+  // inexplicable...but trust me, to wrap around quickedit_entity_view_alter(),
+  // we need to alter the implementations of hook_node_view_alter(). Granted,
+  // this will only work for nodes. If we want to do this for another entity
+  // type, we'll have to check for its entity type-specific view_alter hook as
+  // well.
+  if ($hook == 'node_view_alter') {
+    unset($implementations['quickedit']);
+  }
+}
+
+/**
+ * Implements hook_entity_view_alter().
+ */
+function wxt_ext_workflow_entity_view_alter(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display) {
+  if (\Drupal::moduleHandler()->moduleExists('quickedit')) {
+    quickedit_entity_view_alter($build, $entity, $display);
+
+    if ($entity instanceof EntityPublishedInterface && $entity->isPublished() && RouteSubscriber::isViewing($entity)) {
+      unset($build['#attributes']['data-quickedit-entity-id']);
+    }
+  }
+
+  // Ensure that Quick Edit will be enabled on the latest revision. This
+  // implements the logic in
+  // https://www.drupal.org/project/drupal/issues/2815221, but without needing
+  // to patch core. This can all be removed when that issue is committed; see
+  // also \Drupal\wxt_ext_workflow\Routing\RouteSubscriber.
+  $entity_type_id = $entity->getEntityTypeId();
+  if (isset($build['#contextual_links']["{$entity_type_id}_revision"]) && $entity instanceof RevisionableInterface && $entity->isLatestRevision()) {
+    $build['#contextual_links']["{$entity_type_id}_latest_version"] = $build['#contextual_links']["{$entity_type_id}_revision"];
+  }
+}
+
+/**
+ * Implements hook_modules_installed().
+ */
+function wxt_ext_workflow_modules_installed(array $modules) {
+  // Don't do anything during config sync.
+  if (Drupal::isConfigSyncing()) {
+    return;
+  }
+}
+
+/**
+ * Implements hook_views_data_alter().
+ */
+function wxt_ext_workflow_views_data_alter(array &$data) {
+  foreach ($data as $table => $table_data) {
+    if (isset($table_data['moderation_state']['field'])) {
+      $data[$table]['moderation_state']['field'] += ['id' => 'null'];
+    }
+  }
+}
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function wxt_ext_workflow_views_pre_render(ViewExecutable $view) {
+  if ($view->id() == 'moderation_history') {
+    foreach ($view->result as $index => $row) {
+      $entity = $row->_entity;
+
+      if (empty($previous) || $previous->moderation_state->value != $entity->moderation_state->value) {
+        $previous = $entity;
+      }
+      else {
+        unset($view->result[$index]);
+        $view->total_rows--;
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_entity_extra_field_info_alter().
+ */
+function wxt_ext_workflow_entity_extra_field_info_alter(array &$info) {
+  $moderation_sidebar_exists = Drupal::moduleHandler()->moduleExists('moderation_sidebar');
+
+  foreach ($info as &$entity_type) {
+    foreach ($entity_type as &$bundle) {
+      if (isset($bundle['display']['content_moderation_control'])) {
+        // Hide moderation pseudo-fields if Moderation Sidebar is enabled.
+        $bundle['display']['content_moderation_control']['visible'] = !$moderation_sidebar_exists;
+      }
+    }
+  }
+}

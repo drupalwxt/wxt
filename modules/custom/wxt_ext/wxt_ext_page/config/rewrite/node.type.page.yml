@@ -10,8 +10,6 @@ third_party_settings:
     available_menus:
       - sidebar
     parent: 'sidebar:'
-  lightning_workflow:
-    workflow: editorial
 name: 'Basic page'
 type: page
 description: 'Use <em>basic pages</em> for your static content, such as an ''About us'' page.'

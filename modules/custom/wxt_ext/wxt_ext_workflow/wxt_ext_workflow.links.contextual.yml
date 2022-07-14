@@ -1,0 +1,18 @@
+# The following contextual links can be removed when
+# https://www.drupal.org/project/drupal/issues/2815221 has been committed
+# to Drupal core.
+block_content.block_edit_latest_revision:
+  title: 'Edit'
+  group: block_content_latest_version
+  route_name: 'entity.block_content.canonical'
+
+entity.node.latest_version_edit_form:
+  route_name: entity.node.edit_form
+  group: node_latest_version
+  title: Edit
+
+entity.taxonomy_term.latest_version_edit_form:
+  title: Edit
+  group: taxonomy_term_latest_version
+  route_name: entity.taxonomy_term.edit_form
+  weight: 10

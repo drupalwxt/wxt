@@ -14,6 +14,14 @@ services:
       - '@entity_type.manager'
       - '@entity_field.manager'
 
+  wxt.route_subscriber:
+    class: '\Drupal\wxt_core\Routing\RouteSubscriber'
+    arguments:
+      - '@entity_type.manager'
+    tags:
+      -
+        name: event_subscriber
+
   wxt.update_manager:
     class: '\Drupal\wxt_core\UpdateManager'
     arguments:

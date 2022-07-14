@@ -5,6 +5,8 @@
 - Updates for WxT
   - Translation patch causes whitescreen [#3291183](https://www.drupal.org/node/3295377)
   - Main menu in French not editable [#3291230](https://www.drupal.org/node/3294325)
+  - [Deprecate] Remove Lightning Workflow [#3295862](https://www.drupal.org/node/3295862)
+  - [Deprecate] SubProfile Generator [#3295858](https://www.drupal.org/node/3295858)
 - Updates for WxT Bootstrap
   - Main menu in French not editable [#3291230](https://www.drupal.org/node/3294325)
   - PHP 8.1 compatibility [#3294596](https://www.drupal.org/node/3294596)
@@ -24,15 +26,26 @@ Upgrade path:
   - `drush cache:rebuild`
   - `drush updatedb`
 
-- Run Lightning configuration updates:
-  - `drush cache:rebuild`
-  - `drush update:lightning`
-
 - Run WxT configuration updates:
   - `drush cache:rebuild`
   - `drush update:wxt`
 
-**Note:** N/A
+**Note(s)**:
+
+To facilitate keeping the distribution lightweight and because soon the Lightning Contrib modules will be EOL we need to remove all of the Lightning contrib in a way that doesn't break an upgrade path and documents the modules removed in case site builders will want to manually add them to their composer.json file
+
+a) [Deprecate] Remove Lightning Workflow [#3295862](https://www.drupal.org/node/3295862)
+
+Please read over the above issue and consult the below list of the removed composer entries in case you are using them and need to apply them manually to your composer.json file.
+
+```yaml
+"drupal/autosave_form": "^1.2",
+"drupal/conflict": "^2.0-alpha2",
+"drupal/moderation_dashboard": "^1.0",
+"drupal/moderation_sidebar": "^1.2"
+```
+
+The remainder of the Lightning Workflow functionality that was still needed to support an upgrade path has been ported over and an update script written in the wxt_core_update_8431 function.
 
 ## v4.3.0
 

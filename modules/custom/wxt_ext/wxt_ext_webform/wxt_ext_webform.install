@@ -5,7 +5,6 @@
  * Contains wxt_ext_webform.module.
  */
 
-use Drupal\node\Entity\NodeType;
 use Drupal\wxt_translation\TranslationHelper;
 
 /**
@@ -58,19 +57,6 @@ function wxt_ext_webform_install() {
     }
   }
   $webform->set('options', $newProvinces . $provinces)->save();
-
-  $modules = [
-    'autosave_form',
-    'lightning_roles',
-  ];
-  $modules = array_filter($modules, [Drupal::moduleHandler(), 'moduleExists']);
-  if ($modules) {
-    lightning_workflow_modules_installed($modules);
-  }
-
-  foreach (NodeType::loadMultiple() as $node_type) {
-    lightning_workflow_node_type_insert($node_type);
-  }
 
   $moduleHandler = \Drupal::service('module_handler');
   if ($moduleHandler->moduleExists('wxt_translation')) {

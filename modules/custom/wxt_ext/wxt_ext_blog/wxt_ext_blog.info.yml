@@ -9,7 +9,6 @@ dependencies:
   - 'content_moderation:content_moderation'
   - 'config_rewrite:config_rewrite'
   - 'lightning_layout:lightning_layout'
-  - 'lightning_workflow:lightning_workflow'
   - 'page_manager:page_manager'
   - 'panels_ipe:panels_ipe'
   - 'views_bootstrap:views_bootstrap'
