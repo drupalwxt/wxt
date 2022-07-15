@@ -8,11 +8,13 @@
   - [Deprecate] Remove Lightning Workflow [#3295862](https://www.drupal.org/node/3295862)
   - [Deprecate] SubProfile Generator [#3295858](https://www.drupal.org/node/3295858)
 - Updates for WxT Bootstrap
+  - Corrected all reported issues by phpcs
   - Main menu in French not editable [#3291230](https://www.drupal.org/node/3294325)
   - PHP 8.1 compatibility [#3294596](https://www.drupal.org/node/3294596)
   - GCIntranet WxT search form label visible on mobile [#3294629](https://www.drupal.org/node/3294629)
   - Set dynamic wrapper element for Did you find webform block [#3291816](https://www.drupal.org/node/3291816)
 - Updates for WxT Library
+  - Corrected all reported issues by phpcs
   - Passing null to parameter #1 ($string)  [#3286651](https://www.drupal.org/node/3286651)
 
 Upgrade path:
@@ -34,6 +36,8 @@ Upgrade path:
 
 To facilitate keeping the distribution lightweight and because soon the Lightning Contrib modules will be EOL we need to remove all of the Lightning contrib in a way that doesn't break an upgrade path and documents the modules removed in case site builders will want to manually add them to their composer.json file
 
+> Please note that all error messages stating "Currently using Missing or invalid module" will be resolved after running the  `drush updatedb` step above.
+
 a) [Deprecate] Remove Lightning Workflow [#3295862](https://www.drupal.org/node/3295862)
 
 Please read over the above issue and consult the below list of the removed composer entries in case you are using them and need to apply them manually to your composer.json file.
@@ -45,7 +49,7 @@ Please read over the above issue and consult the below list of the removed compo
 "drupal/moderation_sidebar": "^1.2"
 ```
 
-The remainder of the Lightning Workflow functionality that was still needed to support an upgrade path has been ported over and an update script written in the wxt_core_update_8431 function.
+The remainder of the Lightning Workflow functionality that was still needed to support an upgrade path has been ported over and an update script written in the wxt_core_update_8431 function. Lightning Scheduler will also be automatically uninstalled however this was never enabled by default in WxT.
 
 ## v4.3.0
 

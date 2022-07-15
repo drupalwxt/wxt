@@ -45,6 +45,7 @@ function wxt_core_update_8403() {
 
   $needs_uninstalling = FALSE;
   $modules_to_uninstall = [];
+  $uninstalled = TRUE;
 
   foreach ($modules_to_check as $module => $installed) {
     if ($installed) {
@@ -54,7 +55,23 @@ function wxt_core_update_8403() {
   }
 
   if ($needs_uninstalling) {
-    $module_installer->uninstall($modules_to_uninstall);
+    $uninstalled = $module_installer->uninstall($modules_to_uninstall);
+  }
+
+  if ($needs_uninstalling && !$uninstalled) {
+    \Drupal::configFactory()
+      ->getEditable('core.extension')
+      ->clear('module.libraries')
+      ->clear('module.lightning')
+      ->clear('module.lightning_install')
+      ->clear('module.wxt_ext_translation')
+      ->save();
+    Drupal::keyValue('system.schema')->deleteMultiple([
+      'libraries',
+      'lightning',
+      'lightning_install',
+      'wxt_ext_translation',
+    ]);
   }
 
   // Deprecate RDF additions
@@ -144,6 +161,7 @@ function wxt_core_update_8410() {
 
   $needs_uninstalling = FALSE;
   $modules_to_uninstall = [];
+  $uninstalled = TRUE;
 
   foreach ($modules_to_check as $module => $installed) {
     if ($installed) {
@@ -153,7 +171,17 @@ function wxt_core_update_8410() {
   }
 
   if ($needs_uninstalling) {
-    $module_installer->uninstall($modules_to_uninstall);
+    $uninstalled = $module_installer->uninstall($modules_to_uninstall);
+  }
+
+  if ($needs_uninstalling && !$uninstalled) {
+    \Drupal::configFactory()
+      ->getEditable('core.extension')
+      ->clear('module.panelizer')
+      ->save();
+    Drupal::keyValue('system.schema')->deleteMultiple([
+      'panelizer',
+    ]);
   }
 }
 
@@ -183,10 +211,12 @@ function wxt_core_update_8431() {
   $module_installer = \Drupal::service('module_installer');
   $modules_to_check = [
     'lightning_workflow' => (drupal_get_installed_schema_version('lightning_workflow') >= 0) ? TRUE : FALSE,
+    'lightning_scheduler' => (drupal_get_installed_schema_version('lightning_scheduler') >= 0) ? TRUE : FALSE,
   ];
 
   $needs_uninstalling = FALSE;
   $modules_to_uninstall = [];
+  $uninstalled = TRUE;
 
   foreach ($modules_to_check as $module => $installed) {
     if ($installed) {
@@ -196,10 +226,23 @@ function wxt_core_update_8431() {
   }
 
   if ($needs_uninstalling) {
-    $module_installer->uninstall($modules_to_uninstall);
+    $uninstalled = $module_installer->uninstall($modules_to_uninstall);
 
     $module_installer->install([
       'wxt_ext_workflow',
     ]);
   }
+
+  if ($needs_uninstalling && !$uninstalled) {
+    \Drupal::configFactory()
+      ->getEditable('core.extension')
+      ->clear('module.lightning_workflow')
+      ->clear('module.lightning_scheduler')
+      ->save();
+    Drupal::keyValue('system.schema')->deleteMultiple([
+      'lightning_workflow',
+      'lightning_scheduler',
+    ]);
+  }
+
 }
