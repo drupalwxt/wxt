@@ -45,7 +45,7 @@
         "drupal/paragraphs": "1.12",
         "drupal/password_policy": "^3.0",
         "drupal/pathauto": "1.8",
-        "drupal/redis": "1.4",
+        "drupal/redis": "1.5",
         "drupal/simple_sitemap": "^3.8",
         "drupal/toc_api": "^1.2",
         "drupal/toc_filter": "^2.0",
@@ -310,9 +310,7 @@
             },
             "drupal/redis": {
                 "3004561 - Enable ssl scheme":
-                "https://www.drupal.org/files/issues/2019-06-26/override-default-scheme-and-persistent-for-predis-3004561-12.patch",
-                "Enter drupal/redis patch #3166814 description here":
-                "https://www.drupal.org/files/issues/2020-08-23/redis_test_lock_setup.patch",
+                "https://www.drupal.org/files/issues/2021-11-19/redis-support_tls_on_predis-3004561-37.patch",
                 "Enter drupal/redis patch #3179757 description here":
                 "https://www.drupal.org/files/issues/2020-10-30/3179757-4.patch",
                 "3175412 - Use item_id instead of qid for Queue item":
