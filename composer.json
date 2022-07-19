@@ -57,6 +57,7 @@
         "drupal/webform_migrate": "1.x-dev",
         "drupal/wxt_bootstrap": "6.x-dev",
         "drupal/wxt_library": "6.x-dev",
+        "drupaloverride/lightning_workflow": "3.x-dev",
         "w8tcha/ckeditor-codemirror": "1.16"
     },
     "require-dev": {
