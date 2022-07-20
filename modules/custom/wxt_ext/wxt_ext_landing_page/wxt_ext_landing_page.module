@@ -4,3 +4,70 @@
  * @file
  * Contains wxt_ext_landing_page.module.
  */
+
+use Drupal\content_moderation\Plugin\WorkflowType\ContentModerationInterface;
+use Drupal\Core\Plugin\ObjectWithPluginCollectionInterface;
+use Drupal\node\Entity\NodeType;
+use Drupal\workflows\WorkflowInterface;
+
+/**
+ * Implements hook_modules_installed().
+ */
+function wxt_ext_landing_page_modules_installed(array $modules) {
+  // Don't do anything during config sync.
+  if (\Drupal::isConfigSyncing()) {
+    return;
+  }
+
+  $node_type = NodeType::load('landing_page');
+
+  // If Layout Library is installed, the layout_selection field will be
+  // available on the landing page content type, so it should be displayed on
+  // the node form.
+  if (in_array('layout_library', $modules, TRUE)) {
+    // Show a select list if Options is installed. Otherwise, fall back to an
+    // auto-completing text field.
+    $widget_type = Drupal::moduleHandler()->moduleExists('options')
+      ? 'options_select'
+      : 'entity_reference_autocomplete';
+
+    wxt_ext_layout_entity_get_form_display('node', $node_type->id(), 'default')
+      ->setComponent('layout_selection', [
+        'type' => $widget_type,
+        'region' => 'content',
+      ])
+      ->save();
+  }
+
+  if (in_array('menu_ui', $modules, TRUE)) {
+    $node_type
+      ->setThirdPartySetting('menu_ui', 'available_menus', ['main'])
+      ->setThirdPartySetting('menu_ui', 'parent', 'main:')
+      ->save();
+  }
+}
+
+/**
+ * Implements hook_ENITY_TYPE_presave().
+ */
+function wxt_ext_landing_page_workflow_presave(WorkflowInterface $workflow) {
+  if (Drupal::isConfigSyncing()) {
+    return;
+  }
+  elseif ($workflow->isNew() && $workflow->id() === 'editorial' && Drupal::moduleHandler()->moduleExists('wxt_ext_workflow')) {
+    $type_plugin = $workflow->getTypePlugin();
+
+    if ($type_plugin instanceof ContentModerationInterface) {
+      $type_plugin->addEntityTypeAndBundle('node', 'landing_page');
+
+      // Since this hook is invoked _after_ Workflow::preSave(), we need to
+      // ensure that the stored settings for the type plugin will be up-to-date
+      // with the changes we've made here.
+      if ($workflow instanceof ObjectWithPluginCollectionInterface) {
+        foreach ($workflow->getPluginCollections() as $key => $plugin_collection) {
+          $workflow->set($key, $plugin_collection->getConfiguration());
+        }
+      }
+    }
+  }
+}

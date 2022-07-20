@@ -4,11 +4,11 @@ type: module
 core_version_requirement: '^8.8 || ^9'
 package: WxT
 dependencies:
+  - 'drupal:node'
+  - 'drupal:text'
   - 'content_moderation:content_moderation'
   - 'config_rewrite:config_rewrite'
-  - 'layout_builder_st:layout_builder_st'
-  - 'lightning_landing_page:lightning_landing_page'
-  - 'lightning_layout:lightning_layout'
   - 'wxt_ext_layout:wxt_ext_layout'
+  - 'wxt_ext_metatag:wxt_ext_metatag'
   - 'wxt_translation:wxt_translation'
 version: 4.3.0-dev

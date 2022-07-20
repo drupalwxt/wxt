@@ -38,6 +38,7 @@ wxt_homepage:
       label: 'Bottom'
       classes:
         - col-sm-12
+
 wxt_topic:
   label: 'Topic landing page'
   category: 'WxT'
@@ -78,3 +79,54 @@ wxt_topic:
       label: 'Bottom'
       classes:
         - col-sm-12
+
+# Kept in an abundance of caution so as to not break any layouts as a result of the Lightning deprecation.
+
+lightning_twocol:
+  label: 'Two column'
+  path: layouts/twocol
+  template: layout--twocol
+  library: layout_discovery/twocol
+  category: 'Columns: 2'
+  default_region: first
+  icon_map:
+    - [first, second]
+  regions:
+    first:
+      label: First
+    second:
+      label: Second
+
+lightning_threecol_25_50_25:
+  label: 'Three column 25/50/25'
+  path: layouts/threecol_25_50_25
+  template: layout--threecol-25-50-25
+  library: layout_discovery/threecol_25_50_25
+  category: 'Columns: 3'
+  default_region: second
+  icon_map:
+    - [first, second, second, third]
+  regions:
+    first:
+      label: First
+    second:
+      label: Second
+    third:
+      label: Third
+
+lightning_threecol_33_34_33:
+  label: 'Three column 33/34/33'
+  path: layouts/threecol_33_34_33
+  template: layout--threecol-33-34-33
+  library: layout_discovery/threecol_33_34_33
+  category: 'Columns: 3'
+  default_region: first
+  icon_map:
+    - [first, second, third]
+  regions:
+    first:
+      label: First
+    second:
+      label: Second
+    third:
+      label: Third

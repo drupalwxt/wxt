@@ -1,4 +1,3 @@
-config_rewrite: replace
 langcode: en
 status: true
 dependencies:
@@ -6,11 +5,8 @@ dependencies:
     - core.entity_view_mode.node.full
     - field.field.node.landing_page.body
     - field.field.node.landing_page.field_meta_tags
-    - field.field.node.landing_page.field_queue
     - field.field.node.landing_page.layout_builder__layout
     - field.field.node.landing_page.layout_builder__translation
-    - field.field.node.landing_page.layout_selection
-    - field.field.node.page.body
     - node.type.landing_page
     - system.menu.account
   module:
@@ -106,7 +102,7 @@ third_party_settings:
             uuid: 2ba0359c-af3f-4bd7-a6d6-a6e93f680883
             region: top_right
             configuration:
-              id: 'field_block:node:page:body'
+              id: 'field_block:node:landing_page:body'
               label: Body
               provider: layout_builder
               label_display: '0'
@@ -160,8 +156,6 @@ content:
     region: content
 hidden:
   body: true
-  field_queue: true
   langcode: true
   layout_builder__layout: true
   layout_builder__translation: true
-  layout_selection: true

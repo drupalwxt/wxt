@@ -1,0 +1,5 @@
+wxt_ext_layout.settings:
+  title: 'WxT Layout'
+  description: 'Configure WxT Extend Layout settings.'
+  parent: wxt.admin_config_wxt
+  route_name: wxt_ext_layout.settings

@@ -1,0 +1,34 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - node.type.landing_page
+  module:
+    - text
+id: node.landing_page.teaser
+targetEntityType: node
+bundle: landing_page
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+  links:
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_meta_tags:
+    type: metatag_empty_formatter
+    region: content
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    label: hidden
+hidden: {  }

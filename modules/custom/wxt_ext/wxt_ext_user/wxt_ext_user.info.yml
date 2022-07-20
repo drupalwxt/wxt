@@ -6,8 +6,8 @@ package: WxT
 dependencies:
   - 'config_rewrite:config_rewrite'
   - 'drupal:shortcut'
-  - 'lightning_layout:lightning_layout'
   - 'page_manager:page_manager'
   - 'panels_ipe:panels_ipe'
   - 'wxt_translation:wxt_translation'
+  - 'wxt_ext_layout:wxt_ext_layout'
 version: 4.3.0-dev

@@ -5,6 +5,8 @@
  * Set up the WxT Extend Landing Page module.
  */
 
+use Drupal\layout_builder\Entity\LayoutEntityDisplayInterface;
+
 /**
  * Implements hook_install().
  */
@@ -12,6 +14,23 @@ function wxt_ext_landing_page_install() {
   // Stop here during a config sync.
   if (Drupal::isConfigSyncing()) {
     return;
+  }
+
+  $display = wxt_ext_layout_entity_get_display('node', 'landing_page', 'full');
+  if (!($display instanceof LayoutEntityDisplayInterface)) {
+    throw new \InvalidArgumentException('Expected the ' . $display->label() . ' display to support Layout Builder.');
+  }
+  $display->setOverridable()->save();
+
+  $modules = [
+    'layout_library',
+    'wxt_ext_workflow',
+    'menu_ui',
+  ];
+
+  $modules = array_filter($modules, [Drupal::moduleHandler(), 'moduleExists']);
+  if ($modules) {
+    wxt_ext_landing_page_modules_installed($modules);
   }
 
   // Enable translation for our core entities/bundles.

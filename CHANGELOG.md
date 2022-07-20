@@ -36,11 +36,25 @@ Upgrade path:
 
 To facilitate keeping the distribution lightweight and because soon the Lightning Contrib modules will be EOL we need to remove all of the Lightning contrib in a way that doesn't break an upgrade path and documents the modules removed in case site builders will want to manually add them to their composer.json file
 
-> Please note that all error messages stating "Currently using Missing or invalid module" will be resolved after running the  `drush updatedb` step above.
+> **Note**: that all error messages stating "Currently using Missing or invalid module" will be resolved after running the  `drush updatedb` step above.
 
-a) [Deprecate] Remove Lightning Workflow [#3295862](https://www.drupal.org/node/3295862)
+a) [Deprecate] Remove Lightning Layout [#3298505](https://www.drupal.org/node/3298505)
 
-Please read over the above issue and consult the below list of the removed composer entries in case you are using them and need to apply them manually to your composer.json file.
+Please read over the above issue and consult the below list of the removed composer entries in case you are depending on any of them and need to apply them manually to your composer.json file.
+
+```yaml
+"drupal/bg_image_formatter": "^1.10",
+"drupal/panelizer": "^4.1 || ^5.0",
+"drupal/simple_gmap": "^3.0"
+```
+
+All of the Lightning Layout functionality was directly ported to support an upgrade path and an update script written in the `wxt_core_update_8431` function.
+
+> **Note**: Any Lightning sub modules will also be uninstalled.
+
+b) [Deprecate] Remove Lightning Workflow [#3295862](https://www.drupal.org/node/3295862)
+
+Please read over the above issue and consult the below list of the removed composer entries in case you are depending on any of them and need to apply them manually to your composer.json file.
 
 ```yaml
 "drupal/autosave_form": "^1.2",
@@ -49,7 +63,9 @@ Please read over the above issue and consult the below list of the removed compo
 "drupal/moderation_sidebar": "^1.2"
 ```
 
-The remainder of the Lightning Workflow functionality that was still needed to support an upgrade path has been ported over and an update script written in the wxt_core_update_8431 function. Lightning Scheduler will also be automatically uninstalled however this was never enabled by default in WxT.
+All of the Lightning Workflow functionality was directly ported to support an upgrade path and an update script written in the `wxt_core_update_8431` function.
+
+> **Note**: Any Lightning sub modules will also be uninstalled.
 
 ## v4.3.0
 

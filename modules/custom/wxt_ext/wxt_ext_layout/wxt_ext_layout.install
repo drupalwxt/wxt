@@ -1,0 +1,23 @@
+<?php
+
+/**
+ * @file
+ * Contains installation and update routines for WxT Extend Layout.
+ */
+
+use Drupal\wxt_core\ConfigHelper as Config;
+use Drupal\user\Entity\Role;
+
+/**
+ * Implements hook_install().
+ */
+function wxt_ext_layout_install() {
+  // React to other modules possibly being installed already.
+  $modules = [
+    'wxt_ext_media',
+  ];
+  $modules = array_filter($modules, [Drupal::moduleHandler(), 'moduleExists']);
+  if ($modules) {
+    wxt_ext_layout_modules_installed($modules);
+  }
+}
