@@ -1,10 +1,14 @@
 ## v4.3.1 (In Development)
 
-- Updates for Drupal Core (v9.3.18)
-  - [Bugfix Release](https://www.drupal.org/project/drupal/releases/9.3.18)
+- Security Updates for Drupal Core (v9.3.19)
+  - [SA-core-2022-012](https://www.drupal.org/sa-core-2022-012)
+  - [SA-core-2022-013](https://www.drupal.org/sa-core-2022-013)
+  - [SA-core-2022-014](https://www.drupal.org/sa-core-2022-014)
+  - [SA-core-2022-015](https://www.drupal.org/sa-core-2022-015)
 - Updates for WxT
   - Translation patch causes whitescreen [#3291183](https://www.drupal.org/node/3295377)
   - Main menu in French not editable [#3291230](https://www.drupal.org/node/3294325)
+  - [Deprecate] Remove Lightning Layout [#3298505](https://www.drupal.org/node/3298505)
   - [Deprecate] Remove Lightning Workflow [#3295862](https://www.drupal.org/node/3295862)
   - [Deprecate] SubProfile Generator [#3295858](https://www.drupal.org/node/3295858)
 - Updates for WxT Bootstrap
@@ -34,7 +38,7 @@ Upgrade path:
 
 **Note(s)**:
 
-To facilitate keeping the distribution lightweight and because soon the Lightning Contrib modules will be EOL we need to remove all of the Lightning contrib in a way that doesn't break an upgrade path and documents the modules removed in case site builders will want to manually add them to their composer.json file
+To facilitate keeping the distribution lightweight and because soon the Lightning Contrib modules will be EOL we need to remove all of the Lightning contrib in a way that doesn't break an upgrade path and documents the modules removed in case site builders will want to manually add them to their own `composer.json` file
 
 > **Note**: that all error messages stating "Currently using Missing or invalid module" will be resolved after running the  `drush updatedb` step above.
 
