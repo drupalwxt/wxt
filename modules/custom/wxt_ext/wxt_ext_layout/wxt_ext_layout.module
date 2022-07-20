@@ -261,7 +261,7 @@ function wxt_ext_layout_layout_alter(array &$definitions) {
       continue;
     }
     if (in_array($layout_name, $core_layouts) && empty($definitions[$layout_name]->getIcon())) {
-      $definitions[$layout_name]->setIconPath(drupal_get_path('module', 'panels') . '/layouts/' . $layout_name . '/'. $layout_name . '.png');
+      $definitions[$layout_name]->setIconPath(drupal_get_path('module', 'panels') . '/layouts/' . $layout_name . '/' . $layout_name . '.png');
     }
     if (empty($definitions[$layout_name]->getIcon())) {
       $definitions[$layout_name]->setIconPath(drupal_get_path('module', 'panels') . '/layouts/no-layout-preview.png');
