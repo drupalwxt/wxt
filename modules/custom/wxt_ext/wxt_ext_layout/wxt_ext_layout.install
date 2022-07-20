@@ -5,9 +5,6 @@
  * Contains installation and update routines for WxT Extend Layout.
  */
 
-use Drupal\wxt_core\ConfigHelper as Config;
-use Drupal\user\Entity\Role;
-
 /**
  * Implements hook_install().
  */
