@@ -7,7 +7,7 @@
     "prefer-stable": true,
     "require": {
         "ext-dom": "*",
-        "ckeditor/fakeobjects": "4.16.2",
+        "ckeditor/fakeobjects": "4.17.1",
         "cweagans/composer-patches": "^1.6.0",
         "drupal/admin_toolbar": "^2.0",
         "drupal/autosave_form": "^1.2",

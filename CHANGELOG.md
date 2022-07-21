@@ -11,6 +11,7 @@
   - [Deprecate] Remove Lightning Layout [#3298505](https://www.drupal.org/node/3298505)
   - [Deprecate] Remove Lightning Workflow [#3295862](https://www.drupal.org/node/3295862)
   - [Deprecate] SubProfile Generator [#3295858](https://www.drupal.org/node/3295858)
+  - Incompatible version for ckeditor/fakeobjects [#3298214](https://www.drupal.org/node/3298214)
 - Updates for WxT Bootstrap
   - Corrected all reported issues by phpcs
   - Main menu in French not editable [#3291230](https://www.drupal.org/node/3294325)
