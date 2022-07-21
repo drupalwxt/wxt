@@ -9,6 +9,8 @@ third_party_settings:
   menu_ui:
     available_menus: {  }
     parent: 'main:'
+  wxt_ext_workflow:
+    workflow: editorial
 name: 'Blog post'
 type: blog_post
 description: 'Use for multi-user blogs. Every user gets a personal blog.'

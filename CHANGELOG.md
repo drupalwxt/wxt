@@ -23,7 +23,7 @@
 
 Upgrade path:
 
-> Note: No special notes for this release.
+> **Important**: Please backup your database before running the upgrade process for this release.
 
 - Update your codebase:
   - `composer update`
