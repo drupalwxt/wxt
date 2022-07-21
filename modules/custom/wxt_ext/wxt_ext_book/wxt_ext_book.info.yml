@@ -6,4 +6,4 @@ package: WxT
 dependencies:
   - 'book:book'
 configure: wxt_ext_book.admin_config_wxt_ext_book
-version: 4.3.0-dev
+version: 4.3.1
