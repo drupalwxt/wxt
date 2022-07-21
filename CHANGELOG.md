@@ -1,4 +1,4 @@
-## v4.3.1 (In Development)
+## v4.3.1
 
 - Security Updates for Drupal Core (v9.3.19)
   - [SA-core-2022-012](https://www.drupal.org/sa-core-2022-012)
