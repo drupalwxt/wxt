@@ -3,6 +3,8 @@
 /**
  * @file
  * Contains wxt_ext_layout.module.
+ *
+ * Leveraged from code provided by Acquia for the Lightning distribution.
  */
 
 use Drupal\block_content\BlockContentInterface;

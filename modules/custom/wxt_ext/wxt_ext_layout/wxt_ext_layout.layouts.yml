@@ -80,6 +80,7 @@ wxt_topic:
       classes:
         - col-sm-12
 
+# Leveraged from code provided by Acquia for the Lightning distribution.
 # Kept in an abundance of caution so as to not break any layouts as a result of the Lightning deprecation.
 
 lightning_twocol:

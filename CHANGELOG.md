@@ -61,7 +61,6 @@ b) [Deprecate] Remove Lightning Workflow [#3295862](https://www.drupal.org/node/
 Please read over the above issue and consult the below list of the removed composer entries in case you are depending on any of them and need to apply them manually to your composer.json file.
 
 ```yaml
-"drupal/autosave_form": "^1.2",
 "drupal/conflict": "^2.0-alpha2",
 "drupal/moderation_dashboard": "^1.0",
 "drupal/moderation_sidebar": "^1.2"

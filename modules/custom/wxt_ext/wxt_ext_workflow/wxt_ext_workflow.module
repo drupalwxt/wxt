@@ -3,6 +3,8 @@
 /**
  * @file
  * Contains wxt_ext_workflow.module.
+ *
+ * Leveraged from code provided by Acquia for the Lightning distribution.
  */
 
 use Drupal\content_moderation\Plugin\WorkflowType\ContentModerationInterface;
@@ -12,7 +14,9 @@ use Drupal\Core\Entity\EntityPublishedInterface;
 use Drupal\Core\Entity\RevisionableInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Serialization\Yaml;
+use Drupal\wxt_core\OverrideHelper as Override;
 use Drupal\wxt_core\Routing\RouteSubscriber;
+use Drupal\node\Entity\NodeType;
 use Drupal\node\NodeTypeInterface;
 use Drupal\views\Entity\View;
 use Drupal\views\ViewExecutable;
@@ -78,6 +82,16 @@ function wxt_ext_workflow_node_type_insert(NodeTypeInterface $node_type) {
   $workflow = $node_type->getThirdPartySetting('wxt_ext_workflow', 'workflow');
   if ($workflow) {
     _wxt_ext_workflow_moderate_content_type($node_type, $workflow);
+  }
+
+  // If autosave_form is present, enable it for this content type by default.
+  if (Drupal::moduleHandler()->moduleExists('autosave_form') && $node_type->getThirdPartySetting('wxt_ext_workflow', 'autosave', TRUE)) {
+    $id = $node_type->id();
+
+    Drupal::configFactory()
+      ->getEditable('autosave_form.settings')
+      ->set("allowed_content_entity_types.node.bundles.$id", $id)
+      ->save();
   }
 }
 
@@ -202,6 +216,23 @@ function wxt_ext_workflow_modules_installed(array $modules) {
   if (Drupal::isConfigSyncing()) {
     return;
   }
+
+  if (in_array('autosave_form', $modules, TRUE)) {
+    // Find all content types that would like to opt into autosave by default,
+    // either implicitly or explicitly. I'm not sure this can be done with a
+    // simple entity query, since it's not clear if one can specify a condition
+    // that a third-party setting is "not FALSE".
+    $node_types = array_filter(NodeType::loadMultiple(), function (NodeTypeInterface $node_type) {
+      return $node_type->getThirdPartySetting('wxt_ext_workflow', 'autosave', TRUE);
+    });
+    $node_types = array_keys($node_types);
+
+    Drupal::configFactory()
+      ->getEditable('autosave_form.settings')
+      ->set('interval', 20000)
+      ->set('allowed_content_entity_types.node.bundles', array_combine($node_types, $node_types))
+      ->save();
+  }
 }
 
 /**
@@ -211,6 +242,22 @@ function wxt_ext_workflow_views_data_alter(array &$data) {
   foreach ($data as $table => $table_data) {
     if (isset($table_data['moderation_state']['field'])) {
       $data[$table]['moderation_state']['field'] += ['id' => 'null'];
+    }
+  }
+}
+
+/**
+ * Implements hook_entity_type_alter().
+ */
+function wxt_ext_workflow_entity_type_alter(array &$entity_types) {
+  // If autosave_form is installed, all entity types should use our special
+  // autosave handler which disables autosave in the Layout Builder UI.
+  if (Drupal::moduleHandler()->moduleExists('autosave_form')) {
+    /** @var \Drupal\Core\Entity\EntityTypeInterface $entity_type */
+    foreach ($entity_types as $entity_type) {
+      // We cannot use the ::class form here, because it will go kaboom if
+      // autosave_form is not installed.
+      Override::entityHandler($entity_type, 'autosave_form', '\Drupal\wxt_ext_workflow\AutosaveEntityFormHandler');
     }
   }
 }

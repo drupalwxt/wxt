@@ -10,6 +10,7 @@
         "ckeditor/fakeobjects": "4.16.2",
         "cweagans/composer-patches": "^1.6.0",
         "drupal/admin_toolbar": "^2.0",
+        "drupal/autosave_form": "^1.2",
         "drupal/block_class": "^1.2",
         "drupal/blog": "3.0.1",
         "drupal/bootstrap_layouts": "5.2",

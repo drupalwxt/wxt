@@ -3,6 +3,8 @@
 /**
  * @file
  * Contains post-update functions for WxT Extend Workflow.
+ *
+ * Leveraged from code provided by Acquia for the Lightning distribution.
  */
 
 use Drupal\wxt_core\ConfigHelper as Config;

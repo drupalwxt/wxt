@@ -13,6 +13,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * The settings form for controlling WxT Extend Layout's behavior.
+ *
+ * Leveraged from code provided by Acquia for the Lightning distribution.
  */
 class SettingsForm extends ConfigFormBase {
 
@@ -71,8 +73,7 @@ class SettingsForm extends ConfigFormBase {
       $container->get('string_translation'),
     ];
 
-    // Entity Block is not a hard dependency of Lightning Layout, so we need
-    // to be careful not to inject its deriver if it's not available.
+    // Entity Block is not a hard dependency of WxT Extend Layout.
     $deriver = 'Drupal\entity_block\Plugin\Derivative\EntityBlock';
     if (class_exists($deriver)) {
       $arguments[] = call_user_func([$deriver, 'create'], $container, 'entity_block');
@@ -86,14 +87,14 @@ class SettingsForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   protected function getEditableConfigNames() {
-    return ['lightning_layout.settings'];
+    return ['wxt_ext_layout.settings'];
   }
 
   /**
    * {@inheritdoc}
    */
   public function getFormId() {
-    return 'lightning_layout_settings_form';
+    return 'wxt_ext_layout_settings_form';
   }
 
   /**
@@ -115,7 +116,7 @@ class SettingsForm extends ConfigFormBase {
     $form['entity_blocks'] = [
       '#type' => 'checkboxes',
       '#title' => $this->t('Entity types to expose as blocks'),
-      '#default_value' => $this->config('lightning_layout.settings')->get('entity_blocks'),
+      '#default_value' => $this->config('wxt_ext_layout.settings')->get('entity_blocks'),
     ];
 
     // Get the definitions of all entity types supported by Entity Block.
@@ -141,7 +142,7 @@ class SettingsForm extends ConfigFormBase {
     // Re-key the array.
     $value = array_values($value);
 
-    $this->config('lightning_layout.settings')
+    $this->config('wxt_ext_layout.settings')
       ->set('entity_blocks', $value)
       ->save();
 
