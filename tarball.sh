@@ -29,6 +29,9 @@ cd $ARCHIVE
 composer config extra.enable-patching true
 composer config minimum-stability dev
 composer config prefer-stable true
+for plugin in drupal/core-composer-scaffold composer/installers cweagans/installers cweagans/composer-patches oomphinc/composer-installers-extender dealerdirect/phpcodesniffer-composer-installer; do
+  composer config --no-plugins allow-plugins.$plugin true
+done
 composer remove --no-update composer/installers
 composer require --no-update "ext-dom:*" cweagans/composer-patches oomphinc/composer-installers-extender 'drupal/core:9.3.19'
 composer update --ignore-platform-reqs
