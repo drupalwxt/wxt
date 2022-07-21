@@ -4,3 +4,32 @@
  * @file
  * Contains wxt_ext_page.module.
  */
+
+use Drupal\content_moderation\Plugin\WorkflowType\ContentModerationInterface;
+use Drupal\Core\Plugin\ObjectWithPluginCollectionInterface;
+use Drupal\workflows\WorkflowInterface;
+
+/**
+ * Implements hook_ENTITY_TYPE_presave().
+ */
+function wxt_ext_page_workflow_presave(WorkflowInterface $workflow) {
+  if (Drupal::isConfigSyncing()) {
+    return;
+  }
+  elseif ($workflow->isNew() && $workflow->id() === 'editorial' && Drupal::moduleHandler()->moduleExists('wxt_ext_workflow')) {
+    $type_plugin = $workflow->getTypePlugin();
+
+    if ($type_plugin instanceof ContentModerationInterface) {
+      $type_plugin->addEntityTypeAndBundle('node', 'page');
+
+      // Since this hook is invoked _after_ Workflow::preSave(), we need to
+      // ensure that the stored settings for the type plugin will be up-to-date
+      // with the changes we've made here.
+      if ($workflow instanceof ObjectWithPluginCollectionInterface) {
+        foreach ($workflow->getPluginCollections() as $key => $plugin_collection) {
+          $workflow->set($key, $plugin_collection->getConfiguration());
+        }
+      }
+    }
+  }
+}
