@@ -7,7 +7,6 @@ use Drupal\KernelTests\KernelTestBase;
 use Drupal\wxt\ComponentDiscovery;
 
 /**
- *
  * Leveraged from code provided by Acquia for the Lightning distribution.
  *
  * @group wxt

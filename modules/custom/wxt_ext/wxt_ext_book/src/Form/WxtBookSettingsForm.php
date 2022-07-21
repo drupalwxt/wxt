@@ -32,7 +32,7 @@ class WxtBookSettingsForm extends ConfigFormBase {
   public function buildForm(array $form, FormStateInterface $form_state) {
     $config = $this->config('wxt_ext_book.settings');
 
-    // Enable book index persistent navigation
+    // Enable book index persistent navigation.
     $form['navigation'] = [
       '#type' => 'fieldset',
       '#title' => $this->t('Book navigation'),

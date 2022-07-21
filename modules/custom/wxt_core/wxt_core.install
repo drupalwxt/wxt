@@ -74,7 +74,7 @@ function wxt_core_update_8403() {
     ]);
   }
 
-  // Deprecate RDF additions
+  // Deprecate RDF additions.
   \Drupal::configFactory()->getEditable('rdf.mapping.comment.comment.yml')->delete();
   \Drupal::configFactory()->getEditable('rdf.mapping.node.page.yml')->delete();
 
@@ -98,7 +98,6 @@ function wxt_core_update_8403() {
   }
 
   // Resolve issues with Lightning Scheduler.
-  $entity_type_manager = \Drupal::entityTypeManager();
   $entity_definition_update_manager = \Drupal::entityDefinitionUpdateManager();
   $modules = [
     'crop',

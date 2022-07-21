@@ -120,7 +120,7 @@ class Package {
       if (empty($package['source'])) {
         continue;
       }
-      list(, $name) = explode('/', $package['name'], 2);
+      [, $name] = explode('/', $package['name'], 2);
 
       if ($this->isDrupalPackage($package)) {
         if ($package['type'] == 'drupal-core') {

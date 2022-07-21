@@ -73,7 +73,7 @@ class ArchivedBlock extends BlockBase {
               </section>
               <section class="wb-overlay modal-content overlay-def wb-bar-t" id="archived-bnr">
                 <header>
-                  <h2 class="wb-inv">' . t('Archived') . '</h2>
+                  <h2 class="wb-inv">' . $this->t('Archived') . '</h2>
                 </header>
                 <p><a href="#archived">' . $config['archived_title'] . '</a></p>
               </section>';

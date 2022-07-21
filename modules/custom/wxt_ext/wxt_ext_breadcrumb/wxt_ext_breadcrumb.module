@@ -47,7 +47,7 @@ function wxt_ext_breadcrumb_system_breadcrumb_alter(Breadcrumb &$breadcrumb, Rou
   $leading_links = [];
   $app_link = [];
 
-  // Only alter leading breadcrumbs if enabled
+  // Only alter leading breadcrumbs if enabled.
   if ($enable_leading) {
     // Set configured header breadcrumbs.
     if ($breadcrumb_settings = $config->get($language)) {

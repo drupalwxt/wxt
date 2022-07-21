@@ -44,6 +44,7 @@ function wxt_ext_workflow_form_node_type_add_form_alter(array &$form) {
 
   // If Field UI is installed, there will be a button to save the content type
   // and add more fields.
+  $submit_handlers = [];
   if (isset($form['actions']['save_continue'])) {
     $submit_handlers = &$form['actions']['save_continue']['#submit'];
   }

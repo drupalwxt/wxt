@@ -14,7 +14,7 @@ use Drupal\views\ViewExecutable;
  * @param array $entity_info
  *   $entity_info An array mapping entity types to arrays of bundles.
  */
-function wxt_translation_enable_translation($entity_info) {
+function wxt_translation_enable_translation(array $entity_info) {
   // Enable translation for all of our entities/bundles.
   $type_manager = \Drupal::entityTypeManager();
   /** @var \Drupal\Core\Entity\EntityFieldManagerInterface $field_manager */
@@ -80,7 +80,8 @@ function wxt_translation_update_config_translation() {
  * @param string $name
  *   The name of the project.
  *
- * @return bool FALSE if the project does not exist.
+ * @return bool|false
+ *   Return false if the project does not exist.
  */
 function wxt_translation_import_translations($type, $name) {
   // Attempt to pull module path.

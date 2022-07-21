@@ -61,7 +61,7 @@ class ArchivedField extends ConditionPluginBase implements ContainerFactoryPlugi
     $form['enable_archived'] = [
       '#type' => 'checkbox',
       '#title' => $this->t('Node has field_archived and it is checked (TRUE)'),
-      '#default_value' => isset($this->configuration['enable_archived']) ? $this->configuration['enable_archived'] : 0,
+      '#default_value' => $this->configuration['enable_archived'] ?? 0,
     ];
 
     return parent::buildConfigurationForm($form, $form_state);
@@ -116,7 +116,7 @@ class ArchivedField extends ConditionPluginBase implements ContainerFactoryPlugi
   public function summary() {
     $field = 'field_archived';
 
-    return t('Node field "@field" is checked (TRUE)', ['@field' => $field]);
+    return $this->t('Node field "@field" is checked (TRUE)', ['@field' => $field]);
   }
 
 }

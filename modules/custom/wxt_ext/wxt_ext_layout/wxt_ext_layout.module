@@ -130,7 +130,7 @@ function wxt_ext_layout_preprocess_block(array &$variables) {
  * Implements hook_field_widget_form_alter().
  */
 function wxt_ext_layout_field_widget_form_alter(&$element, FormStateInterface &$form_state, $context) {
-  $items = isset($context['items']) ? $context['items'] : NULL;
+  $items = $context['items'] ?? NULL;
 
   // Hide the Layout field's select widget if it only has the default "none"
   // option.
@@ -256,9 +256,15 @@ function wxt_ext_layout_module_implements_alter(array &$implementations, $hook) 
  * tests this functionality itself.
  */
 function wxt_ext_layout_layout_alter(array &$definitions) {
-  $core_layouts = ['layout_onecol', 'layout_twocol', 'layout_twocol_bricks', 'layout_threecol_25_50_25', 'layout_threecol_33_34_33'];
+  $core_layouts = [
+    'layout_onecol',
+    'layout_twocol',
+    'layout_twocol_bricks',
+    'layout_threecol_25_50_25',
+    'layout_threecol_33_34_33',
+  ];
   foreach ($definitions as $layout_name => $layout) {
-    // Verify that the layout definition is a LayoutDefinition
+    // Verify that the layout definition is a LayoutDefinition.
     if (!($definitions[$layout_name] instanceof LayoutDefinition)) {
       continue;
     }

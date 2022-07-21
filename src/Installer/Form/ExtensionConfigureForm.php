@@ -87,13 +87,13 @@ class ExtensionConfigureForm extends ConfigFormBase {
 
     $form['install_extensions'] = [
       '#type' => 'container',
-      '#states' => array(
-        'invisible' => array(
-          'input[name="select_all"]' => array(
+      '#states' => [
+        'invisible' => [
+          'input[name="select_all"]' => [
             'checked' => TRUE,
-          ),
-        ),
-      ),
+          ],
+        ],
+      ],
     ];
 
     $optional_features = $this->extensionManager->getExtensions();

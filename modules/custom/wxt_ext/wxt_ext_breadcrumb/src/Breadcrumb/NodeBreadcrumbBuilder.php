@@ -82,7 +82,15 @@ class NodeBreadcrumbBuilder implements BreadcrumbBuilderInterface {
    */
   public function applies(RouteMatchInterface $route_match) {
     $route_name = $route_match->getRouteName();
-    return in_array($route_name, ['node.add_page', 'node.add', 'entity.node.edit_form', 'entity.node.version_history', 'entity.node.content_translation_overview', 'layout_builder.overrides.node.view', 'view.moderation_history.page'], TRUE);
+    return in_array($route_name, [
+      'node.add_page',
+      'node.add',
+      'entity.node.edit_form',
+      'entity.node.version_history',
+      'entity.node.content_translation_overview',
+      'layout_builder.overrides.node.view',
+      'view.moderation_history.page',
+    ], TRUE);
   }
 
   /**

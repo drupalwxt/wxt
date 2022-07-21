@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Install, update and uninstall functions for the WxT Extend Search Database module.
+ * Install and update functions for the WxT Extend Search Database module.
  */
 
 use Drupal\search_api\IndexListBuilder;

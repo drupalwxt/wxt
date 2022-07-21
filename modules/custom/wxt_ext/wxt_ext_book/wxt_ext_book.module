@@ -22,7 +22,7 @@ function wxt_ext_book_preprocess_page(&$variables) {
         $node = $node->getTranslation($language);
       }
 
-      // If book child page
+      // If book child page.
       if ($node->book['bid'] != $node->id()) {
         $config = [
           'label_display' => '0',
@@ -58,17 +58,17 @@ function wxt_ext_book_preprocess_book_navigation(&$variables) {
       $config = \Drupal::config('wxt_ext_book.settings');
 
       if ($node->book['bid'] == $node->id()) {
-        // Current page is the book index
+        // Current page is the book index.
         $variables['is_book_index'] = TRUE;
 
-        // Enable/disable persistent navigation on book index page
+        // Enable/disable persistent navigation on book index page.
         $variables['nav_enabled'] = $config->get('navigation.persistent_nav');
       }
       else {
-        // Should page titles be used as book navigation labels
+        // Should page titles be used as book navigation labels.
         $variables['page_title_as_nav_label'] = $config->get('navigation.page_title_nav_labels');
 
-        // Should we include home link in book navigation
+        // Should we include home link in book navigation.
         $variables['include_home_link'] = $config->get('navigation.page_nav_home_link');
       }
     }
@@ -100,7 +100,7 @@ function wxt_ext_book_preprocess_book_tree(&$variables) {
   $node = \Drupal::routeMatch()->getParameter('node');
 
   if ($node instanceof NodeInterface) {
-    // Set active menu item in hierarchy
+    // Set active menu item in hierarchy.
     $active_nid = $node->id();
     $variables['items'] = _wxt_ext_book_set_variables_recursive($variables['items'], $active_nid);
   }
@@ -114,7 +114,7 @@ function _wxt_ext_book_set_variables_recursive(&$items, $active_nid) {
 
   foreach ($items as $nid => &$item) {
     if ($nid == $active_nid) {
-      // Active menu item
+      // Active menu item.
       $item['active'] = TRUE;
       break;
     }

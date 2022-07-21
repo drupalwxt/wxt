@@ -24,12 +24,11 @@ final class ConfigureLegacyProject {
     $target = new JsonFile($arguments[0] . '/composer.json');
     $project = $target->read();
 
-    $required = $event->getComposer()->getPackage()->getRequires();
     $project['require']["drupalwxt/wxt"] = "4.3.x";
     $project['require-dev'] = new \stdClass();
     $project['repositories'][] = [
       'type' => 'composer',
-      'url' => 'https://asset-packagist.org'
+      'url' => 'https://asset-packagist.org',
     ];
     $project['repositories'][] = [
       'type' => 'composer',

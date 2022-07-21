@@ -104,7 +104,7 @@ class Lightbox extends ImageFormatterBase {
       $url_options = [
         'attributes' => [
           'title' => $title,
-         ],
+        ],
       ];
       $url = Url::fromUri(file_create_url($lbx_image_path), $url_options);
 

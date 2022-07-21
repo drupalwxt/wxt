@@ -54,7 +54,8 @@ function wxt_ext_webform_webform_submission_presave(WebformSubmission $submissio
   $did_you_find_answer = $submission->getElementData('did_you_find_answer');
 
   if (empty($did_you_find_answer)) {
-    // Since "No" button is really the next button for the wizard, setting field value to "No" on presave
+    // Since "No" button is really the next button for the wizard
+    // setting field value to "No" on presave.
     $submission->setElementData('did_you_find_answer', 'No');
   }
 }
@@ -90,7 +91,7 @@ function wxt_ext_webform_webform_submission_form_alter(array &$form, FormStateIn
  * AJAX callback function for Yes button on gcweb_did_you_find webform.
  */
 function _gcweb_did_you_find_form_ajax_submit($form, $form_state) {
-  // Programmatically submit webform and mark answer as "Yes"
+  // Programmatically submit webform and mark answer as "Yes".
   $webform_id = 'gcweb_did_you_find';
   $webform = Webform::load($webform_id);
 
@@ -104,7 +105,7 @@ function _gcweb_did_you_find_form_ajax_submit($form, $form_state) {
   $webform_submission = WebformSubmission::create($values);
   $webform_submission->save();
 
-  // Build confirmation message
+  // Build confirmation message.
   $confirmation = [
     '#type' => 'markup',
     '#markup' => '<div class="webform-confirmation">

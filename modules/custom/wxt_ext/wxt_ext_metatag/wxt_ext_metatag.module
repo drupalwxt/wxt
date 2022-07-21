@@ -26,7 +26,7 @@ function wxt_ext_metatag_metatags_attachments_alter(array &$metatag_attachments)
       case 'dcterms_language':
         $tag[0]['#attributes']['title'] = 'ISO639-2/T';
 
-        // Need language code in ISO 639-2 format
+        // Need language code in ISO 639-2 format.
         $content = $tag[0]['#attributes']['content'];
 
         if ($content == 'en') {

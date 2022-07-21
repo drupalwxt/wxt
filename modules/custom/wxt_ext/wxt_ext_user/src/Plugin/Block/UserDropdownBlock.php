@@ -35,6 +35,9 @@ class UserDropdownBlock extends BlockBase implements ContainerFactoryPluginInter
    */
   protected $user;
 
+  /**
+   * {@inheritdoc}
+   */
   public function __construct(array $configuration, $plugin_id, $plugin_definition, FormBuilder $form_builder, AccountProxyInterface $user) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->formBuilder = $form_builder;

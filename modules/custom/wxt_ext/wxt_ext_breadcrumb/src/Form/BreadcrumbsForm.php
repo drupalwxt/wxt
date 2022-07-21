@@ -24,8 +24,6 @@ class BreadcrumbsForm extends ConfigFormBase {
     return ['wxt_ext_breadcrumb.settings'];
   }
 
-  // @todo form layout side-by-side columns for FR and EN
-
   /**
    * Provide n Number of breadcrumbs which will be prefixed after Canada.ca.
    */
@@ -224,7 +222,6 @@ class BreadcrumbsForm extends ConfigFormBase {
     $settings = $this->configFactory->getEditable('wxt_ext_breadcrumb.settings');
     $values_en = [];
     $values_fr = [];
-    $debug = [];
     $cnt = 0;
 
     foreach ($values as $fieldset_key => $fieldset_values) {
@@ -287,7 +284,6 @@ class BreadcrumbsForm extends ConfigFormBase {
     $settings = $this->configFactory->getEditable('wxt_ext_breadcrumb.settings');
     $values_en = [];
     $values_fr = [];
-    $debug = [];
     $cnt = '0';
 
     foreach ($values as $fieldset_key => $fieldset_values) {

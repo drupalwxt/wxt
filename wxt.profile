@@ -29,9 +29,6 @@ function wxt_install_tasks_alter(array &$tasks, array $install_state) {
   unset($tasks['wxt_install_extensions']);
   $tasks = array_merge($tasks, ['wxt_install_extensions' => $task]);
 
-  $task_keys = array_keys($tasks);
-  $insert_before = array_search('wxt_install_extensions', $task_keys, TRUE);
-
   array_insert(
     $tasks,
     "wxt_install_extensions",
@@ -94,6 +91,7 @@ function wxt_install_module($module) {
 
 /**
  * Insert new item in array on any position in PHP (Stack Overflow 3797239).
+ *
  * @param array $array
  *   The original array.
  * @param int|string $position
@@ -101,7 +99,7 @@ function wxt_install_module($module) {
  * @param mixed $insert
  *   The array to insert.
  */
-function array_insert(&$array, $position, $insert) {
+function array_insert(array &$array, $position, $insert) {
   if (is_int($position)) {
     array_splice($array, $position, 0, $insert);
   }
