@@ -1,3 +1,78 @@
+## v4.3.2 (HotFix)
+
+This is a quick immediate hotfix so the changelog from 4.3.1 is also printed here due to its importance due to the deprecations.
+
+- Security Updates for Drupal Core (v9.3.19)
+  - [SA-core-2022-012](https://www.drupal.org/sa-core-2022-012)
+  - [SA-core-2022-013](https://www.drupal.org/sa-core-2022-013)
+  - [SA-core-2022-014](https://www.drupal.org/sa-core-2022-014)
+  - [SA-core-2022-015](https://www.drupal.org/sa-core-2022-015)
+- Updates for WxT
+  - Translation patch causes whitescreen [#3291183](https://www.drupal.org/node/3295377)
+  - Main menu in French not editable [#3291230](https://www.drupal.org/node/3294325)
+  - [Deprecate] Remove Lightning Layout [#3298505](https://www.drupal.org/node/3298505)
+  - [Deprecate] Remove Lightning Workflow [#3295862](https://www.drupal.org/node/3295862)
+  - [Deprecate] SubProfile Generator [#3295858](https://www.drupal.org/node/3295858)
+  - Incompatible version for ckeditor/fakeobjects [#3298214](https://www.drupal.org/node/3298214)
+- Updates for WxT Bootstrap
+  - Corrected all reported issues by phpcs
+  - Main menu in French not editable [#3291230](https://www.drupal.org/node/3294325)
+  - PHP 8.1 compatibility [#3294596](https://www.drupal.org/node/3294596)
+  - GCIntranet WxT search form label visible on mobile [#3294629](https://www.drupal.org/node/3294629)
+  - Set dynamic wrapper element for Did you find webform block [#3291816](https://www.drupal.org/node/3291816)
+- Updates for WxT Library
+  - Corrected all reported issues by phpcs
+  - Passing null to parameter #1 ($string)  [#3286651](https://www.drupal.org/node/3286651)
+
+Upgrade path:
+
+> **Important**: Please backup your database before running the upgrade process for this release.
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
+- Run WxT configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:wxt`
+
+**Note(s)**:
+
+To facilitate keeping the distribution lightweight and because soon the Lightning Contrib modules will be EOL we need to remove all of the Lightning contrib in a way that doesn't break an upgrade path and documents the modules removed in case site builders will want to manually add them to their own `composer.json` file
+
+> **Note**: that all error messages stating "Currently using Missing or invalid module" will be resolved after running the  `drush updatedb` step above.
+
+a) [Deprecate] Remove Lightning Layout [#3298505](https://www.drupal.org/node/3298505)
+
+Please read over the above issue and consult the below list of the removed composer entries in case you are depending on any of them and need to apply them manually to your composer.json file.
+
+```yaml
+"drupal/bg_image_formatter": "^1.10",
+"drupal/panelizer": "^4.1 || ^5.0",
+"drupal/simple_gmap": "^3.0"
+```
+
+All of the Lightning Layout functionality was directly ported to support an upgrade path and an update script written in the `wxt_core_update_8431` function.
+
+> **Note**: Any Lightning sub modules will also be uninstalled.
+
+b) [Deprecate] Remove Lightning Workflow [#3295862](https://www.drupal.org/node/3295862)
+
+Please read over the above issue and consult the below list of the removed composer entries in case you are depending on any of them and need to apply them manually to your composer.json file.
+
+```yaml
+"drupal/conflict": "^2.0-alpha2",
+"drupal/moderation_dashboard": "^1.0",
+"drupal/moderation_sidebar": "^1.2"
+```
+
+All of the Lightning Workflow functionality was directly ported to support an upgrade path and an update script written in the `wxt_core_update_8431` function.
+
+> **Note**: Any Lightning sub modules will also be uninstalled.
+
 ## v4.3.1
 
 - Security Updates for Drupal Core (v9.3.19)
