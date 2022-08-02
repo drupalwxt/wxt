@@ -10,4 +10,4 @@ dependencies:
   - 'webform_bootstrap:webform_bootstrap'
   - 'webform_node:webform_node'
   - 'webform_ui:webform_ui'
-version: 4.3.2
+version: 4.3.2-dev
