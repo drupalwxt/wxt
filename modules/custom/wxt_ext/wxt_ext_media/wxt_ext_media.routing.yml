@@ -1,0 +1,7 @@
+wxt_ext_media.settings:
+  path: '/admin/config/system/wxt/media'
+  defaults:
+    _title: WxT Extend Media
+    _form: '\Drupal\wxt_ext_media\Form\SettingsForm'
+  requirements:
+    _is_administrator: 'true'

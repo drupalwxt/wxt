@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+third_party_settings: {  }
+id: media.slideshow
+label: Slideshow
+targetEntityType: media
+cache: true

@@ -1,0 +1,9 @@
+services:
+  wxt_ext_media_slideshow.uninstall_validator:
+    class: '\Drupal\wxt_ext_media_slideshow\UninstallValidator'
+    arguments:
+      - '@entity_type.manager'
+      - '@string_translation'
+    tags:
+      - { name: module_install.uninstall_validator }
+    lazy: true

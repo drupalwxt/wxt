@@ -1,0 +1,9 @@
+name: 'Bulk Media Upload'
+core_version_requirement: '^8.8 || ^9'
+type: module
+description: 'Provides a form to upload many media items at once.'
+package: WxT
+dependencies:
+  - 'dropzonejs:dropzonejs'
+  - 'wxt_ext_media:wxt_ext_media'
+version: 4.3.2-dev

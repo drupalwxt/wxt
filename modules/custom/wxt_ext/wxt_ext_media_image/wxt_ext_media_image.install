@@ -1,0 +1,63 @@
+<?php
+
+/**
+ * @file
+ * Contains install and update routines for WxT Extend Media Image.
+ */
+
+use Drupal\lightning_core\ConfigHelper as Config;
+use Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException;
+
+/**
+ * Implements hook_install().
+ */
+function wxt_ext_media_image_install() {
+  // Don't do anything during config sync.
+  if (\Drupal::isConfigSyncing()) {
+    return;
+  }
+
+  // Enable translation for our core entities/bundles.
+  $entities = [
+    'media' => [
+      'image',
+    ],
+  ];
+  wxt_translation_enable_translation($entities);
+
+  $module_exists = [\Drupal::moduleHandler(), 'moduleExists'];
+
+  if ($module_exists('image_widget_crop')) {
+    // Use the cropping widgets for every form display of the Image media type.
+    $form_displays = \Drupal::entityTypeManager()
+      ->getStorage('entity_form_display')
+      ->loadByProperties([
+        'targetEntityType' => 'media',
+        'bundle' => 'image',
+      ]);
+
+    /** @var \Drupal\Core\Entity\Display\EntityFormDisplayInterface $form_display */
+    foreach ($form_displays as $form_display) {
+      $component = $form_display->getComponent('field_media_image');
+
+      if ($component && $component['type'] == 'image_image') {
+        $component['type'] = 'image_widget_crop';
+        $component['settings']['crop_list'] = ['freeform'];
+        $component['settings']['show_crop_area'] = TRUE;
+        $form_display->setComponent('field_media_image', $component)->save();
+      }
+    }
+
+    // Try to use a local copy of Cropper over the CDN-hosted fallback.
+    $cropper_path = Drupal::service('library.libraries_directory_file_finder')
+      ->find('cropper/dist');
+
+    if ($cropper_path) {
+      Drupal::configFactory()
+        ->getEditable('image_widget_crop.settings')
+        ->set('settings.library_url', "$cropper_path/cropper.min.js")
+        ->set('settings.css_url', "$cropper_path/cropper.min.css")
+        ->save();
+    }
+  }
+}

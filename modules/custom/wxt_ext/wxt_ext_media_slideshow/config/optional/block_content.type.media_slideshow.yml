@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - wxt_ext_media_slideshow
+id: media_slideshow
+label: 'Slideshow'
+revision: 0
+description: 'A slideshow or carousel of media items.'

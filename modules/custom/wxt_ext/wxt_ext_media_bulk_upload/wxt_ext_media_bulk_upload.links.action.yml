@@ -1,0 +1,6 @@
+wxt_ext_media.bulk_upload:
+  route_name: wxt_ext_media.bulk_upload
+  title: 'Bulk upload'
+  appears_on:
+    - entity.media.collection
+    - view.media_library.page

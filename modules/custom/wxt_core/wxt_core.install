@@ -5,6 +5,7 @@
  * Install and uninstall functions for the WxT installation profile.
  */
 
+use Drupal\media\Entity\MediaType;
 use Drupal\node\Entity\NodeType;
 use Drupal\workflows\Entity\Workflow;
 
@@ -189,7 +190,14 @@ function wxt_core_update_8410() {
  */
 function wxt_core_update_8431() {
 
-  // Remove all remnants of Lightning Workflow.
+  $config_factory = \Drupal::configFactory();
+
+  // Create this file manually since is newly added.
+  $config_factory->getEditable('wxt_ext_layout.settings')
+    ->set('entity_blocks.choose_display', ['media', 'node', 'taxonomy_term', 'user'])
+    ->save();
+
+  // Map third_party_setting lightning_workflow to wxt_ext_workflow.
   $entityTypeManager = \Drupal::service('entity_type.manager');
   $node_types = $entityTypeManager->getStorage('node_type')->loadMultiple();
   foreach ($node_types as $node_type) {
@@ -290,4 +298,154 @@ function wxt_core_update_8431() {
     ]);
   }
 
+}
+
+/**
+ * Updates for the WxT 4.3.3 release.
+ */
+function wxt_core_update_8433() {
+
+  $config_factory = \Drupal::configFactory();
+
+  // Create this file manually since is newly added.
+  $config_factory->getEditable('wxt_ext_media.settings')
+    ->set('revision_ui', false)
+    ->set('entity_embed.choose_display', false)
+    ->save();
+
+  // Map third_party_setting lightning_media to wxt_ext_media.
+  $entity_form_display = $config_factory->getEditable('core.entity_form_display.media.image.media_browser');
+  $plugins = $entity_form_display->get('content');
+  foreach ($plugins as $plugin_id => $config) {
+    if (isset($plugins[$plugin_id]['third_party_settings']['lightning_media'])) {
+      $options = $plugins[$plugin_id]['third_party_settings']['lightning_media'];
+      unset($plugins[$plugin_id]['third_party_settings']['lightning_media']);
+      $plugins[$plugin_id]['third_party_settings'] = ['wxt_ext_media' => $options];
+    }
+    $entity_form_display->set('content', $plugins);
+    $entity_form_display->save(TRUE);
+  }
+
+  // Update Entity Browser dependency to wxt_ext_media.
+  $entity_browser_config = $config_factory->getEditable('entity_browser.browser.image_browser');
+  $data = $entity_browser_config->getRawData();
+  if (isset($data['dependencies']['module']) && in_array('lightning_media', $data['dependencies']['module'])) {
+    $key = array_search('lightning_media', $data['dependencies']['module']);
+    $data['dependencies']['module'][$key] = 'wxt_ext_media';
+    $entity_browser_config->setData($data);
+    $entity_browser_config->save();
+  }
+
+  // Remove block_content.type.media_slideshow enforcement to lightning_media_slideshow.
+  $block_content_config = $config_factory->getEditable('block_content.type.media_slideshow');
+  $data = $block_content_config->getRawData();
+  if (isset($data['dependencies']['enforced']['module']) && $data['dependencies']['enforced']['module'] === ['lightning_media_slideshow']) {
+    unset($data['dependencies']['enforced']['module']);
+    if (empty($data['dependencies']['enforced'])) {
+      unset($data['dependencies']['enforced']);
+    }
+    $block_content_config->setData($data);
+    $block_content_config->save();
+  }
+
+  // Remove field.storage.block_content.field_slideshow_items enforcement to lightning_media_slideshow.
+  $field_storage_config = $config_factory->getEditable('field.storage.block_content.field_slideshow_items');
+  $data = $field_storage_config->getRawData();
+  if (isset($data['dependencies']['enforced']['module']) && $data['dependencies']['enforced']['module'] === ['lightning_media_slideshow']) {
+    unset($data['dependencies']['enforced']['module']);
+    if (empty($data['dependencies']['enforced'])) {
+      unset($data['dependencies']['enforced']);
+    }
+    $field_storage_config->setData($data);
+    $field_storage_config->save();
+  }
+
+  // Fully uninstall Lightning Media.
+  /** @var \Drupal\Core\Extension\ModuleInstallerInterface $module_installer */
+  $module_installer = \Drupal::service('module_installer');
+  $modules_to_check = [
+    'lightning_media' => (drupal_get_installed_schema_version('lightning_media') >= 0) ? TRUE : FALSE,
+    'lightning_media_audio' => (drupal_get_installed_schema_version('lightning_media_audio') >= 0) ? TRUE : FALSE,
+    'lightning_media_bulk_upload' => (drupal_get_installed_schema_version('lightning_media_bulk_upload') >= 0) ? TRUE : FALSE,
+    'lightning_media_document' => (drupal_get_installed_schema_version('lightning_media_document') >= 0) ? TRUE : FALSE,
+    'lightning_media_image' => (drupal_get_installed_schema_version('lightning_media_image') >= 0) ? TRUE : FALSE,
+    'lightning_media_instagram' => (drupal_get_installed_schema_version('lightning_media_instagram') >= 0) ? TRUE : FALSE,
+    'lightning_media_slideshow' => (drupal_get_installed_schema_version('lightning_media_slideshow') >= 0) ? TRUE : FALSE,
+    'lightning_media_twitter' => (drupal_get_installed_schema_version('lightning_media_twitter') >= 0) ? TRUE : FALSE,
+    'lightning_media_video' => (drupal_get_installed_schema_version('lightning_media_video') >= 0) ? TRUE : FALSE,
+  ];
+
+  $needs_uninstalling = FALSE;
+  $modules_to_uninstall = [];
+  $uninstalled = TRUE;
+
+  foreach ($modules_to_check as $module => $installed) {
+    if ($installed) {
+      $needs_uninstalling = TRUE;
+      $modules_to_uninstall[] = $module;
+    }
+  }
+
+  if ($needs_uninstalling) {
+    $uninstalled = $module_installer->uninstall($modules_to_uninstall);
+
+    $module_installer->install([
+      'wxt_ext_media',
+      'wxt_ext_media_audio',
+      'wxt_ext_media_bulk_upload',
+      'wxt_ext_media_document',
+      'wxt_ext_media_image',
+      'wxt_ext_media_instagram',
+      'wxt_ext_media_slideshow',
+      'wxt_ext_media_twitter',
+      'wxt_ext_media_video',
+    ]);
+  }
+
+  if ($needs_uninstalling && !$uninstalled) {
+    \Drupal::configFactory()
+      ->getEditable('core.extension')
+      ->clear('module.lightning_media')
+      ->clear('module.lightning_media_audio')
+      ->clear('module.lightning_media_bulk_upload')
+      ->clear('module.lightning_media_document')
+      ->clear('module.lightning_media_image')
+      ->clear('module.lightning_media_instagram')
+      ->clear('module.lightning_media_slideshow')
+      ->clear('module.lightning_media_twitter')
+      ->clear('module.lightning_media_video')
+      ->save();
+    \Drupal::keyValue('system.schema')->deleteMultiple([
+      'lightning_media',
+      'lightning_media_audio',
+      'lightning_media_bulk_upload',
+      'lightning_media_document',
+      'lightning_media_image',
+      'lightning_media_instagram',
+      'lightning_media_slideshow',
+      'lightning_media_twitter',
+      'lightning_media_video',
+    ]);
+  }
+
+  // Add field.storage.block_content.field_slideshow_items enforcement to wxt_ext_media_slideshow.
+  $config_factory = \Drupal::configFactory();
+  $block_content_config = $config_factory->getEditable('block_content.type.media_slideshow');
+  $data = $block_content_config->getRawData();
+  $data['dependencies'] = [
+    'enforced' => ['module' => ['wxt_ext_media_slideshow']],
+  ];
+  $block_content_config->setData($data);
+  $block_content_config->save();
+
+  // Add field.storage.block_content.field_slideshow_items enforcement to wxt_ext_media_slideshow.
+  $config_factory = \Drupal::configFactory();
+  $block_content_config = $config_factory->getEditable('field.storage.block_content.field_slideshow_items');
+  $data = $block_content_config->getRawData();
+  $data['dependencies'] = [
+    'module' => $data['dependencies']['module'],
+    'enforced' => ['module' => ['wxt_ext_media_slideshow']],
+  ];
+  $block_content_config->setData($data);
+  $block_content_config->save();
 }

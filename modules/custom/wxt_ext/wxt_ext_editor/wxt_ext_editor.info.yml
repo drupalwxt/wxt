@@ -4,6 +4,7 @@ type: module
 core_version_requirement: '^8.8 || ^9'
 package: WxT
 dependencies:
+  - 'blazy:blazy'
   - 'ckeditor:ckeditor'
   - 'ckeditor_abbreviation:ckeditor_abbreviation'
   - 'ckeditor_codemirror:ckeditor_codemirror'

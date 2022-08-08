@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * @file
+ * Adds support for locally-hosted audio files as media items.
+ */
+
+use Drupal\lightning_core\OverrideHelper as Override;
+use Drupal\wxt_ext_media_audio\Plugin\media\Source\AudioFile;
+
+/**
+ * Implements hook_media_source_info_alter().
+ */
+function wxt_ext_media_audio_media_source_info_alter(array &$sources) {
+  Override::pluginClass($sources['audio_file'], AudioFile::class);
+}

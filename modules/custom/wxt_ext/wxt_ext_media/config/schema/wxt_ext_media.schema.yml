@@ -1,0 +1,71 @@
+wxt_ext_media.settings:
+  type: config_object
+  label: 'WxT Extend Media settings'
+  mapping:
+    entity_embed:
+      type: mapping
+      label: 'Entity Embed settings'
+      mapping:
+        choose_display:
+          type: boolean
+          label: 'Allow user to choose display plugin for embedded media'
+    revision_ui:
+      type: boolean
+      label: 'Show revision UI on media forms'
+
+entity_browser.browser.widget.embed_code:
+  type: mapping
+  label: 'Embed code widget settings'
+  mapping:
+    target_bundles:
+      type: sequence
+      label: 'Allowed media types'
+      sequence:
+        type: string
+        label: 'Media type ID'
+    submit_text:
+      type: string
+      label: 'Submit button text'
+    form_mode:
+      type: string
+      label: 'Inline entity form mode'
+
+entity_browser.browser.widget.file_upload:
+  type: mapping
+  label: 'Upload widget settings'
+  mapping:
+    target_bundles:
+      type: sequence
+      label: 'Allowed media types'
+      sequence:
+        type: string
+        label: 'Media type ID'
+    upload_validators:
+      type: mapping
+      label: 'Upload validators'
+      mapping:
+        type: sequence
+        label: 'Validator arguments'
+        sequence:
+          type: ignore
+          label: 'Argument value'
+    submit_text:
+      type: string
+      label: 'Submit button text'
+    form_mode:
+      type: string
+      label: 'Inline entity form mode'
+    return_file:
+      type: boolean
+      label: 'Return underlying file entity'
+
+field.widget.third_party.wxt_ext_media:
+  type: mapping
+  label: 'WxT Extend Media settings'
+  mapping:
+    file_links:
+      type: boolean
+      label: 'Show links to uploaded files'
+    remove_button:
+      type: boolean
+      label: 'Show Remove button'

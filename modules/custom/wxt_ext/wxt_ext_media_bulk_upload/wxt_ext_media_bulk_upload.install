@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * @file
+ * Contains installation and update functions for WxT Extend Media Bulk Upload.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function wxt_ext_media_bulk_upload_install() {
+  user_role_grant_permissions('media_creator', ['dropzone upload files']);
+}

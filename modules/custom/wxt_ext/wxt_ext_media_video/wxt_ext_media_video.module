@@ -1,0 +1,45 @@
+<?php
+
+/**
+ * @file
+ * Support for videos as media entities in WxT Extend Video.
+ */
+
+use Drupal\lightning_core\OverrideHelper as Override;
+use Drupal\wxt_ext_media\Form\AddByUrlForm;
+use Drupal\wxt_ext_media_video\Plugin\media\Source\VideoFile;
+use Drupal\media\MediaInterface;
+
+/**
+ * Implements hook_media_source_info_alter().
+ */
+function wxt_ext_media_video_media_source_info_alter(array &$sources) {
+  if (isset($sources['video_embed_field'])) {
+    $sources['video_embed_field']['input_match'] = [
+      'field_types' => [
+        'string',
+        'string_long',
+        'video_embed_field',
+      ],
+    ];
+    $sources['video_embed_field']['preview'] = TRUE;
+    $sources['video_embed_field']['forms']['media_library_add'] = AddByUrlForm::class;
+
+    // Since the base class will not exist if video_embed_field is not enabled,
+    // we cannot import this class at the top of the file, or things blow up.
+    Override::pluginClass($sources['video_embed_field'], '\Drupal\wxt_ext_media_video\Plugin\media\Source\Video');
+  }
+  Override::pluginClass($sources['video_file'], VideoFile::class);
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_view_alter().
+ */
+function wxt_ext_media_video_media_view_alter(array &$build, MediaInterface $media) {
+  // If we are rendering an embedded video, give it a minimum width so that the
+  // responsive styles provided by Video Embed Field don't accidentally cause
+  // the video to be "invisible".
+  if (isset($build['#embed']) && $media->getSource()->getPluginId() === 'video_embed_field') {
+    $build['#attributes']['style'][] = 'min-width: 50%;';
+  }
+}

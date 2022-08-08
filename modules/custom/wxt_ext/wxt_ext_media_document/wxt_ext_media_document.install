@@ -1,0 +1,38 @@
+<?php
+
+use Drupal\lightning_core\ConfigHelper as Config;
+
+/**
+ * Creates the thumbnail display for documents.
+ */
+function wxt_ext_media_document_update_8001() {
+  Config::forModule('wxt_ext_media_document')
+    ->optional()
+    ->getEntity('entity_view_display', 'media.document.thumbnail')
+    ->save();
+}
+
+/**
+ * Creates the media_library form display for documents.
+ */
+function wxt_ext_media_document_update_8002() {
+  Config::forModule('wxt_ext_media_document')
+    ->optional()
+    ->getEntity('entity_form_display', 'media.document.media_library')
+    ->save();
+}
+
+/**
+ * Implements hook_update_dependencies().
+ */
+function wxt_ext_media_document_update_dependencies() {
+  return [
+    'wxt_ext_media_document' => [
+      // 8001 depends on the thumbnail view mode, which is created by
+      // wxt_ext_media 8015.
+      8001 => [
+        'wxt_ext_media' => 8015,
+      ],
+    ],
+  ];
+}

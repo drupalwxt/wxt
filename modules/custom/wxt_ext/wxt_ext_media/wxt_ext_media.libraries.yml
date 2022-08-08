@@ -1,0 +1,10 @@
+browser.styling:
+  css:
+    component:
+      css/browser.css:
+        minified: true
+  js:
+    js/browser.js: { }
+  dependencies:
+    - core/backbone
+    - core/jquery

@@ -10,7 +10,7 @@ dependencies:
     - media.type.image
   module:
     - image
-    - lightning_media
+    - wxt_ext_media
     - link
     - path
 id: media.image.media_browser
@@ -40,7 +40,7 @@ content:
       preview_image_style: medium
       progress_indicator: throbber
     third_party_settings:
-      lightning_media:
+      wxt_ext_media:
         file_links: false
         remove_button: false
     region: content

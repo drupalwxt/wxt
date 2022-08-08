@@ -1,0 +1,128 @@
+<?php
+
+/**
+ * @file
+ * Support for image media assets in WxT Extend Instagram.
+ */
+
+use Drupal\Core\Entity\Display\EntityFormDisplayInterface;
+use Drupal\Core\Field\FieldStorageDefinitionInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\image\Entity\ImageStyle;
+use Drupal\lightning_core\ConfigHelper as Config;
+use Drupal\lightning_core\OverrideHelper as Override;
+use Drupal\wxt_ext_media_image\Plugin\media\Source\Image;
+
+/**
+ * Implements hook_field_widget_info_alter().
+ */
+function wxt_ext_media_image_field_widget_info_alter(array &$info) {
+  if (isset($info['image_widget_crop'])) {
+    // We cannot import the class with a use statement, because it will blow up
+    // if Image Widget Crop is not installed.
+    Override::pluginClass($info['image_widget_crop'], '\Drupal\wxt_ext_media_image\Plugin\Field\FieldWidget\ImageCropWidget');
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_insert().
+ */
+function wxt_ext_media_image_crop_type_insert($crop_type) {
+  // Don't do anything during a config sync.
+  if (\Drupal::isConfigSyncing()) {
+    return;
+  }
+  else {
+    // Create a dedicated image style to display images using this crop type.
+    /** @var \Drupal\crop\CropTypeInterface $crop_type */
+    $image_style = ImageStyle::create([
+      'name' => 'crop_' . $crop_type->id(),
+      'label' => t('Cropped: @crop_type', [
+        '@crop_type' => $crop_type->label(),
+      ]),
+    ]);
+    $image_style->addImageEffect([
+      'id' => 'crop_crop',
+      'data' => [
+        'crop_type' => $crop_type->id(),
+      ],
+    ]);
+    $image_style->save();
+  }
+}
+
+/**
+ * Implements hook_modules_installed().
+ */
+function wxt_ext_media_image_modules_installed(array $modules) {
+  // Don't do anything during config sync.
+  if (\Drupal::isConfigSyncing()) {
+    return;
+  }
+
+  if (in_array('image_widget_crop', $modules)) {
+    Config::forModule('wxt_ext_media_image')
+      ->optional()
+      ->getEntity('crop_type', 'freeform')
+      ->save();
+  }
+}
+
+/**
+ * Implements hook_media_source_info_alter().
+ */
+function wxt_ext_media_image_media_source_info_alter(array &$sources) {
+  $sources['image']['input_match']['field_types'] = ['image'];
+  Override::pluginClass($sources['image'], Image::class);
+
+  // When a media item that uses the Image plugin is embedded in a text editor,
+  // prefer the media_image display plugin.
+  // @see \Drupal\wxt_ext_media\Form\EntityEmbedDialog::buildEmbedStep()
+  $sources['image']['entity_embed_display'] = 'media_image';
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function wxt_ext_media_image_form_entity_browser_image_browser_form_alter(array &$form, FormStateInterface $form_state) {
+  $form['#attached']['library'][] = 'wxt_ext_media/browser.styling';
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_presave().
+ */
+function wxt_ext_media_image_entity_form_display_presave(EntityFormDisplayInterface $display) {
+  // Don't do anything during config sync.
+  if (\Drupal::isConfigSyncing()) {
+    return;
+  }
+
+  // Since the image browser integrates with the media library, it doesn't make
+  // sense to use the image browser when creating or editing an image media
+  // entity.
+  if ($display->getTargetEntityTypeId() == 'media' && $display->getTargetBundle() == 'image') {
+    return;
+  }
+
+  $filter = function (FieldStorageDefinitionInterface $field) {
+    return $field->getType() == 'image';
+  };
+  $new_components = \Drupal::service('wxt.display_helper')
+    ->getNewFields($display, $filter);
+
+  foreach ($new_components as $key => $component) {
+    $display->setComponent($key, [
+      'type' => 'entity_browser_file',
+      'weight' => $component['weight'],
+      'settings' => [
+        'entity_browser' => 'image_browser',
+        'field_widget_edit' => TRUE,
+        'field_widget_remove' => TRUE,
+        'view_mode' => 'default',
+        'preview_image_style' => 'thumbnail',
+        'open' => TRUE,
+      ],
+      'region' => 'content',
+    ]);
+  }
+}

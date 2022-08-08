@@ -4,3 +4,516 @@
  * @file
  * Contains wxt_ext_media.module.
  */
+
+use Drupal\ckeditor\Ajax\AddStyleSheetCommand;
+use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Field\WidgetInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\StringTranslation\PluralTranslatableMarkup as Plural;
+use Drupal\file\FileInterface;
+use Drupal\image\Entity\ImageStyle;
+use Drupal\image\Plugin\Field\FieldType\ImageItem;
+use Drupal\image\Plugin\Field\FieldWidget\ImageWidget;
+use Drupal\image\Plugin\ImageEffect\ResizeImageEffect;
+use Drupal\lightning_core\BundleEntityStorage;
+use Drupal\lightning_core\OverrideHelper as Override;
+use Drupal\wxt_ext_media\Exception\IndeterminateBundleException;
+use Drupal\wxt_ext_media\Form\MediaForm;
+use Drupal\wxt_ext_media\ImageWidgetHelper;
+use Drupal\wxt_ext_media\MediaHelper;
+use Drupal\media\Entity\MediaType;
+use Drupal\media\MediaInterface;
+use Drupal\media\MediaTypeInterface;
+use Drupal\views\ViewExecutable;
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ */
+function wxt_ext_media_form_media_type_form_alter(array &$form, FormStateInterface $form_state) {
+  $form['source_dependent'] += [
+    'source_configuration' => [],
+  ];
+}
+
+/**
+ * Implements hook_field_widget_third_party_settings_form().
+ */
+function wxt_ext_media_field_widget_third_party_settings_form(WidgetInterface $widget) {
+  $element = [];
+
+  if ($widget instanceof ImageWidget) {
+    $element = ImageWidgetHelper::getSettingsForm($widget);
+  }
+  return $element;
+}
+
+/**
+ * Implements hook_field_widget_settings_summary_alter().
+ */
+function wxt_ext_media_field_widget_settings_summary_alter(array &$summary, array $context) {
+  if ($context['widget'] instanceof ImageWidget) {
+    ImageWidgetHelper::summarize($context['widget'], $summary);
+  }
+}
+
+/**
+ * Implements hook_field_widget_form_alter().
+ */
+function wxt_ext_media_field_widget_form_alter(array &$element, FormStateInterface $form_state, array $context) {
+  if ($context['widget'] instanceof ImageWidget) {
+    ImageWidgetHelper::alter($element, $context['widget']);
+  }
+}
+
+/**
+ * Implements hook_field_widget_WIDGET_TYPE_form_alter().
+ */
+function wxt_ext_media_field_widget_entity_browser_entity_reference_form_alter(array &$element, FormStateInterface $form_state, array $context) {
+  // Move the remaining number of selections to the details summary.
+  if (isset($element['current']['#prefix'])) {
+    $element['#description'] .= $element['current']['#prefix'];
+    unset($element['current']['#prefix']);
+  }
+
+  /** @var \Drupal\Core\Field\FieldItemListInterface $items */
+  $items = $context['items'];
+
+  // Wrap the current selections in a nice <details> element.
+  $cardinality = $items
+    ->getFieldDefinition()
+    ->getFieldStorageDefinition()
+    ->getCardinality();
+
+  $element['current']['#theme_wrappers'] = [
+    'details' => [
+      '#attributes' => [
+        'open' => TRUE,
+      ],
+      '#title' => new Plural($cardinality, 'Current selection', 'Current selections'),
+      '#summary_attributes' => [],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_modules_installed().
+ */
+function wxt_ext_media_modules_installed(array $modules) {
+  // Don't do anything during config sync.
+  if (Drupal::isConfigSyncing()) {
+    return;
+  }
+}
+
+/**
+ * Implements hook_element_info_alter().
+ */
+function wxt_ext_media_element_info_alter(array &$info) {
+  $info['entity_browser']['#after_build'][] = 'wxt_ext_media_inject_entity_browser_count';
+}
+
+/**
+ * Implements hook_entity_extra_field_info().
+ */
+function wxt_ext_media_entity_extra_field_info() {
+  $extra_fields = [];
+
+  if (\Drupal::moduleHandler()->moduleExists('media')) {
+    /** @var \Drupal\media\MediaTypeInterface $media_type */
+    foreach (MediaType::loadMultiple() as $id => $media_type) {
+      $plugin_definition = $media_type->getSource()->getPluginDefinition();
+
+      if (isset($plugin_definition['preview'])) {
+        $extra_fields['media'][$id]['form']['preview'] = [
+          'label' => t('Preview'),
+          'description' => t('A live preview of the @media_type.', [
+            '@media_type' => $media_type->label(),
+          ]),
+          'weight' => 0,
+        ];
+      }
+    }
+  }
+  return $extra_fields;
+}
+
+/**
+ * Implements hook_inline_entity_form_entity_form_alter().
+ */
+function wxt_ext_media_inline_entity_form_entity_form_alter(array &$entity_form) {
+  $entity = $entity_form['#entity'];
+
+  if ($entity instanceof MediaInterface && MediaHelper::isPreviewable($entity)) {
+    $entity_form['preview'] = MediaHelper::getSourceField($entity)->view('default');
+  }
+}
+
+/**
+ * Validates a file using media entity source field criteria.
+ *
+ * @param \Drupal\file\FileInterface $file
+ *   The file to validate.
+ * @param string[] $bundles
+ *   (optional) A set of media bundle IDs which might match the input. If
+ *   omitted, all bundles to which the user has create access will be checked.
+ *
+ * @return string[]
+ *   An array of errors. If empty, the file passed validation.
+ */
+function wxt_ext_media_validate_upload(FileInterface $file, array $bundles = []) {
+  try {
+    $entity = \Drupal::service('wxt.media_helper')->createFromInput($file, $bundles);
+  }
+  catch (IndeterminateBundleException $e) {
+    return [];
+  }
+
+  /** @var \Drupal\file\Plugin\Field\FieldType\FileItem $item */
+  $item = MediaHelper::getSourceField($entity)->first();
+
+  $validators = [
+    // It's maybe a bit overzealous to run this validator, but hey...better
+    // safe than screwed over by script kiddies.
+    'file_validate_name_length' => [],
+  ];
+  $validators = array_merge($validators, $item->getUploadValidators());
+  // This function is only called by the custom FileUpload widget, which runs
+  // file_validate_extensions before this function. So there's no need to
+  // validate the extensions again.
+  unset($validators['file_validate_extensions']);
+
+  // If this is an image field, add image validation. Against all sanity,
+  // this is normally done by ImageWidget, not ImageItem, which is why we
+  // need to facilitate this a bit.
+  if ($item instanceof ImageItem) {
+    // Validate that this is, indeed, a supported image.
+    $validators['file_validate_is_image'] = [];
+
+    $settings = $item->getFieldDefinition()->getSettings();
+    if ($settings['max_resolution'] || $settings['min_resolution']) {
+      $validators['file_validate_image_resolution'] = [
+        $settings['max_resolution'],
+        $settings['min_resolution'],
+      ];
+    }
+  }
+  return file_validate($file, $validators);
+}
+
+/**
+ * Post-build callback for entity browser elements.
+ *
+ * This function injects the number of default values the entity browser has
+ * into its JavaScript settings so that several instances of an entity browser
+ * on a particular field can respect the field's cardinality. This is used by
+ * our special-sauce JavaScript in browser.js to ensure that you cannot select
+ * more entities than the cardinality will allow.
+ *
+ * @param array $element
+ *   The fully built element.
+ *
+ * @return array
+ *   The processed element.
+ */
+function wxt_ext_media_inject_entity_browser_count(array $element) {
+  $settings = &$element['#attached']['drupalSettings']['entity_browser'];
+  $uuid = key($settings);
+  $settings[$uuid]['count'] = count($element['#default_value']);
+
+  return $element;
+}
+
+/**
+ * Implements template_preprocess_image_style().
+ *
+ * @param array $variables
+ *   Template variables.
+ */
+function wxt_ext_media_preprocess_image_style(array &$variables) {
+  $extension = pathinfo($variables['uri'], PATHINFO_EXTENSION);
+  $extension = mb_strtolower($extension);
+
+  // If this is an SVG and we don't know its dimensions, try to calculate them
+  // through the image style's effect chain.
+  if ($extension == 'svg' && (empty($variables['image']['#width']) || empty($variables['image']['#height']))) {
+    $image_style = ImageStyle::load($variables['style_name']);
+
+    // Loop through the effect chain, collecting configured dimensions for all
+    // resizing effects.
+    $dimensions = [];
+    foreach ($image_style->getEffects() as $effect) {
+      if ($effect instanceof ResizeImageEffect) {
+        $configuration = $effect->getConfiguration();
+
+        array_push($dimensions, [
+          'width' => $configuration['data']['width'],
+          'height' => $configuration['data']['height'],
+        ]);
+      }
+    }
+    // If we didn't collect any dimensions, there's nothing else to be done.
+    if (empty($dimensions)) {
+      return;
+    }
+
+    // Sort the configured dimensions in ascending order by an arbitrary axis,
+    // which can be 'width' or 'height'.
+    $axis = @$variables['sort_axis'] ?: 'width';
+    usort($dimensions, function (array $a, array $b) use ($axis) {
+      return $b[$axis] - $a[$axis];
+    });
+
+    // Start with the widest set of configured dimensions.
+    $dimensions = end($dimensions);
+    // Allow the image style to transform the dimensions as needed.
+    $image_style->transformDimensions($dimensions, $variables['uri']);
+
+    if ($dimensions['width']) {
+      $variables['image']['#width'] = $dimensions['width'];
+    }
+    if ($dimensions['height']) {
+      $variables['image']['#height'] = $dimensions['height'];
+    }
+    // If at least one dimension is known, display the image.
+    $variables['image']['#access'] = $dimensions['width'] || $dimensions['height'];
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function wxt_ext_media_form_alter(array &$form, FormStateInterface $form_state) {
+  if ($form_state->has('entity_browser')) {
+    $form['#attached']['library'][] = 'wxt_ext_media/browser.styling';
+  }
+}
+
+/**
+ * Implements hook_entity_base_field_info_alter().
+ */
+function wxt_ext_media_entity_base_field_info_alter(array &$fields, EntityTypeInterface $entity_type) {
+  if ($entity_type->id() === 'media' && array_key_exists('revision_log_message', $fields)) {
+    $fields['revision_log_message']->setDisplayConfigurable('form', TRUE);
+  }
+}
+
+/**
+ * Implements hook_entity_type_alter().
+ */
+function wxt_ext_media_entity_type_alter(array &$entity_types) {
+  // Use a configuration flag to determine whether or not to show the revision
+  // UI.
+  $entity_types['media']->set('show_revision_ui', (bool) Drupal::config('wxt_ext_media.settings')->get('revision_ui'));
+
+  // Use our specialized entity form for adding and editing media assets in
+  // order to support dynamic preview generation.
+  Override::entityForm($entity_types['media'], MediaForm::class);
+  Override::entityForm($entity_types['media'], MediaForm::class, 'edit');
+
+  // Use our extended storage handler for media bundles.
+  Override::entityHandler($entity_types['media_type'], 'storage', BundleEntityStorage::class);
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_insert().
+ */
+function wxt_ext_media_media_type_insert(MediaTypeInterface $media_type) {
+  // Don't do anything during config sync.
+  if (\Drupal::isConfigSyncing()) {
+    return;
+  }
+
+  \Drupal::entityTypeManager()
+    ->getStorage('field_config')
+    ->create([
+      'field_name' => 'field_media_in_library',
+      'entity_type' => 'media',
+      'bundle' => $media_type->id(),
+      'label' => t('Show in media library'),
+      'settings' => [
+        'on_label' => t('Shown in media library'),
+        'off_label' => t('Hidden in media library'),
+      ],
+      'default_value' => [
+        ['value' => TRUE],
+      ],
+    ])
+    ->save();
+
+  Drupal::service('entity_display.repository')
+    ->getFormDisplay('media', $media_type->id())
+    ->setComponent('field_media_in_library', [
+      'type' => 'boolean_checkbox',
+      'settings' => [
+        'display_label' => TRUE,
+      ],
+    ])
+    ->save();
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function wxt_ext_media_form_entity_embed_dialog_alter(array &$form, FormStateInterface $form_state) {
+  list ($editor, $embed_button) = $form_state->getBuildInfo()['args'];
+
+  /** @var \Drupal\embed\EmbedButtonInterface $embed_button */
+  if ($embed_button->id() == 'media_browser') {
+    $element = &$form['attributes']['data-entity-embed-settings']['view_mode'];
+    if (isset($element['#options']['embedded'])) {
+      $element['#default_value'] = 'embedded';
+    }
+  }
+}
+
+/**
+ * Implements hook_js_settings_alter().
+ */
+function wxt_ext_media_js_settings_alter(array &$settings) {
+  if (empty($settings['ajax'])) {
+    $settings['ajax'] = [];
+  }
+
+  $route_name = \Drupal::routeMatch()->getRouteName();
+  if (strpos($route_name, 'entity_browser') === 0 && isset($settings['ajaxPageState']['libraries'])) {
+    $libraries = explode(',', $settings['ajaxPageState']['libraries']);
+    // If we pretend EB's iframe library has not been previously loaded, it will
+    // ALWAYS be fetched from the server, preventing (in a crappy, kludgey way)
+    // the bug in #2768849.
+    $libraries = array_diff($libraries, ['entity_browser/iframe']);
+    $settings['ajaxPageState']['libraries'] = implode(',', $libraries);
+  }
+}
+
+/**
+ * Implements hook_ajax_render_alter().
+ */
+function wxt_ext_media_ajax_render_alter(array &$data) {
+  $route = \Drupal::routeMatch()->getRouteName();
+  $query = \Drupal::request()->query;
+
+  if ($route == 'entity_embed.dialog') {
+    foreach ($data as &$command) {
+      if ($command['command'] == 'settings' && isset($command['settings']['ajaxPageState']['libraries'])) {
+        $libraries = explode(',', $command['settings']['ajaxPageState']['libraries']);
+        $libraries = array_diff($libraries, ['entity_browser/iframe']);
+        $command['settings']['ajaxPageState']['libraries'] = implode(',', $libraries);
+      }
+    }
+  }
+  elseif ($route == 'embed.preview' && $query->has('editor')) {
+    $style_sheets = [];
+
+    foreach ($data as $command) {
+      // Any CSS being added should be replicated in the editor.
+      if ($command['command'] == 'add_css') {
+        $matched = [];
+        // Assume (perhaps naively) that all the style sheets are embedded as
+        // <link /> tags.
+        preg_match_all('/href="([^"]+)"/', $command['data'], $matched);
+        $style_sheets = array_merge($style_sheets, $matched[1]);
+      }
+    }
+
+    if ($style_sheets) {
+      $command = new AddStyleSheetCommand($query->get('editor'), $style_sheets);
+      $data[] = $command->render();
+    }
+  }
+}
+
+/**
+ * Preprocess function for grid views of the media library.
+ *
+ * @param array $variables
+ *   Template variables.
+ */
+function wxt_ext_media_preprocess_views_view_grid(array &$variables) {
+  /** @var \Drupal\views\ViewExecutable $view */
+  $view = $variables['view'];
+
+  if ($view->display_handler->getPluginId() == 'entity_browser') {
+    foreach ($variables['items'] as &$item) {
+      foreach ($item['content'] as &$column) {
+        $column['attributes']['data-selectable'] = 'true';
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_library_info_alter().
+ */
+function wxt_ext_media_library_info_alter(array &$libraries, $extension) {
+  if ($extension === 'entity_browser') {
+    // Clicking the "Remove" or "Edit" buttons in the media browser doesn't
+    // trigger the event that makes Quick Edit display the "Save" button.
+    // Loading the drupal.file library before entity browser attaches the
+    // file button event handlers to the media browser buttons.
+    // @see Drupal.behaviors.fileButtons
+    $libraries['entity_reference']['dependencies'][] = 'file/drupal.file';
+  }
+}
+
+/**
+ * Implements hook_views_pre_view().
+ */
+function wxt_ext_media_views_pre_view(ViewExecutable $view, $display_id) {
+  // If the field_media_in_library field doesn't exist, there is no point in
+  // continuing here.
+  $field_map = Drupal::service('entity_field.manager')->getFieldMap();
+  if (empty($field_map['media']['field_media_in_library'])) {
+    return;
+  }
+
+  if ($view->id() === 'media_library' && strpos($display_id, 'widget') === 0) {
+    $filters = $view->display_handler->getOption('filters');
+    // Filter out media items where field_media_in_library is FALSE. If the view
+    // already has stored configuration for this field, it will be respected.
+    $filters += [
+      'field_media_in_library_value' => [
+        'id' => 'field_media_in_library_value',
+        'table' => 'media__field_media_in_library',
+        'field' => 'field_media_in_library_value',
+        'relationship' => 'none',
+        'group_type' => 'group',
+        'admin_label' => '',
+        'operator' => '=',
+        'value' => '1',
+        'group' => 1,
+        'exposed' => FALSE,
+        'expose' => [
+          'operator_id' => '',
+          'label' => '',
+          'description' => '',
+          'use_operator' => FALSE,
+          'operator' => '',
+          'operator_limit_selection' => FALSE,
+          'operator_list' => [],
+          'identifier' => '',
+          'required' => FALSE,
+          'remember' => FALSE,
+          'multiple' => FALSE,
+          'remember_roles' => [
+            'authenticated' => 'authenticated',
+          ],
+        ],
+        'is_grouped' => FALSE,
+        'group_info' => [
+          'label' => '',
+          'description' => '',
+          'identifier' => '',
+          'optional' => TRUE,
+          'widget' => 'select',
+          'multiple' => FALSE,
+          'remember' => FALSE,
+          'default_group' => 'All',
+          'default_group_multiple' => [],
+          'group_items' => [],
+        ],
+        'plugin_id' => 'boolean',
+      ],
+    ];
+    $view->display_handler->setOption('filters', $filters);
+  }
+}

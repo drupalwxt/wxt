@@ -1,0 +1,8 @@
+name: 'Media Image'
+core_version_requirement: '^8.8 || ^9'
+type: module
+package: WxT
+description: 'Image support for WxT Extend Media.'
+dependencies:
+  - 'wxt_ext_media:wxt_ext_media'
+version: 4.3.2-dev

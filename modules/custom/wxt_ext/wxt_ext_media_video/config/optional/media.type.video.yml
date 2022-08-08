@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - file
+id: video
+label: 'Video file'
+description: 'A locally hosted video file'
+source: video_file
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_video_file
+field_map: {  }

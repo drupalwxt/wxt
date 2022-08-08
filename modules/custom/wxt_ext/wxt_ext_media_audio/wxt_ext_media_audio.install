@@ -1,0 +1,6 @@
+<?php
+
+/**
+ * @file
+ * Contains install, uninstall, and update hooks for WxT Extend Media Audio.
+ */

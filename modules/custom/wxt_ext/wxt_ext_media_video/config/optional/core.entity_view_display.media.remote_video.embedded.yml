@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.embedded
+    - field.field.media.remote_video.field_media_oembed_video
+    - media.type.video
+  module:
+    - media
+id: media.remote_video.embedded
+targetEntityType: media
+bundle: remote_video
+mode: embedded
+content:
+  field_media_oembed_video:
+    type: oembed
+    weight: 2
+    label: hidden
+    settings:
+      max_width: 0
+      max_height: 0
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  field_media_in_library: true
+  name: true
+  thumbnail: true
+  uid: true

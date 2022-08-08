@@ -1,0 +1,39 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.media_slideshow
+    - field.field.block_content.media_slideshow.field_slideshow_items
+  module:
+    - slick_entityreference
+id: block_content.media_slideshow.default
+targetEntityType: block_content
+bundle: media_slideshow
+mode: default
+content:
+  field_slideshow_items:
+    type: slick_entityreference_vanilla
+    label: visually_hidden
+    settings:
+      optionset: default
+      view_mode: default
+      cache: 0
+      skin: default
+      style: ''
+      current_view_mode: default
+      overridables:
+        arrows: '0'
+        autoplay: '0'
+        dots: '0'
+        draggable: '0'
+        infinite: '0'
+        mouseWheel: '0'
+        randomize: '0'
+        variableWidth: '0'
+      override: false
+      skin_arrows: ''
+      skin_dots: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

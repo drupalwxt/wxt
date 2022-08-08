@@ -3,16 +3,16 @@ description: 'Add media entities.'
 type: module
 core_version_requirement: '^8.8 || ^9'
 package: WxT
+configure: wxt_ext_media.settings
 dependencies:
   - 'content_moderation:content_moderation'
-  - 'lightning_media:lightning_media'
-  - 'lightning_media_audio:lightning_media_audio'
-  - 'lightning_media_bulk_upload:lightning_media_bulk_upload'
-  - 'lightning_media_document:lightning_media_document'
-  - 'lightning_media_image:lightning_media_image'
-  - 'lightning_media_instagram:lightning_media_instagram'
-  - 'lightning_media_slideshow:lightning_media_slideshow'
-  - 'lightning_media_twitter:lightning_media_twitter'
-  - 'lightning_media_video:lightning_media_video'
+  - 'drupal:ckeditor'
+  - 'drupal:image'
+  - 'drupal:media_library'
+  - 'drupal:user'
+  - 'entity_browser:entity_browser'
+  - 'inline_entity_form:inline_entity_form'
+  - lightning_core:lightning_core
+  - 'wxt_core:wxt_core'
   - 'wxt_translation:wxt_translation'
 version: 4.3.2-dev

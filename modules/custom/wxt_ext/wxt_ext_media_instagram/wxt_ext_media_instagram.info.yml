@@ -1,0 +1,9 @@
+name: 'Media Instagram'
+core_version_requirement: '^8.8 || ^9'
+type: module
+description: 'Instagram support for WxT Extend Media.'
+package: WxT
+dependencies:
+  - 'wxt_ext_media:wxt_ext_media'
+  - 'media_entity_instagram:media_entity_instagram'
+version: 4.3.2-dev
