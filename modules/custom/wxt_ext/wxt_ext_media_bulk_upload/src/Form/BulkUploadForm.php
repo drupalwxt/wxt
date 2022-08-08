@@ -8,7 +8,7 @@ use Drupal\Core\Entity\EntityTypeBundleInfoInterface;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\StringTranslation\TranslationInterface;
-use Drupal\lightning_core\Element;
+use Drupal\wxt_core\Element;
 use Drupal\wxt_ext_media\Exception\IndeterminateBundleException;
 use Drupal\wxt_ext_media\MediaHelper;
 use Symfony\Component\DependencyInjection\ContainerInterface;

@@ -5,8 +5,234 @@
  * Contains wxt_core.module.
  */
 
+use Drupal\Core\Block\BlockPluginInterface;
 use Drupal\Core\Database\Query\AlterableInterface;
+use Drupal\Core\Entity\ContentEntityFormInterface;
+use Drupal\Core\Entity\ContentEntityInterface;
+use Drupal\Core\Entity\EntityChangedInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\EntityDescriptionInterface;
+use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\File\Exception\FileException;
+use Drupal\Core\File\FileSystemInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\field\FieldConfigInterface;
+use Drupal\file\Entity\File;
+use Drupal\wxt_core\Element as ElementHelper;
+use Drupal\wxt_core\Entity\EntityFormMode;
+use Drupal\wxt_core\Entity\EntityViewMode;
+use Drupal\wxt_core\Entity\Role;
+use Drupal\wxt_core\Form\RoleForm;
+use Drupal\wxt_core\OverrideHelper as Override;
+use Drupal\wxt_core\Plugin\views\filter\Bundle;
 use Drupal\wxt_core\UpdateManager;
+
+/**
+ * Implements hook_entity_base_field_info_alter().
+ */
+function wxt_core_entity_base_field_info_alter(array &$fields, EntityTypeInterface $entity_type) {
+  /** @var \Drupal\Core\Field\BaseFieldDefinition[] $fields */
+  if ($entity_type->id() === 'user') {
+    $fields['name']->setDisplayConfigurable('view', TRUE);
+  }
+}
+
+/**
+ * Implements hook_local_tasks_alter().
+ */
+function wxt_core_local_tasks_alter(array &$local_tasks) {
+  // When Content Moderation is installed, the "Edit" tab may have different
+  // text, depending on the circumstances. In order for Behat tests to visit
+  // the edit form, there must be a consistent way to target the tab. Rather
+  // than rely on the text, set a consistent 'rel' attribute which step
+  // definitions can reliably target.
+  $local_tasks['entity.node.edit_form']['options']['attributes']['rel'] = 'edit-form';
+}
+
+/**
+ * Implements hook_library_info_alter().
+ */
+function wxt_core_library_info_alter(array &$libraries, $extension) {
+  if ($extension == 'seven') {
+    $url = Drupal::service('extension.list.module')->getPath('wxt_core') . '/css/admin-list.grid.css';
+    if (\Drupal::hasService('file_url_generator')) {
+      $file_url_generator = Drupal::service('file_url_generator');
+      $url = $file_url_generator->generateAbsoluteString($url);
+      $url = $file_url_generator->transformRelative($url);
+    }
+    else {
+      // @todo Drop this code when Drupal 9.3 is the minimum supported version of core.
+      /** @phpstan-ignore-next-line */
+      $url = file_create_url($url);
+      /** @phpstan-ignore-next-line */
+      $url = file_url_transform_relative($url);
+    }
+
+    $libraries['global-styling']['css']['component'][$url] = [];
+  }
+}
+
+/**
+ * Implements hook_config_schema_info_alter().
+ */
+function wxt_core_config_schema_info_alter(array &$definitions) {
+  if (isset($definitions['views_filter'])) {
+    $definitions['views_filter']['mapping']['expose']['mapping']['argument'] = [
+      'type' => 'string',
+      'label' => 'Yield to argument',
+    ];
+  }
+}
+
+/**
+ * Implements hook_views_plugins_filter_alter().
+ */
+function wxt_core_views_plugins_filter_alter(array &$plugins) {
+  Override::pluginClass($plugins['bundle'], Bundle::class);
+}
+
+/**
+ * Implements hook_contextual_links_plugins_alter().
+ */
+function wxt_core_contextual_links_plugins_alter(array &$contextual_links) {
+  $module_handler = Drupal::moduleHandler();
+  $class = '\Drupal\Core\Menu\ContextualLinkDefault';
+
+  if ($module_handler->moduleExists('block_content')) {
+    $contextual_links['block_content.block_edit_latest_version'] = [
+      'title' => t('Edit'),
+      'group' => 'block_content_latest_version',
+      'route_name' => 'entity.block_content.canonical',
+      'id' => 'block_content.block_edit_latest_version',
+      'class' => $class,
+      'provider' => 'block_content',
+    ];
+  }
+  if ($module_handler->moduleExists('taxonomy')) {
+    $contextual_links['entity.taxonomy_term.latest_version_edit_form'] = [
+      'title' => t('Edit'),
+      'group' => 'taxonomy_term_latest_version',
+      'route_name' => 'entity.taxonomy_term.edit_form',
+      'weight' => 10,
+      'id' => 'entity.taxonomy_term.latest_version_edit_form',
+      'class' => $class,
+      'provider' => 'taxonomy',
+    ];
+  }
+  if ($module_handler->moduleExists('node')) {
+    $contextual_links['entity.node.latest_version_edit_form'] = [
+      'title' => t('Edit'),
+      'group' => 'node_latest_version',
+      'route_name' => 'entity.node.edit_form',
+      'id' => 'entity.node.latest_version_edit_form',
+      'class' => $class,
+      'provider' => 'node',
+      'weight' => 0,
+      'options' => [],
+    ];
+  }
+}
+
+/**
+ * Implements hook_entity_view_alter().
+ */
+function wxt_core_entity_view_alter(array &$build, EntityInterface $entity) {
+  if (isset($build['#contextual_links'])) {
+    $entity_type_id = $entity->getEntityTypeId();
+
+    $links = [];
+    // Attach either the revision or canonical contextual link groups, but not
+    // both.
+    if ($entity instanceof ContentEntityInterface && !$entity->isDefaultRevision()) {
+      $links[$entity_type_id . '_revision'] = 'revision';
+
+      // If this is the latest revision, add an additional group of contextual
+      // links.
+      if ($entity->isLatestRevision()) {
+        $links[$entity_type_id . '_latest_version'] = 'revision';
+      }
+    }
+    else {
+      $links[$entity_type_id] = 'canonical';
+    }
+
+    foreach ($links as $group => $link_template) {
+      if ($entity->hasLinkTemplate($link_template)) {
+        $build['#contextual_links'][$group] = [
+          'route_parameters' => $entity->toUrl($link_template)->getRouteParameters(),
+        ];
+        if ($entity instanceof EntityChangedInterface) {
+          $build['#contextual_links'][$group]['metadata'] = [
+            'changed' => $entity->getChangedTime(),
+          ];
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_entity_type_alter().
+ */
+function wxt_core_entity_type_alter(array &$entity_types) {
+  Override::entityClass($entity_types['user_role'], Role::class);
+  Override::entityClass($entity_types['entity_view_mode'], EntityViewMode::class);
+  Override::entityClass($entity_types['entity_form_mode'], EntityFormMode::class);
+
+  Override::entityForm($entity_types['user_role'], RoleForm::class);
+
+  if (\Drupal::moduleHandler()->moduleExists('field_ui')) {
+    Override::entityForm($entity_types['entity_view_mode'], '\Drupal\wxt_core\Form\EntityDisplayModeAddForm', 'add');
+    Override::entityForm($entity_types['entity_view_mode'], '\Drupal\wxt_core\Form\EntityDisplayModeEditForm', 'edit');
+
+    Override::entityForm($entity_types['entity_form_mode'], '\Drupal\wxt_core\Form\EntityFormModeAddForm', 'add');
+    Override::entityForm($entity_types['entity_form_mode'], '\Drupal\wxt_core\Form\EntityDisplayModeEditForm', 'edit');
+  }
+}
+
+/**
+ * Implements hook_element_info_alter().
+ */
+function wxt_core_element_info_alter(array &$info) {
+  // Add support for the #legend property to checkboxes and radios.
+  // @see Element::processLegend()
+  $info['radios']['#legend'] = $info['checkboxes']['#legend'] = [];
+  $info['radios']['#process'][] = $info['checkboxes']['#process'][] = [ElementHelper::class, 'processLegend'];
+}
+
+/**
+ * Implements hook_help().
+ */
+function wxt_core_help($route_name, RouteMatchInterface $route_match) {
+  $matched = [];
+  // Parse the route name to figure out what display mode we're looking at:
+  // 0 is the entire string.
+  // 1 is 'view' or 'form'.
+  // 2 is the ID of the affected entity type.
+  // 3 is 'view_mode' or 'form_mode'.
+  // 4 is 'view' or 'form'.
+  $expr = '/^entity\.entity_(view|form)_display\.([a-z_]+)\.((view|form)_mode)$/';
+
+  if (preg_match($expr, $route_name, $matched)) {
+    $entity_id = sprintf(
+      '%s.%s',
+      $route_match->getParameter('entity_type_id'),
+      $route_match->getParameter($matched[3] . '_name')
+    );
+
+    $display_mode = \Drupal::entityTypeManager()
+      ->getStorage('entity_' . $matched[3])
+      ->load($entity_id);
+
+    if ($display_mode instanceof EntityDescriptionInterface) {
+      $description = $display_mode->getDescription();
+      if ($description) {
+        return '<p>' . $description . '</p>';
+      }
+    }
+  }
+}
 
 /**
  * Implements hook_modules_installed().
@@ -30,7 +256,138 @@ function wxt_core_modules_installed(array $modules) {
   $versions_sorted = $versions->getRawData();
   ksort($versions_sorted);
   $versions->setData($versions_sorted)->save();
+
+  if (in_array('token', $modules, TRUE)) {
+    $view_modes = [];
+    foreach (\Drupal::entityTypeManager()->getDefinitions() as $entity_type) {
+      $view_modes[] = $entity_type->id() . '.token';
+    }
+
+    $storage = Drupal::entityTypeManager()->getStorage('entity_view_mode');
+    $view_modes = $storage->loadMultiple($view_modes);
+    /** @var \Drupal\Core\Entity\EntityViewModeInterface $view_mode */
+    foreach ($view_modes as $view_mode) {
+      $view_mode->setThirdPartySetting('wxt_core', 'internal', TRUE);
+      $storage->save($view_mode);
+    }
+  }
 }
+
+/**
+ * Implements hook_block_view_alter().
+ */
+function wxt_core_block_view_alter(array &$build, BlockPluginInterface $block) {
+  \Drupal::service('renderer')->addCacheableDependency($build, $block);
+
+  // Always add block_view:BASE_PLUGIN_ID as a cache tag.
+  $build['#cache']['tags'][] = 'block_view:' . $block->getBaseId();
+
+  // If the plugin is a derivative, add block_view:FULL_PLUGIN_ID as well.
+  if ($block->getDerivativeId()) {
+    $build['#cache']['tags'][] = 'block_view:' . $block->getPluginId();
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function wxt_core_form_user_form_alter(array &$form) {
+  if (isset($form['account']['roles'])) {
+    $roles = Drupal::entityTypeManager()
+      ->getStorage('user_role')
+      ->loadMultiple();
+    /** @var \Drupal\user\RoleInterface $role */
+    foreach ($roles as $id => $role) {
+      if ($role instanceof EntityDescriptionInterface) {
+        $form['account']['roles']['#legend'][$id] = $role->getDescription();
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function wxt_core_form_alter(array &$form, FormStateInterface $form_state) {
+  $form_object = $form_state->getFormObject();
+
+  if ($form_object instanceof ContentEntityFormInterface && isset($form['revision_information']) && $form['revision_information']['#access']) {
+    // Load the form mode and show the revision information if the form mode
+    // allows the revision UI to be shown.
+    $form_display = $form_object->getFormDisplay($form_state);
+    $form_mode = $form_display->getTargetEntityTypeId() . '.' . $form_display->getMode();
+    $form_mode = Drupal::entityTypeManager()
+      ->getStorage('entity_form_mode')
+      ->load($form_mode);
+    if ($form_mode) {
+      $form['revision_information']['#access'] = $form_mode->getThirdPartySetting('wxt_core', 'revision_ui', TRUE);
+    }
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function wxt_core_form_system_modules_alter(array &$form) {
+  // This rule prevents acquia_telemetry module's description from increasing
+  // the page width.
+  $css = "#edit-modules-acquia-telemetry-enable-description { white-space: normal; overflow: hidden; }";
+  $form['#attached']['html_head'][] = [
+    [
+      '#tag' => 'style',
+      '#value' => $css,
+    ],
+    'acquia-telemetry-css',
+  ];
+}
+
+/**
+ * Rebuilds the service container.
+ */
+function wxt_core_rebuild_container() {
+  require_once \Drupal::root() . '/core/includes/utility.inc';
+  $class_loader = \Drupal::service('class_loader');
+  $request = \Drupal::request();
+  drupal_rebuild($class_loader, $request);
+}
+
+/**
+ * Implements template_preprocess_block().
+ */
+function wxt_core_preprocess_block(array &$variables) {
+  $variables['attributes']['data-block-plugin-id'] = $variables['elements']['#plugin_id'];
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_presave().
+ */
+function wxt_core_field_config_presave(FieldConfigInterface $field) {
+  // Set the default image for user profiles.
+  if ($field->getTargetEntityTypeId() === 'user' && $field->getName() === 'user_picture' && $field->isNew() && !\Drupal::isConfigSyncing()) {
+    $source = \Drupal::service('extension.list.module')->getPath('wxt_core')  . '/images/default-avatar.png';
+    $uri = 'public://default-avatar.png';
+
+    try {
+      \Drupal::service('file_system')->copy($source, $uri, FileSystemInterface::EXISTS_ERROR);
+
+      $file = File::create(['uri' => $uri]);
+      $file->setPermanent();
+      $file->save();
+
+      $field->setSetting('default_image', [
+        'uuid' => $file->uuid(),
+        'alt' => (string) t('A generic silhouette of a person.'),
+        'title' => '',
+        'width' => 140,
+        'height' => 140,
+      ]);
+    }
+    catch (FileException $e) {
+      // Fail silently.
+    }
+  }
+}
+
 
 /**
  * Toggles the state of a specified menu link.

@@ -6,7 +6,7 @@
  */
 
 use Drupal\Core\Update\UpdateKernel;
-use Drupal\lightning_core\OverrideHelper as Override;
+use Drupal\wxt_core\OverrideHelper as Override;
 use Drupal\wxt_ext_media\Form\AddByUrlForm;
 use Drupal\wxt_ext_media_instagram\Plugin\media\Source\Instagram;
 

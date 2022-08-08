@@ -3,6 +3,7 @@ description: 'Provides core configuration.'
 type: module
 core_version_requirement: '^8.8 || ^9'
 package: WxT
+configure: wxt_core.settings
 dependencies:
   - 'block_class:block_class'
   - 'button_link:button_link'
@@ -11,6 +12,10 @@ dependencies:
   - 'diff:diff'
   - 'drupal:block_content'
   - 'drupal:image'
+  - 'drupal:node'
+  - 'drupal:path'
+  - 'drupal:text'
+  - 'drupal:user'
   - 'drupal:layout_discovery'
   - 'embed:embed'
   - 'entity_block:entity_block'
@@ -24,5 +29,4 @@ dependencies:
   - 'token_filter:token_filter'
   - 'url_embed:url_embed'
   - 'views_bootstrap:views_bootstrap'
-configure: wxt4032404.config
 version: 4.3.2-dev

@@ -4,6 +4,7 @@ services:
     arguments:
       - '@extension.list.profile'
       - '%install_profile%'
+      - '@plugin.cache_clearer'
       - '@string_translation'
     tags:
       - { name: drush.command }

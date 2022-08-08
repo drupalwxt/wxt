@@ -5,7 +5,7 @@
  * Contains install and update routines for WxT Extend Media Image.
  */
 
-use Drupal\lightning_core\ConfigHelper as Config;
+use Drupal\wxt_core\ConfigHelper as Config;
 use Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException;
 
 /**

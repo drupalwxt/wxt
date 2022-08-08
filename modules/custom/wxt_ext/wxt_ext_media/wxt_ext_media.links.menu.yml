@@ -1,5 +1,5 @@
 wxt_ext_media.settings:
   title: 'WxT Media'
   description: 'Configure WxT Extend Media settings.'
-  parent: wxt.admin_config_wxt
+  parent: wxt_core.settings
   route_name: wxt_ext_media.settings

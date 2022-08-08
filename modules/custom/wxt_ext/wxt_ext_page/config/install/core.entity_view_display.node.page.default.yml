@@ -1,11 +1,8 @@
-config_rewrite: replace
 langcode: en
 status: true
 dependencies:
   config:
     - field.field.node.page.body
-    - field.field.node.page.comment
-    - field.field.node.page.field_meta_tags
     - field.field.node.page.layout_builder__layout
     - field.field.node.page.layout_builder__translation
     - field.field.node.page.layout_selection
@@ -112,9 +109,7 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
-  comment: true
   content_moderation_control: true
-  field_meta_tags: true
   langcode: true
   layout_builder__layout: true
   layout_builder__translation: true

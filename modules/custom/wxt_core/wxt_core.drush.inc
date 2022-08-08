@@ -16,3 +16,16 @@ function drush_wxt_core_pm_updatecode_validate() {
   ]);
   return drush_confirm($question);
 }
+
+/**
+ * Implements drush_hook_pre_COMMAND().
+ */
+function drush_wxt_core_pre_updatedb() {
+  // A common cause of errors during database updates is update hooks referring
+  // to new or changed plugin definitions. Clearing all plugin caches before
+  // updates begin ensures that the plugin system always has the latest plugin
+  // definitions to work with.
+  if (Drupal::hasContainer()) {
+    Drupal::service('plugin.cache_clearer')->clearCachedDefinitions();
+  }
+}

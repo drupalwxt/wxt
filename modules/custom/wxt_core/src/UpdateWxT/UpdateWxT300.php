@@ -48,7 +48,7 @@ final class UpdateWxT300 implements ContainerInjectionInterface {
   public function enableUserPictures() {
     $this->moduleInstaller->install(['image']);
 
-    $config = Config::forModule('lightning_core')->optional();
+    $config = Config::forModule('wxt_core')->optional();
     $config->getEntity('field_storage_config', 'user.user_picture')->save();
     $config->getEntity('field_config', 'user.user.user_picture')->save();
     $config->getEntity('entity_view_display', 'user.user.compact')->save();

@@ -5,6 +5,7 @@ namespace Drupal\wxt_core\Commands;
 use Consolidation\AnnotatedCommand\CommandData;
 use Consolidation\OutputFormatters\Options\FormatterOptions;
 use Drupal\Core\Extension\ProfileExtensionList;
+use Drupal\Core\Plugin\CachedDiscoveryClearerInterface;
 use Drush\Commands\DrushCommands;
 use Symfony\Component\Console\Event\ConsoleCommandEvent;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
@@ -31,36 +32,48 @@ class Hooks extends DrushCommands {
   private $installProfile;
 
   /**
+   * The plugin cache clearer service.
+   *
+   * @var \Drupal\Core\Plugin\CachedDiscoveryClearerInterface
+   */
+  private $pluginCacheClearer;
+
+  /**
    * Hooks constructor.
    *
    * @param \Drupal\Core\Extension\ProfileExtensionList $profile_list
    *   The profile extension list service.
    * @param string $install_profile
    *   The install_profile parameter.
+   * @param \Drupal\Core\Plugin\CachedDiscoveryClearerInterface $plugin_cache_clearer
+   *   The plugin cache clearer service.
    * @param \Drupal\Core\StringTranslation\TranslationInterface $string_translation
    *   The string translation service.
    */
-  public function __construct(ProfileExtensionList $profile_list, $install_profile, TranslationInterface $string_translation) {
+  public function __construct(ProfileExtensionList $profile_list, $install_profile, CachedDiscoveryClearerInterface $plugin_cache_clearer, TranslationInterface $string_translation) {
     $this->profileList = $profile_list;
     $this->installProfile = $install_profile;
+    $this->pluginCacheClearer = $plugin_cache_clearer;
     $this->setStringTranslation($string_translation);
   }
 
   /**
-   * Clears all caches before database updates begin.
+   * Clears all plugin caches before database updates begin.
    *
    * A common cause of errors during database updates is update hooks
    * inadvertently using stale data from the myriad caches in Drupal core and
-   * contributed modules. Clearing all caches before updates begin ensures that
-   * the system always has the freshest and most accurate data to work with,
-   * which is especially helpful during major surgery like a database update.
+   * contributed modules. To migitate this, we do a bit of cache pruning before
+   * database updates begin.
+   *
+   * drupal_flush_all_caches() is extremely aggressive because it rebuilds the
+   * router and other things, but it's a bit too much of a sledgehammer for our
+   * purposes. A good compromise is to clear all plugin discovery caches (which
+   * will include entity type definitions).
    *
    * @hook pre-command updatedb
    */
   public function preUpdate() {
-    \Drupal::state()->set('system.maintenance_mode', TRUE);
-    drupal_flush_all_caches();
-    \Drupal::state()->set('system.maintenance_mode', FALSE);
+    $this->pluginCacheClearer->clearCachedDefinitions();
   }
 
   /**

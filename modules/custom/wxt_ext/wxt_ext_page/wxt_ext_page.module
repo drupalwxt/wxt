@@ -7,7 +7,61 @@
 
 use Drupal\content_moderation\Plugin\WorkflowType\ContentModerationInterface;
 use Drupal\Core\Plugin\ObjectWithPluginCollectionInterface;
+use Drupal\field\FieldConfigInterface;
+use Drupal\node\Entity\NodeType;
 use Drupal\workflows\WorkflowInterface;
+
+/**
+ * Implements hook_modules_installed().
+ */
+function wxt_ext_page_modules_installed(array $modules) {
+  if (Drupal::isConfigSyncing()) {
+    return;
+  }
+
+  if (in_array('layout_library', $modules, TRUE)) {
+    Drupal::service('entity_display.repository')
+      ->getViewDisplay('node', 'page')
+      ->enableLayoutBuilder()
+      ->setThirdPartySetting('layout_library', 'enable', TRUE)
+      ->save();
+  }
+
+  if (in_array('menu_ui', $modules, TRUE)) {
+    NodeType::load('page')
+      ->setThirdPartySetting('menu_ui', 'available_menus', ['main'])
+      ->setThirdPartySetting('menu_ui', 'parent', 'main:')
+      ->save();
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_insert().
+ */
+function wxt_ext_page_field_config_insert(FieldConfigInterface $field) {
+  // Don't do anything during config sync.
+  if (\Drupal::isConfigSyncing()) {
+    return;
+  }
+  elseif ($field->id() == 'node.page.field_meta_tags') {
+    /** @var \Drupal\Core\Entity\EntityDisplayRepositoryInterface $display_repository */
+    $display_repository = Drupal::service('entity_display.repository');
+
+    $display_repository->getViewDisplay('node', 'page')
+      ->setComponent('field_meta_tags', [
+        'type' => 'metatag_empty_formatter',
+        'region' => 'content',
+      ])
+      ->save();
+
+    $display_repository->getFormDisplay('node', 'page')
+      ->setComponent('field_meta_tags', [
+        'type' => 'metatag_firehose',
+        'region' => 'content',
+      ])
+      ->save();
+  }
+}
 
 /**
  * Implements hook_ENTITY_TYPE_presave().

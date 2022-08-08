@@ -14,3 +14,11 @@ wxt4032404.config:
     _title: '403 to 404 Settings'
   requirements:
     _permission: 'administer site configuration'
+
+wxt_core.settings:
+  path: '/admin/config/system/wxt'
+  defaults:
+    _title: WxT
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+  requirements:
+    _is_administrator: 'true'

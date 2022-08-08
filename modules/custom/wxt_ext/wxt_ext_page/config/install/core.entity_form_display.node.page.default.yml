@@ -1,16 +1,12 @@
-config_rewrite: replace
 langcode: en
 status: true
 dependencies:
   config:
     - field.field.node.page.body
-    - field.field.node.page.comment
-    - field.field.node.page.field_meta_tags
     - field.field.node.page.layout_builder__layout
     - field.field.node.page.layout_builder__translation
     - field.field.node.page.layout_selection
     - node.type.page
-    - workflows.workflow.editorial
   module:
     - content_moderation
     - metatag
@@ -36,12 +32,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
-  field_meta_tags:
-    type: metatag_firehose
-    region: content
-    weight: 101
-    settings: {  }
-    third_party_settings: {  }
   langcode:
     type: language_select
     weight: 2
@@ -111,6 +101,5 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
-  comment: true
   layout_builder__layout: true
   layout_builder__translation: true

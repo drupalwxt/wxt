@@ -2,10 +2,10 @@ langcode: en
 status: true
 dependencies:
   module:
-    - lightning_core
     - media
+    - wxt_core
 third_party_settings:
-  lightning_core:
+  wxt_core:
     description: ''
 id: media.linked
 label: Linked

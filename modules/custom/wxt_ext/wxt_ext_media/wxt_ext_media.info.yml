@@ -12,7 +12,6 @@ dependencies:
   - 'drupal:user'
   - 'entity_browser:entity_browser'
   - 'inline_entity_form:inline_entity_form'
-  - lightning_core:lightning_core
   - 'wxt_core:wxt_core'
   - 'wxt_translation:wxt_translation'
 version: 4.3.2-dev

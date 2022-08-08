@@ -28,7 +28,44 @@ function wxt_core_requirements($phase) {
       ];
     }
   }
+
+  $profile = Drupal::installProfile();
+  $profile = Drupal::service('extension.list.profile')->get($profile);
+
+  if (isset($profile->info['base profile'])) {
+    $requirements['wxt_core_base_profile'] = [
+      'title' => t('Base profile'),
+      'value' => $profile->info['base profile'],
+    ];
+  }
+
   return $requirements;
+}
+
+/**
+ * Implements hook_install().
+ */
+function wxt_core_install() {
+  // Don't do anything during config sync.
+  if (\Drupal::isConfigSyncing()) {
+    return;
+  }
+
+  // Record all module version numbers, including our own, in config.
+  $modules = array_keys(\Drupal::moduleHandler()->getModuleList());
+  array_push($modules, 'wxt_core');
+  wxt_core_modules_installed($modules);
+
+  $storage = Drupal::entityTypeManager()->getStorage('entity_view_mode');
+  $view_modes = $storage->loadMultiple([
+    'node.rss',
+    'node.search_index',
+  ]);
+  /** @var \Drupal\Core\Entity\EntityViewModeInterface $view_mode */
+  foreach ($view_modes as $view_mode) {
+    $view_mode->setThirdPartySetting('wxt_core', 'internal', TRUE);
+    $storage->save($view_mode);
+  }
 }
 
 /**
@@ -190,14 +227,21 @@ function wxt_core_update_8410() {
  */
 function wxt_core_update_8431() {
 
+  //
+  // Configuration Updates
+  //
+
+  // Retrieve the config factory.
   $config_factory = \Drupal::configFactory();
 
-  // Create this file manually since is newly added.
+  // Map options currently set in lightning_layout.settings to wxt_ext_layout.settings.
+  $source = $config_factory->getEditable('lightning_layout.settings');
+  $entity_blocks = $source->get('entity_blocks');
   $config_factory->getEditable('wxt_ext_layout.settings')
-    ->set('entity_blocks.choose_display', ['media', 'node', 'taxonomy_term', 'user'])
+    ->set('entity_blocks', $entity_blocks)
     ->save();
 
-  // Map third_party_setting lightning_workflow to wxt_ext_workflow.
+  // Map third_party_setting lightning_workflow to wxt_ext_workflow for all node types.
   $entityTypeManager = \Drupal::service('entity_type.manager');
   $node_types = $entityTypeManager->getStorage('node_type')->loadMultiple();
   foreach ($node_types as $node_type) {
@@ -213,7 +257,10 @@ function wxt_core_update_8431() {
     }
   }
 
+  //
   // Fully uninstall Lightning Layout.
+  //
+
   /** @var \Drupal\Core\Extension\ModuleInstallerInterface $module_installer */
   $module_installer = \Drupal::service('module_installer');
   $modules_to_check = [
@@ -259,7 +306,10 @@ function wxt_core_update_8431() {
     ]);
   }
 
+  //
   // Fully uninstall Lightning Workflow.
+  //
+
   /** @var \Drupal\Core\Extension\ModuleInstallerInterface $module_installer */
   $module_installer = \Drupal::service('module_installer');
   $modules_to_check = [
@@ -305,15 +355,23 @@ function wxt_core_update_8431() {
  */
 function wxt_core_update_8433() {
 
+  //
+  // Configuration Updates
+  //
+
+  // Retrieve the config factory.
   $config_factory = \Drupal::configFactory();
 
-  // Create this file manually since is newly added.
+  // Map options currently set in lightning_media.settings to wxt_ext_media.settings.
+  $source = $config_factory->getEditable('lightning_media.settings');
+  $revision_ui = $source->get('revision_ui');
+  $entity_embed_display = $source->get('entity_embed.choose_display');
   $config_factory->getEditable('wxt_ext_media.settings')
-    ->set('revision_ui', false)
-    ->set('entity_embed.choose_display', false)
+    ->set('revision_ui', $revision_ui)
+    ->set('entity_embed.choose_display', $entity_embed_display)
     ->save();
 
-  // Map third_party_setting lightning_media to wxt_ext_media.
+  // Map third_party_settings lightning_media to wxt_ext_media for core.entity_form_display.media.image.media_browser.
   $entity_form_display = $config_factory->getEditable('core.entity_form_display.media.image.media_browser');
   $plugins = $entity_form_display->get('content');
   foreach ($plugins as $plugin_id => $config) {
@@ -360,7 +418,10 @@ function wxt_core_update_8433() {
     $field_storage_config->save();
   }
 
+  //
   // Fully uninstall Lightning Media.
+  //
+
   /** @var \Drupal\Core\Extension\ModuleInstallerInterface $module_installer */
   $module_installer = \Drupal::service('module_installer');
   $modules_to_check = [
@@ -389,17 +450,38 @@ function wxt_core_update_8433() {
   if ($needs_uninstalling) {
     $uninstalled = $module_installer->uninstall($modules_to_uninstall);
 
+    // WxT typically has all of these enabled by default.
     $module_installer->install([
       'wxt_ext_media',
-      'wxt_ext_media_audio',
-      'wxt_ext_media_bulk_upload',
-      'wxt_ext_media_document',
       'wxt_ext_media_image',
-      'wxt_ext_media_instagram',
       'wxt_ext_media_slideshow',
-      'wxt_ext_media_twitter',
-      'wxt_ext_media_video',
     ]);
+
+    // Check if any of the lightning modules were enabled and map to their counterpart.
+    foreach ($modules_to_check as $module => $installed) {
+      if ($installed) {
+        switch ($module) {
+          case 'lightning_media_audio':
+            $module_installer->install(['wxt_ext_media_audio']);
+            break;
+          case 'lightning_media_bulk_upload':
+            $module_installer->install(['wxt_ext_media_bulk_upload']);
+            break;
+          case 'lightning_media_document':
+            $module_installer->install(['wxt_ext_media_document']);
+            break;
+          case 'lightning_media_instagram':
+            $module_installer->install(['wxt_ext_media_instagram']);
+            break;
+          case 'lightning_media_twitter':
+            $module_installer->install(['wxt_ext_media_twitter']);
+            break;
+          case 'lightning_media_video':
+            $module_installer->install(['wxt_ext_media_video']);
+            break;
+        }
+      }
+    }
   }
 
   if ($needs_uninstalling && !$uninstalled) {
@@ -448,4 +530,77 @@ function wxt_core_update_8433() {
   ];
   $block_content_config->setData($data);
   $block_content_config->save();
+
+
+  //
+  // Fully uninstall Lightning Core.
+  //
+
+  /** @var \Drupal\Core\Extension\ModuleInstallerInterface $module_installer */
+  $module_installer = \Drupal::service('module_installer');
+  $modules_to_check = [
+    'lightning_core' => (drupal_get_installed_schema_version('lightning_core') >= 0) ? TRUE : FALSE,
+    'lightning_contact_form' => (drupal_get_installed_schema_version('lightning_contact_form') >= 0) ? TRUE : FALSE,
+    'lightning_page' => (drupal_get_installed_schema_version('lightning_page') >= 0) ? TRUE : FALSE,
+    'lightning_roles' => (drupal_get_installed_schema_version('lightning_roles') >= 0) ? TRUE : FALSE,
+    'lightning_search' => (drupal_get_installed_schema_version('lightning_search') >= 0) ? TRUE : FALSE,
+  ];
+
+  $needs_uninstalling = FALSE;
+  $modules_to_uninstall = [];
+  $uninstalled = TRUE;
+
+  foreach ($modules_to_check as $module => $installed) {
+    if ($installed) {
+      $needs_uninstalling = TRUE;
+      $modules_to_uninstall[] = $module;
+    }
+  }
+
+  if ($needs_uninstalling) {
+    $uninstalled = $module_installer->uninstall($modules_to_uninstall);
+
+    $module_installer->install([
+      'wxt_core',
+      'wxt_ext_page',
+    ]);
+  }
+
+  if ($needs_uninstalling && !$uninstalled) {
+    \Drupal::configFactory()
+      ->getEditable('core.extension')
+      ->clear('module.lightning_core')
+      ->clear('module.lightning_contact_form')
+      ->clear('module.lightning_page')
+      ->clear('module.lightning_roles')
+      ->clear('module.lightning_search')
+      ->save();
+    Drupal::keyValue('system.schema')->deleteMultiple([
+      'lightning_core',
+      'lightning_contact_form',
+      'lightning_page',
+      'lightning_roles',
+      'lightning_search',
+    ]);
+  }
+
+  // Record all module version numbers, including our own, in config.
+  $modules = array_keys(\Drupal::moduleHandler()->getModuleList());
+  array_push($modules, 'wxt_core');
+  wxt_core_modules_installed($modules);
+
+  // Ensure we keep the entity displays flagged as internal for the moment.
+  $storage = Drupal::entityTypeManager()->getStorage('entity_view_mode');
+  $view_modes = $storage->loadMultiple([
+    'block_content.featured',
+    'node.rss',
+    'node.search_index',
+    'media.thumbnail',
+    'media.linked',
+  ]);
+  /** @var \Drupal\Core\Entity\EntityViewModeInterface $view_mode */
+  foreach ($view_modes as $view_mode) {
+    $view_mode->setThirdPartySetting('wxt_core', 'internal', TRUE);
+    $storage->save($view_mode);
+  }
 }

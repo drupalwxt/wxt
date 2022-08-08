@@ -14,8 +14,8 @@ use Drupal\editor\Entity\Editor;
 use Drupal\embed\Entity\EmbedButton;
 use Drupal\entity_browser\Entity\EntityBrowser;
 use Drupal\file\Entity\File;
-use Drupal\lightning_core\ConfigHelper as Config;
-use Drupal\lightning_core\Entity\EntityViewMode;
+use Drupal\wxt_core\ConfigHelper as Config;
+use Drupal\wxt_core\Entity\EntityViewMode;
 use Drupal\media\Entity\MediaType;
 use Drupal\views\Entity\View;
 

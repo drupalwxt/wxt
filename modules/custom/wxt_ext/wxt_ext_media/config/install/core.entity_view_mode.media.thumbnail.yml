@@ -4,7 +4,7 @@ dependencies:
   module:
     - media
 third_party_settings:
-  lightning_core:
+  wxt_core:
     description: ''
 id: media.thumbnail
 label: Thumbnail

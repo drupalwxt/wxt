@@ -1,4 +1,3 @@
-config_rewrite: replace
 langcode: en
 status: true
 dependencies:
@@ -17,7 +16,7 @@ required: false
 translatable: true
 default_value:
   -
-    value: 'a:0:{}'
+    value: 'a:1:{s:5:"title";s:34:"[current-page:title] | [site:name]";}'
 default_value_callback: ''
 settings: {  }
 field_type: metatag

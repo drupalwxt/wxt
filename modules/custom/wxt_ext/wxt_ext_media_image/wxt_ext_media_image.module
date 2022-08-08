@@ -9,8 +9,8 @@ use Drupal\Core\Entity\Display\EntityFormDisplayInterface;
 use Drupal\Core\Field\FieldStorageDefinitionInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\image\Entity\ImageStyle;
-use Drupal\lightning_core\ConfigHelper as Config;
-use Drupal\lightning_core\OverrideHelper as Override;
+use Drupal\wxt_core\ConfigHelper as Config;
+use Drupal\wxt_core\OverrideHelper as Override;
 use Drupal\wxt_ext_media_image\Plugin\media\Source\Image;
 
 /**

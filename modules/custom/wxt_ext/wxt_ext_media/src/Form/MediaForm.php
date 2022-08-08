@@ -5,7 +5,7 @@ namespace Drupal\wxt_ext_media\Form;
 use Drupal\Component\Utility\NestedArray;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Security\TrustedCallbackInterface;
-use Drupal\lightning_core\Form\BulkCreationEntityFormTrait;
+use Drupal\wxt_core\Form\BulkCreationEntityFormTrait;
 use Drupal\wxt_ext_media\MediaHelper as Helper;
 use Drupal\media\MediaForm as BaseMediaForm;
 

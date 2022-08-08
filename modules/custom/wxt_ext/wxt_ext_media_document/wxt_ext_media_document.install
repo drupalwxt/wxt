@@ -1,6 +1,6 @@
 <?php
 
-use Drupal\lightning_core\ConfigHelper as Config;
+use Drupal\wxt_core\ConfigHelper as Config;
 
 /**
  * Creates the thumbnail display for documents.

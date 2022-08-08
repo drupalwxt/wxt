@@ -1,3 +1,40 @@
+core.entity_view_mode.*.*.third_party.wxt_core:
+  type: mapping
+  label: 'WxT'
+  mapping:
+    description:
+      type: string
+      label: 'Description'
+    internal:
+      type: boolean
+      label: 'Internal'
+
+core.entity_form_mode.*.*.third_party.wxt_core:
+  type: mapping
+  label: 'WxT'
+  mapping:
+    description:
+      type: string
+      label: 'Description'
+    revision_ui:
+      type: boolean
+      label: 'Show the revision UI on entity forms using this mode'
+
+user.role.*.third_party.wxt_core:
+  type: mapping
+  label: 'WxT'
+  mapping:
+    description:
+      type: string
+      label: 'Description'
+
+wxt_core.versions:
+  type: sequence
+  label: 'Extension versions'
+  sequence:
+    type: string
+    label: 'Semantic version number'
+
 wxt4032404.settings:
   type: config_object
   label: '403 to 404 settings'

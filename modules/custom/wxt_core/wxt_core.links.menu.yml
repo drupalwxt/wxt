@@ -1,5 +1,11 @@
+wxt_core.settings:
+  title: WxT
+  description: Various settings for altering the behavior of WxT modules.
+  parent: system.admin_config
+  route_name: wxt_core.settings
+
 wxt4032404.admin:
   title: 403 to 404 settings
   description: 'Settings for 403 to 404.'
-  parent: system.admin_config_system
+  parent: wxt_core.settings
   route_name: wxt4032404.config

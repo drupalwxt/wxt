@@ -14,6 +14,17 @@ function wxt_ext_page_install() {
     return;
   }
 
+  $modules = [
+    'layout_library',
+    'menu_ui',
+    'wxt_ext_workflow',
+  ];
+
+  $modules = array_filter($modules, [Drupal::moduleHandler(), 'moduleExists']);
+  if ($modules) {
+    wxt_ext_page_modules_installed($modules);
+  }
+
   // Enable translation for our core entities/bundles.
   $entities = [
     'node' => [

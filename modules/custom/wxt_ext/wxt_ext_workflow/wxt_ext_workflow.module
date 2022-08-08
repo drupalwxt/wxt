@@ -14,7 +14,7 @@ use Drupal\Core\Entity\EntityPublishedInterface;
 use Drupal\Core\Entity\RevisionableInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Serialization\Yaml;
-use Drupal\lightning_core\OverrideHelper as Override;
+use Drupal\wxt_core\OverrideHelper as Override;
 use Drupal\wxt_core\Routing\RouteSubscriber;
 use Drupal\node\Entity\NodeType;
 use Drupal\node\NodeTypeInterface;

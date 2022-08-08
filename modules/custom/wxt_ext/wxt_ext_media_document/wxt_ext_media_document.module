@@ -5,7 +5,7 @@
  * Support for file media assets in WxT Extend Image.
  */
 
-use Drupal\lightning_core\OverrideHelper as Override;
+use Drupal\wxt_core\OverrideHelper as Override;
 use Drupal\wxt_ext_media_document\Plugin\media\Source\File;
 
 /**

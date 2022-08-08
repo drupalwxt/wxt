@@ -24,7 +24,7 @@ class UpdateManager {
    *
    * @var string
    */
-  const CONFIG_NAME = 'wxt.versions';
+  const CONFIG_NAME = 'wxt_core.versions';
 
   /**
    * Fallback version number used when a module does not declare it.
@@ -194,9 +194,9 @@ class UpdateManager {
       $doc_comment = trim($method->getDocComment());
 
       if ($doc_comment) {
-        $doc_block = $this->docBlockFactory->create($doc_comment);
+        $doc_block = $this->docBlockFactory->create($method);
 
-        if ($doc_block->hasTag('updatewxt')) {
+        if ($doc_block->hasTag('updateWxT')) {
           yield new UpdateTask($handler, $method, $doc_block);
         }
       }
