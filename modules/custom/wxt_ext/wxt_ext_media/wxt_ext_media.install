@@ -3,6 +3,8 @@
 /**
  * @file
  * Contains wxt_ext_media.module.
+ *
+ * Leveraged from code provided by Acquia for the Lightning distribution.
  */
 
 use Drupal\Component\Utility\NestedArray;

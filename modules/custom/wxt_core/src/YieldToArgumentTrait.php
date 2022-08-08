@@ -6,6 +6,8 @@ use Drupal\Core\Form\FormStateInterface;
 
 /**
  * Allows exposed an Views filter to disappear if an argument is present.
+ *
+ * Leveraged from code provided by Acquia for the Lightning distribution.
  */
 trait YieldToArgumentTrait {
 

@@ -7,6 +7,8 @@ use Drupal\Core\Extension\ProfileExtensionList;
 /**
  * Looks for front-end JavaScript libraries in common directories.
  *
+ * Leveraged from code provided by Acquia for the Lightning distribution.
+ *
  * @internal
  *   This class is an internal part of WxT Extend Media and will be deleted when
  *   Drupal 8.9 is the minimum supported version of core. It may change or be

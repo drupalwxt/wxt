@@ -10,6 +10,8 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 /**
  * Defines a console command to run optional configuration updates.
+ *
+ * Leveraged from code provided by Acquia for the Lightning distribution.
  */
 class UpdateCommand extends Command {
 

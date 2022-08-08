@@ -10,6 +10,8 @@ use Drupal\file\Entity\File;
 /**
  * A form element for uploading or deleting files interactively.
  *
+ * Leveraged from code provided by Acquia for the Lightning distribution.
+ *
  * @FormElement("interactive_upload")
  */
 class InteractiveUpload extends FormElement {

@@ -13,6 +13,8 @@ use Drupal\Core\StringTranslation\TranslationInterface;
 
 /**
  * Implements Drush command hooks.
+ *
+ * Leveraged from code provided by Acquia for the Lightning distribution.
  */
 class Hooks extends DrushCommands {
   use StringTranslationTrait;

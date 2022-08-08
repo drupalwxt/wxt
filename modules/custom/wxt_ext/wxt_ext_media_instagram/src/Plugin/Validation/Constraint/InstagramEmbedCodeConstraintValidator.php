@@ -10,6 +10,8 @@ use Symfony\Component\Validator\ConstraintValidator;
 /**
  * Validates the InstagramEmbedCode constraint.
  *
+ * Leveraged from code provided by Acquia for the Lightning distribution.
+ *
  * @internal
  *   This is a totally internal part of WxT Extend Media Instagram and may be
  *   changed or removed in any way, at any time, without warning. External code

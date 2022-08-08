@@ -10,6 +10,8 @@ use Symfony\Component\Validator\ConstraintValidator;
 
 /**
  * Validates the TweetEmbedCode constraint.
+ *
+ * Leveraged from code provided by Acquia for the Lightning distribution.
  */
 final class TweetEmbedCodeConstraintValidator extends ConstraintValidator {
 

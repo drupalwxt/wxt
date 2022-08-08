@@ -9,6 +9,8 @@ use Drupal\Core\StringTranslation\TranslationInterface;
 
 /**
  * Prevents this module from being uninstalled if any slideshow blocks exist.
+ *
+ * Leveraged from code provided by Acquia for the Lightning distribution.
  */
 class UninstallValidator implements ModuleUninstallValidatorInterface {
 

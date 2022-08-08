@@ -4,6 +4,8 @@ namespace Drupal\wxt_core;
 
 /**
  * Provides a third-party settings implementation of EntityDescriptionInterface.
+ *
+ * Leveraged from code provided by Acquia for the Lightning distribution.
  */
 trait ConfigEntityDescriptionTrait {
 

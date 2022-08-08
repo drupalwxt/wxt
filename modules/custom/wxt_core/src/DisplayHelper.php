@@ -8,6 +8,8 @@ use Drupal\Core\Entity\EntityTypeManagerInterface;
 
 /**
  * Helps query and configure various display settings.
+ *
+ * Leveraged from code provided by Acquia for the Lightning distribution.
  */
 class DisplayHelper {
 

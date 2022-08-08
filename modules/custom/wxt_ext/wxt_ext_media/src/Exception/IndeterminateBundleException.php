@@ -7,6 +7,8 @@ use Drupal\media\MediaTypeInterface;
 
 /**
  * Thrown if no single media type can be determined from an input value.
+ *
+ * Leveraged from code provided by Acquia for the Lightning distribution.
  */
 class IndeterminateBundleException extends \LogicException implements \IteratorAggregate, \Countable {
 

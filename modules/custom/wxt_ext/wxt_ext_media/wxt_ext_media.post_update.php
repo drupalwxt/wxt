@@ -3,6 +3,8 @@
 /**
  * @file
  * Contains post-update functions for WxT Extend Media.
+ *
+ * Leveraged from code provided by Acquia for the Lightning distribution.
  */
 
 /**

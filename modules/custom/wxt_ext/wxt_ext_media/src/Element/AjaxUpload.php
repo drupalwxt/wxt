@@ -8,6 +8,8 @@ use Drupal\Core\Form\FormStateInterface;
 /**
  * An interactive, AJAX-ey file upload form element.
  *
+ * Leveraged from code provided by Acquia for the Lightning distribution.
+ *
  * @FormElement("ajax_upload")
  */
 class AjaxUpload extends InteractiveUpload {

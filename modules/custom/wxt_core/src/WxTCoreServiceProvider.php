@@ -8,6 +8,8 @@ use Symfony\Component\DependencyInjection\Reference;
 
 /**
  * Registers and modifies container services.
+ *
+ * Leveraged from code provided by Acquia for the Lightning distribution.
  */
 final class WxTCoreServiceProvider extends ServiceProviderBase {
 

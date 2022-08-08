@@ -11,6 +11,8 @@ use Symfony\Component\Routing\Route;
 
 /**
  * Checks if the current user has any roles that are administrative (is_admin).
+ *
+ * Leveraged from code provided by Acquia for the Lightning distribution.
  */
 class AdministrativeRoleCheck implements AccessInterface {
 

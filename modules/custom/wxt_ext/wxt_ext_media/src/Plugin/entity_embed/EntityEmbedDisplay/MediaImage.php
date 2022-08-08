@@ -11,6 +11,8 @@ use Drupal\wxt_ext_media\MediaHelper;
 /**
  * Renders a media item's image via the image formatter.
  *
+ * Leveraged from code provided by Acquia for the Lightning distribution.
+ *
  * If the embedded media item has an image field as its source field, that image
  * is rendered through the image formatter. Otherwise, the media item's
  * thumbnail is used.

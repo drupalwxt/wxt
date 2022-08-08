@@ -8,6 +8,8 @@ use Drush\Style\DrushStyle;
 
 /**
  * Exposes Drush commands provided by WxT Core.
+ *
+ * Leveraged from code provided by Acquia for the Lightning distribution.
  */
 class WxTCoreCommands extends DrushCommands {
 

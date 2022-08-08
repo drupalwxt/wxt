@@ -6,6 +6,8 @@ use Drupal\image\Plugin\Field\FieldWidget\ImageWidget;
 
 /**
  * Contains helper functions for manipulating image field widgets.
+ *
+ * Leveraged from code provided by Acquia for the Lightning distribution.
  */
 class ImageWidgetHelper {
 

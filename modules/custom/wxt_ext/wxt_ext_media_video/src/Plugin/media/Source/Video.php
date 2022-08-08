@@ -8,6 +8,8 @@ use Drupal\video_embed_media\Plugin\media\Source\VideoEmbedField;
 
 /**
  * Input-matching version of the VideoEmbedField media type.
+ *
+ * Leveraged from code provided by Acquia for the Lightning distribution.
  */
 class Video extends VideoEmbedField implements InputMatchInterface {
 

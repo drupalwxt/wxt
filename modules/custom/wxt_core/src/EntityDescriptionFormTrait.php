@@ -6,6 +6,8 @@ use Drupal\Core\Form\FormStateInterface;
 
 /**
  * Adds description support to entity forms.
+ *
+ * Leveraged from code provided by Acquia for the Lightning distribution.
  */
 trait EntityDescriptionFormTrait {
 

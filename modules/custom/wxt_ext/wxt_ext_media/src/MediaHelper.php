@@ -12,6 +12,8 @@ use Drupal\media\MediaTypeInterface;
 
 /**
  * Provides helper methods for dealing with media entities.
+ *
+ * Leveraged from code provided by Acquia for the Lightning distribution.
  */
 class MediaHelper {
 

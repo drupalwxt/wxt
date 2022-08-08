@@ -10,6 +10,8 @@ use Drupal\media_library\Form\AddFormBase;
 /**
  * Provides a form for adding URL-based media in the media library.
  *
+ * Leveraged from code provided by Acquia for the Lightning distribution.
+ *
  * @internal
  *   This is an internal part of WxT Extend Media and may be changed or removed
  *   at any time, in any way, without warning. External code should not

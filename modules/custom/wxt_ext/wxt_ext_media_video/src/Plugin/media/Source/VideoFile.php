@@ -8,6 +8,8 @@ use Drupal\media\Plugin\media\Source\VideoFile as CoreVideoFile;
 
 /**
  * Input-matching version of the VideoFile media source.
+ *
+ * Leveraged from code provided by Acquia for the Lightning distribution.
  */
 class VideoFile extends CoreVideoFile implements InputMatchInterface {
 

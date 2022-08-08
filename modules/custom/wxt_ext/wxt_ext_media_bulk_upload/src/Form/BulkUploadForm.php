@@ -15,6 +15,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * A form for uploading multiple media assets at once.
+ *
+ * Leveraged from code provided by Acquia for the Lightning distribution.
  */
 class BulkUploadForm extends FormBase {
 

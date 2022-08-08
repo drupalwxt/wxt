@@ -7,6 +7,8 @@ use Symfony\Component\Validator\Constraint;
 /**
  * Checks if a value is a valid Tweet embed code/URL.
  *
+ * Leveraged from code provided by Acquia for the Lightning distribution.
+ *
  * @Constraint(
  *   id = "TweetEmbedCode",
  *   label = @Translation("Tweet embed code", context = "Validation"),

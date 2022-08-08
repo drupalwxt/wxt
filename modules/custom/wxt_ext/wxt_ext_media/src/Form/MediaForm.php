@@ -11,6 +11,8 @@ use Drupal\media\MediaForm as BaseMediaForm;
 
 /**
  * Adds dynamic preview support to the media entity form.
+ *
+ * Leveraged from code provided by Acquia for the Lightning distribution.
  */
 class MediaForm extends BaseMediaForm implements TrustedCallbackInterface {
 

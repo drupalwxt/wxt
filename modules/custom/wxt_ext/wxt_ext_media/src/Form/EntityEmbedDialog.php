@@ -8,6 +8,8 @@ use Drupal\media\MediaInterface;
 
 /**
  * Overrides the entity embed dialog with specialized logic.
+ *
+ * Leveraged from code provided by Acquia for the Lightning distribution.
  */
 class EntityEmbedDialog extends BaseEntityEmbedDialog {
 

@@ -9,6 +9,8 @@ use Drupal\image_widget_crop\Plugin\Field\FieldWidget\ImageCropWidget as BaseIma
 
 /**
  * Adds functionality to the image crop field widget.
+ *
+ * Leveraged from code provided by Acquia for the Lightning distribution.
  */
 class ImageCropWidget extends BaseImageCropWidget {
 

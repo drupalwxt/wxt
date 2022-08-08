@@ -7,6 +7,8 @@ use Drupal\views\Plugin\views\filter\Bundle as BaseBundle;
 
 /**
  * A Bundle filter plugin which supports yielding to an argument.
+ *
+ * Leveraged from code provided by Acquia for the Lightning distribution.
  */
 class Bundle extends BaseBundle {
 

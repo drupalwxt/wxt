@@ -8,6 +8,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * The settings form for controlling WxT Extend Media's behavior.
+ *
+ * Leveraged from code provided by Acquia for the Lightning distribution.
  */
 class SettingsForm extends ConfigFormBase {
 

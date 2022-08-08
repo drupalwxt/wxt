@@ -6,6 +6,8 @@ use Drupal\media\MediaTypeInterface;
 
 /**
  * An interface for media type plugins to tell if they can handle mixed input.
+ *
+ * Leveraged from code provided by Acquia for the Lightning distribution.
  */
 interface InputMatchInterface {
 

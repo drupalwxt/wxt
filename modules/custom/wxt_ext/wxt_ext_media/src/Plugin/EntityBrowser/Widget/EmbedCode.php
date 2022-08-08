@@ -7,6 +7,8 @@ use Drupal\Core\Form\FormStateInterface;
 /**
  * An Entity Browser widget for creating media entities from embed codes.
  *
+ * Leveraged from code provided by Acquia for the Lightning distribution.
+ *
  * @EntityBrowserWidget(
  *   id = "embed_code",
  *   label = @Translation("Embed Code"),

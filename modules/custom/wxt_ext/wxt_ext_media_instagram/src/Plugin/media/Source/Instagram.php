@@ -8,6 +8,8 @@ use Drupal\media_entity_instagram\Plugin\media\Source\Instagram as BaseInstagram
 
 /**
  * Input-matching version of the Instagram media source.
+ *
+ * Leveraged from code provided by Acquia for the Lightning distribution.
  */
 class Instagram extends BaseInstagram implements InputMatchInterface {
 

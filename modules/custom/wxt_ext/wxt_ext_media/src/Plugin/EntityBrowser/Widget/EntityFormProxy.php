@@ -15,6 +15,8 @@ use Drupal\media\MediaTypeInterface;
 
 /**
  * Base class for EB widgets which wrap around an (inline) entity form.
+ *
+ * Leveraged from code provided by Acquia for the Lightning distribution.
  */
 abstract class EntityFormProxy extends WidgetBase {
 

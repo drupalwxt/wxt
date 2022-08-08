@@ -13,6 +13,8 @@ use Drupal\media\MediaTypeInterface;
 /**
  * An Entity Browser widget for creating media entities from uploaded files.
  *
+ * Leveraged from code provided by Acquia for the Lightning distribution.
+ *
  * @EntityBrowserWidget(
  *   id = "file_upload",
  *   label = @Translation("File Upload"),

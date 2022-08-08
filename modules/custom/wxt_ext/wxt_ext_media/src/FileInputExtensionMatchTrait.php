@@ -7,6 +7,8 @@ use Drupal\media\MediaTypeInterface;
 
 /**
  * Implements InputMatchInterface for media types that use a file field.
+ *
+ * Leveraged from code provided by Acquia for the Lightning distribution.
  */
 trait FileInputExtensionMatchTrait {
 

@@ -3,6 +3,8 @@
 /**
  * @file
  * Install and uninstall functions for the WxT installation profile.
+ *
+ * Leveraged from code provided by Acquia for the Lightning distribution.
  */
 
 use Drupal\media\Entity\MediaType;

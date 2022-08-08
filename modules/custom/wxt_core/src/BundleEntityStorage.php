@@ -13,6 +13,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * A storage handler for entity types that are bundles of other entity types.
+ *
+ * Leveraged from code provided by Acquia for the Lightning distribution.
  */
 class BundleEntityStorage extends ConfigEntityStorage {
 

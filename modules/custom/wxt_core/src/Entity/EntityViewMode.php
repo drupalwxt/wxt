@@ -8,6 +8,8 @@ use Drupal\wxt_core\ConfigEntityDescriptionTrait;
 
 /**
  * Adds description support to entity view modes.
+ *
+ * Leveraged from code provided by Acquia for the Lightning distribution.
  */
 class EntityViewMode extends BaseEntityViewMode implements EntityDescriptionInterface {
 
