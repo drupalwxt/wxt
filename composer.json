@@ -246,7 +246,9 @@
                 "2632132 - Fix seven install":
                 "https://www.drupal.org/files/issues/2019-10-11/Move_Seven_block_config_into_the_Seven_theme-2632132-42.patch",
                 "3107212 - allow translation of views field empty text":
-                "https://www.drupal.org/files/issues/2022-03-09/d9-3-x--3107212-13.patch"
+                "https://www.drupal.org/files/issues/2022-03-09/d9-3-x--3107212-13.patch",
+                "3268983 - FilterHtml throws Unsupported operand types":
+                "https://www.drupal.org/files/issues/2022-07-12/core-3268983-43-10.x.patch"
             },
             "drupal/core_context": {
                 "Enter drupal/core_context patch #3263703 description here":
