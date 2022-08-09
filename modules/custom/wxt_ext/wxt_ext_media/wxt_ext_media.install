@@ -7,20 +7,6 @@
  * Leveraged from code provided by Acquia for the Lightning distribution.
  */
 
-use Drupal\Component\Utility\NestedArray;
-use Drupal\Core\Entity\Entity\EntityFormDisplay;
-use Drupal\Core\Entity\Entity\EntityViewDisplay;
-use Drupal\Core\File\Exception\FileException;
-use Drupal\Core\Utility\UpdateException;
-use Drupal\editor\Entity\Editor;
-use Drupal\embed\Entity\EmbedButton;
-use Drupal\entity_browser\Entity\EntityBrowser;
-use Drupal\file\Entity\File;
-use Drupal\wxt_core\ConfigHelper as Config;
-use Drupal\wxt_core\Entity\EntityViewMode;
-use Drupal\media\Entity\MediaType;
-use Drupal\views\Entity\View;
-
 /**
  * Implements hook_install().
  */

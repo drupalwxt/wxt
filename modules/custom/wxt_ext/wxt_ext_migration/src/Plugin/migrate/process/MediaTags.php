@@ -94,7 +94,7 @@ class MediaTags extends ProcessPluginBase implements ContainerFactoryPluginInter
    * Partially copied from 7.x media module media.filter.inc (media_filter).
    *
    * @param string $match
-   *   Takes a match of tag code
+   *   Takes a match of tag code.
    * @param \Drupal\migrate\MigrateExecutableInterface $migrate_executable
    *   The migrate executable helper class.
    * @param \Drupal\migrate\Row $row
@@ -102,7 +102,7 @@ class MediaTags extends ProcessPluginBase implements ContainerFactoryPluginInter
    * @param string $destination_property
    *   The destination propery.
    */
-  private function replaceToken($match, $migrate_executable, $row, $destination_property) {
+  private function replaceToken($match, MigrateExecutableInterface $migrate_executable, Row $row, $destination_property) {
     $settings = [];
     $match = str_replace("[[", "", $match);
     $match = str_replace("]]", "", $match);
@@ -159,12 +159,15 @@ class MediaTags extends ProcessPluginBase implements ContainerFactoryPluginInter
       }
     }
     catch (Exception $e) {
-      $msg = t('Unable to render media from %tag. Error: %error', ['%tag' => $tag, '%error' => $e->getMessage()]);
+      $msg = t('Unable to render media from %tag. Error: %error', [
+        '%tag' => $tag,
+        '%error' => $e->getMessage(),
+      ]);
       \Drupal::logger('Migration')->error($msg);
       return '';
     }
 
-    $alt = isset($settings['alt']) ? $settings['alt'] : '';
+    $alt = $settings['alt'] ?? '';
     $uuid = $media->uuid();
     $title = $media->get('name')->value;
     $class = isset($classes) ? 'class="' . $classes . '"' : '';
@@ -191,13 +194,13 @@ class MediaTags extends ProcessPluginBase implements ContainerFactoryPluginInter
    * Parses the contents of a CSS declaration block and returns a keyed array
    * of property names and values.
    *
-   * @param $declarations
+   * @param string $declarations
    *   One or more CSS declarations delimited by a semicolon. The same as a CSS
    *   declaration block (http://www.w3.org/TR/CSS21/syndata.html#rule-sets),
    *   but without the opening and closing curly braces. Also the same as the
    *   value of an inline HTML style attribute.
    *
-   * @return
+   * @return array
    *   A keyed array. The keys are CSS property names, and the values are CSS
    *   property values.
    */
@@ -205,7 +208,7 @@ class MediaTags extends ProcessPluginBase implements ContainerFactoryPluginInter
     $properties = [];
     foreach (array_map('trim', explode(";", $declarations)) as $declaration) {
       if ($declaration != '') {
-        list($name, $value) = array_map('trim', explode(':', $declaration, 2));
+        [$name, $value] = array_map('trim', explode(':', $declaration, 2));
         $properties[strtolower($name)] = $value;
       }
     }

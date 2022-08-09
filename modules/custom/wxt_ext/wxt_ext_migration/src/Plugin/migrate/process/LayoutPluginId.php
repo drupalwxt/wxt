@@ -26,6 +26,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 class LayoutPluginId extends ProcessPluginBase implements ContainerFactoryPluginInterface {
 
   /**
+   * The block manager.
+   *
    * @var \Drupal\Core\Block\BlockManagerInterface
    */
   protected $blockManager;
@@ -125,7 +127,7 @@ class LayoutPluginId extends ProcessPluginBase implements ContainerFactoryPlugin
       $section = new Section($section_value['layout_id'], $section_value['layout_settings']);
       $sections[] = $section;
       foreach ($section_value['components'] as $tmp_component) {
-        list($module, $delta) = array_pad(explode(":", $tmp_component['configuration']['id'], 2), 2, NULL);
+        [$module, $delta] = array_pad(explode(":", $tmp_component['configuration']['id'], 2), 2, NULL);
         switch ($module) {
           case 'block_content':
             $block_id = $this->migrationPlugin

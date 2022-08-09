@@ -50,7 +50,7 @@ class MediaHelper {
   public function getFileExtensions($check_access = FALSE, array $bundles = []) {
     $extensions = '';
 
-    // WxT Extend Media overrides the media_bundle storage handler with a special
+    // WxT Extend Media overrides the media_bundle storage handler with
     // one that adds an optional second parameter to loadMultiple().
     $storage = $this->entityTypeManager
       ->getStorage('media_type');
@@ -114,7 +114,7 @@ class MediaHelper {
    *   The media bundles that can accept the input value.
    */
   public function getBundlesFromInput($value, $check_access = TRUE, array $bundles = []) {
-    // WxT Extend Media overrides the media_bundle storage handler with a special
+    // WxT Extend Media overrides the media_bundle storage handler with
     // one that adds an optional second parameter to loadMultiple().
     $media_types = $this->entityTypeManager
       ->getStorage('media_type')

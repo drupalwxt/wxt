@@ -58,7 +58,10 @@ class Wxtcex extends ConfigExportCommands {
                 }
                 $destination = $destination_dir . basename($source);
                 if (!copy($source, $destination)) {
-                  $this->logger->log(LogLevel::ERROR, 'New copy from {source} to {destination} failed.', ['source' => $source, 'destination' => $destination]);
+                  $this->logger->log(LogLevel::ERROR, 'New copy from {source} to {destination} failed.', [
+                    'source' => $source,
+                    'destination' => $destination,
+                  ]);
                 }
                 else {
                   $this->stripUuid($destination);
@@ -82,7 +85,10 @@ class Wxtcex extends ConfigExportCommands {
               if ($choice !== 'skip') {
                 $destination = $instances[$choice];
                 if (!copy($source, $destination)) {
-                  $this->logger->log(LogLevel::ERROR, 'Copy from {source} to {destination} failed.', ['source' => $source, 'destination' => $destination]);
+                  $this->logger->log(LogLevel::ERROR, 'Copy from {source} to {destination} failed.', [
+                    'source' => $source,
+                    'destination' => $destination,
+                  ]);
                 }
                 else {
                   $this->stripUuid($destination);

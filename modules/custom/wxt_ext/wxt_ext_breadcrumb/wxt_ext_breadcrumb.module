@@ -69,7 +69,7 @@ function wxt_ext_breadcrumb_system_breadcrumb_alter(Breadcrumb &$breadcrumb, Rou
     $sitename = \Drupal::config('system.site')->get('name');
 
     $idx = 0;
-    foreach ($breadcrumb_links as $breadcrumb_item => $key) {
+    foreach ($breadcrumb_links as $key) {
       if (!is_null($breadcrumb_links[$idx])) {
         if ($breadcrumb_links[$idx]->getText() == 'Home' || $breadcrumb_links[$idx]->getText() == 'Accueil') {
           $breadcrumb_links = $breadcrumb->getLinks();

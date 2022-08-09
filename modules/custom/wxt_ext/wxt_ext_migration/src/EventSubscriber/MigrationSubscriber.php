@@ -79,6 +79,8 @@ class MigrationSubscriber implements EventSubscriberInterface {
   protected $invalidator;
 
   /**
+   * The temp store.
+   *
    * @var \Drupal\Core\TempStore\SharedTempStoreFactory
    */
   protected $tempstore;

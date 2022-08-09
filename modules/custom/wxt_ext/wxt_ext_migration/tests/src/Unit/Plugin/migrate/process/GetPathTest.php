@@ -27,12 +27,18 @@ class GetPathTest extends MigrateProcessTestCase {
    */
   public function providerTestGetPath() {
     return [
-      ['218x291.png', 'profiles/wxt/modules/custom/wxt_ext/wxt_ext_migration/data/images/218x291.png'],
+      [
+        '218x291.png',
+        'profiles/wxt/modules/custom/wxt_ext/wxt_ext_migration/data/images/218x291.png',
+      ],
     ];
   }
 
 }
 
+/**
+ * Test Get Path.
+ */
 class TestGetPath extends GetPath {
 
   /**

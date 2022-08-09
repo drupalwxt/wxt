@@ -110,8 +110,6 @@ function wxt_ext_book_preprocess_book_tree(&$variables) {
  * Recursive function to mark active item in book hierarchy.
  */
 function _wxt_ext_book_set_variables_recursive(&$items, $active_nid) {
-  $langcode = \Drupal::languageManager()->getCurrentLanguage()->getId();
-
   foreach ($items as $nid => &$item) {
     if ($nid == $active_nid) {
       // Active menu item.

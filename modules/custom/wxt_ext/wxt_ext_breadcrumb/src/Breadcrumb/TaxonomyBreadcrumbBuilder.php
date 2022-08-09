@@ -19,6 +19,9 @@ use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\path_alias\AliasManagerInterface;
 use Symfony\Component\Routing\Matcher\RequestMatcherInterface;
 
+/**
+ * Taxonomy Breadcrumb Builder.
+ */
 class TaxonomyBreadcrumbBuilder extends PathBasedBreadcrumbBuilder {
 
   use StringTranslationTrait;
@@ -80,6 +83,8 @@ class TaxonomyBreadcrumbBuilder extends PathBasedBreadcrumbBuilder {
   protected $languageManager;
 
   /**
+   * The path validator.
+   *
    * @var \Drupal\Core\Path\PathValidator
    */
   protected $pathValidator;

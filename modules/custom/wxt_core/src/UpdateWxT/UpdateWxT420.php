@@ -54,31 +54,34 @@ final class UpdateWxT420 implements ContainerInjectionInterface {
   }
 
   /**
-   * Enables CKEditor TOC functionality.
+   * Enables CkEditor ToC functionality.
    *
    * @updatewxt
    *
-   * @ask Do you want to enable CKEditor TOC functionality?
+   * @ask Do you want to enable CkEditor ToC functionality?
    */
-  public function enableCKEditorTOC() {
+  public function enableCkEditorToC() {
     $this->moduleInstaller->install(['wxt_ext_editor']);
     $this->moduleInstaller->install(['toc_filter']);
 
     $format = FilterFormat::load('rich_text');
     $configuration = $format->filters('filter_caption')->getConfiguration();
     $format->setFilterConfig('entity_embed', ['weight' => $configuration['weight'] + 1]);
-    $format->setFilterConfig('toc_filter', ['status' => TRUE, 'settings' => ['type' => 'wxt']]);
+    $format->setFilterConfig('toc_filter', [
+      'status' => TRUE,
+      'settings' => ['type' => 'wxt'],
+    ]);
     $format->save();
   }
 
   /**
-   * Enables CKEditor Abbreviation functionality.
+   * Enables CkEditor Abbreviation functionality.
    *
    * @updatewxt
    *
-   * @ask Do you want to enable CKEditor Abbreviation functionality?
+   * @ask Do you want to enable CkEditor Abbreviation functionality?
    */
-  public function enableCKEditorAbbreviation() {
+  public function enableCkEditorAbbreviation() {
     $this->moduleInstaller->install(['wxt_ext_editor']);
     $this->moduleInstaller->install(['ckeditor_abbreviation']);
 
@@ -97,13 +100,13 @@ final class UpdateWxT420 implements ContainerInjectionInterface {
   }
 
   /**
-   * Enables CKEditor Alert functionality.
+   * Enables CkEditor Alert functionality.
    *
    * @updatewxt
    *
-   * @ask Do you want to enable CKEditor Alert functionality?
+   * @ask Do you want to enable CkEditor Alert functionality?
    */
-  public function enableCKEditorAlert() {
+  public function enableCkEditorAlert() {
     $this->moduleInstaller->install(['wxt_ext_editor']);
 
     $editor = Editor::load('rich_text');
@@ -121,13 +124,13 @@ final class UpdateWxT420 implements ContainerInjectionInterface {
   }
 
   /**
-   * Enables CKEditor Footnotes functionality.
+   * Enables CkEditor Footnotes functionality.
    *
    * @updatewxt
    *
-   * @ask Do you want to enable CKEditor Footnotes functionality?
+   * @ask Do you want to enable CkEditor Footnotes functionality?
    */
-  public function enableCKEditorFootnotes() {
+  public function enableCkEditorFootnotes() {
     $this->moduleInstaller->install(['wxt_ext_editor']);
 
     $editor = Editor::load('rich_text');

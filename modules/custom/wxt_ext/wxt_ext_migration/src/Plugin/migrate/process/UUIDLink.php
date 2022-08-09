@@ -91,7 +91,7 @@ class UUIDLink extends ProcessPluginBase implements ContainerFactoryPluginInterf
    * Replace callback to convert a Drupal 7 UUID link into a Drupal 9 UUID Link.
    *
    * @param string $match
-   *   Takes a match of tag code
+   *   Takes a match of tag code.
    * @param \Drupal\migrate\MigrateExecutableInterface $migrate_executable
    *   The migrate executable helper class.
    * @param \Drupal\migrate\Row $row
@@ -99,7 +99,7 @@ class UUIDLink extends ProcessPluginBase implements ContainerFactoryPluginInterf
    * @param string $destination_property
    *   The destination propery.
    */
-  private function replaceToken($match, $migrate_executable, $row, $destination_property) {
+  private function replaceToken($match, MigrateExecutableInterface $migrate_executable, Row $row, $destination_property) {
     $tmp = str_replace("[", "", $match[2]);
     $tmp = str_replace("]", "", $tmp);
     $tmp = substr($tmp, 15);
@@ -144,7 +144,10 @@ class UUIDLink extends ProcessPluginBase implements ContainerFactoryPluginInterf
           href="/node/' . $nid . '" ' . $attrAfter . ' ' . $attrBefore . '>';
     }
     catch (Exception $e) {
-      $msg = t('Unable to render link from %link. Error: %error', ['%link' => $uuid, '%error' => $e->getMessage()]);
+      $msg = t('Unable to render link from %link. Error: %error', [
+        '%link' => $uuid,
+        '%error' => $e->getMessage(),
+      ]);
       \Drupal::logger('Migration')->error($msg);
       return '';
     }

@@ -39,7 +39,7 @@ class BulkUploadForm extends FormBase {
    *
    * @var \Drupal\Core\Entity\EntityTypeBundleInfoInterface
    */
-  protected $bundle_info;
+  protected $bundleInfo;
 
   /**
    * BulkUploadForm constructor.
@@ -50,12 +50,14 @@ class BulkUploadForm extends FormBase {
    *   The media helper service.
    * @param \Drupal\Core\StringTranslation\TranslationInterface $translator
    *   The string translation service.
+   * @param \Drupal\Core\Entity\EntityTypeBundleInfoInterface $bundleInfo
+   *   The media bundle info service.
    */
-  public function __construct(EntityTypeManagerInterface $entity_type_manager, MediaHelper $helper, TranslationInterface $translator, EntityTypeBundleInfoInterface $bundle_info) {
+  public function __construct(EntityTypeManagerInterface $entity_type_manager, MediaHelper $helper, TranslationInterface $translator, EntityTypeBundleInfoInterface $bundleInfo) {
     $this->entityTypeManager = $entity_type_manager;
     $this->helper = $helper;
     $this->setStringTranslation($translator);
-    $this->bundle_info = $bundle_info;
+    $this->bundleInfo = $bundleInfo;
   }
 
   /**
@@ -82,7 +84,7 @@ class BulkUploadForm extends FormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
     $extensions = $this->helper->getFileExtensions(TRUE);
-    $bundles = $this->bundle_info->getBundleInfo('media');
+    $bundles = $this->bundleInfo->getBundleInfo('media');
     $options = [];
 
     foreach (array_keys($bundles) as $key) {
@@ -147,7 +149,7 @@ class BulkUploadForm extends FormBase {
     $bulk_create = [];
 
     $uploads = $form_state->getValue(['dropzone', 'uploaded_files']);
-    $bundle =  $form_state->getValue('select_extension');
+    $bundle = $form_state->getValue('select_extension');
     foreach ($uploads as $upload) {
       // Create a file entity for the temporary file.
       /** @var \Drupal\file\FileInterface $file */

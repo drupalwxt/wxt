@@ -9,7 +9,7 @@
  * Implements hook_metatags_attachments_alter().
  */
 function wxt_ext_metatag_metatags_attachments_alter(array &$metatag_attachments) {
-  foreach ($metatag_attachments['#attached']['html_head'] as $key => &$tag) {
+  foreach ($metatag_attachments['#attached']['html_head'] as &$tag) {
     switch ($tag[1]) {
       case 'dcterms_issued':
         $tag[0]['#attributes']['title'] = 'W3CDTF';

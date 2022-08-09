@@ -1,3 +1,54 @@
+## v4.3.3
+
+- Updates for WxT
+  - [Deprecate] Remove Lightning Core [#3302473](https://www.drupal.org/node/3302473)
+  - [Deprecate] Remove Lightning Media [#3301875](https://www.drupal.org/node/3301875)
+
+Upgrade path:
+
+> **Important**: Please backup your database before running the upgrade process for this release.
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
+- Run WxT configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:wxt`
+
+**Note(s)**:
+
+To facilitate keeping the distribution lightweight and because soon the Lightning Contrib modules will be EOL we need to remove all of the Lightning contrib in a way that doesn't break an upgrade path and documents the modules removed in case site builders will want to manually add them to their own `composer.json` file
+
+> **Note**: that all error messages stating "Currently using Missing or invalid module" will be resolved after running the  `drush updatedb` step above.
+
+a) [Deprecate] Remove Lightning Core [#3302473](https://www.drupal.org/node/3302473)
+
+Please read over the above issue and consult the below list of the removed composer entries in case you are depending on any of them and need to apply them manually to your composer.json file.
+
+```yaml
+
+```
+
+All of the Lightning Core functionality was directly ported to support an upgrade path and an update script written in the `wxt_core_update_8433` function.
+
+> **Note**: Any Lightning sub modules will also be uninstalled.
+
+b) [Deprecate] Remove Lightning Media [#3301875](https://www.drupal.org/node/3301875)
+
+Please read over the above issue and consult the below list of the removed composer entries in case you are depending on any of them and need to apply them manually to your composer.json file.
+
+```yaml
+
+```
+
+All of the Lightning Media functionality was directly ported to support an upgrade path and an update script written in the `wxt_core_update_8433` function.
+
+> **Note**: Any Lightning sub modules will also be uninstalled.
+
 ## v4.3.2 (HotFix)
 
 This is a quick immediate hotfix so the changelog from 4.3.1 is also printed here due to its importance due to the deprecations.

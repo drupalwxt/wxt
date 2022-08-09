@@ -28,7 +28,6 @@ class BreadcrumbsForm extends ConfigFormBase {
    * Provide n Number of breadcrumbs which will be prefixed after Canada.ca.
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-    $langcode = \Drupal::languageManager()->getCurrentLanguage()->getId();
     $config = $this->config('wxt_ext_breadcrumb.settings');
 
     $form = [];
@@ -196,7 +195,6 @@ class BreadcrumbsForm extends ConfigFormBase {
    * Callback function to add another breadcrumb group.
    */
   public function addmoreCallback(array &$form, FormStateInterface &$form_state) {
-    $crumbtitle_field = $form_state->get('num_crumbs');
     return $form['wxt_ext_breadcrumb'];
   }
 
@@ -219,12 +217,11 @@ class BreadcrumbsForm extends ConfigFormBase {
    */
   public function validateForm(array &$form, FormStateInterface $form_state) {
     $values = $form_state->getValue('wxt_ext_breadcrumb');
-    $settings = $this->configFactory->getEditable('wxt_ext_breadcrumb.settings');
     $values_en = [];
     $values_fr = [];
     $cnt = 0;
 
-    foreach ($values as $fieldset_key => $fieldset_values) {
+    foreach ($values as $fieldset_values) {
       if (isset($fieldset_values['en_crumb'])) {
         $values_en[$cnt]['en_crumb'] = $fieldset_values['en_crumb'];
       }
@@ -318,7 +315,6 @@ class BreadcrumbsForm extends ConfigFormBase {
    * Helper function for form validation of urls.
    */
   private function getUrlByKey($values, $level = 0) {
-    $cnt = count($values);
     $innerCnt = 0;
 
     foreach ($values as $key => $v) {

@@ -25,6 +25,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 class BlockPluginId extends ProcessPluginBase implements ContainerFactoryPluginInterface {
 
   /**
+   * The block manager.
+   *
    * @var \Drupal\Core\Block\BlockManagerInterface
    */
   protected $blockManager;
@@ -122,7 +124,7 @@ class BlockPluginId extends ProcessPluginBase implements ContainerFactoryPluginI
     foreach ($value as $tmp_block) {
       $uuid = $this->uuidService->generate();
       if (is_array($tmp_block)) {
-        list($module, $delta) = explode(":", $tmp_block['id'], 2);
+        [$module, $delta] = explode(":", $tmp_block['id'], 2);
         switch ($module) {
           case 'block_content':
             $block_id = $this->migrationPlugin

@@ -5,9 +5,6 @@
  * Contains install and update routines for WxT Extend Media Image.
  */
 
-use Drupal\wxt_core\ConfigHelper as Config;
-use Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException;
-
 /**
  * Implements hook_install().
  */

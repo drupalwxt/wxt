@@ -18,7 +18,7 @@ use Symfony\Component\DependencyInjection\Reference;
  *   removed at any time without warning! External code should not use this
  *   class in ANY way!
  */
-final class WxTExTMediaServiceProvider extends ServiceProviderBase {
+final class WxTMediaServiceProvider extends ServiceProviderBase {
 
   /**
    * {@inheritdoc}

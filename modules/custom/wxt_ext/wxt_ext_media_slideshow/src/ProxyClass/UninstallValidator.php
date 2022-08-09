@@ -2,7 +2,7 @@
 // @codingStandardsIgnoreFile
 
 /**
- * This file was generated via php core/scripts/generate-proxy-class.php script.
+ * This file was generated via php core/scripts/generate-proxy-class.php 'Drupal\wxt_ext_media_slideshow\UninstallValidator' "/var/www/html/profiles/wxt/modules/custom/wxt_ext/wxt_ext_media_slideshow/src".
  */
 
 namespace Drupal\wxt_ext_media_slideshow\ProxyClass {
