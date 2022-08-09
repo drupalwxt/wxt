@@ -24,7 +24,7 @@
         "drupal/core": "9.3.19",
         "drupal/core_context": "1.0-beta5",
         "drupal/crop": "^2.0.0-rc1",
-        "drupal/ctools": "^3.7",
+        "drupal/ctools": "3.9",
         "drupal/diff": "^1.0",
         "drupal/dropzonejs": "^2.1",
         "drupal/embed": "^1.0",
