@@ -14,6 +14,8 @@ use Drupal\DrupalExtension\Context\DrupalSubContextBase;
  *   changed or removed at any time without warning. It should not be extended,
  *   instantiated, or used in any way by external code! If you need to use this
  *   functionality, you should copy the relevant code into your own project.
+ *
+ * Leveraged from code provided by Acquia for the Lightning distribution.
  */
 final class CkEditorContext extends DrupalSubContextBase {
 

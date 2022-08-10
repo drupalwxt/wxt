@@ -19,6 +19,8 @@ use Drupal\DrupalExtension\Context\DrupalSubContextInterface;
  *   extend, instantiate, or use this class in any way! If you want to use the
  *   functionality of this class, you should copy the relevant code into your
  *   own project.
+ *
+ * Leveraged from code provided by Acquia for the Lightning distribution.
  */
 final class ModerationContext extends RawMinkContext implements DrupalSubContextInterface {
 
