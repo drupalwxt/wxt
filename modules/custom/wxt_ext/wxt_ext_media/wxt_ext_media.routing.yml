@@ -1,5 +1,5 @@
 wxt_ext_media.settings:
-  path: '/admin/config/system/wxt/media'
+  path: '/admin/config/wxt/wxt_ext_media'
   defaults:
     _title: WxT Extend Media
     _form: '\Drupal\wxt_ext_media\Form\SettingsForm'

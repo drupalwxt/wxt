@@ -7,18 +7,18 @@ system.404:
     # Overrides core native 404 handling
     _access: 'TRUE'
 
-wxt4032404.config:
-  path: '/admin/config/system/wxt4032404'
-  defaults:
-    _form: '\Drupal\wxt_core\Form\WxT4032404Form'
-    _title: '403 to 404 Settings'
-  requirements:
-    _permission: 'administer site configuration'
-
 wxt_core.settings:
-  path: '/admin/config/system/wxt'
+  path: '/admin/config/wxt'
   defaults:
     _title: WxT
     _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
   requirements:
     _is_administrator: 'true'
+
+wxt4032404.config:
+  path: '/admin/config/wxt/4032404'
+  defaults:
+    _form: '\Drupal\wxt_core\Form\WxT4032404Form'
+    _title: '403 to 404 Settings'
+  requirements:
+    _permission: 'administer site configuration'

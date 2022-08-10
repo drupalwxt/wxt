@@ -1,5 +1,5 @@
 wxt_ext_breadcrumb.settings_form:
-  path: '/admin/config/wxt/wxt-breadcrumbs'
+  path: '/admin/config/wxt/wxt_ext_breadcrumb'
   defaults:
     _title: 'WxT Breadcrumbs'
     _form: '\Drupal\wxt_ext_breadcrumb\Form\BreadcrumbsForm'

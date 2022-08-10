@@ -1,5 +1,5 @@
 wxt_ext_layout.settings:
-  path: '/admin/config/system/wxt/layout'
+  path: '/admin/config/wxt/wxt_ext_layout'
   defaults:
     _title: WxT Extend Layout
     _form: '\Drupal\wxt_ext_layout\Form\SettingsForm'
