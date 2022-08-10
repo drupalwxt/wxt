@@ -59,7 +59,7 @@
         "drupal/panels": "4.6 || 4.x-dev",
         "drupal/paragraphs": "1.12",
         "drupal/password_policy": "^3.0",
-        "drupal/pathauto": "1.8",
+        "drupal/pathauto": "^1.8",
         "drupal/redirect": "^1.5",
         "drupal/redis": "1.5",
         "drupal/search_api": "^1.16",
