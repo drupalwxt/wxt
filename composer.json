@@ -250,10 +250,6 @@
                 "3268983 - FilterHtml throws Unsupported operand types":
                 "https://www.drupal.org/files/issues/2022-07-12/core-3268983-43-10.x.patch"
             },
-            "drupal/core_context": {
-                "Enter drupal/core_context patch #3263703 description here":
-                "https://www.drupal.org/files/issues/2022-03-13/3263703-05.patch"
-            },
             "drupal/ctools": {
                 "Enter drupal/ctools patch #2667652 description here":
                 "https://www.drupal.org/files/issues/ctools-option_to_expose-2667652-3.patch",
