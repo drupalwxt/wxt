@@ -345,6 +345,11 @@ function wxt_core_update_8431() {
  * Updates for the WxT 4.3.3 release.
  */
 function wxt_core_update_8433() {
+  // Don't run if the site isn't using media.
+  $module_handler = \Drupal::service('module_handler');
+  if (!$module_handler->moduleExists('lightning_media') && !$module_handler->moduleExists('wxt_ext_media')) {
+    return;
+  }
 
   // Retrieve the config factory.
   $config_factory = \Drupal::configFactory();
