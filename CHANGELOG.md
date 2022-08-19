@@ -1,5 +1,7 @@
 ## v4.3.3 (In Development)
 
+- Updates for Drupal Core
+  -  Patch (bugfix) release of Drupal Core to `v9.3.21`
 - Updates for Drupal Contrib
   - ckeditor_codemirror update to `2.4`
   - core_context update to `1.0`
