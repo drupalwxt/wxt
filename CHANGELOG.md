@@ -1,8 +1,27 @@
-## v4.3.3
+## v4.3.3 (In Development)
 
+- Updates for Drupal Contrib
+  - ckeditor_codemirror update to `2.4`
+  - core_context update to `1.0`
+  - ctools module update to `^3.9`
+  - inline_entity_form to `^2.7`
+  - layout_builder_restrictions to `^2.14`
+  - pathauto to `^1.8`
 - Updates for WxT
   - [Deprecate] Remove Lightning Core [#3302473](https://www.drupal.org/node/3302473)
   - [Deprecate] Remove Lightning Media [#3301875](https://www.drupal.org/node/3301875)
+  - Corrected bulk of reported issues by phpcs
+  - FilterHtml throws Unsupported operand types [#3300111](https://www.drupal.org/node/3300111)
+  - Core patch causing error when serializing top-level terms [#3302126](https://www.drupal.org/node/3302126)
+  - WSOD on node forms with fresh install of WxT or ctools update [#3300983](https://www.drupal.org/node/3300983)
+- Updates for WxT Bootstrap
+  - Preprocess field issue with video [#3300986](https://www.drupal.org/node/3300986)
+  - Provide favicons with starterkit [#3304675](https://www.drupal.org/node/3304675)
+  - Facet improvements (WCAG) [#3282148](https://www.drupal.org/node/3282148)
+- Updates for WxT Library
+  - Switch to dynamic menu handling for wxt_library
+  - Update to theme-gc-intranet theme to `4.0.43.1`
+  - SearchCanadaBlockForm missing dependency injection [#3300107](https://www.drupal.org/node/3300107)
 
 Upgrade path:
 
@@ -30,7 +49,8 @@ a) [Deprecate] Remove Lightning Core [#3302473](https://www.drupal.org/node/3302
 Please read over the above issue and consult the below list of the removed composer entries in case you are depending on any of them and need to apply them manually to your composer.json file.
 
 ```yaml
-
+"drupal/acquia_telemetry-acquia_telemetry": "^1.0-alpha3",
+"drupal/contact_storage": "^1.0",
 ```
 
 All of the Lightning Core functionality was directly ported to support an upgrade path and an update script written in the `wxt_core_update_8433` function.
@@ -42,12 +62,17 @@ b) [Deprecate] Remove Lightning Media [#3301875](https://www.drupal.org/node/330
 Please read over the above issue and consult the below list of the removed composer entries in case you are depending on any of them and need to apply them manually to your composer.json file.
 
 ```yaml
+Nothing removed at the moment
 
 ```
 
-All of the Lightning Media functionality was directly ported to support an upgrade path and an update script written in the `wxt_core_update_8433` function.
+c) All of the Lightning Media functionality was directly ported to support an upgrade path and an update script written in the `wxt_core_update_8433` function.
 
 > **Note**: Any Lightning sub modules will also be uninstalled.
+
+d) Finally check your custom modules and / or configuration objects for any reference to `lightning_core`, `lightning_page` and `lightning_media` as some of your config objects (that we couldn't automatically correct) might reference the old modules and this step will be important to get your configuration objects properly loaded.
+
+> **Note**: These references should be replaced by their new counterparts `wxt_core`, `wxt_ext_page` and `wxt_ext_media`. As some of your config objects might reference the old modules this step is important to get your config loaded.
 
 ## v4.3.2 (HotFix)
 
@@ -120,9 +145,13 @@ Please read over the above issue and consult the below list of the removed compo
 "drupal/moderation_sidebar": "^1.2"
 ```
 
-All of the Lightning Workflow functionality was directly ported to support an upgrade path and an update script written in the `wxt_core_update_8431` function.
+c) All of the Lightning Workflow functionality was directly ported to support an upgrade path and an update script written in the `wxt_core_update_8431` function.
 
 > **Note**: Any Lightning sub modules will also be uninstalled.
+
+d) Finally check your custom modules and / or configuration objects for any reference to `lightning_layout`, `lightning_landing_page` and `lightning_workflow` as some of your config objects (that we couldn't automatically correct) might reference the old modules and this step will be important to get your configuration objects properly loaded.
+
+> **Note**: These references should be replaced by their new counterparts `wxt_ext_layout`, `wxt_ext_landing_page` and `wxt_ext_workflow`. As some of your config objects might reference the old modules this step is important to get your config loaded.
 
 ## v4.3.1
 
