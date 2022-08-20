@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Support for image media assets in WxT Extend Instagram.
+ * Support for image media assets in WxT Extend Image.
  */
 
 use Drupal\Core\Entity\Display\EntityFormDisplayInterface;
