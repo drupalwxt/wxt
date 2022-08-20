@@ -22,6 +22,7 @@ dependencies:
   - 'wxt_ext_media_bulk_upload:wxt_ext_media_bulk_upload'
   - 'wxt_ext_media_document:wxt_ext_media_document'
   - 'wxt_ext_media_image:wxt_ext_media_image'
+  - 'wxt_ext_media_image:wxt_ext_media_image_responsive'
   - 'wxt_ext_media_instagram:wxt_ext_media_instagram'
   - 'wxt_ext_media_slideshow:wxt_ext_media_slideshow'
   - 'wxt_ext_media_twitter:wxt_ext_media_twitter'

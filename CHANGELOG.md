@@ -1,4 +1,31 @@
-## v4.3.3 (In Development)
+## v4.3.4 (In Development)
+
+- Updates for WxT
+  - CKEditor improvement leverage responsive images [#3280946](https://www.drupal.org/node/3280946)
+  - Correct mislabelled wxt_extension.yml files
+- Updates for WxT Bootstrap
+  - CKEditor improvement leverage responsive images [#3280946](https://www.drupal.org/node/3280946)
+
+Upgrade path:
+
+> **Important**: Please backup your database before running the upgrade process for this release.
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
+- Run WxT configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:wxt`
+
+**Note(s)**:
+
+To Be Determined.
+
+## v4.3.3
 
 - Updates for Drupal Core
   -  Patch (bugfix) release of Drupal Core to `v9.3.21`
