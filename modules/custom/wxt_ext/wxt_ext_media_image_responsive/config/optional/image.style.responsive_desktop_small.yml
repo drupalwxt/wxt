@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: responsive_desktop_small
+label: 'Responsive desktop small (270 x 270)'
+effects:
+  3e737c49-fbde-4a26-b406-70e375d97944:
+    uuid: 3e737c49-fbde-4a26-b406-70e375d97944
+    id: image_scale
+    weight: 1
+    data:
+      width: 270
+      height: 270
+      upscale: false

@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: responsive_tablet_full_width
+label: 'Responsive tablet full width (992 x 992)'
+effects:
+  72cfb9fc-5674-4384-80c7-b92504253d71:
+    uuid: 72cfb9fc-5674-4384-80c7-b92504253d71
+    id: image_scale
+    weight: 1
+    data:
+      width: 992
+      height: 992
+      upscale: false

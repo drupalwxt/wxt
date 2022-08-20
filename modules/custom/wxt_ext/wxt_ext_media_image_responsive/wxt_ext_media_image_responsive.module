@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * @file
+ * Support for image media assets in WxT Extend Responsive.
+ */
+
+/**
+ * Implements hook_modules_installed().
+ */
+function wxt_ext_media_image_responsive_modules_installed(array $modules) {
+  // Don't do anything during config sync.
+  if (\Drupal::isConfigSyncing()) {
+    return;
+  }
+}

@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: responsive_tabled_medium
+label: 'Responsive tabled medium (360 x 360)'
+effects:
+  3d0ed21c-55e0-425c-8781-17ac8461bce6:
+    uuid: 3d0ed21c-55e0-425c-8781-17ac8461bce6
+    id: image_scale
+    weight: 1
+    data:
+      width: 360
+      height: 360
+      upscale: false

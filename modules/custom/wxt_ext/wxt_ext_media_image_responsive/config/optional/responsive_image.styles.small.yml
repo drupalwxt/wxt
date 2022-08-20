@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.responsive_desktop_small
+    - image.style.responsive_mobile_small
+    - image.style.responsive_tablet_small
+  theme:
+    - bootstrap
+id: small
+label: Small
+image_style_mappings:
+  -
+    breakpoint_id: bootstrap.screen-md-min
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: responsive_desktop_small
+  -
+    breakpoint_id: bootstrap.screen-sm-min
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: responsive_tablet_small
+  -
+    breakpoint_id: bootstrap.screen-xs-max
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: responsive_mobile_small
+breakpoint_group: bootstrap
+fallback_image_style: responsive_mobile_small

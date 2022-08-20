@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - wxt_core
+third_party_settings:
+  wxt_core:
+    description: ''
+id: media.large
+label: Large
+targetEntityType: media
+cache: true

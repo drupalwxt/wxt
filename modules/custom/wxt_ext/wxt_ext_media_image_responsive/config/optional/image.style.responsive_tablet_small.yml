@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: responsive_tablet_small
+label: 'Responsive tablet small (228 x 228)'
+effects:
+  49944325-53cc-446e-8c5d-9acd1f296bd5:
+    uuid: 49944325-53cc-446e-8c5d-9acd1f296bd5
+    id: image_scale
+    weight: 1
+    data:
+      width: 228
+      height: 228
+      upscale: false

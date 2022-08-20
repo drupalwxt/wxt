@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.responsive_desktop_full_width
+    - image.style.responsive_mobile_full_width
+    - image.style.responsive_tablet_full_width
+  theme:
+    - bootstrap
+id: full_width
+label: 'Full width'
+image_style_mappings:
+  -
+    breakpoint_id: bootstrap.screen-md-min
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: responsive_desktop_full_width
+  -
+    breakpoint_id: bootstrap.screen-sm-min
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: responsive_tablet_full_width
+  -
+    breakpoint_id: bootstrap.screen-xs-max
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: responsive_mobile_full_width
+breakpoint_group: bootstrap
+fallback_image_style: responsive_mobile_full_width

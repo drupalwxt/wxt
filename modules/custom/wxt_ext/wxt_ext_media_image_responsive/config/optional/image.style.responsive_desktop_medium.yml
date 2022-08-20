@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: responsive_desktop_medium
+label: 'Responsive desktop medium (565 x 565)'
+effects:
+  7ebc5d1f-0669-4480-9e72-c4c021775f88:
+    uuid: 7ebc5d1f-0669-4480-9e72-c4c021775f88
+    id: image_scale
+    weight: 1
+    data:
+      width: 565
+      height: 565
+      upscale: false

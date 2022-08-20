@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: responsive_desktop_full_width
+label: 'Responsive desktop full width (1200 x 1200)'
+effects:
+  dd26d040-def7-4834-9c28-2173f6add3d3:
+    uuid: dd26d040-def7-4834-9c28-2173f6add3d3
+    id: image_scale
+    weight: 1
+    data:
+      width: 1200
+      height: 1200
+      upscale: false

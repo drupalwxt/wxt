@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * @file
+ * Contains install and update routines for WxT Extend Media Image Responsive.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function wxt_ext_media_image_responsive_install() {
+  // Don't do anything during config sync.
+  if (\Drupal::isConfigSyncing()) {
+    return;
+  }
+}

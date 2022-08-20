@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - wxt_core
+third_party_settings:
+  wxt_core:
+    description: ''
+id: media.medium
+label: Medium
+targetEntityType: media
+cache: true

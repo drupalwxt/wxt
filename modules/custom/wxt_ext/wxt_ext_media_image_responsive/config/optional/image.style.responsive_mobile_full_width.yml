@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: responsive_mobile_full_width
+label: 'Responsive mobile full width (768 x 768)'
+effects:
+  7cbcef1e-83fb-467c-9b21-4d1b3b66da48:
+    uuid: 7cbcef1e-83fb-467c-9b21-4d1b3b66da48
+    id: image_scale
+    weight: 1
+    data:
+      width: 768
+      height: 768
+      upscale: false
