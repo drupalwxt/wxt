@@ -9,4 +9,4 @@ dependencies:
   - 'wxt_translation:wxt_translation'
   - 'wxt_ext_media:wxt_ext_media'
   - 'wxt_ext_media_image:wxt_ext_media_image'
-version: 4.3.3
+version: 4.3.3-dev
