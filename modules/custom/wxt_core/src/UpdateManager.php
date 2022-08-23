@@ -128,7 +128,7 @@ class UpdateManager {
    */
   public static function toSemanticVersion($version) {
     // Strip the 8.x prefix from the version.
-    $semantic_version = preg_replace('/^' . \Drupal::CORE_COMPATIBILITY . '-/', NULL, $version);
+    $semantic_version = preg_replace('/^' . \Drupal::CORE_COMPATIBILITY . '-/', '', $version);
 
     if (preg_match('/-dev$/', $semantic_version)) {
       return preg_replace('/^(\d).+-dev$/', '$1.x-dev', $semantic_version);
