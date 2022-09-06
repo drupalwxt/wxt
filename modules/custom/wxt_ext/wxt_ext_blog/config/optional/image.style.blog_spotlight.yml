@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: blog_spotlight
+label: 'Blog spotlight'
+effects:
+  b3b974e7-49c6-4097-a404-75af6bff54a7:
+    uuid: b3b974e7-49c6-4097-a404-75af6bff54a7
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 360
+      height: 172
+      anchor: center-center

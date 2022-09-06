@@ -1,0 +1,75 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.blog
+    - views.view.blog
+  module:
+    - panels
+    - views
+id: blog-panels_variant-0
+label: Blog
+weight: 0
+variant: panels_variant
+variant_settings:
+  id: panels_variant
+  label: null
+  weight: 0
+  uuid: 02319159-cb66-425c-a27e-883713a95664
+  blocks:
+    eb20fa55-8b1c-40c5-bbd5-86510c1ce56e:
+      id: 'views_block:blog-block_all'
+      label: ''
+      label_display: '0'
+      provider: views
+      context_mapping: {  }
+      views_label: ''
+      items_per_page: '5'
+      region: main
+      weight: 1
+      uuid: eb20fa55-8b1c-40c5-bbd5-86510c1ce56e
+      style:
+        plugin: panels_default
+    091683b1-7dc4-481a-a23b-7c6888b16f72:
+      id: 'views_block:blog-block_latest'
+      label: ''
+      label_display: '0'
+      provider: views
+      context_mapping: {  }
+      views_label: ''
+      items_per_page: none
+      region: main
+      weight: 0
+      uuid: 091683b1-7dc4-481a-a23b-7c6888b16f72
+      css_classes:
+        - ''
+      html_id: ''
+      css_styles: ''
+  page_title: Blog
+  layout: bs_1col
+  layout_settings:
+    label: ''
+    layout:
+      wrapper: div
+      classes:
+        row: row
+      add_layout_class: 1
+      attributes: ''
+    regions:
+      main:
+        wrapper: div
+        classes:
+          col-sm-12: col-sm-12
+        add_region_classes: 1
+        attributes: ''
+  builder: ipe
+  storage_type: page_manager
+  storage_id: blog-panels_variant-0
+  css_classes:
+    - ''
+  html_id: ''
+  css_styles: ''
+page: blog
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }

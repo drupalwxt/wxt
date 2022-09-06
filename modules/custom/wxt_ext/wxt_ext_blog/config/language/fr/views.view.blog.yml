@@ -1,0 +1,41 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Appliquer
+          reset_button_label: Réinitialiser
+          exposed_sorts_label: 'Trier par'
+      pager:
+        options:
+          expose:
+            items_per_page_label: 'Éléments par page'
+            items_per_page_options_all_label: '- Tout -'
+            offset_label: Décalage
+          tags:
+            previous: '‹ Précédent'
+            next: 'Suivant ›'
+            first: '« Premier'
+            last: 'Dernier »'
+  blog_block:
+    display_title: Bloc
+  blog_user_all:
+    display_options:
+      arguments:
+        uid:
+          exception:
+            title: Tout
+  feed_2:
+    display_options:
+      arguments:
+        uid:
+          exception:
+            title: Tout
+  block_all:
+    display_options:
+      empty:
+        area:
+          content:
+            value: "<p>Aucun contenu de blog n'a été créé.</p>\r\n"
+            format: rich_text
+label: Blogue

@@ -11,3 +11,15 @@
 function wxt_ext_blog_user_view_alter(&$build, $account, $display) {
   unset($build['summary']['blog']['#markup']);
 }
+
+/**
+ * Implements hook_entity_type_alter().
+ */
+function wxt_ext_blog_entity_type_alter(array &$entity_types) {
+  // TODO: Better Fix for https://www.drupal.org/project/drupal/issues/2955321.
+  foreach ($entity_types as $entity_type) {
+    $constraints = $entity_type->getConstraints();
+    unset($constraints['EntityUntranslatableFields']);
+    $entity_type->setConstraints($constraints);
+  }
+}
