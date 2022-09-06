@@ -2,9 +2,11 @@
 
 - Updates for WxT
   - CKEditor improvement leverage responsive images [#3280946](https://www.drupal.org/node/3280946)
+  - Update blog listing page to latest spec [#3306505](https://www.drupal.org/node/3306505)
   - Correct mislabelled wxt_extension.yml files
 - Updates for WxT Bootstrap
   - CKEditor improvement leverage responsive images [#3280946](https://www.drupal.org/node/3280946)
+  - Update blog listing page to latest spec  [#3306505](https://www.drupal.org/node/3306505)
 
 Upgrade path:
 
