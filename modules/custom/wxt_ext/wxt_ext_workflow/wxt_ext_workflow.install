@@ -6,6 +6,7 @@
  */
 
 use Drupal\node\Entity\NodeType;
+use Drupal\wxt_translation\TranslationHelper;
 
 /**
  * Implements hook_install().
@@ -26,5 +27,11 @@ function wxt_ext_workflow_install() {
 
   foreach (NodeType::loadMultiple() as $node_type) {
     wxt_ext_workflow_node_type_insert($node_type);
+  }
+
+  // Install config translations.
+  $moduleHandler = \Drupal::service('module_handler');
+  if ($moduleHandler->moduleExists('wxt_translation')) {
+    TranslationHelper::importTranslations('wxt_ext_workflow');
   }
 }
