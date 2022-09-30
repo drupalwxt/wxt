@@ -12,7 +12,7 @@ source:
     - mlid: 'ml_brand_1'
       link_title: 'Médias sociaux'
       description: 'Médias sociaux section.'
-      menu_name: 'brand_fr'
+      menu_name: 'brand-fr'
       link_path: 'https://www.canada.ca/fr/sociaux.html'
       options: []
       external: 1
@@ -21,7 +21,7 @@ source:
     - mlid: 'ml_brand_2'
       link_title: 'Applications mobiles'
       description: 'Applications mobiles section.'
-      menu_name: 'brand_fr'
+      menu_name: 'brand-fr'
       link_path: 'https://www.canada.ca/fr/mobile.html'
       options: []
       external: 1
@@ -30,7 +30,7 @@ source:
     - mlid: 'ml_brand_3'
       link_title: 'À propos de Canada.ca'
       description: 'À propos de Canada.ca section.'
-      menu_name: 'brand_fr'
+      menu_name: 'brand-fr'
       link_path: 'https://www.canada.ca/fr/gouvernement/a-propos.html'
       options: []
       external: 1
@@ -39,7 +39,7 @@ source:
     - mlid: 'ml_brand_4'
       link_title: 'Avis'
       description: 'Avis section.'
-      menu_name: 'brand_fr'
+      menu_name: 'brand-fr'
       link_path: 'https://www.canada.ca/fr/transparence/avis.html'
       options: []
       external: 1
@@ -48,7 +48,7 @@ source:
     - mlid: 'ml_brand_5'
       link_title: 'Confidentialité'
       description: 'Confidentialité section.'
-      menu_name: 'brand_fr'
+      menu_name: 'brand-fr'
       link_path: 'https://www.canada.ca/fr/transparence/confidentialite.html'
       options: []
       external: 1
