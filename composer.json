@@ -21,7 +21,7 @@
         "drupal/ckeditor_codemirror": "2.4",
         "drupal/ckeditor_details": "^2.0.2",
         "drupal/config_rewrite": "1.4",
-        "drupal/core": "9.3.21",
+        "drupal/core": "9.3.22",
         "drupal/core_context": "1.0",
         "drupal/crop": "^2.0.0-rc1",
         "drupal/ctools": "^3.9",
