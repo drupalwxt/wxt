@@ -1,3 +1,26 @@
+## v4.3.5 (In Development)
+
+TBD
+
+Upgrade path:
+
+> **Important**: Please backup your database before running the upgrade process for this release.
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
+- Run WxT configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:wxt`
+
+**Note(s)**:
+
+To Be Determined.
+
 ## v4.3.4
 
 - Security Updates for Drupal Core (v9.3.22)
@@ -31,7 +54,7 @@ Upgrade path:
 
 **Note(s)**:
 
-To Be Determined.
+This will be the last release which includes the Lightning modules, even though they have been uninstalled in an earlier release.
 
 ## v4.3.3
 

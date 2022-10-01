@@ -9,4 +9,4 @@ dependencies:
   - 'media_entity_slideshow:media_entity_slideshow'
   - 'slick_entityreference:slick_entityreference'
   - 'wxt_ext_media:wxt_ext_media'
-version: 4.3.4
+version: 4.3.4-dev

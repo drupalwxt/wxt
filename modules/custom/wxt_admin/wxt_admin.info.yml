@@ -7,4 +7,4 @@ dependencies:
   - 'admin_toolbar:admin_toolbar'
   - 'admin_toolbar_tools:admin_toolbar_tools'
   - 'admin_toolbar_links_access_filter:admin_toolbar_links_access_filter'
-version: 4.3.4
+version: 4.3.4-dev
