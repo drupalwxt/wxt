@@ -1,4 +1,4 @@
-## v4.3.4 (In Development)
+## v4.3.4
 
 - Security Updates for Drupal Core (v9.3.22)
   - [SA-core-2022-016](https://www.drupal.org/sa-core-2022-016)
@@ -12,6 +12,7 @@
   - CKEditor improvement leverage responsive images [#3280946](https://www.drupal.org/node/3280946)
   - Update blog listing page to latest spec [#3306505](https://www.drupal.org/node/3306505)
   - Fix GCintranet link in header on French pages [#3308918](https://www.drupal.org/node/3308918)
+  - Adjust theme suggestion alter in starterkit [#3310485](https://www.drupal.org/node/3310485)
 
 Upgrade path:
 

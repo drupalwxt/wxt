@@ -5,4 +5,4 @@ description: 'Locally hosted document support for WxT Extend Media.'
 package: WxT
 dependencies:
   - 'wxt_ext_media:wxt_ext_media'
-version: 4.3.3-dev
+version: 4.3.4
