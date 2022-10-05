@@ -1,0 +1,52 @@
+<?php
+
+/**
+ * @file
+ * Contains wxt_ext_carousel.module.
+ */
+
+use Drupal\file\Entity\File;
+use Drupal\image\Entity\ImageStyle;
+
+/**
+ * Implements hook_theme().
+ */
+function wxt_ext_carousel_theme($existing, $type, $theme, $path) {
+  return [
+    'field__block_content__carousel' => [
+      'template' => 'field--block-content--carousel',
+      'base hook' => 'field',
+      'path' => drupal_get_path('module', 'wxt_ext_carousel') . '/templates',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_preprocess_field().
+ */
+function wxt_ext_carousel_preprocess_field(&$variables) {
+  if ($variables['field_name'] == 'field_carousel_item') {
+    foreach ($variables['items'] as $key => $item) {
+      $paragraph = $variables['items'][$key]['content']['#paragraph'];
+
+      // Get image URL from paragraph.
+      $media = $paragraph->get('field_image')->entity;
+      $fid = $media->getSource()->getSourceFieldValue($media);
+      $file = File::load($fid);
+      $path = $file->getFileUri();
+      $image_url = ImageStyle::load('carousel')->buildUrl($path);
+      $variables['items'][$key]['image_url'] = $image_url;
+
+      // Get link href and text from paragraph.
+      $href = $paragraph->get('field_link')->first()->getUrl();
+      $link_text = $paragraph->get('field_link')->first()->getValue()['title'];
+      $variables['items'][$key]['href'] = $href;
+      $variables['items'][$key]['link_text'] = $link_text;
+    }
+
+    // Get transition type.
+    $block = $variables['element']['#object'];
+    $transition_type = $block->field_transition_type->value;
+    $variables['transition_type'] = $transition_type;
+  }
+}
