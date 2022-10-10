@@ -39,8 +39,8 @@ function wxt_ext_blocks_preprocess_block(&$variables) {
     if ($block) {
       $label_display = $block->get('settings')['label_display'] == 'visible' ? TRUE : FALSE;
       $variables['label_display'] = $label_display;
-
-      if ($label_display && $display_title_invisible = $block->getThirdPartySetting('wxt_ext_blocks', 'display_title_invisible')) {
+      $display_title_invisible = $block->getThirdPartySetting('wxt_ext_blocks', 'display_title_invisible');
+      if ($label_display && $display_title_invisible) {
         $variables['display_title_invisible'] = TRUE;
       }
     }
