@@ -21,7 +21,7 @@
         "drupal/ckeditor_codemirror": "2.4",
         "drupal/ckeditor_details": "^2.0.2",
         "drupal/config_rewrite": "1.4",
-        "drupal/core": "9.3.22",
+        "drupal/core": "9.4.8",
         "drupal/core_context": "1.0",
         "drupal/crop": "^2.0.0-rc1",
         "drupal/ctools": "^3.9",
@@ -190,9 +190,9 @@
             },
             "drupal/core": {
                 "Enter drupal/core patch #850600 description here":
-                "https://www.drupal.org/files/issues/postgresql_ssl_dsn-850600-3.patch",
+                "https://www.drupal.org/files/issues/2022-06-08/D94x-postgresql_ssl_dsn-850600-23.patch",
                 "Enter drupal/core patch #1356276 description here":
-                "https://www.drupal.org/files/issues/2021-11-18/1356276-675.patch",
+                "https://www.drupal.org/files/issues/2022-06-17/1356276-686.patch",
                 "Enter drupal/core patch #2559833 description here":
                 "https://www.drupal.org/files/issues/2021-06-02/comment_form_redirect-2559833-87.patch",
                 "Enter drupal/core patch #2630732 description here":
@@ -220,35 +220,29 @@
                 "Enter drupal/core patch #2893407 description here":
                 "https://www.drupal.org/files/issues/2021-06-07/2893407-47.patch",
                 "Enter drupal/core patch #2907413 description here":
-                "https://www.drupal.org/files/issues/2021-11-19/D93x-2907413-23.patch",
+                "https://www.drupal.org/files/issues/2022-07-20/2907413-28.patch",
                 "2921627 - WCAG required markers on forms":
-                "https://www.drupal.org/files/issues/2021-10-13/2921627-71.patch",
+                "https://www.drupal.org/files/issues/2022-03-11/2921627-75.patch",
                 "Enter drupal/core patch #2938129 description here":
                 "https://www.drupal.org/files/issues/2019-01-18/2938129-pagetitle-11.patch",
                 "Enter drupal/core patch #3017710 description here":
                 "https://www.drupal.org/files/issues/2018-12-05/3017710-20.patch",
+                "3016131 - Improved exception message developer experience":
+                "https://www.drupal.org/files/issues/2020-05-26/drupal-3016131-23-useless-exception.patch",
                 "3150294 - New translations for moderated nodes are not created in the initial workflow state":
-                "https://www.drupal.org/files/issues/2022-01-05/3150294-95.patch",
-                "Enter drupal/core patch #3164210 description here":
-                "https://www.drupal.org/files/issues/2021-05-17/3164210-11.patch",
+                "https://www.drupal.org/files/issues/2022-05-11/3150294-109.patch",
                 "3177182 - Book title in breadcrumb not translated":
                 "https://www.drupal.org/files/issues/2020-10-20/book-breadcrumb_title_xlate-3177182-3.patch",
                 "Enter drupal/core patch #3173808 description here":
                 "https://www.drupal.org/files/issues/2021-01-31/3173808-9-Make-book-child-content-type-configura.patch",
                 "Enter drupal/core patch #2546212 description here":
                 "https://www.drupal.org/files/issues/2020-11-07/2546212-158.patch",
-                "Enter drupal/core patch #3184667 description here":
-                "https://www.drupal.org/files/issues/2021-08-20/3184667-38.patch",
                 "Enter drupal/core patch #3207813 description here":
                 "https://www.drupal.org/files/issues/2021-04-08/3207813-2.patch",
                 "Enter drupal/core patch #3236799 description here":
                 "https://www.drupal.org/files/issues/2021-12-22/drupal-core-9.2.x-li-role-separator-tag-linkGenerator-3236799-11.patch",
-                "2632132 - Fix seven install":
-                "https://www.drupal.org/files/issues/2019-10-11/Move_Seven_block_config_into_the_Seven_theme-2632132-42.patch",
                 "3107212 - allow translation of views field empty text":
-                "https://www.drupal.org/files/issues/2022-03-09/d9-3-x--3107212-13.patch",
-                "3268983 - FilterHtml throws Unsupported operand types":
-                "https://www.drupal.org/files/issues/2022-07-12/core-3268983-43-10.x.patch"
+                "https://www.drupal.org/files/issues/2022-03-09/d9-4-x--3107212-13.patch"
             },
             "drupal/ctools": {
                 "Enter drupal/ctools patch #2667652 description here":

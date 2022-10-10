@@ -2,7 +2,7 @@ name: build
 on:
   push:
     branches:
-      - 4.3.x
+      - 4.4.x
 
 # Environment variables available to all jobs and steps in this workflow
 env:
@@ -16,18 +16,18 @@ jobs:
 
     - name: Setup dependencies
       run: |
-        git clone --branch 9.3.x https://github.com/drupalwxt/site-wxt.git
+        git clone --branch 9.4.x https://github.com/drupalwxt/site-wxt.git
         cd site-wxt
         rm composer.lock
 
     - uses: statcan/actions/composer@master
       with:
-        args: require drupalwxt/wxt:4.3.x-dev#${{ github.sha }} --working-dir=./site-wxt
+        args: require drupalwxt/wxt:4.4.x-dev#${{ github.sha }} --working-dir=./site-wxt
 
     - name: Build out the Drupal infrastructure
       run: |
         cd site-wxt
-        git clone --branch 9.3.x https://github.com/drupalwxt/docker-scaffold.git docker
+        git clone --branch 9.4.x https://github.com/drupalwxt/docker-scaffold.git docker
         make build
         docker-compose -f docker-compose-ci.yml up -d
         docker ps -a
