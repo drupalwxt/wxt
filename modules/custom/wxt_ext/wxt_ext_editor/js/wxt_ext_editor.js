@@ -12,6 +12,10 @@
     beforeInit: function (editor) {
       CKEDITOR.dtd.$removeEmpty.i = false;
       CKEDITOR.dtd.$removeEmpty.span = false;
+
+      CKEDITOR.config.coreStyles_italic = {
+        element: 'i'
+      };
     },
 
   });
