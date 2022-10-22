@@ -331,6 +331,10 @@
             "drupal/webform": {
                 "Enter drupal/webform patch #3205860 description here":
                 "https://www.drupal.org/files/issues/2021-03-26/webform_clientside_validation-3205860-2.patch"
+            },
+            "drupal/fontawesome": {
+                "3071758 - Fix multiple icons issue":
+                "https://git.drupalcode.org/project/fontawesome/-/merge_requests/4.diff"
             }
         }
     },
