@@ -1,6 +1,15 @@
-## v4.3.5 (In Development)
+## v4.4.0 (In Development)
 
-TBD
+- Updates for Drupal Core
+  -  Patch (bugfix) release of Drupal Core to `v9.4.8`
+- Updates for WxT
+  - Update to D9 core 9.4.x [#3284468](https://www.drupal.org/node/3284468)
+  - Remove Lightning from composer required for upgrade path in v9.3.x branch
+  - Can't add multiple fontawesome icons in CKEditor [#3316393](https://www.drupal.org/node/3316393)
+  - Fontawesome icons not working with Limit Allowed HTML [#3315230](https://www.drupal.org/node/3315230)
+  - Text formats using non-ckeditor editors give error [#3314829](https://www.drupal.org/node/3314829)
+- Updates for WxT Library
+  - DateTimeBlock class $time can sometimes not be an integer [#3316405](https://www.drupal.org/node/3316405)
 
 Upgrade path:
 
@@ -19,7 +28,7 @@ Upgrade path:
 
 **Note(s)**:
 
-To Be Determined.
+Lightning has been removed from composer required for upgrade path in v9.3.x branch.
 
 ## v4.3.4
 
