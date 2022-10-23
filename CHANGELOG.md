@@ -8,6 +8,7 @@
   - Can't add multiple fontawesome icons in CKEditor [#3316393](https://www.drupal.org/node/3316393)
   - Fontawesome icons not working with Limit Allowed HTML [#3315230](https://www.drupal.org/node/3315230)
   - Text formats using non-ckeditor editors give error [#3314829](https://www.drupal.org/node/3314829)
+  - Layout Builder and Ajax Submit Error [#3317048](https://www.drupal.org/node/3317048)
 - Updates for WxT Library
   - DateTimeBlock class $time can sometimes not be an integer [#3316405](https://www.drupal.org/node/3316405)
 
