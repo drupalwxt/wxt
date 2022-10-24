@@ -1,0 +1,14 @@
+name: 'WxT Extend Carousel'
+description: 'Provides a custom block type for displaying a carousel'
+type: module
+core_version_requirement: '^8.8 || ^9'
+package: WxT
+dependencies:
+  - 'block_content:block_content'
+  - 'content_translation:content_translation'
+  - 'entity_reference_revisions:entity_reference_revisions'
+  - 'link:link'
+  - 'media:media'
+  - 'media_library:media_library'
+  - 'options:options'
+  - 'paragraphs:paragraphs'

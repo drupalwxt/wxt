@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.carousel
+    - field.storage.block_content.field_transition_type
+  module:
+    - options
+id: block_content.carousel.field_transition_type
+field_name: field_transition_type
+entity_type: block_content
+bundle: carousel
+label: 'Transition type'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: fade
+default_value_callback: ''
+settings: {  }
+field_type: list_string

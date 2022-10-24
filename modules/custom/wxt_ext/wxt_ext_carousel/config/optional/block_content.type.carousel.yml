@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: carousel
+label: WET Carousel
+revision: 0
+description: 'A custom block for displaying images in a WET carousel with links.'
