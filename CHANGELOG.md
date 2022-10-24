@@ -10,6 +10,7 @@
   - Text formats using non-ckeditor editors give error [#3314829](https://www.drupal.org/node/3314829)
   - Layout Builder and Ajax Submit Error [#3317048](https://www.drupal.org/node/3317048)
   - Update of some contributed modules (admin_toolbar, diff, entityqueue, search_api, token_filter, ...)
+  - Custom block type for WET Carousel [#3313685](https://www.drupal.org/node/3313685)
 - Updates for WxT Library
   - DateTimeBlock class $time can sometimes not be an integer [#3316405](https://www.drupal.org/node/3316405)
   - Support horizontal main menu in GCWeb [#3310969](https://www.drupal.org/node/3310969)
