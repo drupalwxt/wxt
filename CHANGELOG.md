@@ -9,8 +9,14 @@
   - Fontawesome icons not working with Limit Allowed HTML [#3315230](https://www.drupal.org/node/3315230)
   - Text formats using non-ckeditor editors give error [#3314829](https://www.drupal.org/node/3314829)
   - Layout Builder and Ajax Submit Error [#3317048](https://www.drupal.org/node/3317048)
+  - Update of some contributed modules (admin_toolbar, diff, entityqueue, search_api, token_filter, ...)
 - Updates for WxT Library
   - DateTimeBlock class $time can sometimes not be an integer [#3316405](https://www.drupal.org/node/3316405)
+  - Support horizontal main menu in GCWeb [#3310969](https://www.drupal.org/node/3310969)
+- Updates for WxT Bootstrap
+  - Canada.ca flyout menu doesn't work (missing french menu) [#3236799](https://www.drupal.org/node/3236799)
+  - Update starterkit readme file [#3310485](https://www.drupal.org/node/3310485)
+  - Support horizontal main menu in GCWeb [#3310969](https://www.drupal.org/node/3310969)
 
 Upgrade path:
 
