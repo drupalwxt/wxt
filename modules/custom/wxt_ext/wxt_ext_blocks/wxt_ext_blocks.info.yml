@@ -4,6 +4,7 @@ type: module
 core_version_requirement: '^8.8 || ^9'
 package: WxT
 dependencies:
+  - 'block_content_permissions:block_content_permissions'
   - 'content_moderation:content_moderation'
   - 'wxt_core:wxt_core'
   - 'wxt_translation:wxt_translation'
