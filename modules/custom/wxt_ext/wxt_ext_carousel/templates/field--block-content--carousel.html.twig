@@ -53,14 +53,18 @@
       {% else %}
         <div role="tabpanel" id="panel{{ loop.index }}" class="out {{ transition_type }}" aria-hidden="true" aria-expanded="false">
       {% endif %}
-        <a href="{{ item.href }}">
+        {% if item.href %}
+          <a href="{{ item.href }}">
+        {% endif %}
           <figure>
             <img src="{{ item.image_url }}" />
             <figcaption>
               <p>{{ item.link_text }}</p>
             </figcaption>
           </figure>
-        </a>
+        {% if item.href %}
+          </a>
+        {% endif %}
       </div>
     {% endfor %}
   </div>

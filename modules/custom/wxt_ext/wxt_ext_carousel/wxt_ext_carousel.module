@@ -40,7 +40,11 @@ function wxt_ext_carousel_preprocess_field(&$variables) {
       // Get link href and text from paragraph.
       $href = $paragraph->get('field_link')->first()->getUrl();
       $link_text = $paragraph->get('field_link')->first()->getValue()['title'];
-      $variables['items'][$key]['href'] = $href;
+
+      if (!empty($href->toString())) {
+        $variables['items'][$key]['href'] = $href;
+      }
+
       $variables['items'][$key]['link_text'] = $link_text;
     }
 
