@@ -2,7 +2,7 @@
 
 namespace Drupal\wxt_ext_config\Commands;
 
-use Drush\Drupal\Commands\config\ConfigExportCommands;
+use Drush\Commands\DrushCommands;
 use Drupal\Core\Config\StorageComparer;
 use Drupal\Core\Config\FileStorage;
 use Drush\Log\LogLevel;
@@ -13,7 +13,14 @@ use Drupal\Core\Site\Settings;
  *
  * @package Drupal\wxt_ext_config\Commands
  */
-class Wxtcex extends ConfigExportCommands {
+class Wxtcex extends DrushCommands {
+
+  /**
+   * The standard config export command.
+   *
+   * @var \Drush\Drupal\Commands\config\ConfigExportCommands
+   */
+  protected $configExportCommands;
 
   /**
    * Runs Drush "config-export" command then tries to update existing .yml.
@@ -33,7 +40,7 @@ class Wxtcex extends ConfigExportCommands {
     }
 
     // Initiate the normal export routines.
-    $result = parent::export(NULL, ['destination' => $destination_dir]);
+    $result = $this->configExportCommands->export(NULL, ['destination' => $destination_dir]);
 
     // If config was exported, cycle through the config
     // CRUD operations and attempt to automatically update config.
