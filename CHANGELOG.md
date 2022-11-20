@@ -19,6 +19,7 @@
   - Move wxt_ext_layout config to optional [#3319806](https://www.drupal.org/node/3319806)
   - wxt_ext_media PHP 8.1 deprecation [#3322200](https://www.drupal.org/node/3322200)
   - Update the PageTitle block patch [#3322590](https://www.drupal.org/node/3322590)
+  - Update drupal/menu_block to 1.10.0 [#3304838](https://www.drupal.org/node/3304838)
 - Updates for WxT Library
   - DateTimeBlock class $time can sometimes not be an integer [#3316405](https://www.drupal.org/node/3316405)
   - Support horizontal main menu in GCWeb [#3310969](https://www.drupal.org/node/3310969)
