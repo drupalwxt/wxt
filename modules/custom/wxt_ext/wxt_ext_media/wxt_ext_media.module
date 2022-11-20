@@ -376,7 +376,7 @@ function wxt_ext_media_js_settings_alter(array &$settings) {
     $settings['ajax'] = [];
   }
 
-  $route_name = \Drupal::routeMatch()->getRouteName();
+  $route_name = \Drupal::routeMatch()->getRouteName() ?? '';
   if (strpos($route_name, 'entity_browser') === 0 && isset($settings['ajaxPageState']['libraries'])) {
     $libraries = explode(',', $settings['ajaxPageState']['libraries']);
     // If we pretend EB's iframe library has not been previously loaded, it will
