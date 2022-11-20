@@ -11,6 +11,14 @@
   - Layout Builder and Ajax Submit Error [#3317048](https://www.drupal.org/node/3317048)
   - Update of some contributed modules (admin_toolbar, diff, entityqueue, search_api, token_filter, ...)
   - Custom block type for WET Carousel [#3313685](https://www.drupal.org/node/3313685)
+  - TypeError when exporting config with wxt_ext_config [#3315821](https://www.drupal.org/node/3315821)
+  - Make webform content type translatable [#3320521](https://www.drupal.org/node/3320521)
+  - Custom block type for WET Carousel [#3313685](https://www.drupal.org/node/3313685)
+  - WxT Carousel support nolink [#3319559](https://www.drupal.org/node/3319559)
+  - Improve block_content management [#3318099](https://www.drupal.org/node/3318099)
+  - Move wxt_ext_layout config to optional [#3319806](https://www.drupal.org/node/3319806)
+  - wxt_ext_media PHP 8.1 deprecation [#3322200](https://www.drupal.org/node/3322200)
+  - Update the PageTitle block patch [#3322590](https://www.drupal.org/node/3322590)
 - Updates for WxT Library
   - DateTimeBlock class $time can sometimes not be an integer [#3316405](https://www.drupal.org/node/3316405)
   - Support horizontal main menu in GCWeb [#3310969](https://www.drupal.org/node/3310969)
@@ -18,6 +26,7 @@
   - Canada.ca flyout menu doesn't work (missing french menu) [#3236799](https://www.drupal.org/node/3236799)
   - Update starterkit readme file [#3310485](https://www.drupal.org/node/3310485)
   - Support horizontal main menu in GCWeb [#3310969](https://www.drupal.org/node/3310969)
+  - Horizontal main menu more links [#3321303](https://www.drupal.org/node/3321303)
 
 Upgrade path:
 
