@@ -5,4 +5,4 @@ package: WxT
 description: 'Image support for WxT Extend Media.'
 dependencies:
   - 'wxt_ext_media:wxt_ext_media'
-version: 4.4.0-dev
+version: 4.4.0

@@ -12,3 +12,4 @@ dependencies:
   - 'media_library:media_library'
   - 'options:options'
   - 'paragraphs:paragraphs'
+version: 4.4.0

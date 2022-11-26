@@ -1,4 +1,4 @@
-## v4.4.0 (In Development)
+## v4.4.0
 
 - Updates for Drupal Core
   -  Patch (bugfix) release of Drupal Core to `v9.4.8`
