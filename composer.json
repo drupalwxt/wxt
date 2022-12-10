@@ -289,10 +289,6 @@
                 "Detect and strip base URL from pasted URLs to increase matching hits":
                 "https://www.drupal.org/files/issues/2021-02-02/3078075-26.patch"
             },
-            "drupal/moderation_sidebar": {
-                "Discard Draft for a translation edits the base language node":
-                "https://www.drupal.org/files/issues/2021-02-12/3194841-3.patch"
-            },
             "drupal/page_manager": {
                 "Enter drupal/page_manager patch #2626090 description here":
                 "https://www.drupal.org/files/issues/page-manager-2626090-page-title-empty-5.patch",
