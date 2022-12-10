@@ -6,4 +6,4 @@ description: 'Image support for WxT Extend Media.'
 dependencies:
   - 'drupal:responsive_image'
   - 'wxt_ext_media_image:wxt_ext_media_image'
-version: 4.4.0
+version: 4.4.1-dev
