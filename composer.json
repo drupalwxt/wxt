@@ -22,7 +22,7 @@
         "drupal/ckeditor_codemirror": "2.4",
         "drupal/ckeditor_details": "^2.0.2",
         "drupal/config_rewrite": "1.4",
-        "drupal/core": "9.4.8",
+        "drupal/core": "9.4.9",
         "drupal/core_context": "1.0",
         "drupal/crop": "^2.0.0-rc1",
         "drupal/ctools": "^3.9",
@@ -192,8 +192,8 @@
             "drupal/core": {
                 "Enter drupal/core patch #850600 description here":
                 "https://www.drupal.org/files/issues/2022-06-08/D94x-postgresql_ssl_dsn-850600-23.patch",
-                "Enter drupal/core patch #1356276 description here":
-                "https://www.drupal.org/files/issues/2022-06-17/1356276-686.patch",
+                "1356276 is continued in 3266057 , this patch 78 is the latest and works better than patch 686 fixes a bug.":
+                "https://www.drupal.org/files/issues/2022-12-07/3266057-78.patch",
                 "Enter drupal/core patch #2559833 description here":
                 "https://www.drupal.org/files/issues/2021-06-02/comment_form_redirect-2559833-87.patch",
                 "Enter drupal/core patch #2630732 description here":
