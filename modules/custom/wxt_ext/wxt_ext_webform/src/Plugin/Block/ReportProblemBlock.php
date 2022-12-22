@@ -95,6 +95,13 @@ class ReportProblemBlock extends BlockBase implements ContainerFactoryPluginInte
   /**
    * {@inheritdoc}
    */
+  public function getCacheMaxAge() {
+    return 0;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public function blockForm($form, FormStateInterface $form_state) {
 
     $form['inline_webform'] = [
