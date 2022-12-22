@@ -285,6 +285,10 @@
                 "Enter drupal/group patch #2895988 description here":
                 "https://www.drupal.org/files/issues/2895988-4.patch"
             },
+            "drupal/layout_library": {
+                "3135836: Use SectionListTrait instead of SectionStorageTrait":
+                "https://git.drupalcode.org/project/layout_library/-/commit/8d4baef51495aaf5980e54755fc1186310d9edc4.diff"
+            },
             "drupal/linkit": {
                 "Detect and strip base URL from pasted URLs to increase matching hits":
                 "https://www.drupal.org/files/issues/2021-02-02/3078075-26.patch"
