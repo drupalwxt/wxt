@@ -2,6 +2,11 @@
 
 - Updates for Drupal Core
   -  Patch (bugfix) release of Drupal Core to `v9.4.9`
+- Updates for WxT
+  - Drupal 9.4.9 profiles updated patch [#3326139](https://www.drupal.org/node/3326139)
+  - Remove moderation_sidebar patch [#3326106](https://www.drupal.org/node/3326106)
+  - Layout Library beta3 causes WSOD on flush cache via UI [#3328389](https://www.drupal.org/node/3328389)
+  - Empty Menu Principale results in Javascript subElm exception [#3328480](https://www.drupal.org/node/3328480)
 
 Upgrade path:
 
