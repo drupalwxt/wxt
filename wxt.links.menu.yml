@@ -2,3 +2,7 @@ wxt.front_page:
   title: 'Home'
   route_name: '<front>'
   menu_name: main
+wxt.front_page_fr:
+  title: 'Accueil'
+  route_name: '<front>'
+  menu_name: main-fr
