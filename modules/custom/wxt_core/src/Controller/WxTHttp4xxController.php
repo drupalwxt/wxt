@@ -91,7 +91,7 @@ class WxTHttp4xxController extends ControllerBase implements ContainerInjectionI
 
     return [
       '#type' => 'container',
-      '#markup' => render($response),
+      '#markup' => \Drupal::service('renderer')->render($response),
       '#attributes' => [
         'class' => '404 error',
       ],

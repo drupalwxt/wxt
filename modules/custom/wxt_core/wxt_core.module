@@ -65,8 +65,8 @@ function wxt_core_library_info_alter(array &$libraries, $extension) {
     }
     else {
       // @todo Drop this code when Drupal 9.3 is the minimum supported version of core.
-      $url = file_create_url($url);
-      $url = file_url_transform_relative($url);
+      $url = \Drupal::service('file_url_generator')->generateAbsoluteString($url);
+      $url = \Drupal::service('file_url_generator')->transformRelative($url);
     }
 
     $libraries['global-styling']['css']['component'][$url] = [];

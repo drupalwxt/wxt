@@ -33,7 +33,7 @@ class WxTTest extends BrowserTestBase {
     // Verify that logged in user can access the logout link.
     $this->drupalGet('user');
 
-    $this->assertLinkByHref('/user/logout');
+    $this->assertSession()->linkByHrefExists('/user/logout');
   }
 
 }

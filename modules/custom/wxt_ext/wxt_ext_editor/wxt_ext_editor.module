@@ -14,7 +14,7 @@ function wxt_ext_editor_editor_js_settings_alter(array &$settings) {
   foreach ($settings['editor']['formats'] as &$format) {
     // Add a small ckeditor faux plugin.
     if ($format['editor'] == 'ckeditor') {
-      $format['editorSettings']['drupalExternalPlugins']['wxt_ext_editor'] = base_path() . drupal_get_path('module', 'wxt_ext_editor') . '/js/wxt_ext_editor.js';
+      $format['editorSettings']['drupalExternalPlugins']['wxt_ext_editor'] = base_path() . \Drupal::service('extension.list.module')->getPath('wxt_ext_editor') . '/js/wxt_ext_editor.js';
       $format['editorSettings']['extraPlugins'] .= ',wxt_ext_editor';
     }
   }

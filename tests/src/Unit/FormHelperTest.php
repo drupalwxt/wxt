@@ -2,6 +2,7 @@
 
 namespace Drupal\Tests\wxt\Unit;
 
+use Prophecy\PhpUnit\ProphecyTrait;
 use Drupal\Core\Render\ElementInfoManagerInterface;
 use Drupal\wxt\FormHelper;
 use Drupal\Tests\UnitTestCase;
@@ -13,6 +14,7 @@ use Drupal\Tests\UnitTestCase;
  */
 class FormHelperTest extends UnitTestCase {
 
+  use ProphecyTrait;
   /**
    * Leveraged from code provided by Acquia for the Lightning distribution.
    *

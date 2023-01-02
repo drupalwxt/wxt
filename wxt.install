@@ -28,7 +28,7 @@ function wxt_install() {
 function _wxt_setup_branding() {
   // Set the path to the logo, favicon and README file based on install
   // directory.
-  $wxt_path = drupal_get_path('profile', 'wxt');
+  $wxt_path = \Drupal::service('extension.list.profile')->getPath('wxt');
   \Drupal::configFactory()
     ->getEditable('system.theme.global')
     ->set('logo', [

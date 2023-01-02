@@ -55,7 +55,7 @@ class WETAlertPlugin extends PluginBase implements CKEditorPluginInterface, CKEd
     return [
       'alert' => [
         'label' => $this->t('Add alert'),
-        'image' => drupal_get_path('module', 'wxt_ext_editor') . '/js/plugins/wet_alert/icons/alert.png',
+        'image' => \Drupal::service('extension.list.module')->getPath('wxt_ext_editor') . '/js/plugins/wet_alert/icons/alert.png',
       ],
     ];
   }
@@ -64,7 +64,7 @@ class WETAlertPlugin extends PluginBase implements CKEditorPluginInterface, CKEd
    * {@inheritdoc}
    */
   public function getFile() {
-    return drupal_get_path('module', 'wxt_ext_editor') . '/js/plugins/wet_alert/plugin.js';
+    return \Drupal::service('extension.list.module')->getPath('wxt_ext_editor') . '/js/plugins/wet_alert/plugin.js';
   }
 
 }

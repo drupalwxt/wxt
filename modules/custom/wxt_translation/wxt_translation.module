@@ -67,7 +67,7 @@ function wxt_translation_update_config_translation() {
   batch_set($batch);
   // Set a batch to update configuration as well.
   if ($batch = locale_config_batch_update_components($options, $langcodes)) {
-    $batch['file'] = drupal_get_path('module', 'wxt_translation') . '/wxt_translation.batch.inc';
+    $batch['file'] = \Drupal::service('extension.list.module')->getPath('wxt_translation') . '/wxt_translation.batch.inc';
     batch_set($batch);
   }
 }
@@ -85,7 +85,7 @@ function wxt_translation_update_config_translation() {
  */
 function wxt_translation_import_translations($type, $name) {
   // Attempt to pull module path.
-  $path = drupal_get_path($type, $name);
+  $path = \Drupal::service('extension.path.resolver')->getPath($type, $name);
   if (!$path) {
     return FALSE;
   }

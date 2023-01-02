@@ -2,6 +2,7 @@
 
 namespace Drupal\wxt_ext_breadcrumb\Breadcrumb;
 
+use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\Core\Breadcrumb\Breadcrumb;
 use Drupal\Core\Breadcrumb\BreadcrumbBuilderInterface;
 use Drupal\Core\Config\ConfigFactoryInterface;
@@ -23,7 +24,7 @@ use Drupal\Core\Lock\LockBackendInterface;
  */
 class MainBreadcrumbBuilder implements BreadcrumbBuilderInterface {
 
-  use \Drupal\Core\StringTranslation\StringTranslationTrait;
+  use StringTranslationTrait;
 
   /**
    * The configuration object generator.

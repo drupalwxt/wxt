@@ -2,11 +2,11 @@
 
 namespace Drupal\wxt_core\EventSubscriber;
 
+use Symfony\Component\HttpKernel\Event\ExceptionEvent;
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Routing\AdminContext;
 use Drupal\Core\Session\AccountProxyInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
-use Symfony\Component\HttpKernel\Event\GetResponseForExceptionEvent;
 use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\HttpKernel\KernelEvents;
@@ -56,16 +56,16 @@ class WxT4032404EventSubscriber implements EventSubscriberInterface {
   /**
    * Set the properly exception for event.
    *
-   * @param \Symfony\Component\HttpKernel\Event\GetResponseForExceptionEvent $event
+   * @param \Symfony\Component\HttpKernel\Event\ExceptionEvent $event
    *   The response for exception event.
    */
-  public function onAccessDeniedException(GetResponseForExceptionEvent $event) {
-    if ($event->getException() instanceof AccessDeniedHttpException) {
+  public function onAccessDeniedException(ExceptionEvent $event) {
+    if ($event->getThrowable() instanceof AccessDeniedHttpException) {
       $admin_only = $this->config->get('admin_only');
       $is_admin = $this->adminContext->isAdminRoute();
 
       if ((!$admin_only || $is_admin) && !$this->currentUser->hasPermission('access 403 page')) {
-        $event->setException(new NotFoundHttpException());
+        $event->setThrowable(new NotFoundHttpException());
       }
     }
   }

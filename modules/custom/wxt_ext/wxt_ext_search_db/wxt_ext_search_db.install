@@ -18,7 +18,7 @@ function wxt_ext_search_db_requirements($phase) {
     // itself, the class autoloader will not be able to find the
     // \Drupal\search_api\IndexListBuilder class on its own. Load it manually.
     if (!class_exists(IndexListBuilder::class)) {
-      $search_api_path = drupal_get_path('module', 'search_api');
+      $search_api_path = \Drupal::service('extension.list.module')->getPath('search_api');
       require_once $search_api_path . '/src/IndexListBuilder.php';
     }
 

@@ -2,9 +2,9 @@
 
 namespace Drupal\wxt_admin\EventSubscriber;
 
+use Symfony\Component\HttpKernel\Event\RequestEvent;
 use Drupal\Core\Routing\RouteBuilderInterface;
 use Symfony\Component\HttpKernel\KernelEvents;
-use Symfony\Component\HttpKernel\Event\GetResponseEvent;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Drupal\Core\File\FileSystemInterface;
 
@@ -53,10 +53,10 @@ class MenuRouterRebuildSubscriber implements EventSubscriberInterface {
   /**
    * Rebuilds the menu router if the rebuild.dat file is found.
    *
-   * @param \Symfony\Component\HttpKernel\Event\GetResponseEvent $event
+   * @param \Symfony\Component\HttpKernel\Event\RequestEvent $event
    *   The Event to process.
    */
-  public function onKernelRequestMenuRouterRebuild(GetResponseEvent $event) {
+  public function onKernelRequestMenuRouterRebuild(RequestEvent $event) {
     if (file_exists("public://rebuild.dat")) {
       $site_path = preg_replace('/^sites\//', '', $this->sitePath);
       if (!file_exists('public://.drushrc') && file_exists('public://') && is_writable('public://') && file_put_contents('public:///.drushrc', "<?php\n\$options['l'] = 'http://${site_path}';")) {

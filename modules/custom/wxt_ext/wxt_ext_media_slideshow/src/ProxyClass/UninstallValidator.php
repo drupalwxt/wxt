@@ -7,15 +7,19 @@
 
 namespace Drupal\wxt_ext_media_slideshow\ProxyClass {
 
+    use Drupal\Core\Extension\ModuleUninstallValidatorInterface;
+    use Drupal\Core\DependencyInjection\DependencySerializationTrait;
+    use Symfony\Component\DependencyInjection\ContainerInterface;
+    use Drupal\Core\StringTranslation\TranslationInterface;
     /**
      * Provides a proxy class for \Drupal\wxt_ext_media_slideshow\UninstallValidator.
      *
      * @see \Drupal\Component\ProxyBuilder
      */
-    class UninstallValidator implements \Drupal\Core\Extension\ModuleUninstallValidatorInterface
+    class UninstallValidator implements ModuleUninstallValidatorInterface
     {
 
-        use \Drupal\Core\DependencyInjection\DependencySerializationTrait;
+        use DependencySerializationTrait;
 
         /**
          * The id of the original proxied service.
@@ -46,7 +50,7 @@ namespace Drupal\wxt_ext_media_slideshow\ProxyClass {
          * @param string $drupal_proxy_original_service_id
          *   The service ID of the original service.
          */
-        public function __construct(\Symfony\Component\DependencyInjection\ContainerInterface $container, $drupal_proxy_original_service_id)
+        public function __construct(ContainerInterface $container, $drupal_proxy_original_service_id)
         {
             $this->container = $container;
             $this->drupalProxyOriginalServiceId = $drupal_proxy_original_service_id;
@@ -78,7 +82,7 @@ namespace Drupal\wxt_ext_media_slideshow\ProxyClass {
         /**
          * {@inheritdoc}
          */
-        public function setStringTranslation(\Drupal\Core\StringTranslation\TranslationInterface $translation)
+        public function setStringTranslation(TranslationInterface $translation)
         {
             return $this->lazyLoadItself()->setStringTranslation($translation);
         }

@@ -30,7 +30,7 @@ class GetPath extends ProcessPluginBase {
    * Custom function for drupal_get_path().
    */
   protected function getModulePath($value) {
-    return drupal_get_path('module', 'wxt_ext_migration') . '/data/images/' . $value;
+    return \Drupal::service('extension.list.module')->getPath('wxt_ext_migration') . '/data/images/' . $value;
   }
 
 }

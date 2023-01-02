@@ -55,7 +55,7 @@ class WETPanelPlugin extends PluginBase implements CKEditorPluginInterface, CKEd
     return [
       'panel' => [
         'label' => $this->t('Add panel'),
-        'image' => drupal_get_path('module', 'wxt_ext_editor') . '/js/plugins/wet_panel/icons/panel.png',
+        'image' => \Drupal::service('extension.list.module')->getPath('wxt_ext_editor') . '/js/plugins/wet_panel/icons/panel.png',
       ],
     ];
   }
@@ -64,7 +64,7 @@ class WETPanelPlugin extends PluginBase implements CKEditorPluginInterface, CKEd
    * {@inheritdoc}
    */
   public function getFile() {
-    return drupal_get_path('module', 'wxt_ext_editor') . '/js/plugins/wet_panel/plugin.js';
+    return \Drupal::service('extension.list.module')->getPath('wxt_ext_editor') . '/js/plugins/wet_panel/plugin.js';
   }
 
 }
