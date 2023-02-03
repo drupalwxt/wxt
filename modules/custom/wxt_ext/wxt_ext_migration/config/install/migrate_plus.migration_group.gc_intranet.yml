@@ -2,6 +2,10 @@ id: gc_intranet
 label: GC Intranet Migrate
 description: Provides default content and related configuration for Drupal WxT.
 source_type: Embedded data
+dependencies:
+  enforced:
+    module:
+      - wxt_ext_migration
 shared_configuration:
   source:
     key: default

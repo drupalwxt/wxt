@@ -3,6 +3,10 @@ label: Embedded data feed of content
 migration_group: wxt_translation
 migration_tags:
   - Core
+dependencies:
+  enforced:
+    module:
+      - wxt_ext_migration
 source:
   plugin: custom_embedded_data
   translations: true

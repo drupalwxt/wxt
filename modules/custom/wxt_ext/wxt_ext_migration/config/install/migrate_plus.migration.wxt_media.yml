@@ -3,6 +3,10 @@ label: Embedded data feed of media associated metadata
 migration_group: wxt
 migration_tags:
   - Core
+dependencies:
+  enforced:
+    module:
+      - wxt_ext_migration
 source:
   plugin: embedded_data
   # Enforce default language to english
