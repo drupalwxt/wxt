@@ -89,9 +89,12 @@ class WxTHttp4xxController extends ControllerBase implements ContainerInjectionI
       $response = $this->blockViewBuilder->view(reset($block_id));
     }
 
+    // Set up response markup in render array.
+    $response_array = [ '#markup' => $response ];
+
     return [
       '#type' => 'container',
-      '#markup' => \Drupal::service('renderer')->render($response),
+      '#markup' => \Drupal::service('renderer')->render($response_array),
       '#attributes' => [
         'class' => '404 error',
       ],
