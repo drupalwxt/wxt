@@ -1,6 +1,10 @@
 id: wxt_node_blog_post
 label: Embedded data feed of content
 migration_group: wxt
+dependencies:
+  enforced:
+    module:
+      - wxt_ext_migration
 source:
   plugin: embedded_data
   data_rows:

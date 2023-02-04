@@ -3,6 +3,10 @@ label: Embedded data feed of menu link content
 migration_group: gc_intranet_translation
 migration_tags:
   - Menu
+dependencies:
+  enforced:
+    module:
+      - wxt_ext_migration
 source:
   plugin: embedded_data
   translations: true

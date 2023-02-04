@@ -311,3 +311,4 @@ dependencies:
   enforced:
     module:
       - wxt_ext_layout
+      - wxt_ext_migration
