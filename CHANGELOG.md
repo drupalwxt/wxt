@@ -40,7 +40,10 @@ Upgrade path:
 
 **Note(s)**:
 
-TBD
+The Government of Canada's design team has mandated changes to the common footer blocks and menu structures which require some updates be made:
+
+- [Governance details](https://design.canada.ca/common-design-patterns/site-footer.html)
+- [Code Changes](https://wet-boew.github.io/GCWeb/sites/footers/footers-en.html)
 
 ## v4.4.0
 
