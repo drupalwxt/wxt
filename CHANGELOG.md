@@ -1,7 +1,9 @@
 ## v4.4.1 (In Development)
 
+- Security Updates for Drupal Core (v9.4.10)
+  - [SA-core-2022-016](https://www.drupal.org/sa-core-2022-016)
 - Updates for Drupal Core
-  -  Patch (bugfix) release of Drupal Core to `v9.4.9`
+  -  Patch (bugfix) release of Drupal Core to `v9.4.11`
 - Updates for WxT
   - Drupal 9.4.9 profiles updated patch [#3326139](https://www.drupal.org/node/3326139)
   - Remove moderation_sidebar patch [#3326106](https://www.drupal.org/node/3326106)
