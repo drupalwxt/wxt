@@ -9,6 +9,18 @@
   - Remove moderation_sidebar patch [#3326106](https://www.drupal.org/node/3326106)
   - Layout Library beta3 causes WSOD on flush cache via UI [#3328389](https://www.drupal.org/node/3328389)
   - Empty Menu Principale results in Javascript subElm exception [#3328480](https://www.drupal.org/node/3328480)
+  - Layout library patch no longer applies [#3338961](https://www.drupal.org/node/3338961)
+  - Layout library patch no longer applies [#3338961](https://www.drupal.org/node/3338961)
+  - 404 error pages not rendering [#3337399](https://www.drupal.org/node/3337399)
+  - Update GCWeb footer structure with new global footer design [#3335298](https://www.drupal.org/node/3335298)
+  - Drupal Rector: Automated Drupal 10 compatibility fixes
+- Updates for WxT Library
+  - Undefined config can lead to errors [#3338077](https://www.drupal.org/node/3338077)
+  - Error with layout_builder pluginId [#3300528](https://www.drupal.org/node/3300528)
+  - Drupal Rector: Automated Drupal 10 compatibility fixes
+- Updated for WxT Bootstrap
+  - Update GCWeb footer structure with new global footer design [#3335298](https://www.drupal.org/node/3335298)
+  - Drupal Rector: Automated Drupal 10 compatibility fixes
 
 Upgrade path:
 

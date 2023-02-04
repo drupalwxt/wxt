@@ -90,7 +90,7 @@ class WxTHttp4xxController extends ControllerBase implements ContainerInjectionI
     }
 
     // Set up response markup in render array.
-    $response_array = [ '#markup' => $response ];
+    $response_array = ['#markup' => $response];
 
     return [
       '#type' => 'container',
