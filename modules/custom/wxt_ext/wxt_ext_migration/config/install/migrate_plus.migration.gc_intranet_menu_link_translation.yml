@@ -199,7 +199,7 @@ source:
     - mlid: 'ml_footer_1'
       link_title: 'Communiquez avec nous'
       description: 'Communiquez avec nous.'
-      menu_name: 'footer_fr'
+      menu_name: 'footer-fr'
       link_path: 'https://intranet.canada.ca/contact/contactgc-fra.aspx'
       options: []
       external: 1
@@ -208,7 +208,7 @@ source:
     - mlid: 'ml_footer_2'
       link_title: 'À propos des OutilsGC'
       description: 'À propos des OutilsGC section.'
-      menu_name: 'footer_fr'
+      menu_name: 'footer-fr'
       link_path: 'https://intranet.canada.ca/ict-oci/index-fra.asp'
       options: []
       external: 1
@@ -217,7 +217,7 @@ source:
     - mlid: 'ml_footer_3'
       link_title: 'Canada.ca'
       description: 'Canada.ca section.'
-      menu_name: 'footer_fr'
+      menu_name: 'footer-fr'
       link_path: 'https://www.canada.ca/fr.html'
       options: []
       external: 1
@@ -226,7 +226,7 @@ source:
     - mlid: 'ml_footer_4'
       link_title: 'Avis'
       description: 'Avis section.'
-      menu_name: 'footer_fr'
+      menu_name: 'footer-fr'
       link_path: 'https://intranet.canada.ca/terms-avis-fra.asp'
       options: []
       external: 1
