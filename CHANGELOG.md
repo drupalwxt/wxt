@@ -45,6 +45,21 @@ The Government of Canada's design team has mandated changes to the common footer
 - [Governance details](https://design.canada.ca/common-design-patterns/site-footer.html)
 - [Code Changes](https://wet-boew.github.io/GCWeb/sites/footers/footers-en.html)
 
+Please check and edit the following configuration items to ensure the id and plugin spec are using a hyphen instead of an underscore for the menu name.
+
+This will hopefully be fixed once and for all in Drupal 10.
+
+* https://www.drupal.org/project/drupal/issues/3304219
+
+```sh
+drush config:edit block.block.brand_fr
+drush config:edit system.menu.brand-fr
+drush config:edit system.menu.footer-fr
+drush config:edit system.menu.sidebar-fr
+```
+
+> **Note**: Some of the configuration items might be named with an underscore when using `config:edit` to find them.
+
 ## v4.4.0
 
 - Updates for Drupal Core

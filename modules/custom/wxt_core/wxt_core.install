@@ -9,6 +9,7 @@
 
 use Drupal\node\Entity\NodeType;
 use Drupal\workflows\Entity\Workflow;
+use Drupal\wxt_core\ConfigHelper as Config;
 
 /**
  * Implements hook_requirements().
@@ -604,4 +605,20 @@ function wxt_core_update_8433() {
     $view_mode->setThirdPartySetting('wxt_core', 'internal', TRUE);
     $storage->save($view_mode);
   }
+}
+
+/**
+ * Updates for the WxT 4.4.1 release.
+ */
+function wxt_core_update_8441() {
+  // Add the new configuration items for the new GCWeb global footer.
+  $config = Config::forTheme('wxt_bootstrap')->optional();
+  $config->getEntity('block', 'block.block.wxt_bootstrap_footer_contextual')->save();
+  $config->getEntity('block', 'block.block.wxt_bootstrap_footer_contextual_fr')->save();
+  $config->getEntity('block', 'block.block.wxt_bootstrap_footer_top')->save();
+  $config->getEntity('block', 'block.block.wxt_bootstrap_footer_top_fr')->save();
+  $config->getEntity('menu', 'system.menu.footer-contextual')->save();
+  $config->getEntity('menu', 'system.menu.footer-contextual-fr')->save();
+  $config->getEntity('menu', 'system.menu.footer-top')->save();
+  $config->getEntity('menu', 'system.menu.footer-top-fr')->save();
 }
