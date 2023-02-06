@@ -1,3 +1,26 @@
+## v4.4.2 (In Development)
+
+TBD
+
+Upgrade path:
+
+> **Important**: Please backup your database before running the upgrade process for this release.
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
+- Run WxT configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:wxt`
+
+**Note(s)**:
+
+TBD
+
 ## v4.4.1
 
 - Security Updates for Drupal Core (v9.4.10)

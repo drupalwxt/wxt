@@ -6,4 +6,4 @@ package: WxT
 dependencies:
   - 'dropzonejs:dropzonejs'
   - 'wxt_ext_media:wxt_ext_media'
-version: 4.4.1
+version: 4.4.2-dev
