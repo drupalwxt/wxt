@@ -7,11 +7,19 @@ use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
 use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Entity\EntityViewBuilderInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\Core\Render\RendererInterface;
 
 /**
  * Controller for default HTTP 4xx responses.
  */
 class WxTHttp4xxController extends ControllerBase implements ContainerInjectionInterface {
+
+  /**
+   * Drupal\Core\Render\RendererInterface definition.
+   *
+   * @var Drupal\Core\Render\RendererInterface
+   */
+  protected $renderer;
 
   /**
    * The block content entity storage handler.
@@ -41,10 +49,13 @@ class WxTHttp4xxController extends ControllerBase implements ContainerInjectionI
    *   The user storage.
    * @param \Drupal\Core\Entity\EntityViewBuilderInterface $block_view_builder
    *   The block view builder.
+   * @param Drupal\Core\Render\RendererInterface $renderer
+   *   The renderer.
    */
-  public function __construct(EntityStorageInterface $storage, EntityViewBuilderInterface $block_view_builder) {
+  public function __construct(EntityStorageInterface $storage, EntityViewBuilderInterface $block_view_builder, RendererInterface $renderer) {
     $this->blockContentStorage = $storage;
     $this->blockViewBuilder = $block_view_builder;
+    $this->renderer = $renderer;
   }
 
   /**
@@ -53,7 +64,8 @@ class WxTHttp4xxController extends ControllerBase implements ContainerInjectionI
   public static function create(ContainerInterface $container) {
     return new static(
       $container->get('entity_type.manager')->getStorage('block_content'),
-      $container->get('entity_type.manager')->getViewBuilder('block_content')
+      $container->get('entity_type.manager')->getViewBuilder('block_content'),
+      $container->get('renderer')
     );
   }
 
@@ -94,7 +106,7 @@ class WxTHttp4xxController extends ControllerBase implements ContainerInjectionI
 
     return [
       '#type' => 'container',
-      '#markup' => \Drupal::service('renderer')->render($response_array),
+      '#markup' => $this->renderer->render($response_array),
       '#attributes' => [
         'class' => '404 error',
       ],
