@@ -1,6 +1,10 @@
-## v4.4.2 (In Development)
+## v4.4.2 (HotFix)
 
-TBD
+This is a immediate hotfix due to an issue with an update hoook in wxt_core.
+
+- Updates for WxT
+  - Drush updatedb fails on 4.4.1 [#3340061](https://www.drupal.org/node/3340061)
+  - Use Dependency Injection (DI) in WxTHttp4xxController [#3339648](https://www.drupal.org/node/3339648)
 
 Upgrade path:
 
@@ -19,7 +23,7 @@ Upgrade path:
 
 **Note(s)**:
 
-TBD
+Please see the release notes in v4.4.1 since this is only a hotfix release.
 
 ## v4.4.1
 
