@@ -2,7 +2,7 @@ name: build
 on:
   push:
     branches:
-      - 4.4.x
+      - 4.5.x
 
 # Environment variables available to all jobs and steps in this workflow
 env:
@@ -22,7 +22,7 @@ jobs:
 
     - uses: statcan/actions/composer@master
       with:
-        args: require drupalwxt/wxt:4.4.x-dev#${{ github.sha }} --working-dir=./site-wxt
+        args: require drupalwxt/wxt:4.5.x-dev#${{ github.sha }} --working-dir=./site-wxt
 
     - name: Build out the Drupal infrastructure
       run: |
