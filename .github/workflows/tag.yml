@@ -54,7 +54,6 @@ jobs:
         export PATH=/home/runner/.composer/vendor/bin:$PATH
         ./tarball.sh ${{ env.GITHUB_REFERENCE }}
 
-
     - name: Create Release
       id: create_release
       uses: actions/create-release@v1
@@ -83,6 +82,14 @@ jobs:
         git clone --branch 9.5.x https://drupalwxt-svc:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/drupalwxt/wxt-project.git
         git clone --branch master https://drupalwxt-svc:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/drupalwxt/helm-drupal.git
         git clone --branch master https://drupalwxt-svc:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/drupalwxt/terraform-kubernetes-drupalwxt.git
+
+    - name: Update tags for site-wxt
+      uses: jacobtomlinson/gha-find-replace@master
+      with:
+        find: "\"drupalwxt/wxt\": \"[3-4]\\.[0-9]+\\.[0-9]+(-(beta|rc|dev)[0-9])?]?\""
+        replace: "\"drupalwxt/wxt\": \"${{ env.GITHUB_REFERENCE }}\""
+        exclude: ".git/**"
+        include: "site-wxt/**"
 
     - name: Update tags for wxt-project
       uses: jacobtomlinson/gha-find-replace@master
