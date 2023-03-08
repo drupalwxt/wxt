@@ -1,3 +1,24 @@
+## v4.5.0
+
+Upgrade path:
+
+> **Important**: Please backup your database before running the upgrade process for this release.
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
+- Run WxT configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:wxt`
+
+**Note(s)**:
+
+Please see the release notes in v4.4.1 since this is only a hotfix release.
+
 ## v4.4.2 (HotFix)
 
 This is a immediate hotfix due to an issue with an update hoook in wxt_core.
