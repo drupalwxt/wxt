@@ -10,6 +10,15 @@ env:
 
 jobs:
   build:
+    strategy:
+      fail-fast: false
+      matrix:
+        db:
+         - type: mysql
+           port: 3306
+         - type: pgsql
+           port: 5432
+
     runs-on: ubuntu-22.04
     steps:
     - uses: actions/checkout@master
@@ -26,6 +35,8 @@ jobs:
 
     - name: Build out the Drupal infrastructure
       run: |
+        export DB_TYPE=${{ matrix.db.type }}
+        export DB_PORT=${{ matrix.db.port }}
         cd site-wxt
         git clone --branch 9.5.x https://github.com/drupalwxt/docker-scaffold.git docker
         make build
@@ -35,6 +46,8 @@ jobs:
 
     - name: Run installation and tests
       run: |
+        export DB_TYPE=${{ matrix.db.type }}
+        export DB_PORT=${{ matrix.db.port }}
         cd site-wxt
         make drupal_install
         make drupal_migrate
