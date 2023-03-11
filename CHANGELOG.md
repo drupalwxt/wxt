@@ -1,4 +1,11 @@
-## v4.5.0
+## v4.5.0 (In Development)
+
+- Updates for Drupal Contrib
+  - bootstrap_layouts update to `5.3`
+  - core_context update to `1.1`
+  - linkit update to `6.0.0-beta4`
+  - page_manager to `4.0-rc2`
+  - panels to `4.7`
 
 Upgrade path:
 
