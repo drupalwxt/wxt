@@ -1,5 +1,7 @@
 ## v4.5.0 (In Development)
 
+- Updates for Drupal Core
+  -  Patch (bugfix) release of Drupal Core to `v9.5.4`
 - Updates for Drupal Contrib
   - bootstrap_layouts update to `5.3`
   - core_context update to `1.1`
@@ -29,7 +31,7 @@ Upgrade path:
 
 **Note(s)**:
 
-Please see the release notes in v4.4.1 since this is only a hotfix release.
+This is an upgrade from 9.4.x to 9.5.x however changes are minimal and is expected upgrades will be fairly smooth.
 
 ## v4.4.2 (HotFix)
 
