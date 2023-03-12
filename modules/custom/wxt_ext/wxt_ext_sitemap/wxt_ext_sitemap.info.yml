@@ -6,4 +6,4 @@ core_version_requirement: '^8.8.10 || ^9'
 dependencies:
   - 'simple_sitemap:simple_sitemap'
   - 'wxt_ext_page:wxt_ext_page'
-version: 4.5.0-dev
+version: 4.5.0
