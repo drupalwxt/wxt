@@ -361,7 +361,7 @@ function wxt_ext_media_media_type_insert(MediaTypeInterface $media_type) {
  * Implements hook_form_FORM_ID_alter().
  */
 function wxt_ext_media_form_entity_embed_dialog_alter(array &$form, FormStateInterface $form_state) {
-  list ($editor, $embed_button) = $form_state->getBuildInfo()['args'];
+  list (, $embed_button) = $form_state->getBuildInfo()['args'];
 
   /** @var \Drupal\embed\EmbedButtonInterface $embed_button */
   if ($embed_button->id() == 'media_browser') {

@@ -30,4 +30,3 @@ final class LibrariesDirectoryFileFinder extends CoreLibrariesDirectoryFileFinde
   }
 
 }
-
