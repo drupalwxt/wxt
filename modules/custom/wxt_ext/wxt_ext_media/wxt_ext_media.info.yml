@@ -6,7 +6,6 @@ package: WxT
 configure: wxt_ext_media.settings
 dependencies:
   - 'content_moderation:content_moderation'
-  - 'drupal:ckeditor'
   - 'drupal:image'
   - 'drupal:media_library'
   - 'drupal:user'

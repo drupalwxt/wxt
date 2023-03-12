@@ -6,6 +6,11 @@
   - linkit update to `6.0.0-beta4`
   - page_manager to `4.0-rc2`
   - panels to `4.7`
+- Updates for WxT
+  - WxT Media Upload Improvements (sync w/Lightning)
+  - WxT Media Bulk Upload Improvements (sync w/Lightning)
+- Updated for WxT Bootstrap
+  - Update Bootstrap theme to v3.27
 
 Upgrade path:
 

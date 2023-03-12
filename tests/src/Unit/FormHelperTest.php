@@ -15,6 +15,7 @@ use Drupal\Tests\UnitTestCase;
 class FormHelperTest extends UnitTestCase {
 
   use ProphecyTrait;
+
   /**
    * Leveraged from code provided by Acquia for the Lightning distribution.
    *
