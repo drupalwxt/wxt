@@ -31,6 +31,8 @@ jobs:
 
     - name: Build out the Drupal infrastructure
       run: |
+        export DB_TYPE=mysql
+        export DB_PORT=3306
         cd site-wxt
         git clone --branch 9.5.x https://github.com/drupalwxt/docker-scaffold.git docker
         make build
@@ -40,6 +42,8 @@ jobs:
 
     - name: Run installation and tests
       run: |
+        export DB_TYPE=mysql
+        export DB_PORT=3306
         cd site-wxt
         make drupal_install
         make drupal_migrate
