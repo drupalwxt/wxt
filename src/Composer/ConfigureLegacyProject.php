@@ -24,7 +24,7 @@ final class ConfigureLegacyProject {
     $target = new JsonFile($arguments[0] . '/composer.json');
     $project = $target->read();
 
-    $project['require']["drupalwxt/wxt"] = "4.5.x";
+    $project['require']["drupalwxt/wxt"] = "5.0.x";
     $project['require-dev'] = new \stdClass();
     $project['repositories'][] = [
       'type' => 'composer',

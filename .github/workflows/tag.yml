@@ -21,7 +21,7 @@ jobs:
       run: |
         git config --global user.email "development+drupalwxt@zacharyseguin.ca"
         git config --global user.name "drupalwxt-svc"
-        git clone --branch 9.5.x https://drupalwxt-svc:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/drupalwxt/site-wxt.git
+        git clone --branch 10.0.x https://drupalwxt-svc:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/drupalwxt/site-wxt.git
         cd site-wxt
         rm composer.lock
 
@@ -31,15 +31,19 @@ jobs:
 
     - name: Build out the Drupal infrastructure
       run: |
+        export DB_TYPE=mysql
+        export DB_PORT=3306
         cd site-wxt
-        git clone --branch 9.5.x https://github.com/drupalwxt/docker-scaffold.git docker
+        git clone --branch 10.0.x https://github.com/drupalwxt/docker-scaffold.git docker
         make build
-        docker-compose -f docker-compose-ci.yml up -d
+        docker compose -f docker-compose.ci.yml up -d
         docker ps -a
         sleep 10
 
     - name: Run installation and tests
       run: |
+        export DB_TYPE=mysql
+        export DB_PORT=3306
         cd site-wxt
         make drupal_install
         make drupal_migrate
@@ -78,15 +82,15 @@ jobs:
 
     - name: Checkout repos to update tags
       run: |
-        git clone --branch 9.5.x https://drupalwxt-svc:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/drupalwxt/site-wxt.git
-        git clone --branch 9.5.x https://drupalwxt-svc:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/drupalwxt/wxt-project.git
+        git clone --branch 10.0.x https://drupalwxt-svc:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/drupalwxt/site-wxt.git
+        git clone --branch 10.0.x https://drupalwxt-svc:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/drupalwxt/wxt-project.git
         git clone --branch master https://drupalwxt-svc:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/drupalwxt/helm-drupal.git
         git clone --branch master https://drupalwxt-svc:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/drupalwxt/terraform-kubernetes-drupalwxt.git
 
     - name: Update tags for site-wxt
       uses: jacobtomlinson/gha-find-replace@master
       with:
-        find: "\"drupalwxt/wxt\": \"[3-4]\\.[0-9]+\\.[0-9]+(-(beta|rc|dev)[0-9])?]?\""
+        find: "\"drupalwxt/wxt\": \"[3-5]\\.[0-9]+\\.[0-9|x]+-(beta|rc|dev)[0-9]?\""
         replace: "\"drupalwxt/wxt\": \"${{ env.GITHUB_REFERENCE }}\""
         exclude: ".git/**"
         include: "site-wxt/**"
@@ -94,7 +98,7 @@ jobs:
     - name: Update tags for wxt-project
       uses: jacobtomlinson/gha-find-replace@master
       with:
-        find: "\"drupalwxt/wxt\": \"[3-4]\\.[0-9]+\\.[0-9]+(-(beta|rc)[0-9])?]?\""
+        find: "\"drupalwxt/wxt\": \"[3-5]\\.[0-9]+\\.[0-9]+(-(beta|rc)[0-9])?\""
         replace: "\"drupalwxt/wxt\": \"${{ env.GITHUB_REFERENCE }}\""
         exclude: ".git/**"
         include: "wxt-project/**"
@@ -102,7 +106,7 @@ jobs:
     - name: Update tags for wxt-project
       uses: jacobtomlinson/gha-find-replace@master
       with:
-        find: "wxt-project:[3-4]\\.[0-9]+\\.[0-9]+(-(beta|rc)[0-9])?]?"
+        find: "wxt-project:[3-5]\\.[0-9]+\\.[0-9]+(-(beta|rc)[0-9])?"
         replace: "wxt-project:${{ env.GITHUB_REFERENCE }}"
         exclude: ".git/**"
         include: "wxt-project/**"
@@ -110,7 +114,7 @@ jobs:
     - name: Update tags for helm-drupal
       uses: jacobtomlinson/gha-find-replace@master
       with:
-        find: "appVersion: [3-4]\\.[0-9]+\\.[0-9]+(-(beta|rc)[0-9])?]?"
+        find: "appVersion: [3-5]\\.[0-9]+\\.[0-9]+(-(beta|rc)[0-9])?"
         replace: "appVersion: ${{ env.GITHUB_REFERENCE }}"
         exclude: ".git/**"
         include: "helm-drupal/**"
@@ -118,7 +122,7 @@ jobs:
     - name: Update tags for helm-drupal
       uses: jacobtomlinson/gha-find-replace@master
       with:
-        find: "tag: [3-4]\\.[0-9]+\\.[0-9]+(-(beta|rc)[0-9])?]?"
+        find: "tag: [3-5]\\.[0-9]+\\.[0-9]+(-(beta|rc)[0-9])?"
         replace: "tag: ${{ env.GITHUB_REFERENCE }}"
         exclude: ".git/**"
         include: "helm-drupal/**"
@@ -126,7 +130,7 @@ jobs:
     - name: Update tags for terraform-kubernetes-drupalwxt
       uses: jacobtomlinson/gha-find-replace@master
       with:
-        find: "tag: [3-4]\\.[0-9]+\\.[0-9]+(-(beta|rc)[0-9])?]?"
+        find: "tag: [3-5]\\.[0-9]+\\.[0-9]+(-(beta|rc)[0-9])?"
         replace: "tag: ${{ env.GITHUB_REFERENCE }}"
         exclude: ".git/**"
         include: "terraform-kubernetes-drupalwxt/**"
@@ -148,7 +152,7 @@ jobs:
         git add .
         git commit -m "feat(composer): Update version in the composer.json file ${{ env.GITHUB_REFERENCE }}" || true
         git tag ${{ env.GITHUB_REFERENCE }}
-        git push origin 9.5.x
+        git push origin 10.0.x
         git push origin ${{ env.GITHUB_REFERENCE }}
 
     - name: Push to wxt-project the latest tags
@@ -157,7 +161,7 @@ jobs:
         git add .
         git commit -m "Update to latest version of WxT ${{ env.GITHUB_REFERENCE }}" || true
         git tag ${{ env.GITHUB_REFERENCE }}
-        git push origin 9.5.x
+        git push origin 10.0.x
         git push origin ${{ env.GITHUB_REFERENCE }}
 
     - name: Push to helm-drupal the latest tags
@@ -182,9 +186,9 @@ jobs:
 
     # Container build and push to a Container registry
     - run: |
-        docker tag site-wxt_web:latest drupalwxt/site-wxt:${{ env.GITHUB_REFERENCE }}
-        docker tag site-wxt_nginx:latest drupalwxt/site-wxt:${{ env.GITHUB_REFERENCE }}-nginx
-        docker tag site-wxt_web:latest drupalwxt/site-wxt:latest
-        docker tag site-wxt_nginx:latest drupalwxt/site-wxt:latest-nginx
+        docker tag site-wxt-web:latest drupalwxt/site-wxt:${{ env.GITHUB_REFERENCE }}
+        docker tag site-wxt-nginx:latest drupalwxt/site-wxt:${{ env.GITHUB_REFERENCE }}-nginx
+        docker tag site-wxt-web:latest drupalwxt/site-wxt:latest
+        docker tag site-wxt-nginx:latest drupalwxt/site-wxt:latest-nginx
         docker push drupalwxt/site-wxt:${{ env.GITHUB_REFERENCE }}
         docker push drupalwxt/site-wxt:${{ env.GITHUB_REFERENCE }}-nginx

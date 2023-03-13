@@ -1,6 +1,6 @@
 {
     "name": "drupalwxt/wxt",
-    "description": "Project template for Drupal 9 sites built with the WxT distribution.",
+    "description": "Project template for Drupal 9 / 10 sites built with the WxT distribution.",
     "type": "drupal-profile",
     "license": "GPL-2.0+",
     "minimum-stability": "dev",
@@ -85,8 +85,8 @@
         "w8tcha/ckeditor-codemirror": "1.16"
     },
     "require-dev": {
-        "drupal/core-composer-scaffold": "^9",
-        "drupal/core-dev": "^9",
+        "drupal/core-composer-scaffold": "^10",
+        "drupal/core-dev": "^10",
         "drupal/drupal-extension": "^4.1.0",
         "drush/drush": ">=9.7",
         "drupal/console": "~1.9.0",
@@ -205,7 +205,7 @@
         },
         "drush": {
             "services": {
-                "drush.services.yml": "^9"
+                "drush.services.yml": "^10"
             }
         },
         "enable-patching": true,

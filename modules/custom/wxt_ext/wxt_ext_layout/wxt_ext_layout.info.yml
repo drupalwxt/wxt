@@ -1,7 +1,7 @@
 name: 'WxT Extend Layout'
 description: 'Provides custom and responsive panel layouts.'
 type: module
-core_version_requirement: '^8.8 || ^9'
+core_version_requirement: '^9 || ^10'
 package: WxT
 dependencies:
   - 'drupal:block'
@@ -15,4 +15,4 @@ dependencies:
   - 'layout_builder_st:layout_builder_st'
   - 'layout_builder_styles:layout_builder_styles'
   - 'page_manager_ui:page_manager_ui'
-version: 4.4.3-dev
+version: 5.0.0-dev

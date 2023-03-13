@@ -1,7 +1,7 @@
 name: 'WxT Extend Webform'
 description: 'Provides functionality for storing, retrieving, and tabulating webforms.'
 type: module
-core_version_requirement: '^8.8 || ^9'
+core_version_requirement: '^9 || ^10'
 package: WxT
 dependencies:
   - 'content_moderation:content_moderation'
@@ -10,4 +10,4 @@ dependencies:
   - 'webform_bootstrap:webform_bootstrap'
   - 'webform_node:webform_node'
   - 'webform_ui:webform_ui'
-version: 4.4.3-dev
+version: 5.0.0-dev

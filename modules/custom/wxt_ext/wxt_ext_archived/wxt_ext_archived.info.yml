@@ -1,8 +1,8 @@
 name: 'WxT Extend Archived'
 description: 'Adds an archived field and associated block.'
 type: module
-core_version_requirement: '^8.8 || ^9'
+core_version_requirement: '^9 || ^10'
 package: WxT
 dependencies:
   - 'wxt_ext_blocks:wxt_ext_blocks'
-version: 4.4.3-dev
+version: 5.0.0-dev

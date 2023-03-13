@@ -1,12 +1,11 @@
 name: 'WxT Extend Media'
 description: 'Add media entities.'
 type: module
-core_version_requirement: '^8.8 || ^9'
+core_version_requirement: '^9 || ^10'
 package: WxT
 configure: wxt_ext_media.settings
 dependencies:
   - 'content_moderation:content_moderation'
-  - 'drupal:ckeditor'
   - 'drupal:image'
   - 'drupal:media_library'
   - 'drupal:user'
@@ -14,4 +13,4 @@ dependencies:
   - 'inline_entity_form:inline_entity_form'
   - 'wxt_core:wxt_core'
   - 'wxt_translation:wxt_translation'
-version: 4.4.3-dev
+version: 5.0.0-dev

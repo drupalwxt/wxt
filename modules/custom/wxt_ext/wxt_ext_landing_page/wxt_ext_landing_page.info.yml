@@ -1,7 +1,7 @@
 name: 'WxT Extend Landing Page'
 description: 'Extends landing page which allows you to build free-form one-off landing pages.'
 type: module
-core_version_requirement: '^8.8 || ^9'
+core_version_requirement: '^9 || ^10'
 package: WxT
 dependencies:
   - 'drupal:node'
@@ -11,4 +11,4 @@ dependencies:
   - 'wxt_ext_layout:wxt_ext_layout'
   - 'wxt_ext_metatag:wxt_ext_metatag'
   - 'wxt_translation:wxt_translation'
-version: 4.4.3-dev
+version: 5.0.0-dev

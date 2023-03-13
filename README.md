@@ -93,7 +93,7 @@ Extended with code and lessons learned by the **[Acquia Team][acquia]** over at 
 
 [acquia]:                    https://acquia.com
 [blt]:                       https://github.com/acquia/blt
-[changelog]:                 https://github.com/drupalwxt/wxt/blob/4.5.x/CHANGELOG.md
+[changelog]:                 https://github.com/drupalwxt/wxt/blob/5.0.x/CHANGELOG.md
 [containers]:                https://hub.docker.com/r/drupalwxt/site-wxt
 [containers-scaffold]:       https://github.com/drupalwxt/docker-scaffold
 [contributors]:              https://github.com/drupalwxt/wxt/graphs/contributors
@@ -111,7 +111,7 @@ Extended with code and lessons learned by the **[Acquia Team][acquia]** over at 
 [issue-drupal]:              https://drupal.org/project/issues/wxt
 [github-helm-drupal]:        https://github.com/drupalwxt/helm-drupal
 [lightning]:                 https://github.com/acquia/lightning
-[readme]:                    https://github.com/drupalwxt/wxt/blob/4.5.x/README.md
+[readme]:                    https://github.com/drupalwxt/wxt/blob/5.0.x/README.md
 [spec]:                      https://www.canada.ca/en/treasury-board-secretariat/services/government-communications/canada-content-information-architecture-specification.html
 [spec-canada]:               https://wet-boew.github.io/GCWeb/index-en.html
 [standard_accessibility]:    https://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=23601

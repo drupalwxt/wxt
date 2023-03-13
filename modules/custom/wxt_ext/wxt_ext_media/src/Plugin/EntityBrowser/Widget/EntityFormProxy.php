@@ -308,4 +308,13 @@ abstract class EntityFormProxy extends WidgetBase {
     return $allowed_types ? AccessResult::allowed() : AccessResult::forbidden();
   }
 
+  /**
+   * {@inheritdoc}
+   */
+  public function calculateDependencies() {
+    $dependencies = parent::calculateDependencies();
+    $dependencies['module'][] = 'inline_entity_form';
+    return $dependencies;
+  }
+
 }

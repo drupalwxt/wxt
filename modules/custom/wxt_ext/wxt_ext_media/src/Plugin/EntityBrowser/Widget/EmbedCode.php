@@ -47,7 +47,7 @@ class EmbedCode extends EntityFormProxy {
    * {@inheritdoc}
    */
   protected function getCurrentValue(FormStateInterface $form_state) {
-    $value = parent::getCurrentValue($form_state);
+    $value = parent::getCurrentValue($form_state) ?: '';
     return trim($value);
   }
 

@@ -2,6 +2,7 @@
 
 namespace Drupal\wxt_ext_media\Element;
 
+use Drupal\Core\File\Event\FileUploadSanitizeNameEvent;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Render\Element\File as FileElement;
 use Drupal\file\Entity\File;
@@ -99,7 +100,13 @@ class Upload extends FileElement {
     if ($upload instanceof UploadedFile) {
       $destination = $file_system->realPath($element['#upload_location']);
 
-      $name = file_munge_filename($upload->getClientOriginalName(), NULL);
+      $event = new FileUploadSanitizeNameEvent($upload->getClientOriginalName(), '');
+      /** @var \Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher $event_dispatcher */
+      // phpcs:ignore
+      $event_dispatcher = \Drupal::service('event_dispatcher');
+      $event_dispatcher->dispatch($event);
+
+      $name = $event->getFilename();
       // Support both Drupal 8.7's FileSystemInterface API, and its earlier
       // antecedents. We need to call file_create_filename() in an obscure way
       // to prevent deprecation testing failures.

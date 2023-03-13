@@ -83,43 +83,46 @@ class BulkUploadForm extends FormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-    $extensions = $this->helper->getFileExtensions(TRUE);
     $bundles = $this->bundleInfo->getBundleInfo('media');
     $options = [];
+    $allow_all = $this->currentUser()->hasPermission('create media') || $this->currentUser()->hasPermission('administer media');
 
     foreach (array_keys($bundles) as $key) {
-      $options[$key] = $bundles[$key]['label'];
+      if ($allow_all || $this->currentUser()->hasPermission('create ' . $key . ' media')) {
+        $options[$key] = $bundles[$key]['label'];
+      }
     }
 
-    $form['dropzone'] = [
-      '#type' => 'dropzonejs',
-      '#dropzone_description' => $this->t('Drag files here to upload them'),
-      '#extensions' => implode(' ', $extensions),
-    ];
-    $form['select_extension'] = [
-      '#type' => 'select',
-      '#title' => $this
-        ->t('Select A File type'),
-      '#options' => $options,
-    ];
-    $form['continue'] = [
-      '#type' => 'submit',
-      '#value' => $this->t('Continue'),
-    ];
+    if (count($options) == 0) {
+      $this->messenger()->addError($this->t('You need access to be able to create at least one type of media.'));
+    }
+    else {
+      $extensions = $this->helper->getFileExtensions(TRUE, array_keys($options));
 
-    // Support both Drupal 8.7's API and its antecedents. We need to call
-    // file_upload_max_size() as a string in order to prevent deprecation
-    // testing failures.
-    $max_size = version_compare(\Drupal::VERSION, '8.7.0', '>=')
-      ? Environment::getUploadMaxSize()
-      : call_user_func('file_upload_max_size');
+      $form['dropzone'] = [
+        '#type' => 'dropzonejs',
+        '#dropzone_description' => $this->t('Drag files here to upload them'),
+        '#extensions' => implode(' ', $extensions),
+      ];
+      $form['select_extension'] = [
+        '#type' => 'select',
+        '#title' => $this
+          ->t('Select A File type'),
+        '#options' => $options,
+      ];
+      $form['continue'] = [
+        '#type' => 'submit',
+        '#value' => $this->t('Continue'),
+      ];
 
-    $variables = [
-      '@max_size' => static::bytesToString($max_size),
-      '@extensions' => Element::oxford($extensions, $this->t('and')),
-    ];
-    $form['dropzone']['#description'] = $this->t('You can upload as many files as you like. Each file can be up to @max_size in size. The following file extensions are accepted: @extensions', $variables);
+      $max_size = Environment::getUploadMaxSize();
 
+      $variables = [
+        '@max_size' => static::bytesToString($max_size),
+        '@extensions' => Element::oxford($extensions, $this->t('and')),
+      ];
+      $form['dropzone']['#description'] = $this->t('You can upload as many files as you like. Each file can be up to @max_size in size. The following file extensions are accepted: @extensions', $variables);
+    }
     return $form;
   }
 
@@ -179,7 +182,7 @@ class BulkUploadForm extends FormBase {
       /** @var \Drupal\media\MediaInterface $entity */
       $redirect = array_shift($bulk_create)->toUrl('edit-form', [
         'query' => [
-          'bulk_create' => $bulk_create,
+          'bulk_create' => implode(',', $bulk_create),
         ],
       ]);
       $form_state->setRedirectUrl($redirect);

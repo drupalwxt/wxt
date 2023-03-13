@@ -1,9 +1,9 @@
 name: 'WxT Extend Search Database'
 description: 'Enable this module for a default setup of Search API with the Database backend.'
 type: module
-core_version_requirement: '^8.8 || ^9'
+core_version_requirement: '^9 || ^10'
 package: WxT
 dependencies:
   - 'wxt_ext_search:wxt_ext_search'
   - 'search_api:search_api_db'
-version: 4.4.3-dev
+version: 5.0.0-dev

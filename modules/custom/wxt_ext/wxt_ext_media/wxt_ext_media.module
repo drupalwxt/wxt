@@ -77,24 +77,23 @@ function wxt_ext_media_field_widget_entity_browser_entity_reference_form_alter(a
     unset($element['current']['#prefix']);
   }
 
-  /** @var \Drupal\Core\Field\FieldItemListInterface $items */
-  $items = $context['items'];
+  if (!empty($element['current']['items'])) {
+    // Wrap the current selections in a nice <details> element.
+    $cardinality = (int) $context['items']
+      ->getFieldDefinition()
+      ->getFieldStorageDefinition()
+      ->getCardinality();
 
-  // Wrap the current selections in a nice <details> element.
-  $cardinality = $items
-    ->getFieldDefinition()
-    ->getFieldStorageDefinition()
-    ->getCardinality();
-
-  $element['current']['#theme_wrappers'] = [
-    'details' => [
-      '#attributes' => [
-        'open' => TRUE,
+    $element['current']['#theme_wrappers'] = [
+      'details' => [
+        '#attributes' => [
+          'open' => TRUE,
+        ],
+        '#title' => new Plural($cardinality, 'Current selection', 'Current selections'),
+        '#summary_attributes' => [],
       ],
-      '#title' => new Plural($cardinality, 'Current selection', 'Current selections'),
-      '#summary_attributes' => [],
-    ],
-  ];
+    ];
+  }
 }
 
 /**
@@ -284,10 +283,15 @@ function wxt_ext_media_preprocess_image_style(array &$variables) {
 /**
  * Implements hook_form_FORM_ID_alter().
  */
-function wxt_ext_media_form_alter(array &$form, FormStateInterface $form_state) {
-  if ($form_state->has('entity_browser')) {
-    $form['#attached']['library'][] = 'wxt_ext_media/browser.styling';
-  }
+function wxt_ext_media_form_entity_browser_media_browser_form_alter(array &$form) {
+  $form['#attached']['library'][] = 'wxt_ext_media/browser.styling';
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function wxt_ext_media_form_entity_browser_ckeditor_media_browser_form_alter(array &$form) {
+  wxt_ext_media_form_entity_browser_media_browser_form_alter($form);
 }
 
 /**
@@ -357,7 +361,7 @@ function wxt_ext_media_media_type_insert(MediaTypeInterface $media_type) {
  * Implements hook_form_FORM_ID_alter().
  */
 function wxt_ext_media_form_entity_embed_dialog_alter(array &$form, FormStateInterface $form_state) {
-  [, $embed_button] = $form_state->getBuildInfo()['args'];
+  list (, $embed_button) = $form_state->getBuildInfo()['args'];
 
   /** @var \Drupal\embed\EmbedButtonInterface $embed_button */
   if ($embed_button->id() == 'media_browser') {
@@ -376,8 +380,8 @@ function wxt_ext_media_js_settings_alter(array &$settings) {
     $settings['ajax'] = [];
   }
 
-  $route_name = \Drupal::routeMatch()->getRouteName() ?? '';
-  if (strpos($route_name, 'entity_browser') === 0 && isset($settings['ajaxPageState']['libraries'])) {
+  $route_name = \Drupal::routeMatch()->getRouteName();
+  if ($route_name && strpos($route_name, 'entity_browser') === 0 && isset($settings['ajaxPageState']['libraries'])) {
     $libraries = explode(',', $settings['ajaxPageState']['libraries']);
     // If we pretend EB's iframe library has not been previously loaded, it will
     // ALWAYS be fetched from the server, preventing (in a crappy, kludgey way)

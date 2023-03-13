@@ -1,7 +1,7 @@
 name: 'WxT Extend'
 description: 'Wrapper module for enabling all of the WxT Extensions.'
 type: module
-core_version_requirement: '^8.8 || ^9'
+core_version_requirement: '^9 || ^10'
 package: WxT
 dependencies:
   - 'wxt_core:wxt_core'
@@ -42,4 +42,4 @@ dependencies:
   - 'wxt_ext_user:wxt_ext_user'
   - 'wxt_ext_webform:wxt_ext_webform'
   - 'wxt_ext_workflow:wxt_ext_workflow'
-version: 4.4.3-dev
+version: 5.0.0-dev

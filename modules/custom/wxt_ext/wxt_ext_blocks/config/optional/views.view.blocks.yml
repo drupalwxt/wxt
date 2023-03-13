@@ -19,7 +19,7 @@ description: ''
 tag: ''
 base_table: block_content_field_data
 base_field: id
-core_version_requirement: '^8.8 || ^9'
+core_version_requirement: '^9 || ^10'
 display:
   default:
     display_plugin: default

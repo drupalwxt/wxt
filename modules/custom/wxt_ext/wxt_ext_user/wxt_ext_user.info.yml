@@ -1,7 +1,7 @@
 name: 'WxT Extend User'
 description: 'Provides default user roles, users, and permissions.'
 type: module
-core_version_requirement: '^8.8 || ^9'
+core_version_requirement: '^9 || ^10'
 package: WxT
 dependencies:
   - 'config_rewrite:config_rewrite'
@@ -10,4 +10,4 @@ dependencies:
   - 'panels_ipe:panels_ipe'
   - 'wxt_translation:wxt_translation'
   - 'wxt_ext_layout:wxt_ext_layout'
-version: 4.4.3-dev
+version: 5.0.0-dev

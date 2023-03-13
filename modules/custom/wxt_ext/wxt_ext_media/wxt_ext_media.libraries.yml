@@ -4,7 +4,9 @@ browser.styling:
       css/browser.css:
         minified: true
   js:
+    '//cdn.jsdelivr.net/npm/underscore@1.13.6/underscore-umd.min.js': { minified: true, remote: true }
+    '//cdn.jsdelivr.net/npm/backbone@1.4.1/backbone-min.js': { minified: true, remote: true }
     js/browser.js: { }
   dependencies:
-    - core/backbone
+    - core/drupal
     - core/jquery

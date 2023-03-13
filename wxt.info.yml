@@ -1,7 +1,7 @@
 name: WxT
 description: 'A Drupal distribution created to leverage the Web Experience Toolkit.'
 type: profile
-core_version_requirement: '^8.8 || ^9'
+core_version_requirement: '^9 || ^10'
 distribution:
   name: WxT
 keep_english: true
@@ -27,4 +27,4 @@ install:
 themes:
   - claro
   - wxt_bootstrap
-version: 4.4.3-dev
+version: 5.0.0-dev

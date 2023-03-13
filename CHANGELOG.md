@@ -1,3 +1,59 @@
+## v5.0.0 (In Development)
+
+Upgrade path:
+
+> **Important**: Please backup your database before running the upgrade process for this release.
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
+- Run WxT configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:wxt`
+
+**Note(s)**:
+
+This is an upgrade from 9.5.x to 10.0.x however changes are minimal and is expected upgrades will be fairly smooth.
+
+## v4.5.0
+
+- Updates for Drupal Core
+  -  Patch (bugfix) release of Drupal Core to `v9.5.4`
+- Updates for Drupal Contrib
+  - bootstrap_layouts update to `5.3`
+  - core_context update to `1.1`
+  - linkit update to `6.0.0-beta4`
+  - page_manager to `4.0-rc2`
+  - panels to `4.7`
+- Updates for WxT
+  - WxT Media Upload Improvements (sync w/Lightning)
+  - WxT Media Bulk Upload Improvements (sync w/Lightning)
+- Updated for WxT Bootstrap
+  - Update Bootstrap theme to v3.27
+
+Upgrade path:
+
+> **Important**: Please backup your database before running the upgrade process for this release.
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
+- Run WxT configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:wxt`
+
+**Note(s)**:
+
+This is an upgrade from 9.4.x to 9.5.x however changes are minimal and is expected upgrades will be fairly smooth.
+
 ## v4.4.2 (HotFix)
 
 This is a immediate hotfix due to an issue with an update hoook in wxt_core.

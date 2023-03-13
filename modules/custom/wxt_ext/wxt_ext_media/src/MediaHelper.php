@@ -4,6 +4,7 @@ namespace Drupal\wxt_ext_media;
 
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\File\FileSystemInterface;
+use Drupal\file\Entity\File;
 use Drupal\file\FileInterface;
 use Drupal\file\Plugin\Field\FieldType\FileItem;
 use Drupal\wxt_ext_media\Exception\IndeterminateBundleException;
@@ -50,7 +51,7 @@ class MediaHelper {
   public function getFileExtensions($check_access = FALSE, array $bundles = []) {
     $extensions = '';
 
-    // WxT Extend Media overrides the media_bundle storage handler with
+    // WxT Extend Media overrides the media_bundle storage handler with a special
     // one that adds an optional second parameter to loadMultiple().
     $storage = $this->entityTypeManager
       ->getStorage('media_type');
@@ -114,7 +115,7 @@ class MediaHelper {
    *   The media bundles that can accept the input value.
    */
   public function getBundlesFromInput($value, $check_access = TRUE, array $bundles = []) {
-    // WxT Extend Media overrides the media_bundle storage handler with
+    // WxT Extend Media overrides the media_bundle storage handler with a special
     // one that adds an optional second parameter to loadMultiple().
     $media_types = $this->entityTypeManager
       ->getStorage('media_type')
@@ -181,11 +182,25 @@ class MediaHelper {
     }
     $destination .= $file->getFilename();
 
+    // If the core file_move() function has already been called, the file entity
+    // might have been replaced by another one that has the same ID, but a
+    // different URI. So reload the file entity to ensure we're using the most
+    // up-to-date URI.
+    /** @var \Drupal\file\FileInterface $file */
+    $file = File::load($file->id());
+
     if ($destination == $file->getFileUri()) {
       return $file;
     }
     else {
-      $file = \Drupal::service('file.repository')->move($file, $destination, $replace);
+      if (\Drupal::hasService('file.repository')) {
+        // phpcs:ignore
+        $file = \Drupal::service('file.repository')->move($file, $destination, $replace);
+      }
+      else {
+        // @phpstan-ignore-next-line
+        $file = \Drupal::service('file.repository')->move($file, $destination, $replace);
+      }
 
       if ($file) {
         $field->setValue($file);

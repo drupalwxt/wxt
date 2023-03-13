@@ -1,9 +1,9 @@
 name: 'WxT Extend Book'
 description: 'Provides book integration with GC Subway'
 type: module
-core_version_requirement: '^8.8 || ^9'
+core_version_requirement: '^9 || ^10'
 package: WxT
 dependencies:
   - 'book:book'
 configure: wxt_ext_book.admin_config_wxt_ext_book
-version: 4.4.3-dev
+version: 5.0.0-dev
