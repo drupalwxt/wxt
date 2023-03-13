@@ -224,24 +224,16 @@
             "drupal/core": {
                 "Enter drupal/core patch #850600 description here":
                 "https://www.drupal.org/files/issues/2022-06-08/D94x-postgresql_ssl_dsn-850600-23.patch",
-                "1356276 is continued in 3266057 , this patch 78 is the latest and works better than patch 686 fixes a bug.":
-                "https://www.drupal.org/files/issues/2022-12-07/3266057-78.patch",
                 "Enter drupal/core patch #2559833 description here":
                 "https://www.drupal.org/files/issues/2021-06-02/comment_form_redirect-2559833-87.patch",
                 "Enter drupal/core patch #2630732 description here":
                 "https://www.drupal.org/files/issues/2022-02-22/D93x-implement_entity_fields_for_migration_dest-2630732.patch",
-                "2679775 - Fixes float issue with inline label fields (entity references on most cases).":
-                "https://www.drupal.org/files/issues/2679775-11-inline-labels.patch",
                 "2699157 - Plugin Lazy loading can cause usort warning":
                 "https://www.drupal.org/files/issues/2020-06-22/2699157-38.drupal.Plugin-Lazy-loading-can-cause-usort-warning.patch",
                 "Enter drupal/core patch #2715483 description here":
                 "https://www.drupal.org/files/issues/2020-01-09/regression-2715483-22.patch",
                 "Enter drupal/core patch #2752443 description here":
                 "https://www.drupal.org/files/issues/in_correct_order_and-2752443-1.patch",
-                "2759397 - Patch EntityReferenceItemNormalizer to prevent recursion":
-                "https://www.drupal.org/files/issues/2022-08-05/2759397-38_0.patch",
-                "Enter drupal/core patch #2755791 description here":
-                "https://www.drupal.org/files/issues/2022-09-14/drupal-ajax-error-2755791-12_0.patch",
                 "Enter drupal/core patch #2765297 description here":
                 "https://www.drupal.org/files/issues/2021-03-19/taxonomy_translation_2765297_63.patch",
                 "Enter drupal/core patch #2816921 description here":
@@ -252,12 +244,6 @@
                 "https://www.drupal.org/files/issues/systemmainblock_build-2885370-3.patch",
                 "Enter drupal/core patch #2893029 description here":
                 "https://www.drupal.org/files/issues/2893029-9.patch",
-                "Enter drupal/core patch #2893407 description here":
-                "https://www.drupal.org/files/issues/2021-06-07/2893407-47.patch",
-                "Enter drupal/core patch #2907413 description here":
-                "https://www.drupal.org/files/issues/2022-07-20/2907413-28.patch",
-                "2921627 - WCAG required markers on forms":
-                "https://www.drupal.org/files/issues/2022-03-11/2921627-75.patch",
                 "Enter drupal/core patch #2938129 description here":
                 "https://www.drupal.org/files/issues/2022-11-18/drupal-PageTitle_block-2938129-29.patch",
                 "Enter drupal/core patch #3017710 description here":
@@ -323,7 +309,7 @@
             },
             "drupal/linkit": {
                 "Detect and strip base URL from pasted URLs to increase matching hits":
-                "https://www.drupal.org/files/issues/2021-02-02/3078075-26.patch"
+                "https://www.drupal.org/files/issues/2023-03-03/linkit6x-3078075-62.patch"
             },
             "drupal/page_manager": {
                 "Enter drupal/page_manager patch #2626090 description here":
