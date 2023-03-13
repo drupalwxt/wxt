@@ -65,11 +65,6 @@ function wxt_install_extensions(array &$install_state) {
 
   if ($install_core_search) {
     $batch['operations'][] = ['wxt_install_module', (array) 'search'];
-    // Enable default permissions for system roles.
-    user_role_grant_permissions(AccountInterface::ANONYMOUS_ROLE, [
-      'use search',
-      'search content',
-    ]);
   }
 
   return $batch;
@@ -86,6 +81,11 @@ function wxt_install_module($module) {
 
   if ($module == 'search') {
     \Drupal::service('router.builder')->rebuild();
+
+    // Enable default permissions for system roles.
+    user_role_grant_permissions(AccountInterface::ANONYMOUS_ROLE, [
+      'search content',
+    ]);
   }
 }
 
