@@ -87,10 +87,8 @@
     "require-dev": {
         "drupal/core-composer-scaffold": "^10",
         "drupal/core-dev": "^10",
-        "drupal/drupal-extension": "^4.1.0",
+        "drupal/drupal-extension": "^5.0.0-alpha1",
         "drush/drush": ">=9.7",
-        "drupal/console": "~1.9.0",
-        "drupal/console-extend-plugin": "dev-master as 0.9.4",
         "oomphinc/composer-installers-extender": "^1.1 || ^2",
         "squizlabs/php_codesniffer": "3.*",
         "phpspec/prophecy-phpunit": "^2"
@@ -107,7 +105,8 @@
             "cweagans/composer-patches": true,
             "drupal/console-extend-plugin": true,
             "oomphinc/composer-installers-extender": true,
-            "dealerdirect/phpcodesniffer-composer-installer": true
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "phpstan/extension-installer": true
         }
     },
     "autoload": {
