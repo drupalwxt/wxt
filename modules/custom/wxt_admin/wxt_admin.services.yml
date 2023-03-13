@@ -1,6 +1,6 @@
 services:
   wxt_admin.subscriber:
     class: Drupal\wxt_admin\EventSubscriber\MenuRouterRebuildSubscriber
-    arguments: ['@site.path', '@router.builder', '@file_system']
+    arguments: ['%site.path%', '@router.builder', '@file_system']
     tags:
       - { name: event_subscriber }
