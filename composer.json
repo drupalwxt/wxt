@@ -39,7 +39,7 @@
         "drupal/field_group": "^3.0",
         "drupal/file_entity": "2.0-beta10",
         "drupal/fontawesome": "^2.24",
-        "drupal/footnotes": "^3.0",
+        "drupaloverride/footnotes": "dev-389813a1",
         "drupal/group": "1.5",
         "drupal/image_widget_crop": "^2.1",
         "drupal/inline_entity_form": "^1.0-rc12",
@@ -165,6 +165,18 @@
                 "dist": {
                     "type": "zip",
                     "url": "https://git.drupalcode.org/api/v4/projects/project%2Fwebform_migrate/repository/archive.zip?sha=c5e4d9c3"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "drupaloverride/footnotes",
+                "version": "dev-389813a1",
+                "type": "drupal-module",
+                "dist": {
+                    "type": "zip",
+                    "url": "https://git.drupalcode.org/api/v4/projects/project%2Ffootnotes/repository/archive.zip?sha=389813a1"
                 }
             }
         }
