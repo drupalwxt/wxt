@@ -40,6 +40,7 @@
         "drupal/file_entity": "2.0-beta10",
         "drupal/fontawesome": "^2.24",
         "drupaloverride/footnotes": "dev-389813a1",
+        "drupal/fakeobjects": "^1.2",
         "drupal/group": "1.5",
         "drupal/image_widget_crop": "^2.1",
         "drupal/inline_entity_form": "^1.0-rc12",
