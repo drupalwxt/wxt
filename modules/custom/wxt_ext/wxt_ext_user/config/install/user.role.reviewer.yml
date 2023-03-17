@@ -21,8 +21,6 @@ permissions:
   - 'edit own comments'
   - 'revert all revisions'
   - 'update content translations'
-  - 'use editorial transition archive'
-  - 'use editorial transition publish'
   - 'use text format full_html'
   - 'use text format rich_text'
   - 'view all revisions'

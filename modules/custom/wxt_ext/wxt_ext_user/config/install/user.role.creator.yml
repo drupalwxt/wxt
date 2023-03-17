@@ -27,7 +27,6 @@ permissions:
   - 'update any media'
   - 'update content translations'
   - 'update media'
-  - 'use editorial transition review'
   - 'use text format full_html'
   - 'use text format rich_text'
   - 'view all revisions'
