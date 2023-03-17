@@ -16,14 +16,11 @@ function wxt_ext_user_install() {
   // Enable default permissions for system roles.
   user_role_grant_permissions(AccountInterface::ANONYMOUS_ROLE, [
     'access comments',
-    'use search',
-    'search content',
     'access user profiles',
   ]);
   user_role_grant_permissions(AccountInterface::AUTHENTICATED_ROLE, [
     'access comments',
     'post comments',
-    'search content',
     'access user profiles',
   ]);
 
@@ -32,9 +29,6 @@ function wxt_ext_user_install() {
     $user->roles[] = 'administrator';
     $user->save();
   }
-
-  user_role_grant_permissions(AccountInterface::ANONYMOUS_ROLE, ['access site-wide contact form']);
-  user_role_grant_permissions(AccountInterface::AUTHENTICATED_ROLE, ['access site-wide contact form']);
 
   // Allow authenticated users to use shortcuts.
   user_role_grant_permissions(AccountInterface::AUTHENTICATED_ROLE, ['access shortcuts']);
