@@ -1,3 +1,37 @@
+## v4.4.3
+
+- Security Updates for Drupal Core (v9.4.12)
+  - [SA-core-2023-002](https://www.drupal.org/sa-core-2023-002)
+  - [SA-core-2023-003](https://www.drupal.org/sa-core-2023-003)
+  - [SA-core-2023-004](https://www.drupal.org/sa-core-2023-004)
+- Updated for WxT Bootstrap
+  - Update Bootstrap theme to v3.27
+- Updated for WxT Library
+  - Language switcher fix related to Core Security update  [#3349214](https://www.drupal.org/node/3349214)
+
+Upgrade path:
+
+> **Important**: Please backup your database before running the upgrade process for this release.
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
+- Run WxT configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:wxt`
+
+**Note(s)**:
+
+There is a core regression of the language switcher block which throws exception when no route is matched.
+
+* https://www.drupal.org/project/drupal/issues/3348592
+
+WxT Library is patched so it will not have this problem.
+
 ## v4.4.2 (HotFix)
 
 This is a immediate hotfix due to an issue with an update hoook in wxt_core.
