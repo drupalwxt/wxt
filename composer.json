@@ -78,7 +78,7 @@
         "drupal/webform": "^6.0",
         "drupal/webform_migrate": "1.x-dev",
         "drupal/wxt_bootstrap": "6.11",
-        "drupal/wxt_library": "6.x-dev",
+        "drupal/wxt_library": "6.8",
         "npm-asset/dropzone": "^5.7.4",
         "phpdocumentor/reflection-docblock": "^5",
         "vardot/blazy": "^1.8",
