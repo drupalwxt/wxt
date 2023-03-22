@@ -1,5 +1,37 @@
 ## v4.5.0
 
+- Security Updates for Drupal Core (v9.5.5)
+  - [SA-core-2023-002](https://www.drupal.org/sa-core-2023-002)
+  - [SA-core-2023-003](https://www.drupal.org/sa-core-2023-003)
+  - [SA-core-2023-004](https://www.drupal.org/sa-core-2023-004)
+- Updated for WxT Bootstrap
+  - Language switcher fix related to Core Security update  [#3349214](https://www.drupal.org/node/3349214)
+
+Upgrade path:
+
+> **Important**: Please backup your database before running the upgrade process for this release.
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
+- Run WxT configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:wxt`
+
+**Note(s)**:
+
+There is a core regression of the language switcher block which throws exception when no route is matched.
+
+* https://www.drupal.org/project/drupal/issues/3348592
+
+WxT Library is patched so it will not have this problem.
+
+## v4.5.0
+
 - Updates for Drupal Core
   -  Patch (bugfix) release of Drupal Core to `v9.5.4`
 - Updates for Drupal Contrib
