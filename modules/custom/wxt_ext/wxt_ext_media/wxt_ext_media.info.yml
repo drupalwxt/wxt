@@ -14,4 +14,4 @@ dependencies:
   - 'inline_entity_form:inline_entity_form'
   - 'wxt_core:wxt_core'
   - 'wxt_translation:wxt_translation'
-version: 4.4.4-dev
+version: 4.4.3
