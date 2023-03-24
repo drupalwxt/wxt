@@ -15,4 +15,4 @@ dependencies:
   - 'layout_builder_st:layout_builder_st'
   - 'layout_builder_styles:layout_builder_styles'
   - 'page_manager_ui:page_manager_ui'
-version: 4.5.1-dev
+version: 4.5.1
