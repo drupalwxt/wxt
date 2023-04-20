@@ -1,3 +1,27 @@
+## v4.5.2 (In Development)
+
+- Security Updates for Drupal Core (v9.5.8)
+  - [SA-core-2023-002](https://www.drupal.org/sa-core-2023-005)
+
+Upgrade path:
+
+> **Important**: Please backup your database before running the upgrade process for this release.
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
+- Run WxT configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:wxt`
+
+**Note(s)**:
+
+N/A
+
 ## v4.5.1
 
 - Security Updates for Drupal Core (v9.5.5)

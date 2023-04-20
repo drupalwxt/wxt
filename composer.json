@@ -22,7 +22,7 @@
         "drupal/ckeditor_codemirror": "2.4",
         "drupal/ckeditor_details": "^2.0.2",
         "drupal/config_rewrite": "1.4",
-        "drupal/core": "9.5.5",
+        "drupal/core": "9.5.8",
         "drupal/core_context": "1.1",
         "drupal/crop": "^2.0.0-rc1",
         "drupal/ctools": "^3.9",
@@ -90,7 +90,6 @@
         "drupal/drupal-extension": "^4.1.0",
         "drush/drush": ">=9.7",
         "drupal/console": "~1.9.0",
-        "drupal/console-extend-plugin": "dev-master as 0.9.4",
         "oomphinc/composer-installers-extender": "^1.1 || ^2",
         "squizlabs/php_codesniffer": "3.*",
         "phpspec/prophecy-phpunit": "^2"
@@ -128,10 +127,6 @@
         {
             "type": "composer",
             "url": "https://drupalwxt.github.io/composer-extdeps/"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/ossobuffo/drupal-console-extend-plugin.git"
         }
     ],
     "extra": {
