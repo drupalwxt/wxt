@@ -6,4 +6,4 @@ package: WxT
 dependencies:
   - 'config_rewrite:config_rewrite'
   - 'fontawesome:fontawesome'
-version: 4.5.2
+version: 4.5.3-dev
