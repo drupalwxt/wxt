@@ -316,12 +316,6 @@
                 "3175412 - Use item_id instead of qid for Queue item":
                 "https://www.drupal.org/files/issues/2020-10-07/redis-queue-item-id-3175412-2.patch"
             },
-            "drupal/s3fs": {
-                "Enter drupal/s3fs patch #2986407 description here":
-                "https://www.drupal.org/files/issues/2018-07-17/s3fs-2986407-save-memory-2.patch",
-                "Enter drupal/s3fs patch #3038992 description here":
-                "https://www.drupal.org/files/issues/2019-03-10/0001-feat-s3fs-Compatibility-with-Minio.patch"
-            },
             "toc_filter": {
                 "3262302 - Exclude text above [toc] token when building TOC":
                 "https://www.drupal.org/files/issues/2022-02-03/toc-filter-exclude-text-above-token-3262302-2.patch"
