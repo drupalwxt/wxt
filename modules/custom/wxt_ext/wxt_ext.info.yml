@@ -42,4 +42,4 @@ dependencies:
   - 'wxt_ext_user:wxt_ext_user'
   - 'wxt_ext_webform:wxt_ext_webform'
   - 'wxt_ext_workflow:wxt_ext_workflow'
-version: 4.5.2-dev
+version: 4.5.2

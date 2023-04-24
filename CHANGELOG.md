@@ -1,7 +1,10 @@
-## v4.5.2 (In Development)
+## v4.5.2
 
 - Security Updates for Drupal Core (v9.5.8)
   - [SA-core-2023-002](https://www.drupal.org/sa-core-2023-005)
+- Updates for WxT
+  - Update migrate_tools to 6.x for PHP8.1 support [3352269](https://www.drupal.org/node/3352269)
+  - Add alt text to images in wxt_ext_carousel [3352676](https://www.drupal.org/node/3352676)
 
 Upgrade path:
 
