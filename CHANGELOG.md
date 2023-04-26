@@ -1,4 +1,6 @@
-## v4.5.3 (In Development)
+## v4.5.3 (Hotfix)
+
+- Remove accidentally committed composer.lock file
 
 Upgrade path:
 
