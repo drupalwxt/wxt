@@ -1,15 +1,13 @@
-name: 'WxT Extend Editor'
-description: 'Overrides the default settings for CKEditor.'
+name: WxT Extend Editor
 type: module
-core_version_requirement: '^9 || ^10'
+description: "Add WET Alert and Panels plugins for CKEditor 5"
 package: WxT
+core_version_requirement: ^9 || ^10
 dependencies:
   - 'blazy:blazy'
-  - 'ckeditor:ckeditor'
   - 'ckeditor_abbreviation:ckeditor_abbreviation'
-  - 'ckeditor_codemirror:ckeditor_codemirror'
   - 'ckeditor_details:ckeditor_details'
-  - 'editor:editor'
+  - 'drupal:ckeditor5'
   - 'entity_embed:entity_embed'
   - 'footnotes:footnotes'
   - 'linkit:linkit'
@@ -18,5 +16,5 @@ dependencies:
   - 'toc_filter:toc_filter'
   - 'token_filter:token_filter'
   - 'url_embed:url_embed'
-  - 'wxt_ext_media:wxt_ext_media'
+  - 'wxt_ext_media_image_responsive:wxt_ext_media_image_responsive'
 version: 5.0.0-dev

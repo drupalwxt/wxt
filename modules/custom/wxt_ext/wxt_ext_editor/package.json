@@ -1,0 +1,26 @@
+{
+    "name": "drupal-ckeditor5",
+    "version": "1.0.0",
+    "description": "Drupal CKEditor 5 integration",
+    "author": "",
+    "license": "GPL-2.0-or-later",
+    "scripts": {
+        "watch": "webpack --mode development --watch",
+        "build": "webpack"
+    },
+    "devDependencies": {
+        "@ckeditor/ckeditor5-dev-utils": "^30.5.0",
+        "ckeditor5": "~34.1.0",
+        "css-loader": "^6.7.3",
+        "raw-loader": "^4.0.2",
+        "terser-webpack-plugin": "^5.2.0",
+        "webpack": "^5.51.1",
+        "webpack-cli": "^4.4.0"
+    },
+    "dependencies": {
+        "@ckeditor/ckeditor5-dev-webpack-plugin": "^31.1.13",
+        "@ckeditor/ckeditor5-theme-lark": "^37.0.1",
+        "postcss-loader": "^7.2.4",
+        "style-loader": "^3.3.2"
+    }
+}

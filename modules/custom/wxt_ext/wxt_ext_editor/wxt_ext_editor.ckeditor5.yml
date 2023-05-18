@@ -1,0 +1,55 @@
+wxt_ext_editor_alert:
+  ckeditor5:
+    plugins:
+      - wxt_alert.Alert
+  drupal:
+    label: WET Alert
+    library: wxt_ext_editor/alert
+    admin_library: wxt_ext_editor/admin.wxt_ext_editor
+    toolbar_items:
+      alert:
+        label: WET Alert
+    elements:
+      - <h3>
+      - <h3 class>
+      - <div>
+      - <div class>
+      - <section>
+      - <section class>
+
+wxt_ext_editor_panel:
+  ckeditor5:
+    plugins:
+      - wxt_panel.Panel
+  drupal:
+    label: WET Panel
+    library: wxt_ext_editor/panel
+    admin_library: wxt_ext_editor/admin.wxt_ext_editor
+    toolbar_items:
+      panel:
+        label: WET Panel
+    elements:
+      - <section>
+      - <section class>
+      - <header>
+      - <header class>
+      - <details>
+      - <details class>
+
+
+wxt_ext_editor_andor:
+  ckeditor5:
+    plugins:
+      - andor.AndOr
+  drupal:
+    label: And/Or
+    library: wxt_ext_editor/andor
+    admin_library: wxt_ext_editor/admin.wxt_ext_editor
+    toolbar_items:
+      andor:
+        label: And/Or
+    elements:
+      - <h4>
+      - <h4 class>
+      - <div>
+      - <div class>
