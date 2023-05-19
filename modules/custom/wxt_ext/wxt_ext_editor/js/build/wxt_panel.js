@@ -127,12 +127,20 @@ class InsertPanelCommand extends delegated_corefrom_dll_reference_CKEditor5.Comm
      * to add a new panel
      * @param {String} panelClass the panel type to create
      */
-    execute(panelClass) {
+    execute(panelClass, existingPanel) {
         const { model } = this.editor;
-
-        model.change((writer) => {
-            model.insertContent(createPanel(writer, panelClass));
-        });
+        if (existingPanel !== null && existingPanel !== 'undefined') {
+            // Existing panel found so we update
+            model.change((writer) => {
+                updatePanel(writer, panelClass, existingPanel);
+            });
+        } else {
+            // Creating new panel
+            model.change((writer) => {
+                let panel = getPanelTemplate(writer, panelClass);
+                model.insertContent(createPanel(writer, panel));
+            });
+        }
     }
 
     /**
@@ -165,20 +173,66 @@ class InsertPanelCommand extends delegated_corefrom_dll_reference_CKEditor5.Comm
  * 
  * @returns {Element} panel - the new panel with title and body
  */
-function createPanel(writer, panelClass) {
+function createPanel(writer, panel) {
+    for (let child of panel.getChildren()) {
+        if (child.name.startsWith('panelHeading-')) {
+            for (let c of child.getChildren()) {
+                if (c.name.startsWith('panelTitle-')) {
+                    writer.insertText('Panel title', c)
+                }
+            }
+        } else if (child.name.startsWith('panelBody-')) {
+            const placeholderText = writer.createElement('paragraph');
+            writer.append(placeholderText, child);
+            writer.insertText('Panel body', placeholderText);
+        }
+    }
+    return panel;
+}
+
+/**
+ * updatePanel
+ * 
+ * @param {Writer} writer - the writer for the existing editor
+ * @param {Element} panel - the template of a panel
+ * @param {Element} existingPanel - the existing panel that we are replacing
+ * @returns {Element} panel - the new panel with title and body
+ */
+function updatePanel(writer, panel, existingPanel) {
+    // Get existing content from existing panel
+    for (let child of existingPanel.getChildren()) {
+        if (child.name.startsWith('panelHeading-')) {
+            writer.rename(child, 'panelHeading-' + panel);
+            for (let c of child.getChildren()) {
+                if (c.name.startsWith('panelTitle-')) {
+                    writer.rename(c, 'panelTitle-' + panel);
+                }
+            }
+        } else if (child.name.startsWith('panelBody-')) {
+            writer.rename(child, 'panelBody-' + panel);
+        }
+    }
+    writer.rename(existingPanel, 'panel-' + panel)
+
+    return existingPanel;
+}
+
+/**
+ * getPanelTemplate
+ * 
+ * @param {Writer} writer - the document writer
+ * @param {String} panelClass - the panel type we're creating
+ * @returns {Element} panel - the template of a panel of the given type
+ */
+function getPanelTemplate(writer, panelClass) {
     const panel = writer.createElement('panel-' + panelClass);
     const panelHeader = writer.createElement('panelHeading-' + panelClass);
     const panelTitle = writer.createElement('panelTitle-' + panelClass);
     const panelBody = writer.createElement('panelBody-' + panelClass);
-    const placeholderText = writer.createElement('paragraph');
 
     writer.append(panelTitle, panelHeader);
     writer.append(panelHeader, panel);
     writer.append(panelBody, panel);
-    writer.append(placeholderText, panelBody);
-
-    writer.insertText('Panel title', panelTitle)
-    writer.insertText('Panel body', placeholderText);
 
     return panel;
 }
@@ -231,14 +285,6 @@ class PanelEditing extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
                 isLimit: true,
                 allowIn: 'panel-' + c,
                 allowContentOf: '$root',
-            });
-            schema.addChildCheck((context, childDefinition) => {
-                if (
-                    context.endsWith('panelBody-' + c) &&
-                    childDefinition.name === 'panel-' + c
-                ) {
-                    return false;
-                }
             });
         });
     }
@@ -461,12 +507,13 @@ class FormView extends delegated_uifrom_dll_reference_CKEditor5.View {
 
 
 
+
 class PanelUI extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
     init() {
         const editor = this.editor;
         this._balloon = this.editor.plugins.get(delegated_uifrom_dll_reference_CKEditor5.ContextualBalloon);
         this.formView = this._createFormView();
-
+        this.panelClasses = PanelClasses;
         editor.ui.componentFactory.add('panel', () => {
             const button = new delegated_uifrom_dll_reference_CKEditor5.ButtonView();
             button.label = Drupal.t('Panel');
@@ -494,8 +541,27 @@ class PanelUI extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
                 // Possible to add validation message to ask a user to choose?
                 return;
             }
+            let selectionAncestors = editor.model.document.selection.getFirstPosition().getAncestors();
+            let selectionIsAlert = false;
+            let selection = null;
+            // Traverse from the first inner tag to the root
+            selectionAncestors.forEach(node => {
+                // Check if the current selection is a panel widget
+                this.panelClasses.forEach(c => {
+                    if (node.name == 'panel-' + c) {
+                        // Alert widget found 
+                        selection = node;
+                        selectionIsAlert = true;
+                    }
+                });
+            });
 
-            editor.execute('insertPanel', paneltype);
+            // If the selection is within a panel widget, update the selected widget; otherwise create a new one
+            if (selectionIsAlert) {
+                editor.execute('insertPanel', paneltype, selection);
+            } else {
+                editor.execute('insertPanel', paneltype, null);
+            }
             this._hideUI();
         });
 

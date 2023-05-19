@@ -125,12 +125,21 @@ class InsertAlertCommand extends delegated_corefrom_dll_reference_CKEditor5.Comm
      * 
      * @param {String} alertClass the alert type to create
      */
-    execute(alertClass) {
+    execute(alertClass, existingAlert) {
         const { model } = this.editor;
+        if (existingAlert !== null && existingAlert !== 'undefined') {
+            // Existing alert found so we update
+            model.change((writer) => {
+                updateAlert(writer, alertClass, existingAlert);
+            });
+        } else {
+            // Creating new alert
+            model.change((writer) => {
+                let alert = getAlertTemplate(writer, alertClass);
+                model.insertContent(createAlert(writer, alert));
+            });
+        }
 
-        model.change((writer) => {
-            model.insertContent(createAlert(writer, alertClass));
-        });
     }
 
     /**
@@ -159,22 +168,60 @@ class InsertAlertCommand extends delegated_corefrom_dll_reference_CKEditor5.Comm
  * createAlert
  * 
  * @param {Writer} writer - the writer for the existing editor
- * @param {String} alertClass - the chosen alert type to create
+ * @param {Element} alert - the alert template
  * 
  * @returns {Element} Alert - the new alert with title and body
  */
-function createAlert(writer, alertClass) {
+function createAlert(writer, alert) {
+    // Add placeholder text to new alert widget
+    for (let child of alert.getChildren()) {
+        if (child.name.startsWith('alertTitle-')) {
+            writer.insertText('Alert title', child)
+        } else if (child.name.startsWith('alertBody-')) {
+            const placeholderText = writer.createElement('paragraph');
+            writer.append(placeholderText, child);
+            writer.insertText('Alert body', placeholderText);
+        }
+    }
+    return alert;
+}
+
+/**
+ * updateAlert
+ * 
+ * @param {Writer} writer - the writer for the existing editor
+ * @param {Element} alert - the template of an alert
+ * @param {Element} existingAlert - the existing alert that we are replacing
+ * @returns {Element} Alert - the new alert with title and body
+ */
+function updateAlert(writer, alert, existingAlert) {
+    // Get existing content from existing alert
+    for (let child of existingAlert.getChildren()) {
+        if (child.name.startsWith('alertTitle-')) {
+            writer.rename(child, 'alertTitle-' + alert);
+        } else if (child.name.startsWith('alertBody-')) {
+            writer.rename(child, 'alertBody-' + alert);
+        }
+    }
+    writer.rename(existingAlert, 'alert-' + alert);
+
+    return existingAlert;
+}
+
+/**
+ * getAlertTemplate
+ * 
+ * @param {Writer} writer - the document writer
+ * @param {String} alertClass - the alert type we're creating
+ * @returns {Element} alert - the template of an alert of the given type
+ */
+function getAlertTemplate(writer, alertClass) {
     const alert = writer.createElement('alert-' + alertClass);
     const alertTitle = writer.createElement('alertTitle-' + alertClass);
     const alertBody = writer.createElement('alertBody-' + alertClass);
-    const placeholderText = writer.createElement('paragraph');
 
     writer.append(alertTitle, alert);
     writer.append(alertBody, alert);
-    writer.append(placeholderText, alertBody);
-
-    writer.insertText('Alert title', alertTitle)
-    writer.insertText('Alert body', placeholderText);
 
     return alert;
 }
@@ -218,16 +265,7 @@ class AlertEditing extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
                 allowIn: 'alert-' + c,
                 allowContentOf: '$root',
             });
-            schema.addChildCheck((context, childDefinition) => {
-                if (
-                    context.endsWith('alertBody-' + c) &&
-                    childDefinition.name === 'alert-' + c
-                ) {
-                    return false;
-                }
-            });
         });
-
     }
 
     _defineConverters() {
@@ -408,12 +446,13 @@ class FormView extends delegated_uifrom_dll_reference_CKEditor5.View {
 
 
 
+
 class AlertUI extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
     init() {
         const editor = this.editor;
         this._balloon = this.editor.plugins.get(delegated_uifrom_dll_reference_CKEditor5.ContextualBalloon);
         this.formView = this._createFormView();
-
+        this.alertClasses = AlertClasses;
         editor.ui.componentFactory.add('alert', () => {
             const button = new delegated_uifrom_dll_reference_CKEditor5.ButtonView();
             button.label = Drupal.t('Alert');
@@ -440,8 +479,28 @@ class AlertUI extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
                 // Possible to add validation message to ask a user to choose?
                 return;
             }
+            let selectionAncestors = editor.model.document.selection.getFirstPosition().getAncestors();
+            let selectionIsAlert = false;
+            let selection = null;
+            // Traverse from the first inner tag to the root
+            selectionAncestors.forEach(node => {
+                // Check if the current selection is an alert widget
+                this.alertClasses.forEach(c => {
+                    if (node.name == 'alert-' + c) {
+                        // Alert widget found 
+                        selection = node;
+                        selectionIsAlert = true;
+                    }
+                });
+            });
 
-            editor.execute('insertAlert', alerttype);
+            // If the selection is within an alert widget, update the selected widget; otherwise create a new one
+            if (selectionIsAlert) {
+                //console.log('noice');
+                editor.execute('insertAlert', alerttype, selection);
+            } else {
+                editor.execute('insertAlert', alerttype, null);
+            }
             this._hideUI();
         });
 

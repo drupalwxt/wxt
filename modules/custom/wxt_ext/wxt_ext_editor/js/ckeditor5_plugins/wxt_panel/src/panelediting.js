@@ -47,14 +47,6 @@ export default class PanelEditing extends Plugin {
                 allowIn: 'panel-' + c,
                 allowContentOf: '$root',
             });
-            schema.addChildCheck((context, childDefinition) => {
-                if (
-                    context.endsWith('panelBody-' + c) &&
-                    childDefinition.name === 'panel-' + c
-                ) {
-                    return false;
-                }
-            });
         });
     }
 

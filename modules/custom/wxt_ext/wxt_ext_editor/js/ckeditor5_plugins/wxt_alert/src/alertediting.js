@@ -37,16 +37,7 @@ export default class AlertEditing extends Plugin {
                 allowIn: 'alert-' + c,
                 allowContentOf: '$root',
             });
-            schema.addChildCheck((context, childDefinition) => {
-                if (
-                    context.endsWith('alertBody-' + c) &&
-                    childDefinition.name === 'alert-' + c
-                ) {
-                    return false;
-                }
-            });
         });
-
     }
 
     _defineConverters() {

@@ -1,5 +1,6 @@
 import { Plugin } from 'ckeditor5/src/core';
 import { ButtonView, ContextualBalloon, clickOutsideHandler } from 'ckeditor5/src/ui';
+import { PanelClasses } from './panelcssclasses';
 import FormView from './panelview';
 
 export default class PanelUI extends Plugin {
@@ -7,7 +8,7 @@ export default class PanelUI extends Plugin {
         const editor = this.editor;
         this._balloon = this.editor.plugins.get(ContextualBalloon);
         this.formView = this._createFormView();
-
+        this.panelClasses = PanelClasses;
         editor.ui.componentFactory.add('panel', () => {
             const button = new ButtonView();
             button.label = Drupal.t('Panel');
@@ -35,8 +36,27 @@ export default class PanelUI extends Plugin {
                 // Possible to add validation message to ask a user to choose?
                 return;
             }
+            let selectionAncestors = editor.model.document.selection.getFirstPosition().getAncestors();
+            let selectionIsAlert = false;
+            let selection = null;
+            // Traverse from the first inner tag to the root
+            selectionAncestors.forEach(node => {
+                // Check if the current selection is a panel widget
+                this.panelClasses.forEach(c => {
+                    if (node.name == 'panel-' + c) {
+                        // Alert widget found 
+                        selection = node;
+                        selectionIsAlert = true;
+                    }
+                });
+            });
 
-            editor.execute('insertPanel', paneltype);
+            // If the selection is within a panel widget, update the selected widget; otherwise create a new one
+            if (selectionIsAlert) {
+                editor.execute('insertPanel', paneltype, selection);
+            } else {
+                editor.execute('insertPanel', paneltype, null);
+            }
             this._hideUI();
         });
 
