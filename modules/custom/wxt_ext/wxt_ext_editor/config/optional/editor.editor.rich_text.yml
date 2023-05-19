@@ -67,6 +67,19 @@ settings:
         - '<h4 id>'
         - '<h5 id>'
         - '<h6 id>'
+    ckeditor_codemirror_source_editing:
+      enable: true
+      mode: htmlmixed
+      options:
+        autoCloseBrackets: true
+        autoCloseTags: true
+        folding: true
+        lineNumbers: true
+        lineWrapping: true
+        matchBrackets: true
+        matchTags: true
+        searchBottom: true
+        styleActiveLine: true
     linkit_extension:
       linkit_enabled: false
     media_media:

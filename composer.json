@@ -83,7 +83,8 @@
         "npm-asset/dropzone": "^5.7.4",
         "phpdocumentor/reflection-docblock": "^5",
         "vardot/blazy": "^1.8",
-        "w8tcha/ckeditor-codemirror": "1.16"
+        "codemirror/codemirror": "^5.65",
+        "cdubz/ckeditor5-source-editing-codemirror": "^35.1"
     },
     "require-dev": {
         "drupal/core-composer-scaffold": "^10",
@@ -178,6 +179,42 @@
                 "dist": {
                     "type": "zip",
                     "url": "https://git.drupalcode.org/api/v4/projects/project%2Ffootnotes/repository/archive.zip?sha=389813a1"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "cdubz/ckeditor5-source-editing-codemirror",
+                "version": "35.1.0",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "ckeditor5-source-editing-codemirror"
+                },
+                "dist": {
+                    "url": "https://registry.npmjs.org/@cdubz/ckeditor5-source-editing-codemirror/-/ckeditor5-source-editing-codemirror-35.1.0.tgz",
+                    "type": "tar"
+                },
+                "require": {
+                    "composer/installers": "^1.0 || ^2.0"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "codemirror/codemirror",
+                "version": "5.65.8",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "codemirror"
+                },
+                "dist": {
+                    "url": "https://registry.npmjs.org/codemirror/-/codemirror-5.65.8.tgz",
+                    "type": "tar"
+                },
+                "require": {
+                    "composer/installers": "^1.0 || ^2.0"
                 }
             }
         }
