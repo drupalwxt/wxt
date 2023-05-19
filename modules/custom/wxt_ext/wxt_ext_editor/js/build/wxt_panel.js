@@ -387,7 +387,7 @@ class PanelEditing extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
                 model: 'panelHeading-' + c,
                 view: (modelElement, { writer: viewWriter }) => {
                     const header = viewWriter.createEditableElement('header', {
-                        class: 'panel-header',
+                        class: 'panel-heading',
                     });
                     return (0,delegated_widgetfrom_dll_reference_CKEditor5.toWidgetEditable)(header, viewWriter);
                 },
