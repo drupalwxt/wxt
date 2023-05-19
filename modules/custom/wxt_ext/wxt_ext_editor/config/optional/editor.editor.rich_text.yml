@@ -32,7 +32,6 @@ settings:
       - detail
       - alert
       - panel
-      - andor
   plugins:
     ckeditor5_alignment:
       enabled_alignments:

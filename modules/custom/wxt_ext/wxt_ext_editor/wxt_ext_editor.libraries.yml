@@ -15,12 +15,6 @@ admin.wxt_ext_editor:
     theme:
       css/wxt_ext_editor.admin.css: { preprocess: true, minified: false }
 
-andor:
-  js:
-    js/build/andor.js: { preprocess: true, minified: false }
-  dependencies:
-    - core/ckeditor5
-
 admin.gcext:
   css:
     theme:

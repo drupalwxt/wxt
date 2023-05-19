@@ -148,7 +148,7 @@ export default class PanelEditing extends Plugin {
                 model: 'panelHeading-' + c,
                 view: (modelElement, { writer: viewWriter }) => {
                     const header = viewWriter.createEditableElement('header', {
-                        class: 'panel-header',
+                        class: 'panel-heading',
                     });
                     return toWidgetEditable(header, viewWriter);
                 },
