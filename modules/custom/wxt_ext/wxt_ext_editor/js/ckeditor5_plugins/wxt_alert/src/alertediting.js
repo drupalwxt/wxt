@@ -93,7 +93,7 @@ export default class AlertEditing extends Plugin {
                 model: 'alert-' + c,
                 view: (modelElement, { writer: viewWriter }) => {
                     const div = viewWriter.createContainerElement('section', { class: 'alert alert-' + c });
-                    return toWidget(div, viewWriter);
+                    return toWidget(div, viewWriter, { hasSelectionHandle: true });
                 },
                 converterPriority: 'high'
             });

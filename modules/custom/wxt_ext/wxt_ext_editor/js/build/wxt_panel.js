@@ -369,7 +369,7 @@ class PanelEditing extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
                     const section = viewWriter.createContainerElement('section', {
                         class: 'panel panel-' + c,
                     });
-                    return (0,delegated_widgetfrom_dll_reference_CKEditor5.toWidget)(section, viewWriter, { label: c + ' panel' });
+                    return (0,delegated_widgetfrom_dll_reference_CKEditor5.toWidget)(section, viewWriter, { label: c + ' panel', hasSelectionHandle: true });
                 },
                 converterPriority: 'high'
             });

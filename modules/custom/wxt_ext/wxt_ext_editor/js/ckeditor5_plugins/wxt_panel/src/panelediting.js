@@ -130,7 +130,7 @@ export default class PanelEditing extends Plugin {
                     const section = viewWriter.createContainerElement('section', {
                         class: 'panel panel-' + c,
                     });
-                    return toWidget(section, viewWriter, { label: c + ' panel' });
+                    return toWidget(section, viewWriter, { label: c + ' panel', hasSelectionHandle: true });
                 },
                 converterPriority: 'high'
             });
