@@ -110,7 +110,7 @@ var delegated_widgetfrom_dll_reference_CKEditor5 = __webpack_require__("ckeditor
 const PanelClasses = [
     'primary',
     'default',
-    'default well',
+    'default-well',
     'info',
     'success',
     'danger',
@@ -242,7 +242,6 @@ function getPanelTemplate(writer, panelClass) {
 
 
 
-
 class PanelEditing extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
     static get requires() {
         return [delegated_widgetfrom_dll_reference_CKEditor5.Widget];
@@ -296,22 +295,34 @@ class PanelEditing extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
         // Would be nice to have a generic <section class="panel"> converter and add styling
         // classes programmatically.  
         this.panelClasses.forEach(c => {
+            // Default well panels get converted into default panels without a higher converter priority. 
+            // Also CKEditor doesnt seem to like spaces in class names so "default well" cannot simply be 
+            // appended to the string like other classes. We need to fix the castingClasses array for default well panels
+            // See https://www.drupal.org/project/wxt/issues/3362702
+            const castingClasses = ['panel', 'panel-' + c]
+            let convPriority = 'normal';
+            if (c == 'default-well') {
+                castingClasses.pop();
+                castingClasses.push('panel-default');
+                castingClasses.push('well');
+                convPriority = 'high';
+            }
+
             conversion.for('upcast').elementToElement({
                 model: 'panel-' + c,
                 view: {
                     name: 'section',
-                    classes: ['panel', 'panel-' + c],
+                    classes: castingClasses,
                 },
-                converterPriority: 'high'
+                converterPriority: convPriority
             });
-
             conversion.for('upcast').elementToElement({
                 model: 'panelHeading-' + c,
                 view: {
                     name: 'header',
                     classes: 'panel-heading',
                 },
-                converterPriority: 'high'
+                converterPriority: convPriority
             });
             conversion.for('upcast').elementToElement({
                 model: 'panelTitle-' + c,
@@ -319,7 +330,7 @@ class PanelEditing extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
                     name: 'h3',
                     classes: 'panel-title',
                 },
-                converterPriority: 'high'
+                converterPriority: convPriority
             });
             conversion.for('upcast').elementToElement({
                 model: 'panelBody-' + c,
@@ -327,16 +338,15 @@ class PanelEditing extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
                     name: 'div',
                     classes: 'panel-body',
                 },
-                converterPriority: 'high'
+                converterPriority: convPriority
             });
-
             conversion.for('dataDowncast').elementToElement({
                 model: 'panel-' + c,
                 view: {
                     name: 'section',
-                    classes: ['panel', 'panel-' + c],
+                    classes: castingClasses,
                 },
-                converterPriority: 'high'
+                converterPriority: convPriority
             });
             conversion.for('dataDowncast').elementToElement({
                 model: 'panelHeading-' + c,
@@ -344,7 +354,7 @@ class PanelEditing extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
                     name: 'header',
                     classes: 'panel-heading',
                 },
-                converterPriority: 'high'
+                converterPriority: convPriority
             });
             conversion.for('dataDowncast').elementToElement({
                 model: 'panelTitle-' + c,
@@ -352,7 +362,7 @@ class PanelEditing extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
                     name: 'h3',
                     classes: 'panel-title',
                 },
-                converterPriority: 'high'
+                converterPriority: convPriority
             });
             conversion.for('dataDowncast').elementToElement({
                 model: 'panelBody-' + c,
@@ -360,18 +370,17 @@ class PanelEditing extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
                     name: 'div',
                     classes: 'panel-body',
                 },
-                converterPriority: 'high'
+                converterPriority: convPriority
             });
-
             conversion.for('editingDowncast').elementToElement({
                 model: 'panel-' + c,
                 view: (modelElement, { writer: viewWriter }) => {
                     const section = viewWriter.createContainerElement('section', {
-                        class: 'panel panel-' + c,
+                        class: castingClasses.join(" "),
                     });
                     return (0,delegated_widgetfrom_dll_reference_CKEditor5.toWidget)(section, viewWriter, { label: c + ' panel', hasSelectionHandle: true });
                 },
-                converterPriority: 'high'
+                converterPriority: convPriority
             });
             conversion.for('editingDowncast').elementToElement({
                 model: 'panelTitle-' + c,
@@ -381,7 +390,7 @@ class PanelEditing extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
                     });
                     return (0,delegated_widgetfrom_dll_reference_CKEditor5.toWidgetEditable)(h3, viewWriter);
                 },
-                converterPriority: 'high'
+                converterPriority: convPriority
             });
             conversion.for('editingDowncast').elementToElement({
                 model: 'panelHeading-' + c,
@@ -391,7 +400,7 @@ class PanelEditing extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
                     });
                     return (0,delegated_widgetfrom_dll_reference_CKEditor5.toWidgetEditable)(header, viewWriter);
                 },
-                converterPriority: 'high'
+                converterPriority: convPriority
             });
             conversion.for('editingDowncast').elementToElement({
                 model: 'panelBody-' + c,
@@ -401,7 +410,7 @@ class PanelEditing extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
                     });
                     return (0,delegated_widgetfrom_dll_reference_CKEditor5.toWidgetEditable)(div, viewWriter);
                 },
-                converterPriority: 'high'
+                converterPriority: convPriority
             });
         });
     }

@@ -3,7 +3,6 @@ import { toWidget, toWidgetEditable } from 'ckeditor5/src/widget';
 import { Widget } from 'ckeditor5/src/widget';
 import InsertPanelCommand from './insertpanelcommand';
 import { PanelClasses } from './panelcssclasses';
-
 export default class PanelEditing extends Plugin {
     static get requires() {
         return [Widget];
@@ -57,22 +56,34 @@ export default class PanelEditing extends Plugin {
         // Would be nice to have a generic <section class="panel"> converter and add styling
         // classes programmatically.  
         this.panelClasses.forEach(c => {
+            // Default well panels get converted into default panels without a higher converter priority. 
+            // Also CKEditor doesnt seem to like spaces in class names so "default well" cannot simply be 
+            // appended to the string like other classes. We need to fix the castingClasses array for default well panels
+            // See https://www.drupal.org/project/wxt/issues/3362702
+            const castingClasses = ['panel', 'panel-' + c]
+            let convPriority = 'normal';
+            if (c == 'default-well') {
+                castingClasses.pop();
+                castingClasses.push('panel-default');
+                castingClasses.push('well');
+                convPriority = 'high';
+            }
+
             conversion.for('upcast').elementToElement({
                 model: 'panel-' + c,
                 view: {
                     name: 'section',
-                    classes: ['panel', 'panel-' + c],
+                    classes: castingClasses,
                 },
-                converterPriority: 'high'
+                converterPriority: convPriority
             });
-
             conversion.for('upcast').elementToElement({
                 model: 'panelHeading-' + c,
                 view: {
                     name: 'header',
                     classes: 'panel-heading',
                 },
-                converterPriority: 'high'
+                converterPriority: convPriority
             });
             conversion.for('upcast').elementToElement({
                 model: 'panelTitle-' + c,
@@ -80,7 +91,7 @@ export default class PanelEditing extends Plugin {
                     name: 'h3',
                     classes: 'panel-title',
                 },
-                converterPriority: 'high'
+                converterPriority: convPriority
             });
             conversion.for('upcast').elementToElement({
                 model: 'panelBody-' + c,
@@ -88,16 +99,15 @@ export default class PanelEditing extends Plugin {
                     name: 'div',
                     classes: 'panel-body',
                 },
-                converterPriority: 'high'
+                converterPriority: convPriority
             });
-
             conversion.for('dataDowncast').elementToElement({
                 model: 'panel-' + c,
                 view: {
                     name: 'section',
-                    classes: ['panel', 'panel-' + c],
+                    classes: castingClasses,
                 },
-                converterPriority: 'high'
+                converterPriority: convPriority
             });
             conversion.for('dataDowncast').elementToElement({
                 model: 'panelHeading-' + c,
@@ -105,7 +115,7 @@ export default class PanelEditing extends Plugin {
                     name: 'header',
                     classes: 'panel-heading',
                 },
-                converterPriority: 'high'
+                converterPriority: convPriority
             });
             conversion.for('dataDowncast').elementToElement({
                 model: 'panelTitle-' + c,
@@ -113,7 +123,7 @@ export default class PanelEditing extends Plugin {
                     name: 'h3',
                     classes: 'panel-title',
                 },
-                converterPriority: 'high'
+                converterPriority: convPriority
             });
             conversion.for('dataDowncast').elementToElement({
                 model: 'panelBody-' + c,
@@ -121,18 +131,17 @@ export default class PanelEditing extends Plugin {
                     name: 'div',
                     classes: 'panel-body',
                 },
-                converterPriority: 'high'
+                converterPriority: convPriority
             });
-
             conversion.for('editingDowncast').elementToElement({
                 model: 'panel-' + c,
                 view: (modelElement, { writer: viewWriter }) => {
                     const section = viewWriter.createContainerElement('section', {
-                        class: 'panel panel-' + c,
+                        class: castingClasses.join(" "),
                     });
                     return toWidget(section, viewWriter, { label: c + ' panel', hasSelectionHandle: true });
                 },
-                converterPriority: 'high'
+                converterPriority: convPriority
             });
             conversion.for('editingDowncast').elementToElement({
                 model: 'panelTitle-' + c,
@@ -142,7 +151,7 @@ export default class PanelEditing extends Plugin {
                     });
                     return toWidgetEditable(h3, viewWriter);
                 },
-                converterPriority: 'high'
+                converterPriority: convPriority
             });
             conversion.for('editingDowncast').elementToElement({
                 model: 'panelHeading-' + c,
@@ -152,7 +161,7 @@ export default class PanelEditing extends Plugin {
                     });
                     return toWidgetEditable(header, viewWriter);
                 },
-                converterPriority: 'high'
+                converterPriority: convPriority
             });
             conversion.for('editingDowncast').elementToElement({
                 model: 'panelBody-' + c,
@@ -162,7 +171,7 @@ export default class PanelEditing extends Plugin {
                     });
                     return toWidgetEditable(div, viewWriter);
                 },
-                converterPriority: 'high'
+                converterPriority: convPriority
             });
         });
     }
