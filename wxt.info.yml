@@ -7,8 +7,13 @@ distribution:
 keep_english: true
 install:
   - big_pipe
+  - config_translation
+  - content_translation
   - dynamic_page_cache
+  - field_ui
   - inline_form_errors
+  - language
+  - locale
   - menu_link_content
   - menu_ui
   - node
@@ -16,10 +21,6 @@ install:
   - taxonomy
   - text
   - user
-  - config_translation
-  - content_translation
-  - language
-  - locale
   - wxt_admin
   - wxt_core
   - wxt_library
