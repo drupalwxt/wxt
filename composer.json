@@ -32,7 +32,7 @@
         "drupal/entity_block": "^1.0",
         "drupal/entity_browser": "^2.3",
         "drupal/entity_browser_block": "^1.0",
-        "drupaloverride/entity_embed": "dev-efc9bf60",
+        "drupal/entity_embed": "^1.4",
         "drupal/entity_reference_revisions": "^1.8",
         "drupal/entityqueue": "^1.3",
         "drupal/field_formatter": "^3.0",
@@ -133,18 +133,6 @@
         {
             "type": "vcs",
             "url": "https://github.com/ossobuffo/drupal-console-extend-plugin.git"
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "drupaloverride/entity_embed",
-                "version": "dev-efc9bf60",
-                "type": "drupal-module",
-                "dist": {
-                    "type": "zip",
-                    "url": "https://git.drupalcode.org/api/v4/projects/project%2Fentity_embed/repository/archive.zip?sha=efc9bf60"
-                }
-            }
         },
         {
             "type": "package",
