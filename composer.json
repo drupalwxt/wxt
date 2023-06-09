@@ -17,7 +17,7 @@
         "drupal/block_content_permissions": "^1.10",
         "drupal/blog": "3.1.2",
         "drupal/bootstrap_layouts": "5.3",
-        "drupaloverride/button_link": "dev-0629ba90",
+        "drupal/button_link": "2.0.1",
         "drupal/ckeditor_abbreviation": "^3.0",
         "drupal/ckeditor_codemirror": "^3.0.0-beta4",
         "drupal/ckeditor_details": "^2.1.0-alpha1",
@@ -133,18 +133,6 @@
         {
             "type": "vcs",
             "url": "https://github.com/ossobuffo/drupal-console-extend-plugin.git"
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "drupaloverride/button_link",
-                "version": "dev-0629ba90",
-                "type": "drupal-module",
-                "dist": {
-                    "type": "zip",
-                    "url": "https://git.drupalcode.org/api/v4/projects/project%2Fbutton_link/repository/archive.zip?sha=0629ba90"
-                }
-            }
         },
         {
             "type": "package",
