@@ -1,7 +1,7 @@
 export const PanelClasses = [
     'primary',
     'default',
-    'default well',
+    'default-well',
     'info',
     'success',
     'danger',

@@ -21,10 +21,11 @@ function wxt_ext_editor_editor_js_settings_alter(array &$settings) {
 }
 
 /**
- * Implements hook_form_FORM_ID_alter().
+ * Implements hook_form_alter().
  */
-function wxt_ext_editor_form_editor_media_dialog_alter(array &$form, FormStateInterface $form_state) {
-  // Relabel existing field.
-  $form['caption']['#title'] = t('Figure');
-  $form['caption']['#description'] = t('Place this media item within a figure, with optional caption.');
+function wxt_ext_editor_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Add ckeditor5 library to forms.
+  if (\Drupal::service('router.admin_context')->isAdminRoute()) {
+    $form['#attached']['library'][] = 'wxt_ext_editor/ckeditor5';
+  }
 }

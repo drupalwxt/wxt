@@ -3,19 +3,21 @@ alert:
     js/build/wxt_alert.js: { preprocess: true, minified: false }
   dependencies:
     - core/ckeditor5
-
 panel:
   js:
     js/build/wxt_panel.js: { preprocess: true, minified: false }
   dependencies:
     - core/ckeditor5
-
 admin.wxt_ext_editor:
   css:
     theme:
       css/wxt_ext_editor.admin.css: { preprocess: true, minified: false }
-
 admin.gcext:
   css:
     theme:
       css/gcext.admin.css: { preprocess: true, minified: false }
+ckeditor5:
+  css:
+    theme:
+      css/cke5-theme-gcweb.css: { preprocess: true, minified: false }
+      https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css: { type: external, minified: true }

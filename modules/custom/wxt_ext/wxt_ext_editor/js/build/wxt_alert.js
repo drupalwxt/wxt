@@ -321,7 +321,7 @@ class AlertEditing extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
                 model: 'alert-' + c,
                 view: (modelElement, { writer: viewWriter }) => {
                     const div = viewWriter.createContainerElement('section', { class: 'alert alert-' + c });
-                    return (0,delegated_widgetfrom_dll_reference_CKEditor5.toWidget)(div, viewWriter);
+                    return (0,delegated_widgetfrom_dll_reference_CKEditor5.toWidget)(div, viewWriter, { hasSelectionHandle: true });
                 },
                 converterPriority: 'high'
             });
