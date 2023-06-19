@@ -32,13 +32,15 @@ function wxt_core_requirements($phase) {
   }
 
   $profile = Drupal::installProfile();
-  $profile = Drupal::service('extension.list.profile')->get($profile);
+  if (!is_null($profile)) {
+    $profile = Drupal::service('extension.list.profile')->get($profile);
 
-  if (isset($profile->info['base profile'])) {
-    $requirements['wxt_core_base_profile'] = [
-      'title' => t('Base profile'),
-      'value' => $profile->info['base profile'],
-    ];
+    if (isset($profile->info['base profile'])) {
+      $requirements['wxt_core_base_profile'] = [
+        'title' => t('Base profile'),
+        'value' => $profile->info['base profile'],
+      ];
+    }
   }
 
   return $requirements;
