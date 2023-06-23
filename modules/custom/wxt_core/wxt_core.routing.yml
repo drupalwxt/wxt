@@ -13,7 +13,7 @@ wxt_core.settings:
     _title: WxT
     _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
   requirements:
-    _is_administrator: 'true'
+    _permission: 'administer site configuration'
 
 wxt4032404.config:
   path: '/admin/config/wxt/4032404'
