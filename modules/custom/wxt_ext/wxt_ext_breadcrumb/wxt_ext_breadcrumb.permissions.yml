@@ -1,0 +1,4 @@
+administer wxt_ext_breadcrumb:
+  title: 'Administer wxt breadcrumbs'
+  description: 'Access the wxt breadcrumbs pages.'
+  restrict access: true

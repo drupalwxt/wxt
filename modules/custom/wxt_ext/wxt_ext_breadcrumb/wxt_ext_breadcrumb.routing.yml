@@ -4,4 +4,4 @@ wxt_ext_breadcrumb.settings_form:
     _title: 'WxT Breadcrumbs'
     _form: '\Drupal\wxt_ext_breadcrumb\Form\BreadcrumbsForm'
   requirements:
-    _permission: 'access administration pages'
+    _permission: 'administer wxt_ext_breadcrumb'
