@@ -326,7 +326,9 @@
                 "Enter drupal/group patch #2864721 description here":
                 "https://www.drupal.org/files/issues/2020-07-30/group-translate_content_permission-2864721-20.patch",
                 "Enter drupal/group patch #2895988 description here":
-                "https://www.drupal.org/files/issues/2895988-4.patch"
+                "https://www.drupal.org/files/issues/2895988-4.patch",
+                "Enter drupal/group patch #3367539 description here":
+                "https://www.drupal.org/files/issues/2023-06-21/3367539--002-drupal-10-compatibility-group-1.x.patch"
             },
             "drupal/linkit": {
                 "Detect and strip base URL from pasted URLs to increase matching hits":
