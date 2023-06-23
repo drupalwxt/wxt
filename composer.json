@@ -131,10 +131,6 @@
             "url": "https://drupalwxt.github.io/composer-extdeps/"
         },
         {
-            "type": "vcs",
-            "url": "https://github.com/ossobuffo/drupal-console-extend-plugin.git"
-        },
-        {
             "type": "package",
             "package": {
                 "name": "drupaloverride/webform_migrate",
