@@ -1,3 +1,27 @@
+## v4.5.4 (In Development)
+
+- Updates for Drupal Core
+  -  Patch (bugfix) release of Drupal Core to `v9.5.8`
+
+Upgrade path:
+
+> **Important**: Please backup your database before running the upgrade process for this release.
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
+- Run WxT configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:wxt`
+
+**Note(s)**:
+
+N/A
+
 ## v4.5.3 (Hotfix)
 
 - Remove accidentally committed composer.lock file
