@@ -9,7 +9,7 @@
         "ext-dom": "*",
         "bower-asset/cropper": "^2.3",
         "bower-asset/slick-carousel": "^1.8",
-        "ckeditor/fakeobjects": "4.17.1",
+        "ckeditor/fakeobjects": "4.18.0",
         "cweagans/composer-patches": "^1.6.0",
         "drupal/admin_toolbar": "^3.2.1",
         "drupal/autosave_form": "^1.2",
