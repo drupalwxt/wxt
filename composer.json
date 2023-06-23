@@ -21,7 +21,8 @@
         "drupal/ckeditor_codemirror": "^3.0.0-beta4",
         "drupal/ckeditor_details": "^2.1.0-alpha1",
         "drupal/config_rewrite": "^1.5",
-        "drupal/core": "10.0.9",
+        "drupal/core-composer-scaffold": "^10.0",
+        "drupal/core-recommended": "^10.0",
         "drupal/core_context": "1.0",
         "drupal/crop": "^2.0.0-rc1",
         "drupal/ctools": "^3.9",
@@ -87,8 +88,7 @@
         "cdubz/ckeditor5-source-editing-codemirror": "^35.1"
     },
     "require-dev": {
-        "drupal/core-composer-scaffold": "^10",
-        "drupal/core-dev": "^10",
+        "drupal/core-dev": "^10.0",
         "drupal/drupal-extension": "^5.0.0-alpha1",
         "drush/drush": ">=9.7",
         "oomphinc/composer-installers-extender": "^1.1 || ^2",
