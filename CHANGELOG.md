@@ -2,6 +2,8 @@
 
 - Updates for Drupal Core
   -  Patch (bugfix) release of Drupal Core to `v9.5.8`
+- Updates for third party libraries
+  -  Incompatible version for ckeditor/fakeobjects [#3363952](https://drupal.org/i/3363952)
 
 Upgrade path:
 
