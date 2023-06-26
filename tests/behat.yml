@@ -12,8 +12,9 @@ default:
         - '\Drupal\DrupalExtension\Context\DrushContext'
   extensions:
     Behat\MinkExtension:
-      goutte: ~
+      browserkit_http: ~
       selenium2: ~
+      base_url: "http://nginx"
     Drupal\DrupalExtension:
       blackbox: ~
       api_driver: 'drupal'

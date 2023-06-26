@@ -1,7 +1,0 @@
-services:
-  wxt.version_command:
-    class: 'Drupal\wxt\Command\VersionCommand'
-    arguments:
-      - '@app.root'
-    tags:
-      - { name: drupal.command }
