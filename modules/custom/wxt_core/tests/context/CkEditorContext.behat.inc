@@ -36,10 +36,6 @@ final class CkEditorContext extends DrupalSubContextBase {
   public function assertEditor($id = NULL) {
     $js = "CKEDITOR.instances['" . ($id ?: $this->getDefault()) . "']";
 
-    $status = $this->getSession()->executeScript("$js.status");
-
-    print($status);
-
     $this->getSession()->wait(10000, "$js.status === 'ready'");
 
     return $js;
