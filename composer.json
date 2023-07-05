@@ -53,7 +53,7 @@
         "drupal/menu_block": "1.10.0",
         "drupal/menu_breadcrumb": "^1.13",
         "drupal/metatag": "^1.13",
-        "drupal/migrate_plus": "^5.1",
+        "drupal/migrate_plus": "^6.0",
         "drupal/migrate_tools": "^6.0",
         "drupal/page_manager": "4.0-rc2",
         "drupal/panels": "4.7",
