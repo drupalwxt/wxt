@@ -188,7 +188,7 @@
                 "Enter drupal/core patch #2559833 description here":
                 "https://www.drupal.org/files/issues/2021-06-02/comment_form_redirect-2559833-87.patch",
                 "Enter drupal/core patch #2630732 description here":
-                "https://www.drupal.org/files/issues/2022-02-22/D93x-implement_entity_fields_for_migration_dest-2630732.patch",
+                "https://www.drupal.org/files/issues/2023-07-26/D95x-2630732-115.patch",
                 "2679775 - Fixes float issue with inline label fields (entity references on most cases).":
                 "https://www.drupal.org/files/issues/2679775-11-inline-labels.patch",
                 "2699157 - Plugin Lazy loading can cause usort warning":
