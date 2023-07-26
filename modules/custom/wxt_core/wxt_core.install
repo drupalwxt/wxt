@@ -624,3 +624,15 @@ function wxt_core_update_8441() {
   $config->getEntity('block', 'wxt_bootstrap_footer_top')->save();
   $config->getEntity('block', 'wxt_bootstrap_footer_top_fr')->save();
 }
+
+/**
+ * Updates for the WxT 5.0.0 release.
+ */
+function wxt_core_update_8500() {
+  $module_installer = \Drupal::service('module_installer');
+  $moduleHandler = \Drupal::service('module_handler');
+
+  if ($moduleHandler->moduleExists('wxt_ext_config')) {
+    $module_installer->uninstall(['wxt_ext_config']);
+  }
+}
