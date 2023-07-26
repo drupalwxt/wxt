@@ -77,7 +77,7 @@
         "drupal/views_bootstrap": "5.3",
         "drupal/views_infinite_scroll": "^2.0",
         "drupal/webform": "^6.2.0-beta5",
-        "drupaloverride/webform_migrate": "dev-c5e4d9c3",
+        "drupal/webform_migrate": "2.0.x-dev",
         "drupal/wxt_bootstrap": "7.x-dev",
         "drupal/wxt_library": "7.x-dev",
         "drupal-ckeditor-libraries-group/fakeobjects": "4.18.0",
@@ -129,18 +129,6 @@
         {
             "type": "composer",
             "url": "https://drupalwxt.github.io/composer-extdeps/"
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "drupaloverride/webform_migrate",
-                "version": "dev-c5e4d9c3",
-                "type": "drupal-module",
-                "dist": {
-                    "type": "zip",
-                    "url": "https://git.drupalcode.org/api/v4/projects/project%2Fwebform_migrate/repository/archive.zip?sha=c5e4d9c3"
-                }
-            }
         },
         {
             "type": "package",
