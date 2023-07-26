@@ -369,23 +369,25 @@ function wxt_core_field_config_presave(FieldConfigInterface $field) {
     $source = \Drupal::service('extension.list.module')->getPath('wxt_core') . '/images/default-avatar.png';
     $uri = 'public://default-avatar.png';
 
-    try {
-      \Drupal::service('file_system')->copy($source, $uri, FileSystemInterface::EXISTS_ERROR);
+    // Check if the file already exists before copying and saving it.
+    if (!file_exists($uri)) {
+      try {
+        \Drupal::service('file_system')->copy($source, $uri, FileSystemInterface::EXISTS_ERROR);
 
-      $file = File::create(['uri' => $uri]);
-      $file->setPermanent();
-      $file->save();
+        $file = File::create(['uri' => $uri]);
+        $file->setPermanent();
+        $file->save();
 
-      $field->setSetting('default_image', [
-        'uuid' => $file->uuid(),
-        'alt' => (string) t('A generic silhouette of a person.'),
-        'title' => '',
-        'width' => 140,
-        'height' => 140,
-      ]);
-    }
-    catch (FileException $e) {
-      // Fail silently.
+        $field->setSetting('default_image', [
+          'uuid' => $file->uuid(),
+          'alt' => (string) t('A generic silhouette of a person.'),
+          'title' => '',
+          'width' => 140,
+          'height' => 140,
+        ]);
+      } catch (FileException $e) {
+        // Fail silently.
+      }
     }
   }
 }
