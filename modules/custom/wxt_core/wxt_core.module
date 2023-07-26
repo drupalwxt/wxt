@@ -385,7 +385,8 @@ function wxt_core_field_config_presave(FieldConfigInterface $field) {
           'width' => 140,
           'height' => 140,
         ]);
-      } catch (FileException $e) {
+      }
+      catch (FileException $e) {
         // Fail silently.
       }
     }
