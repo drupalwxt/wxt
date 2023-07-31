@@ -339,6 +339,8 @@
                 "https://www.drupal.org/files/issues/2023-05-23/password_policy-d10.patch"
             },
             "drupal/panels": {
+                "Enter drupal/panels patch #2849867 description here":
+                "https://www.drupal.org/files/issues/2023-01-11/panels_custom_attributes_in_panels_blocks-2849867-92_0.patch",
                 "Enter drupal/panels patch #2667755 description here":
                 "https://www.drupal.org/files/issues/bandaid.patch",
                 "Enter drupal/panels patch #2910704 description here":
