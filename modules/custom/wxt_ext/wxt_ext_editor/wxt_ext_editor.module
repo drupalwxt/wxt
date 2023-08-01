@@ -5,9 +5,6 @@
  * Contains wxt_ext_editor.module.
  */
 
-use Drupal\Core\Form\FormStateInterface;
-use Drupal\ckeditor\EditorConfig;
-
 /**
  * Implements hook_editor_js_settings_alter().
  */
