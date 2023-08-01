@@ -19,5 +19,5 @@ admin.gcext:
 ckeditor5:
   css:
     theme:
+      css/cke5-bootstrap-3-4-1.css: { preprocess: true, minified: false }
       css/cke5-theme-gcweb.css: { preprocess: true, minified: false }
-      https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css: { type: external, minified: true }
