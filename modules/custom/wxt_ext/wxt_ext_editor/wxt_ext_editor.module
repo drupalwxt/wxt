@@ -1,5 +1,7 @@
 <?php
 
+use Drupal\Core\Form\FormStateInterface;
+
 /**
  * @file
  * Contains wxt_ext_editor.module.
@@ -19,18 +21,20 @@ function wxt_ext_editor_editor_js_settings_alter(array &$settings) {
 }
 
 /**
- * Implements hook_preprocess_form_element().
+ * Implements hook_form_alter().
  */
-function wxt_ext_editor_preprocess_form_element(array &$variables) {
-  $element = $variables['element'];
+function wxt_ext_editor_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   $moduleHandler = \Drupal::service('module_handler');
 
   // Add ckeditor5 library to forms that use ckeditor5.
   if ($moduleHandler->moduleExists('ckeditor5')) {
-    // Check if the element has a text format.
-    if (isset($element['#type']) && $element['#type'] === 'textarea' && isset($element['#format'])) {
-      // Attach CSS library to the form.
-      $variables['#attached']['library'][] = 'wxt_ext_editor/ckeditor5';
+    foreach ($form as $key => $value) {
+      if (!is_object($value)) {
+        if (!empty($value['widget'][0]['#type']) && $value['widget'][0]['#type'] == 'text_format') {
+          $form['#attached']['library'][] = 'wxt_ext_editor/ckeditor5';
+          break;
+        }
+      }
     }
   }
 }
