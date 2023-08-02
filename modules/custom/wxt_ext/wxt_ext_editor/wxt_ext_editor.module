@@ -1,11 +1,11 @@
 <?php
 
-use Drupal\Core\Form\FormStateInterface;
-
 /**
  * @file
  * Contains wxt_ext_editor.module.
  */
+
+use Drupal\Core\Form\FormStateInterface;
 
 /**
  * Implements hook_editor_js_settings_alter().
@@ -28,7 +28,7 @@ function wxt_ext_editor_form_alter(&$form, FormStateInterface $form_state, $form
 
   // Add ckeditor5 library to forms that use ckeditor5.
   if ($moduleHandler->moduleExists('ckeditor5')) {
-    foreach ($form as $key => $value) {
+    foreach ($form as $value) {
       if (!is_object($value)) {
         if (!empty($value['widget'][0]['#type']) && $value['widget'][0]['#type'] == 'text_format') {
           $form['#attached']['library'][] = 'wxt_ext_editor/ckeditor5';
