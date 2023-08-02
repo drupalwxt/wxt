@@ -66,6 +66,7 @@ settings:
         - '<h4 id>'
         - '<h5 id>'
         - '<h6 id>'
+        - '<div class>'
     ckeditor_codemirror_source_editing:
       enable: true
       mode: htmlmixed
