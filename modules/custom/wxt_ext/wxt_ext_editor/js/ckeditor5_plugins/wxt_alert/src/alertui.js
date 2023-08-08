@@ -2,6 +2,7 @@ import { Plugin } from 'ckeditor5/src/core';
 import { ButtonView, ContextualBalloon, clickOutsideHandler } from 'ckeditor5/src/ui';
 import { AlertClasses } from './alertcssclasses';
 import FormView from './alertview';
+import icon from '../../../../icons/alert.svg';
 
 export default class AlertUI extends Plugin {
     init() {
@@ -12,6 +13,7 @@ export default class AlertUI extends Plugin {
         editor.ui.componentFactory.add('alert', () => {
             const button = new ButtonView();
             button.label = Drupal.t('Alert');
+            button.icon = icon;
             button.tooltip = true;
             button.withText = true;
             const command = editor.commands.get('insertAlert');

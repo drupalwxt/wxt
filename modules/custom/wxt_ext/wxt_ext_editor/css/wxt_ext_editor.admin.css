@@ -1,11 +1,7 @@
 .ckeditor5-toolbar-button-alert {
-    background-image: url(../icons/simpleBox.svg);
+    background-image: url(../icons/alert.svg);
 }
 
 .ckeditor5-toolbar-button-panel {
-    background-image: url(../icons/simpleBox.svg);
-}
-
-.ckeditor5-toolbar-button-andor {
-    background-image: url(../icons/simpleBox.svg);
+    background-image: url(../icons/panel.svg);
 }

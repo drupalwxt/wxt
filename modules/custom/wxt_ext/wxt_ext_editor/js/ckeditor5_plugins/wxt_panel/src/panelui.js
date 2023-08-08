@@ -2,6 +2,7 @@ import { Plugin } from 'ckeditor5/src/core';
 import { ButtonView, ContextualBalloon, clickOutsideHandler } from 'ckeditor5/src/ui';
 import { PanelClasses } from './panelcssclasses';
 import FormView from './panelview';
+import icon from '../../../../icons/panel.svg';
 
 export default class PanelUI extends Plugin {
     init() {
@@ -12,6 +13,7 @@ export default class PanelUI extends Plugin {
         editor.ui.componentFactory.add('panel', () => {
             const button = new ButtonView();
             button.label = Drupal.t('Panel');
+            button.icon = icon;
             button.tooltip = true;
             button.withText = true;
             const command = editor.commands.get('insertPanel');
