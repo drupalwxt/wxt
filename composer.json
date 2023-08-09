@@ -39,7 +39,7 @@
         "drupal/field_group": "^3.0",
         "drupal/file_entity": "2.0-beta10",
         "drupal/fontawesome": "^2.24",
-        "drupaloverride/footnotes": "dev-389813a1",
+        "drupaloverride/footnotes": "3.1.0-alpha1",
         "drupal/fakeobjects": "^1.2",
         "drupal/group": "1.5",
         "drupal/image_widget_crop": "^2.1",
@@ -134,11 +134,11 @@
             "type": "package",
             "package": {
                 "name": "drupaloverride/footnotes",
-                "version": "dev-389813a1",
+                "version": "3.1.0-alpha1",
                 "type": "drupal-module",
                 "dist": {
                     "type": "zip",
-                    "url": "https://git.drupalcode.org/api/v4/projects/project%2Ffootnotes/repository/archive.zip?sha=389813a1"
+                    "url": "https://git.drupalcode.org/api/v4/projects/project%2Ffootnotes/repository/archive.zip?sha=7693fba0"
                 }
             }
         },
@@ -297,14 +297,6 @@
             "drupal/fontawesome": {
                 "3071758 - Fix multiple icons issue":
                 "https://git.drupalcode.org/project/fontawesome/-/merge_requests/4.diff"
-            },
-            "drupal/footnotes": {
-                "3248765 - Footnote links aware of instances":
-                "https://www.drupal.org/files/issues/2021-11-12/footnotes-provide-instance-visibility-to-links-3248765-5.patch",
-                "3119883 - Set title attribute for fakeobjects and display footnote value in backend":
-                "https://www.drupal.org/files/issues/2022-02-04/footnotes-value-as-placeholder-3119883-8.patch",
-                "3204959 - Enable CKEditor basic styles for footnot text field":
-                "https://www.drupal.org/files/issues/2021-11-16/footnotes-basic-styles-for-footnote-text-field-3204959-4.patch"
             },
             "drupal/group": {
                 "Enter drupal/group patch #2817109 description here":

@@ -110,11 +110,12 @@ filters:
   filter_footnotes:
     id: filter_footnotes
     provider: footnotes
-    status: false
+    status: true
     weight: 0
     settings:
       footnotes_collapse: '0'
       footnotes_html: '0'
+      footnotes_css: '1'
   toc_filter:
     id: toc_filter
     provider: toc_filter
