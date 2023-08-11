@@ -6,6 +6,7 @@ core_version_requirement: ^9 || ^10
 dependencies:
   - 'blazy:blazy'
   - 'ckeditor_abbreviation:ckeditor_abbreviation'
+  - 'ckeditor4_codemirror:ckeditor4_codemirror'
   - 'ckeditor_codemirror:ckeditor_codemirror'
   - 'ckeditor_details:ckeditor_details'
   - 'drupal:ckeditor5'
