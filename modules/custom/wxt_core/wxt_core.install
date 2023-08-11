@@ -629,10 +629,28 @@ function wxt_core_update_8441() {
  * Updates for the WxT 5.0.0 release.
  */
 function wxt_core_update_8500() {
+  // Uninstall wxt_ext_config to prepare for removal in future release.
   $module_installer = \Drupal::service('module_installer');
   $moduleHandler = \Drupal::service('module_handler');
 
   if ($moduleHandler->moduleExists('wxt_ext_config')) {
     $module_installer->uninstall(['wxt_ext_config']);
+  }
+
+  // Fix block visibility config.
+  $config_factory = \Drupal::service('config.factory');
+  $block_configurations = $config_factory->listAll('block.block');
+
+  foreach ($block_configurations as $config_name) {
+    // Load the block configuration.
+    $config = $config_factory->getEditable($config_name);
+
+    // Check for a value and update it if needed.
+    if (is_array($config->get('visibility.node_type'))) {
+      if ($config->get('visibility.node_type')['id'] === 'node_type') {
+        $config->set('visibility.node_type.id', 'entity_bundle:node');
+        $config->save();
+      }
+    }
   }
 }
