@@ -51,7 +51,7 @@ filters:
     status: true
     weight: -50
     settings:
-      allowed_html: '<br> <p class="text-align-left text-align-center text-align-right text-align-justify"> <h2 id class="text-align-left text-align-center text-align-right text-align-justify"> <h3 id class> <h4 id class="text-align-left text-align-center text-align-right text-align-justify"> <h5 id class="text-align-left text-align-center text-align-right text-align-justify"> <h6 id class="text-align-left text-align-center text-align-right text-align-justify"> <cite> <dl> <dt> <dd> <a hreflang href data-entity-type data-entity-uuid data-entity-substitution> <blockquote cite> <ul type> <ol type start> <img src alt data-entity-type data-entity-uuid data-align data-caption> <drupal-entity data-* title alt> <strong> <em> <u> <code class="language-*"> <pre class="text-align-left text-align-center text-align-right text-align-justify"> <s> <li> <hr> <table> <tr> <td rowspan colspan> <th rowspan colspan> <thead> <tbody> <tfoot> <caption> <drupal-media data-entity-type data-entity-uuid alt data-caption data-align> <details class> <summary> <div class> <section class> <header class>'
+      allowed_html: '<br> <p class="text-align-left text-align-center text-align-right text-align-justify"> <h2 id class="text-align-left text-align-center text-align-right text-align-justify"> <h3 id class> <h4 id class="text-align-left text-align-center text-align-right text-align-justify"> <h5 id class="text-align-left text-align-center text-align-right text-align-justify"> <h6 id class="text-align-left text-align-center text-align-right text-align-justify"> <cite> <dl> <dt> <dd> <a hreflang href data-entity-type data-entity-uuid data-entity-substitution> <blockquote cite> <ul type> <ol type start> <img src alt data-entity-type data-entity-uuid data-align data-caption> <drupal-entity data-* title alt> <div class> <strong> <em> <u> <code class="language-*"> <pre class="text-align-left text-align-center text-align-right text-align-justify"> <s> <li> <hr> <table> <tr> <td rowspan colspan> <th rowspan colspan> <thead> <tbody> <tfoot> <caption> <drupal-media data-entity-type data-entity-uuid alt data-caption data-align> <details class> <summary> <fn value text> <section class> <header class>'
       filter_html_help: true
       filter_html_nofollow: false
   filter_autop:
@@ -119,13 +119,13 @@ filters:
   toc_filter:
     id: toc_filter
     provider: toc_filter
-    status: false
+    status: true
     weight: 0
     settings:
-      type: default
+      type: wxt
       auto: ''
       block: '0'
-      exclude_above: '0'
+      exclude_above: '1'
   token_filter:
     id: token_filter
     provider: token_filter
