@@ -39,7 +39,7 @@
         "drupal/field_group": "^3.0",
         "drupal/file_entity": "2.0-beta10",
         "drupal/fontawesome": "^2.24",
-        "drupaloverride/footnotes": "3.1.0-alpha1",
+        "drupal/footnotes": "^3.1",
         "drupal/fakeobjects": "^1.2",
         "drupal/group": "1.5",
         "drupal/image_widget_crop": "^2.1",
@@ -129,18 +129,6 @@
         {
             "type": "composer",
             "url": "https://drupalwxt.github.io/composer-extdeps/"
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "drupaloverride/footnotes",
-                "version": "3.1.0-alpha1",
-                "type": "drupal-module",
-                "dist": {
-                    "type": "zip",
-                    "url": "https://git.drupalcode.org/api/v4/projects/project%2Ffootnotes/repository/archive.zip?sha=7693fba0"
-                }
-            }
         },
         {
             "type": "package",
