@@ -2,9 +2,7 @@
   "scripts": {
     "deploy-libraries": "npm install"
   },
-  "dependencies": {
-    "bower": "1.8.8"
-  },
+  "dependencies": {},
   "license": "GPL-2.0",
   "repository": {
     "type": "git",

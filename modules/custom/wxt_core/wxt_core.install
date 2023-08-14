@@ -629,10 +629,10 @@ function wxt_core_update_8441() {
  * Updates for the WxT 5.0.0 release.
  */
 function wxt_core_update_8500() {
-  // Uninstall wxt_ext_config to prepare for removal in future release.
   $module_installer = \Drupal::service('module_installer');
   $moduleHandler = \Drupal::service('module_handler');
 
+  // Uninstall wxt_ext_config to prepare for removal in future release.
   if ($moduleHandler->moduleExists('wxt_ext_config')) {
     $module_installer->uninstall(['wxt_ext_config']);
   }
