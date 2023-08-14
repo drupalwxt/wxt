@@ -4,19 +4,17 @@
   - [CI] Point build system to 10.0.x docker-scaffold
   - [PHP] Build properly on php 8.1+
   - Remove drupal-console-extend-plugin
-
 - Security Updates for Drupal Core
   - [SA-core-2023-005](https://www.drupal.org/sa-core-2023-005)
-
 - Updates for Drupal Core
     Patch (bugfix) release of Drupal Core to `v10.0.10`
-
-- Updates for WxT
+- Updates for Drupal Contrib
   - [Composer] Update all contrib to Drupal 10 versions
-  - Check $profile is not null condition
-  - Remove non-existant permissions from wxt_ext_user
   - Support for CKEditor 5 [3255971](https://www.drupal.org/node/3255971)
   - Add codemirror back to CKEditor5 [3361536](https://www.drupal.org/node/3361536)
+- Updates for WxT
+  - Check $profile is not null condition
+  - Remove non-existant permissions from wxt_ext_user
   - Give users ability to edit existing alerts and panels in CKEditor 5 [3361560](https://www.drupal.org/node/3361560)
   - Remove And/Or plugin from wxt_ext_editor [3361566](https://www.drupal.org/node/3361566)
   - Add gcweb styles to CKEditor5 [3362435](https://www.drupal.org/node/3362435)
@@ -37,14 +35,6 @@
   - ckeditor 5 footnotes related [3377942](https://www.drupal.org/node/3377942)
   - Enable Table of Contents filter [3380730](https://www.drupal.org/node/3380730)
   - codemirror support for both ckeditor4 and ckeditor5 [3362801](https://www.drupal.org/node/3362801)
-
-- Updates for WxT Library
-  - Update *.info.yml + composer.json to allow install on D10
-  - Drupal 10 comptaibility updates [3346270](https://www.drupal.org/node/3346270)
-  - language switcher fix related to Core Security update [3349214](https://www.drupal.org/node/3349214)
-  - Issue with wxt_library.module and php 8.1 [3368356](https://www.drupal.org/node/3368356)
-  - WxT 4 & 5 - Remove IE8 from the wxt build, IE8 cleanup [3374233](https://www.drupal.org/node/3374233)
-
 - Updated for WxT Bootstrap
   - Update *.info.yml + composer.json to allow install on D10
   - Update Bootstrap to v3.27
@@ -57,6 +47,12 @@
   - Drupal 10.1.1 requires bootstrap 3.29 , 3.29 also compatible with D10.0.10 and D9.5.10 [3374741](https://www.drupal.org/node/3374741)
   - Typo in template files: "clas" [3356383](https://www.drupal.org/node/3356383)
   - Empty label can lead to empty 'h3', invalid HTML [3356385](https://www.drupal.org/node/3356385)
+- Updates for WxT Library
+  - Update *.info.yml + composer.json to allow install on D10
+  - Drupal 10 comptaibility updates [3346270](https://www.drupal.org/node/3346270)
+  - language switcher fix related to Core Security update [3349214](https://www.drupal.org/node/3349214)
+  - Issue with wxt_library.module and php 8.1 [3368356](https://www.drupal.org/node/3368356)
+  - Remove IE8 from the wxt build, IE8 cleanup [3374233](https://www.drupal.org/node/3374233)
 
 Upgrade path:
 
