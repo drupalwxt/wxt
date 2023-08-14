@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "deploy-libraries": "npm install && bower install"
+    "deploy-libraries": "npm install"
   },
   "dependencies": {
     "bower": "1.8.8"

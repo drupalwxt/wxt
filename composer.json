@@ -1,6 +1,6 @@
 {
     "name": "drupalwxt/wxt",
-    "description": "Project template for Drupal 9 / 10 sites built with the WxT distribution.",
+    "description": "Project template for Drupal 10 sites built with the WxT distribution.",
     "type": "drupal-profile",
     "license": "GPL-2.0+",
     "minimum-stability": "dev",
@@ -130,42 +130,6 @@
         {
             "type": "composer",
             "url": "https://drupalwxt.github.io/composer-extdeps/"
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "cdubz/ckeditor5-source-editing-codemirror",
-                "version": "35.1.0",
-                "type": "drupal-library",
-                "extra": {
-                    "installer-name": "ckeditor5-source-editing-codemirror"
-                },
-                "dist": {
-                    "url": "https://registry.npmjs.org/@cdubz/ckeditor5-source-editing-codemirror/-/ckeditor5-source-editing-codemirror-35.1.0.tgz",
-                    "type": "tar"
-                },
-                "require": {
-                    "composer/installers": "^1.0 || ^2.0"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "codemirror/codemirror",
-                "version": "5.65.8",
-                "type": "drupal-library",
-                "extra": {
-                    "installer-name": "codemirror"
-                },
-                "dist": {
-                    "url": "https://registry.npmjs.org/codemirror/-/codemirror-5.65.8.tgz",
-                    "type": "tar"
-                },
-                "require": {
-                    "composer/installers": "^1.0 || ^2.0"
-                }
-            }
         }
     ],
     "extra": {
