@@ -1,4 +1,62 @@
-## v5.0.0 (In Development)
+## v5.0.0-RC1 (In Development)
+
+- Build Infrastructure
+  - [CI] Point build system to 10.0.x docker-scaffold
+  - [PHP] Build properly on php 8.1+
+  - Remove drupal-console-extend-plugin
+
+- Security Updates for Drupal Core
+  - [SA-core-2023-005](https://www.drupal.org/sa-core-2023-005)
+
+- Updates for Drupal Core
+    Patch (bugfix) release of Drupal Core to `v10.0.10`
+
+- Updates for WxT
+  - [Composer] Update all contrib to Drupal 10 versions
+  - Check $profile is not null condition
+  - Remove non-existant permissions from wxt_ext_user
+  - Support for CKEditor 5 [3255971](https://www.drupal.org/node/3255971)
+  - Add codemirror back to CKEditor5 [3361536](https://www.drupal.org/node/3361536)
+  - Give users ability to edit existing alerts and panels in CKEditor 5 [3361560](https://www.drupal.org/node/3361560)
+  - Remove And/Or plugin from wxt_ext_editor [3361566](https://www.drupal.org/node/3361566)
+  - Add gcweb styles to CKEditor5 [3362435](https://www.drupal.org/node/3362435)
+  - Add selection handle to allow moving alert and panel widgets [3362705](https://www.drupal.org/node/3362705)
+  - Default well panels being converted to default panels [3362702](https://www.drupal.org/node/3362702)
+  - Add ability to set permissions for wxt_ext_breadcrumbs [3366800](https://www.drupal.org/node/3366800)
+  - Vanilla rich text ckeditor4 notice when editing existing french content [3362793](https://www.drupal.org/node/3362793)
+  - Keep drupal/groups disabled by default [3357710](https://www.drupal.org/node/3357710)
+  - The drush si then drush sql-drop then drush si again results in file exists [3374003](https://www.drupal.org/node/3374003)
+  - Using non-existent parameter "config.export.commands" [3377173](https://www.drupal.org/node/3377173)
+  - Enable linkit in rich text editor [3377252](https://www.drupal.org/node/3377252)
+  - Issue with password_policy and PostgreSQL [3377970](https://www.drupal.org/node/3377970)
+  - Panels Restore Style Settings and classes [3377979](https://www.drupal.org/node/3377979)
+  - Improve placement of bootstrap ckeditor library [3376951](https://www.drupal.org/node/3376951)
+  - The ckeditor5 div class attribute is removed/deleted [3362788](https://www.drupal.org/node/3362788)
+  - password policy is preventing hooks from firing [3313274](https://www.drupal.org/node/3313274)
+  - Add SVG icons to alert/panel widgets in CKE5 [3380029](https://www.drupal.org/node/3380029)
+  - ckeditor 5 footnotes related [3377942](https://www.drupal.org/node/3377942)
+  - Enable Table of Contents filter [3380730](https://www.drupal.org/node/3380730)
+  - codemirror support for both ckeditor4 and ckeditor5 [3362801](https://www.drupal.org/node/3362801)
+
+- Updates for WxT Library
+  - Update *.info.yml + composer.json to allow install on D10
+  - Drupal 10 comptaibility updates [3346270](https://www.drupal.org/node/3346270)
+  - language switcher fix related to Core Security update [3349214](https://www.drupal.org/node/3349214)
+  - Issue with wxt_library.module and php 8.1 [3368356](https://www.drupal.org/node/3368356)
+  - WxT 4 & 5 - Remove IE8 from the wxt build, IE8 cleanup [3374233](https://www.drupal.org/node/3374233)
+
+- Updated for WxT Bootstrap
+  - Update *.info.yml + composer.json to allow install on D10
+  - Update Bootstrap to v3.27
+  - Fix reference to deprecated node_type plugin in optional config
+  - Fix twig errors with input template and it's extensions
+  - Replace ckeditor-stylesheets with ckeditor5 version
+  - Twig deprecation fix for wxt_bootstrap spaceless [3362712](https://www.drupal.org/node/3362712)
+  - Bootstrap requires underscore.js but it was removed from D10 core [3362764](https://www.drupal.org/node/3362764)
+  - wxt_ext_blog - Firstname Lastname - Date [3367309](https://www.drupal.org/node/3367309)
+  - Drupal 10.1.1 requires bootstrap 3.29 , 3.29 also compatible with D10.0.10 and D9.5.10 [3374741](https://www.drupal.org/node/3374741)
+  - Typo in template files: "clas" [3356383](https://www.drupal.org/node/3356383)
+  - Empty label can lead to empty 'h3', invalid HTML [3356385](https://www.drupal.org/node/3356385)
 
 Upgrade path:
 
@@ -19,10 +77,117 @@ Upgrade path:
 
 This is an upgrade from 9.5.x to 10.0.x however changes are minimal and is expected upgrades will be fairly smooth.
 
+## v4.5.4 (In Development)
+
+- Updates for Drupal Core
+  -  Patch (bugfix) release of Drupal Core to `v9.5.8`
+- Updates for third party libraries
+  -  Incompatible version for ckeditor/fakeobjects [#3363952](https://drupal.org/i/3363952)
+
+Upgrade path:
+
+> **Important**: Please backup your database before running the upgrade process for this release.
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
+- Run WxT configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:wxt`
+
+**Note(s)**:
+
+N/A
+
+## v4.5.3 (Hotfix)
+
+- Remove accidentally committed composer.lock file
+
+Upgrade path:
+
+> **Important**: Please backup your database before running the upgrade process for this release.
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
+- Run WxT configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:wxt`
+
+**Note(s)**:
+
+N/A
+
+## v4.5.2
+
+- Security Updates for Drupal Core (v9.5.8)
+  - [SA-core-2023-002](https://www.drupal.org/sa-core-2023-005)
+- Updates for WxT
+  - Update migrate_tools to 6.x for PHP8.1 support [3352269](https://www.drupal.org/node/3352269)
+  - Add alt text to images in wxt_ext_carousel [3352676](https://www.drupal.org/node/3352676)
+
+Upgrade path:
+
+> **Important**: Please backup your database before running the upgrade process for this release.
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
+- Run WxT configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:wxt`
+
+**Note(s)**:
+
+N/A
+
+## v4.5.1
+
+- Security Updates for Drupal Core (v9.5.5)
+  - [SA-core-2023-002](https://www.drupal.org/sa-core-2023-002)
+  - [SA-core-2023-003](https://www.drupal.org/sa-core-2023-003)
+  - [SA-core-2023-004](https://www.drupal.org/sa-core-2023-004)
+- Updated for WxT Library
+  - Language switcher fix related to Core Security update  [#3349214](https://www.drupal.org/node/3349214)
+
+Upgrade path:
+
+> **Important**: Please backup your database before running the upgrade process for this release.
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
+- Run WxT configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:wxt`
+
+**Note(s)**:
+
+There is a core regression of the language switcher block which throws exception when no route is matched.
+
+* https://www.drupal.org/project/drupal/issues/3348592
+
+WxT Library is patched so it will not have this problem.
 ## v4.5.0
 
 - Updates for Drupal Core
-  -  Patch (bugfix) release of Drupal Core to `v9.5.4`
+  - Patch (bugfix) release of Drupal Core to `v9.5.4`
 - Updates for Drupal Contrib
   - bootstrap_layouts update to `5.3`
   - core_context update to `1.1`
