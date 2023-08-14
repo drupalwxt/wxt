@@ -1,9 +1,21 @@
 ## v4.5.4 (In Development)
 
 - Updates for Drupal Core
-  -  Patch (bugfix) release of Drupal Core to `v9.5.8`
-- Updates for third party libraries
-  -  Incompatible version for ckeditor/fakeobjects [#3363952](https://drupal.org/i/3363952)
+  - Patch (bugfix) release of Drupal Core to `v9.5.10`
+- Updates for Drupal Contrib
+  - Incompatible version for ckeditor/fakeobjects [#3363952](https://www.drupal.org/node/3363952)
+  - Update migrate_plus to ^6.0 [#3372334](https://www.drupal.org/node/3372334)
+- Updates for WxT
+  - Check $profile is not null condition.
+  - Add ability to set permissions for wxt_ext_breadcrumbs [#3366800](https://www.drupal.org/node/3366800)
+  - Keep drupal/groups disabled by default [#3357710](https://www.drupal.org/node/3357710)
+  - Undefined array key 'editor' in wxt_ext_editor_editor_js_settings_alter [#3373991](https://www.drupal.org/node/3373991)
+- Updates for WxT Bootstrap
+  - Issue #3356383 by Liam Morland: Typo in template files: "clas" [#3373991](https://www.drupal.org/node/3373991)
+  - Issue #3356385 by Liam Morland: Empty label can lead to empty 'h3', invalid HTML [#3373991](https://www.drupal.org/node/3373991)
+- Updates for WxT Library
+  - Issue with wxt_library.module and php 8.1 [#3368356](https://www.drupal.org/node/3368356)
+  - Remove IE8 from the wxt build, IE8 cleanup [#3374233](https://www.drupal.org/node/3374233)
 
 Upgrade path:
 
