@@ -1,3 +1,35 @@
+## v4.5.5 (In Development)
+
+- Updates for Drupal Core
+  - TBD
+- Updates for Drupal Contrib
+  - TBD
+- Updates for WxT
+  - TBD
+- Updates for WxT Bootstrap
+  - TBD
+- Updates for WxT Library
+  - TBD
+
+Upgrade path:
+
+> **Important**: Please backup your database before running the upgrade process for this release.
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
+- Run WxT configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:wxt`
+
+**Note(s)**:
+
+N/A
+
 ## v4.5.4
 
 - Updates for Drupal Core

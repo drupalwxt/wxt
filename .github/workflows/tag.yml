@@ -84,13 +84,11 @@ jobs:
       run: |
         git clone --branch 9.5.x https://drupalwxt-svc:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/drupalwxt/site-wxt.git
         git clone --branch 9.5.x https://drupalwxt-svc:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/drupalwxt/wxt-project.git
-        git clone --branch master https://drupalwxt-svc:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/drupalwxt/helm-drupal.git
-        git clone --branch master https://drupalwxt-svc:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/drupalwxt/terraform-kubernetes-drupalwxt.git
 
     - name: Update tags for site-wxt
       uses: jacobtomlinson/gha-find-replace@master
       with:
-        find: "\"drupalwxt/wxt\": \"[3-4]\\.[0-9]+\\.[0-9|x]+-(beta|rc|dev)[0-9]?\""
+        find: "\"drupalwxt/wxt\": \"[3-5]\\.[0-9]+\\.[0-9|x]+(-(beta|rc|dev)[0-9]?)?\""
         replace: "\"drupalwxt/wxt\": \"${{ env.GITHUB_REFERENCE }}\""
         exclude: ".git/**"
         include: "site-wxt/**"
@@ -163,20 +161,6 @@ jobs:
         git tag ${{ env.GITHUB_REFERENCE }}
         git push origin 9.5.x
         git push origin ${{ env.GITHUB_REFERENCE }}
-
-    - name: Push to helm-drupal the latest tags
-      run: |
-        cd helm-drupal
-        git add .
-        git commit -m "Update to latest version of WxT ${{ env.GITHUB_REFERENCE }}" || true
-        git push origin master
-
-    - name: Push to terraform-kubernetes-drupalwxt the latest tags
-      run: |
-        cd terraform-kubernetes-drupalwxt
-        git add .
-        git commit -m "Update to latest version of WxT ${{ env.GITHUB_REFERENCE }}" || true
-        git push origin master
 
     # Connect to Container registry
     - uses: azure/docker-login@v1
