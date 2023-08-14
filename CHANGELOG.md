@@ -1,4 +1,4 @@
-## v5.0.0-RC1 (In Development)
+## v5.0.0-rc1
 
 - Build Infrastructure
   - [CI] Point build system to 10.0.x docker-scaffold

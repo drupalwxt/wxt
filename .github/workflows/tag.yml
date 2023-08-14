@@ -90,7 +90,7 @@ jobs:
     - name: Update tags for site-wxt
       uses: jacobtomlinson/gha-find-replace@master
       with:
-        find: "\"drupalwxt/wxt\": \"[3-5]\\.[0-9]+\\.[0-9|x]+-(beta|rc|dev)[0-9]?\""
+        find: "\"drupalwxt/wxt\": \"[3-5]\\.[0-9]+\\.[0-9|x]+(-(beta|rc|dev)[0-9]?)?\""
         replace: "\"drupalwxt/wxt\": \"${{ env.GITHUB_REFERENCE }}\""
         exclude: ".git/**"
         include: "site-wxt/**"
