@@ -6,4 +6,4 @@ package: WxT
 dependencies:
   - 'menu_breadcrumb:menu_breadcrumb'
 configure: wxt_ext_breadcrumb.settings_form
-version: 4.5.4-dev
+version: 4.5.4
