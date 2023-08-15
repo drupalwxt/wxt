@@ -281,9 +281,7 @@
             },
             "drupal/password_policy": {
                 "Enter drupal/password_policy patch #3362201 description here":
-                "https://www.drupal.org/files/issues/2023-05-23/password_policy-d10.patch",
-                "Enter drupal/password_policy patch #3313282 description here":
-                "https://www.drupal.org/files/issues/2023-07-29/password_policy-8304_fix-3313282-11.patch"
+                "https://www.drupal.org/files/issues/2023-05-23/password_policy-d10.patch"
             },
             "drupal/panels": {
                 "Enter drupal/panels patch #2849867 description here":
