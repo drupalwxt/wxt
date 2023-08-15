@@ -653,4 +653,9 @@ function wxt_core_update_8500() {
       }
     }
   }
+
+  // Enable ckeditor4_codemirror for seamless transition of CKE4 text formats.
+  if (!$moduleHandler->moduleExists('ckeditor4_codemirror')) {
+    $module_installer->install(['ckeditor4_codemirror']);
+  }
 }
