@@ -1,3 +1,40 @@
+## v5.0.0-rc2
+
+- Build Infrastructure
+  - TBD
+- Security Updates for Drupal Core
+  - TBD
+- Updates for Drupal Core
+  - TBD
+- Updates for Drupal Contrib
+  - TBD
+- Updates for WxT
+  - Remove duplicate editor/filter config [3381990](https://www.drupal.org/node/3381990)
+  - CKEditor JS error with JS aggregation enabled [3381980](https://www.drupal.org/node/3381980)
+- Updated for WxT Bootstrap
+  - Give CKEditor min-height [3381988](https://www.drupal.org/node/3381988)
+- Updates for WxT Library
+  - TBD
+
+Upgrade path:
+
+> **Important**: Please backup your database before running the upgrade process for this release.
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
+- Run WxT configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:wxt`
+
+**Note(s)**:
+
+This is an upgrade from 9.5.x to 10.0.x however changes are minimal and is expected upgrades will be fairly smooth.
+
 ## v5.0.0-rc1
 
 - Build Infrastructure
