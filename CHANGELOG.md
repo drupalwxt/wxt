@@ -1,13 +1,7 @@
 ## v5.0.0-rc2 (In Development)
 
-- Build Infrastructure
-  - TBD
-- Security Updates for Drupal Core
-  - TBD
-- Updates for Drupal Core
-  - TBD
 - Updates for Drupal Contrib
-  - TBD
+  - core_context to `1.1`
 - Updates for WxT
   - Remove duplicate editor/filter config [3381990](https://www.drupal.org/node/3381990)
   - CKEditor JS error with JS aggregation enabled [3381980](https://www.drupal.org/node/3381980)
