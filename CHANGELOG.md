@@ -11,10 +11,11 @@
 - Updates for WxT
   - Remove duplicate editor/filter config [3381990](https://www.drupal.org/node/3381990)
   - CKEditor JS error with JS aggregation enabled [3381980](https://www.drupal.org/node/3381980)
+  - CKEditor5 and CKEditor compatibility support [3382168](https://www.drupal.org/node/3382168)
 - Updated for WxT Bootstrap
   - Give CKEditor min-height [3381988](https://www.drupal.org/node/3381988)
 - Updates for WxT Library
-  - TBD
+  - Correct logic for Search block visibility reliance on core search
 
 Upgrade path:
 
@@ -33,7 +34,11 @@ Upgrade path:
 
 **Note(s)**:
 
-This is an upgrade from 9.5.x to 10.0.x however changes are minimal and is expected upgrades will be fairly smooth.
+There were some issues in 5.0.0-rc1 related to the text formats and filters logic.
+
+The rich_text format now functions as before using CKEditor4.
+
+There is a new rich_text_ckeditor5 format which uses the newer CKEditor5.
 
 ## v5.0.0-rc1
 
