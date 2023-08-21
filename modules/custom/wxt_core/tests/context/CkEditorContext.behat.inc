@@ -35,8 +35,8 @@ final class CkEditorContext extends DrupalSubContextBase {
    */
   public function assertEditor($id = NULL) {
 
-    $CKEditor5 = $this->getSession()->evaluateScript("Drupal.CKEditor5Instances.size != 0");
-    if ($CKEditor5) {
+    $ckeditor5 = $this->getSession()->evaluateScript("Drupal.CKEditor5Instances.size != 0");
+    if ($ckeditor5) {
       $js = "Drupal.CKEditor5Instances.get(document.getElementById('" . ($id ?: $this->getDefault()) . "').dataset[\"ckeditor5Id\"])";
       $this->getSession()->wait(10000, "$js.state === 'ready'");
     }
