@@ -1,4 +1,4 @@
-## v5.0.0-rc2 (In Development)
+## v5.0.0-rc2
 
 - Updates for Drupal Contrib
   - core_context to `1.1`
