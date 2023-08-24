@@ -18,7 +18,7 @@
         "drupal/bootstrap_layouts": "5.3",
         "drupal/button_link": "2.0.1",
         "drupal/ckeditor_abbreviation": "^3.0",
-        "drupal/ckeditor4_codemirror": "^1.0",
+        "drupal/ckeditor4_codemirror": "^1.0.4",
         "drupal/ckeditor_codemirror": "^3.0.0-beta4",
         "drupal/ckeditor_details": "^2.1.0-alpha1",
         "drupal/config_rewrite": "^1.5",
@@ -224,10 +224,6 @@
                 "https://www.drupal.org/files/issues/2021-12-22/drupal-core-9.2.x-li-role-separator-tag-linkGenerator-3236799-11.patch",
                 "3107212 - allow translation of views field empty text":
                 "https://www.drupal.org/files/issues/2022-03-09/d9-4-x--3107212-13.patch"
-            },
-            "drupal/ckeditor4_codemirror": {
-                "Enter drupal/ckeditor4_codemirror patch #03373907 description here":
-                "https://www.drupal.org/files/issues/2023-08-20/03373907-ckeditor-admin-warning-001.patch"
             },
             "drupal/ctools": {
                 "Enter drupal/ctools patch #2667652 description here":
