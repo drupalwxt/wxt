@@ -98,11 +98,11 @@ Extended with code and lessons learned by the **[Acquia Team][acquia]** over at 
 [containers-scaffold]:       https://github.com/drupalwxt/docker-scaffold
 [contributors]:              https://github.com/drupalwxt/wxt/graphs/contributors
 [docs]:                      http://drupalwxt.github.io
-[docs-architecture]:         https://drupalwxt.github.io/en/docs/development/architecture/
-[docs-containers]:           https://drupalwxt.github.io/en/docs/environment/containers/
-[docs-kubernetes]:           https://drupalwxt.github.io/en/docs/environment/kubernetes/
-[docs-installation]:         https://drupalwxt.github.io/en/docs/general/installation/
-[docs-update-process]:       https://drupalwxt.github.io/en/docs/general/update/
+[docs-architecture]:         https://drupalwxt.github.io/docs/development/architecture/
+[docs-containers]:           https://drupalwxt.github.io/docs/environment/containers/
+[docs-kubernetes]:           https://drupalwxt.github.io/docs/environment/kubernetes/
+[docs-installation]:         https://drupalwxt.github.io/docs/general/installation/
+[docs-update-process]:       https://drupalwxt.github.io/docs/general/update/
 [githubci]:                  https://github.com/drupalwxt/wxt/actions
 [githubci-badge]:            https://github.com/drupalwxt/wxt/workflows/build/badge.svg
 [github-site-wxt]:           https://github.com/drupalwxt/site-wxt
