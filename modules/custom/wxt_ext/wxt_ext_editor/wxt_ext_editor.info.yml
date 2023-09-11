@@ -1,6 +1,6 @@
 name: 'WxT Extend Editor'
 type: module
-description: 'Add WET Alert and Panels plugins for CKEditor 5'
+description: 'Provides CKEditor 4/5 integration along with several plugins (WET Alert, Panels).'
 package: WxT
 core_version_requirement: '^9 || ^10'
 dependencies:

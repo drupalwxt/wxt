@@ -2,7 +2,7 @@ name: 'Media Audio'
 core_version_requirement: '^9 || ^10'
 type: module
 package: WxT
-description: 'Audio support for WxT Extend Media.'
+description: 'Provides an Audio entity type for Media.'
 dependencies:
   - 'wxt_ext_media:wxt_ext_media'
 version: 5.0.0-dev

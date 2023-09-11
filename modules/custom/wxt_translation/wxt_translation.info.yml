@@ -1,5 +1,5 @@
 name: 'WxT Translation'
-description: 'Contains default configuration and additional functionality to interact with entity translation.'
+description: 'Ensures that both of the official languages for Canada are setup correctly.'
 type: module
 core_version_requirement: '^9 || ^10'
 package: WxT

@@ -263,7 +263,7 @@
             },
             "drupal/linkit": {
                 "Detect and strip base URL from pasted URLs to increase matching hits":
-                "https://www.drupal.org/files/issues/2023-03-03/linkit6x-3078075-62.patch"
+                "https://www.drupal.org/files/issues/2023-09-10/linkit6x-3078075-68.patch"
             },
             "drupal/page_manager": {
                 "Enter drupal/page_manager patch #2626090 description here":

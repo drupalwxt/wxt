@@ -1,5 +1,5 @@
 name: 'WxT Extend Group'
-description: 'WxT functionality related to CKAN organizations.'
+description: 'Provides Group functionality and mappings to all departments through Migrate.'
 type: module
 core_version_requirement: '^9 || ^10'
 package: WxT

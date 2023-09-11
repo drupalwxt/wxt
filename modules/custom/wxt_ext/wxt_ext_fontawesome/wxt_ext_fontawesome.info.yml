@@ -1,5 +1,5 @@
 name: 'WxT Extend Font Awesome'
-description: 'Add Font Awesome to the site.'
+description: 'Adds Font Awesome support.'
 type: module
 core_version_requirement: '^9 || ^10'
 package: WxT

@@ -1,5 +1,5 @@
 name: 'WxT Extend Blocks'
-description: 'Provides blocks customizations / bundles.'
+description: 'Creates custom blocks of type Basic, Search, and Spotlight.'
 type: module
 core_version_requirement: '^9 || ^10'
 package: WxT

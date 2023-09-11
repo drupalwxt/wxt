@@ -1,5 +1,5 @@
 name: 'WxT Extend Layout'
-description: 'Provides custom and responsive panel layouts.'
+description: 'Provides Layout related functionality and enhancements.'
 type: module
 core_version_requirement: '^9 || ^10'
 package: WxT

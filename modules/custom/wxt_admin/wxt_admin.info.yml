@@ -1,5 +1,5 @@
 name: 'WxT Admin'
-description: 'Installs default configuration for administrative tasks.'
+description: 'Provides the default configuration and various helper methods for administrative tasks.'
 type: module
 core_version_requirement: '^9 || ^10'
 package: WxT

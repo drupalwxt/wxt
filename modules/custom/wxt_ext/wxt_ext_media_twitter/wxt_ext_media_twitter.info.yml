@@ -2,7 +2,7 @@ name: 'Media Twitter'
 core_version_requirement: '^9 || ^10'
 type: module
 package: WxT
-description: 'Twitter support for WxT Extend Media.'
+description: 'Provides a Twitter entity type for Media.'
 dependencies:
   - 'wxt_ext_media:wxt_ext_media'
   - 'media_entity_twitter:media_entity_twitter'

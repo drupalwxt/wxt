@@ -1,5 +1,5 @@
 name: 'WxT Extend Archived'
-description: 'Adds an archived field and associated block.'
+description: 'Creates an archived alert block triggered by a checkbox field on a entity.'
 type: module
 core_version_requirement: '^9 || ^10'
 package: WxT

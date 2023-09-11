@@ -1,5 +1,5 @@
 name: 'WxT Extend Sitemap'
-description: 'Enable(s) and configure a default sitemap.'
+description: 'Provides a default sitemap.'
 type: module
 package: WxT
 core_version_requirement: '^9 || ^10'

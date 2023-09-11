@@ -1,5 +1,5 @@
 name: 'WxT Extend Workflow'
-description: 'Tools to improve your content workflow.'
+description: 'Provides enhanced functionality to improve your content workflow.'
 type: module
 core_version_requirement: '^9 || ^10'
 package: WxT

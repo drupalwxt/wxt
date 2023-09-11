@@ -1,5 +1,5 @@
 name: 'WxT Extend Webform'
-description: 'Provides functionality for storing, retrieving, and tabulating webforms.'
+description: 'Provides enhanced functionality and custom plugins (Report a Problem, Did you Find).'
 type: module
 core_version_requirement: '^9 || ^10'
 package: WxT

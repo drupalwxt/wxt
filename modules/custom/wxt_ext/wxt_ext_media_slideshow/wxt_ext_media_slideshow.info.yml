@@ -1,5 +1,5 @@
 name: 'WxT Extend Media Slideshow'
-description: 'Adds a slideshow media_entity bundle.'
+description: 'Provides a Slideshow entity type for Media.'
 type: module
 core_version_requirement: '^9 || ^10'
 package: WxT

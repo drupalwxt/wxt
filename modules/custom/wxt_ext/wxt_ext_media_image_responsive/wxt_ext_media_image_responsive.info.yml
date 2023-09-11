@@ -2,7 +2,7 @@ name: 'Media Image'
 core_version_requirement: '^9 || ^10'
 type: module
 package: WxT
-description: 'Image support for WxT Extend Media.'
+description: 'Provides responsive image support for Media.'
 dependencies:
   - 'drupal:responsive_image'
   - 'wxt_ext_media_image:wxt_ext_media_image'

@@ -1,5 +1,5 @@
 name: 'WxT Extend Search Database'
-description: 'Enable this module for a default setup of Search API with the Database backend.'
+description: 'Provides a default setup for Search w/Database Backend.'
 type: module
 core_version_requirement: '^9 || ^10'
 package: WxT

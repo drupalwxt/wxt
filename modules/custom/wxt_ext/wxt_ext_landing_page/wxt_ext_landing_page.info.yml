@@ -1,5 +1,5 @@
 name: 'WxT Extend Landing Page'
-description: 'Extends landing page which allows you to build free-form one-off landing pages.'
+description: 'Provides Landing Page related functionality.'
 type: module
 core_version_requirement: '^9 || ^10'
 package: WxT

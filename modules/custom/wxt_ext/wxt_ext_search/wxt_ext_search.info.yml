@@ -1,5 +1,5 @@
 name: 'WxT Extend Search'
-description: 'Enable this module for a initial setup of Search API.'
+description: 'Provides a default setup for Search API.'
 type: module
 core_version_requirement: '^9 || ^10'
 package: WxT

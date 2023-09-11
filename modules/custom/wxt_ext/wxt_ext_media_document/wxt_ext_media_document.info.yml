@@ -1,7 +1,7 @@
 name: 'Media Document'
 core_version_requirement: '^9 || ^10'
 type: module
-description: 'Locally hosted document support for WxT Extend Media.'
+description: 'Provides a Document entity type for Media.'
 package: WxT
 dependencies:
   - 'wxt_ext_media:wxt_ext_media'

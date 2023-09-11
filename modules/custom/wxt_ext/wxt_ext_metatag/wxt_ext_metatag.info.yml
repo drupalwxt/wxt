@@ -1,5 +1,5 @@
 name: 'WxT Extend Metatag'
-description: 'Enable(s) and configure the default metatag configuration.'
+description: 'Configures Metatag and related functionality.'
 type: module
 package: WxT
 core_version_requirement: '^9 || ^10'

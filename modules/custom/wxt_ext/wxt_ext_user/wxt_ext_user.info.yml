@@ -1,5 +1,5 @@
 name: 'WxT Extend User'
-description: 'Provides default user roles, users, and permissions.'
+description: 'Provides User and related enhancements.'
 type: module
 core_version_requirement: '^9 || ^10'
 package: WxT

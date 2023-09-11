@@ -2,7 +2,7 @@ name: 'Media Video'
 core_version_requirement: '^9 || ^10'
 type: module
 package: WxT
-description: 'Video support for WxT Extend Media.'
+description: 'Provides a Video entity type for Media.'
 dependencies:
   - 'wxt_ext_media:wxt_ext_media'
 version: 5.0.0-dev

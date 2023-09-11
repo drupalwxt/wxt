@@ -1,5 +1,5 @@
 name: 'WxT Extend Theme'
-description: 'Provides default configuration for the WxT theme(s).'
+description: 'Provides theming and related functionality.'
 type: module
 core_version_requirement: '^9 || ^10'
 package: WxT

@@ -1,5 +1,5 @@
 name: 'WxT Extend Carousel'
-description: 'Provides a custom block type for displaying a carousel'
+description: 'Creates custom block of type Carousel.'
 type: module
 core_version_requirement: '^9 || ^10'
 package: WxT

@@ -1,5 +1,5 @@
 name: 'WxT Extend Media'
-description: 'Add media entities.'
+description: 'Provides Media related functionality and enhancements.'
 type: module
 core_version_requirement: '^9 || ^10'
 package: WxT

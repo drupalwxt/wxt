@@ -1,5 +1,5 @@
 name: 'WxT Extend Queue'
-description: 'Entity Queue functionality.'
+description: 'Provides Queueing and related functionality.'
 type: module
 core_version_requirement: '^9 || ^10'
 package: WxT

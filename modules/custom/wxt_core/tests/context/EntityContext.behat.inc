@@ -302,7 +302,7 @@ final class EntityContext extends DrupalSubContextBase {
       }
     }
 
-    // WTF? None of the rows were the current revision.
+    // None of the rows were the current revision.
     throw new ExpectationException('Current revision not found.', $session->getDriver());
   }
 

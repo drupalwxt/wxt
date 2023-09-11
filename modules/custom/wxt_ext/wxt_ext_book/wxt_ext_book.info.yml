@@ -1,5 +1,5 @@
 name: 'WxT Extend Book'
-description: 'Provides book integration with GC Subway'
+description: 'Configures book module to support GC Subway functionality.'
 type: module
 core_version_requirement: '^9 || ^10'
 package: WxT
