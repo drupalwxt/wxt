@@ -106,7 +106,7 @@ class Lightbox extends ImageFormatterBase {
           'title' => $title,
         ],
       ];
-      $url = Url::fromUri(file_create_url($lbx_image_path), $url_options);
+      $url = Url::fromUri(\Drupal::service('file_url_generator')->generateAbsoluteString($lbx_image_path), $url_options);
 
       $item_attributes['class'][] = 'thumbnail';
 
