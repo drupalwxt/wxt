@@ -1,21 +1,22 @@
 # CHANGELOG
 
-## v5.0.0-rc3 (In Development)
+## v5.0.0
 
 - Build Infrastructure
-  - TBD
+  - Add DB_VERSION variable to .env
 - Security Updates for Drupal Core
-  - TBD
+  - [SA-core-2023-006](https://www.drupal.org/sa-core-2023-006)
 - Updates for Drupal Core
-    TBD
+  - N/A
 - Updates for Drupal Contrib
-  - TBD
+  - Build update for wxt, upgrade ckeditor4_codemirror [3382999](https://www.drupal.org/node/3382999)
 - Updates for WxT
-  - TBD
+  - Minor naming adjustments and proper location of config objects
+  - Call to deprecated function file_create_url() [3387600](https://www.drupal.org/node/3387600)
 - Updated for WxT Bootstrap
-  - TBD
+  - Support for composer/installers 2.x [3382948](https://www.drupal.org/node/3382948)
 - Updates for WxT Library
-  - TBD
+  - Support for composer/installers 2.x [3382948](https://www.drupal.org/node/3382948)
 
 Upgrade path:
 
@@ -34,7 +35,7 @@ Upgrade path:
 
 **Note(s)**:
 
-TBD
+This is the first stable release of v5.0.0 please ensure you have read the release notes from the previous release candidates.
 
 ## v5.0.0-rc2
 
