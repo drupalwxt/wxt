@@ -100,9 +100,15 @@ class ConfigHelper extends InstallStorage {
 
     $prefixes = $this->getConfigPrefixes();
 
-    return $storage->createFromStorageRecord(
-      $this->read($prefixes[$entity_type] . '.' . $id)
-    );
+    if ($this->read($prefixes[$entity_type] . '.' . $id)) {
+      return $storage->createFromStorageRecord(
+        $prefixes[$entity_type] . '.' . $id
+      );
+    }
+    else {
+      return $entity;
+    }
+
   }
 
   /**
