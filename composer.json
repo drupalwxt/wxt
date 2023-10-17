@@ -49,7 +49,7 @@
         "drupal/layout_builder_st": "^1.0-alpha2",
         "drupal/layout_builder_styles": "^2.0",
         "drupal/layout_library": "^1.0-beta1",
-        "drupal/linkit": "6.0.x-dev",
+        "drupal/linkit": "6.0.2",
         "drupal/media_entity_instagram": "^3",
         "drupal/media_entity_twitter": "^2.5",
         "drupal/media_entity_slideshow": "^2.0",
@@ -263,7 +263,7 @@
             },
             "drupal/linkit": {
                 "Detect and strip base URL from pasted URLs to increase matching hits":
-                "https://www.drupal.org/files/issues/2023-09-10/linkit6x-3078075-68.patch"
+                "https://www.drupal.org/files/issues/2023-10-15/linkit6x-3078075-76.patch"
             },
             "drupal/page_manager": {
                 "Enter drupal/page_manager patch #2626090 description here":
