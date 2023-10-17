@@ -616,19 +616,19 @@ function wxt_core_update_8441() {
   // Add the new configuration items for the new GCWeb global footer.
   $config = Config::forTheme('wxt_bootstrap')->optional();
   $entities = [
-    'block'=> 'block.block.wxt_bootstrap_footer_contextual',
+    'block' => 'block.block.wxt_bootstrap_footer_contextual',
     'block' => 'block.block.wxt_bootstrap_footer_contextual',
     'block' => 'block.block.wxt_bootstrap_footer_contextual_fr',
     'block' => 'block.block.wxt_bootstrap_footer_top',
     'block' => 'block.block.wxt_bootstrap_footer_top_fr',
-    'menu' =>'system.menu.footer-contextual',
-    'menu' =>'system.menu.footer-contextual-fr',
-    'menu' =>'system.menu.footer-top',
-    'menu' =>'system.menu.footer-top-fr'
+    'menu' => 'system.menu.footer-contextual',
+    'menu' => 'system.menu.footer-contextual-fr',
+    'menu' => 'system.menu.footer-top',
+    'menu' => 'system.menu.footer-top-fr',
   ];
 
-  foreach( $entities as $entity => $machine_name ){
-    if($config->getEntity($entity, $machine_name)){
+  foreach ($entities as $entity => $machine_name) {
+    if ($config->getEntity($entity, $machine_name)) {
       $config->getEntity($entity, $machine_name)->save();
     }
   }
