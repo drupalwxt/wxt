@@ -5,4 +5,4 @@ description: 'Provides a Document entity type for Media.'
 package: WxT
 dependencies:
   - 'wxt_ext_media:wxt_ext_media'
-version: 5.0.0
+version: 5.0.1-dev

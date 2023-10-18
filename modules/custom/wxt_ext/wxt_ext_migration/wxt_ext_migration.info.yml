@@ -13,4 +13,4 @@ dependencies:
   - 'wxt_ext_layout:wxt_ext_layout'
   - 'wxt_ext_media:wxt_ext_media'
   - 'wxt_ext_media_slideshow:wxt_ext_media_slideshow'
-version: 5.0.0
+version: 5.0.1-dev

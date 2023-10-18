@@ -1,5 +1,48 @@
 # CHANGELOG
 
+## v5.0.1 (In Development)
+
+- Build Infrastructure
+  - N/A
+- Security Updates for Drupal Core
+  - N/A
+- Updates for Drupal Core
+  - N/A
+- Updates for Drupal Contrib
+  - N/A
+- Updates for WxT
+  - Exception on wxt_core_update_8441 [3394034](https://www.drupal.org/node/3394034)
+  - Pin linkit to stable and update patches
+  - Lead title functionality [3389645](https://www.drupal.org/node/3389645)
+  - TOC translation issue [3394057](https://www.drupal.org/node/3394057)
+  - Make Modify table attributes filter work with CKE5 [3394629](https://www.drupal.org/node/3394629)
+- Updated for WxT Bootstrap
+  - Skip links hidden by Admin Toolbar [3326137](https://www.drupal.org/node/3326137)
+  - Links style in the contextual alerts class are bold by default [3335963](https://www.drupal.org/node/3335963)
+  - Lead title functionality [3389645](https://www.drupal.org/node/3389645)
+  - Update to latest gulp and simplify logic for sass compilation
+- Updates for WxT Library
+  - Extra values(query) on search submit [3376213](https://www.drupal.org/node/3376213)
+
+Upgrade path:
+
+> **Important**: Please backup your database before running the upgrade process for this release.
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
+- Run WxT configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:wxt`
+
+**Note(s)**:
+
+N/A
+
 ## v5.0.0
 
 - Build Infrastructure
