@@ -16,6 +16,7 @@
   - Lead title functionality [3389645](https://www.drupal.org/node/3389645)
   - TOC translation issue [3394057](https://www.drupal.org/node/3394057)
   - Make Modify table attributes filter work with CKE5 [3394629](https://www.drupal.org/node/3394629)
+  - Get entity_embed working with CKE5 [3394653](https://www.drupal.org/node/3394653)
 - Updated for WxT Bootstrap
   - Skip links hidden by Admin Toolbar [3326137](https://www.drupal.org/node/3326137)
   - Links style in the contextual alerts class are bold by default [3335963](https://www.drupal.org/node/3335963)
