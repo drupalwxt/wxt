@@ -247,6 +247,18 @@
                 "Enter drupal/diff patch #3228798 description here":
                 "https://www.drupal.org/files/issues/2021-08-19/diff-a11y-3228798-10.patch"
             },
+            "drupal/embed": {
+                 "3272732 - CKE5 compatibility":
+                 "https://www.drupal.org/files/issues/2023-03-30/fix_module_embed_compatibility_CKEditor_5.patch"
+            },
+            "drupal/entity_browser": {
+                "2914385 - Fix PHP error":
+                "https://www.drupal.org/files/issues/2022-04-21/entity_browser-key-2914385-12.patch"
+            },
+            "drupal/entity_embed": {
+                "3272732 - CKE5 compatibility":
+                "https://www.drupal.org/files/issues/2023-06-19/entity_embed-3272732-93.patch"
+            },
             "drupal/fontawesome": {
                 "3071758 - Fix multiple icons issue":
                 "https://git.drupalcode.org/project/fontawesome/-/merge_requests/4.diff"
@@ -303,7 +315,7 @@
                 "Enter drupal/s3fs patch #3038992 description here":
                 "https://www.drupal.org/files/issues/2019-03-10/0001-feat-s3fs-Compatibility-with-Minio.patch"
             },
-            "toc_filter": {
+            "drupal/toc_filter": {
                 "3262302 - Exclude text above [toc] token when building TOC":
                 "https://www.drupal.org/files/issues/2022-02-03/toc-filter-exclude-text-above-token-3262302-2.patch"
             },
