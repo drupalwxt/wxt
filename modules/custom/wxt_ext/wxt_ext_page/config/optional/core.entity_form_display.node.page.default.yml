@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.page.layout_builder__layout
     - field.field.node.page.layout_builder__translation
     - field.field.node.page.layout_selection
+    - field.field.node.page.field_lead_title
     - node.type.page
   module:
     - content_moderation
@@ -86,6 +87,14 @@ content:
       placeholder: ''
     third_party_settings: {  }
     region: content
+  field_lead_title:
+      type: string_textfield
+      weight: 1
+      region: content
+      settings:
+        size: 60
+        placeholder: ''
+      third_party_settings: {  }
   translation:
     weight: 10
     region: content
