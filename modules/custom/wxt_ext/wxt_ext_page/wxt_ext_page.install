@@ -1,13 +1,13 @@
 <?php
 
-use Drupal\Core\Config\FileStorage;
-use Drupal\field\Entity\FieldConfig;
-use Drupal\field\Entity\FieldStorageConfig;
-
 /**
  * @file
  * Contains wxt_ext_page.install.
  */
+
+use Drupal\Core\Config\FileStorage;
+use Drupal\field\Entity\FieldConfig;
+use Drupal\field\Entity\FieldStorageConfig;
 
 /**
  * Implements hook_install().
@@ -39,7 +39,7 @@ function wxt_ext_page_install() {
 }
 
 /**
- * Add field_lead_title to page content type
+ * Add field_lead_title to page content type.
  */
 function wxt_ext_page_update_8500() {
   $config_directory = new FileStorage(\Drupal::service('extension.list.module')->getPath('wxt_ext_page') . '/config/optional/');
