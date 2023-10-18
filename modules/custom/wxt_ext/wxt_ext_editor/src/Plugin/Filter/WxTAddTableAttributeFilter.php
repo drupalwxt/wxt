@@ -16,7 +16,7 @@ use Drupal\filter\Plugin\FilterBase;
  *   id = "wxt_add_table_attribute_filter",
  *   module = "wxt_ext_editor",
  *   title = @Translation("Modify table attributes (WxT)"),
- *   type = Drupal\filter\Plugin\FilterInterface::TYPE_MARKUP_LANGUAGE,
+ *   type = Drupal\filter\Plugin\FilterInterface::TYPE_TRANSFORM_IRREVERSIBLE,
  *   settings = {
  *     "responsive" = TRUE,
  *     "replace_classes" = TRUE,
