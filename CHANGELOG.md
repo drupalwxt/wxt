@@ -22,6 +22,7 @@
   - Links style in the contextual alerts class are bold by default [3335963](https://www.drupal.org/node/3335963)
   - Lead title functionality [3389645](https://www.drupal.org/node/3389645)
   - Update to latest gulp and simplify logic for sass compilation
+  - Improve/fix a11y/wcag on every page [3385626](https://www.drupal.org/node/3385626)
 - Updates for WxT Library
   - Extra values(query) on search submit [3376213](https://www.drupal.org/node/3376213)
 
