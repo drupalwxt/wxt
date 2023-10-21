@@ -313,6 +313,10 @@
                 "Enter drupal/s3fs patch #3038992 description here":
                 "https://www.drupal.org/files/issues/2019-03-10/0001-feat-s3fs-Compatibility-with-Minio.patch"
             },
+            "drupal/views_bootstrap": {
+                "3395400 - PHP 8.2 Deprecation messages at ./src/Plugin/views/style/ViewsBootstrapGrid.php":
+                "https://www.drupal.org/files/issues/2023-10-19/issue-3395400-php82-deprecation-notice.patch"
+            },
             "drupal/webform": {
                 "Enter drupal/webform patch #3205860 description here":
                 "https://www.drupal.org/files/issues/2021-03-26/webform_clientside_validation-3205860-2.patch"
