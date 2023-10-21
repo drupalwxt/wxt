@@ -181,7 +181,9 @@
             },
             "drupal/bootstrap": {
                 "Enter drupal/bootstrap patch #2881978 description here":
-                "https://www.drupal.org/files/issues/2018-10-28/temporarily_disable-2881978-3.patch"
+                "https://www.drupal.org/files/issues/2018-10-28/temporarily_disable-2881978-3.patch",
+                "3249470 - Error generated when importing translation":
+                "https://www.drupal.org/files/issues/2021-11-17/3249470-3.patch"
             },
             "drupal/core": {
                 "Enter drupal/core patch #850600 description here":
