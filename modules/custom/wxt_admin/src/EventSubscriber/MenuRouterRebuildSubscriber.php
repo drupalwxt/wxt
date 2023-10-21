@@ -59,7 +59,7 @@ class MenuRouterRebuildSubscriber implements EventSubscriberInterface {
   public function onKernelRequestMenuRouterRebuild(RequestEvent $event) {
     if (file_exists("public://rebuild.dat")) {
       $site_path = preg_replace('/^sites\//', '', $this->sitePath);
-      if (!file_exists('public://.drushrc') && file_exists('public://') && is_writable('public://') && file_put_contents('public:///.drushrc', "<?php\n\$options['l'] = 'http://${site_path}';")) {
+      if (!file_exists('public://.drushrc') && file_exists('public://') && is_writable('public://') && file_put_contents('public:///.drushrc', "<?php\n\$options['l'] = 'http://{$site_path}';")) {
         $this->fileSystem->chmod('public:///.drushrc', 0444);
       }
 
