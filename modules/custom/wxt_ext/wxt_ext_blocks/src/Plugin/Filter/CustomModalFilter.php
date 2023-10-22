@@ -4,7 +4,6 @@ namespace Drupal\wxt_ext_blocks\Plugin\Filter;
 
 use Drupal\filter\Plugin\FilterBase;
 use Drupal\filter\FilterProcessResult;
-use Drupal\block_content\Entity\BlockContent;
 
 /**
  * Provides a filter plugin to add modal block markup below a link.
@@ -77,7 +76,7 @@ class CustomModalFilter extends FilterBase {
       $modalBlockMarkup = \Drupal::entityTypeManager()->getViewBuilder('block_content')->view($block);
       $modal_body = \Drupal::service('renderer')->renderRoot($modalBlockMarkup);
 
-      $modal_output = "<section id='$modal_id' class='mfp-hide modal-dialog modal-content overlay-def'>
+      $modal_output = $this->modalHTML . "<section id='$modal_id' class='mfp-hide modal-dialog modal-content overlay-def'>
           <header class='modal-header'>
             <h2 class='modal-title'>" . $modal_title . "</h2>
           </header>
@@ -86,7 +85,7 @@ class CustomModalFilter extends FilterBase {
         </section>";
 
       // Set the modal HTML.
-      $this->modalHTML .= $modal_output;
+      $this->modalHTML = $modal_output;
 
       // Modify the link and return it.
       $modifiedLink = preg_replace('/<a\b(.*?)>/', '<a$1 aria-controls="' . $modal_id . '" class="wb-lbx lbx-modal">', $matches[0]);
