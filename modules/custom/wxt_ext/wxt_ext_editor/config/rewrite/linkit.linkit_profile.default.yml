@@ -4,6 +4,7 @@ status: true
 dependencies:
   module:
     - node
+    - wxt_ext_blocks
 _core:
   default_config_hash: dccI0aMqbCYWOoBgpP2KeCRjxBV0AjmqzvASrmkLtSc
 label: Default
@@ -14,10 +15,21 @@ matchers:
     id: 'entity:node'
     uuid: 556010a3-e317-48b3-b4ed-854c10f4b950
     settings:
-      metadata: 'by [node:author] | [node:created:medium]'
+      metadata: 'Content type: [node:content-type]'
       bundles: {  }
       group_by_bundle: false
       include_unpublished: false
       substitution_type: canonical
+      limit: 100
+    weight: 0
+  e1e632ad-6c3b-4cd5-b777-34145fe1c272:
+    id: 'entity:block_content'
+    uuid: e1e632ad-6c3b-4cd5-b777-34145fe1c272
+    settings:
+      metadata: 'Block type: [block_content:type]'
+      bundles:
+        modal: modal
+      group_by_bundle: false
+      substitution_type: modal
       limit: 100
     weight: 0

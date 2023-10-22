@@ -12,6 +12,8 @@ dependencies:
     - toc_filter
     - token_filter
     - url_embed
+    - wxt_ext_blocks
+    - wxt_ext_editor
 name: 'Rich Text'
 format: rich_text
 weight: 1
@@ -149,3 +151,9 @@ filters:
       auto: ''
       block: '0'
       exclude_above: '1'
+  custom_modal_filter:
+    id: custom_modal_filter
+    provider: wxt_ext_blocks
+    status: true
+    weight: 0
+    settings: {  }

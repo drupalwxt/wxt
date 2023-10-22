@@ -17,6 +17,7 @@ dependencies:
     - toc_filter
     - token_filter
     - url_embed
+    - wxt_ext_blocks
     - wxt_ext_editor
 name: 'Rich Text (CKEditor5)'
 format: rich_text_ckeditor5
@@ -172,4 +173,10 @@ filters:
     provider: url_embed
     status: false
     weight: -35
+    settings: {  }
+  custom_modal_filter:
+    id: custom_modal_filter
+    provider: wxt_ext_blocks
+    status: true
+    weight: 0
     settings: {  }
