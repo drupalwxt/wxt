@@ -76,13 +76,13 @@ class CustomModalFilter extends FilterBase {
       $modalBlockMarkup = \Drupal::entityTypeManager()->getViewBuilder('block_content')->view($block);
       $modal_body = \Drupal::service('renderer')->renderRoot($modalBlockMarkup);
 
-      $modal_output = $this->modalHTML . "<section id='$modal_id' class='mfp-hide modal-dialog modal-content overlay-def'>
-          <header class='modal-header'>
-            <h2 class='modal-title'>" . $modal_title . "</h2>
+      $modal_output = $this->modalHTML . t('<section id="@modal_id" class="mfp-hide modal-dialog modal-content overlay-def">
+          <header class="modal-header">
+            <h2 class="modal-title">@modal_title</h2>
           </header>
-          <div class='modal-body'>" . $modal_body . "</div>
-          <button title='" . t('Close overlay (escape key)') . "' type='button' class='mfp-close'>×<span class='wb-inv'> " .  t('Close overlay (escape key)') . "</span></button>
-        </section>";
+          <div class="modal-body">@modal_body</div>
+          <button title="Close overlay (escape key)" type="button" class="mfp-close">×<span class="wb-inv">Close overlay (escape key)</span></button>
+        </section>', ['@modal_id' => $modal_id, '@modal_title' => $modal_title, '@modal_body' => $modal_body]);
 
       // Set the modal HTML.
       $this->modalHTML = $modal_output;
