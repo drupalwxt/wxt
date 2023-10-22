@@ -4,7 +4,6 @@ namespace Drupal\wxt_ext_blocks\Plugin\Filter;
 
 use Drupal\filter\Plugin\FilterBase;
 use Drupal\filter\FilterProcessResult;
-use Drupal\Core\Url;
 use Drupal\block_content\Entity\BlockContent;
 
 /**
@@ -24,7 +23,7 @@ class CustomModalFilter extends FilterBase {
    * {@inheritdoc}
    */
   public function process($text, $langcode) {
-     // Regular expression to match your link pattern.
+    // Regular expression to match your link pattern.
     $pattern = '/<a[^>]*data-entity-substitution="modal"[^>]*>(.*?)<\/a>/i';
 
     // Process the text using the regular expression.
@@ -47,9 +46,6 @@ class CustomModalFilter extends FilterBase {
    *   The modified link with modal block markup.
    */
   protected function processLink($matches) {
-    // Extract the link content.
-    $linkContent = $matches[1];
-
     // Extract the entity UUID from the link.
     preg_match('/data-entity-uuid="([a-f0-9\-]+)"/i', $matches[0], $uuidMatches);
 

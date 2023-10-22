@@ -1,15 +1,8 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\my_linkit\Plugin\Linkit\Matcher\MYLinkitMatcher.
- */
-
 namespace Drupal\wxt_ext_blocks\Plugin\Linkit\Matcher;
 
 use Drupal\linkit\Plugin\Linkit\Matcher\EntityMatcher;
-use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
 * A LinkIt matcher for block_content
@@ -21,14 +14,13 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 *   provider = "wxt_ext_blocks"
 * )
 */
-
 class BlockContentMatcher extends EntityMatcher {
 
   /**
    * {@inheritdoc}
    */
   protected function buildEntityQuery($search_string) {
-  	$langcode = \Drupal::languageManager()->getCurrentLanguage()->getId();
+    $langcode = \Drupal::languageManager()->getCurrentLanguage()->getId();
 
     $query = parent::buildEntityQuery($search_string);
     $query->condition('status', 1);
