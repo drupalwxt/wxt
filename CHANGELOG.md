@@ -17,14 +17,24 @@
   - TOC translation issue [3394057](https://www.drupal.org/node/3394057)
   - Make Modify table attributes filter work with CKE5 [3394629](https://www.drupal.org/node/3394629)
   - Get entity_embed working with CKE5 [3394653](https://www.drupal.org/node/3394653)
+  - Disallowed or malformed HTML in a translation string [3377588](https://www.drupal.org/node/3377588)
+  - PHP 8.2 Deprecation messages when installing WxT 5.0.0 [3393796](https://www.drupal.org/node/3393796)
+  - Fresh install defaults for text formats, Full HTML has no wysiwyg editor [3377591](https://www.drupal.org/node/3377591)
+  - Add modal to content with CKEditor [3391443](https://www.drupal.org/node/3391443)
+  - Deprecation notice when editing a "Landing Page" node [3396460](https://www.drupal.org/node/3396460)
+  - Seven and d9.3 old code in wxt_core.module [3396460](https://www.drupal.org/node/3396460)
+  - Error when exporting data using wxt_ext_groups [3277436](https://www.drupal.org/node/3277436)
 - Updated for WxT Bootstrap
   - Skip links hidden by Admin Toolbar [3326137](https://www.drupal.org/node/3326137)
   - Links style in the contextual alerts class are bold by default [3335963](https://www.drupal.org/node/3335963)
   - Lead title functionality [3389645](https://www.drupal.org/node/3389645)
   - Update to latest gulp and simplify logic for sass compilation
   - Improve/fix a11y/wcag on every page [3385626](https://www.drupal.org/node/3385626)
+  - Add modal to content with CKEditor [3391443](https://www.drupal.org/node/3391443)
+  - Toggle feedback webform in footer [3393668](https://www.drupal.org/node/3393668)
 - Updates for WxT Library
   - Extra values(query) on search submit [3376213](https://www.drupal.org/node/3376213)
+  - Move referenced function from wxt to wxt_library
 
 Upgrade path:
 
