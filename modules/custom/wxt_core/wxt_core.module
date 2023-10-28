@@ -53,27 +53,6 @@ function wxt_core_local_tasks_alter(array &$local_tasks) {
 }
 
 /**
- * Implements hook_library_info_alter().
- */
-function wxt_core_library_info_alter(array &$libraries, $extension) {
-  if ($extension == 'seven') {
-    $url = Drupal::service('extension.list.module')->getPath('wxt_core') . '/css/admin-list.grid.css';
-    if (\Drupal::hasService('file_url_generator')) {
-      $file_url_generator = Drupal::service('file_url_generator');
-      $url = $file_url_generator->generateAbsoluteString($url);
-      $url = $file_url_generator->transformRelative($url);
-    }
-    else {
-      // @todo Drop this code when Drupal 9.3 is the minimum supported version of core.
-      $url = \Drupal::service('file_url_generator')->generateAbsoluteString($url);
-      $url = \Drupal::service('file_url_generator')->transformRelative($url);
-    }
-
-    $libraries['global-styling']['css']['component'][$url] = [];
-  }
-}
-
-/**
  * Implements hook_config_schema_info_alter().
  */
 function wxt_core_config_schema_info_alter(array &$definitions) {
