@@ -42,7 +42,7 @@
         "drupal/fontawesome": "^2.24",
         "drupal/footnotes": "^3.1",
         "drupal/fakeobjects": "^1.2",
-        "drupal/group": "1.5",
+        "drupal/group": "1.6",
         "drupal/image_widget_crop": "^2.1",
         "drupal/inline_entity_form": "^1.0-rc12",
         "drupal/layout_builder_restrictions": "^2.14",
@@ -267,9 +267,7 @@
                 "Enter drupal/group patch #2864721 description here":
                 "https://www.drupal.org/files/issues/2020-07-30/group-translate_content_permission-2864721-20.patch",
                 "Enter drupal/group patch #2895988 description here":
-                "https://www.drupal.org/files/issues/2022-07-31/2895988-29.patch",
-                "Enter drupal/group patch #3367539 description here":
-                "https://www.drupal.org/files/issues/2023-06-26/3367539--007-drupal-10-compatibility-group-1.x.patch"
+                "https://www.drupal.org/files/issues/2022-07-31/2895988-29.patch"
             },
             "drupal/linkit": {
                 "Detect and strip base URL from pasted URLs to increase matching hits":
