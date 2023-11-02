@@ -8,6 +8,7 @@
 use Drupal\webform\Entity\Webform;
 use Drupal\webform\Entity\WebformSubmission;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Link;
 
 /**
  * Implements hook_theme().
@@ -118,4 +119,44 @@ function _gcweb_did_you_find_form_ajax_submit($form, $form_state) {
   ];
 
   return $confirmation;
+}
+
+/**
+ * Implements hook_webform_options_WEBFORM_OPTIONS_ID_alter() for country names options.
+ */
+function wxt_ext_webform_webform_options_country_names_alter(array &$options, array $element = []) {
+  $config = \Drupal::configFactory()->get('wxt_core_countries.settings');
+  if ($config->get('webform-override')==1){
+    $countryManager = \Drupal::service('wxt.country_whitelist');
+    $options = $countryManager->whitelistedOptionsSorted();
+  }
+}
+
+/**
+ * Implements hook_form_BASE_FORM_ID_form_alter() WXT Country related additions.
+ */
+function wxt_ext_webform_form_wxt_core_countries_settings_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  $form['webform-box'] = [
+    '#weight' => -1,
+    '#type' => 'fieldset',
+    '#title' => t('WxT Extend Webform'),
+  ];
+  $link = Link::createFromRoute(t('Webform Country Name Options'),'entity.webform_options.edit_form', ['webform_options'=>'country_names']);
+  $form['webform-box']['webform-override'] = [
+    '#type' => 'checkbox',
+    '#title' => t('Override Webform Options for Country Names'),
+    '#default_value' => \Drupal::config('wxt_core_countries.settings')->get('webform-override'),
+    '#description' => t('@link can be edited or reset in many circumstances.', ['@link' => $link->toString()]),
+  ];
+  $form['#submit'][] = 'wxt_ext_webform_form_wxt_core_countries_submit';
+}
+
+/**
+ * Process new field added to form.
+ */
+function wxt_ext_webform_form_wxt_core_countries_submit(&$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+  \Drupal::configFactory()
+    ->getEditable('wxt_core_countries.settings')
+    ->set('webform-override', $form_state->getValue('webform-override'))
+    ->save();
 }

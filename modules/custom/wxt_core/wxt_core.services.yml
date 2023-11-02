@@ -38,3 +38,12 @@ services:
       - '@class_resolver'
       - '@config.factory'
       - '@extension.list.module'
+
+  wxt.country_whitelist:
+    class: '\Drupal\wxt_core\CountriesManager'
+    arguments:
+      - '@config.factory'
+      - '@extension.list.module'
+      - '@country_manager'
+      - '@module_handler'
+

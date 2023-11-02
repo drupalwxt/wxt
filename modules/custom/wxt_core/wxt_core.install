@@ -10,6 +10,7 @@
 use Drupal\node\Entity\NodeType;
 use Drupal\workflows\Entity\Workflow;
 use Drupal\wxt_core\ConfigHelper as Config;
+use Symfony\Component\Yaml\Yaml;
 
 /**
  * Implements hook_requirements().
@@ -668,4 +669,23 @@ function wxt_core_update_8500() {
   if (!$moduleHandler->moduleExists('ckeditor4_codemirror')) {
     $module_installer->install(['ckeditor4_codemirror']);
   }
+}
+
+/**
+ * Setup CountryManager lists [#3111375]
+ */
+function wxt_core_update_8501() {
+  $config_namespace = 'wxt_core_countries.settings';
+  $module_handler = \Drupal::service('module_handler');
+  $module_path = $module_handler->getModule('wxt_core')->getPath();
+  $path = DRUPAL_ROOT . '/' . $module_path . '/config/install/'. $config_namespace . '.yml';
+  $country_data = Yaml::parse(\file_get_contents($path));
+
+  // Get the configuration factory service.
+  $config_factory = \Drupal::configFactory();
+
+  // Save the configuration using the loaded data.
+  $config = $config_factory->getEditable($config_namespace);
+  $config->setData($country_data);
+  $config->save();
 }

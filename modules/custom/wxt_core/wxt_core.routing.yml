@@ -22,3 +22,11 @@ wxt4032404.config:
     _title: '403 to 404 Settings'
   requirements:
     _permission: 'administer site configuration'
+
+wxt_core_countries.settings:
+  path: '/admin/config/wxt/wxt-countries'
+  defaults:
+    _title: WxT Countries
+    _form: '\Drupal\wxt_core\Form\CountriesWhitelistForm'
+  requirements:
+    _permission: 'administer site configuration'

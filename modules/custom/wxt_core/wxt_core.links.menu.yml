@@ -9,3 +9,9 @@ wxt4032404.admin:
   description: 'Settings for 403 to 404.'
   parent: wxt_core.settings
   route_name: wxt4032404.config
+
+wxt_core_countries.settings:
+  title: 'WxT Countries'
+  description: 'Configure WxT Country Whitelist.'
+  parent: wxt_core.settings
+  route_name: wxt_core_countries.settings
