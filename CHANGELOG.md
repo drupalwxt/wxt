@@ -24,6 +24,7 @@
   - Deprecation notice when editing a "Landing Page" node [3396460](https://www.drupal.org/node/3396460)
   - Seven and d9.3 old code in wxt_core.module [3396460](https://www.drupal.org/node/3396460)
   - Error when exporting data using wxt_ext_groups [3277436](https://www.drupal.org/node/3277436)
+  - Webform should only list approved GoC recognized countries [3111375](https://www.drupal.org/node/3111375)
 - Updated for WxT Bootstrap
   - Skip links hidden by Admin Toolbar [3326137](https://www.drupal.org/node/3326137)
   - Links style in the contextual alerts class are bold by default [3335963](https://www.drupal.org/node/3335963)
@@ -32,6 +33,7 @@
   - Improve/fix a11y/wcag on every page [3385626](https://www.drupal.org/node/3385626)
   - Add modal to content with CKEditor [3391443](https://www.drupal.org/node/3391443)
   - Toggle feedback webform in footer [3393668](https://www.drupal.org/node/3393668)
+  - The ckeditor5.css conflict with styles dropdown preview [3398370](https://www.drupal.org/node/3398370)
 - Updates for WxT Library
   - Extra values(query) on search submit [3376213](https://www.drupal.org/node/3376213)
   - Move referenced function from wxt to wxt_library
