@@ -9,7 +9,7 @@ use Drupal\Core\Extension\ModuleHandlerInterface;
 use Drupal\Core\Locale\CountryManagerInterface;
 
 /**
- *
+ * Countries Manager.
  */
 class CountriesManager {
   /**
@@ -41,20 +41,16 @@ class CountriesManager {
   protected $moduleHandler;
 
   /**
-   * UpdateCommand constructor.
+   * CountriesManager constructor.
    *
-   * @param \Traversable $namespaces
-   *   The namespaces to scan for updates.
-   * @param \Drupal\Core\DependencyInjection\ClassResolverInterface $class_resolver
-   *   The class resolver service.
    * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
    *   The config factory service.
    * @param \Drupal\Core\Extension\ModuleExtensionList $module_extension_list
    *   The module extension list.
-   * @param \Drupal\Component\Plugin\Discovery\DiscoveryInterface $discovery
-   *   (optional) The update discovery handler.
-   * @param \phpDocumentor\Reflection\DocBlockFactoryInterface $doc_block_factory
-   *   (optional) The doc block factory.
+   * @param \Drupal\Core\Locale\CountryManagerInterface $country_manager
+   *   The module handler
+   * @param \Drupal\Core\Extension\ModuleHandlerInterface $module_handler
+   *   The module handler
    */
   public function __construct(ConfigFactoryInterface $config_factory, ModuleExtensionList $module_extension_list, CountryManagerInterface $country_manager, ModuleHandlerInterface $module_handler) {
     $this->configFactory = $config_factory;
@@ -64,7 +60,7 @@ class CountriesManager {
   }
 
   /**
-   *  Get all data (from yml) expect for this issue[#3111375] from original online PDF.
+   * Get all data (from yml) expect for this issue[#3111375] from original online PDF.
    */
   public function getCountryData($column = 'Alpha-2', $row = 'Code') {
     $module_path = $this->moduleHandler->getModule('wxt_core')->getPath();
@@ -74,7 +70,7 @@ class CountriesManager {
     }
     $country_names = [];
 
-    foreach ($country_data as $key => $data) {
+    foreach ($country_data as $data) {
       $country_names[$data[$column]] = $data[$row];
     }
     return $country_names;
@@ -114,10 +110,10 @@ class CountriesManager {
   public function whitelistedOptionsSorted() {
     $config = $this->configFactory->get('wxt_core_countries.settings');
     $whitelist = $this->whitelistedOptions();
-    switch ($config->get('whitelist-sort')){
+    switch ($config->get('whitelist-sort')) {
       case 'alpha':
         \ksort($whitelist);
-      break;
+        break;
     }
     return $whitelist;
   }
