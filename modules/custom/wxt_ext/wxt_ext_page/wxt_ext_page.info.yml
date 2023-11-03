@@ -11,4 +11,4 @@ dependencies:
   - 'wxt_core:wxt_core'
   - 'wxt_translation:wxt_translation'
   - 'wxt_ext_layout:wxt_ext_layout'
-version: 5.0.1
+version: 5.0.2-dev
