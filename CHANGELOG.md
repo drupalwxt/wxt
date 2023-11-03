@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## v5.0.1 (In Development)
+## v5.0.1
 
 - Build Infrastructure
   - N/A
@@ -55,7 +55,7 @@ Upgrade path:
 
 **Note(s)**:
 
-N/A
+This is a bugfix release although a few new features such as Standard Classification of Countries and Areas of Interest (SCCAI) has been added to Webforms.
 
 ## v5.0.0
 

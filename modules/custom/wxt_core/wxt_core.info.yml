@@ -29,4 +29,4 @@ dependencies:
   - 'token_filter:token_filter'
   - 'url_embed:url_embed'
   - 'views_bootstrap:views_bootstrap'
-version: 5.0.1-dev
+version: 5.0.1

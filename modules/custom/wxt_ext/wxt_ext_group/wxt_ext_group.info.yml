@@ -8,4 +8,4 @@ dependencies:
   - 'gnode:gnode'
   - 'group:group'
   - 'wxt_ext_blog:wxt_ext_blog'
-version: 5.0.1-dev
+version: 5.0.1
