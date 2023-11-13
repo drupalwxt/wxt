@@ -16,7 +16,7 @@ class CountriesWhitelistForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   protected function getEditableConfigNames() {
-    return ['wxt_core_countries.settings'];
+    return ['wxt_core.settings.countries'];
   }
 
   /**
@@ -31,7 +31,7 @@ class CountriesWhitelistForm extends ConfigFormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
     $countryManager = \Drupal::service('wxt.country_whitelist');
-    $config = $this->config('wxt_core_countries.settings');
+    $config = $this->config('wxt_core.settings.countries');
     $savedCountries = $config->get('countries');
     $whitelisted = $countryManager->getCountryData();
     $options = $countryManager->listCounties();
@@ -96,7 +96,7 @@ class CountriesWhitelistForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    $this->config('wxt_core_countries.settings')
+    $this->config('wxt_core.settings.countries')
       ->set('countries', $form_state->getValue('countries'))
       ->set('whitelist-sort', $form_state->getValue('whitelist-sort'))
       ->save();

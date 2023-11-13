@@ -125,7 +125,7 @@ function _gcweb_did_you_find_form_ajax_submit($form, $form_state) {
  * Implements hook_webform_options_WEBFORM_OPTIONS_ID_alter() for country names options.
  */
 function wxt_ext_webform_webform_options_country_names_alter(array &$options, array $element = []) {
-  $config = \Drupal::configFactory()->get('wxt_core_countries.settings');
+  $config = \Drupal::configFactory()->get('wxt_core.settings.countries');
   if ($config->get('webform-override') == 1) {
     $countryManager = \Drupal::service('wxt.country_whitelist');
     $options = $countryManager->whitelistedOptionsSorted();
@@ -145,7 +145,7 @@ function wxt_ext_webform_form_wxt_core_countries_settings_form_alter(&$form, For
   $form['webform-box']['webform-override'] = [
     '#type' => 'checkbox',
     '#title' => t('Override Webform Options for Country Names'),
-    '#default_value' => \Drupal::config('wxt_core_countries.settings')->get('webform-override'),
+    '#default_value' => \Drupal::config('wxt_core.settings.countries')->get('webform-override'),
     '#description' => t('@link can be edited or reset in many circumstances.', ['@link' => $link->toString()]),
   ];
   $form['#submit'][] = 'wxt_ext_webform_form_wxt_core_countries_submit';
@@ -156,7 +156,7 @@ function wxt_ext_webform_form_wxt_core_countries_settings_form_alter(&$form, For
  */
 function wxt_ext_webform_form_wxt_core_countries_submit(&$form, FormStateInterface $form_state) {
   \Drupal::configFactory()
-    ->getEditable('wxt_core_countries.settings')
+    ->getEditable('wxt_core.settings.countries')
     ->set('webform-override', $form_state->getValue('webform-override'))
     ->save();
 }

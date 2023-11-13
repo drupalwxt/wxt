@@ -94,7 +94,7 @@ class CountriesManager {
    */
   public function whitelistedOptions() {
     $standartCountries = $this->listCounties();
-    $config = $this->configFactory->get('wxt_core_countries.settings');
+    $config = $this->configFactory->get('wxt_core.settings.countries');
     $countries = $config->get('countries');
     foreach ($countries as $abbr => $checkbox) {
       if ($checkbox != 0) {
@@ -108,7 +108,7 @@ class CountriesManager {
    * Returns the sorted whitelisted.
    */
   public function whitelistedOptionsSorted() {
-    $config = $this->configFactory->get('wxt_core_countries.settings');
+    $config = $this->configFactory->get('wxt_core.settings.countries');
     $whitelist = $this->whitelistedOptions();
     switch ($config->get('whitelist-sort')) {
       case 'alpha':
