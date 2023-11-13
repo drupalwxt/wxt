@@ -675,11 +675,11 @@ function wxt_core_update_8500() {
  * Setup CountryManager lists [#3111375].
  */
 function wxt_core_update_8501() {
-  //   [#3399929] wxt_core_update_8502 in favour
+  //  [#3399929] wxt_core_update_8502
 }
 
 /**
- *  [#3399929] Change wxt_core countries config namespace.
+ * [#3399929] Change wxt_core countries config namespace.
  */
 function wxt_core_update_8502() {
   $legacy = 'wxt_core_countries.settings';
@@ -696,7 +696,8 @@ function wxt_core_update_8502() {
     $config->save();
     // Delete old data.
     $country_data->delete();
-  } else {
+  }
+  else {
     $country_data = Yaml::parse(\file_get_contents($path));
     $config = $config_factory->getEditable($updated);
     $config->setData($country_data);
