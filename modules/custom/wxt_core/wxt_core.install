@@ -675,7 +675,7 @@ function wxt_core_update_8500() {
  * Setup CountryManager lists [#3111375].
  */
 function wxt_core_update_8501() {
-  //  [#3399929] wxt_core_update_8502
+  // [#3399929] wxt_core_update_8502
 }
 
 /**
