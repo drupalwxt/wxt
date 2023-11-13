@@ -11,7 +11,11 @@
 - Updates for Drupal Contrib
   - N/A
 - Updates for WxT
-  - N/A
+  - Change wxt_core countries config name [3399929](https://www.drupal.org/node/3399929)
+  - Entity_embed upstream remove conflicting patch [3399717](https://www.drupal.org/node/3399717)
+  - Change wxt_core countries config name [3399929](https://www.drupal.org/node/3399929)
+  - php 8.1 deprecation fix for wxt_ext_media bulk upload [3399712](https://www.drupal.org/node/3399712)
+  - Replace deprecated apis in wxt_core.install [3399083](https://www.drupal.org/node/3399083)
 - Updated for WxT Bootstrap
   - N/A
 - Updates for WxT Library
