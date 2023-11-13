@@ -80,14 +80,14 @@ class IndeterminateBundleException extends \LogicException implements \IteratorA
   /**
    * {@inheritdoc}
    */
-  public function count() {
+  public function count(): int {
     return count($this->types);
   }
 
   /**
    * {@inheritdoc}
    */
-  public function getIterator() {
+  public function getIterator(): \Traversable {
     return new \ArrayIterator($this->types);
   }
 
