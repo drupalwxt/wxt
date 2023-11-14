@@ -22,8 +22,8 @@
         "drupal/ckeditor_codemirror": "^3.0.0-beta4",
         "drupal/ckeditor_details": "^2.1.0-alpha1",
         "drupal/config_rewrite": "^1.5",
-        "drupal/core-composer-scaffold": "^10.0",
-        "drupal/core-recommended": "10.0.11",
+        "drupal/core-composer-scaffold": "^10.1",
+        "drupal/core-recommended": "10.1.6",
         "drupal/core_context": "1.1",
         "drupal/crop": "^2.0.0-rc1",
         "drupal/ctools": "^3.9",
@@ -38,7 +38,7 @@
         "drupal/entityqueue": "^1.3",
         "drupal/field_formatter": "^3.0",
         "drupal/field_group": "^3.0",
-        "drupal/file_entity": "^2.0@RC",
+        "drupal/file_entity": "2.0-beta10",
         "drupal/fontawesome": "^2.24",
         "drupal/footnotes": "^3.1",
         "drupal/fakeobjects": "^1.2",
@@ -49,7 +49,7 @@
         "drupal/layout_builder_st": "^1.0-alpha2",
         "drupal/layout_builder_styles": "^2.0",
         "drupal/layout_library": "^1.0-beta1",
-        "drupal/linkit": "6.0.2",
+        "drupal/linkit": "^6.1",
         "drupal/media_entity_instagram": "^3",
         "drupal/media_entity_twitter": "^2.5",
         "drupal/media_entity_slideshow": "^2.0",
@@ -90,7 +90,7 @@
         "w8tcha/ckeditor-codemirror": "1.18.5"
     },
     "require-dev": {
-        "drupal/core-dev": "^10.0",
+        "drupal/core-dev": "^10.1",
         "drupal/drupal-extension": "5.0.0-alpha1",
         "drush/drush": ">=12.1.0",
         "oomphinc/composer-installers-extender": "^1.1 || ^2",
@@ -175,10 +175,6 @@
             "drupal/core": "-p2"
         },
         "patches": {
-            "drupal/admin_toolbar": {
-                "Resolve access check errors for D10 compatibility":
-                "https://www.drupal.org/files/issues/2023-05-30/3338408-fix-access-check-error.patch"
-            },
             "drupal/block_content_permissions": {
                 "2920739 - Allow accessing the 'Custom block library' page without 'Administer blocks' permission":
                 "https://www.drupal.org/files/issues/2022-07-26/2920739-55.access_listing_page.patch"
@@ -191,7 +187,7 @@
             },
             "drupal/core": {
                 "Enter drupal/core patch #850600 description here":
-                "https://www.drupal.org/files/issues/2022-06-08/D94x-postgresql_ssl_dsn-850600-23.patch",
+                "https://www.drupal.org/files/issues/2023-11-14/postgresql-ssl-dns-850600-29.patch",
                 "Enter drupal/core patch #2559833 description here":
                 "https://www.drupal.org/files/issues/2021-06-02/comment_form_redirect-2559833-87.patch",
                 "Enter drupal/core patch #2630732 description here":
@@ -212,8 +208,6 @@
                 "https://www.drupal.org/files/issues/2893029-9.patch",
                 "Enter drupal/core patch #2938129 description here":
                 "https://www.drupal.org/files/issues/2022-11-18/drupal-PageTitle_block-2938129-29.patch",
-                "Enter drupal/core patch #3017710 description here":
-                "https://www.drupal.org/files/issues/2018-12-05/3017710-20.patch",
                 "3016131 - Improved exception message developer experience":
                 "https://www.drupal.org/files/issues/2020-05-26/drupal-3016131-23-useless-exception.patch",
                 "3150294 - New translations for moderated nodes are not created in the initial workflow state":
@@ -255,9 +249,7 @@
             },
             "drupal/entity_browser": {
                 "2914385 - Fix PHP error":
-                "https://www.drupal.org/files/issues/2022-04-21/entity_browser-key-2914385-12.patch",
-                "3350169 - Fix PHP 8.2 deprecation issue with WidgetSelectorBase-class":
-                "https://www.drupal.org/files/issues/2023-06-15/3350169-8_0.patch"
+                "https://www.drupal.org/files/issues/2022-04-21/entity_browser-key-2914385-12.patch"
             },
             "drupal/fontawesome": {
                 "3071758 - Fix multiple icons issue":
@@ -275,10 +267,6 @@
                 "Detect and strip base URL from pasted URLs to increase matching hits":
                 "https://www.drupal.org/files/issues/2023-11-02/linkit6x-3078075-77.patch"
             },
-            "drupal/migrate_plus": {
-                "3404491 - [PHP 8.2] Call to deprecated function utf8_encode() at ./src/Plugin/migrate_plus/data_parser/Json.php Line 42":
-                "https://www.drupal.org/files/issues/2023-11-27/migrate-plus-php82-warning.patch"
-            },
             "drupal/page_manager": {
                 "Enter drupal/page_manager patch #2626090 description here":
                 "https://www.drupal.org/files/issues/page-manager-2626090-page-title-empty-5.patch",
@@ -287,9 +275,7 @@
                 "Enter drupal/page_manager patch #3096408 description here":
                 "https://www.drupal.org/files/issues/2019-11-23/Issue-3096408-Page-Manager-issue-with-conflict-modul.patch",
                 "Enter drupal/page_manager patch #2752227 description here":
-                "https://www.drupal.org/files/issues/2021-04-14/2752227-47.patch",
-                "3397945 - Relying on entity queries to check access by default":
-                "https://www.drupal.org/files/issues/2023-10-31/3397945_enity_query_access_check_2.patch"
+                "https://www.drupal.org/files/issues/2021-04-14/2752227-47.patch"
             },
             "drupal/paragraphs": {
                 "Enter drupal/paragraphs patch #2878615 description here":
