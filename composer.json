@@ -38,7 +38,7 @@
         "drupal/entityqueue": "^1.3",
         "drupal/field_formatter": "^3.0",
         "drupal/field_group": "^3.0",
-        "drupal/file_entity": "^2.0@RC",
+        "drupal/file_entity": "2.0-beta10",
         "drupal/fontawesome": "^2.24",
         "drupal/footnotes": "^3.1",
         "drupal/fakeobjects": "^1.2",
@@ -175,10 +175,6 @@
             "drupal/core": "-p2"
         },
         "patches": {
-            "drupal/admin_toolbar": {
-                "Resolve access check errors for D10 compatibility":
-                "https://www.drupal.org/files/issues/2023-05-30/3338408-fix-access-check-error.patch"
-            },
             "drupal/block_content_permissions": {
                 "2920739 - Allow accessing the 'Custom block library' page without 'Administer blocks' permission":
                 "https://www.drupal.org/files/issues/2022-07-26/2920739-55.access_listing_page.patch"
@@ -253,9 +249,7 @@
             },
             "drupal/entity_browser": {
                 "2914385 - Fix PHP error":
-                "https://www.drupal.org/files/issues/2022-04-21/entity_browser-key-2914385-12.patch",
-                "3350169 - Fix PHP 8.2 deprecation issue with WidgetSelectorBase-class":
-                "https://www.drupal.org/files/issues/2023-06-15/3350169-8_0.patch"
+                "https://www.drupal.org/files/issues/2022-04-21/entity_browser-key-2914385-12.patch"
             },
             "drupal/fontawesome": {
                 "3071758 - Fix multiple icons issue":
@@ -273,10 +267,6 @@
                 "Detect and strip base URL from pasted URLs to increase matching hits":
                 "https://www.drupal.org/files/issues/2023-11-02/linkit6x-3078075-77.patch"
             },
-            "drupal/migrate_plus": {
-                "3404491 - [PHP 8.2] Call to deprecated function utf8_encode() at ./src/Plugin/migrate_plus/data_parser/Json.php Line 42":
-                "https://www.drupal.org/files/issues/2023-11-27/migrate-plus-php82-warning.patch"
-            },
             "drupal/page_manager": {
                 "Enter drupal/page_manager patch #2626090 description here":
                 "https://www.drupal.org/files/issues/page-manager-2626090-page-title-empty-5.patch",
@@ -285,9 +275,7 @@
                 "Enter drupal/page_manager patch #3096408 description here":
                 "https://www.drupal.org/files/issues/2019-11-23/Issue-3096408-Page-Manager-issue-with-conflict-modul.patch",
                 "Enter drupal/page_manager patch #2752227 description here":
-                "https://www.drupal.org/files/issues/2021-04-14/2752227-47.patch",
-                "3397945 - Relying on entity queries to check access by default":
-                "https://www.drupal.org/files/issues/2023-10-31/3397945_enity_query_access_check_2.patch"
+                "https://www.drupal.org/files/issues/2021-04-14/2752227-47.patch"
             },
             "drupal/paragraphs": {
                 "Enter drupal/paragraphs patch #2878615 description here":
