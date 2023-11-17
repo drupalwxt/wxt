@@ -675,7 +675,19 @@ function wxt_core_update_8500() {
  * Setup CountryManager lists [#3111375].
  */
 function wxt_core_update_8501() {
-  // [#3399929] wxt_core_update_8502
+  $config_namespace = 'wxt_core.settings.countries';
+  $module_handler = \Drupal::service('module_handler');
+  $module_path = $module_handler->getModule('wxt_core')->getPath();
+  $path = DRUPAL_ROOT . '/' . $module_path . '/config/install/'. $config_namespace . '.yml';
+  $country_data = Yaml::parse(\file_get_contents($path));
+
+  // Get the configuration factory service.
+  $config_factory = \Drupal::configFactory();
+
+  // Save the configuration using the loaded data.
+  $config = $config_factory->getEditable($config_namespace);
+  $config->setData($country_data);
+  $config->save();
 }
 
 /**
@@ -692,6 +704,11 @@ function wxt_core_update_8502() {
   if ($hasUpdated) {
     $country_data = $config_factory->getEditable($legacy);
     $config = $config_factory->getEditable($updated);
+    if (!is_array($country_data)) {
+      // Update hook 8501 wasn't run correctly for some reason, or the yml was deleted.
+      wxt_core_update_8501();
+      return;
+    }
     $config->setData($country_data);
     $config->save();
     // Delete old data.
