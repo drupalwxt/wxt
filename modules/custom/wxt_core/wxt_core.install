@@ -678,7 +678,7 @@ function wxt_core_update_8501() {
   $config_namespace = 'wxt_core.settings.countries';
   $module_handler = \Drupal::service('module_handler');
   $module_path = $module_handler->getModule('wxt_core')->getPath();
-  $path = DRUPAL_ROOT . '/' . $module_path . '/config/install/'. $config_namespace . '.yml';
+  $path = DRUPAL_ROOT . '/' . $module_path . '/config/install/' . $config_namespace . '.yml';
   $country_data = Yaml::parse(\file_get_contents($path));
 
   // Get the configuration factory service.
