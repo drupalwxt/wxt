@@ -277,7 +277,9 @@
                 "Enter drupal/page_manager patch #3096408 description here":
                 "https://www.drupal.org/files/issues/2019-11-23/Issue-3096408-Page-Manager-issue-with-conflict-modul.patch",
                 "Enter drupal/page_manager patch #2752227 description here":
-                "https://www.drupal.org/files/issues/2021-04-14/2752227-47.patch"
+                "https://www.drupal.org/files/issues/2021-04-14/2752227-47.patch",
+                "3397945 - Relying on entity queries to check access by default":
+                "https://www.drupal.org/files/issues/2023-10-31/3397945_enity_query_access_check_2.patch"
             },
             "drupal/paragraphs": {
                 "Enter drupal/paragraphs patch #2878615 description here":
