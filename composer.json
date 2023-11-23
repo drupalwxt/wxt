@@ -251,7 +251,9 @@
             },
             "drupal/entity_browser": {
                 "2914385 - Fix PHP error":
-                "https://www.drupal.org/files/issues/2022-04-21/entity_browser-key-2914385-12.patch"
+                "https://www.drupal.org/files/issues/2022-04-21/entity_browser-key-2914385-12.patch",
+                "3350169 - Fix PHP 8.2 deprecation issue with WidgetSelectorBase-class":
+                "https://www.drupal.org/files/issues/2023-06-15/3350169-8_0.patch"
             },
             "drupal/fontawesome": {
                 "3071758 - Fix multiple icons issue":
