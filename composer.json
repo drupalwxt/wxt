@@ -271,6 +271,10 @@
                 "Detect and strip base URL from pasted URLs to increase matching hits":
                 "https://www.drupal.org/files/issues/2023-11-02/linkit6x-3078075-77.patch"
             },
+            "drupal/migrate_plus": {
+                "3404491 - [PHP 8.2] Call to deprecated function utf8_encode() at ./src/Plugin/migrate_plus/data_parser/Json.php Line 42":
+                "https://www.drupal.org/files/issues/2023-11-27/migrate-plus-php82-warning.patch"
+            },
             "drupal/page_manager": {
                 "Enter drupal/page_manager patch #2626090 description here":
                 "https://www.drupal.org/files/issues/page-manager-2626090-page-title-empty-5.patch",
