@@ -1,6 +1,42 @@
 # CHANGELOG
 
-## v5.0.2 (In Development)
+## v5.1.0 (In Development)
+
+- Build Infrastructure
+  - N/A
+- Security Updates for Drupal Core
+  - N/A
+- Updates for Drupal Core
+  - N/A
+- Updates for Drupal Contrib
+  - N/A
+- Updates for WxT
+  - N/A
+- Updated for WxT Bootstrap
+  - N/A
+- Updates for WxT Library
+  - N/A
+
+Upgrade path:
+
+> **Important**: Please backup your database before running the upgrade process for this release.
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
+- Run WxT configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:wxt`
+
+**Note(s)**:
+
+N/A
+
+## v5.0.2
 
 - Build Infrastructure
   - N/A

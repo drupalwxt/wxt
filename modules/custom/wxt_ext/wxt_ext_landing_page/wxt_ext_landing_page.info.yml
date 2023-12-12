@@ -11,4 +11,4 @@ dependencies:
   - 'wxt_ext_layout:wxt_ext_layout'
   - 'wxt_ext_metatag:wxt_ext_metatag'
   - 'wxt_translation:wxt_translation'
-version: 5.0.2-dev
+version: 5.1.0-dev
