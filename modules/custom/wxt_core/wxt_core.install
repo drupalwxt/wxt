@@ -675,11 +675,23 @@ function wxt_core_update_8500() {
  * Setup CountryManager lists [#3111375].
  */
 function wxt_core_update_8501() {
-  //   [#3399929] wxt_core_update_8502 in favour
+  $config_namespace = 'wxt_core.settings.countries';
+  $module_handler = \Drupal::service('module_handler');
+  $module_path = $module_handler->getModule('wxt_core')->getPath();
+  $path = DRUPAL_ROOT . '/' . $module_path . '/config/install/' . $config_namespace . '.yml';
+  $country_data = Yaml::parse(\file_get_contents($path));
+
+  // Get the configuration factory service.
+  $config_factory = \Drupal::configFactory();
+
+  // Save the configuration using the loaded data.
+  $config = $config_factory->getEditable($config_namespace);
+  $config->setData($country_data);
+  $config->save();
 }
 
 /**
- *  [#3399929] Change wxt_core countries config namespace.
+ * [#3399929] Change wxt_core countries config namespace.
  */
 function wxt_core_update_8502() {
   $legacy = 'wxt_core_countries.settings';
@@ -692,11 +704,17 @@ function wxt_core_update_8502() {
   if ($hasUpdated) {
     $country_data = $config_factory->getEditable($legacy);
     $config = $config_factory->getEditable($updated);
+    if (!is_array($country_data)) {
+      // Update hook 8501 wasn't run correctly for some reason, or the yml was deleted.
+      wxt_core_update_8501();
+      return;
+    }
     $config->setData($country_data);
     $config->save();
     // Delete old data.
     $country_data->delete();
-  } else {
+  }
+  else {
     $country_data = Yaml::parse(\file_get_contents($path));
     $config = $config_factory->getEditable($updated);
     $config->setData($country_data);
