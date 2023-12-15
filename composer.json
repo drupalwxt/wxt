@@ -257,7 +257,11 @@
             },
             "drupal/group": {
                 "Enter drupal/group patch #2817109 description here":
-                "https://www.drupal.org/files/issues/2022-11-02/2817109-2.0.x-how-to-redirect-30.patch"
+                "https://www.drupal.org/files/issues/2817109-by-rachel_norfolk-ericras-How-to-redir.patch",
+                "Enter drupal/group patch #2864721 description here":
+                "https://www.drupal.org/files/issues/2020-07-30/group-translate_content_permission-2864721-20.patch",
+                "Enter drupal/group patch #2895988 description here":
+                "https://www.drupal.org/files/issues/2022-07-31/2895988-29.patch"
             },
             "drupal/linkit": {
                 "Detect and strip base URL from pasted URLs to increase matching hits":
