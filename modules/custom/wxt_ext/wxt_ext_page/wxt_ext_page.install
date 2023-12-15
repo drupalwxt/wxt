@@ -42,32 +42,39 @@ function wxt_ext_page_install() {
  * Add field_lead_title to page content type.
  */
 function wxt_ext_page_update_8500() {
-  $config_directory = new FileStorage(\Drupal::service('extension.list.module')->getPath('wxt_ext_page') . '/config/optional/');
+  $types = \Drupal::entityTypeManager()
+    ->getStorage('node_type')
+    ->loadMultiple();
 
-  $entitytype_fields = [
-    'node' => [
-      'page' => [
-        'field_lead_title',
+  if (in_array('page', array_keys($types))) {
+
+    $config_directory = new FileStorage(\Drupal::service('extension.list.module')->getPath('wxt_ext_page') . '/config/optional/');
+
+    $entitytype_fields = [
+      'node' => [
+        'page' => [
+          'field_lead_title',
+        ],
       ],
-    ],
-  ];
+    ];
 
-  // Approach taken from https://thinkshout.com/blog/2020/11/populating-fields
-  foreach ($entitytype_fields as $entitytype => $bundles) {
-    foreach ($bundles as $bundle => $fields) {
-      foreach ($fields as $field) {
-        $field_storage_name = 'field.storage.' . $entitytype . '.' . $field;
-        $config_record = $config_directory->read($field_storage_name);
+    // Approach taken from https://thinkshout.com/blog/2020/11/populating-fields
+    foreach ($entitytype_fields as $entitytype => $bundles) {
+      foreach ($bundles as $bundle => $fields) {
+        foreach ($fields as $field) {
+          $field_storage_name = 'field.storage.' . $entitytype . '.' . $field;
+          $config_record = $config_directory->read($field_storage_name);
 
-        if (!FieldStorageConfig::loadByName($config_record['entity_type'], $config_record['field_name'])) {
-          FieldStorageConfig::create($config_record)->save();
-        }
+          if (!FieldStorageConfig::loadByName($config_record['entity_type'], $config_record['field_name'])) {
+            FieldStorageConfig::create($config_record)->save();
+          }
 
-        $field_config_name = 'field.field.' . $entitytype . '.' . $bundle . '.' . $field;
-        $config_record = $config_directory->read($field_config_name);
+          $field_config_name = 'field.field.' . $entitytype . '.' . $bundle . '.' . $field;
+          $config_record = $config_directory->read($field_config_name);
 
-        if (!FieldConfig::loadByName($config_record['entity_type'], $config_record['bundle'], $config_record['field_name'])) {
-          FieldConfig::create($config_record)->save();
+          if (!FieldConfig::loadByName($config_record['entity_type'], $config_record['bundle'], $config_record['field_name'])) {
+            FieldConfig::create($config_record)->save();
+          }
         }
       }
     }

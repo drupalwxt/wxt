@@ -110,7 +110,6 @@ final class EntityContext extends DrupalSubContextBase {
       $key = $storage->getEntityType()->getKey('bundle');
       if ($key) {
         $query->condition($key, $bundle);
-        $query->accessCheck(FALSE);
       }
     }
 
@@ -144,7 +143,6 @@ final class EntityContext extends DrupalSubContextBase {
       ->getQuery()
       ->sort('created', 'DESC')
       ->range(0, $n)
-      ->accessCheck(FALSE)
       ->execute();
 
     foreach ($items as $id) {
@@ -167,12 +165,9 @@ final class EntityContext extends DrupalSubContextBase {
     $storage = \Drupal::entityTypeManager()->getStorage($entity_type);
 
     $query = $storage->getQuery()->count();
-
     if ($bundle) {
       $query->condition($storage->getEntityType()->getKey('bundle'), $bundle);
-      $query->accessCheck(FALSE);
     }
-
     return (int) $query->execute();
   }
 
