@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## v5.0.2 (In Development)
+## v5.0.2
 
 - Build Infrastructure
   - N/A
@@ -14,10 +14,17 @@
   - Change wxt_core countries config name [3399929](https://www.drupal.org/node/3399929)
   - Entity_embed upstream remove conflicting patch [3399717](https://www.drupal.org/node/3399717)
   - Change wxt_core countries config name [3399929](https://www.drupal.org/node/3399929)
-  - php 8.1 deprecation fix for wxt_ext_media bulk upload [3399712](https://www.drupal.org/node/3399712)
+  - PHP 8.1 deprecation fix for wxt_ext_media bulk upload [3399712](https://www.drupal.org/node/3399712)
   - Replace deprecated apis in wxt_core.install [3399083](https://www.drupal.org/node/3399083)
+  - Deprecated module in the contrib module admin_toolbar [3404472](https://www.drupal.org/node/3404472)
+  - Deprecated code in the module migrate_plus [3405234](https://www.drupal.org/node/3405234)
+  - Deprecated code in the contrib module page_manager [3403542](https://www.drupal.org/node/3403542)
+  - wxt_ext_page_update_8500() fails if page content type doesn't exist [3402680](https://www.drupal.org/node/3402680)
+  - Deprecation notice when opening the entity browser modal window [3402681](https://www.drupal.org/node/3402681)
+  - Update drupal/file_entity to RC [3403264](https://www.drupal.org/node/3403264)
+  - Regression fix for Change wxt_core countries config name [3401668](https://www.drupal.org/node/3401668)
 - Updated for WxT Bootstrap
-  - N/A
+  - Deprecated styles in the file themes/contrib/wxt_bootstrap/css/style.css [3404086](https://www.drupal.org/node/3404086)
 - Updates for WxT Library
   - N/A
 
