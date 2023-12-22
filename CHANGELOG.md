@@ -1,5 +1,40 @@
 # CHANGELOG
 
+## v5.1.1 (In Development)
+
+- Build Infrastructure
+  - N/A
+- Security Updates for Drupal Core
+  - N/A
+- Updates for Drupal Core
+  - N/A
+- Updates for Drupal Contrib + WxT
+  - Incomplete licenses in modulename.libraries.yml will cause a warning [3409881](https://www.drupal.org/node/3409881)
+  - 5.1.x requires a merge from wxt 5.0.x as countries fix is missing [3409755](https://www.drupal.org/node/3409755)
+- Updated for WxT Bootstrap
+  - N/A
+- Updates for WxT Library
+  - N/A
+
+Upgrade path:
+
+> **Important**: Please backup your database before running the upgrade process for this release.
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
+- Run WxT configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:wxt`
+
+**Note(s)**:
+
+N/A
+
 ## v5.1.0
 
 - Build Infrastructure
