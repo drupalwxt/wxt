@@ -13,6 +13,7 @@ use Drupal\migrate\Row;
 use Drupal\Component\Serialization\Json;
 use Drupal\media\Entity\Media;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\Core\StringTranslation\StringTranslationTrait;
 
 /**
  * Convert a Drupal 7 media tag to a rendered image field.
@@ -24,6 +25,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  * @link https://blog.kalamuna.com/news/converting-drupal-7-media-tags-during-a-drupal-8-migration
  */
 class MediaTags extends ProcessPluginBase implements ContainerFactoryPluginInterface {
+  use StringTranslationTrait;
 
   /**
    * The migration process plugin, configured for lookups in wxt_ext_file.
@@ -159,7 +161,7 @@ class MediaTags extends ProcessPluginBase implements ContainerFactoryPluginInter
       }
     }
     catch (Exception $e) {
-      $msg = t('Unable to render media from %tag. Error: %error', [
+      $msg = $this->t('Unable to render media from %tag. Error: %error', [
         '%tag' => $tag,
         '%error' => $e->getMessage(),
       ]);

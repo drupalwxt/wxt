@@ -13,6 +13,7 @@ use Drupal\migrate\ProcessPluginBase;
 use Drupal\migrate\Row;
 use Drupal\node\Entity\Node;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\Core\StringTranslation\StringTranslationTrait;
 
 /**
  * Convert a Drupal 7 UUID Link to a Drupal 9 UUID Link.
@@ -22,6 +23,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  * )
  */
 class UUIDLink extends ProcessPluginBase implements ContainerFactoryPluginInterface {
+  use StringTranslationTrait;
 
   /**
    * The migration process plugin, configured for lookups in wxt_ext_file.
@@ -144,7 +146,7 @@ class UUIDLink extends ProcessPluginBase implements ContainerFactoryPluginInterf
           href="/node/' . $nid . '" ' . $attrAfter . ' ' . $attrBefore . '>';
     }
     catch (Exception $e) {
-      $msg = t('Unable to render link from %link. Error: %error', [
+      $msg = $this->t('Unable to render link from %link. Error: %error', [
         '%link' => $uuid,
         '%error' => $e->getMessage(),
       ]);

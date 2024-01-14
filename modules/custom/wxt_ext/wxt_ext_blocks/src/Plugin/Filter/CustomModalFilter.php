@@ -4,6 +4,7 @@ namespace Drupal\wxt_ext_blocks\Plugin\Filter;
 
 use Drupal\filter\Plugin\FilterBase;
 use Drupal\filter\FilterProcessResult;
+use Drupal\Core\StringTranslation\StringTranslationTrait;
 
 /**
  * Provides a filter plugin to add modal block markup below a link.
@@ -15,6 +16,7 @@ use Drupal\filter\FilterProcessResult;
  * )
  */
 class CustomModalFilter extends FilterBase {
+  use StringTranslationTrait;
 
   private $modalHTML;
 
@@ -76,7 +78,7 @@ class CustomModalFilter extends FilterBase {
       $modalBlockMarkup = \Drupal::entityTypeManager()->getViewBuilder('block_content')->view($block);
       $modal_body = \Drupal::service('renderer')->renderRoot($modalBlockMarkup);
 
-      $modal_output = $this->modalHTML . t('<section id="@modal_id" class="mfp-hide modal-dialog modal-content overlay-def">
+      $modal_output = $this->modalHTML . $this->t('<section id="@modal_id" class="mfp-hide modal-dialog modal-content overlay-def">
           <header class="modal-header">
             <h2 class="modal-title">@modal_title</h2>
           </header>
