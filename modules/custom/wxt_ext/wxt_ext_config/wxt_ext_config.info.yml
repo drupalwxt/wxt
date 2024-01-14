@@ -3,4 +3,4 @@ description: 'Contains specialized Drush commands for handling config exports.'
 type: module
 core_version_requirement: '^9 || ^10'
 package: WxT
-version: 5.1.0
+version: 5.2.0-dev

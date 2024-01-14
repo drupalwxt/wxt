@@ -5,4 +5,4 @@ core_version_requirement: '^9 || ^10'
 package: WxT
 dependencies:
   - 'drupal:content_moderation'
-version: 5.1.0
+version: 5.2.0-dev
