@@ -12,7 +12,7 @@ trait ConfigEntityDescriptionTrait {
   /**
    * Implements EntityDescriptionInterface::getDescription().
    */
-  public function getDescription() {
+  public function getDescription(): string {
     return $this->getThirdPartySetting('wxt_core', 'description');
   }
 
