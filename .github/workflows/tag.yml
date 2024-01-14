@@ -21,7 +21,7 @@ jobs:
       run: |
         git config --global user.email "development+drupalwxt@zacharyseguin.ca"
         git config --global user.name "drupalwxt-svc"
-        git clone --branch 10.1.x https://drupalwxt-svc:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/drupalwxt/site-wxt.git
+        git clone --branch 10.2.x https://drupalwxt-svc:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/drupalwxt/site-wxt.git
         cd site-wxt
         rm composer.lock
 
@@ -34,7 +34,7 @@ jobs:
         export DB_TYPE=mysql
         export DB_PORT=3306
         cd site-wxt
-        git clone --branch 10.1.x https://github.com/drupalwxt/docker-scaffold.git docker
+        git clone --branch 10.2.x https://github.com/drupalwxt/docker-scaffold.git docker
         make build
         docker compose -f docker-compose.ci.yml up -d
         docker ps -a
@@ -82,8 +82,8 @@ jobs:
 
     - name: Checkout repos to update tags
       run: |
-        git clone --branch 10.1.x https://drupalwxt-svc:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/drupalwxt/site-wxt.git
-        git clone --branch 10.1.x https://drupalwxt-svc:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/drupalwxt/wxt-project.git
+        git clone --branch 10.2.x https://drupalwxt-svc:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/drupalwxt/site-wxt.git
+        git clone --branch 10.2.x https://drupalwxt-svc:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/drupalwxt/wxt-project.git
         git clone --branch master https://drupalwxt-svc:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/drupalwxt/helm-drupal.git
         git clone --branch master https://drupalwxt-svc:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/drupalwxt/terraform-kubernetes-drupalwxt.git
 
@@ -152,7 +152,7 @@ jobs:
         git add .
         git commit -m "feat(composer): Update version in the composer.json file ${{ env.GITHUB_REFERENCE }}" || true
         git tag ${{ env.GITHUB_REFERENCE }}
-        git push origin 10.1.x
+        git push origin 10.2.x
         git push origin ${{ env.GITHUB_REFERENCE }}
 
     - name: Push to wxt-project the latest tags
@@ -161,7 +161,7 @@ jobs:
         git add .
         git commit -m "Update to latest version of WxT ${{ env.GITHUB_REFERENCE }}" || true
         git tag ${{ env.GITHUB_REFERENCE }}
-        git push origin 10.1.x
+        git push origin 10.2.x
         git push origin ${{ env.GITHUB_REFERENCE }}
 
     - name: Push to helm-drupal the latest tags

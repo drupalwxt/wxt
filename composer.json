@@ -9,7 +9,8 @@
         "ext-dom": "*",
         "bower-asset/cropper": "^2.3",
         "bower-asset/slick-carousel": "^1.8",
-        "cweagans/composer-patches": "^1.6.0",
+        "composer/installers": "^2.1",
+        "cweagans/composer-patches": "^1.7",
         "drupal/admin_toolbar": "^3.2.1",
         "drupal/autosave_form": "^1.2",
         "drupal/block_class": "^2.0",
@@ -22,8 +23,8 @@
         "drupal/ckeditor_codemirror": "^3.0.0-beta4",
         "drupal/ckeditor_details": "^2.1.0-alpha1",
         "drupal/config_rewrite": "^1.5",
-        "drupal/core-composer-scaffold": "^10.1",
-        "drupal/core-recommended": "10.1.6",
+        "drupal/core-composer-scaffold": "^10.2",
+        "drupal/core-recommended": "10.2.1",
         "drupal/core_context": "1.1",
         "drupal/crop": "^2.0.0-rc1",
         "drupal/ctools": "^3.9",
@@ -79,8 +80,8 @@
         "drupal/views_infinite_scroll": "^2.0",
         "drupal/webform": "^6.2.0-beta5",
         "drupal/webform_migrate": "2.0.x-dev",
-        "drupal/wxt_bootstrap": "7.4",
-        "drupal/wxt_library": "7.3",
+        "drupal/wxt_bootstrap": "8.x-dev",
+        "drupal/wxt_library": "8.x-dev",
         "drupal-ckeditor-libraries-group/fakeobjects": "4.18.0",
         "cdubz/ckeditor5-source-editing-codemirror": "^35.1",
         "codemirror/codemirror": "^5.65",
@@ -90,25 +91,23 @@
         "w8tcha/ckeditor-codemirror": "1.18.5"
     },
     "require-dev": {
-        "drupal/core-dev": "^10.1",
+        "drupal/core-dev": "^10.2",
         "drupal/drupal-extension": "5.0.0-alpha1",
-        "drush/drush": ">=12.1.0",
+        "drush/drush": "^12.4.3",
         "oomphinc/composer-installers-extender": "^1.1 || ^2",
         "squizlabs/php_codesniffer": "3.*",
         "phpspec/prophecy-phpunit": "^2"
     },
     "config": {
-        "secure-http": false,
-        "prestissimo": {
-            "maxConnections": 10,
-            "minConnections": 5
-        },
+        "discard-changes": true,
+        "sort-packages": true,
         "allow-plugins": {
             "composer/installers": true,
             "cweagans/composer-patches": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "drupal/core-composer-scaffold": true,
             "oomphinc/composer-installers-extender": true,
+            "php-http/discovery": true,
             "phpstan/extension-installer": true
         }
     },
@@ -189,7 +188,7 @@
                 "Enter drupal/core patch #850600 description here":
                 "https://www.drupal.org/files/issues/2023-11-14/postgresql-ssl-dns-850600-29.patch",
                 "Enter drupal/core patch #2559833 description here":
-                "https://www.drupal.org/files/issues/2021-06-02/comment_form_redirect-2559833-87.patch",
+                "https://www.drupal.org/files/issues/2024-01-14/comment_form_redirect-2559833-100.patch",
                 "Enter drupal/core patch #2630732 description here":
                 "https://www.drupal.org/files/issues/2023-05-15/D10x-implement_entity_fields_for_migration_dest-2630732-107.patch",
                 "2699157 - Plugin Lazy loading can cause usort warning":
@@ -207,15 +206,15 @@
                 "Enter drupal/core patch #2893029 description here":
                 "https://www.drupal.org/files/issues/2893029-9.patch",
                 "Enter drupal/core patch #2938129 description here":
-                "https://www.drupal.org/files/issues/2022-11-18/drupal-PageTitle_block-2938129-29.patch",
+                "https://www.drupal.org/files/issues/2024-01-14/drupal-PageTitle_block-2938129-41.patch",
                 "3016131 - Improved exception message developer experience":
                 "https://www.drupal.org/files/issues/2020-05-26/drupal-3016131-23-useless-exception.patch",
                 "3150294 - New translations for moderated nodes are not created in the initial workflow state":
-                "https://www.drupal.org/files/issues/2022-05-11/3150294-109.patch",
+                "https://www.drupal.org/files/issues/2024-01-03/3150294-128.patch",
                 "3177182 - Book title in breadcrumb not translated":
                 "https://www.drupal.org/files/issues/2020-10-20/book-breadcrumb_title_xlate-3177182-3.patch",
                 "Enter drupal/core patch #3173808 description here":
-                "https://www.drupal.org/files/issues/2021-01-31/3173808-9-Make-book-child-content-type-configura.patch",
+                "https://www.drupal.org/files/issues/2024-01-14/3173808-26.patch",
                 "Enter drupal/core patch #2546212 description here":
                 "https://www.drupal.org/files/issues/2020-11-07/2546212-158.patch",
                 "Enter drupal/core patch #3207813 description here":
