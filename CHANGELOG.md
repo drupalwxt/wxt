@@ -32,7 +32,7 @@ Upgrade path:
 
 **Note(s)**:
 
-N/A
+This release is functionality equivalent to v5.1.1 but against Drupal Core 10.2.x.
 
 ## v5.1.1
 
@@ -113,7 +113,7 @@ Upgrade path:
 
 **Note(s)**:
 
-This release is functionality equivalent to v5.0.2 but against Drupal Core 5.1.x.
+This release is functionality equivalent to v5.0.2 but against Drupal Core 10.1.x.
 
 ## v5.0.2
 

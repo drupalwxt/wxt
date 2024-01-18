@@ -5,4 +5,4 @@ package: WxT
 description: 'Provides an Image entity type for Media.'
 dependencies:
   - 'wxt_ext_media:wxt_ext_media'
-version: 5.2.0-dev
+version: 5.2.0
