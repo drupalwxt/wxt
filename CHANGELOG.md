@@ -1,16 +1,17 @@
 # CHANGELOG
 
-## v5.1.1 (In Development)
+## v5.1.1
 
 - Build Infrastructure
   - N/A
 - Security Updates for Drupal Core
-  - N/A
+  - [SA-core-2024-001](https://www.drupal.org/sa-core-2024-001)
 - Updates for Drupal Core
   - N/A
 - Updates for Drupal Contrib + WxT
   - Incomplete licenses in modulename.libraries.yml will cause a warning [3409881](https://www.drupal.org/node/3409881)
   - 5.1.x requires a merge from wxt 5.0.x as countries fix is missing [3409755](https://www.drupal.org/node/3409755)
+  - No schema for wxt_core.settings [3413791](https://www.drupal.org/node/3413791)
 - Updated for WxT Bootstrap
   - N/A
 - Updates for WxT Library

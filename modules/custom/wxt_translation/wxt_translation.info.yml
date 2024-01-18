@@ -6,4 +6,4 @@ package: WxT
 dependencies:
   - 'drupal:config_translation'
   - 'drupal:content_translation'
-version: 5.1.0
+version: 5.1.1
