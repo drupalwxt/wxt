@@ -19,4 +19,4 @@ dependencies:
   - 'token_filter:token_filter'
   - 'url_embed:url_embed'
   - 'wxt_ext_media_image_responsive:wxt_ext_media_image_responsive'
-version: 5.2.0
+version: 5.2.1-dev

@@ -10,4 +10,4 @@ dependencies:
   - 'panels_ipe:panels_ipe'
   - 'wxt_translation:wxt_translation'
   - 'wxt_ext_layout:wxt_ext_layout'
-version: 5.2.0
+version: 5.2.1-dev
