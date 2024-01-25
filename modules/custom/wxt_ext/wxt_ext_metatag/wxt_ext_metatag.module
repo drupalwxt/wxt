@@ -5,6 +5,8 @@
  * Contains wxt_ext_metatag.module.
  */
 
+use Drupal\wxt_ext_metatag\Plugin\metatag\Tag\AdobeAnalyticsAttributeBase;
+
 /**
  * Implements hook_metatags_attachments_alter().
  */
@@ -38,4 +40,12 @@ function wxt_ext_metatag_metatags_attachments_alter(array &$metatag_attachments)
         break;
     }
   }
+}
+
+/**
+ * Implements hook_metatags_alter().
+ */
+function wxt_ext_metatag_metatags_alter(array &$metatags, array &$context): void {
+  // Update the metadata values for all that use AdobeAnalyticsAttributeBase.
+  AdobeAnalyticsAttributeBase::alterMetatags($metatags, $context);
 }
