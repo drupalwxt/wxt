@@ -7,13 +7,20 @@
 - Security Updates for Drupal Core
   - N/A
 - Updates for Drupal Core
-  - N/A
+    Patch (bugfix) release of Drupal Core to `v10.2.3`
 - Updates for Drupal Contrib + WxT
-  - N/A
+  - Deprecated function: str_contains(): Passing null to parameter #1 [3415945](https://www.drupal.org/node/3415945)
+  - Security advisory for group module [3406903](https://www.drupal.org/node/3406903
+  - Allow setting GC Adobe Analytics metatag attributes [3415924](https://www.drupal.org/node/3415924)
+  - Patch for 3107212 no longer applies in 5.2.0 [3418450](https://www.drupal.org/node/3418450)
+  - Patch identified as "Temporary" has been in use for approximately 6 years [3421777](https://www.drupal.org/node/3421777)
+  - Remove unnecessary usort patch from WxT build [3421776](https://www.drupal.org/node/3421776)
 - Updated for WxT Bootstrap
-  - N/A
+  - Starterkit fixes and add some README.md instructions [3420710](https://www.drupal.org/node/3420710)
+  - Lead title styling still displays even if field is empty [3420910](https://www.drupal.org/node/3420910)
+  - Menu Block doesn't reflect expand state correctly [3419328](https://www.drupal.org/node/3419328)
 - Updates for WxT Library
-  - N/A
+  - SearchApiBlockForm missing title [3418164](https://www.drupal.org/node/3418164)
 
 Upgrade path:
 
@@ -34,7 +41,7 @@ Upgrade path:
 
 N/A
 
-## v5.2.0 (In Development)
+## v5.2.0
 
 - Build Infrastructure
   - N/A
