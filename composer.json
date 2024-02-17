@@ -179,8 +179,6 @@
                 "https://www.drupal.org/files/issues/2022-07-26/2920739-55.access_listing_page.patch"
             },
             "drupal/bootstrap": {
-                "Enter drupal/bootstrap patch #2881978 description here":
-                "https://www.drupal.org/files/issues/2018-10-28/temporarily_disable-2881978-3.patch",
                 "3249470 - Error generated when importing translation":
                 "https://www.drupal.org/files/issues/2021-11-17/3249470-3.patch"
             },
