@@ -258,7 +258,7 @@
             },
             "drupal/layout_builder_st": {
                 "3420063 - Call to a member function getConfig() OverridesSectionStorage.php":
-                "https://git.drupalcode.org/project/layout_builder_st/-/merge_requests/6/diffs.diff"
+                "https://git.drupalcode.org/project/layout_builder_st/-/merge_requests/6.diff"
             },
             "drupal/linkit": {
                 "Detect and strip base URL from pasted URLs to increase matching hits":
