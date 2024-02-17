@@ -76,7 +76,7 @@
         "drupal/url_embed": "^2.0.0-alpha1",
         "drupal/video_embed_field": "^2.5",
         "drupal/views_autocomplete_filters": "^1.4",
-        "drupal/views_bootstrap": "^5.3",
+        "drupal/views_bootstrap": "5.3.1",
         "drupal/views_infinite_scroll": "^2.0",
         "drupal/webform": "^6.2.0-beta5",
         "drupal/webform_migrate": "2.0.x-dev",
