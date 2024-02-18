@@ -146,7 +146,7 @@ jobs:
       with:
         args: install --working-dir=./site-wxt
 
-    - name: Push to site-wxt the latest build sha
+    - name: Push to site-wxt the latest stable tag
       working-directory: ./site-wxt
       run: |
         git add .
@@ -154,6 +154,21 @@ jobs:
         git tag ${{ env.GITHUB_REFERENCE }}
         git push origin 10.2.x
         git push origin ${{ env.GITHUB_REFERENCE }}
+
+    - name: Update tags for site-wxt
+      uses: jacobtomlinson/gha-find-replace@master
+      with:
+        find: "\"drupalwxt/wxt\": \"[3-5]\\.[0-9]+\\.[0-9|x]+(-(beta|rc|dev)[0-9]?)?\""
+        replace: "\"drupalwxt/wxt\": \"5.2.x-dev\""
+        exclude: ".git/**"
+        include: "site-wxt/**"
+
+    - name: Push to site-wxt the latest build sha
+      working-directory: ./site-wxt
+      run: |
+        git add .
+        git commit -m "feat(composer): Update version in the composer.json file" || true
+        git push origin 10.2.x
 
     - name: Push to wxt-project the latest tags
       run: |
