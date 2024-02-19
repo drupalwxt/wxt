@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## v5.2.1 (In Development)
+## v5.2.1
 
 - Build Infrastructure
   - N/A
@@ -39,7 +39,7 @@ Upgrade path:
 
 **Note(s)**:
 
-N/A
+The Group module has been updated to the 2.2.x branch as an intermediate step required to get to the recommended 3.2.x branch.
 
 ## v5.2.0
 

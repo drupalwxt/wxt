@@ -6,4 +6,4 @@ core_version_requirement: '^9 || ^10'
 dependencies:
   - 'paragraphs:paragraphs'
   - 'wxt_translation:wxt_translation'
-version: 5.2.1-dev
+version: 5.2.1
