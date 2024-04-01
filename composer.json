@@ -246,7 +246,7 @@
             },
             "drupal/entity_browser": {
                 "2914385 - Fix PHP error":
-                "https://www.drupal.org/files/issues/2022-04-21/entity_browser-key-2914385-12.patch"
+                "https://www.drupal.org/files/issues/2023-10-10/2914385-25.patch"
             },
             "drupal/fontawesome": {
                 "3071758 - Fix multiple icons issue":
