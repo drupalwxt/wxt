@@ -11,9 +11,11 @@
 - Updates for Drupal Contrib + WxT
   - N/A
 - Updated for WxT Bootstrap
-  - N/A
+  - Make gc-thickline default for H1  [3403484](https://www.drupal.org/node/3403484)
+  - Fix for duplicate footer in update GCWeb theme [3436553](https://www.drupal.org/node/3436553)
 - Updates for WxT Library
-  - N/A
+  - Add latest releases of wet-boew and gcweb [3422762](https://www.drupal.org/node/3422762)
+  - WxT Library (language block) warning when viewing the latest version node page in some cases [3403484](https://www.drupal.org/node/3403484)
 
 Upgrade path:
 
@@ -32,7 +34,9 @@ Upgrade path:
 
 **Note(s)**:
 
-N/A
+The Group module has been downgraded to the 8.x-1.6 release + alongside the flexible permissions module which has been added.
+
+This is needed for an immediate upgrade path for groups and the next release will have groups using again the 2.2.x branch.
 
 ## v5.2.1
 
