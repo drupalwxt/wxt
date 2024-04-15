@@ -7,7 +7,7 @@
 - Security Updates for Drupal Core
   - N/A
 - Updates for Drupal Core
-  - N/A
+    Patch (bugfix) release of Drupal Core to `v10.2.5`
 - Updates for Drupal Contrib + WxT
   - N/A
 - Updated for WxT Bootstrap
