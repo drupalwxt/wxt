@@ -6,4 +6,4 @@ description: 'Provides responsive image support for Media.'
 dependencies:
   - 'drupal:responsive_image'
   - 'wxt_ext_media_image:wxt_ext_media_image'
-version: 5.2.2-dev
+version: 5.2.2
