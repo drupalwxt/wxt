@@ -5,6 +5,7 @@ core_version_requirement: '^9 || ^10'
 package: WxT
 dependencies:
   - 'config_rewrite:config_rewrite'
+  - 'flexible_permissions:flexible_permissions'
   - 'gnode:gnode'
   - 'group:group'
   - 'wxt_ext_blog:wxt_ext_blog'

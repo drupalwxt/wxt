@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * @file
+ * Install and uninstall functions for the WxT Extend Groups module.
+ */
+
+/**
+ * Installs the Flexible Permissions module.
+ */
+function wxt_ext_group_update_8201() {
+  \Drupal::service('module_installer')->install(['flexible_permissions']);
+}
