@@ -229,15 +229,6 @@ function wxt_ext_layout_entity_get_form_display($entity_type, $bundle, $form_mod
 }
 
 /**
- * Implements hook_system_info_alter().
- */
-function wxt_ext_layout_system_info_alter(array &$info, Extension $file, $type) {
-  if ($file->getName() === 'layout_builder_st') {
-    $info['hidden'] = TRUE;
-  }
-}
-
-/**
  * Implements hook_module_implements_alter().
  *
  * @todo Remove when we require Panels 4.5 or later, since it implements and
