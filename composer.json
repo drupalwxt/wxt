@@ -263,7 +263,9 @@
             },
             "drupal/layout_builder_st": {
                 "3420063 - Call to a member function getConfig() OverridesSectionStorage.php":
-                "https://git.drupalcode.org/project/layout_builder_st/-/merge_requests/6.diff"
+                "https://git.drupalcode.org/project/layout_builder_st/-/merge_requests/6.diff",
+                "3411037 - Fix core removing contextual translation links":
+                "https://git.drupalcode.org/project/layout_builder_st/-/merge_requests/5.patch"
             },
             "drupal/linkit": {
                 "Detect and strip base URL from pasted URLs to increase matching hits":
