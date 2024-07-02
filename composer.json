@@ -24,7 +24,7 @@
         "drupal/ckeditor_details": "^2.1.0-alpha1",
         "drupal/config_rewrite": "^1.5",
         "drupal/core-composer-scaffold": "^10.2",
-        "drupal/core-recommended": "10.2.5",
+        "drupal/core-recommended": "10.2.7",
         "drupal/core_context": "1.1",
         "drupal/crop": "^2.0.0-rc1",
         "drupal/ctools": "^3.9",
