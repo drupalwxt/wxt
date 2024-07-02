@@ -11,10 +11,8 @@ use Drupal\block_content\BlockContentInterface;
 use Drupal\Core\Entity\Entity\EntityFormDisplay;
 use Drupal\Core\Entity\Entity\EntityViewDisplay;
 use Drupal\Core\Entity\Entity\EntityViewMode;
-use Drupal\Core\Extension\Extension;
 use Drupal\Core\Field\EntityReferenceFieldItemListInterface;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\Core\Layout\LayoutDefinition;
 use Drupal\Core\Routing\RouteMatchInterface;
 
 /**
@@ -227,4 +225,3 @@ function wxt_ext_layout_entity_get_form_display($entity_type, $bundle, $form_mod
 
   return $entity_form_display;
 }
-
