@@ -227,7 +227,7 @@
                 "Enter drupal/ctools patch #2667652 description here":
                 "https://www.drupal.org/files/issues/ctools-option_to_expose-2667652-3.patch",
                 "Enter drupal/ctools patch #2924356 description here":
-                "https://www.drupal.org/files/issues/ctools-entity_field_rendered_twice-2924356-2.patch"
+                "https://www.drupal.org/files/issues/2024-06-14/ctools-entity_field_rendered_twice-2924356-12.patch"
             },
             "drupal/diff": {
                 "Enter drupal/diff patch #2844337 description here":
@@ -286,10 +286,6 @@
                 "https://www.drupal.org/files/issues/comments_entity_uri-2878615-6.patch"
             },
             "drupal/panels": {
-                "Enter drupal/panels patch #2849867 description here":
-                "https://www.drupal.org/files/issues/2023-01-11/panels_custom_attributes_in_panels_blocks-2849867-92_0.patch",
-                "Enter drupal/panels patch #2667755 description here":
-                "https://www.drupal.org/files/issues/bandaid.patch",
                 "Enter drupal/panels patch #2910704 description here":
                 "https://www.drupal.org/files/issues/panels-ipe-card-flip-ie-error-2910704.diff"
             },
