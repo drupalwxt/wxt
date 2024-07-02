@@ -12,7 +12,7 @@
         "composer/installers": "^2.1",
         "cweagans/composer-patches": "^1.7",
         "drupal/admin_toolbar": "^3.2.1",
-        "drupal/autosave_form": "^1.2",
+        "drupal/autosave_form": "^1.6",
         "drupal/block_class": "^2.0",
         "drupal/block_content_permissions": "^1.10",
         "drupal/blog": "3.1.2",
@@ -300,10 +300,6 @@
                 "https://www.drupal.org/files/issues/2021-03-26/webform_clientside_validation-3205860-2.patch",
                 "[PHP 8.1] Deprecated function: preg_match(): Passing null to parameter #2 ($subject) of type string is deprecated in webform_form_alter()":
                 "https://www.drupal.org/files/issues/2024-03-18/issue-3431852-deprecation-warning-webform_form_alter.patch"
-            },
-            "drupal/autosave_form": {
-                "3355495 - PHP 8.2 deprecation issue with AutosaveFormBuilder":
-                "https://git.drupalcode.org/project/autosave_form/-/merge_requests/12.diff"
             }
         }
     },
