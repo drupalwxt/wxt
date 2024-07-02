@@ -231,7 +231,7 @@
             },
             "drupal/diff": {
                 "Enter drupal/diff patch #2844337 description here":
-                "https://www.drupal.org/files/issues/diff-remove-thumbnails-errors-2844337-17.patch",
+                "https://www.drupal.org/files/issues/2024-04-15/2844337-array_to_string_conversion-29.patch",
                 "Enter drupal/diff patch #2834253 description here":
                 "https://www.drupal.org/files/issues/2021-08-19/diff-missing-column-headers-2834253-15.patch",
                 "Enter drupal/diff patch #2882334 description here":
