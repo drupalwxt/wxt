@@ -300,6 +300,10 @@
                 "https://www.drupal.org/files/issues/2021-03-26/webform_clientside_validation-3205860-2.patch",
                 "[PHP 8.1] Deprecated function: preg_match(): Passing null to parameter #2 ($subject) of type string is deprecated in webform_form_alter()":
                 "https://www.drupal.org/files/issues/2024-03-18/issue-3431852-deprecation-warning-webform_form_alter.patch"
+            },
+            "drupal/autosave_form": {
+                "3355495 - PHP 8.2 deprecation issue with AutosaveFormBuilder":
+                "https://git.drupalcode.org/project/autosave_form/-/merge_requests/12.diff"
             }
         }
     },
