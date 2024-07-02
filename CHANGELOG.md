@@ -1,5 +1,45 @@
 # CHANGELOG
 
+## v5.2.3
+
+- Build Infrastructure
+  - N/A
+- Security Updates for Drupal Core
+  - N/A
+- Updates for Drupal Core
+    Patch (bugfix) release of Drupal Core to `v10.2.7`
+- Updates for Drupal Contrib + WxT
+  - wxt_ext_layout deprecations in Panels 4.8 [3457046](https://www.drupal.org/node/3457046)
+  - LB inline blocks are no longer translatable [3456872](https://www.drupal.org/node/3456872)
+  - Layout Builder ST not listed in modules list [3456863](https://www.drupal.org/node/3456863)
+  - PHP deprecation issues with AutoSaveFormBuilder [3444515](https://www.drupal.org/node/3444515)
+  - Split contextual footer menu migration [3456754](https://www.drupal.org/node/3456754)
+  - Update file_entity in composer.json [3445800](https://www.drupal.org/node/3445800)
+  - SKAUGHT: Security advisory for group module [3406903](https://www.drupal.org/node/3406903)
+- Updated for WxT Bootstrap
+  - Use content language for footer menu visibility conditions [3456827](https://www.drupal.org/node/3456827)
+- Updates for WxT Library
+  - Add latest releases of wet-boew and gcweb (v4.0.75 and v14.6.0)
+
+Upgrade path:
+
+> **Important**: Please backup your database before running the upgrade process for this release.
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
+- Run WxT configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:wxt`
+
+**Note(s)**:
+
+The Group module has been updated to the 2.2.x branch as an intermediate step required to get to the recommended 3.2.x branch.
+
 ## v5.2.2
 
 - Build Infrastructure
