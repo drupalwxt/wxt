@@ -28,7 +28,7 @@
         "drupal/core_context": "1.1",
         "drupal/crop": "^2.0.0-rc1",
         "drupal/ctools": "^3.9",
-        "drupal/diff": "1.1",
+        "drupal/diff": "^1.1",
         "drupal/dropzonejs": "^2.1",
         "drupal/embed": "^1.7",
         "drupal/entity_block": "^1.0",
@@ -44,7 +44,7 @@
         "drupal/footnotes": "^3.1",
         "drupal/fakeobjects": "^1.2",
         "drupal/flexible_permissions": "^1.1",
-        "drupal/group": "1.6",
+        "drupal/group": "^2.2",
         "drupal/image_widget_crop": "^2.1",
         "drupal/inline_entity_form": "^1.0-rc12",
         "drupal/layout_builder_restrictions": "^2.14",
@@ -255,11 +255,7 @@
             },
             "drupal/group": {
                 "Enter drupal/group patch #2817109 description here":
-                "https://www.drupal.org/files/issues/2817109-by-rachel_norfolk-ericras-How-to-redir.patch",
-                "Enter drupal/group patch #2864721 description here":
-                "https://www.drupal.org/files/issues/2020-07-30/group-translate_content_permission-2864721-20.patch",
-                "Enter drupal/group patch #2895988 description here":
-                "https://www.drupal.org/files/issues/2022-07-31/2895988-29.patch"
+                "https://www.drupal.org/files/issues/2022-11-02/2817109-2.0.x-how-to-redirect-30.patch"
             },
             "drupal/layout_builder_st": {
                 "3420063 - Call to a member function getConfig() OverridesSectionStorage.php":
