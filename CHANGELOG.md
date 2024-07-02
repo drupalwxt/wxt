@@ -17,6 +17,7 @@
   - Update file_entity in composer.json [3445800](https://www.drupal.org/node/3445800)
   - SKAUGHT: Security advisory for group module [3406903](https://www.drupal.org/node/3406903)
 - Updated for WxT Bootstrap
+  - Use Bootstrap to v3.31
   - Use content language for footer menu visibility conditions [3456827](https://www.drupal.org/node/3456827)
 - Updates for WxT Library
   - Add latest releases of wet-boew and gcweb (v4.0.75 and v14.6.0)
