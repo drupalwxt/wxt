@@ -11,4 +11,4 @@ dependencies:
   - 'drupal:user'
   - 'drupal:views'
   - 'search_api:search_api'
-version: 5.2.3
+version: 5.2.3-dev
