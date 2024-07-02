@@ -240,10 +240,8 @@
                 "https://git.drupalcode.org/project/diff/-/merge_requests/87.patch",
                 "Enter drupal/diff patch #3169729 description here":
                 "https://www.drupal.org/files/issues/2020-09-08/diff_add-local-tasks-3169729-2.patch",
-                "Enter drupal/diff patch #3183380 description here":
-                "https://www.drupal.org/files/issues/2020-11-19/3183380-add-compare-revisions.patch",
                 "Enter drupal/diff patch #3228798 description here":
-                "https://www.drupal.org/files/issues/2021-08-19/diff-a11y-3228798-10.patch"
+                "https://www.drupal.org/files/issues/2024-05-14/diff-3228798-17.patch"
             },
             "drupal/entity_browser": {
                 "2914385 - Fix PHP error":
