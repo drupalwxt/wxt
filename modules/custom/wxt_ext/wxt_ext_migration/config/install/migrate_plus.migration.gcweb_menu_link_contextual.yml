@@ -1,0 +1,85 @@
+id: gcweb_menu_link_contextual
+label: Embedded data feed for contextual menu links
+migration_group: gcweb
+migration_tags:
+  - Menu
+dependencies:
+  enforced:
+    module:
+      - wxt_ext_migration
+source:
+  plugin: embedded_data
+  # Enforce default language to english
+  default_lang: true
+  data_rows:
+    # Footer Contextual.
+    - mlid: 'contextual_1'
+      link_title: 'Contextual link 1'
+      description: 'Contextual link 1'
+      menu_name: 'footer-contextual'
+      link_path: 'internal:/'
+      options: []
+      external: 0
+      weight: 0
+      parent: 0
+    - mlid: 'contextual_2'
+      link_title: 'Contextual link 2'
+      description: 'Contextual link 2'
+      menu_name: 'footer-contextual'
+      link_path: 'internal:/'
+      options: []
+      external: 0
+      weight: 1
+      parent: 0
+    - mlid: 'contextual_3'
+      link_title: 'Contextual link 3'
+      description: 'Contextual link 3'
+      menu_name: 'footer-contextual'
+      link_path: 'internal:/'
+      options: []
+      external: 0
+      weight: 2
+      parent: 0
+  # Under 'ids', we identify source fields populated above which will uniquely
+  # identify each imported item. The 'type' makes sure the migration map table
+  # uses the proper schema type for stored the IDs.
+  ids:
+    mlid:
+      type: string
+process:
+  id: mlid
+  bundle: 'constants/bundle'
+  title: link_title
+  description: description
+  menu_name: menu_name
+  'link/uri': link_path
+  'link/options': options
+  route:
+    plugin: route
+    source:
+      - link_path
+      - options
+  route_name: '@route/route_name'
+  route_parameters: '@route/route_parameters'
+  url: '@route/url'
+  options: '@route/options'
+  external: external
+  weight: weight
+  expanded:
+    plugin: default_value
+    default_value: 1
+  enabled:
+    plugin: default_value
+    default_value: 1
+  parent:
+    plugin: menu_link_parent
+    source:
+      - parent
+  changed:
+    plugin: default_value
+    default_value: ''
+destination:
+  plugin: entity:menu_link_content
+migration_dependencies:
+  required:
+    - menu
