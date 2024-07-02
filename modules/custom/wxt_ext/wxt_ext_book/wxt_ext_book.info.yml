@@ -6,4 +6,4 @@ package: WxT
 dependencies:
   - 'book:book'
 configure: wxt_ext_book.admin_config_wxt_ext_book
-version: 5.2.2
+version: 5.2.3

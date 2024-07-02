@@ -5,4 +5,4 @@ package: WxT
 description: 'Provides a Video entity type for Media.'
 dependencies:
   - 'wxt_ext_media:wxt_ext_media'
-version: 5.2.2
+version: 5.2.3

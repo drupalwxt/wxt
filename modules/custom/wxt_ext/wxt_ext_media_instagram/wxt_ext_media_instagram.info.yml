@@ -6,4 +6,4 @@ package: WxT
 dependencies:
   - 'wxt_ext_media:wxt_ext_media'
   - 'media_entity_instagram:media_entity_instagram'
-version: 5.2.2
+version: 5.2.3
