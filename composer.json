@@ -23,8 +23,8 @@
         "drupal/ckeditor_codemirror": "^3.0.0-beta4",
         "drupal/ckeditor_details": "^2.1.0-alpha1",
         "drupal/config_rewrite": "^1.5",
-        "drupal/core-composer-scaffold": "^10.2",
-        "drupal/core-recommended": "10.2.7",
+        "drupal/core-composer-scaffold": "^10.3",
+        "drupal/core-recommended": "10.3.2",
         "drupal/core_context": "1.1",
         "drupal/crop": "^2.0.0-rc1",
         "drupal/ctools": "^3.9",
@@ -92,7 +92,7 @@
         "w8tcha/ckeditor-codemirror": "1.18.5"
     },
     "require-dev": {
-        "drupal/core-dev": "^10.2",
+        "drupal/core-dev": "^10.3",
         "drupal/drupal-extension": "5.0.0-alpha1",
         "drush/drush": "^12.4.3",
         "oomphinc/composer-installers-extender": "^1.1 || ^2",
@@ -185,15 +185,11 @@
             },
             "drupal/core": {
                 "Enter drupal/core patch #850600 description here":
-                "https://www.drupal.org/files/issues/2023-11-14/postgresql-ssl-dns-850600-29.patch",
-                "Enter drupal/core patch #2559833 description here":
-                "https://www.drupal.org/files/issues/2024-01-14/comment_form_redirect-2559833-100.patch",
+                "https://www.drupal.org/files/issues/2024-08-19/postgresql-ssl-dns-850600-38.patch",
                 "Enter drupal/core patch #2630732 description here":
-                "https://www.drupal.org/files/issues/2023-05-15/D10x-implement_entity_fields_for_migration_dest-2630732-107.patch",
+                "https://www.drupal.org/files/issues/2024-07-29/D103-2630732-123.patch",
                 "Enter drupal/core patch #2752443 description here":
                 "https://www.drupal.org/files/issues/in_correct_order_and-2752443-1.patch",
-                "Enter drupal/core patch #2765297 description here":
-                "https://www.drupal.org/files/issues/2021-03-19/taxonomy_translation_2765297_63.patch",
                 "Enter drupal/core patch #2816921 description here":
                 "https://www.drupal.org/files/issues/user_password-2816921-2.patch",
                 "Enter drupal/core patch #2857273 description here":
