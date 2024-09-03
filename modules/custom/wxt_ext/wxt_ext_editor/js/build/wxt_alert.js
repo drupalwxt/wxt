@@ -378,7 +378,7 @@ class FormView extends delegated_uifrom_dll_reference_CKEditor5.View {
         this.alertClasses.forEach(c => {
             dropdownItems.push({
                 type: 'button',
-                model: new delegated_uifrom_dll_reference_CKEditor5.Model({
+                model: new delegated_uifrom_dll_reference_CKEditor5.ViewModel({
                     withText: true,
                     label: c,
                     value: c

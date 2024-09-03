@@ -33,7 +33,7 @@ export default class FormView extends View {
         this.alertClasses.forEach(c => {
             dropdownItems.push({
                 type: 'button',
-                model: new Model({
+                model: new ViewModel({
                     withText: true,
                     label: c,
                     value: c
