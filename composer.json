@@ -187,7 +187,7 @@
                 "Enter drupal/core patch #850600 description here":
                 "https://www.drupal.org/files/issues/2024-08-19/postgresql-ssl-dns-850600-38.patch",
                 "Enter drupal/core patch #2630732 description here":
-                "https://www.drupal.org/files/issues/2024-07-29/D103-2630732-123.patch",
+                "https://git.drupalcode.org/project/drupal/-/merge_requests/6111.diff",
                 "Enter drupal/core patch #2752443 description here":
                 "https://www.drupal.org/files/issues/in_correct_order_and-2752443-1.patch",
                 "Enter drupal/core patch #2816921 description here":
