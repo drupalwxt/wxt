@@ -30,7 +30,7 @@ settings:
       - sourceEditing
       - '-'
       - '|'
-      - Footnotes
+      - footnotes
       - detail
       - alert
       - panel
@@ -62,7 +62,6 @@ settings:
         - '<ul type>'
         - '<ol type>'
         - '<img src alt data-entity-type data-entity-uuid data-align data-caption>'
-        - '<drupal-entity data-* title alt>'
         - '<h2 id>'
         - '<h3 id>'
         - '<h4 id>'
