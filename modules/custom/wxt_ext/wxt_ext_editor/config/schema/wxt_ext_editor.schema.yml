@@ -1,0 +1,32 @@
+filter_settings.wxt_add_table_attribute_filter:
+  type: filter
+  label: 'Modify table attributes (WxT)'
+  mapping:
+    responsive:
+      type: boolean
+      label: 'Responsive'
+      default: TRUE
+    replace_classes:
+      type: boolean
+      label: 'Replace classes'
+      default: TRUE
+    replace_all_classes:
+      type: boolean
+      label: 'Replace all classes'
+      default: TRUE
+    classes:
+      type: string
+      label: 'Classes to apply'
+      default: 'wb-tables table'
+    whitelist_classes:
+      type: string
+      label: 'Whitelist classes'
+      default: ''
+    add_datatable_attribute:
+      type: boolean
+      label: 'Add Datatable attribute'
+      default: FALSE
+    datatable_options:
+      type: string
+      label: 'Datatable options'
+      default: ''
