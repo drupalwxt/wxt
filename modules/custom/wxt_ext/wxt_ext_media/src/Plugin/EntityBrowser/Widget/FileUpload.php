@@ -171,7 +171,9 @@ class FileUpload extends EntityFormProxy {
         ];
       }
     }
-    return file_validate($item->entity, $validators);
+
+    $file_validator = \Drupal::service('file.validator');
+    return $file_validator->file_validate($item->entity, $validators);
   }
 
   /**

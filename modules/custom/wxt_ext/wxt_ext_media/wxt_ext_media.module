@@ -198,7 +198,9 @@ function wxt_ext_media_validate_upload(FileInterface $file, array $bundles = [])
       ];
     }
   }
-  return file_validate($file, $validators);
+
+  $file_validator = \Drupal::service('file.validator');
+  return $file_validator->file_validate($file, $validators);
 }
 
 /**

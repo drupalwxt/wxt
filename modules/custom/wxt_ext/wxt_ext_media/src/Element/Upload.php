@@ -45,7 +45,8 @@ class Upload extends FileElement {
     if ($element['#value']) {
       $file = File::load($element['#value']);
 
-      $errors = file_validate($file, $element['#upload_validators']);
+      $file_validator = \Drupal::service('file.validator');
+      $errors = $file_validator->file_validate($file, $element['#upload_validators']);
       if ($errors) {
         foreach ($errors as $error) {
           $form_state->setError($element, $error);
