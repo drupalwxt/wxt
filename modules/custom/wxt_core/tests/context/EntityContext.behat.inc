@@ -104,7 +104,7 @@ final class EntityContext extends DrupalSubContextBase {
   public function visitEntity($entity_type, $bundle = NULL) {
     $storage = \Drupal::entityTypeManager()->getStorage($entity_type);
 
-    $query = $storage->getQuery();
+    $query = $storage->getQuery()->accessCheck(TRUE);
 
     if ($bundle) {
       $key = $storage->getEntityType()->getKey('bundle');
@@ -166,7 +166,7 @@ final class EntityContext extends DrupalSubContextBase {
   private function count($entity_type, $bundle = NULL) {
     $storage = \Drupal::entityTypeManager()->getStorage($entity_type);
 
-    $query = $storage->getQuery()->count();
+    $query = $storage->getQuery()->accessCheck(TRUE)->count();
 
     if ($bundle) {
       $query->condition($storage->getEntityType()->getKey('bundle'), $bundle);
