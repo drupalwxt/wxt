@@ -8,9 +8,9 @@ use Drupal\Core\DependencyInjection\ClassResolverInterface;
 use Drupal\Core\Extension\ModuleExtensionList;
 use Drupal\Core\Plugin\Discovery\AnnotatedClassDiscovery;
 use Drupal\wxt_core\Annotation\UpdateWxT;
+use Symfony\Component\Console\Style\StyleInterface;
 use phpDocumentor\Reflection\DocBlockFactory;
 use phpDocumentor\Reflection\DocBlockFactoryInterface;
-use Symfony\Component\Console\Style\StyleInterface;
 
 /**
  * Discovers and manages optional configuration updates.
@@ -84,7 +84,7 @@ class UpdateManager {
    * @param \phpDocumentor\Reflection\DocBlockFactoryInterface $doc_block_factory
    *   (optional) The doc block factory.
    */
-  public function __construct(\Traversable $namespaces, ClassResolverInterface $class_resolver, ConfigFactoryInterface $config_factory, ModuleExtensionList $module_extension_list, DiscoveryInterface $discovery = NULL, DocBlockFactoryInterface $doc_block_factory = NULL) {
+  public function __construct(\Traversable $namespaces, ClassResolverInterface $class_resolver, ConfigFactoryInterface $config_factory, ModuleExtensionList $module_extension_list, ?DiscoveryInterface $discovery = NULL, ?DocBlockFactoryInterface $doc_block_factory = NULL) {
     $this->classResolver = $class_resolver;
     $this->configFactory = $config_factory;
     $this->moduleExtensionList = $module_extension_list;

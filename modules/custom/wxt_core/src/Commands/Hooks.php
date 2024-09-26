@@ -6,10 +6,10 @@ use Consolidation\AnnotatedCommand\CommandData;
 use Consolidation\OutputFormatters\Options\FormatterOptions;
 use Drupal\Core\Extension\ProfileExtensionList;
 use Drupal\Core\Plugin\CachedDiscoveryClearerInterface;
-use Drush\Commands\DrushCommands;
-use Symfony\Component\Console\Event\ConsoleCommandEvent;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\Core\StringTranslation\TranslationInterface;
+use Drush\Commands\DrushCommands;
+use Symfony\Component\Console\Event\ConsoleCommandEvent;
 
 /**
  * Implements Drush command hooks.

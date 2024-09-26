@@ -2,11 +2,11 @@
 
 namespace Drupal\wxt_admin\EventSubscriber;
 
-use Symfony\Component\HttpKernel\Event\RequestEvent;
-use Drupal\Core\Routing\RouteBuilderInterface;
-use Symfony\Component\HttpKernel\KernelEvents;
-use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Drupal\Core\File\FileSystemInterface;
+use Drupal\Core\Routing\RouteBuilderInterface;
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use Symfony\Component\HttpKernel\Event\RequestEvent;
+use Symfony\Component\HttpKernel\KernelEvents;
 
 /**
  * Rebuilds the menu router to ensure image derivatives are created.

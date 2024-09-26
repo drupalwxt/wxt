@@ -2,21 +2,21 @@
 
 namespace Drupal\wxt_ext_breadcrumb\Breadcrumb;
 
-use Drupal\Core\Breadcrumb\Breadcrumb;
-use Drupal\system\PathBasedBreadcrumbBuilder;
 use Drupal\Core\Access\AccessManagerInterface;
+use Drupal\Core\Breadcrumb\Breadcrumb;
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Controller\TitleResolverInterface;
 use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\Core\Link;
 use Drupal\Core\Path\CurrentPathStack;
-use Drupal\Core\PathProcessor\InboundPathProcessorInterface;
 use Drupal\Core\Path\PathValidator;
+use Drupal\Core\PathProcessor\InboundPathProcessorInterface;
 use Drupal\Core\Routing\RequestContext;
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\path_alias\AliasManagerInterface;
+use Drupal\system\PathBasedBreadcrumbBuilder;
 use Symfony\Component\Routing\Matcher\RequestMatcherInterface;
 
 /**
@@ -133,7 +133,8 @@ class TaxonomyBreadcrumbBuilder extends PathBasedBreadcrumbBuilder {
     CurrentPathStack $current_path,
     LanguageManagerInterface $language_manager,
     PathValidator $pathValidator,
-    AliasManagerInterface $alias_manager) {
+    AliasManagerInterface $alias_manager,
+  ) {
     $this->context = $context;
     $this->accessManager = $access_manager;
     $this->router = $router;

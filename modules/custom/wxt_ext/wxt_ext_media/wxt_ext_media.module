@@ -7,26 +7,26 @@
  * Leveraged from code provided by Acquia for the Lightning distribution.
  */
 
-use Drupal\ckeditor\Ajax\AddStyleSheetCommand;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\WidgetInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\StringTranslation\PluralTranslatableMarkup as Plural;
+use Drupal\ckeditor\Ajax\AddStyleSheetCommand;
 use Drupal\file\FileInterface;
 use Drupal\image\Entity\ImageStyle;
 use Drupal\image\Plugin\Field\FieldType\ImageItem;
 use Drupal\image\Plugin\Field\FieldWidget\ImageWidget;
 use Drupal\image\Plugin\ImageEffect\ResizeImageEffect;
+use Drupal\media\Entity\MediaType;
+use Drupal\media\MediaInterface;
+use Drupal\media\MediaTypeInterface;
+use Drupal\views\ViewExecutable;
 use Drupal\wxt_core\BundleEntityStorage;
 use Drupal\wxt_core\OverrideHelper as Override;
 use Drupal\wxt_ext_media\Exception\IndeterminateBundleException;
 use Drupal\wxt_ext_media\Form\MediaForm;
 use Drupal\wxt_ext_media\ImageWidgetHelper;
 use Drupal\wxt_ext_media\MediaHelper;
-use Drupal\media\Entity\MediaType;
-use Drupal\media\MediaInterface;
-use Drupal\media\MediaTypeInterface;
-use Drupal\views\ViewExecutable;
 
 /**
  * Implements hook_form_BASE_FORM_ID_alter().
@@ -363,7 +363,7 @@ function wxt_ext_media_media_type_insert(MediaTypeInterface $media_type) {
  * Implements hook_form_FORM_ID_alter().
  */
 function wxt_ext_media_form_entity_embed_dialog_alter(array &$form, FormStateInterface $form_state) {
-  list (, $embed_button) = $form_state->getBuildInfo()['args'];
+  [, $embed_button] = $form_state->getBuildInfo()['args'];
 
   /** @var \Drupal\embed\EmbedButtonInterface $embed_button */
   if ($embed_button->id() == 'media_browser') {

@@ -8,8 +8,8 @@ use Drupal\Core\Block\BlockManagerInterface;
 use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\migrate\MigrateExecutableInterface;
-use Drupal\migrate\Plugin\MigrationInterface;
 use Drupal\migrate\Plugin\MigrateProcessInterface;
+use Drupal\migrate\Plugin\MigrationInterface;
 use Drupal\migrate\ProcessPluginBase;
 use Drupal\migrate\Row;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -72,7 +72,7 @@ class BlockPluginId extends ProcessPluginBase implements ContainerFactoryPluginI
    * @param \Drupal\Core\Entity\EntityStorageInterface|null $block_storage
    *   Block storage.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityStorageInterface $storage, MigrateProcessInterface $migration_plugin, UuidInterface $uuid_service, BlockManagerInterface $block_manager, EntityStorageInterface $block_storage = NULL) {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityStorageInterface $storage, MigrateProcessInterface $migration_plugin, UuidInterface $uuid_service, BlockManagerInterface $block_manager, ?EntityStorageInterface $block_storage = NULL) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->blockContentStorage = $storage;
     $this->migrationPlugin = $migration_plugin;
@@ -84,7 +84,7 @@ class BlockPluginId extends ProcessPluginBase implements ContainerFactoryPluginI
   /**
    * {@inheritdoc}
    */
-  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition, MigrationInterface $migration = NULL) {
+  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition, ?MigrationInterface $migration = NULL) {
     $entity_manager = $container->get('entity_type.manager');
     $migration_configuration = [
       'migration' => [

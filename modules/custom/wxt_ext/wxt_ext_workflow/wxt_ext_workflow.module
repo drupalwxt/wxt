@@ -7,20 +7,20 @@
  * Leveraged from code provided by Acquia for the Lightning distribution.
  */
 
-use Drupal\content_moderation\Plugin\WorkflowType\ContentModerationInterface;
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\EntityPublishedInterface;
 use Drupal\Core\Entity\RevisionableInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Serialization\Yaml;
-use Drupal\wxt_core\OverrideHelper as Override;
-use Drupal\wxt_core\Routing\RouteSubscriber;
+use Drupal\content_moderation\Plugin\WorkflowType\ContentModerationInterface;
 use Drupal\node\Entity\NodeType;
 use Drupal\node\NodeTypeInterface;
 use Drupal\views\Entity\View;
 use Drupal\views\ViewExecutable;
 use Drupal\workflows\Entity\Workflow;
+use Drupal\wxt_core\OverrideHelper as Override;
+use Drupal\wxt_core\Routing\RouteSubscriber;
 
 /**
  * Implements hook_form_FORM_ID_alter().

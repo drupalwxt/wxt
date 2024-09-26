@@ -2,7 +2,7 @@
     "name": "drupalwxt/wxt",
     "description": "Project template for Drupal 10 sites built with the WxT distribution.",
     "type": "drupal-profile",
-    "license": "GPL-2.0+",
+    "license": "GPL-2.0-or-later",
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {

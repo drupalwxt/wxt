@@ -98,7 +98,7 @@ class DisplayHelper {
    * @return array
    *   The newly added components.
    */
-  public function getNewFields(EntityDisplayInterface $display, callable $filter = NULL) {
+  public function getNewFields(EntityDisplayInterface $display, ?callable $filter = NULL) {
     $fields = $this->entityFieldManager->getFieldStorageDefinitions(
       $display->getTargetEntityTypeId()
     );

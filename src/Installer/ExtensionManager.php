@@ -6,7 +6,6 @@ use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
 use Drupal\Core\Extension\Extension;
 use Drupal\Core\Extension\ModuleExtensionList;
 use Drupal\Core\Serialization\Yaml;
-use Drupal\wxt\Installer\ExtensionException;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**

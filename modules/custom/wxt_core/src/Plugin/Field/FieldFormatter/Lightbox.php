@@ -2,12 +2,12 @@
 
 namespace Drupal\wxt_core\Plugin\Field\FieldFormatter;
 
-use Drupal\Core\Form\FormStateInterface;
-use Drupal\image\Plugin\Field\FieldFormatter\ImageFormatterBase;
-use Drupal\image\Entity\ImageStyle;
-use Drupal\Core\Field\FieldItemListInterface;
-use Drupal\Core\Url;
 use Drupal\Component\Utility\Html;
+use Drupal\Core\Field\FieldItemListInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
+use Drupal\image\Entity\ImageStyle;
+use Drupal\image\Plugin\Field\FieldFormatter\ImageFormatterBase;
 
 /**
  * Lightbox (WxT) field formatter.

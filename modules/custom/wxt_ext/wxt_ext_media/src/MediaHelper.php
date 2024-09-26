@@ -7,9 +7,9 @@ use Drupal\Core\File\FileSystemInterface;
 use Drupal\file\Entity\File;
 use Drupal\file\FileInterface;
 use Drupal\file\Plugin\Field\FieldType\FileItem;
-use Drupal\wxt_ext_media\Exception\IndeterminateBundleException;
 use Drupal\media\MediaInterface;
 use Drupal\media\MediaTypeInterface;
+use Drupal\wxt_ext_media\Exception\IndeterminateBundleException;
 
 /**
  * Provides helper methods for dealing with media entities.
@@ -51,8 +51,8 @@ class MediaHelper {
   public function getFileExtensions($check_access = FALSE, array $bundles = []) {
     $extensions = '';
 
-    // WxT Extend Media overrides the media_bundle storage handler with a special
-    // one that adds an optional second parameter to loadMultiple().
+    // WxT Extend Media overrides the media_bundle storage handler with a
+    // special one that adds an optional second parameter to loadMultiple().
     $storage = $this->entityTypeManager
       ->getStorage('media_type');
     $media_types = $storage->loadMultiple($bundles ?: NULL, $check_access);
@@ -115,8 +115,8 @@ class MediaHelper {
    *   The media bundles that can accept the input value.
    */
   public function getBundlesFromInput($value, $check_access = TRUE, array $bundles = []) {
-    // WxT Extend Media overrides the media_bundle storage handler with a special
-    // one that adds an optional second parameter to loadMultiple().
+    // WxT Extend Media overrides the media_bundle storage handler with a
+    // special one that adds an optional second parameter to loadMultiple().
     $media_types = $this->entityTypeManager
       ->getStorage('media_type')
       ->loadMultiple($bundles ?: NULL, $check_access);

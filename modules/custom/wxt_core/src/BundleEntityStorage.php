@@ -63,7 +63,7 @@ class BundleEntityStorage extends ConfigEntityStorage {
   /**
    * {@inheritdoc}
    */
-  public function loadMultiple(array $ids = NULL, $check_access = FALSE) {
+  public function loadMultiple(?array $ids = NULL, $check_access = FALSE) {
     if ($check_access) {
       $ids = array_filter(
         $ids ?: $this->getQuery()->execute(),

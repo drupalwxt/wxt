@@ -6,8 +6,8 @@ use Drupal\Component\Utility\NestedArray;
 use Drupal\Core\Entity\Exception\UndefinedLinkTemplateException;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Security\TrustedCallbackInterface;
-use Drupal\wxt_ext_media\MediaHelper as Helper;
 use Drupal\media\MediaForm as BaseMediaForm;
+use Drupal\wxt_ext_media\MediaHelper as Helper;
 
 /**
  * Adds dynamic preview support to the media entity form.

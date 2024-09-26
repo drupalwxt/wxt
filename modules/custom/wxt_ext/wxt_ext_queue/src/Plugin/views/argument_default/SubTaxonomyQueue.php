@@ -3,10 +3,10 @@
 namespace Drupal\wxt_ext_queue\Plugin\views\argument_default;
 
 use Drupal\Core\Routing\RouteMatchInterface;
-use Drupal\taxonomy\TermInterface;
-use Symfony\Component\DependencyInjection\ContainerInterface;
-use Drupal\taxonomy\VocabularyStorageInterface;
 use Drupal\taxonomy\Plugin\views\argument_default\Tid;
+use Drupal\taxonomy\TermInterface;
+use Drupal\taxonomy\VocabularyStorageInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Taxonomy tid default argument.

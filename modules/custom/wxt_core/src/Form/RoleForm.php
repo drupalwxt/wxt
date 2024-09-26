@@ -2,8 +2,8 @@
 
 namespace Drupal\wxt_core\Form;
 
-use Drupal\wxt_core\EntityDescriptionFormTrait;
 use Drupal\user\RoleForm as BaseRoleForm;
+use Drupal\wxt_core\EntityDescriptionFormTrait;
 
 /**
  * Adds description support to the user role entity form.

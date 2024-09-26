@@ -5,10 +5,10 @@
  * Support for videos as media entities in WxT Extend Video.
  */
 
+use Drupal\media\MediaInterface;
 use Drupal\wxt_core\OverrideHelper as Override;
 use Drupal\wxt_ext_media\Form\AddByUrlForm;
 use Drupal\wxt_ext_media_video\Plugin\media\Source\VideoFile;
-use Drupal\media\MediaInterface;
 
 /**
  * Implements hook_media_source_info_alter().

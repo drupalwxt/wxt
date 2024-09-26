@@ -2,9 +2,9 @@
 
 namespace Drupal\wxt_ext_media_video\Plugin\media\Source;
 
-use Drupal\wxt_ext_media\InputMatchInterface;
 use Drupal\media\MediaTypeInterface;
 use Drupal\video_embed_media\Plugin\media\Source\VideoEmbedField;
+use Drupal\wxt_ext_media\InputMatchInterface;
 
 /**
  * Input-matching version of the VideoEmbedField media type.

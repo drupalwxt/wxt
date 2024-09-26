@@ -2,18 +2,18 @@
 
 namespace Drupal\wxt_ext_migration\EventSubscriber;
 
+use Drupal\Component\Uuid\UuidInterface;
 use Drupal\Core\Cache\CacheTagsInvalidatorInterface;
 use Drupal\Core\Config\ConfigFactoryInterface;
+use Drupal\Core\Database\Connection;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Session\SessionManagerInterface;
-use Drupal\Core\Database\Connection;
 use Drupal\Core\TempStore\SharedTempStoreFactory;
 use Drupal\migrate\Event\MigrateEvents;
 use Drupal\migrate\Event\MigrateImportEvent;
-use Drupal\migrate\Event\MigratePreRowSaveEvent;
 use Drupal\migrate\Event\MigratePostRowSaveEvent;
-use Drupal\Component\Uuid\UuidInterface;
+use Drupal\migrate\Event\MigratePreRowSaveEvent;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpFoundation\Session\Session;
 
@@ -107,15 +107,17 @@ class MigrationSubscriber implements EventSubscriberInterface {
    * @param \Drupal\Core\TempStore\SharedTempStoreFactory $tempstore
    *   The tempstore factory.
    */
-  public function __construct(Connection $database,
-                              EntityTypeManagerInterface $entity_type_manager,
-                              ConfigFactoryInterface $config_factory,
-                              SessionManagerInterface $session_manager,
-                              Session $session,
-                              AccountInterface $current_user,
-                              UuidInterface $uuid_service,
-                              CacheTagsInvalidatorInterface $invalidator,
-                              SharedTempStoreFactory $tempstore) {
+  public function __construct(
+    Connection $database,
+    EntityTypeManagerInterface $entity_type_manager,
+    ConfigFactoryInterface $config_factory,
+    SessionManagerInterface $session_manager,
+    Session $session,
+    AccountInterface $current_user,
+    UuidInterface $uuid_service,
+    CacheTagsInvalidatorInterface $invalidator,
+    SharedTempStoreFactory $tempstore,
+  ) {
     $this->database = $database;
     $this->entityTypeManager = $entity_type_manager;
     $this->config = $config_factory;

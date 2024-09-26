@@ -5,14 +5,10 @@
  * Contains \WxTSubContext.
  */
 
-use Behat\Behat\Hook\Scope\BeforeScenarioScope;
 use Behat\Behat\Hook\Scope\AfterScenarioScope;
-use Behat\Gherkin\Node\PyStringNode;
-use Behat\Mink\Exception\ElementNotFoundException;
-use Behat\Mink\Exception\ExpectationException;
-use Behat\Mink\Exception\UnsupportedDriverActionException;
-use Drupal\DrupalExtension\Context\DrupalSubContextBase;
+use Behat\Behat\Hook\Scope\BeforeScenarioScope;
 use Drupal\Core\Database\Database;
+use Drupal\DrupalExtension\Context\DrupalSubContextBase;
 
 /**
  * Sub context for WxT step definitions.
@@ -28,6 +24,8 @@ class WxTSubContext extends DrupalSubContextBase {
 
   /**
    * Start time for each scenario.
+   *
+   * @var int
    */
   protected $startTime;
 

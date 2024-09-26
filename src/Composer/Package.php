@@ -2,10 +2,10 @@
 
 namespace Drupal\wxt\Composer;
 
-use Drupal\wxt\IniEncoder;
 use Composer\Package\Locker;
 use Composer\Package\RootPackageInterface;
 use Composer\Script\Event;
+use Drupal\wxt\IniEncoder;
 
 /**
  * Generates Drush make files for drupal.org's ancient packaging system.

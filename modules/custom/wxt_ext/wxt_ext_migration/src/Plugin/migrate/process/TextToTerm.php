@@ -2,11 +2,11 @@
 
 namespace Drupal\wxt_ext_migration\Plugin\migrate\process;
 
+use Drupal\Core\Language\LanguageInterface;
 use Drupal\migrate\MigrateExecutableInterface;
 use Drupal\migrate\ProcessPluginBase;
 use Drupal\migrate\Row;
 use Drupal\taxonomy\Entity\Term;
-use Drupal\Core\Language\LanguageInterface;
 
 /**
  * This plugin creates a new taxonomy term based on the source.

@@ -2,8 +2,8 @@
 
 namespace Drupal\Tests\wxt_ext_migration\Unit\Plugin\migrate\process;
 
-use Drupal\wxt_ext_migration\Plugin\migrate\process\GetPath;
 use Drupal\Tests\migrate\Unit\process\MigrateProcessTestCase;
+use Drupal\wxt_ext_migration\Plugin\migrate\process\GetPath;
 
 /**
  * @coversDefaultClass \Drupal\wxt_ext_migration\Plugin\migrate\process\GetPath

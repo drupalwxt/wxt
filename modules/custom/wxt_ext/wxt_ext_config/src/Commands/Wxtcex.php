@@ -2,11 +2,11 @@
 
 namespace Drupal\wxt_ext_config\Commands;
 
-use Drush\Commands\DrushCommands;
-use Drupal\Core\Config\StorageComparer;
 use Drupal\Core\Config\FileStorage;
-use Drush\Log\LogLevel;
+use Drupal\Core\Config\StorageComparer;
 use Drupal\Core\Site\Settings;
+use Drush\Commands\DrushCommands;
+use Drush\Log\LogLevel;
 
 /**
  * A drush command file.

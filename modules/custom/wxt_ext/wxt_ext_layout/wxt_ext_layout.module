@@ -7,13 +7,13 @@
  * Leveraged from code provided by Acquia for the Lightning distribution.
  */
 
-use Drupal\block_content\BlockContentInterface;
 use Drupal\Core\Entity\Entity\EntityFormDisplay;
 use Drupal\Core\Entity\Entity\EntityViewDisplay;
 use Drupal\Core\Entity\Entity\EntityViewMode;
 use Drupal\Core\Field\EntityReferenceFieldItemListInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\block_content\BlockContentInterface;
 
 /**
  * Implements hook_help().

@@ -2,8 +2,8 @@
 
 namespace Drupal\wxt_core;
 
-use phpDocumentor\Reflection\DocBlock;
 use Symfony\Component\Console\Style\StyleInterface;
+use phpDocumentor\Reflection\DocBlock;
 
 /**
  * Defines a value object wrapping a single optional configuration update.

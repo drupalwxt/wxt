@@ -10,8 +10,8 @@ use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\entity_browser\WidgetBase;
 use Drupal\inline_entity_form\ElementSubmit;
-use Drupal\wxt_ext_media\InputMatchInterface;
 use Drupal\media\MediaTypeInterface;
+use Drupal\wxt_ext_media\InputMatchInterface;
 
 /**
  * Base class for EB widgets which wrap around an (inline) entity form.

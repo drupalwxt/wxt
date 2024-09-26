@@ -5,10 +5,10 @@
  * Contains wxt_ext_webform.module.
  */
 
-use Drupal\webform\Entity\Webform;
-use Drupal\webform\Entity\WebformSubmission;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Link;
+use Drupal\webform\Entity\Webform;
+use Drupal\webform\Entity\WebformSubmission;
 
 /**
  * Implements hook_theme().
@@ -75,7 +75,7 @@ function wxt_ext_webform_webform_submission_form_alter(array &$form, FormStateIn
         '#type' => 'submit',
         '#value' => t('Yes'),
         '#ajax' => [
-          'callback' => '_gcweb_did_you_find_form_ajax_submit',
+          'callback' => '_wxt_ext_webform_gcweb_did_you_find_form_ajax_submit',
           'wrapper' => $form['#form_wrapper_id'],
           'method' => 'replace',
           'effect' => 'fade',
@@ -91,7 +91,7 @@ function wxt_ext_webform_webform_submission_form_alter(array &$form, FormStateIn
 /**
  * AJAX callback function for Yes button on gcweb_did_you_find webform.
  */
-function _gcweb_did_you_find_form_ajax_submit($form, $form_state) {
+function _wxt_ext_webform_gcweb_did_you_find_form_ajax_submit($form, $form_state) {
   // Programmatically submit webform and mark answer as "Yes".
   $webform_id = 'gcweb_did_you_find';
   $webform = Webform::load($webform_id);

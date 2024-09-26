@@ -2,10 +2,10 @@
 
 namespace Drupal\wxt_ext_editor\Plugin\CKEditorPlugin;
 
-use Drupal\ckeditor\CKEditorPluginInterface;
-use Drupal\ckeditor\CKEditorPluginButtonsInterface;
 use Drupal\Component\Plugin\PluginBase;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
+use Drupal\ckeditor\CKEditorPluginButtonsInterface;
+use Drupal\ckeditor\CKEditorPluginInterface;
 use Drupal\editor\Entity\Editor;
 
 /**

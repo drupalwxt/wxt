@@ -5,8 +5,8 @@
  * Contains wxt_ext_page.module.
  */
 
-use Drupal\content_moderation\Plugin\WorkflowType\ContentModerationInterface;
 use Drupal\Core\Plugin\ObjectWithPluginCollectionInterface;
+use Drupal\content_moderation\Plugin\WorkflowType\ContentModerationInterface;
 use Drupal\field\FieldConfigInterface;
 use Drupal\node\Entity\NodeType;
 use Drupal\workflows\WorkflowInterface;

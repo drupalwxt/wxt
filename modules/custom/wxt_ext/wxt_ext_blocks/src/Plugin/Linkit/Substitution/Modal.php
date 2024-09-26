@@ -2,12 +2,12 @@
 
 namespace Drupal\wxt_ext_blocks\Plugin\Linkit\Substitution;
 
-use Drupal\block_content\Entity\BlockContent;
 use Drupal\Component\Plugin\PluginBase;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\GeneratedUrl;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+use Drupal\block_content\Entity\BlockContent;
 use Drupal\linkit\SubstitutionInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 

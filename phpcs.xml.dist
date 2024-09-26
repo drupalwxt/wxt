@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset name="drupal-project">
+  <description>Default PHP CodeSniffer configuration for Drupal project.</description>
+  <rule ref="vendor/drupal/coder/coder_sniffer/Drupal/ruleset.xml"/>
+  <arg name="extensions" value="php,inc,module,install,info,test,profile,theme"/>
+  <exclude-pattern>*/libraries/*</exclude-pattern>
+</ruleset>

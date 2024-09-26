@@ -2,22 +2,22 @@
 
 namespace Drupal\wxt_ext_breadcrumb\Breadcrumb;
 
-use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\Core\Breadcrumb\Breadcrumb;
 use Drupal\Core\Breadcrumb\BreadcrumbBuilderInterface;
+use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Controller\TitleResolverInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\Core\Link;
+use Drupal\Core\Lock\LockBackendInterface;
 use Drupal\Core\Menu\MenuActiveTrailInterface;
 use Drupal\Core\Menu\MenuLinkManagerInterface;
 use Drupal\Core\Routing\AdminContext;
 use Drupal\Core\Routing\RouteMatchInterface;
-use Symfony\Component\HttpFoundation\RequestStack;
+use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\menu_breadcrumb\MenuBasedBreadcrumbBuilder;
-use Drupal\Core\Cache\CacheBackendInterface;
-use Drupal\Core\Lock\LockBackendInterface;
+use Symfony\Component\HttpFoundation\RequestStack;
 
 /**
  * {@inheritdoc}
@@ -157,8 +157,8 @@ class MainBreadcrumbBuilder implements BreadcrumbBuilderInterface {
     RequestStack $request_stack,
     LanguageManagerInterface $language_manager,
     EntityTypeManagerInterface $entity_type_manager,
-  CacheBackendInterface $cache,
-  LockBackendInterface $lock
+    CacheBackendInterface $cache,
+    LockBackendInterface $lock,
   ) {
     $this->configFactory = $config_factory;
     $this->menuActiveTrail = $menu_active_trail;

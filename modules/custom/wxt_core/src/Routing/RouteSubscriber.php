@@ -93,7 +93,7 @@ class RouteSubscriber extends RouteSubscriberBase {
    * @return bool
    *   TRUE if we are at the entity's canonical route, FALSE otherwise.
    */
-  public static function isViewing(EntityInterface $entity, RouteMatchInterface $route_match = NULL) {
+  public static function isViewing(EntityInterface $entity, ?RouteMatchInterface $route_match = NULL) {
     $route_match = $route_match ?: \Drupal::routeMatch();
 
     $entity_type = $entity->getEntityTypeId();

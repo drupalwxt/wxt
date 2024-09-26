@@ -2,9 +2,9 @@
 
 namespace Drupal\wxt_ext_workflow;
 
-use Drupal\autosave_form\Form\AutosaveEntityFormHandler as BaseAutosaveEntityFormHandler;
 use Drupal\Core\Entity\EntityFormInterface;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\autosave_form\Form\AutosaveEntityFormHandler as BaseAutosaveEntityFormHandler;
 
 /**
  * Disables autosave in the Layout Builder interface.

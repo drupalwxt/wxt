@@ -2,9 +2,9 @@
 
 namespace Drupal\wxt_ext_blocks\Plugin\Filter;
 
-use Drupal\filter\Plugin\FilterBase;
-use Drupal\filter\FilterProcessResult;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
+use Drupal\filter\FilterProcessResult;
+use Drupal\filter\Plugin\FilterBase;
 
 /**
  * Provides a filter plugin to add modal block markup below a link.
@@ -18,6 +18,11 @@ use Drupal\Core\StringTranslation\StringTranslationTrait;
 class CustomModalFilter extends FilterBase {
   use StringTranslationTrait;
 
+  /**
+   * HTML for the modal.
+   *
+   * @var string
+   */
   private $modalHTML;
 
   /**

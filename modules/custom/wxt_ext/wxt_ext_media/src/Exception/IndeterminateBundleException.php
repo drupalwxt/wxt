@@ -31,7 +31,7 @@ class IndeterminateBundleException extends \LogicException implements \IteratorA
    * @param \Drupal\media\MediaTypeInterface[] $types
    *   (optional) The media types which matched the input value.
    */
-  public function __construct($value, $code = 0, \Exception $previous = NULL, array $types = []) {
+  public function __construct($value, $code = 0, ?\Exception $previous = NULL, array $types = []) {
     $message = sprintf(
       $types
         ? 'Input matched multiple media types: %s'
