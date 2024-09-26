@@ -38,6 +38,7 @@ class ArchivedField extends ConditionPluginBase implements ContainerFactoryPlugi
    * @param mixed $plugin_definition
    *   The plugin_definition for the plugin instance.
    */
+  // phpcs:ignore Generic.CodeAnalysis.UselessOverridingMethod.Found
   public function __construct(array $configuration, $plugin_id, $plugin_definition) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
   }
