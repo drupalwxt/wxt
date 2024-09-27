@@ -41,9 +41,9 @@ entity_browser.browser.widget.file_upload:
         type: string
         label: 'Media type ID'
     upload_validators:
-      type: mapping
+      type: sequence
       label: 'Upload validators'
-      mapping:
+      sequence:
         type: sequence
         label: 'Validator arguments'
         sequence:
