@@ -33,3 +33,8 @@ variables:
   OPT_IN_TEST_PREVIOUS_MINOR: '0'
   OPT_IN_TEST_NEXT_MAJOR: '0'
 #   _CURL_TEMPLATES_REF: 'main'
+
+composer:
+  variables:
+    DRUPAL_CORE: 10.3.6
+
