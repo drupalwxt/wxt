@@ -26,26 +26,31 @@ export default class AlertUI extends Plugin {
             return button;
         });
     }
+
     _createFormView() {
         const editor = this.editor;
         const formView = new FormView(editor.locale);
 
         this.listenTo(formView, 'submit', () => {
             const alerttype = formView.dropdown.selectedValue;
+            const headingLevel = formView.headingDropdown.selectedValue || 'h3';
 
-            if (alerttype === null || typeof alerttype == 'undefined') {
-                // Possible to add validation message to ask a user to choose?
-                return;
+            if (alerttype === null || typeof alerttype === 'undefined') {
+                return; // Optionally show validation message
             }
+
+            console.log(alerttype);
+
             let selectionAncestors = editor.model.document.selection.getFirstPosition().getAncestors();
             let selectionIsAlert = false;
             let selection = null;
+
             // Traverse from the first inner tag to the root
             selectionAncestors.forEach(node => {
                 // Check if the current selection is an alert widget
                 this.alertClasses.forEach(c => {
                     if (node.name == 'alert-' + c) {
-                        // Alert widget found 
+                        // Alert widget found
                         selection = node;
                         selectionIsAlert = true;
                     }
@@ -54,11 +59,11 @@ export default class AlertUI extends Plugin {
 
             // If the selection is within an alert widget, update the selected widget; otherwise create a new one
             if (selectionIsAlert) {
-                //console.log('noice');
-                editor.execute('insertAlert', alerttype, selection);
+                editor.execute('insertAlert', alerttype, selection, headingLevel);
             } else {
-                editor.execute('insertAlert', alerttype, null);
+                editor.execute('insertAlert', alerttype, null, headingLevel);
             }
+
             this._hideUI();
         });
 
@@ -77,17 +82,61 @@ export default class AlertUI extends Plugin {
     }
 
     _showUI() {
+        const editor = this.editor;
+        const selection = editor.model.document.selection;
+        let selectedAlert = null;
+        let selectedAlertType = null;
+        let selectedHeadingLevel = null;
+        
+        // Check if the selection is inside an existing alert.
+        selection.getFirstPosition().getAncestors().forEach(node => {
+            this.alertClasses.forEach(c => {
+                if (node.name === 'alert-' + c) {
+                    selectedAlert = node;
+                    selectedAlertType = c;
+                    
+                    // Check if the alertTitle element has a heading level attribute.
+                    node.getChildren().forEach(child => {
+                        if (child.name.startsWith('alertTitle-')) {
+                            selectedHeadingLevel = child.getAttribute('headingLevel') || 'h3';
+                        }
+                    });
+                }
+            });
+        });
+
+        // Prepopulate the alert type dropdown if there's a selected alert.
+        if (selectedAlertType) {
+            this.formView.dropdown.selectedValue = selectedAlertType;
+            this.formView.dropdown.buttonView.set({ label: selectedAlertType });
+        } else {
+            this.formView.dropdown.selectedValue = null;
+            this.formView.dropdown.buttonView.set({ label: Drupal.t('Alert type') });
+        }
+
+        // Prepopulate the heading level dropdown if there's a selected alert.
+        if (selectedHeadingLevel) {
+            this.formView.headingDropdown.selectedValue = selectedHeadingLevel;
+            this.formView.headingDropdown.buttonView.set({ label: selectedHeadingLevel });
+        } else {
+            this.formView.headingDropdown.selectedValue = null;
+            this.formView.headingDropdown.buttonView.set({ label: Drupal.t('Heading level') });
+        }
+
+        // Show the balloon with the form.
         this._balloon.add({
             view: this.formView,
             position: this._getBalloonPositionData()
         });
+
         this.formView.focus();
     }
 
     _hideUI() {
         this.formView.dropdown.selectedValue = null;
-
-        this.formView.dropdown.buttonView.set({ label: Drupal.t('Alert type') })
+        this.formView.dropdown.buttonView.set({ label: Drupal.t('Alert type') });
+        this.formView.headingDropdown.selectedValue = null;
+        this.formView.headingDropdown.buttonView.set({ label: Drupal.t('Heading level') });
         this.formView.element.reset();
         this._balloon.remove(this.formView);
         this.editor.editing.view.focus();

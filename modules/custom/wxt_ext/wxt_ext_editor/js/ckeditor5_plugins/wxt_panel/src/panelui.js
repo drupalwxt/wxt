@@ -77,6 +77,30 @@ export default class PanelUI extends Plugin {
     }
 
     _showUI() {
+        const editor = this.editor;
+        const selection = editor.model.document.selection;
+        let selectedPanel = null;
+        let selectedPanelType = null;
+
+        // Check if the selection is inside an existing panel.
+        selection.getFirstPosition().getAncestors().forEach(node => {
+            this.panelClasses.forEach(c => {
+                if (node.name === 'panel-' + c) {
+                    selectedPanel = node;
+                    selectedPanelType = c;
+                }
+            });
+        });
+
+        // Prepopulate the panel type dropdown if there's a selected panel.
+        if (selectedPanelType) {
+            this.formView.dropdown.selectedValue = selectedPanelType;
+            this.formView.dropdown.buttonView.set({ label: selectedPanelType });
+        } else {
+            this.formView.dropdown.selectedValue = null;
+            this.formView.dropdown.buttonView.set({ label: Drupal.t('Panel type') });
+        }
+
         this._balloon.add({
             view: this.formView,
             position: this._getBalloonPositionData()
@@ -86,7 +110,6 @@ export default class PanelUI extends Plugin {
 
     _hideUI() {
         this.formView.dropdown.selectedValue = null;
-
         this.formView.dropdown.buttonView.set({ label: Drupal.t('Panel type') })
         this.formView.element.reset();
         this._balloon.remove(this.formView);

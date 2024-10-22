@@ -10,6 +10,8 @@ wxt_ext_editor_alert:
       alert:
         label: WET Alert
     elements:
+      - <h2>
+      - <h2 class>
       - <h3>
       - <h3 class>
       - <div>

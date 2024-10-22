@@ -124,28 +124,29 @@ class InsertAlertCommand extends delegated_corefrom_dll_reference_CKEditor5.Comm
      * to add a new Alert
      * 
      * @param {String} alertClass the alert type to create
+     * @param {Element} existingAlert the existing alert to update, if any
+     * @param {String} headingLevel the heading level to use for the alert title
      */
-    execute(alertClass, existingAlert) {
+    execute(alertClass, existingAlert, headingLevel = 'h3') {
         const { model } = this.editor;
         if (existingAlert !== null && existingAlert !== 'undefined') {
-            // Existing alert found so we update
+            // Existing alert found, so we update it
             model.change((writer) => {
-                updateAlert(writer, alertClass, existingAlert);
+                updateAlert(writer, alertClass, existingAlert, headingLevel);
             });
         } else {
-            // Creating new alert
+            // Creating a new alert
             model.change((writer) => {
-                let alert = getAlertTemplate(writer, alertClass);
+                let alert = getAlertTemplate(writer, alertClass, headingLevel);
                 model.insertContent(createAlert(writer, alert));
             });
         }
-
     }
 
     /**
-     * Triggered when selection changes. determines if the alert toolbar button should be 
-     * enabled if the users selection is not inside an element that allows alerts, disable
-     * the button; otherwise it's active
+     * Triggered when selection changes. Determines if the alert toolbar button should be 
+     * enabled. If the user's selection is not inside an element that allows alerts, disable
+     * the button; otherwise, it's active.
      */
     refresh() {
         const { model } = this.editor;
@@ -173,10 +174,10 @@ class InsertAlertCommand extends delegated_corefrom_dll_reference_CKEditor5.Comm
  * @returns {Element} Alert - the new alert with title and body
  */
 function createAlert(writer, alert) {
-    // Add placeholder text to new alert widget
+    // Add placeholder text to the new alert widget
     for (let child of alert.getChildren()) {
         if (child.name.startsWith('alertTitle-')) {
-            writer.insertText('Alert title', child)
+            writer.insertText('Alert title', child);
         } else if (child.name.startsWith('alertBody-')) {
             const placeholderText = writer.createElement('paragraph');
             writer.append(placeholderText, child);
@@ -190,20 +191,22 @@ function createAlert(writer, alert) {
  * updateAlert
  * 
  * @param {Writer} writer - the writer for the existing editor
- * @param {Element} alert - the template of an alert
- * @param {Element} existingAlert - the existing alert that we are replacing
- * @returns {Element} Alert - the new alert with title and body
+ * @param {String} alertClass - the alert type to update
+ * @param {Element} existingAlert - the existing alert being updated
+ * @param {String} headingLevel - the heading level to use for the alert title
+ * @returns {Element} Alert - the updated alert
  */
-function updateAlert(writer, alert, existingAlert) {
-    // Get existing content from existing alert
+function updateAlert(writer, alertClass, existingAlert, headingLevel) {
+    // Get the existing content from the alert
     for (let child of existingAlert.getChildren()) {
         if (child.name.startsWith('alertTitle-')) {
-            writer.rename(child, 'alertTitle-' + alert);
+            writer.rename(child, 'alertTitle-' + alertClass);
+            writer.setAttribute('headingLevel', headingLevel, child);
         } else if (child.name.startsWith('alertBody-')) {
-            writer.rename(child, 'alertBody-' + alert);
+            writer.rename(child, 'alertBody-' + alertClass);
         }
     }
-    writer.rename(existingAlert, 'alert-' + alert);
+    writer.rename(existingAlert, 'alert-' + alertClass);
 
     return existingAlert;
 }
@@ -213,11 +216,12 @@ function updateAlert(writer, alert, existingAlert) {
  * 
  * @param {Writer} writer - the document writer
  * @param {String} alertClass - the alert type we're creating
+ * @param {String} headingLevel - the heading level for the alert title
  * @returns {Element} alert - the template of an alert of the given type
  */
-function getAlertTemplate(writer, alertClass) {
+function getAlertTemplate(writer, alertClass, headingLevel) {
     const alert = writer.createElement('alert-' + alertClass);
-    const alertTitle = writer.createElement('alertTitle-' + alertClass);
+    const alertTitle = writer.createElement('alertTitle-' + alertClass, { headingLevel });
     const alertBody = writer.createElement('alertBody-' + alertClass);
 
     writer.append(alertTitle, alert);
@@ -225,6 +229,7 @@ function getAlertTemplate(writer, alertClass) {
 
     return alert;
 }
+
 ;// CONCATENATED MODULE: ./js/ckeditor5_plugins/wxt_alert/src/alertediting.js
 
 
@@ -259,6 +264,7 @@ class AlertEditing extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
                 isLimit: true,
                 allowContentOf: '$block',
                 allowIn: 'alert-' + c,
+                allowAttributes: ['headingLevel'], // Allow the heading level attribute
             });
             schema.register('alertBody-' + c, {
                 isLimit: true,
@@ -280,13 +286,23 @@ class AlertEditing extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
                 },
                 converterPriority: 'high'
             });
+
             conversion.for('upcast').elementToElement({
-                model: 'alertTitle-' + c,
-                view: {
-                    name: 'h3'
+                model: {
+                    name: 'alertTitle-' + c,
+                    attributes: ['headingLevel'], // Handle heading level attribute
+                },
+                view: (viewElement) => {
+                    const headingLevel = viewElement.name.match(/^h[2-6]$/) ? viewElement.name : 'h3'; // Detect heading level dynamically
+                    return {
+                        type: 'element',
+                        name: 'alertTitle-' + c,
+                        attributes: { headingLevel }
+                    };
                 },
                 converterPriority: 'high'
             });
+
             conversion.for('upcast').elementToElement({
                 model: 'alertBody-' + c,
                 view: {
@@ -302,13 +318,16 @@ class AlertEditing extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
                     classes: ['alert', 'alert-' + c],
                 },
             });
+
             conversion.for('dataDowncast').elementToElement({
                 model: 'alertTitle-' + c,
-                view: {
-                    name: 'h3'
+                view: (modelElement, { writer: viewWriter }) => {
+                    const headingLevel = modelElement.getAttribute('headingLevel') || 'h3';
+                    return viewWriter.createContainerElement(headingLevel);
                 },
                 converterPriority: 'high'
             });
+
             conversion.for('dataDowncast').elementToElement({
                 model: 'alertBody-' + c,
                 view: {
@@ -325,14 +344,17 @@ class AlertEditing extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
                 },
                 converterPriority: 'high'
             });
+
             conversion.for('editingDowncast').elementToElement({
                 model: 'alertTitle-' + c,
                 view: (modelElement, { writer: viewWriter }) => {
-                    const h3 = viewWriter.createEditableElement('h3');
-                    return (0,delegated_widgetfrom_dll_reference_CKEditor5.toWidgetEditable)(h3, viewWriter);
+                    const headingLevel = modelElement.getAttribute('headingLevel') || 'h3';
+                    const heading = viewWriter.createEditableElement(headingLevel);
+                    return (0,delegated_widgetfrom_dll_reference_CKEditor5.toWidgetEditable)(heading, viewWriter);
                 },
                 converterPriority: 'high'
-            }, );
+            });
+
             conversion.for('editingDowncast').elementToElement({
                 model: 'alertBody-' + c,
                 view: (modelElement, { writer: viewWriter }) => {
@@ -340,11 +362,11 @@ class AlertEditing extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
                     return (0,delegated_widgetfrom_dll_reference_CKEditor5.toWidgetEditable)(div, viewWriter);
                 },
                 converterPriority: 'high'
-
             });
         });
     }
 }
+
 // EXTERNAL MODULE: delegated ./ui.js from dll-reference CKEditor5.dll
 var delegated_uifrom_dll_reference_CKEditor5 = __webpack_require__("ckeditor5/src/ui.js");
 // EXTERNAL MODULE: delegated ./utils.js from dll-reference CKEditor5.dll
@@ -366,7 +388,9 @@ class FormView extends delegated_uifrom_dll_reference_CKEditor5.View {
         this.alertClasses = AlertClasses;
         const dropdownItems = [];
         this.dropdown = (0,delegated_uifrom_dll_reference_CKEditor5.createDropdown)(locale);
+        this.headingDropdown = (0,delegated_uifrom_dll_reference_CKEditor5.createDropdown)(locale);
         const items = new delegated_utilsfrom_dll_reference_CKEditor5.Collection();
+        const headingItems = new delegated_utilsfrom_dll_reference_CKEditor5.Collection();
 
         // Create save and cancel buttons
         this.saveButtonView = this._createButton('Save', delegated_corefrom_dll_reference_CKEditor5.icons.check, 'ck-button-save');
@@ -397,15 +421,42 @@ class FormView extends delegated_uifrom_dll_reference_CKEditor5.View {
         // Store the selected Alert type from user selection
         this.dropdown.on('execute', eventinfo => {
             this.dropdown.selectedValue = eventinfo.source.value;
-            this.dropdown.buttonView.set({ label: this.dropdown.selectedValue })
+            this.dropdown.buttonView.set({ label: this.dropdown.selectedValue });
         });
 
-        // Collect child views and add them to the form
+        // Define heading levels (h2, h3, h4, etc.)
+        ['h2', 'h3', 'h4', 'h5'].forEach(level => {
+            headingItems.add({
+                type: 'button',
+                model: new delegated_uifrom_dll_reference_CKEditor5.ViewModel({
+                    withText: true,
+                    label: level.toUpperCase(),
+                    value: level,
+                })
+            });
+        });
+
+        (0,delegated_uifrom_dll_reference_CKEditor5.addListToDropdown)(this.headingDropdown, headingItems);
+
+        this.headingDropdown.buttonView.set({
+            label: Drupal.t('Heading level'),
+            withText: true
+        });
+
+        // Store the selected heading level from user selection
+        this.headingDropdown.on('execute', eventinfo => {
+            this.headingDropdown.selectedValue = eventinfo.source.value;
+            this.headingDropdown.buttonView.set({ label: this.headingDropdown.selectedValue });
+        });
+
+        // Collect child views and add them to the form, including the heading dropdown
         this.childViews = this.createCollection([
             this.dropdown,
+            this.headingDropdown, // Added heading dropdown to the form
             this.saveButtonView,
             this.cancelButtonView
         ]);
+
         this.setTemplate({
             tag: 'form',
             attributes: {
@@ -441,6 +492,7 @@ class FormView extends delegated_uifrom_dll_reference_CKEditor5.View {
         return button;
     }
 }
+
 ;// CONCATENATED MODULE: ./icons/alert.svg
 /* harmony default export */ const icons_alert = ("<?xml version=\"1.0\" encoding=\"UTF-8\"?><svg id=\"Layer_2\" xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"28\" viewBox=\"0 0 32 28\"><g id=\"Layer_1-2\"><path id=\"alert\" d=\"m31.75,25.22L17.61.92c-.72-1.23-2.51-1.23-3.23,0L.25,25.22c-.72,1.23.18,2.78,1.61,2.78h28.27c1.43,0,2.33-1.54,1.61-2.78Zm-15.75.81c-1.33,0-2.35-1.01-2.35-2.27s1.02-2.33,2.35-2.33,2.35,1.04,2.35,2.33-1.05,2.27-2.35,2.27Zm2.66-17.16l-.96,9.98c-.04.51-.52.73-1.4.73h-.61c-.87,0-1.35-.23-1.4-.73l-.96-9.98v-.63c0-.51.52-.78,1.35-.78h2.62c.83,0,1.35.28,1.35.78v.63Z\" stroke-width=\"0\"/></g></svg>");
 ;// CONCATENATED MODULE: ./js/ckeditor5_plugins/wxt_alert/src/alertui.js
@@ -472,26 +524,31 @@ class AlertUI extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
             return button;
         });
     }
+
     _createFormView() {
         const editor = this.editor;
         const formView = new FormView(editor.locale);
 
         this.listenTo(formView, 'submit', () => {
             const alerttype = formView.dropdown.selectedValue;
+            const headingLevel = formView.headingDropdown.selectedValue || 'h3';
 
-            if (alerttype === null || typeof alerttype == 'undefined') {
-                // Possible to add validation message to ask a user to choose?
-                return;
+            if (alerttype === null || typeof alerttype === 'undefined') {
+                return; // Optionally show validation message
             }
+
+            console.log(alerttype);
+
             let selectionAncestors = editor.model.document.selection.getFirstPosition().getAncestors();
             let selectionIsAlert = false;
             let selection = null;
+
             // Traverse from the first inner tag to the root
             selectionAncestors.forEach(node => {
                 // Check if the current selection is an alert widget
                 this.alertClasses.forEach(c => {
                     if (node.name == 'alert-' + c) {
-                        // Alert widget found 
+                        // Alert widget found
                         selection = node;
                         selectionIsAlert = true;
                     }
@@ -500,11 +557,11 @@ class AlertUI extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
 
             // If the selection is within an alert widget, update the selected widget; otherwise create a new one
             if (selectionIsAlert) {
-                //console.log('noice');
-                editor.execute('insertAlert', alerttype, selection);
+                editor.execute('insertAlert', alerttype, selection, headingLevel);
             } else {
-                editor.execute('insertAlert', alerttype, null);
+                editor.execute('insertAlert', alerttype, null, headingLevel);
             }
+
             this._hideUI();
         });
 
@@ -523,17 +580,61 @@ class AlertUI extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
     }
 
     _showUI() {
+        const editor = this.editor;
+        const selection = editor.model.document.selection;
+        let selectedAlert = null;
+        let selectedAlertType = null;
+        let selectedHeadingLevel = null;
+        
+        // Check if the selection is inside an existing alert.
+        selection.getFirstPosition().getAncestors().forEach(node => {
+            this.alertClasses.forEach(c => {
+                if (node.name === 'alert-' + c) {
+                    selectedAlert = node;
+                    selectedAlertType = c;
+                    
+                    // Check if the alertTitle element has a heading level attribute.
+                    node.getChildren().forEach(child => {
+                        if (child.name.startsWith('alertTitle-')) {
+                            selectedHeadingLevel = child.getAttribute('headingLevel') || 'h3';
+                        }
+                    });
+                }
+            });
+        });
+
+        // Prepopulate the alert type dropdown if there's a selected alert.
+        if (selectedAlertType) {
+            this.formView.dropdown.selectedValue = selectedAlertType;
+            this.formView.dropdown.buttonView.set({ label: selectedAlertType });
+        } else {
+            this.formView.dropdown.selectedValue = null;
+            this.formView.dropdown.buttonView.set({ label: Drupal.t('Alert type') });
+        }
+
+        // Prepopulate the heading level dropdown if there's a selected alert.
+        if (selectedHeadingLevel) {
+            this.formView.headingDropdown.selectedValue = selectedHeadingLevel;
+            this.formView.headingDropdown.buttonView.set({ label: selectedHeadingLevel });
+        } else {
+            this.formView.headingDropdown.selectedValue = null;
+            this.formView.headingDropdown.buttonView.set({ label: Drupal.t('Heading level') });
+        }
+
+        // Show the balloon with the form.
         this._balloon.add({
             view: this.formView,
             position: this._getBalloonPositionData()
         });
+
         this.formView.focus();
     }
 
     _hideUI() {
         this.formView.dropdown.selectedValue = null;
-
-        this.formView.dropdown.buttonView.set({ label: Drupal.t('Alert type') })
+        this.formView.dropdown.buttonView.set({ label: Drupal.t('Alert type') });
+        this.formView.headingDropdown.selectedValue = null;
+        this.formView.headingDropdown.buttonView.set({ label: Drupal.t('Heading level') });
         this.formView.element.reset();
         this._balloon.remove(this.formView);
         this.editor.editing.view.focus();
@@ -550,6 +651,7 @@ class AlertUI extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
         };
     }
 }
+
 ;// CONCATENATED MODULE: ./js/ckeditor5_plugins/wxt_alert/src/alert.js
 
 

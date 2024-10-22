@@ -242,6 +242,7 @@ function getPanelTemplate(writer, panelClass) {
 
 
 
+
 class PanelEditing extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
     static get requires() {
         return [delegated_widgetfrom_dll_reference_CKEditor5.Widget];
@@ -260,10 +261,9 @@ class PanelEditing extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
 
     _defineSchema() {
         const schema = this.editor.model.schema;
+
         // Loop through available panel classes and create schema entries for 
         // panel, panel heading, panel title, panel body.
-        // Would be nice to be able to have a generic panel shema entry and apply
-        // styling class programmatically based on user input
         this.panelClasses.forEach(c => {
             schema.register('panel-' + c, {
                 isObject: true,
@@ -291,32 +291,25 @@ class PanelEditing extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
     _defineConverters() {
         const { conversion } = this.editor;
 
-        // Loop through available panel classes and create conversions for each panel type.
-        // Would be nice to have a generic <section class="panel"> converter and add styling
-        // classes programmatically.  
         this.panelClasses.forEach(c => {
-            // Default well panels get converted into default panels without a higher converter priority. 
-            // Also CKEditor doesnt seem to like spaces in class names so "default well" cannot simply be 
-            // appended to the string like other classes. We need to fix the castingClasses array for default well panels
-            // See https://www.drupal.org/project/wxt/issues/3362702
-            const castingClasses = ['panel', 'panel-' + c]
-            let convPriority = 'normal';
-            if (c == 'default-well') {
-                castingClasses.pop();
-                castingClasses.push('panel-default');
-                castingClasses.push('well');
-                convPriority = 'high';
-            }
+            // Handle special case for "default-well" class
+            const castingClasses = (c === 'default-well') 
+                ? ['panel', 'panel-default', 'well'] 
+                : ['panel', 'panel-' + c];
+
+            let convPriority = (c === 'default-well') ? 'high' : 'normal';
+
+            // Upcast converters
+            conversion.for('upcast').elementToElement({
+                model: 'panel-' + c,
+                view: {
+                    name: 'section',
+                    classes: castingClasses,
+                },
+                converterPriority: convPriority
+            });
 
             conversion.for('upcast').elementToElement({
-                model: 'panel-' + c,
-                view: {
-                    name: 'section',
-                    classes: castingClasses,
-                },
-                converterPriority: convPriority
-            });
-            conversion.for('upcast').elementToElement({
                 model: 'panelHeading-' + c,
                 view: {
                     name: 'header',
@@ -324,6 +317,7 @@ class PanelEditing extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
                 },
                 converterPriority: convPriority
             });
+
             conversion.for('upcast').elementToElement({
                 model: 'panelTitle-' + c,
                 view: {
@@ -332,6 +326,7 @@ class PanelEditing extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
                 },
                 converterPriority: convPriority
             });
+
             conversion.for('upcast').elementToElement({
                 model: 'panelBody-' + c,
                 view: {
@@ -340,6 +335,8 @@ class PanelEditing extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
                 },
                 converterPriority: convPriority
             });
+
+            // Data Downcast converters
             conversion.for('dataDowncast').elementToElement({
                 model: 'panel-' + c,
                 view: {
@@ -348,6 +345,7 @@ class PanelEditing extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
                 },
                 converterPriority: convPriority
             });
+
             conversion.for('dataDowncast').elementToElement({
                 model: 'panelHeading-' + c,
                 view: {
@@ -356,6 +354,7 @@ class PanelEditing extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
                 },
                 converterPriority: convPriority
             });
+
             conversion.for('dataDowncast').elementToElement({
                 model: 'panelTitle-' + c,
                 view: {
@@ -364,6 +363,7 @@ class PanelEditing extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
                 },
                 converterPriority: convPriority
             });
+
             conversion.for('dataDowncast').elementToElement({
                 model: 'panelBody-' + c,
                 view: {
@@ -372,16 +372,19 @@ class PanelEditing extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
                 },
                 converterPriority: convPriority
             });
+
+            // Editing Downcast converters
             conversion.for('editingDowncast').elementToElement({
                 model: 'panel-' + c,
                 view: (modelElement, { writer: viewWriter }) => {
                     const section = viewWriter.createContainerElement('section', {
-                        class: castingClasses.join(" "),
+                        class: castingClasses.join(' '),
                     });
-                    return (0,delegated_widgetfrom_dll_reference_CKEditor5.toWidget)(section, viewWriter, { label: c + ' panel', hasSelectionHandle: true });
+                    return (0,delegated_widgetfrom_dll_reference_CKEditor5.toWidget)(section, viewWriter, { label: `${c} panel`, hasSelectionHandle: true });
                 },
                 converterPriority: convPriority
             });
+
             conversion.for('editingDowncast').elementToElement({
                 model: 'panelTitle-' + c,
                 view: (modelElement, { writer: viewWriter }) => {
@@ -392,6 +395,7 @@ class PanelEditing extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
                 },
                 converterPriority: convPriority
             });
+
             conversion.for('editingDowncast').elementToElement({
                 model: 'panelHeading-' + c,
                 view: (modelElement, { writer: viewWriter }) => {
@@ -402,6 +406,7 @@ class PanelEditing extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
                 },
                 converterPriority: convPriority
             });
+
             conversion.for('editingDowncast').elementToElement({
                 model: 'panelBody-' + c,
                 view: (modelElement, { writer: viewWriter }) => {
@@ -415,6 +420,7 @@ class PanelEditing extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
         });
     }
 }
+
 // EXTERNAL MODULE: delegated ./ui.js from dll-reference CKEditor5.dll
 var delegated_uifrom_dll_reference_CKEditor5 = __webpack_require__("ckeditor5/src/ui.js");
 // EXTERNAL MODULE: delegated ./utils.js from dll-reference CKEditor5.dll
@@ -593,6 +599,30 @@ class PanelUI extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
     }
 
     _showUI() {
+        const editor = this.editor;
+        const selection = editor.model.document.selection;
+        let selectedPanel = null;
+        let selectedPanelType = null;
+
+        // Check if the selection is inside an existing panel.
+        selection.getFirstPosition().getAncestors().forEach(node => {
+            this.panelClasses.forEach(c => {
+                if (node.name === 'panel-' + c) {
+                    selectedPanel = node;
+                    selectedPanelType = c;
+                }
+            });
+        });
+
+        // Prepopulate the panel type dropdown if there's a selected panel.
+        if (selectedPanelType) {
+            this.formView.dropdown.selectedValue = selectedPanelType;
+            this.formView.dropdown.buttonView.set({ label: selectedPanelType });
+        } else {
+            this.formView.dropdown.selectedValue = null;
+            this.formView.dropdown.buttonView.set({ label: Drupal.t('Panel type') });
+        }
+
         this._balloon.add({
             view: this.formView,
             position: this._getBalloonPositionData()
@@ -602,7 +632,6 @@ class PanelUI extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
 
     _hideUI() {
         this.formView.dropdown.selectedValue = null;
-
         this.formView.dropdown.buttonView.set({ label: Drupal.t('Panel type') })
         this.formView.element.reset();
         this._balloon.remove(this.formView);

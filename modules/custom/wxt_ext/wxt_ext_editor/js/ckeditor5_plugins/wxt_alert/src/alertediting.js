@@ -31,6 +31,7 @@ export default class AlertEditing extends Plugin {
                 isLimit: true,
                 allowContentOf: '$block',
                 allowIn: 'alert-' + c,
+                allowAttributes: ['headingLevel'], // Allow the heading level attribute
             });
             schema.register('alertBody-' + c, {
                 isLimit: true,
@@ -52,13 +53,23 @@ export default class AlertEditing extends Plugin {
                 },
                 converterPriority: 'high'
             });
+
             conversion.for('upcast').elementToElement({
-                model: 'alertTitle-' + c,
-                view: {
-                    name: 'h3'
+                model: {
+                    name: 'alertTitle-' + c,
+                    attributes: ['headingLevel'], // Handle heading level attribute
+                },
+                view: (viewElement) => {
+                    const headingLevel = viewElement.name.match(/^h[2-6]$/) ? viewElement.name : 'h3'; // Detect heading level dynamically
+                    return {
+                        type: 'element',
+                        name: 'alertTitle-' + c,
+                        attributes: { headingLevel }
+                    };
                 },
                 converterPriority: 'high'
             });
+
             conversion.for('upcast').elementToElement({
                 model: 'alertBody-' + c,
                 view: {
@@ -74,13 +85,16 @@ export default class AlertEditing extends Plugin {
                     classes: ['alert', 'alert-' + c],
                 },
             });
+
             conversion.for('dataDowncast').elementToElement({
                 model: 'alertTitle-' + c,
-                view: {
-                    name: 'h3'
+                view: (modelElement, { writer: viewWriter }) => {
+                    const headingLevel = modelElement.getAttribute('headingLevel') || 'h3';
+                    return viewWriter.createContainerElement(headingLevel);
                 },
                 converterPriority: 'high'
             });
+
             conversion.for('dataDowncast').elementToElement({
                 model: 'alertBody-' + c,
                 view: {
@@ -97,14 +111,17 @@ export default class AlertEditing extends Plugin {
                 },
                 converterPriority: 'high'
             });
+
             conversion.for('editingDowncast').elementToElement({
                 model: 'alertTitle-' + c,
                 view: (modelElement, { writer: viewWriter }) => {
-                    const h3 = viewWriter.createEditableElement('h3');
-                    return toWidgetEditable(h3, viewWriter);
+                    const headingLevel = modelElement.getAttribute('headingLevel') || 'h3';
+                    const heading = viewWriter.createEditableElement(headingLevel);
+                    return toWidgetEditable(heading, viewWriter);
                 },
                 converterPriority: 'high'
-            }, );
+            });
+
             conversion.for('editingDowncast').elementToElement({
                 model: 'alertBody-' + c,
                 view: (modelElement, { writer: viewWriter }) => {
@@ -112,7 +129,6 @@ export default class AlertEditing extends Plugin {
                     return toWidgetEditable(div, viewWriter);
                 },
                 converterPriority: 'high'
-
             });
         });
     }

@@ -3,6 +3,7 @@ import { toWidget, toWidgetEditable } from 'ckeditor5/src/widget';
 import { Widget } from 'ckeditor5/src/widget';
 import InsertPanelCommand from './insertpanelcommand';
 import { PanelClasses } from './panelcssclasses';
+
 export default class PanelEditing extends Plugin {
     static get requires() {
         return [Widget];
@@ -21,10 +22,9 @@ export default class PanelEditing extends Plugin {
 
     _defineSchema() {
         const schema = this.editor.model.schema;
+
         // Loop through available panel classes and create schema entries for 
         // panel, panel heading, panel title, panel body.
-        // Would be nice to be able to have a generic panel shema entry and apply
-        // styling class programmatically based on user input
         this.panelClasses.forEach(c => {
             schema.register('panel-' + c, {
                 isObject: true,
@@ -52,32 +52,25 @@ export default class PanelEditing extends Plugin {
     _defineConverters() {
         const { conversion } = this.editor;
 
-        // Loop through available panel classes and create conversions for each panel type.
-        // Would be nice to have a generic <section class="panel"> converter and add styling
-        // classes programmatically.  
         this.panelClasses.forEach(c => {
-            // Default well panels get converted into default panels without a higher converter priority. 
-            // Also CKEditor doesnt seem to like spaces in class names so "default well" cannot simply be 
-            // appended to the string like other classes. We need to fix the castingClasses array for default well panels
-            // See https://www.drupal.org/project/wxt/issues/3362702
-            const castingClasses = ['panel', 'panel-' + c]
-            let convPriority = 'normal';
-            if (c == 'default-well') {
-                castingClasses.pop();
-                castingClasses.push('panel-default');
-                castingClasses.push('well');
-                convPriority = 'high';
-            }
+            // Handle special case for "default-well" class
+            const castingClasses = (c === 'default-well') 
+                ? ['panel', 'panel-default', 'well'] 
+                : ['panel', 'panel-' + c];
+
+            let convPriority = (c === 'default-well') ? 'high' : 'normal';
+
+            // Upcast converters
+            conversion.for('upcast').elementToElement({
+                model: 'panel-' + c,
+                view: {
+                    name: 'section',
+                    classes: castingClasses,
+                },
+                converterPriority: convPriority
+            });
 
             conversion.for('upcast').elementToElement({
-                model: 'panel-' + c,
-                view: {
-                    name: 'section',
-                    classes: castingClasses,
-                },
-                converterPriority: convPriority
-            });
-            conversion.for('upcast').elementToElement({
                 model: 'panelHeading-' + c,
                 view: {
                     name: 'header',
@@ -85,6 +78,7 @@ export default class PanelEditing extends Plugin {
                 },
                 converterPriority: convPriority
             });
+
             conversion.for('upcast').elementToElement({
                 model: 'panelTitle-' + c,
                 view: {
@@ -93,6 +87,7 @@ export default class PanelEditing extends Plugin {
                 },
                 converterPriority: convPriority
             });
+
             conversion.for('upcast').elementToElement({
                 model: 'panelBody-' + c,
                 view: {
@@ -101,6 +96,8 @@ export default class PanelEditing extends Plugin {
                 },
                 converterPriority: convPriority
             });
+
+            // Data Downcast converters
             conversion.for('dataDowncast').elementToElement({
                 model: 'panel-' + c,
                 view: {
@@ -109,6 +106,7 @@ export default class PanelEditing extends Plugin {
                 },
                 converterPriority: convPriority
             });
+
             conversion.for('dataDowncast').elementToElement({
                 model: 'panelHeading-' + c,
                 view: {
@@ -117,6 +115,7 @@ export default class PanelEditing extends Plugin {
                 },
                 converterPriority: convPriority
             });
+
             conversion.for('dataDowncast').elementToElement({
                 model: 'panelTitle-' + c,
                 view: {
@@ -125,6 +124,7 @@ export default class PanelEditing extends Plugin {
                 },
                 converterPriority: convPriority
             });
+
             conversion.for('dataDowncast').elementToElement({
                 model: 'panelBody-' + c,
                 view: {
@@ -133,16 +133,19 @@ export default class PanelEditing extends Plugin {
                 },
                 converterPriority: convPriority
             });
+
+            // Editing Downcast converters
             conversion.for('editingDowncast').elementToElement({
                 model: 'panel-' + c,
                 view: (modelElement, { writer: viewWriter }) => {
                     const section = viewWriter.createContainerElement('section', {
-                        class: castingClasses.join(" "),
+                        class: castingClasses.join(' '),
                     });
-                    return toWidget(section, viewWriter, { label: c + ' panel', hasSelectionHandle: true });
+                    return toWidget(section, viewWriter, { label: `${c} panel`, hasSelectionHandle: true });
                 },
                 converterPriority: convPriority
             });
+
             conversion.for('editingDowncast').elementToElement({
                 model: 'panelTitle-' + c,
                 view: (modelElement, { writer: viewWriter }) => {
@@ -153,6 +156,7 @@ export default class PanelEditing extends Plugin {
                 },
                 converterPriority: convPriority
             });
+
             conversion.for('editingDowncast').elementToElement({
                 model: 'panelHeading-' + c,
                 view: (modelElement, { writer: viewWriter }) => {
@@ -163,6 +167,7 @@ export default class PanelEditing extends Plugin {
                 },
                 converterPriority: convPriority
             });
+
             conversion.for('editingDowncast').elementToElement({
                 model: 'panelBody-' + c,
                 view: (modelElement, { writer: viewWriter }) => {

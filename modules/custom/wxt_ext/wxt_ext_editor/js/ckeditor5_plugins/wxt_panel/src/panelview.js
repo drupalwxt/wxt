@@ -4,7 +4,7 @@ import {
     submitHandler,
     createDropdown,
     addListToDropdown,
-    Model
+    ViewModel
 } from 'ckeditor5/src/ui';
 import { Collection } from 'ckeditor5/src/utils'
 import { icons } from 'ckeditor5/src/core';
