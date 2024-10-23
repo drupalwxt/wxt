@@ -66,7 +66,7 @@ export default class AlertEditing extends Plugin {
             conversion.for('upcast').elementToElement({
                 model: 'alertBody-' + c,
                 view: {
-                    name: 'div',
+                    name: /^(div|p)$/,
                 },
                 converterPriority: 'high'
             });

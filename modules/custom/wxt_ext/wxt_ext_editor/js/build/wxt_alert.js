@@ -299,7 +299,7 @@ class AlertEditing extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
             conversion.for('upcast').elementToElement({
                 model: 'alertBody-' + c,
                 view: {
-                    name: 'div',
+                    name: /^(div|p)$/,
                 },
                 converterPriority: 'high'
             });
