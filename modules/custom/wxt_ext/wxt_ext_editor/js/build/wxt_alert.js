@@ -286,23 +286,16 @@ class AlertEditing extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
                 },
                 converterPriority: 'high'
             });
-
             conversion.for('upcast').elementToElement({
-                model: {
-                    name: 'alertTitle-' + c,
-                    attributes: ['headingLevel'], // Handle heading level attribute
+                model: (viewElement, { writer: modelWriter }) => {
+                    const headingLevel = viewElement.name.match(/^h[2-6]$/) ? viewElement.name : 'h3';
+                    return modelWriter.createElement('alertTitle-' + c, { headingLevel });
                 },
-                view: (viewElement) => {
-                    const headingLevel = viewElement.name.match(/^h[2-6]$/) ? viewElement.name : 'h3'; // Detect heading level dynamically
-                    return {
-                        type: 'element',
-                        name: 'alertTitle-' + c,
-                        attributes: { headingLevel }
-                    };
+                view: {
+                    name: /^(h2|h3|h4|h5|h6)$/,
                 },
                 converterPriority: 'high'
             });
-
             conversion.for('upcast').elementToElement({
                 model: 'alertBody-' + c,
                 view: {
