@@ -258,7 +258,8 @@ class AlertEditing extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
 
         this.alertClasses.forEach(c => {
             schema.register('alert-' + c, {
-                inheritAllFrom: '$block'
+                inheritAllFrom: '$block',
+                allowAttributes: ['id']
             });
             schema.register('alertTitle-' + c, {
                 isLimit: true,
@@ -278,8 +279,12 @@ class AlertEditing extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
         const { conversion } = this.editor;
 
         this.alertClasses.forEach(c => {
+            // Upcast
             conversion.for('upcast').elementToElement({
-                model: 'alert-' + c,
+                model: (viewElement, { writer: modelWriter }) => {
+                    const id = viewElement.getAttribute('id') || null;
+                    return modelWriter.createElement('alert-' + c, { id });
+                },
                 view: {
                     name: 'section',
                     classes: ['alert', 'alert-' + c],
@@ -304,14 +309,17 @@ class AlertEditing extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
                 converterPriority: 'high'
             });
 
+            // Data Downcast
             conversion.for('dataDowncast').elementToElement({
                 model: 'alert-' + c,
-                view: {
-                    name: 'section',
-                    classes: ['alert', 'alert-' + c],
+                view: (modelElement, { writer: viewWriter }) => {
+                    const id = modelElement.getAttribute('id') || null;
+                    return viewWriter.createContainerElement('section', {
+                        class: 'alert alert-' + c,
+                        id: id
+                    });
                 },
             });
-
             conversion.for('dataDowncast').elementToElement({
                 model: 'alertTitle-' + c,
                 view: (modelElement, { writer: viewWriter }) => {
@@ -320,7 +328,6 @@ class AlertEditing extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
                 },
                 converterPriority: 'high'
             });
-
             conversion.for('dataDowncast').elementToElement({
                 model: 'alertBody-' + c,
                 view: {
@@ -329,15 +336,19 @@ class AlertEditing extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
                 converterPriority: 'high'
             });
 
+            // Editing Downcast
             conversion.for('editingDowncast').elementToElement({
                 model: 'alert-' + c,
                 view: (modelElement, { writer: viewWriter }) => {
-                    const div = viewWriter.createContainerElement('section', { class: 'alert alert-' + c });
-                    return (0,delegated_widgetfrom_dll_reference_CKEditor5.toWidget)(div, viewWriter, { hasSelectionHandle: true });
+                    const id = modelElement.getAttribute('id') || null;
+                    const section = viewWriter.createContainerElement('section', {
+                        class: 'alert alert-' + c,
+                        id: id
+                    });
+                    return (0,delegated_widgetfrom_dll_reference_CKEditor5.toWidget)(section, viewWriter, { hasSelectionHandle: true });
                 },
                 converterPriority: 'high'
             });
-
             conversion.for('editingDowncast').elementToElement({
                 model: 'alertTitle-' + c,
                 view: (modelElement, { writer: viewWriter }) => {
@@ -347,7 +358,6 @@ class AlertEditing extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
                 },
                 converterPriority: 'high'
             });
-
             conversion.for('editingDowncast').elementToElement({
                 model: 'alertBody-' + c,
                 view: (modelElement, { writer: viewWriter }) => {

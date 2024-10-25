@@ -25,7 +25,8 @@ export default class AlertEditing extends Plugin {
 
         this.alertClasses.forEach(c => {
             schema.register('alert-' + c, {
-                inheritAllFrom: '$block'
+                inheritAllFrom: '$block',
+                allowAttributes: ['id']
             });
             schema.register('alertTitle-' + c, {
                 isLimit: true,
@@ -45,8 +46,12 @@ export default class AlertEditing extends Plugin {
         const { conversion } = this.editor;
 
         this.alertClasses.forEach(c => {
+            // Upcast
             conversion.for('upcast').elementToElement({
-                model: 'alert-' + c,
+                model: (viewElement, { writer: modelWriter }) => {
+                    const id = viewElement.getAttribute('id') || null;
+                    return modelWriter.createElement('alert-' + c, { id });
+                },
                 view: {
                     name: 'section',
                     classes: ['alert', 'alert-' + c],
@@ -71,14 +76,17 @@ export default class AlertEditing extends Plugin {
                 converterPriority: 'high'
             });
 
+            // Data Downcast
             conversion.for('dataDowncast').elementToElement({
                 model: 'alert-' + c,
-                view: {
-                    name: 'section',
-                    classes: ['alert', 'alert-' + c],
+                view: (modelElement, { writer: viewWriter }) => {
+                    const id = modelElement.getAttribute('id') || null;
+                    return viewWriter.createContainerElement('section', {
+                        class: 'alert alert-' + c,
+                        id: id
+                    });
                 },
             });
-
             conversion.for('dataDowncast').elementToElement({
                 model: 'alertTitle-' + c,
                 view: (modelElement, { writer: viewWriter }) => {
@@ -87,7 +95,6 @@ export default class AlertEditing extends Plugin {
                 },
                 converterPriority: 'high'
             });
-
             conversion.for('dataDowncast').elementToElement({
                 model: 'alertBody-' + c,
                 view: {
@@ -96,15 +103,19 @@ export default class AlertEditing extends Plugin {
                 converterPriority: 'high'
             });
 
+            // Editing Downcast
             conversion.for('editingDowncast').elementToElement({
                 model: 'alert-' + c,
                 view: (modelElement, { writer: viewWriter }) => {
-                    const div = viewWriter.createContainerElement('section', { class: 'alert alert-' + c });
-                    return toWidget(div, viewWriter, { hasSelectionHandle: true });
+                    const id = modelElement.getAttribute('id') || null;
+                    const section = viewWriter.createContainerElement('section', {
+                        class: 'alert alert-' + c,
+                        id: id
+                    });
+                    return toWidget(section, viewWriter, { hasSelectionHandle: true });
                 },
                 converterPriority: 'high'
             });
-
             conversion.for('editingDowncast').elementToElement({
                 model: 'alertTitle-' + c,
                 view: (modelElement, { writer: viewWriter }) => {
@@ -114,7 +125,6 @@ export default class AlertEditing extends Plugin {
                 },
                 converterPriority: 'high'
             });
-
             conversion.for('editingDowncast').elementToElement({
                 model: 'alertBody-' + c,
                 view: (modelElement, { writer: viewWriter }) => {
