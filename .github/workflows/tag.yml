@@ -159,7 +159,7 @@ jobs:
       uses: jacobtomlinson/gha-find-replace@master
       with:
         find: "\"drupalwxt/wxt\": \"[3-5]\\.[0-9]+\\.[0-9|x]+(-(beta|rc|dev)[0-9]?)?\""
-        replace: "\"drupalwxt/wxt\": \"5.2.x-dev\""
+        replace: "\"drupalwxt/wxt\": \"5.3.x-dev\""
         exclude: ".git/**"
         include: "site-wxt/**"
 

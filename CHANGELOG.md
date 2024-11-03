@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## v5.2.4 (In Development)
+## v5.3.0 (In Development)
 
 - Build Infrastructure
   - N/A
