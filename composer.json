@@ -275,7 +275,9 @@
             },
             "drupal/paragraphs": {
                 "Enter drupal/paragraphs patch #2878615 description here":
-                "https://www.drupal.org/files/issues/comments_entity_uri-2878615-6.patch"
+                "https://www.drupal.org/files/issues/comments_entity_uri-2878615-6.patch",
+                "Enter drupal/paragraphs patch #3177867 description here":
+                "https://git.drupalcode.org/project/paragraphs/-/merge_requests/120.patch"
             },
             "drupal/panels": {
                 "Enter drupal/panels patch #2910704 description here":
