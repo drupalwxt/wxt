@@ -1,15 +1,23 @@
 # CHANGELOG
 
-## v5.3.0 (In Development)
+## v5.3.0
 
 - Build Infrastructure
-  - N/A
+  - Varnish Ban / Purge logic
+  - Allow to specify composer version
 - Security Updates for Drupal Core
-  - N/A
+  - [SA-core-2024-001](https://www.drupal.org/sa-core-2024-002)
 - Updates for Drupal Core
-  - N/A
+    Patch (bugfix) release of Drupal Core to `v10.3.5`
 - Updates for Drupal Contrib + WxT
-  - N/A
+  - Invalid Mapping Definition in upload_validators Config Schema [3477356](https://www.drupal.org/node/3477356)
+  - Ignore useless method overriding on ArchivedField::__construct() [3472183](https://www.drupal.org/node/3472183)
+  - Remove default_argument_skip_url from Views [3472124](https://www.drupal.org/node/3472124)
+  - Enable GitLab CI automated testing [3472183](https://www.drupal.org/node/3472183)
+  - Remove calls to file_validate() which is deprecated [3472120](https://www.drupal.org/node/3472120)
+  - Add schema file to wxt_ext_editor to prevent error on text format edit/save [3457046](https://www.drupal.org/node/3457046)
+  - Update footnotes, toc_filter, and url_embed to fix error on CKE5 text format admin form [3457046](https://www.drupal.org/node/3457046)
+  - Add ArchivedField.php constructor back to fix install error [3457046](https://www.drupal.org/node/3457046)
 - Updated for WxT Bootstrap
   - N/A
 - Updates for WxT Library
