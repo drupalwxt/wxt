@@ -240,6 +240,10 @@
                 "Enter drupal/diff patch #3228798 description here":
                 "https://www.drupal.org/files/issues/2024-05-14/diff-3228798-17.patch"
             },
+            "drupal/entity_embed": {
+                "3481413 - Fix PHP error":
+                "https://www.drupal.org/files/issues/2024-10-17/entity_embed-3481413.patch"
+            },
             "drupal/entity_browser": {
                 "2914385 - Fix PHP error":
                 "https://www.drupal.org/files/issues/2023-10-10/2914385-25.patch"
