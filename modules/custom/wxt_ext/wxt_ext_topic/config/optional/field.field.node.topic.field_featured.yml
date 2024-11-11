@@ -1,0 +1,36 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_featured
+    - node.type.topic
+    - paragraphs.paragraphs_type.feature
+  module:
+    - entity_reference_revisions
+id: node.topic.field_featured
+field_name: field_featured
+entity_type: node
+bundle: topic
+label: Featured
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      feature: feature
+    negate: 0
+    target_bundles_drag_drop:
+      carousel_item:
+        weight: 4
+        enabled: false
+      feature:
+        weight: 5
+        enabled: true
+      social_media_link:
+        weight: 6
+        enabled: false
+field_type: entity_reference_revisions

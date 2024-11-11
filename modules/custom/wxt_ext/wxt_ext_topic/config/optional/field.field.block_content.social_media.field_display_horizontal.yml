@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.social_media
+    - field.storage.block_content.field_display_horizontal
+id: block_content.social_media.field_display_horizontal
+field_name: field_display_horizontal
+entity_type: block_content
+bundle: social_media
+label: 'Display horizontal'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

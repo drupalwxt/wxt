@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_most_requested
+    - node.type.topic
+  module:
+    - link
+id: node.topic.field_most_requested
+field_name: field_most_requested
+entity_type: node
+bundle: topic
+label: 'Most requested'
+description: "Features top tasks.\r\n\r\nThis component provides shortcuts to the topic’s top tasks. However, if all of the topic's top tasks are already included as direct links under Services and information, do not duplicate them here. In that case, you can choose not to include this component."
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 2
+  link_type: 17
+field_type: link
