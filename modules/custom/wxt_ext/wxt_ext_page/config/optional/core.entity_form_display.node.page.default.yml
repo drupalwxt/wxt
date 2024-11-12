@@ -3,16 +3,35 @@ status: true
 dependencies:
   config:
     - field.field.node.page.body
-    - field.field.node.page.layout_builder__layout
-    - field.field.node.page.layout_builder__translation
-    - field.field.node.page.layout_selection
+    - field.field.node.page.field_byline
     - field.field.node.page.field_lead_title
+    - field.field.node.page.field_meta_tags
     - node.type.page
   module:
     - content_moderation
+    - field_group
     - metatag
     - path
     - text
+third_party_settings:
+  field_group:
+    group_byline_page:
+      children:
+        - field_byline
+      label: Byline
+      region: content
+      parent_name: ''
+      weight: 14
+      format_type: details_sidebar
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        open: false
+        description: ''
+        required_fields: true
+        weight: 0
 id: node.page.default
 targetEntityType: node
 bundle: page
@@ -20,95 +39,103 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 6
+    weight: 2
+    region: content
     settings:
       rows: 9
       summary_rows: 3
       placeholder: ''
+      show_summary: false
     third_party_settings: {  }
-    region: content
   created:
     type: datetime_timestamp
-    weight: 2
-    settings: {  }
-    third_party_settings: {  }
-    region: content
-  langcode:
-    type: language_select
-    weight: 2
-    region: content
-    settings:
-      include_locked: true
-    third_party_settings: {  }
-  layout_selection:
-    type: options_select
-    region: content
-    weight: 102
-    settings: {  }
-    third_party_settings: {  }
-  moderation_state:
-    type: moderation_state_default
-    weight: 100
-    settings: {  }
-    region: content
-    third_party_settings: {  }
-  path:
-    type: path
     weight: 5
+    region: content
     settings: {  }
     third_party_settings: {  }
+  field_byline:
+    type: options_buttons
+    weight: 15
     region: content
-  promote:
-    type: boolean_checkbox
-    settings:
-      display_label: true
-    weight: 3
+    settings: {  }
     third_party_settings: {  }
-    region: content
-  status:
-    type: boolean_checkbox
-    weight: 10
-    settings:
-      display_label: true
-    third_party_settings: {  }
-    region: content
-  sticky:
-    type: boolean_checkbox
-    settings:
-      display_label: true
-    weight: 4
-    third_party_settings: {  }
-    region: content
-  title:
+  field_lead_title:
     type: string_textfield
-    weight: 0
+    weight: 1
+    region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_meta_tags:
+    type: metatag_firehose
+    weight: 13
     region: content
-  field_lead_title:
-      type: string_textfield
-      weight: 1
-      region: content
-      settings:
-        size: 60
-        placeholder: ''
-      third_party_settings: {  }
-  translation:
+    settings:
+      sidebar: true
+      use_details: true
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 3
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 11
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  path:
+    type: path
     weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    weight: 8
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 12
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    weight: 9
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 1
+    weight: 4
+    region: content
     settings:
       match_operator: CONTAINS
+      match_limit: 10
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    region: content
-hidden:
-  layout_builder__layout: true
-  layout_builder__translation: true
+hidden: {}

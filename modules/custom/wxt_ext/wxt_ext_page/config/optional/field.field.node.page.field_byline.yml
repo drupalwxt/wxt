@@ -3,14 +3,14 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_byline
-    - node.type.topic
+    - node.type.page
     - taxonomy.vocabulary.departments
-id: node.topic.field_byline
+id: node.page.field_byline
 field_name: field_byline
 entity_type: node
-bundle: topic
+bundle: page
 label: Byline
-description: 'Use the contributors pattern to highlight institutions/organizations that have contributed to the content on a webpage.'
+description: ''
 required: false
 translatable: false
 default_value: {  }

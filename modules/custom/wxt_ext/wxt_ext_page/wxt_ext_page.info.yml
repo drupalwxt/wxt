@@ -7,8 +7,10 @@ dependencies:
   - 'config_rewrite:config_rewrite'
   - 'content_moderation:content_moderation'
   - 'drupal:node'
+  - 'field_group:field_group'
   - 'layout_builder_st:layout_builder_st'
   - 'wxt_core:wxt_core'
   - 'wxt_translation:wxt_translation'
   - 'wxt_ext_layout:wxt_ext_layout'
+  - 'wxt_ext_taxonomy:wxt_ext_taxonomy'
 version: 5.2.3-dev

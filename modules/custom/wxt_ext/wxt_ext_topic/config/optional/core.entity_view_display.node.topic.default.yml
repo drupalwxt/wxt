@@ -33,16 +33,12 @@ content:
     weight: 0
     region: content
   field_byline:
-    type: link
-    label: inline
+    type: entity_reference_label
+    label: hidden
     settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
+      link: true
     third_party_settings: {  }
-    weight: 6
+    weight: 0
     region: content
   field_featured:
     type: entity_reference_revisions_entity_view

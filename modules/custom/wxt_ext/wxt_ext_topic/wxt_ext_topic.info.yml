@@ -8,4 +8,5 @@ dependencies:
   - 'drupal:node'
   - 'wxt_core:wxt_core'
   - 'wxt_translation:wxt_translation'
+  - 'wxt_ext_taxonomy:wxt_ext_taxonomy'
 version: 5.3.0-dev

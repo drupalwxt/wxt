@@ -37,6 +37,23 @@ third_party_settings:
         open: false
         description: ''
         required_fields: true
+    group_byline:
+      children:
+        - field_byline
+      label: Byline
+      region: content
+      parent_name: ''
+      weight: 17
+      format_type: details_sidebar
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        open: false
+        description: ''
+        required_fields: true
+        weight: 0
 id: node.topic.default
 targetEntityType: node
 bundle: topic
@@ -59,12 +76,10 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_byline:
-    type: link_default
-    weight: 17
+    type: options_buttons
+    weight: 18
     region: content
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
+    settings: { }
     third_party_settings: {  }
   field_featured:
     type: paragraphs

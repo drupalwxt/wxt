@@ -3,114 +3,59 @@ status: true
 dependencies:
   config:
     - field.field.node.page.body
-    - field.field.node.page.layout_builder__layout
-    - field.field.node.page.layout_builder__translation
-    - field.field.node.page.layout_selection
+    - field.field.node.page.comment
+    - field.field.node.page.field_byline
+    - field.field.node.page.field_lead_title
+    - field.field.node.page.field_meta_tags
     - node.type.page
   module:
-    - bootstrap_layouts
     - layout_builder
+    - layout_builder_restrictions
     - layout_library
     - text
     - user
 third_party_settings:
   layout_builder:
-    enabled: true
-    sections:
-      -
-        layout_id: bs_1col_stacked
-        layout_settings:
-          layout:
-            wrapper: div
-            classes:
-              row: row
-            add_layout_class: 1
-            attributes: ''
-          regions:
-            top:
-              wrapper: div
-              classes:
-                col-sm-12: col-sm-12
-              add_region_classes: 1
-              attributes: ''
-            main:
-              wrapper: div
-              classes:
-                col-sm-12: col-sm-12
-              add_region_classes: 1
-              attributes: ''
-            bottom:
-              wrapper: div
-              classes:
-                col-sm-12: col-sm-12
-              add_region_classes: 1
-              attributes: ''
-        components:
-          c62bbe2e-e1cb-48d6-803f-cf0f371d299b:
-            uuid: c62bbe2e-e1cb-48d6-803f-cf0f371d299b
-            region: top
-            configuration:
-              id: page_title_block
-              label: 'Page title'
-              provider: core
-              label_display: '0'
-              context_mapping: {  }
-            additional: {  }
-            weight: 0
-          32338ff6-919d-414d-a91b-fa0310743e8c:
-            uuid: 32338ff6-919d-414d-a91b-fa0310743e8c
-            region: top
-            configuration:
-              id: local_tasks_block
-              label: Tabs
-              provider: core
-              label_display: '0'
-              primary: true
-              secondary: true
-              context_mapping: {  }
-            additional: {  }
-            weight: 1
-          a9f455ac-7a75-4241-bb9e-52f56897df0a:
-            uuid: a9f455ac-7a75-4241-bb9e-52f56897df0a
-            region: main
-            configuration:
-              id: 'field_block:node:page:body'
-              label: Body
-              provider: layout_builder
-              label_display: '0'
-              formatter:
-                label: hidden
-                type: text_default
-                settings: {  }
-                third_party_settings: {  }
-              context_mapping:
-                entity: layout_builder.entity
-            additional: {  }
-            weight: 0
-        third_party_settings: {  }
-    allow_custom: true
+    enabled: false
+    allow_custom: false
   layout_library:
-    enable: true
+    enable: false
+  layout_builder_restrictions:
+    allowed_block_categories: {  }
+    entity_view_mode_restriction:
+      allowed_layouts: {  }
+      denylisted_blocks: {  }
+      allowlisted_blocks: {  }
+      restricted_categories: {  }
 id: node.page.default
 targetEntityType: node
 bundle: page
 mode: default
 content:
   body:
-    label: hidden
     type: text_default
-    weight: 0
+    label: hidden
     settings: {  }
     third_party_settings: {  }
-    region: content
-  links:
     weight: 1
     region: content
+  field_byline:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
     settings: {  }
     third_party_settings: {  }
+    weight: 2
+    region: content
 hidden:
+  comment: true
   content_moderation_control: true
+  field_lead_title: true
+  field_meta_tags: true
   langcode: true
-  layout_builder__layout: true
-  layout_builder__translation: true
-  layout_selection: true
+  search_api_excerpt: true
