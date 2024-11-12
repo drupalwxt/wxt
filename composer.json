@@ -62,7 +62,7 @@
         "drupal/migrate_tools": "^6.0",
         "drupal/page_manager": "4.0-rc2",
         "drupal/panels": "^4.8",
-        "drupal/paragraphs": "^1.15",
+        "drupal/paragraphs": "1.17",
         "drupal/password_policy": "^4.0",
         "drupal/pathauto": "^1.12",
         "drupal/redirect": "^1.5",
@@ -81,8 +81,8 @@
         "drupal/views_infinite_scroll": "^2.0",
         "drupal/webform": "^6.2.0-beta5",
         "drupal/webform_migrate": "2.0.x-dev",
-        "drupal/wxt_bootstrap": "8.x",
-        "drupal/wxt_library": "8.x",
+        "drupal/wxt_bootstrap": "8.5",
+        "drupal/wxt_library": "8.3",
         "drupal-ckeditor-libraries-group/fakeobjects": "4.18.0",
         "cdubz/ckeditor5-source-editing-codemirror": "^35.1",
         "codemirror/codemirror": "^5.65",
@@ -109,7 +109,8 @@
             "drupal/core-composer-scaffold": true,
             "oomphinc/composer-installers-extender": true,
             "php-http/discovery": true,
-            "phpstan/extension-installer": true
+            "phpstan/extension-installer": true,
+            "tbachert/spi": true
         }
     },
     "autoload": {
@@ -239,6 +240,10 @@
                 "Enter drupal/diff patch #3228798 description here":
                 "https://www.drupal.org/files/issues/2024-05-14/diff-3228798-17.patch"
             },
+            "drupal/entity_embed": {
+                "3481413 - Fix PHP error":
+                "https://www.drupal.org/files/issues/2024-10-17/entity_embed-3481413.patch"
+            },
             "drupal/entity_browser": {
                 "2914385 - Fix PHP error":
                 "https://www.drupal.org/files/issues/2023-10-10/2914385-25.patch"
@@ -259,7 +264,9 @@
             },
             "drupal/linkit": {
                 "Detect and strip base URL from pasted URLs to increase matching hits":
-                "https://www.drupal.org/files/issues/2023-11-02/linkit6x-3078075-77.patch"
+                "https://www.drupal.org/files/issues/2023-11-02/linkit6x-3078075-77.patch",
+                "Enter drupal/linkit patch #3457958 description here":
+                "https://www.drupal.org/files/issues/2024-06-28/linkit--testing-static-methods--3457958.patch"
             },
             "drupal/page_manager": {
                 "Enter drupal/page_manager patch #2626090 description here":

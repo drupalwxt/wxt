@@ -1,5 +1,0 @@
-services:
-  wxt_ext_config.commands:
-    class: \Drupal\wxt_ext_config\Commands\Wxtcex
-    tags:
-      - { name: drush.command }
