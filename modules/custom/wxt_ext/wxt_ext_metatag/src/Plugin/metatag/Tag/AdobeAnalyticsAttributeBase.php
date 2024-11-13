@@ -22,7 +22,7 @@ abstract class AdobeAnalyticsAttributeBase extends MetaNameBase {
 
     // Add the meta element. Example:
     // @code
-    // <meta data-gc-analytics-owner="HC|CPSD|Consumer product safety" />
+    // <meta data-gc-analytics-owner="HC|CPSD|Consumer product safety|N/A" />
     // @endcode
     return [
       '#tag' => $this->htmlTag,
@@ -76,8 +76,9 @@ abstract class AdobeAnalyticsAttributeBase extends MetaNameBase {
    *   The field.
    *
    * @return string
-   *   The names with levels separated with pipe and values with colon. Example:
-   *   "Food|Beverages:Food chemicals|Non-alcoholic:Flavour additive"
+   *   The names with levels separated with pipe and values with colon, padded
+   *   to exactly four levels. Example:
+   *   "Food|Beverages:Food chemicals|Non-alcoholic:Flavour additive|N/A"
    */
   protected static function combineFieldValues(EntityReferenceFieldItemListInterface $field): string {
     $taxonomy_term_storage = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
@@ -104,6 +105,10 @@ abstract class AdobeAnalyticsAttributeBase extends MetaNameBase {
       $level = implode(':', array_unique($level));
     }
     unset($level);
+    // There must be exactly 4 levels. Add more if there are not enough.
+    for ($counter = count($names); $counter < 4; $counter++) {
+      $names[] = 'N/A';
+    }
     // Combine the levels, separated by pipe.
     return implode('|', $names);
   }
