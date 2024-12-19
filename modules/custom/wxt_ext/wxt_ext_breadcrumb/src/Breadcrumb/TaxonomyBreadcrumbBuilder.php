@@ -4,6 +4,7 @@ namespace Drupal\wxt_ext_breadcrumb\Breadcrumb;
 
 use Drupal\Core\Access\AccessManagerInterface;
 use Drupal\Core\Breadcrumb\Breadcrumb;
+use Drupal\Core\Cache\CacheableMetadata;
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Controller\TitleResolverInterface;
 use Drupal\Core\Language\LanguageManagerInterface;
@@ -151,7 +152,7 @@ class TaxonomyBreadcrumbBuilder extends PathBasedBreadcrumbBuilder {
   /**
    * {@inheritdoc}
    */
-  public function applies(RouteMatchInterface $route_match) {
+  public function applies(RouteMatchInterface $route_match, ?CacheableMetadata $cacheable_metadata = NULL) {
     $parameters = $route_match->getParameters()->all();
     $path = trim($this->context->getPathInfo(), '/');
     $path_elements = explode('/', $path);
