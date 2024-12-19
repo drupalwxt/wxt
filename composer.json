@@ -13,7 +13,7 @@
         "cweagans/composer-patches": "^1.7",
         "drupal/admin_toolbar": "^3.2.1",
         "drupal/autosave_form": "^1.6",
-        "drupal/block_class": "^2.0",
+        "drupal/block_class": "^4.0",
         "drupal/block_content_permissions": "^1.10",
         "drupal/blog": "3.1.2",
         "drupal/bootstrap_layouts": "5.3",
