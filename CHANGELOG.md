@@ -7,7 +7,7 @@
 - Security Updates for Drupal Core
   - N/A
 - Updates for Drupal Core
-  - Unpin drupal/core-recommended from 10.3.6 to ^10.3 to allow for upgrade to latest 10.3.x
+  - Unpin drupal/core-recommended from 10.3.6 to 10.4.x to include patches release
   - Update core patch to allow upgrade to 10.4.x LTS
 - Updates for Drupal Contrib + WxT
   - Allow setting GC Adobe Analytics metatag attributes [3415924](https://www.drupal.org/node/3415924)
