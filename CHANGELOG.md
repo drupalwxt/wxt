@@ -1,15 +1,19 @@
 # CHANGELOG
 
-## v5.3.1 (In Devlopment)
+## v5.3.1
 
 - Build Infrastructure
   - N/A
 - Security Updates for Drupal Core
   - N/A
 - Updates for Drupal Core
-  - N/A
+  - Unpin drupal/core-recommended from 10.3.6 to ^10.3 to allow for upgrade to latest 10.3.x
+  - Update core patch to allow upgrade to 10.4.x LTS
 - Updates for Drupal Contrib + WxT
-  - N/A
+  - Issue #3415924 by liam morland: Allow setting GC Adobe Analytics metatag attributes [3415924](https://www.drupal.org/node/3415924)
+  - Issue #3436190 by OPTASY: [WxT 10.2] Issues with WxT Extend Config module [3436190](https://www.drupal.org/node/3436190)
+  - Issue #3486425: Block Class 2.0.12 is unsupported [3486425](https://www.drupal.org/node/3486425)
+  - Issue #3490685: wxt versions crashes on upgrades since admin_toolbar_links_access_filter is deprecated for Drupal 10.3+ [3490685](https://www.drupal.org/node/3490685)
 - Updated for WxT Bootstrap
   - N/A
 - Updates for WxT Library
