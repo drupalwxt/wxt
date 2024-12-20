@@ -29,11 +29,12 @@ user.role.*.third_party.wxt_core:
       label: 'Description'
 
 wxt_core.versions:
-  type: sequence
+  type: config_object
   label: 'Extension versions'
-  sequence:
-    type: string
-    label: 'Semantic version number'
+  mapping:
+    config_value:
+      type: string
+      label: 'Semantic version number'
 
 wxt4032404.settings:
   type: config_object

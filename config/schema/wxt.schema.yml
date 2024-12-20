@@ -7,8 +7,9 @@ user.role.*.third_party.wxt:
       label: 'Bundled with WxT'
 
 wxt.versions:
-  type: sequence
+  type: config_object
   label: 'WxT component versions'
-  sequence:
-    type: string
-    label: 'Version'
+  mapping:
+    config_value:
+      type: string
+      label: 'Version'
