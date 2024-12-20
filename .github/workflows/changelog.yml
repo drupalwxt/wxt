@@ -2,7 +2,7 @@ name: changelog
 on:
   push:
     branches:
-      - 5.3.x
+      - 5.4.x
   release:
     types: [edited]
 
