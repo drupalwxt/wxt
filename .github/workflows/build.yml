@@ -25,7 +25,7 @@ jobs:
 
     - name: Setup dependencies
       run: |
-        git clone --branch 10.3.x https://github.com/drupalwxt/site-wxt.git
+        git clone --branch 10.4.x https://github.com/drupalwxt/site-wxt.git
         cd site-wxt
         rm composer.lock
 
@@ -38,7 +38,7 @@ jobs:
         export DB_TYPE=${{ matrix.db.type }}
         export DB_PORT=${{ matrix.db.port }}
         cd site-wxt
-        git clone --branch 10.3.x https://github.com/drupalwxt/docker-scaffold.git docker
+        git clone --branch 10.4.x https://github.com/drupalwxt/docker-scaffold.git docker
         make build
         docker compose -f docker-compose.ci.yml up -d
         docker ps -a

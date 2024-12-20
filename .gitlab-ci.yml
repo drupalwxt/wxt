@@ -34,5 +34,5 @@ variables:
 
 composer:
   variables:
-    DRUPAL_CORE: 10.3.6
+    DRUPAL_CORE: 10.4.0
 
