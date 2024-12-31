@@ -80,7 +80,6 @@
         "drupal/views_bootstrap": "5.3.1",
         "drupal/views_infinite_scroll": "^2.0",
         "drupal/webform": "^6.2.0-beta5",
-        "drupal/webform_migrate": "2.0.x-dev",
         "drupalwxt/wxt_bootstrap": "11.1.x-dev",
         "drupalwxt/wxt_library": "11.1.x-dev",
         "drupal-ckeditor-libraries-group/fakeobjects": "4.18.0",
