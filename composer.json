@@ -16,7 +16,7 @@
         "drupal/block_class": "^4.0",
         "drupal/blog": "^3.1",
         "drupal/bootstrap_layouts": "^5.4",
-        "drupal/button_link": "2.0.1",
+        "drupaloverride/button_link": "dev-master",
         "drupal/ckeditor_abbreviation": "^5.0",
         "drupal/ckeditor_codemirror": "^3.1",
         "drupal/ckeditor_details": "^2.1@beta",
@@ -28,27 +28,27 @@
         "drupal/ctools": "^4.1",
         "drupal/diff": "^1.8",
         "drupal/dropzonejs": "^2.11",
-        "drupal/embed": "^1.7",
-        "drupal/entity_block": "^1.0",
+        "drupaloverride/embed": "dev-master",
+        "drupaloverride/entity_block": "dev-master",
         "drupal/entity_browser": "^2.12",
-        "drupal/entity_browser_block": "^1.0",
-        "drupal/entity_embed": "^1.5",
+        "drupaloverride/entity_browser_block": "dev-master",
+        "drupaloverride/entity_embed": "dev-master",
         "drupal/entity_reference_revisions": "^1.12",
         "drupal/entityqueue": "^1.9",
         "drupal/field_formatter": "^3.0",
         "drupal/field_group": "^3.6",
         "drupal/file_entity": "^2.1",
-        "drupal/fontawesome": "^2.24",
+        "drupaloverride/fontawesome": "dev-master",
         "drupal/footnotes": "^4.0@beta",
         "drupal/fakeobjects": "1.x-dev@dev",
-        "drupal/flexible_permissions": "^2.0",
+        "drupal/flexible_permissions": "^2.0.1",
         "drupal/group": "^2.3",
         "drupal/image_widget_crop": "2.x-dev@dev",
         "drupal/inline_entity_form": "^3.0@RC",
         "drupal/layout_builder_restrictions": "^3.0",
-        "drupal/layout_builder_st": "^1.0-alpha2",
+        "drupaloverride/layout_builder_st": "dev-master",
         "drupal/layout_builder_styles": "^2.1",
-        "drupal/layout_library": "^1.0-beta1",
+        "drupaloverride/layout_library": "dev-master",
         "drupal/linkit": "^7.0",
         "drupal/media_entity_instagram": "^4.0@beta",
         "drupal/media_entity_twitter": "^2.10",
@@ -68,11 +68,11 @@
         "drupal/search_api": "^1.37",
         "drupal/simple_sitemap": "^4.2",
         "drupal/slick_entityreference": "^3.0",
-        "drupal/toc_api": "^1.2",
+        "drupaloverride/toc_api": "dev-master",
         "drupal/toc_filter": "^2.3",
         "drupal/token": "^1.15",
         "drupal/token_filter": "^2.2",
-        "drupal/url_embed": "^3.0@beta",
+        "drupaloverride/url_embed": "dev-master",
         "drupal/video_embed_field": "^3.0@alpha",
         "drupal/views_autocomplete_filters": "^2.0",
         "drupal/views_bootstrap": "^5.3",
@@ -126,6 +126,136 @@
         {
             "type": "composer",
             "url": "https://drupalwxt.github.io/composer-extdeps/"
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "drupaloverride/button_link",
+                "version": "dev-master",
+                "type": "drupal-module",
+                "source": {
+                    "url": "https://git.drupalcode.org/issue/button_link-3429088.git",
+                    "type": "git",
+                    "reference": "project-update-bot-only"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "drupaloverride/embed",
+                "version": "dev-master",
+                "type": "drupal-module",
+                "source": {
+                    "url": "https://git.drupalcode.org/issue/embed-3430097.git",
+                    "type": "git",
+                    "reference": "3430097-automated-drupal-11"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "drupaloverride/url_embed",
+                "version": "dev-master",
+                "type": "drupal-module",
+                "source": {
+                    "url": "https://git.drupalcode.org/issue/url_embed-3438709.git",
+                    "type": "git",
+                    "reference": "composer-workaround-d11"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "drupaloverride/entity_block",
+                "version": "dev-master",
+                "type": "drupal-module",
+                "source": {
+                    "url": "https://git.drupalcode.org/issue/entity_block-3430128.git",
+                    "type": "git",
+                    "reference": "3430128-automated-drupal-11"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "drupaloverride/entity_browser_block",
+                "version": "dev-master",
+                "type": "drupal-module",
+                "source": {
+                    "url": "https://git.drupalcode.org/issue/entity_browser_block-3430130.git",
+                    "type": "git",
+                    "reference": "project-update-bot-only"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "drupaloverride/entity_embed",
+                "version": "dev-master",
+                "type": "drupal-module",
+                "source": {
+                    "url": "https://git.drupalcode.org/issue/entity_embed-3430164.git",
+                    "type": "git",
+                    "reference": "3430164-d11-readiness"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "drupaloverride/fontawesome",
+                "version": "dev-master",
+                "type": "drupal-module",
+                "source": {
+                    "url": "https://git.drupalcode.org/issue/fontawesome-3465765.git",
+                    "type": "git",
+                    "reference": "3465765-drupal-11-compatibility"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "drupaloverride/layout_builder_st",
+                "version": "dev-master",
+                "type": "drupal-module",
+                "source": {
+                    "url": "https://git.drupalcode.org/issue/layout_builder_st-3431600.git",
+                    "type": "git",
+                    "reference": "3431600-automated-drupal-11"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "drupaloverride/layout_library",
+                "version": "dev-master",
+                "type": "drupal-module",
+                "source": {
+                    "url": "https://git.drupalcode.org/issue/layout_library-3431607.git",
+                    "type": "git",
+                    "reference": "3431607-automated-drupal-11"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "drupaloverride/toc_api",
+                "version": "dev-master",
+                "type": "drupal-module",
+                "source": {
+                    "url": "https://git.drupalcode.org/issue/toc_api-3455312.git",
+                    "type": "git",
+                    "reference": "3455312-drupal11-fixes"
+                }
+            }
         }
     ],
     "extra": {
