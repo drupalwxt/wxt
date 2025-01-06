@@ -5,6 +5,7 @@ namespace Drupal\wxt_ext_layout\Form;
 use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Block\BlockManagerInterface;
 use Drupal\Core\Config\ConfigFactoryInterface;
+use Drupal\Core\Config\TypedConfigManagerInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
@@ -54,8 +55,8 @@ class SettingsForm extends ConfigFormBase {
    *   (optional) The entity block deriver. If passed, must be an instance of
    *   \Drupal\entity_block\Plugin\Derivative\EntityBlock.
    */
-  public function __construct(ConfigFactoryInterface $config_factory, EntityTypeManagerInterface $entity_type_manager, BlockManagerInterface $block_manager, TranslationInterface $translator, $deriver = NULL) {
-    parent::__construct($config_factory);
+  public function __construct(ConfigFactoryInterface $config_factory, EntityTypeManagerInterface $entity_type_manager, BlockManagerInterface $block_manager, TranslationInterface $translator, protected TypedConfigManagerInterface $typedConfigManager, $deriver = NULL) {
+    parent::__construct($config_factory, $typedConfigManager);
     $this->entityTypeManager = $entity_type_manager;
     $this->blockManager = $block_manager;
     $this->setStringTranslation($translator);
@@ -71,6 +72,7 @@ class SettingsForm extends ConfigFormBase {
       $container->get('entity_type.manager'),
       $container->get('plugin.manager.block'),
       $container->get('string_translation'),
+      $container->get('config.typed')
     ];
 
     // Entity Block is not a hard dependency of WxT Extend Layout.
