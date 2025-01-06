@@ -2,7 +2,7 @@ name: 'WxT Extend Editor'
 type: module
 description: 'Provides CKEditor 4/5 integration along with several plugins (WET Alert, Panels).'
 package: WxT
-core_version_requirement: '^9 || ^10'
+core_version_requirement: '>10'
 dependencies:
   - 'blazy:blazy'
   - 'ckeditor_abbreviation:ckeditor_abbreviation'

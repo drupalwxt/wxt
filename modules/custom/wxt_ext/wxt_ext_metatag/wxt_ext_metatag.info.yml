@@ -2,7 +2,7 @@ name: 'WxT Extend Metatag'
 description: 'Configures Metatag and related functionality.'
 type: module
 package: WxT
-core_version_requirement: '^9 || ^10'
+core_version_requirement: '>10'
 dependencies:
   - 'metatag:metatag'
   - 'metatag_dc:metatag_dc'

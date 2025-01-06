@@ -1,7 +1,7 @@
 name: 'WxT Extend'
 description: 'Wrapper module for enabling all of the WxT Extensions.'
 type: module
-core_version_requirement: '^9 || ^10'
+core_version_requirement: '>10'
 package: WxT
 dependencies:
   - 'wxt_core:wxt_core'

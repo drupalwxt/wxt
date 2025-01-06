@@ -1,7 +1,7 @@
 name: 'WxT Extend Queue'
 description: 'Provides Queueing and related functionality.'
 type: module
-core_version_requirement: '^9 || ^10'
+core_version_requirement: '>10'
 package: WxT
 dependencies:
   - 'content_moderation:content_moderation'

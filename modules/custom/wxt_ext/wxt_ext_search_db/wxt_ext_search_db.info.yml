@@ -1,7 +1,7 @@
 name: 'WxT Extend Search Database'
 description: 'Provides a default setup for Search w/Database Backend.'
 type: module
-core_version_requirement: '^9 || ^10'
+core_version_requirement: '>10'
 package: WxT
 dependencies:
   - 'wxt_ext_search:wxt_ext_search'

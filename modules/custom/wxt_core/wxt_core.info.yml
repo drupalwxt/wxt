@@ -1,7 +1,7 @@
 name: 'WxT Core'
 description: 'Provides the core configuration and all update related hooks for WxT as a whole.'
 type: module
-core_version_requirement: '^9 || ^10'
+core_version_requirement: '>10'
 package: WxT
 configure: wxt_core.settings
 dependencies:

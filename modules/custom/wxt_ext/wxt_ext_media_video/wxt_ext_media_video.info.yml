@@ -1,5 +1,5 @@
 name: 'Media Video'
-core_version_requirement: '^9 || ^10'
+core_version_requirement: '>10'
 type: module
 package: WxT
 description: 'Provides a Video entity type for Media.'

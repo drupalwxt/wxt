@@ -1,7 +1,7 @@
 name: 'WxT Extend Blocks'
 description: 'Creates custom blocks of type Basic, Search, and Spotlight.'
 type: module
-core_version_requirement: '^9 || ^10'
+core_version_requirement: '>10'
 package: WxT
 dependencies:
   - 'block_content_permissions:block_content_permissions'

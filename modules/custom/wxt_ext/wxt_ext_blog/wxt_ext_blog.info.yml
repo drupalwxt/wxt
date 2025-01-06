@@ -1,7 +1,7 @@
 name: 'WxT Extend Blog'
 description: 'Creates a default Blog listing layout page.'
 type: module
-core_version_requirement: '^9 || ^10'
+core_version_requirement: '>10'
 package: WxT
 dependencies:
   - 'blog:blog'

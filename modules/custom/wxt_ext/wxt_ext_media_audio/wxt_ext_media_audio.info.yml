@@ -1,5 +1,5 @@
 name: 'Media Audio'
-core_version_requirement: '^9 || ^10'
+core_version_requirement: '>10'
 type: module
 package: WxT
 description: 'Provides an Audio entity type for Media.'

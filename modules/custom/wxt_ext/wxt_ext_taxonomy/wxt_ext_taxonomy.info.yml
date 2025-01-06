@@ -1,7 +1,7 @@
 name: 'WxT Extend Taxonomy'
 description: 'Provides taxonomy vocabularies used for categorizing content.'
 type: module
-core_version_requirement: '^9 || ^10'
+core_version_requirement: '>10'
 package: WxT
 dependencies:
   - 'drupal:taxonomy'

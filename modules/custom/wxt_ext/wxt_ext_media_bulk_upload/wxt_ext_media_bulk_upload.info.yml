@@ -1,5 +1,5 @@
 name: 'Bulk Media Upload'
-core_version_requirement: '^9 || ^10'
+core_version_requirement: '>10'
 type: module
 description: 'Provides improvements to Bulk Upload for Media.'
 package: WxT
