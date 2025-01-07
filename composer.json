@@ -15,6 +15,7 @@
         "drupal/autosave_form": "^1.7",
         "drupal/block_class": "^4.0",
         "drupal/blog": "^3.1",
+        "drupal/book": "^2.0",
         "drupal/bootstrap_layouts": "^5.4",
         "drupaloverride/button_link": "dev-master",
         "drupal/ckeditor_abbreviation": "^5.0",
