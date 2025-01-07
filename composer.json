@@ -30,7 +30,7 @@
         "drupal/diff": "^1.8",
         "drupal/dropzonejs": "^2.11",
         "drupaloverride/embed": "dev-master",
-        "drupaloverride/entity_block": "dev-master",
+        "drupal/entity_block": "2.0.x-dev@dev",
         "drupal/entity_browser": "^2.12",
         "drupaloverride/entity_browser_block": "dev-master",
         "drupaloverride/entity_embed": "dev-master",
@@ -164,19 +164,6 @@
                     "url": "https://git.drupalcode.org/issue/url_embed-3438709.git",
                     "type": "git",
                     "reference": "composer-workaround-d11"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "drupaloverride/entity_block",
-                "version": "dev-master",
-                "type": "drupal-module",
-                "source": {
-                    "url": "https://git.drupalcode.org/issue/entity_block-3430128.git",
-                    "type": "git",
-                    "reference": "3430128-automated-drupal-11"
                 }
             }
         },
