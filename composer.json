@@ -396,9 +396,6 @@
             },
             "drupal/bootstrap_layouts": {
                 "3481450": "https://www.drupal.org/files/issues/2025-01-06/3481450-12.patch"
-            },
-            "drupal/menu_breadcrumb": {
-                "3485520": "https://www.drupal.org/files/issues/2025-01-06/3485520-8.patch"
             }
         }
     },
