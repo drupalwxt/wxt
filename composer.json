@@ -81,6 +81,7 @@
         "drupal/webform": "^6.3@alpha",
         "drupalwxt/wxt_bootstrap": "11.1.x-dev",
         "drupalwxt/wxt_library": "11.1.x-dev",
+        "cdubz/ckeditor5-source-editing-codemirror": "^35.1",
         "codemirror/codemirror": "^5.65",
         "npm-asset/dropzone": "^5.7.4",
         "phpdocumentor/reflection-docblock": "^5",
