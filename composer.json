@@ -17,7 +17,7 @@
         "drupal/blog": "^3.1",
         "drupal/book": "^2.0",
         "drupal/bootstrap_layouts": "^5.4",
-        "drupaloverride/button_link": "dev-master",
+        "drupal/button_link": "2.0.x-dev@dev",
         "drupal/ckeditor_abbreviation": "^5.0",
         "drupal/ckeditor_codemirror": "^3.1",
         "drupal/ckeditor_details": "^2.1@beta",
@@ -49,7 +49,7 @@
         "drupal/layout_builder_restrictions": "^3.0",
         "drupaloverride/layout_builder_st": "dev-master",
         "drupal/layout_builder_styles": "^2.1",
-        "drupaloverride/layout_library": "dev-master",
+        "drupal/layout_library": "^1.0@beta",
         "drupal/linkit": "^7.0",
         "drupal/media_entity_instagram": "^4.0@beta",
         "drupal/media_entity_twitter": "^2.10",
@@ -132,19 +132,6 @@
         {
             "type": "package",
             "package": {
-                "name": "drupaloverride/button_link",
-                "version": "dev-master",
-                "type": "drupal-module",
-                "source": {
-                    "url": "https://git.drupalcode.org/issue/button_link-3429088.git",
-                    "type": "git",
-                    "reference": "project-update-bot-only"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
                 "name": "drupaloverride/embed",
                 "version": "dev-master",
                 "type": "drupal-module",
@@ -217,19 +204,6 @@
                     "url": "https://git.drupalcode.org/issue/layout_builder_st-3431600.git",
                     "type": "git",
                     "reference": "3431600-automated-drupal-11"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "drupaloverride/layout_library",
-                "version": "dev-master",
-                "type": "drupal-module",
-                "source": {
-                    "url": "https://git.drupalcode.org/issue/layout_library-3431607.git",
-                    "type": "git",
-                    "reference": "3431607-automated-drupal-11"
                 }
             }
         },
