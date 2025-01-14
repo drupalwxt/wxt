@@ -8,6 +8,11 @@ panel:
     js/build/wxt_panel.js: { preprocess: true, minified: false }
   dependencies:
     - core/ckeditor5
+tabs:
+  js:
+    js/build/wxt_tabs.js: { preprocess: true, minified: false }
+  dependencies:
+    - core/ckeditor5
 admin.wxt_ext_editor:
   css:
     theme:
@@ -21,3 +26,4 @@ ckeditor5:
     theme:
       css/cke5-bootstrap-3-4-1.css: { preprocess: true, minified: false }
       css/cke5-theme-gcweb.css: { preprocess: true, minified: false }
+      css/wxt_ext_editor.admin.css: { preprocess: true, minified: false }

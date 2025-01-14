@@ -36,3 +36,17 @@ wxt_ext_editor_panel:
       - <header class>
       - <details>
       - <details class>
+
+wxt_ext_editor_tabs:
+  ckeditor5:
+    plugins:
+      - wxt_tabs.WXTTabs
+  drupal:
+    label: WET Tabs
+    library: wxt_ext_editor/tabs
+    admin_library: wxt_ext_editor/admin.wxt_ext_editor
+    toolbar_items:
+      insertWXTTabs:
+        label: WET Tabs
+    elements:
+      - <div class>

@@ -31,9 +31,11 @@ settings:
       - '-'
       - '|'
       - footnotes
-      - detail
       - alert
       - panel
+      - '|'
+      - insertWXTTabs
+      - detail
   plugins:
     ckeditor5_alignment:
       enabled_alignments:

@@ -1,7 +1,46 @@
+/* Icons on text format admin UI */
 .ckeditor5-toolbar-button-alert {
-    background-image: url(../icons/alert.svg);
+	background-image: url(../icons/alert.svg);
 }
 
 .ckeditor5-toolbar-button-panel {
-    background-image: url(../icons/panel.svg);
+	background-image: url(../icons/panel.svg);
+}
+
+.ckeditor5-toolbar-button-insertWXTTabs {
+	background-image: url(../icons/tab.svg);
+}
+
+/* Fix styles for details and tabs in CKEditor5 */
+.ck-content .wb-tabs details,
+.ck-content .wb-tabs details summary,
+.ck-content .wb-tabs > .tabpanels > details[open] > summary {
+	display: block !important;
+}
+
+.ck-content details {
+	border-radius: 4px;
+	margin: 10px 0px;
+}
+
+.ck-content .wb-tabs {
+	padding: 15px;
+ 	background: #efefef;
+ 	display: flex;
+    flex-direction: column;
+}
+
+.ck-content .wb-tabs-label {
+    order: -1;
+    margin-bottom: 5px;
+  	font-style: italic;
+}
+
+.ck-content .wb-tabs .tabpanels {
+	background: #ffffff;
+	padding: 10px;
+}
+
+.ck-content .wb-tabs details .details-wrapper {
+	margin: 6px -12px -6px -12px;
 }
