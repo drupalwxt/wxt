@@ -3,6 +3,7 @@
 namespace Drupal\wxt\Installer\Form;
 
 use Drupal\Core\Config\ConfigFactoryInterface;
+use Drupal\Core\Config\TypedConfigManagerInterface;
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\wxt\Installer\ExtensionManager;
@@ -27,11 +28,17 @@ class ExtensionConfigureForm extends ConfigFormBase {
    *
    * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
    *   The factory for configuration objects.
+   * @param \Drupal\Core\Config\TypedConfigManagerInterface $typed_config_manager
+   *   The typed config manager.
    * @param \Drupal\wxt\Installer\ExtensionManager $extension_manager
    *   The module extension list.
    */
-  public function __construct(ConfigFactoryInterface $config_factory, ExtensionManager $extension_manager) {
-    parent::__construct($config_factory);
+  public function __construct(
+    ConfigFactoryInterface $config_factory,
+    TypedConfigManagerInterface $typed_config_manager,
+    ExtensionManager $extension_manager
+  ) {
+    parent::__construct($config_factory, $typed_config_manager);
     $this->extensionManager = $extension_manager;
   }
 
@@ -41,6 +48,7 @@ class ExtensionConfigureForm extends ConfigFormBase {
   public static function create(ContainerInterface $container) {
     return new static(
       $container->get('config.factory'),
+      $container->get('config.typed'),
       ExtensionManager::create($container)
     );
   }
