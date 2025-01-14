@@ -1,7 +1,7 @@
 name: WxT
 description: 'A Drupal distribution created to leverage the Web Experience Toolkit.'
 type: profile
-core_version_requirement: '^9 || ^10'
+core_version_requirement: '>10'
 distribution:
   name: WxT
 keep_english: true
@@ -12,6 +12,9 @@ install:
   - dynamic_page_cache
   - field_ui
   - inline_form_errors
+  - jquery_ui
+  - jquery_ui_draggable
+  - jquery_ui_resizable
   - language
   - locale
   - menu_link_content
