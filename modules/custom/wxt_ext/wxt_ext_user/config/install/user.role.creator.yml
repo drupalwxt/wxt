@@ -27,8 +27,6 @@ permissions:
   - 'update any media'
   - 'update content translations'
   - 'update media'
-  - 'use text format full_html'
-  - 'use text format rich_text'
   - 'use text format full_html_ckeditor5'
   - 'use text format rich_text_ckeditor5'
   - 'view all revisions'

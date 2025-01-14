@@ -21,8 +21,6 @@ permissions:
   - 'edit own comments'
   - 'revert all revisions'
   - 'update content translations'
-  - 'use text format full_html'
-  - 'use text format rich_text'
   - 'use text format full_html_ckeditor5'
   - 'use text format rich_text_ckeditor5'
   - 'view all revisions'
