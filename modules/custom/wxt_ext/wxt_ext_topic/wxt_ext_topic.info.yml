@@ -1,7 +1,7 @@
 name: 'WxT Extend Topic'
 description: 'Provides a content type for Topic pages and supporting configurations.'
 type: module
-core_version_requirement: '^9 || ^10'
+core_version_requirement: '>10'
 package: WxT
 dependencies:
   - 'content_moderation:content_moderation'
