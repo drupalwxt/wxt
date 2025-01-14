@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - wxt_ext_workflow
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+  wxt_ext_workflow:
+    workflow: editorial
+name: Topic
+type: topic
+description: 'Topic pages provide access to topics and destination pages that support task completion.'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: false

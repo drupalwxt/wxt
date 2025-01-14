@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: topic_image
+label: 'Topic image (520x200)'
+effects:
+  492016e3-1210-4c9a-a3dd-412f242a7d84:
+    uuid: 492016e3-1210-4c9a-a3dd-412f242a7d84
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 520
+      height: 200
+      anchor: center-center

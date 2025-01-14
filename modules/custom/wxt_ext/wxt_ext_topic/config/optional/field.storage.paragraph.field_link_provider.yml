@@ -1,0 +1,62 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_link_provider
+field_name: field_link_provider
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: foursquare
+      label: Foursquare
+    -
+      value: youtube
+      label: YouTube
+    -
+      value: twitter
+      label: Twitter
+    -
+      value: x-social
+      label: X
+    -
+      value: flickr
+      label: Flickr
+    -
+      value: facebook
+      label: Facebook
+    -
+      value: pinterest
+      label: Pinterest
+    -
+      value: linkedin
+      label: LinkedIn
+    -
+      value: instagram
+      label: Instagram
+    -
+      value: googleplus
+      label: Google+
+    -
+      value: reddit
+      label: Reddit
+    -
+      value: rss
+      label: RSS
+    -
+      value: periscope
+      label: Periscope
+    -
+      value: email
+      label: Email
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

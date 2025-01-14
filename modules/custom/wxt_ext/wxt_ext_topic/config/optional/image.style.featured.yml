@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: featured
+label: 'Featured (360x203)'
+effects:
+  679ee126-ee92-4a47-bfaf-97cf0d6949ff:
+    uuid: 679ee126-ee92-4a47-bfaf-97cf0d6949ff
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 360
+      height: 203
+      anchor: center-center

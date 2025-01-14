@@ -19,14 +19,6 @@ function wxt_ext_page_modules_installed(array $modules) {
     return;
   }
 
-  if (in_array('layout_library', $modules, TRUE)) {
-    Drupal::service('entity_display.repository')
-      ->getViewDisplay('node', 'page')
-      ->enableLayoutBuilder()
-      ->setThirdPartySetting('layout_library', 'enable', TRUE)
-      ->save();
-  }
-
   if (in_array('menu_ui', $modules, TRUE)) {
     NodeType::load('page')
       ->setThirdPartySetting('menu_ui', 'available_menus', ['main'])
