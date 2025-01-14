@@ -37,23 +37,20 @@ class Modal extends PluginBase implements SubstitutionInterface, ContainerFactor
    * {@inheritdoc}
    */
   public function getUrl(EntityInterface $entity) {
-    $url = '';
-
     if ($entity instanceof BlockContent) {
       if ($entity->hasField('field_modal_id')) {
         // Get the value of the 'field_modal_id' field.
-        $urlValue = '#' . $entity->get('field_modal_id')->value;
+        $modalId = $entity->get('field_modal_id')->value;
 
-        // Create a GeneratedUrl object and set the URL value.
-        $generatedUrl = new GeneratedUrl();
-        $generatedUrl->setGeneratedUrl($urlValue);
-
-        // Return the GeneratedUrl object.
-        return $generatedUrl;
+        if (!empty($modalId)) {
+          // Return a Url object with a fragment (e.g., #modal-id).
+          return \Drupal\Core\Url::fromUri('internal:#' . $modalId);
+        }
       }
     }
 
-    return $url;
+    // Return an empty Url object if the field or value is missing.
+    return \Drupal\Core\Url::fromUri('internal:#');
   }
 
   /**
