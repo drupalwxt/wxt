@@ -1,0 +1,16 @@
+config_rewrite: replace
+langcode: en
+status: true
+name: Footnote
+format: footnote
+weight: 20
+filters:
+  filter_html:
+    id: filter_html
+    provider: filter
+    status: true
+    weight: -10
+    settings:
+      allowed_html: '<br> <p> <strong> <em> <a href>'
+      filter_html_help: true
+      filter_html_nofollow: false
