@@ -23,13 +23,6 @@ jobs:
     steps:
     - uses: actions/checkout@master
 
-    - name: Setup PHP
-      uses: shivammathur/setup-php@v2
-      with:
-        php-version: '8.3'
-        extensions: mbstring, intl, pdo, pdo_mysql, pdo_pgsql, opcache
-        tools: composer
-
     - name: Setup dependencies
       run: |
         git clone --branch 11.1.x https://github.com/drupalwxt/site-wxt.git
@@ -38,7 +31,7 @@ jobs:
 
     - uses: statcan/actions/composer@master
       with:
-        args: require drupalwxt/wxt:6.1.x-dev#${{ github.sha }} --working-dir=./site-wxt
+        args: require drupalwxt/wxt:6.1.x-dev#${{ github.sha }} --working-dir=./site-wxt --ignore-platform-reqs
 
     - name: Build out the Drupal infrastructure
       run: |
