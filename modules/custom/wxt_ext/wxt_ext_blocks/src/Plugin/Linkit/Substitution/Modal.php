@@ -5,8 +5,8 @@ namespace Drupal\wxt_ext_blocks\Plugin\Linkit\Substitution;
 use Drupal\Component\Plugin\PluginBase;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
-use Drupal\Core\GeneratedUrl;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+use Drupal\Core\Url;
 use Drupal\block_content\Entity\BlockContent;
 use Drupal\linkit\SubstitutionInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -44,13 +44,13 @@ class Modal extends PluginBase implements SubstitutionInterface, ContainerFactor
 
         if (!empty($modalId)) {
           // Return a Url object with a fragment (e.g., #modal-id).
-          return \Drupal\Core\Url::fromUri('internal:#' . $modalId);
+          return Url::fromUri('internal:#' . $modalId);
         }
       }
     }
 
     // Return an empty Url object if the field or value is missing.
-    return \Drupal\Core\Url::fromUri('internal:#');
+    return Url::fromUri('internal:#');
   }
 
   /**

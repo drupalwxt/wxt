@@ -51,6 +51,8 @@ class SettingsForm extends ConfigFormBase {
    *   The block plugin manager.
    * @param \Drupal\Core\StringTranslation\TranslationInterface $translator
    *   The string translation service.
+   * @param \Drupal\Core\Config\TypedConfigManagerInterface $typedConfigManager
+   *   The typed configuration manager.
    * @param mixed $deriver
    *   (optional) The entity block deriver. If passed, must be an instance of
    *   \Drupal\entity_block\Plugin\Derivative\EntityBlock.
@@ -72,7 +74,7 @@ class SettingsForm extends ConfigFormBase {
       $container->get('entity_type.manager'),
       $container->get('plugin.manager.block'),
       $container->get('string_translation'),
-      $container->get('config.typed')
+      $container->get('config.typed'),
     ];
 
     // Entity Block is not a hard dependency of WxT Extend Layout.
