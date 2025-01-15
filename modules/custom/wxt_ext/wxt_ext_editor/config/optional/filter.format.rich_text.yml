@@ -19,8 +19,8 @@ dependencies:
     - url_embed
     - wxt_ext_blocks
     - wxt_ext_editor
-name: 'Rich Text (CKEditor5)'
-format: rich_text_ckeditor5
+name: 'Rich Text'
+format: rich_text
 weight: 1
 filters:
   filter_align:

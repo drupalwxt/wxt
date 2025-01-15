@@ -2,10 +2,10 @@ langcode: en
 status: true
 dependencies:
   config:
-    - filter.format.full_html_ckeditor5
+    - filter.format.full_html
   module:
     - ckeditor5
-format: full_html_ckeditor5
+format: full_html
 editor: ckeditor5
 settings:
   toolbar:

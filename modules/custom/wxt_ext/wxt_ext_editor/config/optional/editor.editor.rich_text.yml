@@ -2,10 +2,10 @@ langcode: en
 status: true
 dependencies:
   config:
-    - filter.format.rich_text_ckeditor5
+    - filter.format.rich_text
   module:
     - ckeditor5
-format: rich_text_ckeditor5
+format: rich_text
 editor: ckeditor5
 settings:
   toolbar:

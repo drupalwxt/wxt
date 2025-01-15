@@ -18,8 +18,8 @@ dependencies:
     - token_filter
     - url_embed
     - wxt_ext_editor
-name: 'Full HTML (CKEditor5)'
-format: full_html_ckeditor5
+name: 'Full HTML'
+format: full_html
 weight: 5
 filters:
   url_embed:
