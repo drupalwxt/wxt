@@ -5,6 +5,8 @@
  * Contains wxt_ext_webform.module.
  */
 
+use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\Ajax\HtmlCommand;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Link;
 use Drupal\webform\Entity\Webform;
@@ -107,18 +109,21 @@ function _wxt_ext_webform_gcweb_did_you_find_form_ajax_submit($form, $form_state
   $webform_submission->save();
 
   // Build confirmation message.
-  $confirmation = [
-    '#type' => 'markup',
-    '#markup' => '<div class="webform-confirmation">
-                    <div class="webform-confirmation__message">
-                      <div class="gc-pg-hlpfl-thnk">
-                        <p class="h3 mrgn-tp-sm mrgn-bttm-sm"><span class="far fa-check-circle text-success mrgn-rght-sm" aria-hidden="true"></span> ' . t("Thank you for your feedback") . '</p>
-                      </div>
-                    </div>
-                  </div>',
-  ];
+  $confirmation_markup = '<div class="webform-confirmation">
+                            <div class="webform-confirmation__message">
+                              <div class="gc-pg-hlpfl-thnk">
+                                <p class="h3 mrgn-tp-sm mrgn-bttm-sm">
+                                  <span class="far fa-check-circle text-success mrgn-rght-sm" aria-hidden="true">
+                                  </span> ' . t("Thank you for your feedback") . '</p>
+                              </div>
+                            </div>
+                          </div>';
 
-  return $confirmation;
+  // Return AjaxResponse to replace content.
+  $response = new AjaxResponse();
+  $response->addCommand(new HtmlCommand('#' . $form['#form_wrapper_id'], $confirmation_markup));
+
+  return $response;
 }
 
 /**
