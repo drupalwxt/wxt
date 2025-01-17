@@ -36,7 +36,7 @@ class ExtensionConfigureForm extends ConfigFormBase {
   public function __construct(
     ConfigFactoryInterface $config_factory,
     TypedConfigManagerInterface $typed_config_manager,
-    ExtensionManager $extension_manager
+    ExtensionManager $extension_manager,
   ) {
     parent::__construct($config_factory, $typed_config_manager);
     $this->extensionManager = $extension_manager;
