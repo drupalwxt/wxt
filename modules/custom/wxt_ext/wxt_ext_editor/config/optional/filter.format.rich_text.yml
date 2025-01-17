@@ -7,6 +7,7 @@ dependencies:
     - core.entity_view_mode.media.large
     - core.entity_view_mode.media.medium
     - core.entity_view_mode.media.small
+    - core.entity_view_mode.media.thumbnail
   module:
     - blazy
     - editor
@@ -18,7 +19,6 @@ dependencies:
     - token_filter
     - url_embed
     - wxt_ext_blocks
-    - wxt_ext_editor
 name: 'Rich Text'
 format: rich_text
 weight: 1
@@ -87,13 +87,14 @@ filters:
     status: true
     weight: -41
     settings:
-      default_view_mode: embedded
+      default_view_mode: default
       allowed_view_modes:
         default: default
         full_width: full_width
         large: large
         medium: medium
         small: small
+        thumbnail: thumbnail
       allowed_media_types: {  }
   blazy_filter:
     id: blazy_filter

@@ -1,4 +1,4 @@
-name: 'Media Image'
+name: 'Media Image Responsive'
 core_version_requirement: '>10'
 type: module
 package: WxT
