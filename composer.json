@@ -96,6 +96,9 @@
         "squizlabs/php_codesniffer": "3.*",
         "phpspec/prophecy-phpunit": "^2"
     },
+    "replace": {
+        "drupal/toc_api": "*"
+    },
     "config": {
         "discard-changes": true,
         "sort-packages": true,
