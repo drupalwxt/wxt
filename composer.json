@@ -39,7 +39,7 @@
         "drupal/field_formatter": "^3.0",
         "drupal/field_group": "^3.6",
         "drupal/file_entity": "^2.1",
-        "drupaloverride/fontawesome": "dev-master",
+        "drupal/fontawesome": "^3.0",
         "drupal/footnotes": "^4.0@beta",
         "drupal/fakeobjects": "1.x-dev@dev",
         "drupal/flexible_permissions": "^2.0.1",
@@ -168,19 +168,6 @@
                     "url": "https://git.drupalcode.org/issue/entity_embed-3430164.git",
                     "type": "git",
                     "reference": "3430164-d11-readiness"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "drupaloverride/fontawesome",
-                "version": "dev-master",
-                "type": "drupal-module",
-                "source": {
-                    "url": "https://git.drupalcode.org/issue/fontawesome-3465765.git",
-                    "type": "git",
-                    "reference": "3465765-drupal-11-compatibility"
                 }
             }
         },
