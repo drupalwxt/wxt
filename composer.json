@@ -265,7 +265,9 @@
                 "3107212 - views no results behavior on field level is not translateable":
                 "https://www.drupal.org/files/issues/2023-01-23/d10-1-x--3107212-19.patch",
                 "3359497 - Prevent warnings when library definitions have a license with no URL defined, contrib is not perfect here.":
-                "https://www.drupal.org/files/issues/2023-10-07/fix-license-missing-url.patch"
+                "https://www.drupal.org/files/issues/2023-10-07/fix-license-missing-url.patch",
+                "2938129 - PageTitle block is non-functional when not handled directly by BlockPageVariant":
+                "https://www.drupal.org/files/issues/2025-01-28/drupal-PageTitle_block-2938129-43.patch"
             },
             "drupal/ctools": {
                 "Enter drupal/ctools patch #2667652 description here":
