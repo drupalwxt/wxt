@@ -7,7 +7,6 @@
  * Leveraged from code provided by Acquia for the Lightning distribution.
  */
 
-use Drupal\Core\Database\Database;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\WidgetInterface;
 use Drupal\Core\Form\FormStateInterface;
@@ -21,7 +20,6 @@ use Drupal\image\Plugin\ImageEffect\ResizeImageEffect;
 use Drupal\media\Entity\MediaType;
 use Drupal\media\MediaInterface;
 use Drupal\media\MediaTypeInterface;
-use Drupal\media\Entity\Media;
 use Drupal\views\ViewExecutable;
 use Drupal\wxt_core\BundleEntityStorage;
 use Drupal\wxt_core\OverrideHelper as Override;
