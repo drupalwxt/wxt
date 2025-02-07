@@ -7,6 +7,7 @@
  * Leveraged from code provided by Acquia for the Lightning distribution.
  */
 
+use Drupal\Core\Database\Database;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\WidgetInterface;
 use Drupal\Core\Form\FormStateInterface;
@@ -20,6 +21,7 @@ use Drupal\image\Plugin\ImageEffect\ResizeImageEffect;
 use Drupal\media\Entity\MediaType;
 use Drupal\media\MediaInterface;
 use Drupal\media\MediaTypeInterface;
+use Drupal\media\Entity\Media;
 use Drupal\views\ViewExecutable;
 use Drupal\wxt_core\BundleEntityStorage;
 use Drupal\wxt_core\OverrideHelper as Override;
@@ -147,60 +149,6 @@ function wxt_ext_media_inline_entity_form_entity_form_alter(array &$entity_form)
   if ($entity instanceof MediaInterface && MediaHelper::isPreviewable($entity)) {
     $entity_form['preview'] = MediaHelper::getSourceField($entity)->view('default');
   }
-}
-
-/**
- * Validates a file using media entity source field criteria.
- *
- * @param \Drupal\file\FileInterface $file
- *   The file to validate.
- * @param string[] $bundles
- *   (optional) A set of media bundle IDs which might match the input. If
- *   omitted, all bundles to which the user has create access will be checked.
- *
- * @return string[]
- *   An array of errors. If empty, the file passed validation.
- */
-function wxt_ext_media_validate_upload(FileInterface $file, array $bundles = []) {
-  try {
-    $entity = \Drupal::service('wxt.media_helper')->createFromInput($file, $bundles);
-  }
-  catch (IndeterminateBundleException $e) {
-    return [];
-  }
-
-  /** @var \Drupal\file\Plugin\Field\FieldType\FileItem $item */
-  $item = MediaHelper::getSourceField($entity)->first();
-
-  $validators = [
-    // It's maybe a bit overzealous to run this validator, but hey...better
-    // safe than screwed over by script kiddies.
-    'file_validate_name_length' => [],
-  ];
-  $validators = array_merge($validators, $item->getUploadValidators());
-  // This function is only called by the custom FileUpload widget, which runs
-  // file_validate_extensions before this function. So there's no need to
-  // validate the extensions again.
-  unset($validators['file_validate_extensions']);
-
-  // If this is an image field, add image validation. Against all sanity,
-  // this is normally done by ImageWidget, not ImageItem, which is why we
-  // need to facilitate this a bit.
-  if ($item instanceof ImageItem) {
-    // Validate that this is, indeed, a supported image.
-    $validators['file_validate_is_image'] = [];
-
-    $settings = $item->getFieldDefinition()->getSettings();
-    if ($settings['max_resolution'] || $settings['min_resolution']) {
-      $validators['file_validate_image_resolution'] = [
-        $settings['max_resolution'],
-        $settings['min_resolution'],
-      ];
-    }
-  }
-
-  $file_validator = \Drupal::service('file.validator');
-  return $file_validator->file_validate($file, $validators);
 }
 
 /**

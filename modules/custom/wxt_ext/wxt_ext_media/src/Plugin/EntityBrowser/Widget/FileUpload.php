@@ -82,10 +82,10 @@ class FileUpload extends EntityFormProxy {
     // If the widget context didn't specify any file extension validation, add
     // it as the first validator, allowing it to accept only file extensions
     // associated with existing media bundles.
-    if (empty($validators['file_validate_extensions'])) {
+    if (empty($validators['FileExtension'])) {
       return array_merge([
-        'file_validate_extensions' => [
-          implode(' ', $this->getAllowedFileExtensions()),
+        'FileExtension' => [
+           'extensions' => $this->getAllowedFileExtensions(),
         ],
       ], $validators);
     }
@@ -115,14 +115,44 @@ class FileUpload extends EntityFormProxy {
    * {@inheritdoc}
    */
   public function validate(array &$form, FormStateInterface $form_state) {
+    if (empty($form_state->getValue('input'))) {
+      \Drupal::logger('wxt_ext_media')->warning(
+        'Missing required input field in form: @form_id',
+        [
+          '@form_id' => $form_id,
+        ]
+      );
+    }
     $fid = $this->getCurrentValue($form_state);
     if ($fid) {
       parent::validate($form, $form_state);
 
       $media = $this->getCurrentEntity($form_state);
       if ($media) {
+        $has_error = FALSE;
         foreach ($this->validateFile($media) as $error) {
+          \Drupal::logger('wxt_ext_media')->error(
+            'Form state has ERROR: @error.',
+            [
+              '@error' => $error,
+            ]
+          );
+          $has_error = TRUE;
           $form_state->setError($form['widget']['input'], $error);
+        }
+        if ($has_error) {
+          return;
+        }
+        $source_field = $media->getSource()->getSourceFieldDefinition($media->bundle->entity)->getName();
+
+        if ($source_field && $media->hasField($source_field) && !$media->get($source_field)->isEmpty()) {
+          $file = $media->get($source_field)->entity;
+          if (!$file) {
+            \Drupal::logger('wxt_ext_media')->error('File is NULL after retrieval.');
+          }
+        }
+        else {
+          \Drupal::logger('wxt_ext_media')->error('Source field does not exist or is empty.');
         }
       }
     }
@@ -135,7 +165,7 @@ class FileUpload extends EntityFormProxy {
    *   The media item.
    *
    * @return array[]
-   *   Any errors returned by file_validate().
+   *   Any errors returned by validate().
    */
   protected function validateFile(MediaInterface $media) {
     $field = $media->getSource()
@@ -148,38 +178,44 @@ class FileUpload extends EntityFormProxy {
     $validators = [
       // It's maybe a bit overzealous to run this validator, but hey...better
       // safe than screwed over by script kiddies.
-      'file_validate_name_length' => [],
+      'FileNameLength' => [],
     ];
     $validators = array_merge($validators, $item->getUploadValidators());
     // This function is only called by the custom FileUpload widget, which runs
-    // file_validate_extensions before this function. So there's no need to
+    // FileExtension before this function. So there's no need to
     // validate the extensions again.
-    unset($validators['file_validate_extensions']);
+    unset($validators['FileExtension']);
 
     // If this is an image field, add image validation. Against all sanity,
     // this is normally done by ImageWidget, not ImageItem, which is why we
     // need to facilitate this a bit.
     if ($item instanceof ImageItem) {
       // Validate that this is, indeed, a supported image.
-      $validators['file_validate_is_image'] = [];
+      $validators['FileIsImage'] = [];
 
       $settings = $item->getFieldDefinition()->getSettings();
       if ($settings['max_resolution'] || $settings['min_resolution']) {
-        $validators['file_validate_image_resolution'] = [
-          $settings['max_resolution'],
-          $settings['min_resolution'],
+        $validators['FileImageDimensions'] = [
+          'maxDimensions' => [$settings['max_resolution']],
+          'minDimensions' => [$settings['min_resolution']],
         ];
       }
     }
 
     $file_validator = \Drupal::service('file.validator');
-    return $file_validator->file_validate($item->entity, $validators);
+
+    $file = NULL;
+    if ($field && $media->hasField($field) && !$media->get($field)->isEmpty()) {
+      $file = $media->get($field)->entity;
+    }
+    return $file_validator->validate($item->entity, $validators);
   }
 
   /**
    * {@inheritdoc}
    */
   public function submit(array &$element, array &$form, FormStateInterface $form_state) {
+    \Drupal::logger('wxt_ext_media')->notice('FileUpload.php submit is called.');
     /** @var \Drupal\media\MediaInterface $entity */
     $entity = $element['entity']['#entity'];
 

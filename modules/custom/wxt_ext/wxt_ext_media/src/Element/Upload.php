@@ -42,19 +42,63 @@ class Upload extends FileElement {
    *   The current form state.
    */
   public static function validate(array &$element, FormStateInterface $form_state) {
-    if ($element['#value']) {
+    if (isset($element['#value']) && $element['#value']) {
       $file = File::load($element['#value']);
 
+      if (!$file) {
+        \Drupal::logger('wxt_ext_media')->error(
+          'File entity not found. Value: @value, Field: @field_name, Form: @form_id',
+          [
+            '@value' => $element['#value'],
+            '@field_name' => $element['#name'] ?? 'unknown',
+            '@form_id' => $form_state->getFormObject()->getFormId() ?? 'unknown',
+          ]
+        );
+        return;
+      }
+
       $file_validator = \Drupal::service('file.validator');
-      $errors = $file_validator->file_validate($file, $element['#upload_validators']);
-      if ($errors) {
+      $errors = $file_validator->validate($file, $element['#upload_validators']);
+
+      if ($errors && count($errors)) {
         foreach ($errors as $error) {
+          \Drupal::logger('wxt_ext_media')->error(
+            'File validation failed: @error for File ID: @fid',
+            ['@error' => $error, '@fid' => $file->id()]
+          );
           $form_state->setError($element, $error);
         }
         static::delete($element);
+        return;
       }
+      if (!count($errors) && $file && $file->isTemporary()) {
+        // Convert to a permanent file.
+        $file->setPermanent();
+        $file->save();
+      }
+
+      \Drupal::logger('wxt_ext_media')->notice(
+        'File passed validation. File ID: @fid, URI: @uri',
+          ['@fid' => $file->id(), '@uri' => $file->getFileUri()]
+      );
     }
     elseif ($element['#required']) {
+      \Drupal::logger('wxt_ext_media')->error(
+        'Element required. FIELD NAME: @field_name, FORM_ID: @form_id.',
+        [
+          '@field_name' => $element['#name'] ?? 'unknown',
+          '@form_id' => $form_state->getFormObject()->getFormId() ?? 'unknown',
+        ]
+      );
+      $form_state->setError($element, t('You must upload a file.'));
+    }
+    else {
+      \Drupal::logger('wxt_ext_media')->error(
+        'Element not found. FORM_ID: @form_id.',
+        [
+          '@form_id' => $form_state->getFormObject()->getFormId() ?? 'unknown',
+        ]
+      );
       $form_state->setError($element, t('You must upload a file.'));
     }
   }
@@ -71,7 +115,11 @@ class Upload extends FileElement {
       $file->delete();
 
       // Clean up the file system if needed.
-      $uri = $file->getFileUri();
+      $uri = NULL;
+      if ($file instanceof File) {
+        $uri = $file->getFileUri();
+      }
+
       if (file_exists($uri)) {
         \Drupal::service('file_system')->unlink($uri);
       }
