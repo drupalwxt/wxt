@@ -85,7 +85,7 @@ class FileUpload extends EntityFormProxy {
     if (empty($validators['FileExtension'])) {
       return array_merge([
         'FileExtension' => [
-           'extensions' => $this->getAllowedFileExtensions(),
+          'extensions' => $this->getAllowedFileExtensions(),
         ],
       ], $validators);
     }
@@ -204,10 +204,6 @@ class FileUpload extends EntityFormProxy {
 
     $file_validator = \Drupal::service('file.validator');
 
-    $file = NULL;
-    if ($field && $media->hasField($field) && !$media->get($field)->isEmpty()) {
-      $file = $media->get($field)->entity;
-    }
     return $file_validator->validate($item->entity, $validators);
   }
 

@@ -138,7 +138,6 @@ abstract class EntityFormProxy extends WidgetBase {
     return NULL;
   }
 
-
   /**
    * Returns all media types that can apply to the current input.
    *
