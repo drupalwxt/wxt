@@ -97,7 +97,6 @@ abstract class EntityFormProxy extends WidgetBase {
   protected function getCurrentEntity(FormStateInterface $form_state) {
     $value = $this->getCurrentValue($form_state);
     $types = $this->getCurrentTypes($form_state);
-
     $type = $form_state->getValue('bundle');
 
     if (empty($type) && count($types) === 1) {
@@ -105,10 +104,40 @@ abstract class EntityFormProxy extends WidgetBase {
     }
 
     if ($value && $type) {
-      return $this->createMedia($value, $types[$type]);
+      // Check if media entity is already in form_state
+      if ($media = $form_state->get('media_entity')) {
+        // Use it;
+        $this->selectEntities([$media], $form_state);
+        $form_state->set('media_entity', $media);
+        return $media;
+      }
+
+      // Create the media entity
+      $media = $this->createMedia($value, $types[$type]);
+      $media->save();
+      \Drupal::logger('wxt_ext_media')->notice(
+        '✅ Media entity created: ID: @id, UUID: @uuid',
+        [
+          '@id' => $media->id(),
+          '@uuid' => $media->uuid(),
+        ]
+      );
+
+      $this->selectEntities([$media], $form_state);
+
+      // Store the media entity in form_state so it persists across AJAX calls
+      $form_state->set('media_entity', $media);
+
+      return $media;
     }
+
+    \Drupal::logger('wxt_ext_media')->error(
+      '🚨 getCurrentEntity() failed: No valid media entity found.'
+    );
+
     return NULL;
   }
+
 
   /**
    * Returns all media types that can apply to the current input.
@@ -171,10 +200,19 @@ abstract class EntityFormProxy extends WidgetBase {
    * {@inheritdoc}
    */
   public function submit(array &$element, array &$form, FormStateInterface $form_state) {
-    // IEF will take care of creating the entity upon submission. All we need to
-    // do is send it upstream to Entity Browser.
-    $entity = $form['widget']['entity']['#entity'];
-    $this->selectEntities([$entity], $form_state);
+    if (isset($form['widget']['entity']['#entity'])) {
+      $entity = $form['widget']['entity']['#entity'];
+
+      \Drupal::logger('wxt_ext_media')->notice(
+        'DEBUG: submit() called. Entity exists: ID: @id, UUID: @uuid',
+        [
+          '@id' => $entity->id() ?? 'NULL',
+          '@uuid' => $entity->uuid() ?? 'NULL',
+        ]
+      );
+
+      $this->selectEntities([$entity], $form_state);
+    }
   }
 
   /**
@@ -190,16 +228,13 @@ abstract class EntityFormProxy extends WidgetBase {
    */
   public static function ajax(array &$form, FormStateInterface $form_state) {
     if ($form_state::hasAnyErrors()) {
+      \Drupal::logger('wxt_ext_media')->error('🚨 Form state has errors.');
       $form['widget']['bundle']['#access'] = FALSE;
     }
 
     return (new AjaxResponse())
-      ->addCommand(
-        new ReplaceCommand('#entity-form', $form['widget'])
-      )
-      ->addCommand(
-        new PrependCommand('#entity-form', ['#type' => 'status_messages'])
-      );
+      ->addCommand(new ReplaceCommand('#entity-form', $form['widget']))
+      ->addCommand(new PrependCommand('#entity-form', ['#type' => 'status_messages']));
   }
 
   /**
