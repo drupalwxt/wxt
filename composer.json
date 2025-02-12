@@ -29,11 +29,11 @@
         "drupal/ctools": "^4.1",
         "drupal/diff": "^1.8",
         "drupal/dropzonejs": "^2.11",
-        "drupaloverride/embed": "dev-master",
+        "drupal/embed": "^1.10",
         "drupal/entity_block": "2.0.x-dev@dev",
         "drupal/entity_browser": "^2.12",
         "drupal/entity_browser_block": "^2.0",
-        "drupaloverride/entity_embed": "dev-master",
+        "drupal/entity_embed": "^1.7",
         "drupal/entity_reference_revisions": "^1.12",
         "drupal/entityqueue": "^1.9",
         "drupal/field_formatter": "^3.0",
@@ -73,7 +73,7 @@
         "drupal/toc_filter": "^2.3",
         "drupal/token": "^1.15",
         "drupal/token_filter": "^2.2",
-        "drupaloverride/url_embed": "dev-master",
+        "drupal/url_embed": "^3.0@beta",
         "drupal/video_embed_field": "^3.0@alpha",
         "drupal/views_autocomplete_filters": "^2.0",
         "drupal/views_bootstrap": "5.3.*",
@@ -131,45 +131,6 @@
         {
             "type": "composer",
             "url": "https://drupalwxt.github.io/composer-extdeps/"
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "drupaloverride/embed",
-                "version": "dev-master",
-                "type": "drupal-module",
-                "source": {
-                    "url": "https://git.drupalcode.org/issue/embed-3430097.git",
-                    "type": "git",
-                    "reference": "3430097-automated-drupal-11"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "drupaloverride/url_embed",
-                "version": "dev-master",
-                "type": "drupal-module",
-                "source": {
-                    "url": "https://git.drupalcode.org/issue/url_embed-3438709.git",
-                    "type": "git",
-                    "reference": "composer-workaround-d11"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "drupaloverride/entity_embed",
-                "version": "dev-master",
-                "type": "drupal-module",
-                "source": {
-                    "url": "https://git.drupalcode.org/issue/entity_embed-3430164.git",
-                    "type": "git",
-                    "reference": "3430164-d11-readiness"
-                }
-            }
         },
         {
             "type": "package",
@@ -288,10 +249,6 @@
                 "https://www.drupal.org/files/issues/2020-09-08/diff_add-local-tasks-3169729-2.patch",
                 "Enter drupal/diff patch #3228798 description here":
                 "https://www.drupal.org/files/issues/2024-05-14/diff-3228798-17.patch"
-            },
-            "drupal/entity_embed": {
-                "3481413 - Fix PHP error":
-                "https://www.drupal.org/files/issues/2024-10-17/entity_embed-3481413.patch"
             },
             "drupal/entity_browser": {
                 "2914385 - Fix PHP error":
