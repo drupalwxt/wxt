@@ -86,7 +86,8 @@
         "npm-asset/dropzone": "^5.7.4",
         "phpdocumentor/reflection-docblock": "^5",
         "vardot/blazy": "^1.8",
-        "w8tcha/ckeditor-codemirror": "1.18.5"
+        "w8tcha/ckeditor-codemirror": "1.18.5",
+        "fontawesome/fontawesome": "^6.4"
     },
     "require-dev": {
         "drupal/core-dev": "11.1.*",
@@ -131,6 +132,21 @@
         {
             "type": "composer",
             "url": "https://drupalwxt.github.io/composer-extdeps/"
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "fontawesome/fontawesome",
+                "version": "6.4.2",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "fontawesome"
+                },
+                "dist": {
+                    "url": "https://use.fontawesome.com/releases/v6.4.2/fontawesome-free-6.4.2-web.zip",
+                    "type": "zip"
+                }
+            }
         },
         {
             "type": "package",
@@ -258,7 +274,9 @@
             },
             "drupal/fontawesome": {
                 "3071758 - Fix multiple icons issue":
-                "https://git.drupalcode.org/project/fontawesome/-/merge_requests/4.diff"
+                "https://git.drupalcode.org/project/fontawesome/-/merge_requests/4.diff",
+                "3274028 - CKEditor 5 compatibility":
+                "https://www.drupal.org/files/issues/2025-02-12/fontawesome-cke5-compatibility-3274028-58.patch"
             },
             "drupal/group": {
                 "Enter drupal/group patch #2817109 description here":
