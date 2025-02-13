@@ -104,15 +104,15 @@ abstract class EntityFormProxy extends WidgetBase {
     }
 
     if ($value && $type) {
-      // Check if media entity is already in form_state
+      // Check if media entity is already in form_state.
       if ($media = $form_state->get('media_entity')) {
-        // Use it;
+        // Use it.
         $this->selectEntities([$media], $form_state);
         $form_state->set('media_entity', $media);
         return $media;
       }
 
-      // Create the media entity
+      // Create the media entity.
       $media = $this->createMedia($value, $types[$type]);
       $media->save();
       \Drupal::logger('wxt_ext_media')->notice(
@@ -125,7 +125,7 @@ abstract class EntityFormProxy extends WidgetBase {
 
       $this->selectEntities([$media], $form_state);
 
-      // Store the media entity in form_state so it persists across AJAX calls
+      // Store the media entity in form_state so it persists across AJAX calls.
       $form_state->set('media_entity', $media);
 
       return $media;
