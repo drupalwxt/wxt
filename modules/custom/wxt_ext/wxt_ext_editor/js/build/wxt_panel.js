@@ -93,7 +93,7 @@ module.exports = CKEditor5.dll;
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be in strict mode.
+// This entry needs to be wrapped in an IIFE because it needs to be in strict mode.
 (() => {
 "use strict";
 
@@ -106,7 +106,7 @@ __webpack_require__.d(__webpack_exports__, {
 var delegated_corefrom_dll_reference_CKEditor5 = __webpack_require__("ckeditor5/src/core.js");
 // EXTERNAL MODULE: delegated ./widget.js from dll-reference CKEditor5.dll
 var delegated_widgetfrom_dll_reference_CKEditor5 = __webpack_require__("ckeditor5/src/widget.js");
-;// CONCATENATED MODULE: ./js/ckeditor5_plugins/wxt_panel/src/panelcssclasses.js
+;// ./js/ckeditor5_plugins/wxt_panel/src/panelcssclasses.js
 const PanelClasses = [
     'primary',
     'default',
@@ -116,7 +116,7 @@ const PanelClasses = [
     'danger',
     'warning'
 ];
-;// CONCATENATED MODULE: ./js/ckeditor5_plugins/wxt_panel/src/insertpanelcommand.js
+;// ./js/ckeditor5_plugins/wxt_panel/src/insertpanelcommand.js
 
 
 
@@ -236,7 +236,7 @@ function getPanelTemplate(writer, panelClass) {
 
     return panel;
 }
-;// CONCATENATED MODULE: ./js/ckeditor5_plugins/wxt_panel/src/panelediting.js
+;// ./js/ckeditor5_plugins/wxt_panel/src/panelediting.js
 
 
 
@@ -425,7 +425,7 @@ class PanelEditing extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
 var delegated_uifrom_dll_reference_CKEditor5 = __webpack_require__("ckeditor5/src/ui.js");
 // EXTERNAL MODULE: delegated ./utils.js from dll-reference CKEditor5.dll
 var delegated_utilsfrom_dll_reference_CKEditor5 = __webpack_require__("ckeditor5/src/utils.js");
-;// CONCATENATED MODULE: ./js/ckeditor5_plugins/wxt_panel/src/panelview.js
+;// ./js/ckeditor5_plugins/wxt_panel/src/panelview.js
 
 
 
@@ -517,9 +517,9 @@ class FormView extends delegated_uifrom_dll_reference_CKEditor5.View {
         return button;
     }
 }
-;// CONCATENATED MODULE: ./icons/panel.svg
+;// ./icons/panel.svg
 /* harmony default export */ const panel = ("<?xml version=\"1.0\" encoding=\"UTF-8\"?><svg id=\"Layer_2\" xmlns=\"http://www.w3.org/2000/svg\" width=\"50\" height=\"30\" viewBox=\"0 0 50 30\"><g id=\"Layer_1-2\"><path id=\"panel\" d=\"m0,0v30h50V0H0Zm2.98,2.93h19.52v4.56H2.98V2.93Zm44.04,24.29H2.98V10.49h44.04v16.73Z\" stroke-width=\"0\"/></g></svg>");
-;// CONCATENATED MODULE: ./js/ckeditor5_plugins/wxt_panel/src/panelui.js
+;// ./js/ckeditor5_plugins/wxt_panel/src/panelui.js
 
 
 
@@ -649,7 +649,7 @@ class PanelUI extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
         };
     }
 }
-;// CONCATENATED MODULE: ./js/ckeditor5_plugins/wxt_panel/src/panel.js
+;// ./js/ckeditor5_plugins/wxt_panel/src/panel.js
 
 
 
@@ -659,7 +659,7 @@ class Panel extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
         return [PanelEditing, PanelUI];
     }
 }
-;// CONCATENATED MODULE: ./js/ckeditor5_plugins/wxt_panel/src/index.js
+;// ./js/ckeditor5_plugins/wxt_panel/src/index.js
 
 
 /* harmony default export */ const src = ({

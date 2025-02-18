@@ -86,7 +86,7 @@ module.exports = CKEditor5.dll;
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be in strict mode.
+// This entry needs to be wrapped in an IIFE because it needs to be in strict mode.
 (() => {
 "use strict";
 
@@ -101,9 +101,9 @@ var delegated_corefrom_dll_reference_CKEditor5 = __webpack_require__("ckeditor5/
 var delegated_uifrom_dll_reference_CKEditor5 = __webpack_require__("ckeditor5/src/ui.js");
 // EXTERNAL MODULE: delegated ./widget.js from dll-reference CKEditor5.dll
 var delegated_widgetfrom_dll_reference_CKEditor5 = __webpack_require__("ckeditor5/src/widget.js");
-;// CONCATENATED MODULE: ./icons/cite.svg
+;// ./icons/cite.svg
 /* harmony default export */ const cite = ("<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M0 1v16.981h4v5.019l7-5.019h13v-16.981h-24zm12 8.028c0 2.337-1.529 3.91-3.684 4.335l-.406-.87c.996-.375 1.637-1.587 1.637-2.493h-1.547v-4h4v3.028zm5 0c0 2.337-1.529 3.91-3.684 4.335l-.406-.87c.996-.375 1.637-1.587 1.637-2.493h-1.547v-4h4v3.028z\"/></svg>");
-;// CONCATENATED MODULE: ./js/ckeditor5_plugins/cite/src/cite.js
+;// ./js/ckeditor5_plugins/cite/src/cite.js
 
 
 
@@ -216,22 +216,36 @@ class CitePlugin extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
 
         // Upcast <cite> elements from raw HTML into model data.
         conversion.for('upcast').elementToElement({
-            model: 'cite',
-            view: 'cite'
+            view: 'cite',
+            model: (viewElement, { writer }) => {
+                // If the cite is already inside another cite, unwrap it.
+                if (viewElement.parent && viewElement.parent.name === 'cite') {
+                    return null;
+                }
+                return writer.createElement('cite');
+            },
         });
 
         // Downcast model data into <cite> elements for editing and data output.
         conversion.for('downcast').elementToElement({
             model: 'cite',
             view: (modelElement, { writer }) => {
-                const citeElement = writer.createContainerElement('cite');
+                return writer.createContainerElement('cite');
+            }
+        });
+
+        // Downcast for editing mode (Ensures it's editable but doesn't add attributes)
+        conversion.for('editingDowncast').elementToElement({
+            model: 'cite',
+            view: (modelElement, { writer }) => {
+                const citeElement = writer.createEditableElement('cite');
                 return (0,delegated_widgetfrom_dll_reference_CKEditor5.toWidgetEditable)(citeElement, writer);
             }
         });
     }
 }
 
-;// CONCATENATED MODULE: ./js/ckeditor5_plugins/cite/src/index.js
+;// ./js/ckeditor5_plugins/cite/src/index.js
 
 
 /* harmony default export */ const src = ({

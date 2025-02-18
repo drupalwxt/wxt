@@ -26,7 +26,7 @@
 	display: block !important;
 }
 
-.ck-content cite.ck-editor__editable {
+.ck-content cite {
 	background: #efefef;
 	border: 1px dotted #333 !important;
 }

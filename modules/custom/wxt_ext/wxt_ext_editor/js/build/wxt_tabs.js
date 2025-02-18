@@ -86,7 +86,7 @@ module.exports = CKEditor5.dll;
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be in strict mode.
+// This entry needs to be wrapped in an IIFE because it needs to be in strict mode.
 (() => {
 "use strict";
 
@@ -99,7 +99,7 @@ __webpack_require__.d(__webpack_exports__, {
 var delegated_corefrom_dll_reference_CKEditor5 = __webpack_require__("ckeditor5/src/core.js");
 // EXTERNAL MODULE: delegated ./widget.js from dll-reference CKEditor5.dll
 var delegated_widgetfrom_dll_reference_CKEditor5 = __webpack_require__("ckeditor5/src/widget.js");
-;// CONCATENATED MODULE: ./js/ckeditor5_plugins/wxt_tabs/src/insertwxttabcommand.js
+;// ./js/ckeditor5_plugins/wxt_tabs/src/insertwxttabcommand.js
 
 
 class InsertWXTTabsCommand extends delegated_corefrom_dll_reference_CKEditor5.Command {
@@ -131,7 +131,7 @@ class InsertWXTTabsCommand extends delegated_corefrom_dll_reference_CKEditor5.Co
   }
 }
 
-;// CONCATENATED MODULE: ./js/ckeditor5_plugins/wxt_tabs/src/wxttabediting.js
+;// ./js/ckeditor5_plugins/wxt_tabs/src/wxttabediting.js
 
 
 
@@ -278,9 +278,9 @@ class WXTTabsEditing extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
 
 // EXTERNAL MODULE: delegated ./ui.js from dll-reference CKEditor5.dll
 var delegated_uifrom_dll_reference_CKEditor5 = __webpack_require__("ckeditor5/src/ui.js");
-;// CONCATENATED MODULE: ./icons/tab.svg
+;// ./icons/tab.svg
 /* harmony default export */ const tab = ("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<svg id=\"Layer_1\" data-name=\"Layer 1\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 20 20\">\n  <defs>\n    <style>\n      .cls-1 {\n        fill: #666;\n      }\n    </style>\n  </defs>\n  <path class=\"cls-1\" d=\"M17.5,3.2v2.47h-1v-2.17h-6.52v-1h6.73c.44,0,.79.31.79.7Z\"/>\n  <path d=\"M19.21,6.17v11.81c0,.28-.22.5-.5.5s-.5-.22-.5-.5V6.67h-8.73c-.27,0-.5-.23-.5-.5v-3.67H1.95v3.67c0,.25-.2.47-.45.49v11.32c0,.28-.22.5-.5.5s-.5-.22-.5-.5V6.17c0-.26.2-.47.45-.5v-3.37c0-.44.35-.8.8-.8h7.43c.44,0,.8.36.8.8v3.37h8.73c.28,0,.5.22.5.5Z\"/>\n  <path d=\"M15.5,15.49H4.51c-.28,0-.5-.22-.5-.5s.22-.5.5-.5h10.99c.28,0,.5.22.5.5s-.22.5-.5.5Z\"/>\n  <path d=\"M15.5,11.49H4.51c-.28,0-.5-.22-.5-.5s.22-.5.5-.5h10.99c.28,0,.5.22.5.5s-.22.5-.5.5Z\"/>\n</svg>");
-;// CONCATENATED MODULE: ./js/ckeditor5_plugins/wxt_tabs/src/wxttabui.js
+;// ./js/ckeditor5_plugins/wxt_tabs/src/wxttabui.js
 
 
 
@@ -309,7 +309,7 @@ class WXTTabsUI extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
   }
 }
 
-;// CONCATENATED MODULE: ./js/ckeditor5_plugins/wxt_tabs/src/tabs.js
+;// ./js/ckeditor5_plugins/wxt_tabs/src/tabs.js
 
 
 
@@ -320,7 +320,7 @@ class WXTTabs extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
     }
 }
 
-;// CONCATENATED MODULE: ./js/ckeditor5_plugins/wxt_tabs/src/index.js
+;// ./js/ckeditor5_plugins/wxt_tabs/src/index.js
 
 
 /* harmony default export */ const src = ({

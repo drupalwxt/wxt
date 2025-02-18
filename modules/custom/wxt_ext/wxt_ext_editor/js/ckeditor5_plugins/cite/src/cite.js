@@ -110,15 +110,29 @@ export default class CitePlugin extends Plugin {
 
         // Upcast <cite> elements from raw HTML into model data.
         conversion.for('upcast').elementToElement({
-            model: 'cite',
-            view: 'cite'
+            view: 'cite',
+            model: (viewElement, { writer }) => {
+                // If the cite is already inside another cite, unwrap it.
+                if (viewElement.parent && viewElement.parent.name === 'cite') {
+                    return null;
+                }
+                return writer.createElement('cite');
+            },
         });
 
         // Downcast model data into <cite> elements for editing and data output.
         conversion.for('downcast').elementToElement({
             model: 'cite',
             view: (modelElement, { writer }) => {
-                const citeElement = writer.createContainerElement('cite');
+                return writer.createContainerElement('cite');
+            }
+        });
+
+        // Downcast for editing mode (Ensures it's editable but doesn't add attributes)
+        conversion.for('editingDowncast').elementToElement({
+            model: 'cite',
+            view: (modelElement, { writer }) => {
+                const citeElement = writer.createEditableElement('cite');
                 return toWidgetEditable(citeElement, writer);
             }
         });

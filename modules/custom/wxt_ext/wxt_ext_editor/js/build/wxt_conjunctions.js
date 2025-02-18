@@ -93,7 +93,7 @@ module.exports = CKEditor5.dll;
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be in strict mode.
+// This entry needs to be wrapped in an IIFE because it needs to be in strict mode.
 (() => {
 "use strict";
 
@@ -106,13 +106,13 @@ __webpack_require__.d(__webpack_exports__, {
 var delegated_corefrom_dll_reference_CKEditor5 = __webpack_require__("ckeditor5/src/core.js");
 // EXTERNAL MODULE: delegated ./widget.js from dll-reference CKEditor5.dll
 var delegated_widgetfrom_dll_reference_CKEditor5 = __webpack_require__("ckeditor5/src/widget.js");
-;// CONCATENATED MODULE: ./js/ckeditor5_plugins/wxt_conjunctions/src/conjunctioncssclasses.js
+;// ./js/ckeditor5_plugins/wxt_conjunctions/src/conjunctioncssclasses.js
 const ConjunctionClasses = [
     'and',
     'or'
 ];
 
-;// CONCATENATED MODULE: ./js/ckeditor5_plugins/wxt_conjunctions/src/insertconjunctioncommand.js
+;// ./js/ckeditor5_plugins/wxt_conjunctions/src/insertconjunctioncommand.js
 
 
 class InsertConjunctionCommand extends delegated_corefrom_dll_reference_CKEditor5.Command {
@@ -211,7 +211,7 @@ class InsertConjunctionCommand extends delegated_corefrom_dll_reference_CKEditor
     }
 }
 
-;// CONCATENATED MODULE: ./js/ckeditor5_plugins/wxt_conjunctions/src/conjunctionediting.js
+;// ./js/ckeditor5_plugins/wxt_conjunctions/src/conjunctionediting.js
 
 
 
@@ -434,7 +434,7 @@ class ConjunctionEditing extends delegated_corefrom_dll_reference_CKEditor5.Plug
 
 // EXTERNAL MODULE: delegated ./ui.js from dll-reference CKEditor5.dll
 var delegated_uifrom_dll_reference_CKEditor5 = __webpack_require__("ckeditor5/src/ui.js");
-;// CONCATENATED MODULE: ./js/ckeditor5_plugins/wxt_conjunctions/src/responsiveclasses.js
+;// ./js/ckeditor5_plugins/wxt_conjunctions/src/responsiveclasses.js
 const ResponsiveClasses = [
     'cnjnctn-xs',
     'cnjnctn-sm',
@@ -444,7 +444,7 @@ const ResponsiveClasses = [
 
 // EXTERNAL MODULE: delegated ./utils.js from dll-reference CKEditor5.dll
 var delegated_utilsfrom_dll_reference_CKEditor5 = __webpack_require__("ckeditor5/src/utils.js");
-;// CONCATENATED MODULE: ./js/ckeditor5_plugins/wxt_conjunctions/src/conjunctionview.js
+;// ./js/ckeditor5_plugins/wxt_conjunctions/src/conjunctionview.js
 
 
 
@@ -635,9 +635,9 @@ class FormView extends delegated_uifrom_dll_reference_CKEditor5.View {
     }
 }
 
-;// CONCATENATED MODULE: ./icons/conjunction.svg
+;// ./icons/conjunction.svg
 /* harmony default export */ const conjunction = ("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<svg id=\"Layer_1\" data-name=\"Layer 1\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 20 20\">\n  <g>\n    <path d=\"M18,11c-.55,0-1,.51-1,1.14v5.71c0,.63.45,1.14,1,1.14s1-.51,1-1.14v-5.71c0-.63-.45-1.14-1-1.14Z\"/>\n    <path d=\"M14,11c-.55,0-1,.51-1,1.14v5.71c0,.63.45,1.14,1,1.14s1-.51,1-1.14v-5.71c0-.63-.45-1.14-1-1.14Z\"/>\n  </g>\n  <path d=\"M3.64,17.36c-.26,0-.51-.1-.71-.29-.39-.39-.39-1.02,0-1.41L15.66,2.93c.39-.39,1.02-.39,1.41,0s.39,1.02,0,1.41l-12.73,12.73c-.2.2-.45.29-.71.29Z\"/>\n  <path d=\"M8,4h-2v-2c0-.55-.45-1-1-1s-1,.45-1,1v2h-2c-.55,0-1,.45-1,1s.45,1,1,1h2v2c0,.55.45,1,1,1s1-.45,1-1v-2h2c.55,0,1-.45,1-1s-.45-1-1-1Z\"/>\n</svg>");
-;// CONCATENATED MODULE: ./js/ckeditor5_plugins/wxt_conjunctions/src/conjunctionui.js
+;// ./js/ckeditor5_plugins/wxt_conjunctions/src/conjunctionui.js
 
 
 
@@ -780,7 +780,7 @@ class ConjunctionUI extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
 
 }
 
-;// CONCATENATED MODULE: ./js/ckeditor5_plugins/wxt_conjunctions/src/conjunctions.js
+;// ./js/ckeditor5_plugins/wxt_conjunctions/src/conjunctions.js
 
 
 
@@ -790,7 +790,7 @@ class Conjunction extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
         return [ConjunctionEditing, ConjunctionUI];
     }
 }
-;// CONCATENATED MODULE: ./js/ckeditor5_plugins/wxt_conjunctions/src/index.js
+;// ./js/ckeditor5_plugins/wxt_conjunctions/src/index.js
 
 
 /* harmony default export */ const src = ({
