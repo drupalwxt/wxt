@@ -50,3 +50,19 @@ wxt_ext_editor_tabs:
         label: WET Tabs
     elements:
       - <div class>
+
+wxt_ext_editor_cite:
+  ckeditor5:
+    plugins:
+      - cite.CitePlugin
+  drupal:
+    label: Cite
+    library: wxt_ext_editor/cite
+    admin_library: wxt_ext_editor/admin.wxt_ext_editor
+    toolbar_items:
+      cite:
+        label: Cite
+    elements:
+      - <cite>
+
+

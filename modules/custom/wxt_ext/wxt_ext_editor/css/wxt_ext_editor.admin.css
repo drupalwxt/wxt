@@ -11,11 +11,20 @@
 	background-image: url(../icons/tab.svg);
 }
 
+.ckeditor5-toolbar-button-cite {
+	background-image: url(../icons/cite.svg);
+}
+
 /* Fix styles for details and tabs in CKEditor5 */
 .ck-content .wb-tabs details,
 .ck-content .wb-tabs details summary,
 .ck-content .wb-tabs > .tabpanels > details[open] > summary {
 	display: block !important;
+}
+
+.ck-content cite.ck-editor__editable {
+	background: #efefef;
+	border: 1px dotted #333 !important;
 }
 
 .ck-content details {
