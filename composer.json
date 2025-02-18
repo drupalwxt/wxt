@@ -312,10 +312,6 @@
                 "Enter drupal/webform patch #3205860 description here":
                 "https://www.drupal.org/files/issues/2021-03-26/webform_clientside_validation-3205860-2.patch"
             },
-            "drupal/bootstrap_layouts": {
-                "3481450 - Fix Drupal 11 support by removing any use of ContainerAwareTrait and ContainerAwareInterface":
-                "https://www.drupal.org/files/issues/2025-01-20/3481450-14.patch"
-            },
             "drupal/ckeditor_details": {
                 "3244311 - Allow <details> element to be placed without <div>":
                 "https://www.drupal.org/files/issues/2024-11-15/3244311-9.patch"
