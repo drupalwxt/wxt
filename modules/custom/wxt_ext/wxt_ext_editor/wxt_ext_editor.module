@@ -24,7 +24,7 @@ function wxt_ext_editor_editor_js_settings_alter(array &$settings) {
       $plugins = $format['editorSettings']['plugins'];
 
       $itemsToMove = ['list.List', 'list.ListProperties'];
-      _moveItemsToEnd($plugins, $itemsToMove);
+      _wxt_ext_editor_move_items_to_end($plugins, $itemsToMove);
 
       $format['editorSettings']['plugins'] = $plugins;
     }
@@ -50,14 +50,17 @@ function wxt_ext_editor_form_alter(&$form, FormStateInterface $form_state, $form
   }
 }
 
-function _moveItemsToEnd(array &$array, array $itemsToMove): void {
+/**
+ * Custom function to rearrange order of plugins in CKE5.
+ */
+function _wxt_ext_editor_move_items_to_end(array &$array, array $itemsToMove): void {
   $movedItems = [];
 
   // Loop through the items to move.
   foreach ($itemsToMove as $item) {
     // Search for the item in the array.
-    $key = array_search($item, $array, true);
-    if ($key !== false) {
+    $key = array_search($item, $array, TRUE);
+    if ($key !== FALSE) {
       // Remove the item from the array and store it for later.
       $movedItems[] = $array[$key];
       unset($array[$key]);
