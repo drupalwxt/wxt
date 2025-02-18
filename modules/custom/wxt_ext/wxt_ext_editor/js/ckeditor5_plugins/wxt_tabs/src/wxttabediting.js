@@ -106,7 +106,7 @@ export default class WXTTabsEditing extends Plugin {
 
         // Create a label element to add to the widget.
         const label = writer.createContainerElement('div', {
-            class: 'wb-tabs-label',
+            class: 'wb-conjunction-label',
             'data-cke-ignore-selection': 'true',
         });
 

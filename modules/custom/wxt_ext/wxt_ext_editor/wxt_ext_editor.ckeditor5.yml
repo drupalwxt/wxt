@@ -51,6 +51,22 @@ wxt_ext_editor_tabs:
     elements:
       - <div class>
 
+wxt_ext_editor_conjunctions:
+  ckeditor5:
+    plugins:
+      - wxt_conjunctions.Conjunction
+  drupal:
+    label: And/Or
+    library: wxt_ext_editor/conjunctions
+    admin_library: wxt_ext_editor/admin.wxt_ext_editor
+    toolbar_items:
+      conjunction:
+        label: And/Or
+    elements:
+      - <div class>
+      - <ul class>
+      - <li class>
+
 wxt_ext_editor_cite:
   ckeditor5:
     plugins:

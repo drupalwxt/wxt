@@ -18,6 +18,11 @@ cite:
     js/build/cite.js: { preprocess: true, minified: false }
   dependencies:
     - core/ckeditor5
+conjunctions:
+  js:
+    js/build/wxt_conjunctions.js: { preprocess: true, minified: false }
+  dependencies:
+    - core/ckeditor5
 admin.wxt_ext_editor:
   css:
     theme:

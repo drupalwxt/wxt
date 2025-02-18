@@ -17,6 +17,17 @@ function wxt_ext_editor_editor_js_settings_alter(array &$settings) {
       $format['editorSettings']['drupalExternalPlugins']['wxt_ext_editor'] = base_path() . \Drupal::service('extension.list.module')->getPath('wxt_ext_editor') . '/js/wxt_ext_editor.js';
       $format['editorSettings']['extraPlugins'] .= ',wxt_ext_editor';
     }
+
+    // Check if the editor is CKEditor 5 and matches the target text format.
+    if (isset($format['editor']) && $format['editor'] === 'ckeditor5') {
+      // Ensure the 'list' plugin is loaded after 'conjunctionEditing' plugin.
+      $plugins = $format['editorSettings']['plugins'];
+
+      $itemsToMove = ['list.List', 'list.ListProperties'];
+      _moveItemsToEnd($plugins, $itemsToMove);
+
+      $format['editorSettings']['plugins'] = $plugins;
+    }
   }
 }
 
@@ -37,4 +48,22 @@ function wxt_ext_editor_form_alter(&$form, FormStateInterface $form_state, $form
       }
     }
   }
+}
+
+function _moveItemsToEnd(array &$array, array $itemsToMove): void {
+  $movedItems = [];
+
+  // Loop through the items to move.
+  foreach ($itemsToMove as $item) {
+    // Search for the item in the array.
+    $key = array_search($item, $array, true);
+    if ($key !== false) {
+      // Remove the item from the array and store it for later.
+      $movedItems[] = $array[$key];
+      unset($array[$key]);
+    }
+  }
+
+  // Append the removed items to the end of the array.
+  $array = array_merge($array, $movedItems);
 }

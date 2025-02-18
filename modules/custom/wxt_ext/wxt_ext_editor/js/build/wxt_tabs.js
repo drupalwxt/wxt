@@ -240,7 +240,7 @@ class WXTTabsEditing extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
 
         // Create a label element to add to the widget.
         const label = writer.createContainerElement('div', {
-            class: 'wb-tabs-label',
+            class: 'wb-conjunction-label',
             'data-cke-ignore-selection': 'true',
         });
 

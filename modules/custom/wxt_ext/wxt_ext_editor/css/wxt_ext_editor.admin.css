@@ -15,6 +15,10 @@
 	background-image: url(../icons/cite.svg);
 }
 
+.ckeditor5-toolbar-button-conjunction {
+	background-image: url(../icons/conjunction.svg);
+}
+
 /* Fix styles for details and tabs in CKEditor5 */
 .ck-content .wb-tabs details,
 .ck-content .wb-tabs details summary,
@@ -52,4 +56,32 @@
 
 .ck-content .wb-tabs details .details-wrapper {
 	margin: 6px -12px -6px -12px;
+}
+
+/* Conjunctions */
+.ck-content .cnjnctn-type-or,
+.ck-content .cnjnctn-type-and {
+	padding: 15px;
+ 	background: #efefef;
+ 	display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.ck-content ul.cnjnctn-type-or,
+.ck-content ul.cnjnctn-type-and {
+	margin-left: 0px;
+	list-style: none;
+}
+
+.ck-content .wb-conjunction-label {
+    order: -1;
+    margin-bottom: 5px;
+  	font-style: italic;
+}
+
+.ck-content .cnjnctn-col {
+	background: #ffffff;
+	padding: 10px;
+	margin-bottom: 15px;
 }
