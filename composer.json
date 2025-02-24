@@ -273,8 +273,6 @@
                 "https://www.drupal.org/files/issues/2025-02-13/entity-browser-2843247-16.patch"
             },
             "drupal/fontawesome": {
-                "3071758 - Fix multiple icons issue":
-                "https://git.drupalcode.org/project/fontawesome/-/merge_requests/4.diff",
                 "3274028 - CKEditor 5 compatibility":
                 "https://www.drupal.org/files/issues/2025-02-12/fontawesome-cke5-compatibility-3274028-58.patch"
             },
