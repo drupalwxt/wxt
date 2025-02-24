@@ -71,6 +71,8 @@ function wxt_core_install() {
     $view_mode->setThirdPartySetting('wxt_core', 'internal', TRUE);
     $storage->save($view_mode);
   }
+  // Ensure that the countries get set up as expected.
+  wxt_core_update_8502();
 }
 
 /**
