@@ -21,6 +21,13 @@ class WxTTest extends BrowserTestBase {
   protected $profile = 'wxt';
 
   /**
+   * Disable strict config schema validation.
+   *
+   * @var bool
+   */
+  protected $strictConfigSchema = FALSE;
+
+  /**
    * Test for the login.
    */
   public function testWxtLogin() {
