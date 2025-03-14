@@ -1,5 +1,47 @@
 # CHANGELOG
 
+## v5.4.1
+
+- Build Infrastructure
+  - N/A
+- Security Updates for Drupal Core
+  - [SA-core-2025-001](https://www.drupal.org/sa-core-2025-001)
+  - [SA-core-2025-002](https://www.drupal.org/sa-core-2025-002)
+  - [SA-core-2025-003](https://www.drupal.org/sa-core-2025-003)
+- Updates for Drupal Core
+  - Unpin drupal/core-recommended from 10.3.6 to ^10.3
+- Updates for Drupal Contrib + WxT
+  - Update block class to 4.x line
+  - Remove dependency on block_content_permissions and ckeditor4_codemirror
+  - Fix entity_browser and wxt_ext_media integration [3466676](https://www.drupal.org/node/3466676)
+  - Remove old page_manager patch used for conflict module issue [3508459](https://www.drupal.org/node/3508459)
+  - Group 2.2.2 is unsupported [3486431](https://www.drupal.org/node/3486431)
+  - Countries test failure in a vanilla install [3508590](https://www.drupal.org/node/3508590)
+  - Ensure file extensions passed to validate() method is a string instead of an array in wxt_ext_media
+- Updated for WxT Bootstrap
+  - Update wxt_bootstrap to 8.x-8.6
+- Updates for WxT Library
+  - N/A
+
+Upgrade path:
+
+> **Important**: Please backup your database before running the upgrade process for this release.
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
+- Run WxT configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:wxt`
+
+**Note(s)**:
+
+N/A
+
 ## v5.4.0
 
 - Build Infrastructure
