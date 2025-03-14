@@ -66,10 +66,6 @@ class Upload extends FileElement {
 
       if ($errors && count($errors)) {
         foreach ($errors as $error) {
-          \Drupal::logger('wxt_ext_media')->error(
-            'File validation failed: @error for File ID: @fid',
-            ['@error' => $error, '@fid' => $file->id()]
-          );
           $form_state->setError($element, $error);
         }
         static::delete($element);
@@ -80,29 +76,11 @@ class Upload extends FileElement {
         $file->setPermanent();
         $file->save();
       }
-
-      \Drupal::logger('wxt_ext_media')->notice(
-        'File passed validation. File ID: @fid, URI: @uri',
-          ['@fid' => $file->id(), '@uri' => $file->getFileUri()]
-      );
     }
     elseif ($element['#required']) {
-      \Drupal::logger('wxt_ext_media')->error(
-        'Element required. FIELD NAME: @field_name, FORM_ID: @form_id.',
-        [
-          '@field_name' => $element['#name'] ?? 'unknown',
-          '@form_id' => $form_state->getFormObject()->getFormId() ?? 'unknown',
-        ]
-      );
       $form_state->setError($element, t('You must upload a file.'));
     }
     else {
-      \Drupal::logger('wxt_ext_media')->error(
-        'Element not found. FORM_ID: @form_id.',
-        [
-          '@form_id' => $form_state->getFormObject()->getFormId() ?? 'unknown',
-        ]
-      );
       $form_state->setError($element, t('You must upload a file.'));
     }
   }

@@ -189,27 +189,6 @@ class MediaHelper {
     /** @var \Drupal\file\FileInterface $file */
     $file = File::load($file->id());
 
-    if ($file instanceof File) {
-      \Drupal::logger('wxt_ext_media')->notice(
-        'useFile debug: ID: @fid, URI: @uri, DESTINATION: @destination Status: @status',
-        [
-          '@fid' => $file->id(),
-          '@uri' => $file->getFileUri(),
-          '@destination' => $destination,
-          '@status' => $file->isTemporary() ? 'Temporary' : 'Permanent',
-        ]
-      );
-    }
-    else {
-      \Drupal::logger('wxt_ext_media')->notice(
-        'useFile debug: ID: @fid, DESTINATION: @destination, Status: @status',
-        [
-          '@fid' => $file->id(),
-          '@destination' => $destination,
-          '@status' => $file->isTemporary() ? 'Temporary' : 'Permanent',
-        ]
-      );
-    }
     if ($file instanceof File && $destination == $file->getFileUri()) {
       return $file;
     }

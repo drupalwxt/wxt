@@ -115,13 +115,6 @@ abstract class EntityFormProxy extends WidgetBase {
       // Create the media entity.
       $media = $this->createMedia($value, $types[$type]);
       $media->save();
-      \Drupal::logger('wxt_ext_media')->notice(
-        '✅ Media entity created: ID: @id, UUID: @uuid',
-        [
-          '@id' => $media->id(),
-          '@uuid' => $media->uuid(),
-        ]
-      );
 
       $this->selectEntities([$media], $form_state);
 
@@ -130,10 +123,6 @@ abstract class EntityFormProxy extends WidgetBase {
 
       return $media;
     }
-
-    \Drupal::logger('wxt_ext_media')->error(
-      '🚨 getCurrentEntity() failed: No valid media entity found.'
-    );
 
     return NULL;
   }
@@ -201,14 +190,6 @@ abstract class EntityFormProxy extends WidgetBase {
   public function submit(array &$element, array &$form, FormStateInterface $form_state) {
     if (isset($form['widget']['entity']['#entity'])) {
       $entity = $form['widget']['entity']['#entity'];
-
-      \Drupal::logger('wxt_ext_media')->notice(
-        'DEBUG: submit() called. Entity exists: ID: @id, UUID: @uuid',
-        [
-          '@id' => $entity->id() ?? 'NULL',
-          '@uuid' => $entity->uuid() ?? 'NULL',
-        ]
-      );
 
       $this->selectEntities([$entity], $form_state);
     }
