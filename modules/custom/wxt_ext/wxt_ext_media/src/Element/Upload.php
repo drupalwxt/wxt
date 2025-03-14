@@ -58,6 +58,10 @@ class Upload extends FileElement {
       }
 
       $file_validator = \Drupal::service('file.validator');
+      // Ensure extensions are space-separated strings.
+      if (isset($element['#upload_validators']['FileExtension']['extensions'])) {
+        $element['#upload_validators']['FileExtension']['extensions'] = implode(' ', (array) $element['#upload_validators']['FileExtension']['extensions']);
+      }
       $errors = $file_validator->validate($file, $element['#upload_validators']);
 
       if ($errors && count($errors)) {
