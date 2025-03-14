@@ -115,14 +115,6 @@ class FileUpload extends EntityFormProxy {
    * {@inheritdoc}
    */
   public function validate(array &$form, FormStateInterface $form_state) {
-    if (empty($form_state->getValue('input'))) {
-      \Drupal::logger('wxt_ext_media')->warning(
-        'Missing required input field in form: @form_id',
-        [
-          '@form_id' => $form_id,
-        ]
-      );
-    }
     $fid = $this->getCurrentValue($form_state);
     if ($fid) {
       parent::validate($form, $form_state);
@@ -131,12 +123,6 @@ class FileUpload extends EntityFormProxy {
       if ($media) {
         $has_error = FALSE;
         foreach ($this->validateFile($media) as $error) {
-          \Drupal::logger('wxt_ext_media')->error(
-            'Form state has ERROR: @error.',
-            [
-              '@error' => $error,
-            ]
-          );
           $has_error = TRUE;
           $form_state->setError($form['widget']['input'], $error);
         }
@@ -211,7 +197,6 @@ class FileUpload extends EntityFormProxy {
    * {@inheritdoc}
    */
   public function submit(array &$element, array &$form, FormStateInterface $form_state) {
-    \Drupal::logger('wxt_ext_media')->notice('FileUpload.php submit is called.');
     /** @var \Drupal\media\MediaInterface $entity */
     $entity = $element['entity']['#entity'];
 
