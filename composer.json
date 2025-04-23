@@ -47,7 +47,7 @@
         "drupal/image_widget_crop": "2.x-dev@dev",
         "drupal/inline_entity_form": "^3.0@RC",
         "drupal/layout_builder_restrictions": "^3.0",
-        "drupaloverride/layout_builder_st": "dev-master",
+        "drupal/layout_builder_st": "2.0.x-dev@dev",
         "drupal/layout_builder_styles": "^2.1",
         "drupal/layout_library": "^1.0@beta",
         "drupal/linkit": "^7.0",
@@ -69,7 +69,7 @@
         "drupal/search_api": "^1.37",
         "drupal/simple_sitemap": "^4.2",
         "drupal/slick_entityreference": "^3.0",
-        "drupaloverride/toc_api": "dev-master",
+        "drupal/toc_api": "^2.0",
         "drupal/toc_filter": "^2.3",
         "drupal/token": "^1.15",
         "drupal/token_filter": "^2.2",
@@ -96,9 +96,6 @@
         "oomphinc/composer-installers-extender": "^1.1 || ^2",
         "squizlabs/php_codesniffer": "3.*",
         "phpspec/prophecy-phpunit": "^2"
-    },
-    "replace": {
-        "drupal/toc_api": "*"
     },
     "config": {
         "discard-changes": true,
@@ -145,32 +142,6 @@
                 "dist": {
                     "url": "https://use.fontawesome.com/releases/v6.4.2/fontawesome-free-6.4.2-web.zip",
                     "type": "zip"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "drupaloverride/layout_builder_st",
-                "version": "dev-master",
-                "type": "drupal-module",
-                "source": {
-                    "url": "https://git.drupalcode.org/issue/layout_builder_st-3431600.git",
-                    "type": "git",
-                    "reference": "3431600-automated-drupal-11"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "drupaloverride/toc_api",
-                "version": "dev-master",
-                "type": "drupal-module",
-                "source": {
-                    "url": "https://git.drupalcode.org/issue/toc_api-3455312.git",
-                    "type": "git",
-                    "reference": "3455312-drupal11-fixes"
                 }
             }
         }
