@@ -47,7 +47,7 @@
         "drupal/image_widget_crop": "2.x-dev@dev",
         "drupal/inline_entity_form": "^3.0@RC",
         "drupal/layout_builder_restrictions": "^3.0",
-        "drupal/layout_builder_st": "dev-2.0.x#a8f47feb",
+        "drupal/layout_builder_st": "dev-2.0.x#68f690c8",
         "drupal/layout_builder_styles": "^2.1",
         "drupal/layout_library": "^1.0@beta",
         "drupal/linkit": "^7.0",
@@ -250,10 +250,6 @@
             "drupal/group": {
                 "Enter drupal/group patch #2817109 description here":
                 "https://www.drupal.org/files/issues/2022-11-02/2817109-2.0.x-how-to-redirect-30.patch"
-            },
-            "drupal/layout_builder_st": {
-                "3431600 - D11 compatibility fixes":
-                "https://www.drupal.org/files/issues/2025-04-23/3497945-and-3431600-80.patch"
             },
             "drupal/page_manager": {
                 "Enter drupal/page_manager patch #2626090 description here":
