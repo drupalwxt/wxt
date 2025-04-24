@@ -274,8 +274,8 @@
                 "https://www.drupal.org/files/issues/2021-11-19/redis-support_tls_on_predis-3004561-37.patch"
             },
             "drupal/toc_filter": {
-                "3455312 and 3540464 - D11 fix":
-                "https://www.drupal.org/files/issues/2025-04-23/3455312-and-3520464-45.patch"
+                "3518549 and 3520464 - toc_filter D11 bug fix":
+                "https://www.drupal.org/files/issues/2025-04-24/toc-filter-3518549-13.patch"
             },
             "drupal/webform": {
                 "Enter drupal/webform patch #3205860 description here":
