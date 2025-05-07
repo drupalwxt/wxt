@@ -11,108 +11,45 @@
 return /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "ckeditor5/src/core.js":
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-module.exports = (__webpack_require__("dll-reference CKEditor5.dll"))("./src/core.js");
-
-/***/ }),
-
-/***/ "ckeditor5/src/ui.js":
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-module.exports = (__webpack_require__("dll-reference CKEditor5.dll"))("./src/ui.js");
-
-/***/ }),
-
-/***/ "ckeditor5/src/widget.js":
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-module.exports = (__webpack_require__("dll-reference CKEditor5.dll"))("./src/widget.js");
-
-/***/ }),
-
-/***/ "dll-reference CKEditor5.dll":
-/***/ ((module) => {
+/***/ "./icons/cite.svg":
+/*!************************!*\
+  !*** ./icons/cite.svg ***!
+  \************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-module.exports = CKEditor5.dll;
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M0 1v16.981h4v5.019l7-5.019h13v-16.981h-24zm12 8.028c0 2.337-1.529 3.91-3.684 4.335l-.406-.87c.996-.375 1.637-1.587 1.637-2.493h-1.547v-4h4v3.028zm5 0c0 2.337-1.529 3.91-3.684 4.335l-.406-.87c.996-.375 1.637-1.587 1.637-2.493h-1.547v-4h4v3.028z\"/></svg>");
 
-/***/ })
+/***/ }),
 
-/******/ 	});
-/************************************************************************/
-/******/ 	// The module cache
-/******/ 	var __webpack_module_cache__ = {};
-/******/ 	
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-/******/ 		// Check if module is in cache
-/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
-/******/ 		if (cachedModule !== undefined) {
-/******/ 			return cachedModule.exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = __webpack_module_cache__[moduleId] = {
-/******/ 			// no module.id needed
-/******/ 			// no module.loaded needed
-/******/ 			exports: {}
-/******/ 		};
-/******/ 	
-/******/ 		// Execute the module function
-/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
-/******/ 	
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-/******/ 	
-/************************************************************************/
-/******/ 	/* webpack/runtime/define property getters */
-/******/ 	(() => {
-/******/ 		// define getter functions for harmony exports
-/******/ 		__webpack_require__.d = (exports, definition) => {
-/******/ 			for(var key in definition) {
-/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
-/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
-/******/ 				}
-/******/ 			}
-/******/ 		};
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
-/******/ 	(() => {
-/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
-/******/ 	})();
-/******/ 	
-/************************************************************************/
-var __webpack_exports__ = {};
-// This entry needs to be wrapped in an IIFE because it needs to be in strict mode.
-(() => {
+/***/ "./js/ckeditor5_plugins/cite/src/cite.js":
+/*!***********************************************!*\
+  !*** ./js/ckeditor5_plugins/cite/src/cite.js ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
 "use strict";
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  "default": () => (/* binding */ src)
-});
-
-// EXTERNAL MODULE: delegated ./core.js from dll-reference CKEditor5.dll
-var delegated_corefrom_dll_reference_CKEditor5 = __webpack_require__("ckeditor5/src/core.js");
-// EXTERNAL MODULE: delegated ./ui.js from dll-reference CKEditor5.dll
-var delegated_uifrom_dll_reference_CKEditor5 = __webpack_require__("ckeditor5/src/ui.js");
-// EXTERNAL MODULE: delegated ./widget.js from dll-reference CKEditor5.dll
-var delegated_widgetfrom_dll_reference_CKEditor5 = __webpack_require__("ckeditor5/src/widget.js");
-;// ./icons/cite.svg
-/* harmony default export */ const cite = ("<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M0 1v16.981h4v5.019l7-5.019h13v-16.981h-24zm12 8.028c0 2.337-1.529 3.91-3.684 4.335l-.406-.87c.996-.375 1.637-1.587 1.637-2.493h-1.547v-4h4v3.028zm5 0c0 2.337-1.529 3.91-3.684 4.335l-.406-.87c.996-.375 1.637-1.587 1.637-2.493h-1.547v-4h4v3.028z\"/></svg>");
-;// ./js/ckeditor5_plugins/cite/src/cite.js
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ CitePlugin)
+/* harmony export */ });
+/* harmony import */ var ckeditor5_src_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ckeditor5/src/core */ "ckeditor5/src/core.js");
+/* harmony import */ var ckeditor5_src_ui__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ckeditor5/src/ui */ "ckeditor5/src/ui.js");
+/* harmony import */ var ckeditor5_src_widget__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ckeditor5/src/widget */ "ckeditor5/src/widget.js");
+/* harmony import */ var _icons_cite_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../icons/cite.svg */ "./icons/cite.svg");
 
 
 
 
 
 
-class CitePlugin extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
+class CitePlugin extends ckeditor5_src_core__WEBPACK_IMPORTED_MODULE_0__.Plugin {
     static get requires() {
-        return [ delegated_widgetfrom_dll_reference_CKEditor5.Widget ];
+        return [ ckeditor5_src_widget__WEBPACK_IMPORTED_MODULE_2__.Widget ];
     }
 
     init() {
@@ -123,10 +60,10 @@ class CitePlugin extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
 
         // Add the Cite button to the toolbar.
         editor.ui.componentFactory.add('cite', locale => {
-            const button = new delegated_uifrom_dll_reference_CKEditor5.ButtonView(locale);
+            const button = new ckeditor5_src_ui__WEBPACK_IMPORTED_MODULE_1__.ButtonView(locale);
             button.set({
                 label: 'Cite',
-                icon: cite,
+                icon: _icons_cite_svg__WEBPACK_IMPORTED_MODULE_3__["default"],
                 tooltip: true,
                 isEnabled: false
             });
@@ -239,17 +176,128 @@ class CitePlugin extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
             model: 'cite',
             view: (modelElement, { writer }) => {
                 const citeElement = writer.createEditableElement('cite');
-                return (0,delegated_widgetfrom_dll_reference_CKEditor5.toWidgetEditable)(citeElement, writer);
+                return (0,ckeditor5_src_widget__WEBPACK_IMPORTED_MODULE_2__.toWidgetEditable)(citeElement, writer);
             }
         });
     }
 }
 
-;// ./js/ckeditor5_plugins/cite/src/index.js
+
+/***/ }),
+
+/***/ "ckeditor5/src/core.js":
+/*!************************************************************!*\
+  !*** delegated ./core.js from dll-reference CKEditor5.dll ***!
+  \************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = (__webpack_require__(/*! dll-reference CKEditor5.dll */ "dll-reference CKEditor5.dll"))("./src/core.js");
+
+/***/ }),
+
+/***/ "ckeditor5/src/ui.js":
+/*!**********************************************************!*\
+  !*** delegated ./ui.js from dll-reference CKEditor5.dll ***!
+  \**********************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = (__webpack_require__(/*! dll-reference CKEditor5.dll */ "dll-reference CKEditor5.dll"))("./src/ui.js");
+
+/***/ }),
+
+/***/ "ckeditor5/src/widget.js":
+/*!**************************************************************!*\
+  !*** delegated ./widget.js from dll-reference CKEditor5.dll ***!
+  \**************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = (__webpack_require__(/*! dll-reference CKEditor5.dll */ "dll-reference CKEditor5.dll"))("./src/widget.js");
+
+/***/ }),
+
+/***/ "dll-reference CKEditor5.dll":
+/*!********************************!*\
+  !*** external "CKEditor5.dll" ***!
+  \********************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = CKEditor5.dll;
+
+/***/ })
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/************************************************************************/
+var __webpack_exports__ = {};
+// This entry needs to be wrapped in an IIFE because it needs to be in strict mode.
+(() => {
+"use strict";
+/*!************************************************!*\
+  !*** ./js/ckeditor5_plugins/cite/src/index.js ***!
+  \************************************************/
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _cite__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./cite */ "./js/ckeditor5_plugins/cite/src/cite.js");
 
 
-/* harmony default export */ const src = ({
-    CitePlugin: CitePlugin
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+    CitePlugin: _cite__WEBPACK_IMPORTED_MODULE_0__["default"]
 });
 
 })();

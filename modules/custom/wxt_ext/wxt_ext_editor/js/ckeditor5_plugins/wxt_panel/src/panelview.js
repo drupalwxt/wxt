@@ -21,7 +21,9 @@ export default class FormView extends View {
         this.panelClasses = PanelClasses;
         const dropdownItems = [];
         this.dropdown = createDropdown(locale);
+        this.headingDropdown = createDropdown(locale);
         const items = new Collection();
+        const headingItems = new Collection();
 
         // Create save and cancel buttons
         this.saveButtonView = this._createButton('Save', icons.check, 'ck-button-save');
@@ -41,11 +43,36 @@ export default class FormView extends View {
             });
         });
 
+        // Add items to Panel type dropdown.
         items.addMany(dropdownItems);
         addListToDropdown(this.dropdown, items);
         this.dropdown.buttonView.set({
             label: Drupal.t('Panel type'),
             withText: true
+        });
+
+        // Add items to Heading level dropdown.
+        ['h2', 'h3', 'h4', 'h5'].forEach(level => {
+            headingItems.add({
+                type: 'button',
+                model: new ViewModel({
+                    withText: true,
+                    label: level.toUpperCase(),
+                    value: level
+                })
+            });
+        });
+        addListToDropdown(this.headingDropdown, headingItems);
+
+        this.headingDropdown.buttonView.set({
+            label: Drupal.t('Heading level'),
+            withText: true
+        });
+
+        // Store selected heading level
+        this.headingDropdown.on('execute', eventinfo => {
+            this.headingDropdown.selectedValue = eventinfo.source.value;
+            this.headingDropdown.buttonView.set({ label: this.headingDropdown.selectedValue });
         });
 
         // Store the selected panel type from user selection
@@ -58,6 +85,7 @@ export default class FormView extends View {
         // Collect child views and add them to the form
         this.childViews = this.createCollection([
             this.dropdown,
+            this.headingDropdown,
             this.saveButtonView,
             this.cancelButtonView
         ]);

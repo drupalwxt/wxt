@@ -8,17 +8,17 @@ export default class InsertPanelCommand extends Command {
      * to add a new panel
      * @param {String} panelClass the panel type to create
      */
-    execute(panelClass, existingPanel) {
+    execute(panelClass, existingPanel, headingLevel = 'h3') {
         const { model } = this.editor;
         if (existingPanel !== null && existingPanel !== 'undefined') {
             // Existing panel found so we update
             model.change((writer) => {
-                updatePanel(writer, panelClass, existingPanel);
+                updatePanel(writer, panelClass, existingPanel, headingLevel);
             });
         } else {
             // Creating new panel
             model.change((writer) => {
-                let panel = getPanelTemplate(writer, panelClass);
+                let panel = getPanelTemplate(writer, panelClass, headingLevel);
                 model.insertContent(createPanel(writer, panel));
             });
         }
@@ -79,21 +79,22 @@ function createPanel(writer, panel) {
  * @param {Element} existingPanel - the existing panel that we are replacing
  * @returns {Element} panel - the new panel with title and body
  */
-function updatePanel(writer, panel, existingPanel) {
+function updatePanel(writer, panelClass, existingPanel, headingLevel = 'h3') {
     // Get existing content from existing panel
     for (let child of existingPanel.getChildren()) {
         if (child.name.startsWith('panelHeading-')) {
-            writer.rename(child, 'panelHeading-' + panel);
+            writer.rename(child, 'panelHeading-' + panelClass);
             for (let c of child.getChildren()) {
                 if (c.name.startsWith('panelTitle-')) {
-                    writer.rename(c, 'panelTitle-' + panel);
+                    writer.rename(c, 'panelTitle-' + panelClass);
+                    writer.setAttribute('headingLevel', headingLevel, c);
                 }
             }
         } else if (child.name.startsWith('panelBody-')) {
-            writer.rename(child, 'panelBody-' + panel);
+            writer.rename(child, 'panelBody-' + panelClass);
         }
     }
-    writer.rename(existingPanel, 'panel-' + panel)
+    writer.rename(existingPanel, 'panel-' + panelClass)
 
     return existingPanel;
 }
@@ -105,10 +106,10 @@ function updatePanel(writer, panel, existingPanel) {
  * @param {String} panelClass - the panel type we're creating
  * @returns {Element} panel - the template of a panel of the given type
  */
-function getPanelTemplate(writer, panelClass) {
+function getPanelTemplate(writer, panelClass, headingLevel = 'h3') {
     const panel = writer.createElement('panel-' + panelClass);
     const panelHeader = writer.createElement('panelHeading-' + panelClass);
-    const panelTitle = writer.createElement('panelTitle-' + panelClass);
+    const panelTitle = writer.createElement('panelTitle-' + panelClass, { headingLevel });
     const panelBody = writer.createElement('panelBody-' + panelClass);
 
     writer.append(panelTitle, panelHeader);
