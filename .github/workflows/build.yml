@@ -19,9 +19,14 @@ jobs:
          - type: pgsql
            port: 5432
 
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
     - uses: actions/checkout@master
+
+    - name: Setup PHP 8.3
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.3'
 
     - name: Setup dependencies
       run: |
