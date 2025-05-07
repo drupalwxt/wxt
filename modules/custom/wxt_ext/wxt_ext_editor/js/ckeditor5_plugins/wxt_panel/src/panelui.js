@@ -53,11 +53,13 @@ export default class PanelUI extends Plugin {
                 });
             });
 
+            const headingLevel = formView.headingDropdown.selectedValue || 'h3';
+
             // If the selection is within a panel widget, update the selected widget; otherwise create a new one
             if (selectionIsAlert) {
-                editor.execute('insertPanel', paneltype, selection);
+                editor.execute('insertPanel', paneltype, selection, headingLevel);
             } else {
-                editor.execute('insertPanel', paneltype, null);
+                editor.execute('insertPanel', paneltype, null, headingLevel);
             }
             this._hideUI();
         });
@@ -99,6 +101,28 @@ export default class PanelUI extends Plugin {
         } else {
             this.formView.dropdown.selectedValue = null;
             this.formView.dropdown.buttonView.set({ label: Drupal.t('Panel type') });
+        }
+
+        // Check inside the selected panel for the panelTitle element.
+        let selectedHeadingLevel = null;
+        if (selectedPanel) {
+            for (const child of selectedPanel.getChildren()) {
+                if (child.name.startsWith('panelHeading-')) {
+                    for (const grandchild of child.getChildren()) {
+                        if (grandchild.name.startsWith('panelTitle-')) {
+                            selectedHeadingLevel = grandchild.getAttribute('headingLevel') || 'h3';
+                        }
+                    }
+                }
+            }
+        }
+
+        if (selectedHeadingLevel) {
+            this.formView.headingDropdown.selectedValue = selectedHeadingLevel;
+            this.formView.headingDropdown.buttonView.set({ label: selectedHeadingLevel.toUpperCase() });
+        } else {
+            this.formView.headingDropdown.selectedValue = null;
+            this.formView.headingDropdown.buttonView.set({ label: Drupal.t('Heading level') });
         }
 
         this._balloon.add({

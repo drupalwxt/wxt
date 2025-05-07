@@ -11,98 +11,36 @@
 return /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "ckeditor5/src/core.js":
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-module.exports = (__webpack_require__("dll-reference CKEditor5.dll"))("./src/core.js");
-
-/***/ }),
-
-/***/ "ckeditor5/src/ui.js":
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-module.exports = (__webpack_require__("dll-reference CKEditor5.dll"))("./src/ui.js");
-
-/***/ }),
-
-/***/ "ckeditor5/src/widget.js":
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-module.exports = (__webpack_require__("dll-reference CKEditor5.dll"))("./src/widget.js");
-
-/***/ }),
-
-/***/ "dll-reference CKEditor5.dll":
-/***/ ((module) => {
+/***/ "./icons/tab.svg":
+/*!***********************!*\
+  !*** ./icons/tab.svg ***!
+  \***********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-module.exports = CKEditor5.dll;
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<svg id=\"Layer_1\" data-name=\"Layer 1\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 20 20\">\n  <defs>\n    <style>\n      .cls-1 {\n        fill: #666;\n      }\n    </style>\n  </defs>\n  <path class=\"cls-1\" d=\"M17.5,3.2v2.47h-1v-2.17h-6.52v-1h6.73c.44,0,.79.31.79.7Z\"/>\n  <path d=\"M19.21,6.17v11.81c0,.28-.22.5-.5.5s-.5-.22-.5-.5V6.67h-8.73c-.27,0-.5-.23-.5-.5v-3.67H1.95v3.67c0,.25-.2.47-.45.49v11.32c0,.28-.22.5-.5.5s-.5-.22-.5-.5V6.17c0-.26.2-.47.45-.5v-3.37c0-.44.35-.8.8-.8h7.43c.44,0,.8.36.8.8v3.37h8.73c.28,0,.5.22.5.5Z\"/>\n  <path d=\"M15.5,15.49H4.51c-.28,0-.5-.22-.5-.5s.22-.5.5-.5h10.99c.28,0,.5.22.5.5s-.22.5-.5.5Z\"/>\n  <path d=\"M15.5,11.49H4.51c-.28,0-.5-.22-.5-.5s.22-.5.5-.5h10.99c.28,0,.5.22.5.5s-.22.5-.5.5Z\"/>\n</svg>");
 
-/***/ })
+/***/ }),
 
-/******/ 	});
-/************************************************************************/
-/******/ 	// The module cache
-/******/ 	var __webpack_module_cache__ = {};
-/******/ 	
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-/******/ 		// Check if module is in cache
-/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
-/******/ 		if (cachedModule !== undefined) {
-/******/ 			return cachedModule.exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = __webpack_module_cache__[moduleId] = {
-/******/ 			// no module.id needed
-/******/ 			// no module.loaded needed
-/******/ 			exports: {}
-/******/ 		};
-/******/ 	
-/******/ 		// Execute the module function
-/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
-/******/ 	
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-/******/ 	
-/************************************************************************/
-/******/ 	/* webpack/runtime/define property getters */
-/******/ 	(() => {
-/******/ 		// define getter functions for harmony exports
-/******/ 		__webpack_require__.d = (exports, definition) => {
-/******/ 			for(var key in definition) {
-/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
-/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
-/******/ 				}
-/******/ 			}
-/******/ 		};
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
-/******/ 	(() => {
-/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
-/******/ 	})();
-/******/ 	
-/************************************************************************/
-var __webpack_exports__ = {};
-// This entry needs to be wrapped in an IIFE because it needs to be in strict mode.
-(() => {
+/***/ "./js/ckeditor5_plugins/wxt_tabs/src/insertwxttabcommand.js":
+/*!******************************************************************!*\
+  !*** ./js/ckeditor5_plugins/wxt_tabs/src/insertwxttabcommand.js ***!
+  \******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
 "use strict";
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  "default": () => (/* binding */ src)
-});
-
-// EXTERNAL MODULE: delegated ./core.js from dll-reference CKEditor5.dll
-var delegated_corefrom_dll_reference_CKEditor5 = __webpack_require__("ckeditor5/src/core.js");
-// EXTERNAL MODULE: delegated ./widget.js from dll-reference CKEditor5.dll
-var delegated_widgetfrom_dll_reference_CKEditor5 = __webpack_require__("ckeditor5/src/widget.js");
-;// ./js/ckeditor5_plugins/wxt_tabs/src/insertwxttabcommand.js
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ InsertWXTTabsCommand)
+/* harmony export */ });
+/* harmony import */ var ckeditor5_src_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ckeditor5/src/core */ "ckeditor5/src/core.js");
 
 
-class InsertWXTTabsCommand extends delegated_corefrom_dll_reference_CKEditor5.Command {
+class InsertWXTTabsCommand extends ckeditor5_src_core__WEBPACK_IMPORTED_MODULE_0__.Command {
   execute() {
     const { model } = this.editor;
 
@@ -131,21 +69,64 @@ class InsertWXTTabsCommand extends delegated_corefrom_dll_reference_CKEditor5.Co
   }
 }
 
-;// ./js/ckeditor5_plugins/wxt_tabs/src/wxttabediting.js
+
+/***/ }),
+
+/***/ "./js/ckeditor5_plugins/wxt_tabs/src/tabs.js":
+/*!***************************************************!*\
+  !*** ./js/ckeditor5_plugins/wxt_tabs/src/tabs.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ WXTTabs)
+/* harmony export */ });
+/* harmony import */ var _wxttabediting__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./wxttabediting */ "./js/ckeditor5_plugins/wxt_tabs/src/wxttabediting.js");
+/* harmony import */ var _wxttabui__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./wxttabui */ "./js/ckeditor5_plugins/wxt_tabs/src/wxttabui.js");
+/* harmony import */ var ckeditor5_src_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ckeditor5/src/core */ "ckeditor5/src/core.js");
 
 
 
 
-class WXTTabsEditing extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
+class WXTTabs extends ckeditor5_src_core__WEBPACK_IMPORTED_MODULE_2__.Plugin {
+    static get requires() {
+        return [_wxttabediting__WEBPACK_IMPORTED_MODULE_0__["default"], _wxttabui__WEBPACK_IMPORTED_MODULE_1__["default"]];
+    }
+}
+
+
+/***/ }),
+
+/***/ "./js/ckeditor5_plugins/wxt_tabs/src/wxttabediting.js":
+/*!************************************************************!*\
+  !*** ./js/ckeditor5_plugins/wxt_tabs/src/wxttabediting.js ***!
+  \************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ WXTTabsEditing)
+/* harmony export */ });
+/* harmony import */ var ckeditor5_src_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ckeditor5/src/core */ "ckeditor5/src/core.js");
+/* harmony import */ var ckeditor5_src_widget__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ckeditor5/src/widget */ "ckeditor5/src/widget.js");
+/* harmony import */ var _insertwxttabcommand__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./insertwxttabcommand */ "./js/ckeditor5_plugins/wxt_tabs/src/insertwxttabcommand.js");
+
+
+
+
+class WXTTabsEditing extends ckeditor5_src_core__WEBPACK_IMPORTED_MODULE_0__.Plugin {
   static get requires() {
-    return [delegated_widgetfrom_dll_reference_CKEditor5.Widget];
+    return [ckeditor5_src_widget__WEBPACK_IMPORTED_MODULE_1__.Widget];
   }
 
   init() {
     this._defineSchema();
     this._defineConverters();
 
-    this.editor.commands.add('insertWXTTabs', new InsertWXTTabsCommand(this.editor));
+    this.editor.commands.add('insertWXTTabs', new _insertwxttabcommand__WEBPACK_IMPORTED_MODULE_2__["default"](this.editor));
   }
 
   _defineSchema() {
@@ -251,7 +232,7 @@ class WXTTabsEditing extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
         writer.insert(writer.createPositionAt(div, 0), label);
 
         // Convert into a widget for selection and handles.
-        return (0,delegated_widgetfrom_dll_reference_CKEditor5.toWidget)(div, writer, {
+        return (0,ckeditor5_src_widget__WEBPACK_IMPORTED_MODULE_1__.toWidget)(div, writer, {
             label: 'Tabs widget',
             hasSelectionHandle: true,
         });
@@ -270,32 +251,44 @@ class WXTTabsEditing extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
           }
         });
 
-        return (0,delegated_widgetfrom_dll_reference_CKEditor5.toWidgetEditable)(div, writer);
+        return (0,ckeditor5_src_widget__WEBPACK_IMPORTED_MODULE_1__.toWidgetEditable)(div, writer);
       },
     });
   }
 }
 
-// EXTERNAL MODULE: delegated ./ui.js from dll-reference CKEditor5.dll
-var delegated_uifrom_dll_reference_CKEditor5 = __webpack_require__("ckeditor5/src/ui.js");
-;// ./icons/tab.svg
-/* harmony default export */ const tab = ("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<svg id=\"Layer_1\" data-name=\"Layer 1\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 20 20\">\n  <defs>\n    <style>\n      .cls-1 {\n        fill: #666;\n      }\n    </style>\n  </defs>\n  <path class=\"cls-1\" d=\"M17.5,3.2v2.47h-1v-2.17h-6.52v-1h6.73c.44,0,.79.31.79.7Z\"/>\n  <path d=\"M19.21,6.17v11.81c0,.28-.22.5-.5.5s-.5-.22-.5-.5V6.67h-8.73c-.27,0-.5-.23-.5-.5v-3.67H1.95v3.67c0,.25-.2.47-.45.49v11.32c0,.28-.22.5-.5.5s-.5-.22-.5-.5V6.17c0-.26.2-.47.45-.5v-3.37c0-.44.35-.8.8-.8h7.43c.44,0,.8.36.8.8v3.37h8.73c.28,0,.5.22.5.5Z\"/>\n  <path d=\"M15.5,15.49H4.51c-.28,0-.5-.22-.5-.5s.22-.5.5-.5h10.99c.28,0,.5.22.5.5s-.22.5-.5.5Z\"/>\n  <path d=\"M15.5,11.49H4.51c-.28,0-.5-.22-.5-.5s.22-.5.5-.5h10.99c.28,0,.5.22.5.5s-.22.5-.5.5Z\"/>\n</svg>");
-;// ./js/ckeditor5_plugins/wxt_tabs/src/wxttabui.js
+
+/***/ }),
+
+/***/ "./js/ckeditor5_plugins/wxt_tabs/src/wxttabui.js":
+/*!*******************************************************!*\
+  !*** ./js/ckeditor5_plugins/wxt_tabs/src/wxttabui.js ***!
+  \*******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ WXTTabsUI)
+/* harmony export */ });
+/* harmony import */ var ckeditor5_src_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ckeditor5/src/core */ "ckeditor5/src/core.js");
+/* harmony import */ var ckeditor5_src_ui__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ckeditor5/src/ui */ "ckeditor5/src/ui.js");
+/* harmony import */ var _icons_tab_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../icons/tab.svg */ "./icons/tab.svg");
 
 
 
 
-class WXTTabsUI extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
+class WXTTabsUI extends ckeditor5_src_core__WEBPACK_IMPORTED_MODULE_0__.Plugin {
   init() {
     const editor = this.editor;
 
     editor.ui.componentFactory.add('insertWXTTabs', (locale) => {
       const command = editor.commands.get('insertWXTTabs');
-      const buttonView = new delegated_uifrom_dll_reference_CKEditor5.ButtonView(locale);
+      const buttonView = new ckeditor5_src_ui__WEBPACK_IMPORTED_MODULE_1__.ButtonView(locale);
 
       buttonView.set({
         label: 'Tabs',
-        icon: tab,
+        icon: _icons_tab_svg__WEBPACK_IMPORTED_MODULE_2__["default"],
         tooltip: true,
         withText: true,
       });
@@ -309,22 +302,122 @@ class WXTTabsUI extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
   }
 }
 
-;// ./js/ckeditor5_plugins/wxt_tabs/src/tabs.js
+
+/***/ }),
+
+/***/ "ckeditor5/src/core.js":
+/*!************************************************************!*\
+  !*** delegated ./core.js from dll-reference CKEditor5.dll ***!
+  \************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = (__webpack_require__(/*! dll-reference CKEditor5.dll */ "dll-reference CKEditor5.dll"))("./src/core.js");
+
+/***/ }),
+
+/***/ "ckeditor5/src/ui.js":
+/*!**********************************************************!*\
+  !*** delegated ./ui.js from dll-reference CKEditor5.dll ***!
+  \**********************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = (__webpack_require__(/*! dll-reference CKEditor5.dll */ "dll-reference CKEditor5.dll"))("./src/ui.js");
+
+/***/ }),
+
+/***/ "ckeditor5/src/widget.js":
+/*!**************************************************************!*\
+  !*** delegated ./widget.js from dll-reference CKEditor5.dll ***!
+  \**************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = (__webpack_require__(/*! dll-reference CKEditor5.dll */ "dll-reference CKEditor5.dll"))("./src/widget.js");
+
+/***/ }),
+
+/***/ "dll-reference CKEditor5.dll":
+/*!********************************!*\
+  !*** external "CKEditor5.dll" ***!
+  \********************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = CKEditor5.dll;
+
+/***/ })
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/************************************************************************/
+var __webpack_exports__ = {};
+// This entry needs to be wrapped in an IIFE because it needs to be in strict mode.
+(() => {
+"use strict";
+/*!****************************************************!*\
+  !*** ./js/ckeditor5_plugins/wxt_tabs/src/index.js ***!
+  \****************************************************/
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _tabs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./tabs */ "./js/ckeditor5_plugins/wxt_tabs/src/tabs.js");
 
 
-
-
-class WXTTabs extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
-    static get requires() {
-        return [WXTTabsEditing, WXTTabsUI];
-    }
-}
-
-;// ./js/ckeditor5_plugins/wxt_tabs/src/index.js
-
-
-/* harmony default export */ const src = ({
-    WXTTabs: WXTTabs,
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+    WXTTabs: _tabs__WEBPACK_IMPORTED_MODULE_0__["default"],
 });
 })();
 

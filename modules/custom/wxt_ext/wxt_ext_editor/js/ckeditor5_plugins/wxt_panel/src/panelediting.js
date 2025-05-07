@@ -40,6 +40,7 @@ export default class PanelEditing extends Plugin {
                 isLimit: true,
                 allowIn: 'panelHeading-' + c,
                 allowContentOf: '$block',
+                allowAttributes: ['headingLevel'], // Allow the heading level attribute
             });
             schema.register('panelBody-' + c, {
                 isLimit: true,
@@ -80,9 +81,12 @@ export default class PanelEditing extends Plugin {
             });
 
             conversion.for('upcast').elementToElement({
-                model: 'panelTitle-' + c,
+                model: (viewElement, { writer: modelWriter }) => {
+                    const headingLevel = viewElement.name.match(/^h[2-6]$/) ? viewElement.name : 'h3';
+                    return modelWriter.createElement('panelTitle-' + c, { headingLevel });
+                },
                 view: {
-                    name: 'h3',
+                    name: /^(h2|h3|h4|h5|h6)$/,
                     classes: 'panel-title',
                 },
                 converterPriority: convPriority
@@ -118,9 +122,11 @@ export default class PanelEditing extends Plugin {
 
             conversion.for('dataDowncast').elementToElement({
                 model: 'panelTitle-' + c,
-                view: {
-                    name: 'h3',
-                    classes: 'panel-title',
+                view: (modelElement, { writer: viewWriter }) => {
+                    const headingLevel = modelElement.getAttribute('headingLevel') || 'h3';
+                    return viewWriter.createContainerElement(headingLevel, {
+                        class: 'panel-title'
+                    });
                 },
                 converterPriority: convPriority
             });
@@ -149,10 +155,11 @@ export default class PanelEditing extends Plugin {
             conversion.for('editingDowncast').elementToElement({
                 model: 'panelTitle-' + c,
                 view: (modelElement, { writer: viewWriter }) => {
-                    const h3 = viewWriter.createEditableElement('h3', {
-                        class: 'panel-title',
+                    const headingLevel = modelElement.getAttribute('headingLevel') || 'h3';
+                    const heading = viewWriter.createEditableElement(headingLevel, {
+                        class: 'panel-title'
                     });
-                    return toWidgetEditable(h3, viewWriter);
+                    return toWidgetEditable(heading, viewWriter);
                 },
                 converterPriority: convPriority
             });
