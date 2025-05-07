@@ -34,9 +34,8 @@ jobs:
         cd site-wxt
         rm composer.lock
 
-    - uses: statcan/actions/composer@master
-      with:
-        args: require drupalwxt/wxt:6.1.x-dev#${{ github.sha }} --working-dir=./site-wxt --ignore-platform-reqs
+    - name: Require patched wxt with Composer
+      run: composer require drupalwxt/wxt:6.1.x-dev#${{ github.sha }} --working-dir=./site-wxt --ignore-platform-reqs
 
     - name: Build out the Drupal infrastructure
       run: |
