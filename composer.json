@@ -255,7 +255,9 @@
                 "3420063 - Call to a member function getConfig() OverridesSectionStorage.php":
                 "https://git.drupalcode.org/project/layout_builder_st/-/merge_requests/6.diff",
                 "3411037 - Fix core removing contextual translation links":
-                "https://git.drupalcode.org/project/layout_builder_st/-/merge_requests/5.patch"
+                "https://git.drupalcode.org/project/layout_builder_st/-/merge_requests/5.patch",
+                "3069964 null fix, on login.":
+                "https://www.drupal.org/files/issues/2025-01-02/3069964-null-fix.patch"
             },
             "drupal/page_manager": {
                 "Enter drupal/page_manager patch #2626090 description here":
