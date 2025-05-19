@@ -193,6 +193,10 @@
                 "2920739 - Allow accessing the 'Custom block library' page without 'Administer blocks' permission":
                 "https://www.drupal.org/files/issues/2022-07-26/2920739-55.access_listing_page.patch"
             },
+            "drupal/book": {
+                "3525362 - Prevent WSOD after Upgrade from Drupal 10.4.7 to Drupal 11.1.7 when no allowed books are set":
+                "https://www.drupal.org/files/issues/2025-05-19/3525362-03.patch"
+            },
             "drupal/core": {
                 "Enter drupal/core patch #850600 description here":
                 "https://www.drupal.org/files/issues/2024-08-19/postgresql-ssl-dns-850600-38.patch",
