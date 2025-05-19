@@ -1,5 +1,39 @@
 # CHANGELOG
 
+## v5.4.2
+
+- Build Infrastructure
+  - N/A
+- Security Updates for Drupal Core
+  - [SA-core-2025-004](https://www.drupal.org/sa-core-2025-004)
+- Updates for Drupal Core
+  - Update drupal/core-recommended from ^10.3 to 10.4.*
+- Updates for Drupal Contrib + WxT
+  - Update layout_builder_st patch to fix builds
+- Updated for WxT Bootstrap
+  - N/A
+- Updates for WxT Library
+  - N/A
+
+Upgrade path:
+
+> **Important**: Please backup your database before running the upgrade process for this release.
+
+- Update your codebase:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
+- Run WxT configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:wxt`
+
+**Note(s)**:
+
+N/A
+
 ## v5.4.1
 
 - Build Infrastructure
