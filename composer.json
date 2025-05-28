@@ -195,7 +195,7 @@
             },
             "drupal/book": {
                 "3525362 - Prevent WSOD after Upgrade from Drupal 10.4.7 to Drupal 11.1.7 when no allowed books are set":
-                "https://www.drupal.org/files/issues/2025-05-19/3525362-03.patch"
+                "https://www.drupal.org/files/issues/2025-05-28/3525363-08.patch"
             },
             "drupal/core": {
                 "Enter drupal/core patch #850600 description here":
@@ -278,10 +278,6 @@
             "drupal/redis": {
                 "3004561 - Enable ssl scheme":
                 "https://www.drupal.org/files/issues/2021-11-19/redis-support_tls_on_predis-3004561-37.patch"
-            },
-            "drupal/toc_filter": {
-                "3518549 and 3520464 - toc_filter D11 bug fix":
-                "https://www.drupal.org/files/issues/2025-04-24/toc-filter-3518549-13.patch"
             },
             "drupal/webform": {
                 "Enter drupal/webform patch #3205860 description here":
