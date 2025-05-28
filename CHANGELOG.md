@@ -1,5 +1,41 @@
 # CHANGELOG
 
+## v6.1.0
+
+- Build Infrastructure
+  - Updated docker-scaffold available for [11.1.x](https://github.com/drupalwxt/docker-scaffold/tree/11.1.x)
+- Security Updates for Drupal Core
+  - On latest Drupal 11.1.x
+- Updates for Drupal Core
+  - On latest Drupal 11.1.x
+- Updates for Drupal Contrib + WxT
+  - See related WxT issues below
+  - Drupal 11 preparedness [3466676](https://www.drupal.org/project/wxt/issues/3466676)
+  - [META] - WxT 6.1.x -> 11.1.x [3510413](https://www.drupal.org/project/wxt/issues/3510413)
+- Updated for WxT Bootstrap
+  - On latest 11.1.x
+- Updates for WxT Library
+  - On latest 11.1.x
+
+Upgrade path:
+
+> **Important**: Please backup your database before running the upgrade process for this release.
+
+- Update your codebase after updating to 6.1.x in composer.json:
+  - `composer update`
+
+- Run database updates:
+  - `drush cache:rebuild`
+  - `drush updatedb`
+
+- Run WxT configuration updates:
+  - `drush cache:rebuild`
+  - `drush update:wxt`
+
+**Note(s)**:
+
+N/A
+
 ## v5.4.0
 
 - Build Infrastructure
