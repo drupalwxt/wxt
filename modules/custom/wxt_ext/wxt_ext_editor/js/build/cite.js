@@ -39,147 +39,85 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var ckeditor5_src_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ckeditor5/src/core */ "ckeditor5/src/core.js");
 /* harmony import */ var ckeditor5_src_ui__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ckeditor5/src/ui */ "ckeditor5/src/ui.js");
-/* harmony import */ var ckeditor5_src_widget__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ckeditor5/src/widget */ "ckeditor5/src/widget.js");
-/* harmony import */ var _icons_cite_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../icons/cite.svg */ "./icons/cite.svg");
-
-
+/* harmony import */ var _icons_cite_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../icons/cite.svg */ "./icons/cite.svg");
 
 
 
 
 class CitePlugin extends ckeditor5_src_core__WEBPACK_IMPORTED_MODULE_0__.Plugin {
-    static get requires() {
-        return [ ckeditor5_src_widget__WEBPACK_IMPORTED_MODULE_2__.Widget ];
-    }
+  init() {
+    const editor = this.editor;
 
-    init() {
-        const editor = this.editor;
+    this._defineSchema();
+    this._defineConverters();
 
-        this._defineSchema();
-        this._defineConverters();
+    editor.ui.componentFactory.add('cite', locale => {
+      const button = new ckeditor5_src_ui__WEBPACK_IMPORTED_MODULE_1__.ButtonView(locale);
+      button.set({
+        label: 'Cite',
+        icon: _icons_cite_svg__WEBPACK_IMPORTED_MODULE_2__["default"],
+        tooltip: true,
+        isToggleable: true
+      });
 
-        // Add the Cite button to the toolbar.
-        editor.ui.componentFactory.add('cite', locale => {
-            const button = new ckeditor5_src_ui__WEBPACK_IMPORTED_MODULE_1__.ButtonView(locale);
-            button.set({
-                label: 'Cite',
-                icon: _icons_cite_svg__WEBPACK_IMPORTED_MODULE_3__["default"],
-                tooltip: true,
-                isEnabled: false
-            });
+      const updateButtonState = () => {
+        const selection = editor.model.document.selection;
+        button.isOn = selection.hasAttribute('citeMark');
+        button.isEnabled = true;
+      };
 
-            // Listen for selection changes and update button state.
-            const updateButtonState = () => {
-                const selection = editor.model.document.selection;
-                const selectedElement = selection.getSelectedElement();
-                const position = selection.getFirstPosition();
+      editor.model.document.selection.on('change', updateButtonState);
+      editor.model.document.on('change:data', updateButtonState);
 
-                // Check if the selection is inside a `<cite>` (even if cursor is inside).
-                let isInsideCite = false;
-                if (position) {
-                    for (const ancestor of position.getAncestors()) {
-                        if (ancestor.is && ancestor.is('element', 'cite')) {
-                            isInsideCite = true;
-                            break;
-                        }
-                    }
-                }
+      button.on('execute', () => {
+        const model = editor.model;
+        const selection = model.document.selection;
+        const isApplied = selection.hasAttribute('citeMark');
 
-                // Enable button if text is selected, the whole cite is selected, OR the cursor is inside `<cite>`.
-                button.isEnabled = !selection.isCollapsed || selectedElement?.is('element', 'cite') || isInsideCite;
-            };
-
-
-            // React to selection changes.
-            editor.model.document.selection.on('change', updateButtonState);
-            editor.model.document.on('change:data', updateButtonState);
-
-            button.on('execute', () => {
-                const model = editor.model;
-                const selection = model.document.selection;
-                const selectedElement = selection.getSelectedElement();
-                const position = selection.getFirstPosition();
-
-                let citeElement = null;
-
-                // Check if the selection is inside a <cite> element.
-                if (position) {
-                    for (const ancestor of position.getAncestors()) {
-                        if (ancestor.is && ancestor.is('element', 'cite')) {
-                            citeElement = ancestor;
-                            break;
-                        }
-                    }
-                }
-
-                model.change(writer => {
-                    if (selectedElement && selectedElement.is('element', 'cite')) {
-                        // If the whole <cite> is selected, unwrap it.
-                        writer.unwrap(selectedElement);
-                    } else if (citeElement) {
-                        // If cursor is inside an existing <cite>, unwrap it.
-                        writer.unwrap(citeElement);
-                    } else {
-                        // Otherwise, wrap the selected text in a new <cite>.
-                        const range = selection.getFirstRange();
-                        writer.wrap(range, writer.createElement('cite'));
-                    }
-                });
-
-                updateButtonState();
-            });
-
-
-            return button;
-        });
-    }
-
-    // Define Schema to Allow <cite> as a Widget
-    _defineSchema() {
-        const schema = this.editor.model.schema;
-
-        schema.register('cite', {
-            allowWhere: '$text',
-            allowContentOf: '$block',
-            isInline: true,
-            isObject: true,
-            isContent: true
-        });
-    }
-
-    // Define Converters to Treat Cite as a Widget.
-    _defineConverters() {
-        const conversion = this.editor.conversion;
-
-        // Upcast <cite> elements from raw HTML into model data.
-        conversion.for('upcast').elementToElement({
-            view: 'cite',
-            model: (viewElement, { writer }) => {
-                // If the cite is already inside another cite, unwrap it.
-                if (viewElement.parent && viewElement.parent.name === 'cite') {
-                    return null;
-                }
-                return writer.createElement('cite');
-            },
-        });
-
-        // Downcast model data into <cite> elements for editing and data output.
-        conversion.for('downcast').elementToElement({
-            model: 'cite',
-            view: (modelElement, { writer }) => {
-                return writer.createContainerElement('cite');
+        model.change(writer => {
+          if (selection.isCollapsed) {
+            if (isApplied) {
+              writer.removeSelectionAttribute('citeMark');
+            } else {
+              writer.setSelectionAttribute('citeMark', true);
             }
-        });
-
-        // Downcast for editing mode (Ensures it's editable but doesn't add attributes)
-        conversion.for('editingDowncast').elementToElement({
-            model: 'cite',
-            view: (modelElement, { writer }) => {
-                const citeElement = writer.createEditableElement('cite');
-                return (0,ckeditor5_src_widget__WEBPACK_IMPORTED_MODULE_2__.toWidgetEditable)(citeElement, writer);
+          } else {
+            if (isApplied) {
+              writer.removeAttribute('citeMark', selection.getFirstRange());
+            } else {
+              writer.setAttribute('citeMark', true, selection.getFirstRange());
             }
+          }
         });
-    }
+      });
+
+      updateButtonState();
+
+      return button;
+    });
+  }
+
+  _defineSchema() {
+    const schema = this.editor.model.schema;
+    schema.extend('$text', { allowAttributes: [ 'citeMark' ] });
+  }
+
+  _defineConverters() {
+    const conversion = this.editor.conversion;
+
+    conversion.for('upcast').elementToAttribute({
+      view: 'cite',
+      model: {
+        key: 'citeMark',
+        value: true
+      }
+    });
+
+    conversion.for('downcast').attributeToElement({
+      model: 'citeMark',
+      view: 'cite'
+    });
+  }
 }
 
 
@@ -202,16 +140,6 @@ module.exports = (__webpack_require__(/*! dll-reference CKEditor5.dll */ "dll-re
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 module.exports = (__webpack_require__(/*! dll-reference CKEditor5.dll */ "dll-reference CKEditor5.dll"))("./src/ui.js");
-
-/***/ }),
-
-/***/ "ckeditor5/src/widget.js":
-/*!**************************************************************!*\
-  !*** delegated ./widget.js from dll-reference CKEditor5.dll ***!
-  \**************************************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-module.exports = (__webpack_require__(/*! dll-reference CKEditor5.dll */ "dll-reference CKEditor5.dll"))("./src/widget.js");
 
 /***/ }),
 
