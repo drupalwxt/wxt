@@ -287,7 +287,7 @@
             },
             "drupal/linkit": {
                 "3078075 - Detect and strip base URL from pasted URLs":
-                "https://www.drupal.org/files/issues/2025-01-24/linkit-detect-strip-base-url-3078075-109.patch"
+                "https://www.drupal.org/files/issues/2025-07-02/linkit-detect-strip-base-url-3078075-118.patch"
             }
         }
     },
