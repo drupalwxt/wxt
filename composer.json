@@ -280,10 +280,6 @@
             "drupal/ckeditor_details": {
                 "3244311 - Allow <details> element to be placed without <div>":
                 "https://www.drupal.org/files/issues/2024-11-15/3244311-9.patch"
-            },
-            "drupal/linkit": {
-                "3078075 - Detect and strip base URL from pasted URLs":
-                "https://www.drupal.org/files/issues/2025-07-02/linkit-detect-strip-base-url-3078075-118.patch"
             }
         }
     },
