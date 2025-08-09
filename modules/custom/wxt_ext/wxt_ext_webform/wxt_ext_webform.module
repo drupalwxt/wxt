@@ -31,6 +31,32 @@ function wxt_ext_webform_theme($existing, $type, $theme, $path) {
 }
 
 /**
+ * Implements hook_webform_third_party_settings_form_alter().
+ */
+function wxt_ext_webform_webform_third_party_settings_form_alter(array &$form, FormStateInterface $form_state) {
+  // Get the Webform entity being edited.
+  $form_object = $form_state->getFormObject();
+  $webform = $form_object->getEntity();
+
+  $form['form']['wxt_settings'] = [
+    '#type' => 'details',
+    '#title' => t('WxT settings'),
+    '#open' => TRUE,
+  ];
+
+  // Add the checkbox and store under third_party_settings.
+  $form['form']['wxt_settings']['wxt_inline_validation'] = [
+    '#type' => 'checkbox',
+    '#title' => t('Enable WET-BOEW inline validation'),
+    '#description' => t('Enable WET-BOEW inline form validation for this webform. When enabled, the form will be wrapped in a <code>&lt;div class="wb-frmvld"&gt;</code> container so WET-BOEW can apply its built-in client-side validation, displaying error messages inline as users complete the form.'),
+    '#default_value' => $webform->getThirdPartySetting('wxt_ext_webform', 'wet_inline_validation', FALSE),
+    // Make it land in $form_state values under third_party_settings.
+    '#parents' => ['third_party_settings', 'wxt_ext_webform', 'wet_inline_validation'],
+    '#weight' => 99,
+  ];
+}
+
+/**
  * Implements hook_theme_suggestions_HOOK_alter().
  */
 function wxt_ext_webform_theme_suggestions_form_element_alter(array &$suggestions, array $variables) {
@@ -87,6 +113,16 @@ function wxt_ext_webform_webform_submission_form_alter(array &$form, FormStateIn
         ],
       ];
     }
+  }
+
+  // Get the Webform entity being edited.
+  $form_object = $form_state->getFormObject();
+  $webform_submission = $form_object->getEntity();
+  $webform = $webform_submission->getWebform();
+
+  if ($webform->getThirdPartySetting('wxt_ext_webform', 'wet_inline_validation', FALSE)) {
+    $form['#prefix'] = ($form['#prefix'] ?? '') . '<div class="wb-frmvld">';
+    $form['#suffix'] = '</div>' . ($form['#suffix'] ?? '');
   }
 }
 
