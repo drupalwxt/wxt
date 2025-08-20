@@ -11,6 +11,8 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Link;
 use Drupal\webform\Entity\Webform;
 use Drupal\webform\Entity\WebformSubmission;
+use Drupal\webform\Utility\WebformArrayHelper;
+use Drupal\webform\Utility\WebformElementHelper;
 
 /**
  * Implements hook_theme().
@@ -54,6 +56,21 @@ function wxt_ext_webform_webform_third_party_settings_form_alter(array &$form, F
     '#parents' => ['third_party_settings', 'wxt_ext_webform', 'wet_inline_validation'],
     '#weight' => 99,
   ];
+}
+
+/**
+ * Implements hook__preprocess_form_element().
+ */
+function wxt_ext_webform_preprocess_form_element(array &$variables) {
+  // Only perform this action on webform elements.
+  if (!WebformElementHelper::isWebformElement($variables['element'])) {
+    return;
+  }
+
+  // Remove form-inline class for element wrappers to ensure proper rendering with label.
+  if (!empty($variables['attributes']['class'])) {
+    WebformArrayHelper::removeValue($variables['attributes']['class'], 'form-inline');
+  }
 }
 
 /**
