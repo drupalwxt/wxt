@@ -271,7 +271,7 @@
             },
             "drupal/redis": {
                 "3004561 - Enable ssl scheme":
-                "https://www.drupal.org/files/issues/2021-11-19/redis-support_tls_on_predis-3004561-37.patch"
+                "https://www.drupal.org/files/issues/2025-08-13/redis-support_tls_on_predis-3004561-49.patch"
             },
             "drupal/webform": {
                 "Enter drupal/webform patch #3205860 description here":
