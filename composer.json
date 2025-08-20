@@ -251,9 +251,7 @@
             },
             "drupal/layout_builder_st": {
                 "3420063 - Call to a member function getConfig() OverridesSectionStorage.php":
-                "https://git.drupalcode.org/project/layout_builder_st/-/merge_requests/6.diff",
-                "3411037 - Fix core removing contextual translation links":
-                "https://git.drupalcode.org/project/layout_builder_st/-/merge_requests/5.patch"
+                "https://git.drupalcode.org/project/layout_builder_st/-/merge_requests/6.diff"
             },
             "drupal/page_manager": {
                 "Enter drupal/page_manager patch #2626090 description here":
