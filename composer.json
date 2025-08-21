@@ -217,7 +217,7 @@
                 "2938129 - PageTitle block is non-functional when not handled directly by BlockPageVariant":
                 "https://www.drupal.org/files/issues/2025-01-28/drupal-PageTitle_block-2938129-43.patch",
                 "3500238 - Rename tests to fix core phpunit kernel tests":
-                "https://www.drupal.org/files/issues/2025-08-20/3500238-core-11.1.8.patch"
+                "https://www.drupal.org/files/issues/2025-08-20/3500238-core-11.1.8--16.patch"
             },
             "drupal/ctools": {
                 "Enter drupal/ctools patch #2667652 description here":
