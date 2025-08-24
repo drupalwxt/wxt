@@ -26,10 +26,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 class LightboxGalleryFormatter extends FormatterBase {
 
   /**
-   * Generates web-accessible URLs from file URIs (public://, private://, etc.).
-   *
-   * Used for building absolute/relative links to files (e.g., images, downloads).
-   * Injected via the service container.
+   * Generates web-accessible URLs from file URIs.
    *
    * @var \Drupal\Core\File\FileUrlGeneratorInterface
    */
