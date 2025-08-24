@@ -5,6 +5,8 @@
  * Set up the WxT Extend Translation module.
  */
 
+use \Drupal\locale\SourceString;
+
 /**
  * Implements hook_install().
  */
@@ -33,6 +35,24 @@ function wxt_translation_install() {
       $link->addTranslation('fr', ['title' => $link_title_fr])->save();
     }
   }
+
+  // Translate the "Did you find what you were looking for?" webform title.
+  $storage = \Drupal::service('locale.storage');
+  $source_string = "Did you find what you were looking for?";
+  $string = $storage->findString(array('source' => $source_string));
+
+  if (is_null($string)) {
+    $string = new SourceString();
+    $string->setString($source_string);
+    $string->setStorage($storage);
+    $string->save();
+  }
+  // Create the translation. If it already exists, it will be replaced.
+  $storage->createTranslation(array(
+    'lid' => $string->lid,
+    'language' => "fr",
+    'translation' => "Avez-vous trouvé ce que vous cherchiez?"
+  ))->save();
 
   // Translate Date Format.
   $dateConfig = \Drupal::languageManager()->getLanguageConfigOverride('fr', 'core.date_format.wxt_standard');
