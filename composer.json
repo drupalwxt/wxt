@@ -65,7 +65,7 @@
         "drupal/password_policy": "^4.0",
         "drupal/pathauto": "^1.13",
         "drupal/redirect": "^1.10",
-        "drupal/redis": "^1.8",
+        "drupal/redis": "^1.10",
         "drupal/search_api": "^1.37",
         "drupal/simple_sitemap": "^4.2",
         "drupal/slick_entityreference": "^3.0",
