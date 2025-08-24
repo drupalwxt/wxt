@@ -92,7 +92,8 @@ function wxt_ext_webform_preprocess_form_element(array &$variables) {
     return;
   }
 
-  // Remove form-inline class for element wrappers to ensure proper rendering with label.
+  // Remove form-inline class for element wrappers
+  // to ensure proper rendering with label.
   if (!empty($variables['attributes']['class'])) {
     WebformArrayHelper::removeValue($variables['attributes']['class'], 'form-inline');
   }
