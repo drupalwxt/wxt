@@ -7,7 +7,6 @@ use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Field\FormatterBase;
 use Drupal\Core\File\FileUrlGeneratorInterface;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\file\Entity\File;
 use Drupal\image\Entity\ImageStyle;
 use Drupal\media\Entity\Media;
@@ -136,7 +135,7 @@ class LightboxGalleryFormatter extends FormatterBase {
       '#context' => ['images' => []],
     ];
 
-    foreach ($items as $delta => $item) {
+    foreach ($items as $item) {
       $media = Media::load($item->target_id);
       if ($media && $media->hasField('field_media_image')) {
         $image_file = $media->get('field_media_image')->entity;
@@ -157,4 +156,5 @@ class LightboxGalleryFormatter extends FormatterBase {
     $elements[] = $render;
     return $elements;
   }
+
 }
