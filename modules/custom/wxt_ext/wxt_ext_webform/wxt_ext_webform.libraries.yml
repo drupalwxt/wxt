@@ -1,0 +1,8 @@
+webform_required_marker:
+  js:
+    js/webform_required_marker.js: {}
+  dependencies:
+    - core/drupal
+    - core/once
+    - core/drupalSettings
+
