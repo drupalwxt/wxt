@@ -25,9 +25,18 @@
   function isLegendRequired(legend) {
     return !!legend.querySelector('span.js-form-required');
   }
-  function ensureAtEnd(el, node) {
-    if (node.parentNode !== el || el.lastElementChild !== node) {
-      el.appendChild(node);
+  // Place marker before any inline error badge (e.g., .label.label-danger).
+  function ensureBeforeError(el, node) {
+    const err = el.querySelector('strong.error');
+    const errIsChild = err && err.parentNode === el;
+    if (errIsChild) {
+      if (node.parentNode !== el || node.nextElementSibling !== err) {
+        el.insertBefore(node, err);
+      }
+    } else {
+      if (node.parentNode !== el || el.lastElementChild !== node) {
+        el.appendChild(node);
+      }
     }
   }
   function addMarker(el) {
@@ -40,7 +49,7 @@
       strong.setAttribute('aria-hidden', 'true');
       strong.textContent = `(${Drupal.t('required')})`;
     }
-    ensureAtEnd(el, strong);
+    ensureBeforeError(el, strong);
   }
   function removeMarker(el) {
     el.classList.remove('required');
