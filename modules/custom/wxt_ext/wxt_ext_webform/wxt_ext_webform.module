@@ -168,7 +168,7 @@ function wxt_ext_webform_webform_submission_form_alter(array &$form, FormStateIn
     $form['#suffix'] = '</div>' . ($form['#suffix'] ?? '');
 
     // Attach label/required enhancer only when inline validation is enabled.
-    $form['#attached']['library'][] = 'wxt_ext_webform/webform_required_marker';
+    $form['#attached']['library'][] = 'wxt_ext_webform/wet_webform_enhancements';
   }
 }
 
