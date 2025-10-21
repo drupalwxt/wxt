@@ -1,0 +1,8 @@
+wet_webform_enhancements:
+  js:
+    js/webform_required_marker.js: {}
+    js/webform_checkboxes_group.js: {}
+  dependencies:
+    - core/drupal
+    - core/once
+    - core/drupalSettings
