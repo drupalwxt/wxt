@@ -63,6 +63,11 @@
         function wire(v) {
           const groups = discoverGroups();
 
+          // Make jQuery Validate prefer element.id over name (fixes accented name issues)
+          v.idOrName = function (el) {
+            return el.id || (el.name ? el.name.replace(/[^\w\-]+/g, '_') : '');
+          };
+
           // 1) Register one jQuery Validate "group" per checkbox base.
           //    This makes jQuery Validate treat multiple field names as one logical group
           //    when deciding which single label/entry to render.
@@ -72,10 +77,12 @@
             v.settings.groups[base] = groups[base].join(' ');
           });
 
-          // Precompute the "first" field name for each base; duplicates will be suppressed.
-          const firstOf = {};
+          // Precompute the FIRST field *id* of each base so we can place a single inline label.
+          const firstIdOf = {};
           Object.keys(groups).forEach((base) => {
-            firstOf[base] = groups[base][0];
+            const firstName = groups[base][0];
+            const $el = $form.find('[name="' + CSS.escape(firstName) + '"]').first();
+            firstIdOf[base] = $el.attr('id') || '';
           });
 
           // Shadow a local baseOf so inner functions have it in scope (performance/readability).
@@ -90,8 +97,10 @@
 
             // If this is part of a checkbox base and it's NOT the first item,
             // skip placing the label entirely (the "first" item will get it).
-            if (base && name !== firstOf[base]) {
-              return;
+            if (base) {
+              const id = element.attr('id') || '';
+              // Only place for the FIRST id in the group, skip others to avoid duplicates.
+              if (firstIdOf[base] && id !== firstIdOf[base]) return;
             }
             return origPlace(error, element);
           };
@@ -104,14 +113,16 @@
             const seen = new Set();
             const list = [];
             const map = {};
-            validator.errorList.forEach((item) => {
-              const nm = item.element && item.element.name;
-              // Fall back to name for non-array fields.
-              const base = baseOf(nm) || nm;
 
-              // Keep the first error per base, drop the rest.
-              if (!seen.has(base)) {
-                seen.add(base);
+            validator.errorList.forEach((item) => {
+              const el = item.element;
+              const nm = el && el.name;
+              const id = el && el.id;
+              const base = baseOf(nm) || nm;
+              const dedupeKey = base + '::' + (id || '');
+
+              if (!seen.has(dedupeKey)) {
+                seen.add(dedupeKey);
                 list.push(item);
                 if (nm) map[nm] = item.message;
               }
@@ -120,6 +131,14 @@
             // Replace the validator's error structures with our reduced versions.
             validator.errorList = list;
             validator.errorMap = map;
+
+            // Clean up any duplicate labels that may exist (caused earlier by accented names)
+            const seenLabelFor = {};
+            $(formEl).find('label.error[for]').each(function () {
+              const f = $(this).attr('for');
+              if (seenLabelFor[f]) $(this).remove();
+              else seenLabelFor[f] = true;
+            });
 
             // Allow any original invalidHandler (including WET's) to run with the reduced list.
             return origInvalid.call(this, formEl, validator);
