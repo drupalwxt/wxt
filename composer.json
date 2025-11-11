@@ -55,7 +55,7 @@
         "drupal/media_entity_twitter": "^2.11",
         "drupal/media_entity_slideshow": "^2.6",
         "drupal/menu_block": "^1.14",
-        "drupal/menu_breadcrumb": "^2.0v",
+        "drupal/menu_breadcrumb": "^2.0",
         "drupal/metatag": "^2.2",
         "drupal/migrate_plus": "^6.0",
         "drupal/migrate_tools": "^6.1",
