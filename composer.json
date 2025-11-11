@@ -196,8 +196,6 @@
             "drupal/core": {
                 "Enter drupal/core patch #850600 description here":
                 "https://www.drupal.org/files/issues/2024-08-19/postgresql-ssl-dns-850600-38.patch",
-                "Enter drupal/core patch #2630732 description here":
-                "https://www.drupal.org/files/issues/2024-12-18/entity-fields-migration-destination-10.4.x-2630732-169.patch",
                 "Enter drupal/core patch #2752443 description here":
                 "https://www.drupal.org/files/issues/in_correct_order_and-2752443-1.patch",
                 "Enter drupal/core patch #2816921 description here":
@@ -215,9 +213,7 @@
                 "3359497 - Prevent warnings when library definitions have a license with no URL defined, contrib is not perfect here.":
                 "https://www.drupal.org/files/issues/2023-10-07/fix-license-missing-url.patch",
                 "2938129 - PageTitle block is non-functional when not handled directly by BlockPageVariant":
-                "https://www.drupal.org/files/issues/2025-01-28/drupal-PageTitle_block-2938129-43.patch",
-                "3500238 - Rename tests to fix core phpunit kernel tests":
-                "https://www.drupal.org/files/issues/2025-08-20/3500238-core-11.1.8--16.patch"
+                "https://www.drupal.org/files/issues/2025-01-28/drupal-PageTitle_block-2938129-43.patch"
             },
             "drupal/ctools": {
                 "Enter drupal/ctools patch #2667652 description here":
@@ -238,8 +234,6 @@
                 "https://www.drupal.org/files/issues/2024-05-14/diff-3228798-17.patch"
             },
             "drupal/entity_browser": {
-                "2914385 - Fix PHP error":
-                "https://www.drupal.org/files/issues/2023-10-10/2914385-25.patch",
                 "2843247 - Drupal ajax error of undefined method getFileUri() while selecting newly uploaded image":
                 "https://www.drupal.org/files/issues/2025-02-13/entity-browser-2843247-16.patch"
             },
