@@ -80,7 +80,7 @@
         "drupal/views_infinite_scroll": "^2.0",
         "drupal/webform": "^6.3@alpha",
         "drupalwxt/wxt_bootstrap": "11.1.*",
-        "drupalwxt/wxt_library": "11.1.x-dev",
+        "drupalwxt/wxt_library": "11.1.*",
         "cdubz/ckeditor5-source-editing-codemirror": "^35.1",
         "codemirror/codemirror": "^5.65",
         "npm-asset/dropzone": "^5.7.4",
