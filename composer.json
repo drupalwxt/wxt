@@ -32,7 +32,7 @@
         "drupal/dropzonejs": "^2.1",
         "drupal/embed": "^1.7",
         "drupal/entity_block": "^1.0",
-        "drupal/entity_browser": "^2.3",
+        "drupal/entity_browser": "^2.15",
         "drupal/entity_browser_block": "^1.0",
         "drupal/entity_embed": "^1.5",
         "drupal/entity_reference_revisions": "^1.8",
@@ -66,7 +66,7 @@
         "drupal/password_policy": "^4.0",
         "drupal/pathauto": "^1.12",
         "drupal/redirect": "^1.5",
-        "drupal/redis": "^1.6",
+        "drupal/redis": "^1.10",
         "drupal/search_api": "^1.27",
         "drupal/simple_sitemap": "^4.1",
         "drupal/slick_entityreference": "^3.0",
@@ -235,8 +235,6 @@
                 "https://www.drupal.org/files/issues/2024-05-14/diff-3228798-17.patch"
             },
             "drupal/entity_browser": {
-                "2914385 - Fix PHP error":
-                "https://www.drupal.org/files/issues/2023-10-10/2914385-25.patch",
                 "2843247 - Drupal ajax error of undefined method getFileUri() while selecting newly uploaded image":
                 "https://www.drupal.org/files/issues/2025-02-13/entity-browser-2843247-16.patch"
             },
@@ -256,9 +254,7 @@
             },
             "drupal/linkit": {
                 "Detect and strip base URL from pasted URLs to increase matching hits":
-                "https://www.drupal.org/files/issues/2023-11-02/linkit6x-3078075-77.patch",
-                "Enter drupal/linkit patch #3457958 description here":
-                "https://www.drupal.org/files/issues/2024-06-28/linkit--testing-static-methods--3457958.patch"
+                "https://www.drupal.org/files/issues/2023-11-02/linkit6x-3078075-77.patch"
             },
             "drupal/page_manager": {
                 "Enter drupal/page_manager patch #2626090 description here":
@@ -278,7 +274,7 @@
             },
             "drupal/redis": {
                 "3004561 - Enable ssl scheme":
-                "https://www.drupal.org/files/issues/2021-11-19/redis-support_tls_on_predis-3004561-37.patch"
+                "https://www.drupal.org/files/issues/2025-08-13/redis-support_tls_on_predis-3004561-49.patch"
             },
             "drupal/webform": {
                 "Enter drupal/webform patch #3205860 description here":
