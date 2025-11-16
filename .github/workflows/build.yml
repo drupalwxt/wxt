@@ -2,7 +2,7 @@ name: build
 on:
   push:
     branches:
-      - 6.1.x
+      - 6.2.x
 
 # Environment variables available to all jobs and steps in this workflow
 env:
@@ -30,19 +30,19 @@ jobs:
 
     - name: Setup dependencies
       run: |
-        git clone --branch 11.1.x https://github.com/drupalwxt/site-wxt.git
+        git clone --branch 11.2.x https://github.com/drupalwxt/site-wxt.git
         cd site-wxt
         rm composer.lock
 
     - name: Require patched wxt with Composer
-      run: composer require drupalwxt/wxt:6.1.x-dev#${{ github.sha }} --working-dir=./site-wxt --ignore-platform-reqs
+      run: composer require drupalwxt/wxt:6.2.x-dev#${{ github.sha }} --working-dir=./site-wxt --ignore-platform-reqs
 
     - name: Build out the Drupal infrastructure
       run: |
         export DB_TYPE=${{ matrix.db.type }}
         export DB_PORT=${{ matrix.db.port }}
         cd site-wxt
-        git clone --branch 11.1.x https://github.com/drupalwxt/docker-scaffold.git docker
+        git clone --branch 11.2.x https://github.com/drupalwxt/docker-scaffold.git docker
         make build
         docker compose -f docker-compose.ci.yml up -d
         docker ps -a
@@ -55,6 +55,4 @@ jobs:
         cd site-wxt
         make drupal_install
         make drupal_migrate
-        # Change ownership on html/core to allow files to be copied (see drupal_cs in Makefile)
-        sudo chown -R $(id -u) html/core
         make test
