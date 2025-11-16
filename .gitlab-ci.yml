@@ -35,4 +35,4 @@ variables:
 composer:
   variables:
     DRUPAL_CORE: 10.4.9
-
+    _WEB_ROOT: 'html'
