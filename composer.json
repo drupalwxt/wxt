@@ -48,7 +48,7 @@
         "drupal/image_widget_crop": "^2.1",
         "drupal/inline_entity_form": "^1.0-rc12",
         "drupal/layout_builder_restrictions": "^3.0",
-        "drupal/layout_builder_st": "^1.0@alpha",
+        "drupal/layout_builder_st": "^1.0-alpha2",
         "drupal/layout_builder_styles": "^2.0",
         "drupal/layout_library": "^1.0-beta1",
         "drupal/linkit": "^6.1",
@@ -245,6 +245,12 @@
             "drupal/group": {
                 "Enter drupal/group patch #2817109 description here":
                 "https://www.drupal.org/files/issues/2022-11-02/2817109-2.0.x-how-to-redirect-30.patch"
+            },
+            "drupal/layout_builder_st": {
+                "3420063 - Call to a member function getConfig() OverridesSectionStorage.php":
+                "https://git.drupalcode.org/project/layout_builder_st/-/merge_requests/6.diff",
+                "3411037 - Fix core removing contextual translation links":
+                "https://www.drupal.org/files/issues/2025-05-14/3411037-contextual-links-removed-from-core-26.patch"
             },
             "drupal/linkit": {
                 "Detect and strip base URL from pasted URLs to increase matching hits":
