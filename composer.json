@@ -47,7 +47,7 @@
         "drupal/group": "^2.3",
         "drupal/image_widget_crop": "^2.1",
         "drupal/inline_entity_form": "^1.0-rc12",
-        "drupal/layout_builder_restrictions": "^2.14",
+        "drupal/layout_builder_restrictions": "^3.0",
         "drupal/layout_builder_st": "^1.0-alpha2",
         "drupal/layout_builder_styles": "^2.0",
         "drupal/layout_library": "^1.0-beta1",
