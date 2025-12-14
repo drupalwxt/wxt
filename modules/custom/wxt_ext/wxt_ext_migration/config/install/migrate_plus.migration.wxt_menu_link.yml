@@ -59,7 +59,7 @@ source:
       weight: 3
       parent: 0
     - mlid: 'ml_main_3_sub_1'
-      link_title: 'Drupal 9'
+      link_title: 'Drupal 10'
       description: ''
       menu_name: 'main'
       link_path: 'internal:/node/2'
@@ -68,7 +68,7 @@ source:
       weight: 0
       parent: 'ml_main_3'
     - mlid: 'ml_main_3_sub_2'
-      link_title: 'Drupal WxT for Drupal 9'
+      link_title: 'Drupal WxT for Drupal 10'
       description: ''
       menu_name: 'main'
       link_path: 'internal:/node/1'
@@ -78,7 +78,7 @@ source:
       parent: 'ml_main_3'
     - mlid: 'ml_main_4'
       link_title: 'Resources'
-      description: 'Drupal 9 API.'
+      description: 'Drupal 10 API.'
       menu_name: 'main'
       link_path: 'https://api.drupal.org/api/drupal/8.2.x'
       options: []
@@ -86,7 +86,7 @@ source:
       weight: 4
       parent: 0
     - mlid: 'ml_main_4_sub_1'
-      link_title: 'Theming in Drupal 9'
+      link_title: 'Theming in Drupal 10'
       description: ''
       menu_name: 'main'
       link_path: 'https://loganfarr.com/index.php/d8-theming'
@@ -114,8 +114,8 @@ source:
       weight: 0
       parent: 0
     - mlid: 'ml_sidebar_1_sub_1'
-      link_title: 'Drupal 9'
-      description: 'Drupal 9 introduction'
+      link_title: 'Drupal 10'
+      description: 'Drupal 10 introduction'
       menu_name: 'sidebar'
       link_path: 'internal:/node/2'
       options: []
@@ -123,7 +123,7 @@ source:
       weight: 0
       parent: 'ml_sidebar_1'
     - mlid: 'ml_sidebar_1_sub_1_sub_1'
-      link_title: 'Why Drupal 9'
+      link_title: 'Why Drupal 10'
       description: 'Meet the world’s leading digital experience platform.'
       menu_name: 'sidebar'
       link_path: 'https://www.drupal.com/why-drupal-8'
@@ -133,7 +133,7 @@ source:
       parent: 'ml_sidebar_1_sub_1'
     - mlid: 'ml_sidebar_1_sub_1_sub_2'
       link_title: 'Multilingual Improvements'
-      description: 'Drupal 9 multilingual improvements.'
+      description: 'Drupal 10 multilingual improvements.'
       menu_name: 'sidebar'
       link_path: 'https://www.drupal.org/features/multilingual'
       options: []
@@ -141,7 +141,7 @@ source:
       weight: 0
       parent: 'ml_sidebar_1_sub_1'
     - mlid: 'ml_sidebar_1_sub_2'
-      link_title: 'Drupal WxT for Drupal 9'
+      link_title: 'Drupal WxT for Drupal 10'
       description: 'Drupal WxT8 introduction'
       menu_name: 'sidebar'
       link_path: 'internal:/node/1'
