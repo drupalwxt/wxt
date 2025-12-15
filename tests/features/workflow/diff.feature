@@ -1,7 +1,6 @@
 @wxt @workflow @api @diff
 Feature: Diffing different revisions of content
 
-  @javascript
   Scenario: Diffing two node revisions
     Given I am logged in as a user with the administrator role
     And page content:
