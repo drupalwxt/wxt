@@ -90,7 +90,7 @@ class UUIDLink extends ProcessPluginBase implements ContainerFactoryPluginInterf
   }
 
   /**
-   * Replace callback to convert Drupal 7 UUID link into Drupal 10 UUID Link.
+   * Replace callback to convert a Drupal 7 UUID link into a Drupal 10 UUID Link.
    *
    * @param string $match
    *   Takes a match of tag code.
