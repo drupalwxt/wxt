@@ -8,6 +8,6 @@ dependencies:
   - 'drupal:shortcut'
   - 'page_manager:page_manager'
   - 'panels_ipe:panels_ipe'
-  - 'wxt_translation:wxt_translation'
-  - 'wxt_ext_layout:wxt_ext_layout'
+  - 'wxt:wxt_translation'
+  - 'wxt:wxt_ext_layout'
 version: '6.3.x'
