@@ -31,4 +31,4 @@ install:
 themes:
   - claro
   - wxt_bootstrap
-version: 6.1.0
+version: 6.1.5

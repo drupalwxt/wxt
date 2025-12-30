@@ -9,4 +9,4 @@ dependencies:
   - 'wxt_core:wxt_core'
   - 'wxt_translation:wxt_translation'
   - 'wxt_ext_taxonomy:wxt_ext_taxonomy'
-version: 6.1.0
+version: 6.1.5
