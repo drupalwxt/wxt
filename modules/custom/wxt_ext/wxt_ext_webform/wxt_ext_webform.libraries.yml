@@ -2,6 +2,7 @@ wet_webform_enhancements:
   js:
     js/webform_required_marker.js: {}
     js/webform_checkboxes_group.js: {}
+    js/wet-webform-prev-bypass.js: {}
   dependencies:
     - core/drupal
     - core/once
