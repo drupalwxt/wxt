@@ -12,13 +12,13 @@ source:
   translations: true
   data_rows:
     - name: 'wxt_content_1'
-      title: 'Drupal WxT pour Drupal 9'
+      title: 'Drupal WxT pour Drupal 11'
       language: 'fr'
       status: 1
       body: |
         <p>Pas de traduction en ce moment.</p>
     - name: 'wxt_content_2'
-      title: 'Drupal 9'
+      title: 'Drupal 11'
       language: 'fr'
       status: 1
       body:  |
