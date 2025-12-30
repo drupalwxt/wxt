@@ -169,6 +169,12 @@ function wxt_ext_webform_webform_submission_form_alter(array &$form, FormStateIn
 
     // Attach label/required enhancer only when inline validation is enabled.
     $form['#attached']['library'][] = 'wxt_ext_webform/wet_webform_enhancements';
+
+    // Multi-step webform "Previous" button.
+    if (!empty($form['actions']['wizard_prev'])) {
+      // Mark this button so JS knows to bypass WET validation.
+      $form['actions']['wizard_prev']['#attributes']['data-wet-skip-validation'] = '1';
+    }
   }
 }
 
