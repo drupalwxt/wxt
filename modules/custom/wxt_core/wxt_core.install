@@ -722,3 +722,18 @@ function wxt_core_update_8502() {
     $config->save();
   }
 }
+
+/**
+ * Issue #3554857: Install jquery_ui_resizable module.
+ */
+function wxt_core_update_8503() {
+  $module_installer = \Drupal::service('module_installer');
+  $moduleHandler = \Drupal::service('module_handler');
+
+  // Install wxt_core dependency.
+  if ($moduleHandler->moduleExists('query_ui_resizable')) {
+    $module_installer->install([
+      'jquery_ui_resizable',
+    ]);
+  }
+}
