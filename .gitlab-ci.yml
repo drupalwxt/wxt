@@ -24,6 +24,8 @@ include:
 # Uncomment the lines below if you want to override any of the variables. The following is just an example.
 ################
 variables:
+  CI_DEBUG_TRACE: "true"
+  CWEAGANS_COMPOSER_PATCHES_VERBOSE: "1"
   SKIP_CSPELL: '1'
   SKIP_ESLINT: '1'
   SKIP_STYLELINT: '1'
