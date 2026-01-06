@@ -93,6 +93,7 @@
     },
     "require-dev": {
         "drupal/core-dev": "10.4.*",
+        "composer/composer": "~2.8.1",
         "drupal/drupal-extension": "5.0.0-alpha1",
         "drush/drush": "^12.4.3",
         "oomphinc/composer-installers-extender": "^1.1 || ^2",
