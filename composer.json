@@ -51,7 +51,7 @@
         "drupal/layout_builder_st": "^1.0-alpha2",
         "drupal/layout_builder_styles": "^2.0",
         "drupal/layout_library": "^1.0-beta1",
-        "drupal/linkit": "^6.1",
+        "drupal/linkit": "^7.0",
         "drupal/media_entity_instagram": "^3",
         "drupal/media_entity_twitter": "^2.5",
         "drupal/media_entity_slideshow": "^2.0",
@@ -251,10 +251,6 @@
                 "https://git.drupalcode.org/project/layout_builder_st/-/merge_requests/6.diff",
                 "3411037 - Fix core removing contextual translation links":
                 "https://www.drupal.org/files/issues/2025-05-14/3411037-contextual-links-removed-from-core-26.patch"
-            },
-            "drupal/linkit": {
-                "Detect and strip base URL from pasted URLs to increase matching hits":
-                "https://www.drupal.org/files/issues/2023-11-02/linkit6x-3078075-77.patch"
             },
             "drupal/page_manager": {
                 "Enter drupal/page_manager patch #2626090 description here":
