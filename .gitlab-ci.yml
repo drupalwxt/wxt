@@ -36,5 +36,5 @@ variables:
 
 composer:
   variables:
-    DRUPAL_CORE: 10.4.9
+    DRUPAL_CORE: 10.6.1
     _WEB_ROOT: 'html'
