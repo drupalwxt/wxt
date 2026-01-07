@@ -23,8 +23,8 @@
         "drupal/ckeditor_codemirror": "^3.0.0-beta4",
         "drupal/ckeditor_details": "^2.1.0-alpha1",
         "drupal/config_rewrite": "^1.5",
-        "drupal/core-composer-scaffold": "10.4.*",
-        "drupal/core-recommended": "10.4.*",
+        "drupal/core-composer-scaffold": "10.6.*",
+        "drupal/core-recommended": "10.6.*",
         "drupal/core_context": "1.1",
         "drupal/crop": "^2.0.0-rc1",
         "drupal/ctools": "^3.9",
@@ -92,7 +92,7 @@
         "w8tcha/ckeditor-codemirror": "1.18.5"
     },
     "require-dev": {
-        "drupal/core-dev": "^10.4.9",
+        "drupal/core-dev": "10.6.*",
         "drupal/drupal-extension": "5.0.0-alpha1",
         "drush/drush": "^12.4.3",
         "oomphinc/composer-installers-extender": "^1.1 || ^2",
