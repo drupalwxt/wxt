@@ -201,8 +201,6 @@
                 "https://www.drupal.org/files/issues/2020-05-26/drupal-3016131-23-useless-exception.patch",
                 "3150294 - New translations for moderated nodes are not created in the initial workflow state":
                 "https://www.drupal.org/files/issues/2024-01-03/3150294-128.patch",
-                "3177182 - Book title in breadcrumb not translated":
-                "https://www.drupal.org/files/issues/2020-10-20/book-breadcrumb_title_xlate-3177182-3.patch",
                 "Enter drupal/core patch #3173808 description here":
                 "https://www.drupal.org/files/issues/2024-01-14/3173808-26.patch",
                 "Enter drupal/core patch #2546212 description here":
