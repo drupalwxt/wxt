@@ -7,7 +7,7 @@ import {
     ViewModel
 } from 'ckeditor5/src/ui';
 import { Collection } from 'ckeditor5/src/utils'
-import { icons } from 'ckeditor5/src/core';
+import { IconCheck, IconCancel } from 'ckeditor5/src/icons';
 import { PanelClasses } from './panelcssclasses';
 
 /*
@@ -24,9 +24,9 @@ export default class FormView extends View {
         const items = new Collection();
 
         // Create save and cancel buttons
-        this.saveButtonView = this._createButton('Save', icons.check, 'ck-button-save');
+        this.saveButtonView = this._createButton('Save', IconCheck, 'ck-button-save');
         this.saveButtonView.type = 'submit';
-        this.cancelButtonView = this._createButton('Cancel', icons.cancel, 'ck-button-cancel');
+        this.cancelButtonView = this._createButton('Cancel', IconCancel, 'ck-button-cancel');
         this.cancelButtonView.delegate('execute').to(this, 'cancel');
 
         // Create the dropdown list from array of panel classes

@@ -36,10 +36,8 @@ export default class AlertUI extends Plugin {
             const headingLevel = formView.headingDropdown.selectedValue || 'h3';
 
             if (alerttype === null || typeof alerttype === 'undefined') {
-                return; // Optionally show validation message
+                return;
             }
-
-            console.log(alerttype);
 
             let selectionAncestors = editor.model.document.selection.getFirstPosition().getAncestors();
             let selectionIsAlert = false;

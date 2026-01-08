@@ -11,41 +11,48 @@
 return /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "ckeditor5/src/core.js":
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+/***/ "ckeditor5/src/core.js"
+(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = (__webpack_require__("dll-reference CKEditor5.dll"))("./src/core.js");
 
-/***/ }),
+/***/ },
 
-/***/ "ckeditor5/src/ui.js":
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+/***/ "ckeditor5/src/icons.js"
+(module, __unused_webpack_exports, __webpack_require__) {
+
+module.exports = (__webpack_require__("dll-reference CKEditor5.dll"))("./src/icons.js");
+
+/***/ },
+
+/***/ "ckeditor5/src/ui.js"
+(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = (__webpack_require__("dll-reference CKEditor5.dll"))("./src/ui.js");
 
-/***/ }),
+/***/ },
 
-/***/ "ckeditor5/src/utils.js":
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+/***/ "ckeditor5/src/utils.js"
+(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = (__webpack_require__("dll-reference CKEditor5.dll"))("./src/utils.js");
 
-/***/ }),
+/***/ },
 
-/***/ "ckeditor5/src/widget.js":
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+/***/ "ckeditor5/src/widget.js"
+(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = (__webpack_require__("dll-reference CKEditor5.dll"))("./src/widget.js");
 
-/***/ }),
+/***/ },
 
-/***/ "dll-reference CKEditor5.dll":
-/***/ ((module) => {
+/***/ "dll-reference CKEditor5.dll"
+(module) {
 
 "use strict";
 module.exports = CKEditor5.dll;
 
-/***/ })
+/***/ }
 
 /******/ 	});
 /************************************************************************/
@@ -93,7 +100,7 @@ module.exports = CKEditor5.dll;
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be in strict mode.
+// This entry needs to be wrapped in an IIFE because it needs to be in strict mode.
 (() => {
 "use strict";
 
@@ -106,14 +113,14 @@ __webpack_require__.d(__webpack_exports__, {
 var delegated_corefrom_dll_reference_CKEditor5 = __webpack_require__("ckeditor5/src/core.js");
 // EXTERNAL MODULE: delegated ./widget.js from dll-reference CKEditor5.dll
 var delegated_widgetfrom_dll_reference_CKEditor5 = __webpack_require__("ckeditor5/src/widget.js");
-;// CONCATENATED MODULE: ./js/ckeditor5_plugins/wxt_alert/src/alertcssclasses.js
+;// ./js/ckeditor5_plugins/wxt_alert/src/alertcssclasses.js
 const AlertClasses = [
     'info',
     'success',
     'danger',
     'warning'
 ];
-;// CONCATENATED MODULE: ./js/ckeditor5_plugins/wxt_alert/src/insertalertcommand.js
+;// ./js/ckeditor5_plugins/wxt_alert/src/insertalertcommand.js
 
 
 
@@ -230,7 +237,7 @@ function getAlertTemplate(writer, alertClass, headingLevel) {
     return alert;
 }
 
-;// CONCATENATED MODULE: ./js/ckeditor5_plugins/wxt_alert/src/alertediting.js
+;// ./js/ckeditor5_plugins/wxt_alert/src/alertediting.js
 
 
 
@@ -374,7 +381,9 @@ class AlertEditing extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
 var delegated_uifrom_dll_reference_CKEditor5 = __webpack_require__("ckeditor5/src/ui.js");
 // EXTERNAL MODULE: delegated ./utils.js from dll-reference CKEditor5.dll
 var delegated_utilsfrom_dll_reference_CKEditor5 = __webpack_require__("ckeditor5/src/utils.js");
-;// CONCATENATED MODULE: ./js/ckeditor5_plugins/wxt_alert/src/alertview.js
+// EXTERNAL MODULE: delegated ./icons.js from dll-reference CKEditor5.dll
+var delegated_iconsfrom_dll_reference_CKEditor5 = __webpack_require__("ckeditor5/src/icons.js");
+;// ./js/ckeditor5_plugins/wxt_alert/src/alertview.js
 
 
 
@@ -396,9 +405,9 @@ class FormView extends delegated_uifrom_dll_reference_CKEditor5.View {
         const headingItems = new delegated_utilsfrom_dll_reference_CKEditor5.Collection();
 
         // Create save and cancel buttons
-        this.saveButtonView = this._createButton('Save', delegated_corefrom_dll_reference_CKEditor5.icons.check, 'ck-button-save');
+        this.saveButtonView = this._createButton('Save', delegated_iconsfrom_dll_reference_CKEditor5.IconCheck, 'ck-button-save');
         this.saveButtonView.type = 'submit';
-        this.cancelButtonView = this._createButton('Cancel', delegated_corefrom_dll_reference_CKEditor5.icons.cancel, 'ck-button-cancel');
+        this.cancelButtonView = this._createButton('Cancel', delegated_iconsfrom_dll_reference_CKEditor5.IconCancel, 'ck-button-cancel');
         this.cancelButtonView.delegate('execute').to(this, 'cancel');
 
         // create button for each alert class and add to the collection of buttons for the dropdown list 
@@ -496,9 +505,9 @@ class FormView extends delegated_uifrom_dll_reference_CKEditor5.View {
     }
 }
 
-;// CONCATENATED MODULE: ./icons/alert.svg
+;// ./icons/alert.svg
 /* harmony default export */ const icons_alert = ("<?xml version=\"1.0\" encoding=\"UTF-8\"?><svg id=\"Layer_2\" xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"28\" viewBox=\"0 0 32 28\"><g id=\"Layer_1-2\"><path id=\"alert\" d=\"m31.75,25.22L17.61.92c-.72-1.23-2.51-1.23-3.23,0L.25,25.22c-.72,1.23.18,2.78,1.61,2.78h28.27c1.43,0,2.33-1.54,1.61-2.78Zm-15.75.81c-1.33,0-2.35-1.01-2.35-2.27s1.02-2.33,2.35-2.33,2.35,1.04,2.35,2.33-1.05,2.27-2.35,2.27Zm2.66-17.16l-.96,9.98c-.04.51-.52.73-1.4.73h-.61c-.87,0-1.35-.23-1.4-.73l-.96-9.98v-.63c0-.51.52-.78,1.35-.78h2.62c.83,0,1.35.28,1.35.78v.63Z\" stroke-width=\"0\"/></g></svg>");
-;// CONCATENATED MODULE: ./js/ckeditor5_plugins/wxt_alert/src/alertui.js
+;// ./js/ckeditor5_plugins/wxt_alert/src/alertui.js
 
 
 
@@ -537,10 +546,8 @@ class AlertUI extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
             const headingLevel = formView.headingDropdown.selectedValue || 'h3';
 
             if (alerttype === null || typeof alerttype === 'undefined') {
-                return; // Optionally show validation message
+                return;
             }
-
-            console.log(alerttype);
 
             let selectionAncestors = editor.model.document.selection.getFirstPosition().getAncestors();
             let selectionIsAlert = false;
@@ -655,7 +662,7 @@ class AlertUI extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
     }
 }
 
-;// CONCATENATED MODULE: ./js/ckeditor5_plugins/wxt_alert/src/alert.js
+;// ./js/ckeditor5_plugins/wxt_alert/src/alert.js
 
 
 
@@ -665,7 +672,7 @@ class Alert extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
         return [AlertEditing, AlertUI];
     }
 }
-;// CONCATENATED MODULE: ./js/ckeditor5_plugins/wxt_alert/src/index.js
+;// ./js/ckeditor5_plugins/wxt_alert/src/index.js
 /**
  * @file The build process always expects an index.js file. Anything exported
  * here will be recognized by CKEditor 5 as an available plugin. Multiple

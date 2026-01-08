@@ -11,41 +11,48 @@
 return /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "ckeditor5/src/core.js":
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+/***/ "ckeditor5/src/core.js"
+(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = (__webpack_require__("dll-reference CKEditor5.dll"))("./src/core.js");
 
-/***/ }),
+/***/ },
 
-/***/ "ckeditor5/src/ui.js":
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+/***/ "ckeditor5/src/icons.js"
+(module, __unused_webpack_exports, __webpack_require__) {
+
+module.exports = (__webpack_require__("dll-reference CKEditor5.dll"))("./src/icons.js");
+
+/***/ },
+
+/***/ "ckeditor5/src/ui.js"
+(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = (__webpack_require__("dll-reference CKEditor5.dll"))("./src/ui.js");
 
-/***/ }),
+/***/ },
 
-/***/ "ckeditor5/src/utils.js":
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+/***/ "ckeditor5/src/utils.js"
+(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = (__webpack_require__("dll-reference CKEditor5.dll"))("./src/utils.js");
 
-/***/ }),
+/***/ },
 
-/***/ "ckeditor5/src/widget.js":
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+/***/ "ckeditor5/src/widget.js"
+(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = (__webpack_require__("dll-reference CKEditor5.dll"))("./src/widget.js");
 
-/***/ }),
+/***/ },
 
-/***/ "dll-reference CKEditor5.dll":
-/***/ ((module) => {
+/***/ "dll-reference CKEditor5.dll"
+(module) {
 
 "use strict";
 module.exports = CKEditor5.dll;
 
-/***/ })
+/***/ }
 
 /******/ 	});
 /************************************************************************/
@@ -93,7 +100,7 @@ module.exports = CKEditor5.dll;
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be in strict mode.
+// This entry needs to be wrapped in an IIFE because it needs to be in strict mode.
 (() => {
 "use strict";
 
@@ -106,7 +113,7 @@ __webpack_require__.d(__webpack_exports__, {
 var delegated_corefrom_dll_reference_CKEditor5 = __webpack_require__("ckeditor5/src/core.js");
 // EXTERNAL MODULE: delegated ./widget.js from dll-reference CKEditor5.dll
 var delegated_widgetfrom_dll_reference_CKEditor5 = __webpack_require__("ckeditor5/src/widget.js");
-;// CONCATENATED MODULE: ./js/ckeditor5_plugins/wxt_panel/src/panelcssclasses.js
+;// ./js/ckeditor5_plugins/wxt_panel/src/panelcssclasses.js
 const PanelClasses = [
     'primary',
     'default',
@@ -116,7 +123,7 @@ const PanelClasses = [
     'danger',
     'warning'
 ];
-;// CONCATENATED MODULE: ./js/ckeditor5_plugins/wxt_panel/src/insertpanelcommand.js
+;// ./js/ckeditor5_plugins/wxt_panel/src/insertpanelcommand.js
 
 
 
@@ -236,7 +243,7 @@ function getPanelTemplate(writer, panelClass) {
 
     return panel;
 }
-;// CONCATENATED MODULE: ./js/ckeditor5_plugins/wxt_panel/src/panelediting.js
+;// ./js/ckeditor5_plugins/wxt_panel/src/panelediting.js
 
 
 
@@ -425,7 +432,9 @@ class PanelEditing extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
 var delegated_uifrom_dll_reference_CKEditor5 = __webpack_require__("ckeditor5/src/ui.js");
 // EXTERNAL MODULE: delegated ./utils.js from dll-reference CKEditor5.dll
 var delegated_utilsfrom_dll_reference_CKEditor5 = __webpack_require__("ckeditor5/src/utils.js");
-;// CONCATENATED MODULE: ./js/ckeditor5_plugins/wxt_panel/src/panelview.js
+// EXTERNAL MODULE: delegated ./icons.js from dll-reference CKEditor5.dll
+var delegated_iconsfrom_dll_reference_CKEditor5 = __webpack_require__("ckeditor5/src/icons.js");
+;// ./js/ckeditor5_plugins/wxt_panel/src/panelview.js
 
 
 
@@ -445,9 +454,9 @@ class FormView extends delegated_uifrom_dll_reference_CKEditor5.View {
         const items = new delegated_utilsfrom_dll_reference_CKEditor5.Collection();
 
         // Create save and cancel buttons
-        this.saveButtonView = this._createButton('Save', delegated_corefrom_dll_reference_CKEditor5.icons.check, 'ck-button-save');
+        this.saveButtonView = this._createButton('Save', delegated_iconsfrom_dll_reference_CKEditor5.IconCheck, 'ck-button-save');
         this.saveButtonView.type = 'submit';
-        this.cancelButtonView = this._createButton('Cancel', delegated_corefrom_dll_reference_CKEditor5.icons.cancel, 'ck-button-cancel');
+        this.cancelButtonView = this._createButton('Cancel', delegated_iconsfrom_dll_reference_CKEditor5.IconCancel, 'ck-button-cancel');
         this.cancelButtonView.delegate('execute').to(this, 'cancel');
 
         // Create the dropdown list from array of panel classes
@@ -517,9 +526,9 @@ class FormView extends delegated_uifrom_dll_reference_CKEditor5.View {
         return button;
     }
 }
-;// CONCATENATED MODULE: ./icons/panel.svg
+;// ./icons/panel.svg
 /* harmony default export */ const panel = ("<?xml version=\"1.0\" encoding=\"UTF-8\"?><svg id=\"Layer_2\" xmlns=\"http://www.w3.org/2000/svg\" width=\"50\" height=\"30\" viewBox=\"0 0 50 30\"><g id=\"Layer_1-2\"><path id=\"panel\" d=\"m0,0v30h50V0H0Zm2.98,2.93h19.52v4.56H2.98V2.93Zm44.04,24.29H2.98V10.49h44.04v16.73Z\" stroke-width=\"0\"/></g></svg>");
-;// CONCATENATED MODULE: ./js/ckeditor5_plugins/wxt_panel/src/panelui.js
+;// ./js/ckeditor5_plugins/wxt_panel/src/panelui.js
 
 
 
@@ -649,7 +658,7 @@ class PanelUI extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
         };
     }
 }
-;// CONCATENATED MODULE: ./js/ckeditor5_plugins/wxt_panel/src/panel.js
+;// ./js/ckeditor5_plugins/wxt_panel/src/panel.js
 
 
 
@@ -659,7 +668,7 @@ class Panel extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
         return [PanelEditing, PanelUI];
     }
 }
-;// CONCATENATED MODULE: ./js/ckeditor5_plugins/wxt_panel/src/index.js
+;// ./js/ckeditor5_plugins/wxt_panel/src/index.js
 
 
 /* harmony default export */ const src = ({
