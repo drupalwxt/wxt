@@ -25,7 +25,7 @@ class GetPathTest extends MigrateProcessTestCase {
   /**
    * Data provider for testGetPath().
    */
-  public function providerTestGetPath() {
+  public static function providerTestGetPath() {
     return [
       [
         '218x291.png',
