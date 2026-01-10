@@ -1,9 +1,10 @@
 name: 'WxT Extend Book'
 description: 'Configures book module to support GC Subway functionality.'
 type: module
-core_version_requirement: '>10'
+core_version_requirement: '>11'
 package: WxT
+container_rebuild_required: true
 dependencies:
   - 'book:book'
 configure: wxt_ext_book.admin_config_wxt_ext_book
-version: 6.1.0
+version: 6.2.x

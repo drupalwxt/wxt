@@ -1,9 +1,10 @@
 name: 'WxT Extend Font Awesome'
 description: 'Adds Font Awesome support.'
 type: module
-core_version_requirement: '>10'
+core_version_requirement: '>11'
 package: WxT
+container_rebuild_required: true
 dependencies:
   - 'config_rewrite:config_rewrite'
   - 'fontawesome:fontawesome'
-version: 6.1.0
+version: 6.2.x

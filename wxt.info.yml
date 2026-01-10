@@ -16,7 +16,10 @@ install:
   - jquery_ui_draggable
   - jquery_ui_resizable
   - language
+  - layout_builder
   - locale
+  - media
+  - media_library
   - menu_link_content
   - menu_ui
   - node
@@ -24,6 +27,8 @@ install:
   - taxonomy
   - text
   - user
+  - webform
+  - webform_node
   - wxt_admin
   - wxt_core
   - wxt_library
@@ -31,4 +36,4 @@ install:
 themes:
   - claro
   - wxt_bootstrap
-version: 6.1.0
+version: 6.2.x

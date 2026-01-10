@@ -1,9 +1,9 @@
 name: 'Bulk Media Upload'
-core_version_requirement: '>10'
+core_version_requirement: '>11'
 type: module
 description: 'Provides improvements to Bulk Upload for Media.'
 package: WxT
 dependencies:
   - 'dropzonejs:dropzonejs'
   - 'wxt_ext_media:wxt_ext_media'
-version: 6.1.0
+version: 6.2.x

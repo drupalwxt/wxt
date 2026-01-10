@@ -1,7 +1,7 @@
 name: 'WxT Extend Carousel'
 description: 'Creates custom block of type Carousel.'
 type: module
-core_version_requirement: '>10'
+core_version_requirement: '>11'
 package: WxT
 dependencies:
   - 'block_content:block_content'
@@ -12,4 +12,4 @@ dependencies:
   - 'media_library:media_library'
   - 'options:options'
   - 'paragraphs:paragraphs'
-version: 6.1.0
+version: 6.2.x

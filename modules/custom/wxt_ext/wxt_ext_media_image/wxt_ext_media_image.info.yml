@@ -1,8 +1,8 @@
 name: 'Media Image'
-core_version_requirement: '>10'
+core_version_requirement: '>11'
 type: module
 package: WxT
 description: 'Provides an Image entity type for Media.'
 dependencies:
   - 'wxt_ext_media:wxt_ext_media'
-version: 6.1.0
+version: 6.2.x

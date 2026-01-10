@@ -1,9 +1,9 @@
 name: 'Media Image Responsive'
-core_version_requirement: '>10'
+core_version_requirement: '>11'
 type: module
 package: WxT
 description: 'Provides responsive image support for Media.'
 dependencies:
   - 'drupal:responsive_image'
   - 'wxt_ext_media_image:wxt_ext_media_image'
-version: 6.1.0
+version: 6.2.x

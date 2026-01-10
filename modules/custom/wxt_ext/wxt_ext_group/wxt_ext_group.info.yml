@@ -1,7 +1,7 @@
 name: 'WxT Extend Group'
 description: 'Provides Group functionality and mappings to all departments through Migrate.'
 type: module
-core_version_requirement: '>10'
+core_version_requirement: '>11'
 package: WxT
 dependencies:
   - 'config_rewrite:config_rewrite'
@@ -9,4 +9,4 @@ dependencies:
   - 'gnode:gnode'
   - 'group:group'
   - 'wxt_ext_blog:wxt_ext_blog'
-version: 6.1.0
+version: 6.2.x
