@@ -32,15 +32,15 @@ class WxTTest extends BrowserTestBase {
    */
   public function testWxtLogin() {
     // Create a user to check the login.
-    $user = $this->createUser();
+    $user = $this->createUser(['access toolbar']);
 
     // Log in our user.
     $this->drupalLogin($user);
 
-    // Verify that logged in user can access the logout link.
-    $this->drupalGet('user');
-
-    $this->assertSession()->linkByHrefExists('/user/logout');
+    // If we were anonymous we'd be sent to /user/login.
+    $this->drupalGet('en/user');
+    $this->assertSession()->statusCodeEquals(200);
+    $this->assertSession()->addressNotMatches('#/user/login#');
   }
 
 }
