@@ -9,6 +9,9 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Link;
 use Drupal\webform\Entity\Webform;
 use Drupal\webform\Entity\WebformSubmission;
+use Drupal\webform\Utility\WebformArrayHelper;
+use Drupal\webform\Utility\WebformElementHelper;
+use Drupal\webform\WebformInterface;
 
 /**
  * Implements hook_theme().
@@ -26,6 +29,71 @@ function wxt_ext_webform_theme($existing, $type, $theme, $path) {
       ],
     ],
   ];
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter() for webform_edit_form.
+ */
+function wxt_ext_webform_form_webform_edit_form_alter(array &$form, FormStateInterface $form_state, $form_id): void {
+  // Get the Webform entity from the form.
+  $form_object = $form_state->getFormObject();
+  if (!method_exists($form_object, 'getEntity')) {
+    return;
+  }
+  $webform = $form_object->getEntity();
+  if (!$webform instanceof WebformInterface) {
+    return;
+  }
+
+  $enabled = (bool) $webform->getThirdPartySetting('wxt_ext_webform', 'wet_inline_validation', FALSE);
+
+  if ($enabled) {
+    \Drupal::messenger()->addStatus(t('WET-BOEW inline validation is <strong>ENABLED</strong> for this webform. To add special validation to a field, edit the field, go to the Advanced tab -> Element attributes -> Element custom attributes (YAML) and add custom attributes as per <a href="https://wet-boew.github.io/wet-boew/docs/ref/formvalid/formvalid-en.html#SpecializedValidation">https://wet-boew.github.io/wet-boew/docs/ref/formvalid/formvalid-en.html#SpecializedValidation</a>'));
+  }
+  else {
+    \Drupal::messenger()->addWarning(t('WET-BOEW inline validation is <strong>DISABLED</strong> for this webform. To enable it, go to the Settings tab and select the "Enable WET-BOEW inline validation" option.'));
+  }
+}
+
+/**
+ * Implements hook_webform_third_party_settings_form_alter().
+ */
+function wxt_ext_webform_webform_third_party_settings_form_alter(array &$form, FormStateInterface $form_state) {
+  // Get the Webform entity being edited.
+  $form_object = $form_state->getFormObject();
+  $webform = $form_object->getEntity();
+
+  $form['form']['wxt_settings'] = [
+    '#type' => 'details',
+    '#title' => t('WxT settings'),
+    '#open' => TRUE,
+  ];
+
+  // Add the checkbox and store under third_party_settings.
+  $form['form']['wxt_settings']['wxt_inline_validation'] = [
+    '#type' => 'checkbox',
+    '#title' => t('Enable WET-BOEW inline validation'),
+    '#description' => t('Enable WET-BOEW inline form validation for this webform. When enabled, the form will be wrapped in a <code>&lt;div class="wb-frmvld"&gt;</code> container so WET-BOEW can apply its built-in client-side validation, displaying error messages inline as users complete the form.'),
+    '#default_value' => $webform->getThirdPartySetting('wxt_ext_webform', 'wet_inline_validation', FALSE),
+    // Make it land in $form_state values under third_party_settings.
+    '#parents' => ['third_party_settings', 'wxt_ext_webform', 'wet_inline_validation'],
+    '#weight' => 99,
+  ];
+}
+
+/**
+ * Implements hook_preprocess_form_element().
+ */
+function wxt_ext_webform_preprocess_form_element(array &$variables) {
+  // Only perform this action on webform elements.
+  if (!WebformElementHelper::isWebformElement($variables['element'])) {
+    return;
+  }
+
+  // Remove form-inline class for element wrappers to ensure proper rendering with label.
+  if (!empty($variables['attributes']['class'])) {
+    WebformArrayHelper::removeValue($variables['attributes']['class'], 'form-inline');
+  }
 }
 
 /**
@@ -84,6 +152,25 @@ function wxt_ext_webform_webform_submission_form_alter(array &$form, FormStateIn
           'class' => ['btn btn-primary'],
         ],
       ];
+    }
+  }
+
+  // Get the Webform entity being edited.
+  $form_object = $form_state->getFormObject();
+  $webform_submission = $form_object->getEntity();
+  $webform = $webform_submission->getWebform();
+
+  if ($webform->getThirdPartySetting('wxt_ext_webform', 'wet_inline_validation', FALSE)) {
+    $form['#prefix'] = ($form['#prefix'] ?? '') . '<div class="wb-frmvld">';
+    $form['#suffix'] = '</div>' . ($form['#suffix'] ?? '');
+
+    // Attach label/required enhancer only when inline validation is enabled.
+    $form['#attached']['library'][] = 'wxt_ext_webform/wet_webform_enhancements';
+
+    // Multi-step webform "Previous" button.
+    if (!empty($form['actions']['wizard_prev'])) {
+      // Mark this button so JS knows to bypass WET validation.
+      $form['actions']['wizard_prev']['#attributes']['data-wet-skip-validation'] = '1';
     }
   }
 }
