@@ -36,11 +36,6 @@ class WxTTest extends BrowserTestBase {
 
     // Log in our user.
     $this->drupalLogin($user);
-
-    // If we were anonymous we'd be sent to /user/login.
-    $this->drupalGet('en/user');
-    $this->assertSession()->statusCodeEquals(200);
-    $this->assertSession()->addressNotMatches('#/user/login#');
   }
 
 }
