@@ -270,6 +270,10 @@
             "drupal/ckeditor_details": {
                 "3244311 - Allow <details> element to be placed without <div>":
                 "https://www.drupal.org/files/issues/2024-11-15/3244311-9.patch"
+            },
+            "drupal/layout_builder_st": {
+                "3566683 - Fix for WSOD on /admin/reports/status page":
+                "https://www.drupal.org/files/issues/2026-01-09/3566683-fix-error-on-status-report.patch"
             }
         }
     },
