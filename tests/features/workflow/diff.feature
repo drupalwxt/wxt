@@ -7,10 +7,14 @@ Feature: Diffing different revisions of content
       | title       | body           | moderation_state |
       | Drupal 10   | First revision | draft            |
     When I visit "/drupal-10"
-    And I visit the edit form
+    And I follow "Edit"
+    # CKEditor5 hides the textarea; switch to Source mode so body[0][value] is editable.
+    And I click "button.ck-source-editing-button" element
     And I enter "Second revision" for "body[0][value]"
     And I press "Save"
-    And I visit the edit form
+    And I follow "Edit"
+    # CKEditor5 hides the textarea; switch to Source mode so body[0][value] is editable.
+    And I click "button.ck-source-editing-button" element
     And I enter "Third revision" for "body[0][value]"
     And I press "Save"
     And I compare the 1st and 2nd revisions
