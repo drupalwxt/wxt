@@ -237,6 +237,12 @@
                 "2843247 - Drupal ajax error of undefined method getFileUri() while selecting newly uploaded image":
                 "https://www.drupal.org/files/issues/2025-02-13/entity-browser-2843247-16.patch"
             },
+            "drupal/entity_embed": {
+                "3531672 - Tooltip fix for embedded entities relating to cke5 updates included in Drupal 11.2.10/11.3.2 ..":
+                "https://www.drupal.org/files/issues/2025-12-22/entity_embed.issue-3531672-62.patch",
+                "3086162 - Prevent bug of adding img attributes to the parent div.":
+                "https://www.drupal.org/files/issues/2020-06-15/entity_embed-remove_image_attributes_from_div-3086162-13_0.patch"
+            },
             "drupal/fontawesome": {
                 "3274028 - CKEditor 5 compatibility":
                 "https://www.drupal.org/files/issues/2026-01-10/fontawesome-cke5-compatibility-3274028-72.patch.patch"
