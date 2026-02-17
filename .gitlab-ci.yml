@@ -34,5 +34,5 @@ variables:
 
 composer:
   variables:
-    DRUPAL_CORE: 11.1.1
-
+    DRUPAL_CORE: 11.1.8
+    _WEB_ROOT: "html"

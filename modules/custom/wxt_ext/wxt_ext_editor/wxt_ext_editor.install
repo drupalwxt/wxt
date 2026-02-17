@@ -17,7 +17,32 @@ function wxt_ext_editor_install() {
   }
 
   $moduleHandler = \Drupal::service('module_handler');
+
   if ($moduleHandler->moduleExists('wxt_translation')) {
     TranslationHelper::importTranslations('wxt_ext_editor');
+  }
+}
+
+/**
+ * Issue #3554857: Install dependencies of the wxt_ext_editor.
+ */
+function wxt_ext_editor_update_8500() {
+  /** @var \Drupal\Core\Extension\ModuleInstallerInterface $module_installer */
+  $module_installer = \Drupal::service('module_installer');
+  $moduleHandler = \Drupal::service('module_handler');
+
+  $modules = [
+    'ckeditor_abbreviation',
+    'ckeditor_details',
+    'footnotes',
+    'toc_api',
+    'toc_filter',
+    'wxt_ext_media_image_responsive',
+  ];
+
+  // Only install what's missing.
+  $missing = array_values(array_filter($modules, fn($m) => !$moduleHandler->moduleExists($m)));
+  if ($missing) {
+    $module_installer->install($missing);
   }
 }

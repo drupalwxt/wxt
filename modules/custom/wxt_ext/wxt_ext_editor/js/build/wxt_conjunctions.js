@@ -11,216 +11,64 @@
 return /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "ckeditor5/src/core.js":
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-module.exports = (__webpack_require__("dll-reference CKEditor5.dll"))("./src/core.js");
-
-/***/ }),
-
-/***/ "ckeditor5/src/ui.js":
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-module.exports = (__webpack_require__("dll-reference CKEditor5.dll"))("./src/ui.js");
-
-/***/ }),
-
-/***/ "ckeditor5/src/utils.js":
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-module.exports = (__webpack_require__("dll-reference CKEditor5.dll"))("./src/utils.js");
-
-/***/ }),
-
-/***/ "ckeditor5/src/widget.js":
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-module.exports = (__webpack_require__("dll-reference CKEditor5.dll"))("./src/widget.js");
-
-/***/ }),
-
-/***/ "dll-reference CKEditor5.dll":
-/***/ ((module) => {
+/***/ "./icons/conjunction.svg":
+/*!*******************************!*\
+  !*** ./icons/conjunction.svg ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-module.exports = CKEditor5.dll;
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<svg id=\"Layer_1\" data-name=\"Layer 1\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 20 20\">\n  <g>\n    <path d=\"M18,11c-.55,0-1,.51-1,1.14v5.71c0,.63.45,1.14,1,1.14s1-.51,1-1.14v-5.71c0-.63-.45-1.14-1-1.14Z\"/>\n    <path d=\"M14,11c-.55,0-1,.51-1,1.14v5.71c0,.63.45,1.14,1,1.14s1-.51,1-1.14v-5.71c0-.63-.45-1.14-1-1.14Z\"/>\n  </g>\n  <path d=\"M3.64,17.36c-.26,0-.51-.1-.71-.29-.39-.39-.39-1.02,0-1.41L15.66,2.93c.39-.39,1.02-.39,1.41,0s.39,1.02,0,1.41l-12.73,12.73c-.2.2-.45.29-.71.29Z\"/>\n  <path d=\"M8,4h-2v-2c0-.55-.45-1-1-1s-1,.45-1,1v2h-2c-.55,0-1,.45-1,1s.45,1,1,1h2v2c0,.55.45,1,1,1s1-.45,1-1v-2h2c.55,0,1-.45,1-1s-.45-1-1-1Z\"/>\n</svg>");
 
-/***/ })
+/***/ }),
 
-/******/ 	});
-/************************************************************************/
-/******/ 	// The module cache
-/******/ 	var __webpack_module_cache__ = {};
-/******/ 	
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-/******/ 		// Check if module is in cache
-/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
-/******/ 		if (cachedModule !== undefined) {
-/******/ 			return cachedModule.exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = __webpack_module_cache__[moduleId] = {
-/******/ 			// no module.id needed
-/******/ 			// no module.loaded needed
-/******/ 			exports: {}
-/******/ 		};
-/******/ 	
-/******/ 		// Execute the module function
-/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
-/******/ 	
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-/******/ 	
-/************************************************************************/
-/******/ 	/* webpack/runtime/define property getters */
-/******/ 	(() => {
-/******/ 		// define getter functions for harmony exports
-/******/ 		__webpack_require__.d = (exports, definition) => {
-/******/ 			for(var key in definition) {
-/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
-/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
-/******/ 				}
-/******/ 			}
-/******/ 		};
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
-/******/ 	(() => {
-/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
-/******/ 	})();
-/******/ 	
-/************************************************************************/
-var __webpack_exports__ = {};
-// This entry needs to be wrapped in an IIFE because it needs to be in strict mode.
-(() => {
+/***/ "./js/ckeditor5_plugins/wxt_conjunctions/src/conjunctioncssclasses.js":
+/*!****************************************************************************!*\
+  !*** ./js/ckeditor5_plugins/wxt_conjunctions/src/conjunctioncssclasses.js ***!
+  \****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
 "use strict";
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  "default": () => (/* binding */ src)
-});
-
-// EXTERNAL MODULE: delegated ./core.js from dll-reference CKEditor5.dll
-var delegated_corefrom_dll_reference_CKEditor5 = __webpack_require__("ckeditor5/src/core.js");
-// EXTERNAL MODULE: delegated ./widget.js from dll-reference CKEditor5.dll
-var delegated_widgetfrom_dll_reference_CKEditor5 = __webpack_require__("ckeditor5/src/widget.js");
-;// ./js/ckeditor5_plugins/wxt_conjunctions/src/conjunctioncssclasses.js
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ConjunctionClasses: () => (/* binding */ ConjunctionClasses)
+/* harmony export */ });
 const ConjunctionClasses = [
     'and',
     'or'
 ];
 
-;// ./js/ckeditor5_plugins/wxt_conjunctions/src/insertconjunctioncommand.js
 
+/***/ }),
 
-class InsertConjunctionCommand extends delegated_corefrom_dll_reference_CKEditor5.Command {
-    execute(conjunctionType = 'and', numColumns = 2, responsiveClass = '') {
-        const { model } = this.editor;
+/***/ "./js/ckeditor5_plugins/wxt_conjunctions/src/conjunctionediting.js":
+/*!*************************************************************************!*\
+  !*** ./js/ckeditor5_plugins/wxt_conjunctions/src/conjunctionediting.js ***!
+  \*************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-        model.change((writer) => {
-            const selection = model.document.selection;
-
-            // Check if the selection is directly on an existing conjunction
-            const selectedWidget = selection.getSelectedElement();
-
-            if (selectedWidget && selectedWidget.is('element', 'conjunction')) {
-                const originalTag = selectedWidget.getAttribute('originalTag');
-
-                // Update the existing widget's attributes
-                writer.setAttribute('conjunctionType', `cnjnctn-type-${conjunctionType}`, selectedWidget);
-                writer.setAttribute('columnCount', numColumns, selectedWidget);
-                writer.setAttribute('responsiveClass', responsiveClass, selectedWidget);
-                writer.setAttribute('originalTag', originalTag, selectedWidget);
-
-                // Update the number of columns
-                this._updateConjunctionColumns(writer, selectedWidget, numColumns);
-            } else {
-                // Insert a new widget
-                const conjunction = writer.createElement('conjunction', {
-                    conjunctionType: `cnjnctn-type-${conjunctionType}`,
-                    columnCount: numColumns,
-                    ...(responsiveClass ? { responsiveClass } : {}),
-                    originalTag: 'div',
-                });
-
-                const insertPosition = model.document.selection.getFirstPosition();
-                model.insertContent(conjunction, insertPosition);
-
-                // Add the specified number of conjunctionCol children
-                for (let i = 0; i < numColumns; i++) {
-                    const column = writer.createElement('conjunctionCol');
-                    writer.append(column, conjunction);
-
-                    const paragraph = writer.createElement('paragraph');
-                    writer.append(paragraph, column);
-                    writer.insertText(`Column ${i + 1}`, paragraph);
-                }
-
-                // Set selection inside the first column for usability
-                const firstColumn = conjunction.getChild(0);
-                if (firstColumn) {
-                    writer.setSelection(writer.createPositionAt(firstColumn, 0));
-                }
-            }
-        });
-    }
-
-    _updateConjunctionColumns(writer, widget, numColumns) {
-      const existingColumns = Array.from(widget.getChildren());
-
-      const defaultOriginalTag = existingColumns.length > 0
-        ? existingColumns[0].getAttribute('originalTag')
-        : 'div';
-
-      // Add new columns if needed
-      while (existingColumns.length < numColumns) {
-          const column = writer.createElement('conjunctionCol', { originalTag: defaultOriginalTag });
-          writer.append(column, widget);
-
-          // Add an empty paragraph if the column is new
-          const paragraph = writer.createElement('paragraph');
-          writer.append(paragraph, column);
-          existingColumns.push(column);
-      }
-
-      // Remove extra columns if needed
-      while (existingColumns.length > numColumns) {
-          writer.remove(existingColumns.pop());
-      }
-
-      // Keep the existing text/content in the remaining columns
-      existingColumns.forEach((column, index) => {
-          if (column.childCount === 0) {
-              // Ensure each column has a paragraph if it's empty
-              const paragraph = writer.createElement('paragraph');
-              writer.append(paragraph, column);
-          }
-      });
-    }
-
-
-    refresh() {
-        const { model } = this.editor;
-        const { selection } = model.document;
-        this.isEnabled = model.schema.findAllowedParent(
-            selection.getFirstPosition(),
-            'conjunction'
-        ) !== null;
-    }
-}
-
-;// ./js/ckeditor5_plugins/wxt_conjunctions/src/conjunctionediting.js
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ ConjunctionEditing)
+/* harmony export */ });
+/* harmony import */ var ckeditor5_src_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ckeditor5/src/core */ "ckeditor5/src/core.js");
+/* harmony import */ var ckeditor5_src_widget__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ckeditor5/src/widget */ "ckeditor5/src/widget.js");
+/* harmony import */ var _conjunctioncssclasses__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./conjunctioncssclasses */ "./js/ckeditor5_plugins/wxt_conjunctions/src/conjunctioncssclasses.js");
+/* harmony import */ var _insertconjunctioncommand__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./insertconjunctioncommand */ "./js/ckeditor5_plugins/wxt_conjunctions/src/insertconjunctioncommand.js");
 
 
 
 
 
 
-class ConjunctionEditing extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
+class ConjunctionEditing extends ckeditor5_src_core__WEBPACK_IMPORTED_MODULE_0__.Plugin {
     static get requires() {
-        return [delegated_widgetfrom_dll_reference_CKEditor5.Widget];
+        return [ckeditor5_src_widget__WEBPACK_IMPORTED_MODULE_1__.Widget];
     }
 
     init() {
@@ -237,12 +85,12 @@ class ConjunctionEditing extends delegated_corefrom_dll_reference_CKEditor5.Plug
             }, { priority: 'highest' });
         });
 
-        this.conjunctionClasses = ConjunctionClasses;
+        this.conjunctionClasses = _conjunctioncssclasses__WEBPACK_IMPORTED_MODULE_2__.ConjunctionClasses;
         this._defineSchema();
         this._defineConverters();
         this.editor.commands.add(
             'insertConjunction',
-            new InsertConjunctionCommand(this.editor)
+            new _insertconjunctioncommand__WEBPACK_IMPORTED_MODULE_3__["default"](this.editor)
         );
 
         // Listen for attribute changes in the model, to update widget label.
@@ -415,7 +263,7 @@ class ConjunctionEditing extends delegated_corefrom_dll_reference_CKEditor5.Plug
                 writer.insert(writer.createPositionAt(label, 0), writer.createText('Conjunction: ' + labelText));
                 writer.insert(writer.createPositionAt(container, 0), label);
 
-                return (0,delegated_widgetfrom_dll_reference_CKEditor5.toWidget)(container, writer, { hasSelectionHandle: true });
+                return (0,ckeditor5_src_widget__WEBPACK_IMPORTED_MODULE_1__.toWidget)(container, writer, { hasSelectionHandle: true });
             },
         });
 
@@ -426,218 +274,58 @@ class ConjunctionEditing extends delegated_corefrom_dll_reference_CKEditor5.Plug
                 const container = viewWriter.createEditableElement(originalTag, {
                     class: 'cnjnctn-col'
                 });
-                return (0,delegated_widgetfrom_dll_reference_CKEditor5.toWidgetEditable)(container, viewWriter);
+                return (0,ckeditor5_src_widget__WEBPACK_IMPORTED_MODULE_1__.toWidgetEditable)(container, viewWriter);
             }
         });
     }
 }
 
-// EXTERNAL MODULE: delegated ./ui.js from dll-reference CKEditor5.dll
-var delegated_uifrom_dll_reference_CKEditor5 = __webpack_require__("ckeditor5/src/ui.js");
-;// ./js/ckeditor5_plugins/wxt_conjunctions/src/responsiveclasses.js
-const ResponsiveClasses = [
-    'cnjnctn-xs',
-    'cnjnctn-sm',
-    'cnjnctn-md',
-    'cnjnctn-lg',
-];
 
-// EXTERNAL MODULE: delegated ./utils.js from dll-reference CKEditor5.dll
-var delegated_utilsfrom_dll_reference_CKEditor5 = __webpack_require__("ckeditor5/src/utils.js");
-;// ./js/ckeditor5_plugins/wxt_conjunctions/src/conjunctionview.js
+/***/ }),
+
+/***/ "./js/ckeditor5_plugins/wxt_conjunctions/src/conjunctions.js":
+/*!*******************************************************************!*\
+  !*** ./js/ckeditor5_plugins/wxt_conjunctions/src/conjunctions.js ***!
+  \*******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Conjunction)
+/* harmony export */ });
+/* harmony import */ var _conjunctionediting__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./conjunctionediting */ "./js/ckeditor5_plugins/wxt_conjunctions/src/conjunctionediting.js");
+/* harmony import */ var _conjunctionui__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./conjunctionui */ "./js/ckeditor5_plugins/wxt_conjunctions/src/conjunctionui.js");
+/* harmony import */ var ckeditor5_src_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ckeditor5/src/core */ "ckeditor5/src/core.js");
 
 
 
 
-
-
-class FormView extends delegated_uifrom_dll_reference_CKEditor5.View {
-    constructor(locale) {
-        super(locale);
-
-        // Conjunction type (and/or).
-        this.conjunctionClasses = ConjunctionClasses;
-        const dropdownItems = [];
-        this.dropdown = (0,delegated_uifrom_dll_reference_CKEditor5.createDropdown)(locale);
-        this.childCountInput = this._createInputField();
-
-        const items = new delegated_utilsfrom_dll_reference_CKEditor5.Collection();
-
-        // Create dropdown items for conjunction types.
-        this.conjunctionClasses.forEach(c => {
-            dropdownItems.push({
-                type: 'button',
-                model: new delegated_uifrom_dll_reference_CKEditor5.ViewModel({
-                    withText: true,
-                    label: c,
-                    value: c
-                })
-            });
-        });
-
-        items.addMany(dropdownItems);
-        (0,delegated_uifrom_dll_reference_CKEditor5.addListToDropdown)(this.dropdown, items);
-
-        this.dropdown.buttonView.set({
-            label: 'Type',
-            withText: true
-        });
-
-        this.dropdown.on('execute', (evt) => {
-            this.dropdown.selectedValue = evt.source.value;
-            this.dropdown.buttonView.set({ label: this.dropdown.selectedValue });
-        });
-
-        // Responsive classes (xs/sm/md/lg).
-        this.responsiveClasses = ResponsiveClasses;
-        const responsiveClassItems = [];
-        this.dropdownResponsive = (0,delegated_uifrom_dll_reference_CKEditor5.createDropdown)(locale);
-        this.responsiveClassInput = this._createResponsiveClassDropdown();
-
-        const responsiveItems = new delegated_utilsfrom_dll_reference_CKEditor5.Collection();
-
-        // Create dropdown items for conjunction types.
-        this.responsiveClasses.forEach(c => {
-            responsiveClassItems.push({
-                type: 'button',
-                model: new delegated_uifrom_dll_reference_CKEditor5.ViewModel({
-                    withText: true,
-                    label: c,
-                    value: c
-                })
-            });
-        });
-
-        responsiveItems.addMany(responsiveClassItems);
-        (0,delegated_uifrom_dll_reference_CKEditor5.addListToDropdown)(this.dropdownResponsive, responsiveItems);
-
-        this.dropdownResponsive.buttonView.set({
-            label: 'Type',
-            withText: true
-        });
-
-        this.dropdownResponsive.on('execute', (evt) => {
-            this.dropdownResponsive.selectedValue = evt.source.value;
-            this.dropdownResponsive.buttonView.set({ label: this.dropdownResponsive.selectedValue });
-        });
-
-        // Rest of form.
-        this.saveButtonView = this._createButton('Save', delegated_corefrom_dll_reference_CKEditor5.icons.check, 'ck-button-save');
-        this.saveButtonView.type = 'submit';
-
-        this.cancelButtonView = this._createButton('Cancel', delegated_corefrom_dll_reference_CKEditor5.icons.cancel, 'ck-button-cancel');
-        this.cancelButtonView.delegate('execute').to(this, 'cancel');
-
-        this.childViews = this.createCollection([
-            this.dropdown,
-            this.responsiveClassInput,
-            this.childCountInput,
-            this.saveButtonView,
-            this.cancelButtonView
-        ]);
-
-        this.setTemplate({
-            tag: 'form',
-            attributes: {
-                class: ['ck', 'ck-conjunction-form'],
-                tabindex: '-1'
-            },
-            children: this.childViews
-        });
-    }
-
-    render() {
-        super.render();
-
-        (0,delegated_uifrom_dll_reference_CKEditor5.submitHandler)({
-            view: this
-        });
-    }
-
-    focus() {
-        this.childViews.first.focus();
-    }
-
-    _createResponsiveClassDropdown() {
-        const dropdown = (0,delegated_uifrom_dll_reference_CKEditor5.createDropdown)(this.locale);
-        const items = new delegated_utilsfrom_dll_reference_CKEditor5.Collection();
-
-        // Add options for responsive classes (xs/sm/md/lg).
-        this.responsiveClasses.forEach((c) => {
-            items.add({
-                type: 'button',
-                model: new delegated_uifrom_dll_reference_CKEditor5.ViewModel({
-                    withText: true,
-                    label: c,
-                    value: c
-                })
-            });
-        });
-
-        (0,delegated_uifrom_dll_reference_CKEditor5.addListToDropdown)(dropdown, items);
-
-        dropdown.buttonView.set({
-            label: 'Responsive class',
-            withText: true
-        });
-
-        dropdown.on('execute', (evt) => {
-            dropdown.selectedValue = evt.source.value;
-            dropdown.buttonView.set({ label: evt.source.value });
-        });
-
-        return dropdown;
-    }
-
-    _createInputField() {
-        const dropdown = (0,delegated_uifrom_dll_reference_CKEditor5.createDropdown)(this.locale);
-        const items = new delegated_utilsfrom_dll_reference_CKEditor5.Collection();
-
-        // Add options for the number of columns (2 to 6).
-        [2, 3, 4, 5, 6].forEach((value) => {
-            items.add({
-                type: 'button',
-                model: new delegated_uifrom_dll_reference_CKEditor5.ViewModel({
-                    withText: true,
-                    label: value.toString(),
-                    value: value,
-                }),
-            });
-        });
-
-        (0,delegated_uifrom_dll_reference_CKEditor5.addListToDropdown)(dropdown, items);
-
-        dropdown.buttonView.set({
-            label: 'Columns',
-            withText: true,
-        });
-
-        // Store the selected value in the dropdown.
-        dropdown.on('execute', (evt) => {
-            dropdown.selectedValue = evt.source.value;
-            dropdown.buttonView.set({ label: evt.source.value.toString() });
-        });
-
-        return dropdown;
-    }
-
-    _createButton(label, icon, className) {
-        const button = new delegated_uifrom_dll_reference_CKEditor5.ButtonView();
-
-        button.set({
-            label,
-            icon,
-            tooltip: true,
-            class: className
-        });
-
-        return button;
+class Conjunction extends ckeditor5_src_core__WEBPACK_IMPORTED_MODULE_2__.Plugin {
+    static get requires() {
+        return [_conjunctionediting__WEBPACK_IMPORTED_MODULE_0__["default"], _conjunctionui__WEBPACK_IMPORTED_MODULE_1__["default"]];
     }
 }
 
-;// ./icons/conjunction.svg
-/* harmony default export */ const conjunction = ("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<svg id=\"Layer_1\" data-name=\"Layer 1\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 20 20\">\n  <g>\n    <path d=\"M18,11c-.55,0-1,.51-1,1.14v5.71c0,.63.45,1.14,1,1.14s1-.51,1-1.14v-5.71c0-.63-.45-1.14-1-1.14Z\"/>\n    <path d=\"M14,11c-.55,0-1,.51-1,1.14v5.71c0,.63.45,1.14,1,1.14s1-.51,1-1.14v-5.71c0-.63-.45-1.14-1-1.14Z\"/>\n  </g>\n  <path d=\"M3.64,17.36c-.26,0-.51-.1-.71-.29-.39-.39-.39-1.02,0-1.41L15.66,2.93c.39-.39,1.02-.39,1.41,0s.39,1.02,0,1.41l-12.73,12.73c-.2.2-.45.29-.71.29Z\"/>\n  <path d=\"M8,4h-2v-2c0-.55-.45-1-1-1s-1,.45-1,1v2h-2c-.55,0-1,.45-1,1s.45,1,1,1h2v2c0,.55.45,1,1,1s1-.45,1-1v-2h2c.55,0,1-.45,1-1s-.45-1-1-1Z\"/>\n</svg>");
-;// ./js/ckeditor5_plugins/wxt_conjunctions/src/conjunctionui.js
+/***/ }),
+
+/***/ "./js/ckeditor5_plugins/wxt_conjunctions/src/conjunctionui.js":
+/*!********************************************************************!*\
+  !*** ./js/ckeditor5_plugins/wxt_conjunctions/src/conjunctionui.js ***!
+  \********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ ConjunctionUI)
+/* harmony export */ });
+/* harmony import */ var ckeditor5_src_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ckeditor5/src/core */ "ckeditor5/src/core.js");
+/* harmony import */ var ckeditor5_src_ui__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ckeditor5/src/ui */ "ckeditor5/src/ui.js");
+/* harmony import */ var _conjunctioncssclasses__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./conjunctioncssclasses */ "./js/ckeditor5_plugins/wxt_conjunctions/src/conjunctioncssclasses.js");
+/* harmony import */ var _responsiveclasses__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./responsiveclasses */ "./js/ckeditor5_plugins/wxt_conjunctions/src/responsiveclasses.js");
+/* harmony import */ var _conjunctionview__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./conjunctionview */ "./js/ckeditor5_plugins/wxt_conjunctions/src/conjunctionview.js");
+/* harmony import */ var _icons_conjunction_svg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../icons/conjunction.svg */ "./icons/conjunction.svg");
 
 
 
@@ -645,18 +333,18 @@ class FormView extends delegated_uifrom_dll_reference_CKEditor5.View {
 
 
 
-class ConjunctionUI extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
+class ConjunctionUI extends ckeditor5_src_core__WEBPACK_IMPORTED_MODULE_0__.Plugin {
     init() {
         const editor = this.editor;
-        this._balloon = this.editor.plugins.get(delegated_uifrom_dll_reference_CKEditor5.ContextualBalloon);
+        this._balloon = this.editor.plugins.get(ckeditor5_src_ui__WEBPACK_IMPORTED_MODULE_1__.ContextualBalloon);
         this.formView = this._createFormView();
-        this.conjunctionClasses = ConjunctionClasses;
-        this.responsiveClasses = ResponsiveClasses;
+        this.conjunctionClasses = _conjunctioncssclasses__WEBPACK_IMPORTED_MODULE_2__.ConjunctionClasses;
+        this.responsiveClasses = _responsiveclasses__WEBPACK_IMPORTED_MODULE_3__.ResponsiveClasses;
 
         editor.ui.componentFactory.add('conjunction', () => {
-            const button = new delegated_uifrom_dll_reference_CKEditor5.ButtonView();
+            const button = new ckeditor5_src_ui__WEBPACK_IMPORTED_MODULE_1__.ButtonView();
             button.label = 'Conjunction';
-            button.icon = conjunction;
+            button.icon = _icons_conjunction_svg__WEBPACK_IMPORTED_MODULE_5__["default"];
             button.tooltip = true;
             button.withText = true;
             const command = editor.commands.get('insertConjunction');
@@ -672,7 +360,7 @@ class ConjunctionUI extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
 
     _createFormView() {
         const editor = this.editor;
-        const formView = new FormView(editor.locale);
+        const formView = new _conjunctionview__WEBPACK_IMPORTED_MODULE_4__["default"](editor.locale);
 
         this.listenTo(formView, 'submit', () => {
             const conjunctionType = formView.dropdown.selectedValue;
@@ -691,7 +379,7 @@ class ConjunctionUI extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
             this._hideUI();
         });
 
-        (0,delegated_uifrom_dll_reference_CKEditor5.clickOutsideHandler)({
+        (0,ckeditor5_src_ui__WEBPACK_IMPORTED_MODULE_1__.clickOutsideHandler)({
             emitter: formView,
             activator: () => this._balloon.visibleView === formView,
             contextElements: [this._balloon.view.element],
@@ -780,21 +468,475 @@ class ConjunctionUI extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
 
 }
 
-;// ./js/ckeditor5_plugins/wxt_conjunctions/src/conjunctions.js
+
+/***/ }),
+
+/***/ "./js/ckeditor5_plugins/wxt_conjunctions/src/conjunctionview.js":
+/*!**********************************************************************!*\
+  !*** ./js/ckeditor5_plugins/wxt_conjunctions/src/conjunctionview.js ***!
+  \**********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ FormView)
+/* harmony export */ });
+/* harmony import */ var ckeditor5_src_ui__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ckeditor5/src/ui */ "ckeditor5/src/ui.js");
+/* harmony import */ var ckeditor5_src_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ckeditor5/src/utils */ "ckeditor5/src/utils.js");
+/* harmony import */ var ckeditor5_src_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ckeditor5/src/core */ "ckeditor5/src/core.js");
+/* harmony import */ var _conjunctioncssclasses__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./conjunctioncssclasses */ "./js/ckeditor5_plugins/wxt_conjunctions/src/conjunctioncssclasses.js");
+/* harmony import */ var _responsiveclasses__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./responsiveclasses */ "./js/ckeditor5_plugins/wxt_conjunctions/src/responsiveclasses.js");
 
 
 
 
-class Conjunction extends delegated_corefrom_dll_reference_CKEditor5.Plugin {
-    static get requires() {
-        return [ConjunctionEditing, ConjunctionUI];
+
+
+class FormView extends ckeditor5_src_ui__WEBPACK_IMPORTED_MODULE_0__.View {
+    constructor(locale) {
+        super(locale);
+
+        // Conjunction type (and/or).
+        this.conjunctionClasses = _conjunctioncssclasses__WEBPACK_IMPORTED_MODULE_3__.ConjunctionClasses;
+        const dropdownItems = [];
+        this.dropdown = (0,ckeditor5_src_ui__WEBPACK_IMPORTED_MODULE_0__.createDropdown)(locale);
+        this.childCountInput = this._createInputField();
+
+        const items = new ckeditor5_src_utils__WEBPACK_IMPORTED_MODULE_1__.Collection();
+
+        // Create dropdown items for conjunction types.
+        this.conjunctionClasses.forEach(c => {
+            dropdownItems.push({
+                type: 'button',
+                model: new ckeditor5_src_ui__WEBPACK_IMPORTED_MODULE_0__.ViewModel({
+                    withText: true,
+                    label: c,
+                    value: c
+                })
+            });
+        });
+
+        items.addMany(dropdownItems);
+        (0,ckeditor5_src_ui__WEBPACK_IMPORTED_MODULE_0__.addListToDropdown)(this.dropdown, items);
+
+        this.dropdown.buttonView.set({
+            label: 'Type',
+            withText: true
+        });
+
+        this.dropdown.on('execute', (evt) => {
+            this.dropdown.selectedValue = evt.source.value;
+            this.dropdown.buttonView.set({ label: this.dropdown.selectedValue });
+        });
+
+        // Responsive classes (xs/sm/md/lg).
+        this.responsiveClasses = _responsiveclasses__WEBPACK_IMPORTED_MODULE_4__.ResponsiveClasses;
+        const responsiveClassItems = [];
+        this.dropdownResponsive = (0,ckeditor5_src_ui__WEBPACK_IMPORTED_MODULE_0__.createDropdown)(locale);
+        this.responsiveClassInput = this._createResponsiveClassDropdown();
+
+        const responsiveItems = new ckeditor5_src_utils__WEBPACK_IMPORTED_MODULE_1__.Collection();
+
+        // Create dropdown items for conjunction types.
+        this.responsiveClasses.forEach(c => {
+            responsiveClassItems.push({
+                type: 'button',
+                model: new ckeditor5_src_ui__WEBPACK_IMPORTED_MODULE_0__.ViewModel({
+                    withText: true,
+                    label: c,
+                    value: c
+                })
+            });
+        });
+
+        responsiveItems.addMany(responsiveClassItems);
+        (0,ckeditor5_src_ui__WEBPACK_IMPORTED_MODULE_0__.addListToDropdown)(this.dropdownResponsive, responsiveItems);
+
+        this.dropdownResponsive.buttonView.set({
+            label: 'Type',
+            withText: true
+        });
+
+        this.dropdownResponsive.on('execute', (evt) => {
+            this.dropdownResponsive.selectedValue = evt.source.value;
+            this.dropdownResponsive.buttonView.set({ label: this.dropdownResponsive.selectedValue });
+        });
+
+        // Rest of form.
+        this.saveButtonView = this._createButton('Save', ckeditor5_src_core__WEBPACK_IMPORTED_MODULE_2__.icons.check, 'ck-button-save');
+        this.saveButtonView.type = 'submit';
+
+        this.cancelButtonView = this._createButton('Cancel', ckeditor5_src_core__WEBPACK_IMPORTED_MODULE_2__.icons.cancel, 'ck-button-cancel');
+        this.cancelButtonView.delegate('execute').to(this, 'cancel');
+
+        this.childViews = this.createCollection([
+            this.dropdown,
+            this.responsiveClassInput,
+            this.childCountInput,
+            this.saveButtonView,
+            this.cancelButtonView
+        ]);
+
+        this.setTemplate({
+            tag: 'form',
+            attributes: {
+                class: ['ck', 'ck-conjunction-form'],
+                tabindex: '-1'
+            },
+            children: this.childViews
+        });
+    }
+
+    render() {
+        super.render();
+
+        (0,ckeditor5_src_ui__WEBPACK_IMPORTED_MODULE_0__.submitHandler)({
+            view: this
+        });
+    }
+
+    focus() {
+        this.childViews.first.focus();
+    }
+
+    _createResponsiveClassDropdown() {
+        const dropdown = (0,ckeditor5_src_ui__WEBPACK_IMPORTED_MODULE_0__.createDropdown)(this.locale);
+        const items = new ckeditor5_src_utils__WEBPACK_IMPORTED_MODULE_1__.Collection();
+
+        // Add options for responsive classes (xs/sm/md/lg).
+        this.responsiveClasses.forEach((c) => {
+            items.add({
+                type: 'button',
+                model: new ckeditor5_src_ui__WEBPACK_IMPORTED_MODULE_0__.ViewModel({
+                    withText: true,
+                    label: c,
+                    value: c
+                })
+            });
+        });
+
+        (0,ckeditor5_src_ui__WEBPACK_IMPORTED_MODULE_0__.addListToDropdown)(dropdown, items);
+
+        dropdown.buttonView.set({
+            label: 'Responsive class',
+            withText: true
+        });
+
+        dropdown.on('execute', (evt) => {
+            dropdown.selectedValue = evt.source.value;
+            dropdown.buttonView.set({ label: evt.source.value });
+        });
+
+        return dropdown;
+    }
+
+    _createInputField() {
+        const dropdown = (0,ckeditor5_src_ui__WEBPACK_IMPORTED_MODULE_0__.createDropdown)(this.locale);
+        const items = new ckeditor5_src_utils__WEBPACK_IMPORTED_MODULE_1__.Collection();
+
+        // Add options for the number of columns (2 to 6).
+        [2, 3, 4, 5, 6].forEach((value) => {
+            items.add({
+                type: 'button',
+                model: new ckeditor5_src_ui__WEBPACK_IMPORTED_MODULE_0__.ViewModel({
+                    withText: true,
+                    label: value.toString(),
+                    value: value,
+                }),
+            });
+        });
+
+        (0,ckeditor5_src_ui__WEBPACK_IMPORTED_MODULE_0__.addListToDropdown)(dropdown, items);
+
+        dropdown.buttonView.set({
+            label: 'Columns',
+            withText: true,
+        });
+
+        // Store the selected value in the dropdown.
+        dropdown.on('execute', (evt) => {
+            dropdown.selectedValue = evt.source.value;
+            dropdown.buttonView.set({ label: evt.source.value.toString() });
+        });
+
+        return dropdown;
+    }
+
+    _createButton(label, icon, className) {
+        const button = new ckeditor5_src_ui__WEBPACK_IMPORTED_MODULE_0__.ButtonView();
+
+        button.set({
+            label,
+            icon,
+            tooltip: true,
+            class: className
+        });
+
+        return button;
     }
 }
-;// ./js/ckeditor5_plugins/wxt_conjunctions/src/index.js
 
 
-/* harmony default export */ const src = ({
-    Conjunction: Conjunction,
+/***/ }),
+
+/***/ "./js/ckeditor5_plugins/wxt_conjunctions/src/insertconjunctioncommand.js":
+/*!*******************************************************************************!*\
+  !*** ./js/ckeditor5_plugins/wxt_conjunctions/src/insertconjunctioncommand.js ***!
+  \*******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ InsertConjunctionCommand)
+/* harmony export */ });
+/* harmony import */ var ckeditor5_src_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ckeditor5/src/core */ "ckeditor5/src/core.js");
+
+
+class InsertConjunctionCommand extends ckeditor5_src_core__WEBPACK_IMPORTED_MODULE_0__.Command {
+    execute(conjunctionType = 'and', numColumns = 2, responsiveClass = '') {
+        const { model } = this.editor;
+
+        model.change((writer) => {
+            const selection = model.document.selection;
+
+            // Check if the selection is directly on an existing conjunction
+            const selectedWidget = selection.getSelectedElement();
+
+            if (selectedWidget && selectedWidget.is('element', 'conjunction')) {
+                const originalTag = selectedWidget.getAttribute('originalTag');
+
+                // Update the existing widget's attributes
+                writer.setAttribute('conjunctionType', `cnjnctn-type-${conjunctionType}`, selectedWidget);
+                writer.setAttribute('columnCount', numColumns, selectedWidget);
+                writer.setAttribute('responsiveClass', responsiveClass, selectedWidget);
+                writer.setAttribute('originalTag', originalTag, selectedWidget);
+
+                // Update the number of columns
+                this._updateConjunctionColumns(writer, selectedWidget, numColumns);
+            } else {
+                // Insert a new widget
+                const conjunction = writer.createElement('conjunction', {
+                    conjunctionType: `cnjnctn-type-${conjunctionType}`,
+                    columnCount: numColumns,
+                    ...(responsiveClass ? { responsiveClass } : {}),
+                    originalTag: 'div',
+                });
+
+                const insertPosition = model.document.selection.getFirstPosition();
+                model.insertContent(conjunction, insertPosition);
+
+                // Add the specified number of conjunctionCol children
+                for (let i = 0; i < numColumns; i++) {
+                    const column = writer.createElement('conjunctionCol');
+                    writer.append(column, conjunction);
+
+                    const paragraph = writer.createElement('paragraph');
+                    writer.append(paragraph, column);
+                    writer.insertText(`Column ${i + 1}`, paragraph);
+                }
+
+                // Set selection inside the first column for usability
+                const firstColumn = conjunction.getChild(0);
+                if (firstColumn) {
+                    writer.setSelection(writer.createPositionAt(firstColumn, 0));
+                }
+            }
+        });
+    }
+
+    _updateConjunctionColumns(writer, widget, numColumns) {
+      const existingColumns = Array.from(widget.getChildren());
+
+      const defaultOriginalTag = existingColumns.length > 0
+        ? existingColumns[0].getAttribute('originalTag')
+        : 'div';
+
+      // Add new columns if needed
+      while (existingColumns.length < numColumns) {
+          const column = writer.createElement('conjunctionCol', { originalTag: defaultOriginalTag });
+          writer.append(column, widget);
+
+          // Add an empty paragraph if the column is new
+          const paragraph = writer.createElement('paragraph');
+          writer.append(paragraph, column);
+          existingColumns.push(column);
+      }
+
+      // Remove extra columns if needed
+      while (existingColumns.length > numColumns) {
+          writer.remove(existingColumns.pop());
+      }
+
+      // Keep the existing text/content in the remaining columns
+      existingColumns.forEach((column, index) => {
+          if (column.childCount === 0) {
+              // Ensure each column has a paragraph if it's empty
+              const paragraph = writer.createElement('paragraph');
+              writer.append(paragraph, column);
+          }
+      });
+    }
+
+
+    refresh() {
+        const { model } = this.editor;
+        const { selection } = model.document;
+        this.isEnabled = model.schema.findAllowedParent(
+            selection.getFirstPosition(),
+            'conjunction'
+        ) !== null;
+    }
+}
+
+
+/***/ }),
+
+/***/ "./js/ckeditor5_plugins/wxt_conjunctions/src/responsiveclasses.js":
+/*!************************************************************************!*\
+  !*** ./js/ckeditor5_plugins/wxt_conjunctions/src/responsiveclasses.js ***!
+  \************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ResponsiveClasses: () => (/* binding */ ResponsiveClasses)
+/* harmony export */ });
+const ResponsiveClasses = [
+    'cnjnctn-xs',
+    'cnjnctn-sm',
+    'cnjnctn-md',
+    'cnjnctn-lg',
+];
+
+
+/***/ }),
+
+/***/ "ckeditor5/src/core.js":
+/*!************************************************************!*\
+  !*** delegated ./core.js from dll-reference CKEditor5.dll ***!
+  \************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = (__webpack_require__(/*! dll-reference CKEditor5.dll */ "dll-reference CKEditor5.dll"))("./src/core.js");
+
+/***/ }),
+
+/***/ "ckeditor5/src/ui.js":
+/*!**********************************************************!*\
+  !*** delegated ./ui.js from dll-reference CKEditor5.dll ***!
+  \**********************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = (__webpack_require__(/*! dll-reference CKEditor5.dll */ "dll-reference CKEditor5.dll"))("./src/ui.js");
+
+/***/ }),
+
+/***/ "ckeditor5/src/utils.js":
+/*!*************************************************************!*\
+  !*** delegated ./utils.js from dll-reference CKEditor5.dll ***!
+  \*************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = (__webpack_require__(/*! dll-reference CKEditor5.dll */ "dll-reference CKEditor5.dll"))("./src/utils.js");
+
+/***/ }),
+
+/***/ "ckeditor5/src/widget.js":
+/*!**************************************************************!*\
+  !*** delegated ./widget.js from dll-reference CKEditor5.dll ***!
+  \**************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = (__webpack_require__(/*! dll-reference CKEditor5.dll */ "dll-reference CKEditor5.dll"))("./src/widget.js");
+
+/***/ }),
+
+/***/ "dll-reference CKEditor5.dll":
+/*!********************************!*\
+  !*** external "CKEditor5.dll" ***!
+  \********************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = CKEditor5.dll;
+
+/***/ })
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/************************************************************************/
+var __webpack_exports__ = {};
+// This entry needs to be wrapped in an IIFE because it needs to be in strict mode.
+(() => {
+"use strict";
+/*!************************************************************!*\
+  !*** ./js/ckeditor5_plugins/wxt_conjunctions/src/index.js ***!
+  \************************************************************/
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _conjunctions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./conjunctions */ "./js/ckeditor5_plugins/wxt_conjunctions/src/conjunctions.js");
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+    Conjunction: _conjunctions__WEBPACK_IMPORTED_MODULE_0__["default"],
 });
 })();
 

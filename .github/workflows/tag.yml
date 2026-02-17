@@ -14,6 +14,11 @@ jobs:
     steps:
     - uses: actions/checkout@master
 
+    - name: Setup PHP 8.3
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.3'
+
     - name: Export github reference var
       run: echo "GITHUB_REFERENCE=$(echo ${GITHUB_REF#refs/tags/})" >> $GITHUB_ENV
 
@@ -25,9 +30,8 @@ jobs:
         cd site-wxt
         rm composer.lock
 
-    - uses: statcan/actions/composer@master
-      with:
-        args: require drupalwxt/wxt:${{ env.GITHUB_REFERENCE }} --working-dir=./site-wxt
+    - name: Require patched wxt with Composer
+      run: composer require drupalwxt/wxt:6.1.x-dev#${{ github.sha }} --working-dir=./site-wxt --ignore-platform-reqs
 
     - name: Build out the Drupal infrastructure
       run: |
@@ -140,11 +144,8 @@ jobs:
       run: |
         rm composer.lock
 
-    - uses: statcan/actions/composer@master
-      env:
-        COMPOSER_AUTH: ${{ secrets.COMPOSER_AUTH }}
-      with:
-        args: install --working-dir=./site-wxt
+    - name: Install with Composer
+      run: composer install --working-dir=./site-wxt --ignore-platform-reqs
 
     - name: Push to site-wxt the latest stable tag
       working-directory: ./site-wxt
@@ -168,11 +169,8 @@ jobs:
       run: |
         rm composer.lock
 
-    - uses: statcan/actions/composer@master
-      env:
-        COMPOSER_AUTH: ${{ secrets.COMPOSER_AUTH }}
-      with:
-        args: install --working-dir=./site-wxt
+    - name: Install with Composer
+      run: composer install --working-dir=./site-wxt --ignore-platform-reqs
 
     - name: Push to site-wxt the latest build sha
       working-directory: ./site-wxt

@@ -16,6 +16,7 @@ module.exports = [];
 getDirectories('./js/ckeditor5_plugins').forEach((dir) => {
     const bc = {
         mode: 'production',
+        devtool: false,
         optimization: {
             minimize: false,
             minimizer: [
