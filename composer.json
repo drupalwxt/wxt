@@ -280,9 +280,6 @@
             "drupal/layout_builder_st": {
                 "3566683 - Fix for WSOD on /admin/reports/status page":
                 "https://www.drupal.org/files/issues/2026-01-09/3566683-fix-error-on-status-report.patch"
-            },
-            "codemirror/codemirror": {
-               "#3531472: Drupal 10.5 / 11.2 incompatibility": "https://www.drupal.org/files/issues/2025-11-13/ckeditor_codemirror-codemirror-LIBRARY-3531472-copyobj-hasownproperty-fix.diff"
             }
         }
     },
