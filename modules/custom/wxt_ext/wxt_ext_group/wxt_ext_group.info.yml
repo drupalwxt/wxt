@@ -9,4 +9,4 @@ dependencies:
   - 'gnode:gnode'
   - 'group:group'
   - 'wxt_ext_blog:wxt_ext_blog'
-version: 6.2.x
+version: 6.2.0

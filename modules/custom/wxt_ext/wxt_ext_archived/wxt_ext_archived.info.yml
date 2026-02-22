@@ -5,4 +5,4 @@ core_version_requirement: '>11'
 package: WxT
 dependencies:
   - 'wxt_ext_blocks:wxt_ext_blocks'
-version: 6.2.x
+version: 6.2.0
