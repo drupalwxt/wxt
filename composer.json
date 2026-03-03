@@ -213,7 +213,9 @@
                 "3359497 - Prevent warnings when library definitions have a license with no URL defined, contrib is not perfect here.":
                 "https://www.drupal.org/files/issues/2023-10-07/fix-license-missing-url.patch",
                 "2938129 - PageTitle block is non-functional when not handled directly by BlockPageVariant":
-                "https://www.drupal.org/files/issues/2025-01-28/drupal-PageTitle_block-2938129-43.patch"
+                "https://www.drupal.org/files/issues/2025-01-28/drupal-PageTitle_block-2938129-43.patch",
+                "3492837 - TypeError: array_key_exists(): Argument #2 ($array) must be of type array, null given in array_key_exists()":
+                "https://www.drupal.org/files/issues/2026-03-02/11.3.x-3492837-9.patch"
             },
             "drupal/ctools": {
                 "Enter drupal/ctools patch #2667652 description here":
