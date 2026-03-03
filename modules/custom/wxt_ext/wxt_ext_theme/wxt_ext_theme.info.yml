@@ -5,4 +5,4 @@ core_version_requirement: '>11'
 package: WxT
 dependencies:
   - 'config_rewrite:config_rewrite'
-version: 6.2.0
+version: 6.3.x

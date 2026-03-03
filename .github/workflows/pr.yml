@@ -11,14 +11,14 @@ jobs:
     steps:
     - uses: actions/checkout@master
 
-    - name: Setup PHP 8.3
+    - name: Setup PHP 8.4
       uses: shivammathur/setup-php@v2
       with:
-        php-version: '8.3'
+        php-version: '8.4'
 
     - name: Setup dependencies
       run: |
-        git clone --branch 11.2.x https://github.com/drupalwxt/site-wxt.git
+        git clone --branch 11.3.x https://github.com/drupalwxt/site-wxt.git
         cd site-wxt
         rm composer.lock
 
@@ -30,7 +30,7 @@ jobs:
         export DB_TYPE=mysql
         export DB_PORT=3306
         cd site-wxt
-        git clone --branch 11.2.x https://github.com/drupalwxt/docker-scaffold.git docker
+        git clone --branch 11.3.x https://github.com/drupalwxt/docker-scaffold.git docker
         make build
         docker compose -f docker-compose.ci.yml up -d
         docker ps -a
