@@ -292,7 +292,11 @@ function wxt_core_form_user_form_alter(array &$form) {
 function wxt_core_form_alter(array &$form, FormStateInterface $form_state) {
   $form_object = $form_state->getFormObject();
 
-  if ($form_object instanceof ContentEntityFormInterface && isset($form['revision_information']) && $form['revision_information']['#access']) {
+  if (
+    $form_object instanceof ContentEntityFormInterface &&
+    isset($form['revision_information']) &&
+    (!isset($form['revision_information']['#access']) || $form['revision_information']['#access'])
+  ) {
     // Load the form mode and show the revision information if the form mode
     // allows the revision UI to be shown.
     $form_display = $form_object->getFormDisplay($form_state);
