@@ -7,7 +7,7 @@ dependencies:
   - 'content_moderation:content_moderation'
   - 'config_rewrite:config_rewrite'
   - 'webform:webform'
+  - 'webform:webform_node'
   - 'webform_bootstrap:webform_bootstrap'
-  - 'webform_node:webform_node'
   - 'webform_ui:webform_ui'
 version: 6.3.x
