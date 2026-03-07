@@ -286,6 +286,10 @@
             "drupal/layout_builder_st": {
                 "3566683 - Fix for WSOD on /admin/reports/status page":
                 "https://www.drupal.org/files/issues/2026-01-09/3566683-fix-error-on-status-report.patch"
+            },
+            "drupal/blog": {
+                "Enter drupal/blog patch #3546341 description here":
+                "https://www.drupal.org/files/issues/2026-03-07/blog-fix-11-3-x-3546341-4.patch"
             }
         }
     },
