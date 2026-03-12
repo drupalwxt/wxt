@@ -26,6 +26,7 @@ dependencies:
   - 'linkit:linkit'
   - 'menu_block:menu_block'
   - 'menu_breadcrumb:menu_breadcrumb'
+  - 'metatag:metatag'
   - 'pathauto:pathauto'
   - 'token:token'
   - 'token_filter:token_filter'
