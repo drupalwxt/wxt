@@ -10,4 +10,4 @@ dependencies:
   - 'webform:webform_node'
   - 'webform_bootstrap:webform_bootstrap'
   - 'webform_ui:webform_ui'
-version: 6.3.x
+version: '6.3.0'

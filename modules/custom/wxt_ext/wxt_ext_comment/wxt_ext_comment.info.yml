@@ -5,4 +5,4 @@ core_version_requirement: '>11'
 package: WxT
 dependencies:
   - 'drupal:comment'
-version: 6.3.x
+version: '6.3.0'

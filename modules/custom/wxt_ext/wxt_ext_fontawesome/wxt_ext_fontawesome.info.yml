@@ -7,4 +7,4 @@ container_rebuild_required: true
 dependencies:
   - 'config_rewrite:config_rewrite'
   - 'fontawesome:fontawesome'
-version: 6.3.x
+version: '6.3.0'

@@ -32,4 +32,4 @@ dependencies:
   - 'token_filter:token_filter'
   - 'url_embed:url_embed'
   - 'views_bootstrap:views_bootstrap'
-version: 6.3.x
+version: '6.3.0'

@@ -7,4 +7,4 @@ container_rebuild_required: true
 dependencies:
   - 'book:book'
 configure: wxt_ext_book.admin_config_wxt_ext_book
-version: 6.3.x
+version: '6.3.0'

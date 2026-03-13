@@ -6,4 +6,4 @@ description: 'Provides a Twitter entity type for Media.'
 dependencies:
   - 'wxt_ext_media:wxt_ext_media'
   - 'media_entity_twitter:media_entity_twitter'
-version: 6.3.x
+version: '6.3.0'
