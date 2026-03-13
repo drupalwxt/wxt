@@ -14,4 +14,4 @@ dependencies:
   - 'wxt_translation:wxt_translation'
   - 'wxt_ext_layout:wxt_ext_layout'
   - 'wxt_ext_taxonomy:wxt_ext_taxonomy'
-version: '6.3.0'
+version: '6.3.x'
