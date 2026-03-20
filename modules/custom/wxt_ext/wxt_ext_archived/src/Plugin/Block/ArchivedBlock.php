@@ -58,6 +58,7 @@ class ArchivedBlock extends BlockBase {
   public function blockSubmit($form, FormStateInterface $form_state) {
     parent::blockSubmit($form, $form_state);
     $values = $form_state->getValues();
+    $this->configuration['archived_title'] = $values['archived_title'];
     $this->configuration['archived_text'] = $values['archived_text'];
   }
 
