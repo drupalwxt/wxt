@@ -1,13 +1,17 @@
 (function (Drupal, once) {
   Drupal.behaviors.wetWebformPrevBypass = {
-    attach: function (context) {
-      // Find Previous button with attribute.
-      var elements = once('wetWebformPrevBypass', '[data-wet-skip-validation]', context);
+    attach(context) {
 
-      elements.forEach(function (el) {
-        // Runs BEFORE jQuery/WET handlers.
+      // Find Previous button with attribute.
+      const elements = once(
+        'wetWebformPrevBypass',
+        '[data-wet-skip-validation]',
+        context
+      );
+
+      elements.forEach((el) => {
         el.addEventListener('click', function (e) {
-          var form = el.form;
+          const form = el.form;
           if (!form) {
             return;
           }
@@ -17,8 +21,23 @@
           e.stopImmediatePropagation();
           e.stopPropagation();
 
-          // Native submit: does NOT trigger jQuery submit handlers,
-          // so no WET validation, but Drupal still processes "op".
+          // Remove any earlier injected helper input.
+          const existing = form.querySelector('input[data-wet-prev-helper="1"]');
+          if (existing) {
+            existing.remove();
+          }
+
+          // Preserve the clicked submit button, because form.submit()
+          // does not include submit button name/value automatically.
+          if (el.name) {
+            const hidden = document.createElement('input');
+            hidden.type = 'hidden';
+            hidden.name = el.name;
+            hidden.value = el.value;
+            hidden.setAttribute('data-wet-prev-helper', '1');
+            form.appendChild(hidden);
+          }
+
           form.submit();
         }, true);
       });
