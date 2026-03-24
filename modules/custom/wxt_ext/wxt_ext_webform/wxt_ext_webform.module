@@ -164,6 +164,11 @@ function wxt_ext_webform_webform_submission_form_alter(array &$form, FormStateIn
   $webform = $webform_submission->getWebform();
 
   if ($webform->getThirdPartySetting('wxt_ext_webform', 'wet_inline_validation', FALSE)) {
+    if (empty($form['#attributes'])) {
+      $form['#attributes'] = [];
+    }
+    $form['#attributes']['novalidate'] = 'novalidate';
+
     $form['#prefix'] = ($form['#prefix'] ?? '') . '<div class="wb-frmvld">';
     $form['#suffix'] = '</div>' . ($form['#suffix'] ?? '');
 
