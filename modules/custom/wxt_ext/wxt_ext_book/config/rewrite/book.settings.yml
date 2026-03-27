@@ -1,5 +1,10 @@
-allowed_type_book: 1
-block:
-  navigation:
-    mode: 'all pages'
-child_type_book: book
+allowed_types:
+  -
+    content_type: book
+    child_type: book
+  -
+    content_type: page
+    child_type: page
+book_sort: weight
+truncate_label: true
+use_parent_selector: true
