@@ -14,8 +14,8 @@ function wxt_ext_book_preprocess_page(&$variables) {
   $node = \Drupal::routeMatch()->getParameter('node');
 
   if ($node instanceof NodeInterface) {
-    if (!empty($node->book)) {
-
+    $book_array = $node->getBook();
+    if (!empty($book_array)) {
       $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
 
       if ($node->hasTranslation($language)) {
@@ -23,7 +23,7 @@ function wxt_ext_book_preprocess_page(&$variables) {
       }
 
       // If book child page.
-      if ($node->book['bid'] != $node->id()) {
+      if ($book_array['bid'] != $node->id()) {
         $config = [
           'label_display' => '0',
           'block_mode' => 'book pages',
@@ -32,14 +32,14 @@ function wxt_ext_book_preprocess_page(&$variables) {
         $block = \Drupal::service('plugin.manager.block')->createInstance('book_navigation', $config);
         $variables['book_navigation'] = $block->build();
 
-        $book = \Drupal::entityTypeManager()->getStorage('node')->load($node->book['bid']);
+        $book = \Drupal::entityTypeManager()->getStorage('node')->load($book_array['bid']);
 
         if ($book instanceof NodeInterface) {
           if ($book->hasTranslation($language)) {
             $book = $book->getTranslation($language);
           }
 
-          $book_title = $book->getTitle();
+          $book_title = $book->label();
           $variables['book_title'] = $book_title;
         }
       }
@@ -54,10 +54,11 @@ function wxt_ext_book_preprocess_book_navigation(&$variables) {
   $node = \Drupal::routeMatch()->getParameter('node');
 
   if ($node instanceof NodeInterface) {
-    if (!empty($node->book)) {
+    $book_array = $node->getBook();
+    if (!empty($book_array)) {
       $config = \Drupal::config('wxt_ext_book.settings');
 
-      if ($node->book['bid'] == $node->id()) {
+      if ($book_array['bid'] == $node->id()) {
         // Current page is the book index.
         $variables['is_book_index'] = TRUE;
 
@@ -131,8 +132,11 @@ function _wxt_ext_book_set_variables_recursive(&$items, $active_nid) {
 function wxt_ext_book_preprocess_page_title(&$variables) {
   $node = \Drupal::routeMatch()->getParameter('node');
 
-  if ($node instanceof NodeInterface && !empty($node->book)) {
-    $variables['is_book'] = TRUE;
+  if ($node instanceof NodeInterface) {
+    $book_array = $node->getBook();
+    if (!empty($book_array)) {
+      $variables['is_book'] = TRUE;
+    }
   }
 }
 

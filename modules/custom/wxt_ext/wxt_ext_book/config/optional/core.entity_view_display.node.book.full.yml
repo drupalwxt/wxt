@@ -1,0 +1,124 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.book.body
+    - node.type.book
+  module:
+    - bootstrap_layouts
+    - layout_builder
+    - layout_discovery
+    - layout_library
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          a6a77cb9-5ce3-46ba-8c0d-bddafc87fce5:
+            uuid: a6a77cb9-5ce3-46ba-8c0d-bddafc87fce5
+            region: content
+            configuration:
+              id: 'extra_field_block:node:book:content_moderation_control'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 0
+            additional: {  }
+          00f097fe-a6e5-4467-9d3c-2a1dacd2a827:
+            uuid: 00f097fe-a6e5-4467-9d3c-2a1dacd2a827
+            region: content
+            configuration:
+              id: 'field_block:node:book:body'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+          f1d6ab5d-4531-4061-b90d-766c806e9ceb:
+            uuid: f1d6ab5d-4531-4061-b90d-766c806e9ceb
+            region: content
+            configuration:
+              id: 'extra_field_block:node:book:links'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 2
+            additional: {  }
+        third_party_settings: {  }
+      -
+        layout_id: bs_1col
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+          layout:
+            wrapper: div
+            classes:
+              row: row
+            add_layout_class: 1
+            attributes: ''
+          regions:
+            main:
+              wrapper: div
+              classes:
+                col-sm-12: col-sm-12
+              add_region_classes: 1
+              attributes: ''
+        components:
+          0eade8e1-27b0-4519-9287-610ab4abd46a:
+            uuid: 0eade8e1-27b0-4519-9287-610ab4abd46a
+            region: main
+            configuration:
+              id: 'extra_field_block:node:book:book_navigation'
+              label: 'Book navigation'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                settings: {  }
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+  layout_library:
+    enable: false
+id: node.book.full
+targetEntityType: node
+bundle: book
+mode: full
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  book_navigation: true
+  footnotes_group: true
+  langcode: true
+  search_api_excerpt: true

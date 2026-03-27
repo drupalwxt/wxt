@@ -1,0 +1,260 @@
+<?php
+
+use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\layout_builder\Entity\LayoutEntityDisplayInterface;
+use Drupal\layout_builder\Section;
+use Drupal\layout_builder\SectionComponent;
+
+/**
+ * Implements hook_install().
+ */
+function wxt_ext_book_install(): void {
+  _wxt_ext_book_apply_page_book_nav_layouts();
+}
+
+function wxt_ext_book_update_10001(): void {
+  // Set up sane layout library and display full configuration for a Basic Page book.
+  wxt_ext_book_install();
+}
+/**
+ * Apply the basic page Layout Builder + Layout Library changes.
+ *
+ * Safe to run multiple times.
+ */
+function _wxt_ext_book_apply_page_book_nav_layouts(): void {
+  $etm = \Drupal::entityTypeManager();
+
+  _wxt_ext_book_patch_view_display($etm);
+  _wxt_ext_book_patch_layout_library($etm);
+}
+
+/**
+ * Insert a new bs_1col section at index 1 on node.page.full.
+ */
+function _wxt_ext_book_patch_view_display(EntityTypeManagerInterface $etm): void {
+  $storage = $etm->getStorage('entity_view_display');
+  $display = $storage->load('node.page.full');
+
+  if (!$display || !$display instanceof LayoutEntityDisplayInterface) {
+    return;
+  }
+
+  $lb = $display->getThirdPartySettings('layout_builder');
+  if (empty($lb['enabled'])) {
+    return;
+  }
+
+  // Idempotent: if any section already contains BOTH components, do nothing.
+  foreach ($display->getSections() as $section) {
+    if (_wxt_ext_book_section_has_component_id($section, 'extra_field_block:node:page:links') &&
+        _wxt_ext_book_section_has_component_id($section, 'extra_field_block:node:page:book_navigation')) {
+      return;
+    }
+  }
+
+  $new_section = _wxt_ext_book_build_bs_1col_container_section();
+  $new_section->appendComponent(_wxt_ext_book_build_extra_field_component(
+    'extra_field_block:node:page:links',
+    'Links',
+    0
+  ));
+  $new_section->appendComponent(_wxt_ext_book_build_extra_field_component(
+    'extra_field_block:node:page:book_navigation',
+    'Book navigation',
+    1
+  ));
+
+  // Insert after the original section (index 0). If no sections exist, insert at 0.
+  $insert_index = count($display->getSections()) > 0 ? 1 : 0;
+
+  // Your class supports insertSection() (you verified).
+  $display->insertSection($insert_index, $new_section);
+  $display->save();
+}
+
+/**
+ * Insert a new bs_1col section at index 1 on layout library template.
+ */
+function _wxt_ext_book_patch_layout_library(EntityTypeManagerInterface $etm): void {
+  $config_name = 'layout_library.layout.node_page_full_default';
+  $config = \Drupal::configFactory()->getEditable($config_name);
+
+  // If it doesn't exist yet, bail.
+  if ($config->isNew()) {
+    return;
+  }
+
+  $layout_array = $config->get('layout') ?? [];
+  if (!is_array($layout_array)) {
+    $layout_array = [];
+  }
+
+  // Idempotent check.
+  $already = FALSE;
+  foreach ($layout_array as $section_array) {
+    $components = $section_array['components'] ?? [];
+    $has_links = FALSE;
+    $has_book_nav = FALSE;
+    foreach ($components as $c) {
+      $id = $c['configuration']['id'] ?? '';
+      $has_links = $has_links || ($id === 'extra_field_block:node:page:links');
+      $has_book_nav = $has_book_nav || ($id === 'extra_field_block:node:page:book_navigation');
+    }
+    if ($has_links && $has_book_nav) {
+      $already = TRUE;
+      break;
+    }
+  }
+
+  if ($already) {
+    return;
+  }
+
+  $new_section = _wxt_ext_book_build_bs_1col_container_section_array_with_components();
+  $insert_index = count($layout_array) > 0 ? 1 : 0;
+  array_splice($layout_array, $insert_index, 0, [$new_section]);
+
+  $config->set('layout', $layout_array);
+  $config->save();
+
+}
+
+/**
+ * Build a bs_1col Layout Builder Section matching your YAML.
+ */
+function _wxt_ext_book_build_bs_1col_container_section(): Section {
+  return new Section('bs_1col', [
+    'label' => '',
+    'context_mapping' => [],
+    'layout' => [
+      'wrapper' => 'div',
+      'classes' => [
+        'row' => 'row',
+      ],
+      'add_layout_class' => 1,
+      'attributes' => '',
+    ],
+    'regions' => [
+      'main' => [
+        'wrapper' => 'div',
+        'classes' => [
+          'col-sm-12' => 'col-sm-12',
+        ],
+        'add_region_classes' => 1,
+        'attributes' => '',
+      ],
+    ],
+  ]);
+}
+
+/**
+ * Build a Layout Builder component for an extra field block.
+ */
+function _wxt_ext_book_build_extra_field_component(string $plugin_id, string $label, int $weight): SectionComponent {
+  $uuid = \Drupal::service('uuid')->generate();
+
+  $component = new SectionComponent($uuid, 'main', [
+    'id' => $plugin_id,
+    'label' => $label,
+    'label_display' => '0',
+    'provider' => 'layout_builder',
+    'context_mapping' => [
+      'entity' => 'layout_builder.entity',
+    ],
+    'formatter' => [
+      'settings' => [],
+      'third_party_settings' => [],
+    ],
+  ]);
+  $component->setWeight($weight);
+
+  return $component;
+}
+
+/**
+ * Helper: check whether a Section already contains a component id.
+ */
+function _wxt_ext_book_section_has_component_id(Section $section, string $plugin_id): bool {
+  foreach ($section->getComponents() as $component) {
+    $conf = $component->get('configuration');
+    if (($conf['id'] ?? '') === $plugin_id) {
+      return TRUE;
+    }
+  }
+  return FALSE;
+}
+
+/**
+ * Build the layout library section as an array with both components.
+ */
+function _wxt_ext_book_build_bs_1col_container_section_array_with_components(): array {
+  $uuid_links = \Drupal::service('uuid')->generate();
+  $uuid_book = \Drupal::service('uuid')->generate();
+
+  return [
+    'layout_id' => 'bs_1col',
+    'layout_settings' => [
+      'label' => '',
+      'context_mapping' => [],
+      'layout' => [
+        'wrapper' => 'div',
+        'classes' => [
+          'row' => 'row',
+        ],
+        'add_layout_class' => 1,
+        'attributes' => '',
+      ],
+      'regions' => [
+        'main' => [
+          'wrapper' => 'div',
+          'classes' => [
+            'col-sm-12' => 'col-sm-12',
+          ],
+          'add_region_classes' => 1,
+          'attributes' => '',
+        ],
+      ],
+    ],
+    'components' => [
+      $uuid_links => [
+        'uuid' => $uuid_links,
+        'region' => 'main',
+        'configuration' => [
+          'id' => 'extra_field_block:node:page:links',
+          'label' => 'Links',
+          'label_display' => '0',
+          'provider' => 'layout_builder',
+          'context_mapping' => [
+            'entity' => 'layout_builder.entity',
+          ],
+          'formatter' => [
+            'settings' => [],
+            'third_party_settings' => [],
+          ],
+        ],
+        'weight' => 0,
+        'additional' => [],
+      ],
+      $uuid_book => [
+        'uuid' => $uuid_book,
+        'region' => 'main',
+        'configuration' => [
+          'id' => 'extra_field_block:node:page:book_navigation',
+          'label' => 'Book navigation',
+          'label_display' => '0',
+          'provider' => 'layout_builder',
+          'context_mapping' => [
+            'entity' => 'layout_builder.entity',
+          ],
+          'formatter' => [
+            'settings' => [],
+            'third_party_settings' => [],
+          ],
+        ],
+        'weight' => 1,
+        'additional' => [],
+      ],
+    ],
+    'third_party_settings' => [],
+  ];
+}

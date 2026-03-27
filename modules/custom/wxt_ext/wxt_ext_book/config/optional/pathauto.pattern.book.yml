@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: book
+label: Book
+type: 'canonical_entities:node'
+pattern: '[node:book:parents:join-path]/[node:title]'
+selection_criteria:
+  de676eda-f1c9-4740-8f70-f4b1dc2943c1:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: de676eda-f1c9-4740-8f70-f4b1dc2943c1
+    context_mapping:
+      node: node
+    bundles:
+      book: book
+selection_logic: and
+weight: -10
+relationships:
+  'node:langcode:language':
+    label: Language
