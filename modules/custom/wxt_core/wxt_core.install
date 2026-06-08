@@ -737,3 +737,22 @@ function wxt_core_update_8503() {
     ]);
   }
 }
+
+/**
+ * Issue #3510980: Remove the bad system.site entries, 0: '' and 1: ''.
+ */
+function wxt_core_update_8504() : void {
+  $config = \Drupal::service('config.factory')->getEditable('system.site');
+  $page_0 = $config->get('page.0');
+  $page_1 = $config->get('page.1');
+
+  if ($page_0 === '') {
+    $config->clear('page.0');
+  }
+
+  if ($page_1 === '') {
+    $config->clear('page.1');
+  }
+
+  $config->save();
+}
