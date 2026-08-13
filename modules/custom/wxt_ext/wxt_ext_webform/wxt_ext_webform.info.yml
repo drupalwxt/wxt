@@ -8,6 +8,6 @@ dependencies:
   - 'config_rewrite:config_rewrite'
   - 'webform:webform'
   - 'webform:webform_node'
-  - 'webform_bootstrap:webform_bootstrap'
-  - 'webform_ui:webform_ui'
+  - 'webform:webform_bootstrap'
+  - 'webform:webform_ui'
 version: '6.3.x'
