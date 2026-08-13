@@ -257,9 +257,7 @@
                 "Enter drupal/page_manager patch #2626090 description here":
                 "https://www.drupal.org/files/issues/page-manager-2626090-page-title-empty-5.patch",
                 "Enter drupal/page_manager patch #2752227 description here":
-                "https://www.drupal.org/files/issues/2025-01-15/2752227-56.patch",
-                "Enter drupal/page_manager patch #3536704 description here":
-                "https://www.drupal.org/files/issues/2026-03-07/page_manager-php8-4-deprecation-3536704-15.patch"
+                "https://www.drupal.org/files/issues/2025-01-15/2752227-56.patch"
             },
             "drupal/paragraphs": {
                 "Enter drupal/paragraphs patch #2878615 description here":
