@@ -31,7 +31,7 @@
         "drupal/dropzonejs": "^2.11",
         "drupal/embed": "^1.10",
         "drupal/entity_block": "^2.0",
-        "drupal/entity_browser": "^2.15",
+        "drupal/entity_browser": "^2.17",
         "drupal/entity_browser_block": "^2.0",
         "drupal/entity_embed": "^1.7",
         "drupal/entity_reference_revisions": "^1.12",
