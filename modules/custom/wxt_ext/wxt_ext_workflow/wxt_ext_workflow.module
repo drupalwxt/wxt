@@ -182,7 +182,12 @@ function wxt_ext_workflow_module_implements_alter(array &$implementations, $hook
   // type, we'll have to check for its entity type-specific view_alter hook as
   // well.
   if ($hook == 'node_view_alter') {
-    unset($implementations['quickedit']);
+    if (isset($implementations['quickedit'])) {
+      // Reorder instead of removing (Drupal 11.3 safe)
+      $quickedit = $implementations['quickedit'];
+      unset($implementations['quickedit']);
+      $implementations['quickedit'] = $quickedit;
+    }
   }
 }
 
