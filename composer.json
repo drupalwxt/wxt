@@ -271,6 +271,10 @@
                 "Enter drupal/panels patch #3577740 description here":
                 "https://www.drupal.org/files/issues/2026-03-07/panels-php8-4-deprecations-3577740-2.patch"
             },
+            "drupal/password_policy": {
+                "PHP 8.4 deprecation warning in the password_policy contrib module":
+                "https://www.drupal.org/files/issues/2025-04-02/password-policy-3516906.patch"
+            },
             "drupal/redis": {
                 "3004561 - Enable ssl scheme":
                 "https://www.drupal.org/files/issues/2025-08-13/redis-support_tls_on_predis-3004561-49.patch"
