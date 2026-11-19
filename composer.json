@@ -27,7 +27,7 @@
         "drupal/core_context": "^1.2",
         "drupal/crop": "^2.4",
         "drupal/ctools": "^4.1",
-        "drupal/diff": "^1.9",
+        "drupal/diff": "^2.1",
         "drupal/dropzonejs": "^2.11",
         "drupal/embed": "^1.10",
         "drupal/entity_block": "^2.0",
@@ -47,7 +47,7 @@
         "drupal/image_widget_crop": "^3.0",
         "drupal/inline_entity_form": "^3.0@RC",
         "drupal/layout_builder_restrictions": "^3.0",
-        "drupal/layout_builder_st": "dev-2.0.x",
+        "drupal/layout_builder_st": "^2.0.2",
         "drupal/layout_builder_styles": "^2.1",
         "drupal/layout_library": "^1.0@beta",
         "drupal/linkit": "^7.0",
@@ -60,7 +60,7 @@
         "drupal/migrate_plus": "^6.0",
         "drupal/migrate_tools": "^6.1",
         "drupal/page_manager": "^4.0@RC",
-        "drupal/panels": "^4.9",
+        "drupal/panels": "^4.10",
         "drupal/paragraphs": "^1.19",
         "drupal/password_policy": "^4.0",
         "drupal/pathauto": "^1.14",
@@ -223,18 +223,6 @@
                 "Enter drupal/ctools patch #2924356 description here":
                 "https://www.drupal.org/files/issues/2024-06-14/ctools-entity_field_rendered_twice-2924356-12.patch"
             },
-            "drupal/diff": {
-                "Enter drupal/diff patch #2844337 description here":
-                "https://www.drupal.org/files/issues/2024-04-15/2844337-array_to_string_conversion-29.patch",
-                "Enter drupal/diff patch #2882334 description here":
-                "https://www.drupal.org/files/issues/2020-09-28/2882334-diff-missing_some_revisions-13.patch",
-                "Enter drupal/diff patch #3004705 description here":
-                "https://git.drupalcode.org/project/diff/-/merge_requests/87.patch",
-                "Enter drupal/diff patch #3169729 description here":
-                "https://www.drupal.org/files/issues/2020-09-08/diff_add-local-tasks-3169729-2.patch",
-                "Enter drupal/diff patch #3228798 description here":
-                "https://www.drupal.org/files/issues/2024-05-14/diff-3228798-17.patch"
-            },
             "drupal/entity_browser": {
                 "2843247 - Drupal ajax error of undefined method getFileUri() while selecting newly uploaded image":
                 "https://www.drupal.org/files/issues/2025-02-13/entity-browser-2843247-16.patch"
@@ -257,19 +245,11 @@
                 "Enter drupal/page_manager patch #2626090 description here":
                 "https://www.drupal.org/files/issues/page-manager-2626090-page-title-empty-5.patch",
                 "Enter drupal/page_manager patch #2752227 description here":
-                "https://www.drupal.org/files/issues/2025-01-15/2752227-56.patch",
-                "Enter drupal/page_manager patch #3536704 description here":
-                "https://www.drupal.org/files/issues/2026-03-07/page_manager-php8-4-deprecation-3536704-15.patch"
+                "https://www.drupal.org/files/issues/2025-01-15/2752227-56.patch"
             },
             "drupal/paragraphs": {
                 "Enter drupal/paragraphs patch #2878615 description here":
                 "https://www.drupal.org/files/issues/comments_entity_uri-2878615-6.patch"
-            },
-            "drupal/panels": {
-                "Enter drupal/panels patch #2910704 description here":
-                "https://www.drupal.org/files/issues/panels-ipe-card-flip-ie-error-2910704.diff",
-                "Enter drupal/panels patch #3577740 description here":
-                "https://www.drupal.org/files/issues/2026-03-07/panels-php8-4-deprecations-3577740-2.patch"
             },
             "drupal/password_policy": {
                 "PHP 8.4 deprecation warning in the password_policy contrib module":
@@ -282,14 +262,6 @@
             "drupal/webform": {
                 "Enter drupal/webform patch #3205860 description here":
                 "https://www.drupal.org/files/issues/2021-03-26/webform_clientside_validation-3205860-2.patch"
-            },
-            "drupal/ckeditor_details": {
-                "3244311 - Allow <details> element to be placed without <div>":
-                "https://www.drupal.org/files/issues/2024-11-15/3244311-9.patch"
-            },
-            "drupal/layout_builder_st": {
-                "3566683 - Fix for WSOD on /admin/reports/status page":
-                "https://www.drupal.org/files/issues/2026-01-09/3566683-fix-error-on-status-report.patch"
             },
             "drupal/blog": {
                 "Enter drupal/blog patch #3546341 description here":
