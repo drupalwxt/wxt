@@ -27,7 +27,7 @@
         "drupal/core_context": "^1.2",
         "drupal/crop": "^2.4",
         "drupal/ctools": "^4.1",
-        "drupal/diff": "^1.9",
+        "drupal/diff": "^2.1",
         "drupal/dropzonejs": "^2.11",
         "drupal/embed": "^1.10",
         "drupal/entity_block": "^2.0",
@@ -222,18 +222,6 @@
                 "https://www.drupal.org/files/issues/ctools-option_to_expose-2667652-3.patch",
                 "Enter drupal/ctools patch #2924356 description here":
                 "https://www.drupal.org/files/issues/2024-06-14/ctools-entity_field_rendered_twice-2924356-12.patch"
-            },
-            "drupal/diff": {
-                "Enter drupal/diff patch #2844337 description here":
-                "https://www.drupal.org/files/issues/2024-04-15/2844337-array_to_string_conversion-29.patch",
-                "Enter drupal/diff patch #2882334 description here":
-                "https://www.drupal.org/files/issues/2020-09-28/2882334-diff-missing_some_revisions-13.patch",
-                "Enter drupal/diff patch #3004705 description here":
-                "https://git.drupalcode.org/project/diff/-/merge_requests/87.patch",
-                "Enter drupal/diff patch #3169729 description here":
-                "https://www.drupal.org/files/issues/2020-09-08/diff_add-local-tasks-3169729-2.patch",
-                "Enter drupal/diff patch #3228798 description here":
-                "https://www.drupal.org/files/issues/2024-05-14/diff-3228798-17.patch"
             },
             "drupal/entity_browser": {
                 "2843247 - Drupal ajax error of undefined method getFileUri() while selecting newly uploaded image":
