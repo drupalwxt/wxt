@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\wxt\Exception;
+namespace Drupal\wxt\Installer;
 
 /**
  * Exception thrown for an invalid WxT Extension.
