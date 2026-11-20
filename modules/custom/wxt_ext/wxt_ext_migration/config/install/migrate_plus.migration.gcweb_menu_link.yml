@@ -442,8 +442,8 @@ source:
       weight: 14
       parent: 0
     - mlid: 'ml_footer_16'
-      link_title: 'Indigenous peoples'
-      description: 'Indigenous peoples section.'
+      link_title: 'Indigenous Peoples'
+      description: 'Indigenous Peoples section.'
       menu_name: 'footer'
       link_path: 'https://www.canada.ca/en/services/indigenous-peoples.html'
       options: []
