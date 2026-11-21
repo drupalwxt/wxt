@@ -5,5 +5,5 @@ description: 'Provides improvements to Bulk Upload for Media.'
 package: WxT
 dependencies:
   - 'dropzonejs:dropzonejs'
-  - 'wxt_ext_media:wxt_ext_media'
+  - 'wxt:wxt_ext_media'
 version: '6.3.x'

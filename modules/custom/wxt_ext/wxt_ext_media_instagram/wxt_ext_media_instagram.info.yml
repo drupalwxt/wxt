@@ -4,6 +4,6 @@ type: module
 description: 'Provides an Instagram entity type for Media.'
 package: WxT
 dependencies:
-  - 'wxt_ext_media:wxt_ext_media'
+  - 'wxt:wxt_ext_media'
   - 'media_entity_instagram:media_entity_instagram'
 version: '6.3.x'

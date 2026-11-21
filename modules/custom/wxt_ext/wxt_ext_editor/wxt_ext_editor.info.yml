@@ -18,5 +18,5 @@ dependencies:
   - 'toc_filter:toc_filter'
   - 'token_filter:token_filter'
   - 'url_embed:url_embed'
-  - 'wxt_ext_media_image_responsive:wxt_ext_media_image_responsive'
+  - 'wxt:wxt_ext_media_image_responsive'
 version: '6.3.x'

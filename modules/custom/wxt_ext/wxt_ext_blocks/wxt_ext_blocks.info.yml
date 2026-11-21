@@ -5,8 +5,8 @@ core_version_requirement: '>11'
 package: WxT
 dependencies:
   - 'content_moderation:content_moderation'
-  - 'wxt_core:wxt_core'
-  - 'wxt_translation:wxt_translation'
-  - 'wxt_ext_media:wxt_ext_media'
-  - 'wxt_ext_media_image:wxt_ext_media_image'
+  - 'wxt:wxt_core'
+  - 'wxt:wxt_translation'
+  - 'wxt:wxt_ext_media'
+  - 'wxt:wxt_ext_media_image'
 version: '6.3.x'

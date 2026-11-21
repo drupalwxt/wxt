@@ -11,6 +11,6 @@ dependencies:
   - 'drupal:user'
   - 'entity_browser:entity_browser'
   - 'inline_entity_form:inline_entity_form'
-  - 'wxt_core:wxt_core'
-  - 'wxt_translation:wxt_translation'
+  - 'wxt:wxt_core'
+  - 'wxt:wxt_translation'
 version: '6.3.x'

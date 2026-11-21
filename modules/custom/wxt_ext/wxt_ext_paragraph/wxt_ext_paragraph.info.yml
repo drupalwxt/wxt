@@ -5,5 +5,5 @@ package: WxT
 core_version_requirement: '>11'
 dependencies:
   - 'paragraphs:paragraphs'
-  - 'wxt_translation:wxt_translation'
+  - 'wxt:wxt_translation'
 version: '6.3.x'

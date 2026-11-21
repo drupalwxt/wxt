@@ -4,5 +4,5 @@ type: module
 package: WxT
 description: 'Provides a Video entity type for Media.'
 dependencies:
-  - 'wxt_ext_media:wxt_ext_media'
+  - 'wxt:wxt_ext_media'
 version: '6.3.x'

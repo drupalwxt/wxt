@@ -7,6 +7,6 @@ dependencies:
   - 'content_moderation:content_moderation'
   - 'config_rewrite:config_rewrite'
   - 'drupal:entityqueue'
-  - 'drupal:wxt_ext_landing_page'
-  - 'wxt_ext_media:wxt_ext_media'
+  - 'wxt:wxt_ext_landing_page'
+  - 'wxt:wxt_ext_media'
 version: '6.3.x'

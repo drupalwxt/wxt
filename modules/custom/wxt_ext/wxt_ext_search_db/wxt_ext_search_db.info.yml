@@ -4,6 +4,6 @@ type: module
 core_version_requirement: '>11'
 package: WxT
 dependencies:
-  - 'wxt_ext_search:wxt_ext_search'
+  - 'wxt:wxt_ext_search'
   - 'search_api:search_api_db'
 version: '6.3.x'
