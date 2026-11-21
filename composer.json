@@ -15,7 +15,7 @@
         "drupal/autosave_form": "^1.10",
         "drupal/block_class": "^4.0",
         "drupal/blog": "^3.1",
-        "drupal/book": "^2.0",
+        "drupal/book": "^3.0",
         "drupal/bootstrap_layouts": "^5.5",
         "drupal/button_link": "^2.0",
         "drupal/ckeditor_abbreviation": "^5.0",
@@ -216,6 +216,10 @@
                 "https://www.drupal.org/files/issues/2025-01-28/drupal-PageTitle_block-2938129-43.patch",
                 "3492837 - TypeError: array_key_exists(): Argument #2 ($array) must be of type array, null given in array_key_exists()":
                 "https://www.drupal.org/files/issues/2026-03-02/11.3.x-3492837-9.patch"
+            },
+            "drupal/ckeditor_details": {
+                "3244311 - Allow <details> element to be placed without <div>":
+                "https://www.drupal.org/files/issues/2024-11-15/3244311-9.patch"
             },
             "drupal/ctools": {
                 "Enter drupal/ctools patch #2667652 description here":
