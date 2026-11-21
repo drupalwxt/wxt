@@ -28,6 +28,8 @@ abstract class AdobeAnalyticsAttributeBase extends MetaNameBase {
       '#tag' => $this->htmlTag,
       '#attributes' => [
         $this->name => $this->value,
+        'name' => $this->name,
+        'content' => $this->value,
       ],
     ];
   }
