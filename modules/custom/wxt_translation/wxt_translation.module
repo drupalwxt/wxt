@@ -6,6 +6,7 @@
  */
 
 use Drupal\Core\Entity\FieldableEntityInterface;
+use Drupal\locale\LocaleDefaultOptions;
 use Drupal\views\ViewExecutable;
 
 /**
@@ -62,7 +63,7 @@ function wxt_translation_update_config_translation() {
   // Set a batch to download and import translations.
   locale_translation_flush_projects();
   locale_translation_check_projects();
-  $options = _locale_translation_default_update_options();
+  $options = LocaleDefaultOptions::updateOptions();
   $batch = locale_translation_batch_fetch_build([], $langcodes, $options);
   batch_set($batch);
   // Set a batch to update configuration as well.
@@ -100,7 +101,7 @@ function wxt_translation_import_translations($type, $name) {
     if (file_exists($filepath)) {
       \Drupal::moduleHandler()->loadInclude('locale', 'bulk.inc');
       \Drupal::moduleHandler()->loadInclude('locale', 'translation.inc');
-      $options = array_merge(_locale_translation_default_update_options(), [
+      $options = array_merge(LocaleDefaultOptions::updateOptions(), [
         'langcode' => $langcode,
         'overwrite_options' => [
           'customized' => TRUE,
