@@ -22,8 +22,8 @@
         "drupal/ckeditor_codemirror": "^3.1",
         "drupal/ckeditor_details": "^2.1@beta",
         "drupal/config_rewrite": "^1.6",
-        "drupal/core-composer-scaffold": "11.3.*",
-        "drupal/core-recommended": "11.3.*",
+        "drupal/core-composer-scaffold": "11.4.*",
+        "drupal/core-recommended": "11.4.*",
         "drupal/core_context": "^1.2",
         "drupal/crop": "^2.4",
         "drupal/ctools": "^4.1",
@@ -90,7 +90,7 @@
         "fontawesome/fontawesome": "^6.4"
     },
     "require-dev": {
-        "drupal/core-dev": "11.3.*",
+        "drupal/core-dev": "11.4.*",
         "drupal/drupal-extension": "^5.2",
         "drush/drush": "^13.3.3",
         "mnsami/composer-custom-directory-installer": "^2.1",
