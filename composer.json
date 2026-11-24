@@ -218,8 +218,6 @@
                 "https://www.drupal.org/files/issues/2026-03-02/11.3.x-3492837-9.patch"
             },
             "drupal/ctools": {
-                "Enter drupal/ctools patch #2667652 description here":
-                "https://www.drupal.org/files/issues/ctools-option_to_expose-2667652-3.patch",
                 "Enter drupal/ctools patch #2924356 description here":
                 "https://www.drupal.org/files/issues/2024-06-14/ctools-entity_field_rendered_twice-2924356-12.patch"
             },
